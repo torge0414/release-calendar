@@ -157,9 +157,10 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
     font-size:11.5px; font-weight:600; text-decoration:none; border-radius:980px;
     padding:3px 11px; display:inline-flex; align-items:center; gap:5px;
     transition:.6s; letter-spacing:.01em; white-space:nowrap;
+    height:20px; box-sizing:border-box;   /* 固定高度: 悬停放大字号时不撑开卡片、不推挤列表 */
   }
   /* 悬停放大用字号/内边距(而非 transform:scale): scale 会按位图栅格化文字,动画期间发糊 */
-  .chip:hover{font-size:12.1px; padding:3.15px 11.55px;}
+  .chip:hover{font-size:12.1px;}
   .chip .pd{font-weight:500; opacity:.65; font-size:10.5px;}
   .chip:hover .pd{font-size:11px;}
   .chip.st{color:var(--st); background:var(--st-bg);}
