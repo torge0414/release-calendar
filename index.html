@@ -164,11 +164,13 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   /* 悬停反馈只改色彩、不动几何: 放大必然让字形变高(糊/位移); filter/transform 会提升合成层重栅格化文字。
      内阴影铺一层半透明黑 = 底色加深, 纯绘制、文字保持矢量清晰、布局零变化。 */
   .chip .pd{font-weight:500; opacity:.65; font-size:10.5px;}
-  .chip:hover{box-shadow:0 0 0 2px rgba(0,0,0,.13), inset 0 0 0 99px rgba(255,255,255,.28);}
   /* 按 torge 要求: Steam 与 PS 的配色对调(Steam 用原 PS 的紫蓝, PS 用原 Steam 的亮蓝) */
   .chip.st{color:var(--ps); background:var(--ps-bg);}
   .chip.ps{color:var(--st); background:var(--st-bg);}
   .chip.ns{color:var(--ns); background:var(--ns-bg);}
+  /* 悬停: 背景压暗 + 字体变亮(白)。必须放在平台色规则之后, 否则 .chip.st 的 color 会盖住这里的白。
+     外描边不参与布局 → 无位移; 字号不变 → 文字不糊。 */
+  .chip:hover{color:#fff; box-shadow:0 0 0 2px rgba(0,0,0,.10), inset 0 0 0 99px rgba(0,0,0,.36);}
   .empty{color:var(--dim); font-size:14px; padding:18px 8px; text-align:center;}
   .loading{color:var(--dim); font-size:14px; text-align:center; padding:52px 0;}
   .loading .spin{display:inline-block; width:22px; height:22px; border:2.5px solid var(--spin);
