@@ -510,7 +510,7 @@ function card(it){
       (pfmt?' · '+pfmt:'')+'</a>';
   }).join('');
   const mc = (typeof it.mc==='number' && it.mc>0) ? it.mc : null;
-  const mcBox = mc ? '<a class="mcbox '+(mc>=80?'g':(mc>=60?'y':'r'))+'" href="'+esc(it.mc_url||'https://www.metacritic.com/')+'" target="_blank" rel="noopener" title="Metacritic 均分 '+(mc>=80?'好评':(mc>=60?'中评':'差评'))+'">'+
+  const mcBox = mc ? '<a class="mcbox '+(mc>=80?'g':(mc>=60?'y':'r'))+'" href="'+esc(it.mc_url||'https://www.metacritic.com/')+'" target="_blank" rel="noopener">'+
       '<span class="mcv">'+mc+'</span></a>' : '';
   wrap.innerHTML =
     '<div class="pic">'+imgTag+
@@ -574,7 +574,7 @@ function mcard(it){
     ? '<img class="cover" src="'+esc(it.poster)+'" alt="" loading="lazy" onerror="this.style.display=\'none\'">' : '';
   /* 豆瓣 10 分制 ×10 显示(与游戏 Metacritic 同为百分制): ≥80 绿 / ≥60 黄 / <60 红, 整块跳豆瓣条目页 */
   const mc = sc!=null ? '<a class="mcbox '+(sc>=8?'g':(sc>=6?'y':'r'))+'" href="'+esc(it.url||'https://movie.douban.com/')+
-      '" target="_blank" rel="noopener" title="豆瓣评分 '+sc+'（×10 显示为百分制）">'+
+      '" target="_blank" rel="noopener">'+
       '<span class="mcv">'+Math.round(sc*10)+'</span></a>' : '';
   const mi = minfoParts(it.info);
   const line2 = '<span>'+it.month+'月'+it.day+'日'+(mi.region?' · '+esc(mi.region):'')+'</span>';
@@ -638,11 +638,7 @@ function mucard(it){
   const img = it.art ? '<img class="cover" src="'+esc(it.art)+'" alt="" loading="lazy" onerror="this.style.display=\'none\'">' : '';
   /* Metacritic 专业均分(百分制): ≥80 绿 / ≥60 黄 / <60 红 */
   const mcBox = sc!=null ? '<a class="mcbox '+(sc>=80?'g':(sc>=60?'y':'r'))+'" href="'+esc(it.score_url||'https://pitchfork.com/reviews/albums/')+
-      '" target="_blank" rel="noopener" title="'+(it.score_src||'AOTY')+' '+sc+
-      (it.fame? ' · 知名度 '+(it.fame)+'分'+((it.fame_parts)? '（'+((it.fame_parts.chart)?'榜单'+it.fame_parts.chart+'分':'')+
-        ((it.fame_parts.fans)?' 粉丝'+it.fame_parts.fans+'分':'')+((it.fame_parts.mc)?' 媒体'+it.fame_parts.mc+'分':'')+'）' : '') : '')+
-      (it.fans? ' · 艺人粉丝 '+Math.round(it.fans/10000)+'万' : '')+
-      ((it.chart_regions&&it.chart_regions.length)? ' · Apple榜 '+it.chart_regions.join('/') : '')+'">'+
+      '" target="_blank" rel="noopener">'+
       '<span class="mcv">'+sc+'</span></a>' : '';
   const line2 = '<span>'+esc(it.artist||'')+'</span>';
   const line3 = [it.kind||it.genre||'', it.date? ((+it.date.slice(5,7))+'月'+(+it.date.slice(8,10))+'日') : ''].filter(Boolean).join(' · ');
