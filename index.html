@@ -161,11 +161,10 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
     line-height:14px;                     /* 固定行盒: 否则字号变大时文字在胶囊内上下跳 */
   }
   /* 悬停放大用字号/内边距(而非 transform:scale): scale 会按位图栅格化文字,动画期间发糊 */
-  /* 悬停反馈不做任何几何变化也不加 filter: 放大必然让字形变高变糊或位移, filter 会提升合成层可能重栅格化文字。
-     用 opacity(纯合成, 不重采样文字): 默认略淡, 悬停变实。 */
+  /* 悬停反馈只改色彩、不动几何: 放大必然让字形变高(糊/位移); filter/transform 会提升合成层重栅格化文字。
+     内阴影铺一层半透明黑 = 底色加深, 纯绘制、文字保持矢量清晰、布局零变化。 */
   .chip .pd{font-weight:500; opacity:.65; font-size:10.5px;}
-  .chip{opacity:.9;}
-  .chip:hover{opacity:1;}
+  .chip:hover{box-shadow:inset 0 0 0 99px rgba(0,0,0,.07);}
   .chip.st{color:var(--st); background:var(--st-bg);}
   .chip.ps{color:var(--ps); background:var(--ps-bg);}
   .chip.ns{color:var(--ns); background:var(--ns-bg);}
