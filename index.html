@@ -147,7 +147,10 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   .mcbox{position:absolute; right:18px; bottom:14px; border-radius:11px; padding:0;
        width:42px; height:42px; box-sizing:border-box; color:#fff; display:flex; align-items:center; justify-content:center;
        line-height:1; z-index:2; box-shadow:0 2px 8px rgba(0,0,0,.18); text-decoration:none;}
-  .mcbox:hover{filter:brightness(1.08);}
+  /* 悬停: 背景压暗(与平台标签同一套效果)。数字本身已是白色, 压暗底色后对比度更高、白字更跳。
+     保留原有的投影, 只叠一层 inset 黑。暗色主题有更高特异性的投影规则, 需单独补一条。 */
+  .mcbox:hover{box-shadow:0 2px 8px rgba(0,0,0,.18), inset 0 0 0 99px rgba(0,0,0,.26);}
+  html.dark .mcbox:hover{box-shadow:0 2px 10px rgba(0,0,0,.45), inset 0 0 0 99px rgba(0,0,0,.26);}
   .mcbox .mcv{font-size:17px; font-weight:800; letter-spacing:-.02em; line-height:1; text-decoration:none;}
   .mcbox.g,.mcbox.y,.mcbox.r{text-align:center;}
   .mcbox.g{background:#1f9d55;} .mcbox.y{background:#e2a03a;} .mcbox.r{background:#d6453f;}
