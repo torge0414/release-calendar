@@ -174,7 +174,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   .chip.ns{color:var(--ns); background:var(--ns-bg);}
   /* 悬停: 背景压暗 + 字体变亮(白)。必须放在平台色规则之后, 否则 .chip.st 的 color 会盖住这里的白。
      外描边不参与布局 → 无位移; 字号不变 → 文字不糊。 */
-  .chip:hover{color:#fff; box-shadow:0 0 0 2px rgba(0,0,0,.10), inset 0 0 0 99px rgba(0,0,0,.36);}
+  .chip:hover{color:rgba(255,255,255,.92); box-shadow:0 0 0 2px rgba(0,0,0,.08), inset 0 0 0 99px rgba(0,0,0,.20);}
   .empty{color:var(--dim); font-size:14px; padding:18px 8px; text-align:center;}
   .loading{color:var(--dim); font-size:14px; text-align:center; padding:52px 0;}
   .loading .spin{display:inline-block; width:22px; height:22px; border:2.5px solid var(--spin);
