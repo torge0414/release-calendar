@@ -158,6 +158,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
     padding:3px 11px; display:inline-flex; align-items:center; gap:5px;
     transition:.6s; letter-spacing:.01em; white-space:nowrap;
     height:20px; box-sizing:border-box;   /* 固定高度: 悬停放大字号时不撑开卡片、不推挤列表 */
+    line-height:14px;                     /* 固定行盒: 否则字号变大时文字在胶囊内上下跳 */
   }
   /* 悬停放大用字号/内边距(而非 transform:scale): scale 会按位图栅格化文字,动画期间发糊 */
   .chip:hover{font-size:12.1px;}
