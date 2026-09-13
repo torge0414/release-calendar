@@ -146,7 +146,8 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   .txt .tag.tag3{margin-top:2px; padding-right:56px;}   /* 给右下角评分块让位 */
   .mcbox{position:absolute; right:18px; bottom:14px; border-radius:11px; padding:0;
        width:42px; height:42px; box-sizing:border-box; color:#fff; display:flex; align-items:center; justify-content:center;
-       line-height:1; z-index:2; box-shadow:0 2px 8px rgba(0,0,0,.18); text-decoration:none;}
+       line-height:1; z-index:2; box-shadow:0 2px 8px rgba(0,0,0,.18); text-decoration:none;
+       transition:box-shadow .6s;}   /* 悬停压暗要有过渡(全站统一 0.6s) */
   /* 悬停: 背景压暗(与平台标签同一套效果)。数字本身已是白色, 压暗底色后对比度更高、白字更跳。
      保留原有的投影, 只叠一层 inset 黑。暗色主题有更高特异性的投影规则, 需单独补一条。 */
   .mcbox:hover{box-shadow:0 2px 8px rgba(0,0,0,.18), inset 0 0 0 99px rgba(0,0,0,.26);}
