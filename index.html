@@ -594,10 +594,7 @@ function mcard(it){
       '<div class="tag">'+line2+'</div>'+
       (line3?'<div class="tag tag3"><span>'+esc(line3)+'</span></div>':'')+
     '</div>'+mc;
-  const tEl = wrap.querySelector('.t');
-  tEl.textContent = it.title;
-  /* 电影名点击跳豆瓣条目页 */
-  if(it.url) tEl.outerHTML = '<a class="t" href="'+esc(it.url)+'" target="_blank" rel="noopener">'+esc(it.title)+'</a>';
+  wrap.querySelector('.t').textContent = it.title;   /* 电影名纯文本: 跳转只走右下角评分块 */
   return wrap;
 }
 
