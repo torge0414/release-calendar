@@ -37,21 +37,12 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   /* 封面画框在夜间保持浅色, 超宽横幅(完整显示)的留白处能把深色封面衬出来 */
   html.dark .pic{background:#c9c9cf;}
   *{box-sizing:border-box; margin:0; padding:0;}
-  html,body{height:100%;}
   body{
     background:var(--bg); color:var(--txt); min-width:320px;
     font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro SC","Segoe UI","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
-    -webkit-font-smoothing:antialiased; padding:26px 20px 0; overflow:hidden;
-    height:100vh; display:flex; flex-direction:column;
+    -webkit-font-smoothing:antialiased; padding:26px 20px 44px; overflow-x:hidden;
   }
-  /* 只有列表自己滚动: 标题/页签/月份滑块始终留在界面里 */
-  .wrap{max-width:860px; margin:0 auto; position:relative; width:100%;
-        flex:1 1 auto; min-height:0; display:flex; flex-direction:column;}
-  /* 高度 100% 要穿过整条链(视图 > #body/#movieBody/#musicBody > .pages > .sect), 缺一层就会退回内容高度 */
-  #viewStack > .page, #viewStack > .page > div[id], #viewStack .pages, #viewStack .sect{height:100%;}
-  #viewStack .sect{display:flex; flex-direction:column; min-height:0;}
-  .sect > .ft, .sect > .credit{flex:0 0 auto;}
-  .list{flex:1 1 auto; min-height:0; overflow-y:auto; overscroll-behavior:contain; padding-bottom:8px;}
+  .wrap{max-width:860px; margin:0 auto; position:relative;}
   .theme-btn{
     position:relative; display:block; margin:0 0 18px auto; width:54px; height:31px; border-radius:999px;
     border:0; cursor:pointer; background:var(--switch-bg); padding:0;
@@ -110,7 +101,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
      再加 overflow:hidden 裁掉其余页的溢出, 文档高度就只随当前列表变化。 */
   .pages{overflow:hidden;}
   /* 内容区初始就占满视口: 加载期间底部署名不在首屏内, 避免刷新时的跳动/闪烁 */
-  #viewStack{flex:1 1 auto; min-height:0;}
+  #viewStack{min-height:calc(100vh - 100px);}
   .h2c{font-size:12.5px; color:var(--dim); font-weight:500; text-align:center; margin:0 0 12px; padding-top:16px;}
   .sect{padding-top:16px;}   /* 顶部间距(原来挂在列表上方的计数行上) */
   .sect h2{
@@ -342,7 +333,7 @@ function tabbed(tabsEl, panels){
     });
     p.body.appendChild(pagesEl);
     if(curIdx !== 0 && p.sections[0]) p.sections[0].classList.add('off');   // 恢复的隐藏页静态隐藏(无动画)
-    p.fit = ()=>{};   /* 高度改由 CSS flex/100% 撑满(列表内部滚动), 不再设内联高度 */
+    p.fit = ()=>{ if(p.sections[curIdx]) p.pagesEl.style.height = p.sections[curIdx].offsetHeight + 'px'; };
     p.fit();
   });
 
@@ -422,7 +413,7 @@ function stackFit(){
   /* 只认直接子视图, 不能用 querySelector('.page.on')——会误命中嵌套的子页签页(viewGame/viewMovie 内部) */
   const on = Array.from(stack.children).find(el=>el.classList.contains('on'));
   if(!on) return;
-  /* 高度由 CSS 决定(视口内固定布局, 列表内部滚动), 这里不再设内联高度 */
+  stack.style.height = on.offsetHeight + 'px';   // 瞬时, 不做高度动画
 }
 
 const PAGE_CLASSES = ['on','off','pre-r','pre-l','out-l','out-r','anim-in-r','anim-in-l','anim-out-l','anim-out-r'];
@@ -724,7 +715,7 @@ async function refreshMusic(){
     if(v === 'music') refreshMusic();
     /* 直接用新视图高度(切换瞬间它可能还没拿到 on), 高度瞬时调整 */
     const stack = document.getElementById('viewStack');
-    /* 高度由 CSS 决定, 这里不再设内联高度 */
+    if(stack) stack.style.height = nxt.offsetHeight + 'px';
     if(window['_fit_tabs']) window['_fit_tabs']();
     try { localStorage.setItem('glwView', v); } catch(e) {}
   }
