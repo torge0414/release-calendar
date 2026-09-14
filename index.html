@@ -333,7 +333,7 @@ function tabbed(tabsEl, panels){
     });
     p.body.appendChild(pagesEl);
     if(curIdx !== 0 && p.sections[0]) p.sections[0].classList.add('off');   // 恢复的隐藏页静态隐藏(无动画)
-    p.fit = ()=>{ if(p.sections[curIdx]) p.pagesEl.style.height = p.sections[curIdx].offsetHeight + 'px'; };
+    p.fit = ()=>{ if(p.holdH) return; if(p.sections[curIdx]) p.pagesEl.style.height = p.sections[curIdx].offsetHeight + 'px'; };
     p.fit();
   });
 
@@ -346,6 +346,12 @@ function tabbed(tabsEl, panels){
     const cur = p.sections[pCur], nxt = p.sections[i];
     if(!cur || !nxt) return;
     if(animate){
+      /* 动画期间容器按两页里更高的那页撑住: 否则高度立即缩到新页, 旧页多出的部分会被 .pages 的
+         overflow:hidden 直接切掉(表现为"一部分内容没有动效就消失")。640ms 后再收敛到新页高度。 */
+      const h = Math.max(cur.offsetHeight, nxt.offsetHeight);
+      p.holdH = h; p.pagesEl.style.height = h + 'px';
+      clearTimeout(p.holdT);
+      p.holdT = setTimeout(()=>{ p.holdH = 0; p.fit(); stackFit(); }, 640);
       animSwap(cur, nxt, i > pCur);
     } else {
       PAGE_CLASSES.forEach(c=>{ cur.classList.remove(c); nxt.classList.remove(c); });
@@ -407,7 +413,9 @@ function hideBoot(){
   if(b) setTimeout(()=>b.classList.add('hide'), 60);
 }
 
+let holdStackH = 0, stackHT = null;   // 视图切换动画期间锁住容器高度(避免旧视图被提前裁掉)
 function stackFit(){
+  if(holdStackH) return;
   const stack = document.getElementById('viewStack');
   if(!stack) return;
   /* 只认直接子视图, 不能用 querySelector('.page.on')——会误命中嵌套的子页签页(viewGame/viewMovie 内部) */
@@ -696,6 +704,12 @@ async function refreshMusic(){
     const forward = VIEWS.indexOf(v) > VIEWS.indexOf(curView);
     const cur = viewEl[curView], nxt = viewEl[v];
     if(animate){
+      const stackEl = document.getElementById('viewStack');
+      const hh = Math.max(cur.offsetHeight, nxt.offsetHeight);
+      holdStackH = hh;
+      if(stackEl) stackEl.style.height = hh + 'px';
+      clearTimeout(stackHT);
+      stackHT = setTimeout(()=>{ holdStackH = 0; stackFit(); }, 640);
       animSwap(cur, nxt, forward);          // 旧视图先脱离文档流, 两视图都走 keyframes 动画
       /* 月份重置: 新视图立即归位(它刚从透明淡入, 看不到); 旧视图正在淡出, 等动画结束再归位(否则会闪出"本月"列表) */
       const BODY_ID = { game: 'body', movie: 'movieBody', music: 'musicBody' };
