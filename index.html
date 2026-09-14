@@ -48,7 +48,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   .wrap{max-width:860px; margin:0 auto; position:relative; width:100%;
         flex:1 1 auto; min-height:0; display:flex; flex-direction:column;}
   /* 高度 100% 要穿过整条链(视图 > #body/#movieBody/#musicBody > .pages > .sect), 缺一层就会退回内容高度 */
-  #viewStack > .page, #viewStack > .page > div, #viewStack .pages, #viewStack .sect{height:100%;}
+  #viewStack > .page, #viewStack > .page > div[id], #viewStack .pages, #viewStack .sect{height:100%;}
   #viewStack .sect{display:flex; flex-direction:column; min-height:0;}
   .sect > .ft, .sect > .credit{flex:0 0 auto;}
   .list{flex:1 1 auto; min-height:0; overflow-y:auto; overscroll-behavior:contain; padding-bottom:8px;}
