@@ -96,7 +96,10 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   #viewStack > .page:not(.on), #viewStack > .page:not(.on) *{pointer-events:none !important;}
   /* 非活动视图(静止态 .off)高度归零并裁剪: absolute 元素即使不占布局, 也会把超出部分算进文档滚动高度,
      导致「当前列表很短但滚动条很长」(最长的那份列表在撑高页面)。只在静止态生效, 动画中的 anim-* 类不受影响。 */
-  .page.off{height:0; overflow:hidden;}   /* 静止态的非活动页(顶层视图 + 视图内的月份页)高度归零, 不再撑高文档滚动区 */
+  /* 静止态的非活动页(顶层视图 + 视图内的月份页)高度归零: absolute 元素即使不占布局,
+     超出部分仍会被算进文档滚动高度 → 「列表很短但滚动条很长」。
+     排除动画中的 anim-* 页, 避免打断 0.6s 交叉过渡。 */
+  .page:not(.on):not([class*="anim-"]){height:0; overflow:hidden;}
   /* 内容区初始就占满视口: 加载期间底部署名不在首屏内, 避免刷新时的跳动/闪烁 */
   #viewStack{min-height:calc(100vh - 100px);}
   .h2c{font-size:12.5px; color:var(--dim); font-weight:500; text-align:center; margin:0 0 12px; padding-top:16px;}
