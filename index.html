@@ -238,7 +238,6 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
       <span class="tabg"></span>
       <button class="tab on" data-view="game">游戏</button>
       <button class="tab" data-view="movie">电影</button>
-      <button class="tab" data-view="music">音乐</button>
     </div>
   </header>
   <!-- 月份页签移到视图外: 切游戏/电影时它不参与淡入淡出, 刷新也不会滑动 -->
@@ -253,11 +252,6 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
     <div class="meta"><span id="mmeta"></span><span class="msep">·</span><span>每月初自动更新</span></div>
     <div class="err" id="mErrBox"></div>
     <div id="movieBody"><div class="loading"><span class="spin"></span></div></div>
-  </div>
-  <div class="page" id="viewMusic">
-    <div class="meta"><span id="mumeta"></span><span class="msep">·</span><span>每月初自动更新</span></div>
-    <div class="err" id="muErrBox"></div>
-    <div id="musicBody"><div class="loading"><span class="spin"></span></div></div>
   </div>
   </div>
 </div>
@@ -470,16 +464,10 @@ function paint(){
     body: $('#movieBody'), groups: state.movie.groups || [], makeCard: mcard, unit: '部',
     footFn: g => '共 ' + g.movies.length + ' 部 · 评分来自豆瓣'
   });
-  if(state.music) panels.push({
-    body: $('#musicBody'), groups: state.music.groups || [], makeCard: mucard, unit: '张',
-    emptyText: '该月暂无符合条件的专辑',
-    footFn: g => '共 ' + g.albums.length + ' 张 · 评分来自 AOTY'
-  });
   if(!panels.length) return;
   tabbed($('#tabs'), panels);
   $('#metaTxt').textContent = '数据更新于 ' + ((state.game && state.game.updated) || '');
   $('#mmeta').textContent = '数据更新于 ' + ((state.movie && state.movie.updated) || '');
-  $('#mumeta').textContent = '数据更新于 ' + ((state.music && state.music.updated) || '');
   showCredit();
   stackFit();
   alignMc();
@@ -699,8 +687,8 @@ async function refreshMusic(){
   const g = document.getElementById('viewGame'), m = document.getElementById('viewMovie');
   let curView = 'game';
 
-  const VIEWS = ['game', 'movie', 'music'];
-  const viewEl = { game: g, movie: m, music: document.getElementById('viewMusic') };
+  const VIEWS = ['game', 'movie'];   // 音乐页签已按用户要求下线(相关代码保留, 需要时把 music 加回来即可)
+  const viewEl = { game: g, movie: m };
   function setView(v, animate){
     if(v === curView || VIEWS.indexOf(v) < 0) return;
     const forward = VIEWS.indexOf(v) > VIEWS.indexOf(curView);
@@ -714,7 +702,7 @@ async function refreshMusic(){
       stackHT = setTimeout(()=>{ holdStackH = 0; stackFit(); }, 640);
       animSwap(cur, nxt, forward);          // 旧视图先脱离文档流, 两视图都走 keyframes 动画
       /* 月份重置: 新视图立即归位(它刚从透明淡入, 看不到); 旧视图正在淡出, 等动画结束再归位(否则会闪出"本月"列表) */
-      const BODY_ID = { game: 'body', movie: 'movieBody', music: 'musicBody' };
+      const BODY_ID = { game: 'body', movie: 'movieBody' };
       const oldBody = document.getElementById(BODY_ID[curView]);   // 旧视图的列表容器(月签重置时要跳过它)
       if(window['_resetMonth_tabs']) window['_resetMonth_tabs']({ skipBody: oldBody, glide: true });
       setTimeout(()=>{ if(window['_resetMonth_tabs']) window['_resetMonth_tabs']({ onlyBody: oldBody }); }, 700);
@@ -728,7 +716,6 @@ async function refreshMusic(){
     const curBtn = btns.find(b=>b.dataset.view === v);
     if(curBtn) moveGlider(top, curBtn);
     if(v === 'movie') refreshMovies();
-    if(v === 'music') refreshMusic();
     /* 直接用新视图高度(切换瞬间它可能还没拿到 on), 高度瞬时调整 */
     const stack = document.getElementById('viewStack');
     if(stack) stack.style.height = nxt.offsetHeight + 'px';
@@ -750,7 +737,6 @@ async function refreshMusic(){
 window.addEventListener('load', ()=>{ alignMc(); stackFit(); });   // 字体/图片就位后重算布局对齐
 refresh();
 refreshMovies();   // 预渲染电影视图: 首次切换时高度已就位, 避免"先塌后撑"的下沉
-refreshMusic();    // 预渲染音乐视图
 </script>
 </body>
 </html>
