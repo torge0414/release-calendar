@@ -34,7 +34,7 @@ python scripts/update_scores.py --dry-run
 2. 只保留当月、下月两个 `groups`。每条作品的 `date` 必须与 `year`、`month`、`day` 和所属月份一致。跨年时检查年份切换。游戏的不同平台可以有各自的发售日期。
 3. 对原有评分保留可信值，再按每日评分来源复核；来源失效不能把有效评分改为空。
 4. 核对封面。游戏封面按 `cover_img`（如果有）、Steam、Nintendo、PlayStation 的顺序尝试。外链必须返回真正的图片；仅有一个来源的作品尤其需要检查。电影 `poster` 可指向 `img/` 下的本地文件。
-5. 运行 `python scripts/check_data.py`。网络条件允许时再运行 `python scripts/check_data.py --images`，逐项检查可见图片；图片源站可能拦截非浏览器请求，失败项需在浏览器中复核。
+5. 运行 `python scripts/check_data.py`。网络条件允许时再运行 `python scripts/check_data.py --images`，或在 Actions 页面手动运行 `Check displayed images`；失败项需在浏览器中复核，因为图片源站可能拦截非浏览器请求。
 6. 审阅 JSON 差异，确认没有无关字段被删除后提交并推送 `main`，检查 Pages 构建及线上内容。
 
 `index.html` 从相对路径读取两份 JSON；切换数据结构前须同步修改页面。不要把第三方网站的登录凭据、Cookie 或访问令牌写入仓库。
