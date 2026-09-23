@@ -494,11 +494,8 @@ function card(it){
   const pl = it.plats||[];
   /* 封面优先横版图源; 候选链全部列出, 加载失败自动换下一张 */
   const cand = [];
+  if(it.cover_img) cand.push(it.cover_img);
   ['steam','ns','ps'].forEach(k=>{ const p=pl.find(x=>x.key===k); if(p&&p.img) cand.push(p.img); });
-  // 任天堂香港商店的图片外链会返回 HTML；为这款独占游戏优先使用可加载的横版封面。
-  if(it.mc_url === 'https://www.metacritic.com/game/fire-emblem-fortunes-weave/'){
-    cand.unshift('https://www.metacritic.com/a/img/resize/205323319138f9e7f845a7b7d4e6186a0a81b1fb/catalog/provider/7/2/7-1781630859.jpg?auto=webp&fit=crop&height=675&width=1200');
-  }
   const imgUrl = cand[0] || '';
   const candJson = JSON.stringify(cand).replace(/'/g, "&#39;");
   const imgTag = imgUrl
