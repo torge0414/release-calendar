@@ -1,4 +1,4 @@
-"""Refresh scores for existing calendar entries without changing the monthly selection."""
+"""Refresh scores and Steam prices without changing the monthly selection."""
 from __future__ import annotations
 
 import argparse
@@ -71,6 +71,35 @@ def movie_score(item: dict) -> tuple[str, tuple[float | None, int | None] | None
         return (f"error: {exc}", None)
 
 
+def steam_price(item: dict) -> tuple[str, float | None]:
+    url = item.get("steam_url") or ""
+    match = re.fullmatch(r"https?://store\.steampowered\.com/app/(\d+)/?", url)
+    if not match:
+        return ("no_url", None)
+    app_id = match.group(1)
+    api_url = f"https://store.steampowered.com/api/appdetails?appids={app_id}&cc=cn&l=schinese"
+    try:
+        page = fetch(api_url, {
+            "User-Agent": "Mozilla/5.0",
+            "Accept": "application/json",
+        })
+        payload = json.loads(page).get(app_id) or {}
+        if not payload.get("success"):
+            return ("unavailable", None)
+        data = payload.get("data") or {}
+        if data.get("steam_appid") != int(app_id) or data.get("type") != "game":
+            raise ValueError("Steam app ID or type mismatch")
+        overview = data.get("price_overview") or {}
+        if overview.get("currency") != "CNY":
+            return ("unavailable", None)
+        final = overview.get("final")
+        if isinstance(final, bool) or not isinstance(final, int) or final < 0:
+            return ("unavailable", None)
+        return ("ok", final / 100)
+    except (HTTPError, URLError, TimeoutError, ValueError, TypeError, json.JSONDecodeError) as exc:
+        return (f"error: {exc}", None)
+
+
 def write_json(path: Path, data: dict) -> None:
     path.write_text(
         json.dumps(data, ensure_ascii=False, separators=(", ", ": ")),
@@ -97,13 +126,15 @@ def main() -> int:
 
     total_sources = 0
     errors = []
+    score_errors = []
     changes = []
     game_changed = movie_changed = False
     for (kind, item), (status, rating) in zip(jobs, results):
         if status not in ("no_url", "no_sid"):
             total_sources += 1
         if status.startswith("error:"):
-            errors.append(f"{kind} {item['title']}: {status}")
+            score_errors.append(f"{kind} {item['title']}: {status}")
+            errors.append(score_errors[-1])
         if status != "ok":
             continue
         if kind == "game":
@@ -122,12 +153,30 @@ def main() -> int:
                 item["votes"] = count
                 movie_changed = True
 
+    steam_games = [item for item in games if item.get("steam_url")]
+    with ThreadPoolExecutor(max_workers=5) as pool:
+        price_results = list(pool.map(steam_price, steam_games))
+    for item, (status, price) in zip(steam_games, price_results):
+        if status.startswith("error:"):
+            errors.append(f"Steam {item['title']}: {status}")
+        if status != "ok":
+            continue
+        old_price = item.get("steam_price")
+        if old_price != price:
+            changes.append(f"游戏 {item['title']} Steam 国区现价: {old_price} → {price}")
+            item["steam_price"] = price
+            game_changed = True
+        for platform in item.get("plats", []):
+            if platform.get("key") == "steam" and platform.get("price") != price:
+                platform["price"] = price
+                game_changed = True
+
     print(json.dumps({
         "checked": {"games": len(games), "movies": len(movies)},
         "changes": changes,
         "errors": errors,
     }, ensure_ascii=False, indent=2))
-    if total_sources and len(errors) > total_sources // 2:
+    if total_sources and len(score_errors) > total_sources // 2:
         print("More than half of score sources failed; no data written.")
         return 1
     if not args.dry_run:
