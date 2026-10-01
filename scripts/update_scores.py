@@ -73,11 +73,20 @@ def movie_score(item: dict) -> tuple[str, tuple[float | None, int | None] | None
 
 def steam_price(item: dict) -> tuple[str, float | None]:
     url = item.get("steam_url") or ""
-    match = re.fullmatch(r"https?://store\.steampowered\.com/app/(\d+)/?", url)
+    match = re.fullmatch(r"https?://store\.steampowered\.com/(app|sub)/(\d+)/?", url)
     if not match:
         return ("no_url", None)
-    app_id = match.group(1)
-    api_url = f"https://store.steampowered.com/api/appdetails?appids={app_id}&cc=cn&l=schinese"
+    kind, app_id = match.groups()
+    if kind == "sub":
+        expected_apps = item.get("steam_package_apps")
+        if not isinstance(expected_apps, list) or not expected_apps or any(
+            isinstance(value, bool) or not isinstance(value, int) or value <= 0
+            for value in expected_apps
+        ):
+            return ("unavailable", None)
+        api_url = f"https://store.steampowered.com/api/packagedetails?packageids={app_id}&cc=cn&l=schinese"
+    else:
+        api_url = f"https://store.steampowered.com/api/appdetails?appids={app_id}&cc=cn&l=schinese"
     try:
         page = fetch(api_url, {
             "User-Agent": "Mozilla/5.0",
@@ -87,9 +96,15 @@ def steam_price(item: dict) -> tuple[str, float | None]:
         if not payload.get("success"):
             return ("unavailable", None)
         data = payload.get("data") or {}
-        if data.get("steam_appid") != int(app_id) or data.get("type") != "game":
-            raise ValueError("Steam app ID or type mismatch")
-        overview = data.get("price_overview") or {}
+        if kind == "sub":
+            included = {app.get("id") for app in data.get("apps", [])}
+            if not set(expected_apps).issubset(included):
+                raise ValueError("Steam package does not contain expected games")
+            overview = data.get("price") or {}
+        else:
+            if data.get("steam_appid") != int(app_id) or data.get("type") != "game":
+                raise ValueError("Steam app ID or type mismatch")
+            overview = data.get("price_overview") or {}
         if overview.get("currency") != "CNY":
             return ("unavailable", None)
         final = overview.get("final")

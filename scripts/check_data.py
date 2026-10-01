@@ -36,14 +36,18 @@ def validate(root: Path, check_images: bool) -> list[str]:
     errors = []
     games_data = json.loads((root / "releases.json").read_text(encoding="utf-8"))
     movies_data = json.loads((root / "movies.json").read_text(encoding="utf-8"))
+    game_months = [(g.get("year"), g.get("month")) for g in games_data.get("groups", [])]
+    movie_months = [(g.get("year"), g.get("month")) for g in movies_data.get("groups", [])]
+    if game_months != movie_months:
+        fail(errors, "game/movie month groups disagree")
     image_jobs = []
     for kind, data, list_key in (
         ("game", games_data, "games"),
         ("movie", movies_data, "movies"),
     ):
         groups = data.get("groups")
-        if not isinstance(groups, list) or len(groups) != 2:
-            fail(errors, f"{kind}: expected exactly two month groups")
+        if not isinstance(groups, list) or len(groups) != 3:
+            fail(errors, f"{kind}: expected exactly three month groups")
             continue
         seen = set()
         months = []
@@ -94,6 +98,9 @@ def validate(root: Path, check_images: bool) -> list[str]:
                     candidates += [p.get("img") for p in (platforms or []) if p.get("img")]
                     if candidates:
                         image_jobs.append((label, candidates))
+                    cover = item.get("cover_img")
+                    if cover and not cover.startswith("https://") and not (root / cover).is_file():
+                        fail(errors, f"{label}: missing local cover {cover}")
                 else:
                     score = item.get("score")
                     votes = item.get("votes")
@@ -109,10 +116,10 @@ def validate(root: Path, check_images: bool) -> list[str]:
                             fail(errors, f"{label}: missing local poster {poster}")
                     elif poster:
                         image_jobs.append((label, [poster]))
-        if len(months) == 2:
-            next_year = months[0][0] + (months[0][1] == 12)
-            next_month = months[0][1] % 12 + 1
-            if months[1] != (next_year, next_month):
+        for previous, following in zip(months, months[1:]):
+            next_year = previous[0] + (previous[1] == 12)
+            next_month = previous[1] % 12 + 1
+            if following != (next_year, next_month):
                 fail(errors, f"{kind}: groups are not consecutive months")
     if check_images:
         def check_candidates(job: tuple[str, list[str]]) -> str | None:
@@ -120,6 +127,10 @@ def validate(root: Path, check_images: bool) -> list[str]:
             for url in candidates:
                 if url.startswith("https://") and check_image(url):
                     return None
+                if not url.startswith("https://") and (root / url).is_file():
+                    with (root / url).open("rb") as stream:
+                        if stream.read(32).startswith(IMAGE_MAGIC):
+                            return None
             return f"{label}: no working image candidate"
         with ThreadPoolExecutor(max_workers=5) as pool:
             errors.extend(error for error in pool.map(check_candidates, image_jobs) if error)

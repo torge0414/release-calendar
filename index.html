@@ -303,10 +303,14 @@ function moveGlider(tabsEl, btn, instant){
 function tabbed(tabsEl, panels){
   tabsEl.innerHTML = '<span class="tabg"></span>';  // 滑块层
   const tabKey = 'glwTab_' + (tabsEl.id || 'x');
-  let savedIdx = 0;
-  try { savedIdx = Number(localStorage.getItem(tabKey) || 0) || 0; } catch(e) {}
-  const nMonths = Math.max.apply(null, panels.map(p=>p.groups.length).concat([1]));
-  let curIdx = (savedIdx === 1 && nMonths > 1) ? 1 : 0;
+  const groups = panels[0].groups;
+  const monthKey = g => g.year + '-' + String(g.month).padStart(2, '0');
+  const currentKey = today.getFullYear() + '-' + String(today.getMonth()+1).padStart(2, '0');
+  const currentIdx = Math.max(0, groups.findIndex(g=>monthKey(g)===currentKey));
+  let savedMonth = '';
+  try { savedMonth = localStorage.getItem(tabKey + '_month') || ''; } catch(e) {}
+  const savedIdx = groups.findIndex(g=>monthKey(g)===savedMonth);
+  let curIdx = savedIdx >= 0 ? savedIdx : currentIdx;
 
   panels.forEach(p=>{
     p.body.innerHTML = '';
@@ -328,7 +332,7 @@ function tabbed(tabsEl, panels){
       pagesEl.appendChild(sect); p.sections.push(sect);
     });
     p.body.appendChild(pagesEl);
-    if(curIdx !== 0 && p.sections[0]) p.sections[0].classList.add('off');   // 恢复的隐藏页静态隐藏(无动画)
+    p.sections.forEach((section,i)=>{ if(i!==curIdx) section.classList.add('off'); });
     p.fit = ()=>{ if(p.holdH) return; if(p.sections[curIdx]) p.pagesEl.style.height = p.sections[curIdx].offsetHeight + 'px'; };
     p.fit();
   });
@@ -371,7 +375,7 @@ function tabbed(tabsEl, panels){
       applyIdx(p, i, animate);
     });
     curIdx = i;
-    try { localStorage.setItem(tabKey, String(i)); } catch(e) {}
+    try { localStorage.setItem(tabKey + '_month', monthKey(groups[i])); } catch(e) {}
     fitAll();
     stackFit();
     tabsEl.querySelectorAll('.tab').forEach((b,j)=>b.classList.toggle('on', j===i));
@@ -380,12 +384,14 @@ function tabbed(tabsEl, panels){
   };
 
   /* 供顶层视图切换时把月份重置回「本月」: skipBody 跳过正在淡出的视图; force 用于动画后再补一次 */
-  window['_resetMonth_' + (tabsEl.id || 'x')] = (opts)=> switchTo(0, false, opts);
+  window['_resetMonth_' + (tabsEl.id || 'x')] = (opts)=> switchTo(currentIdx, false, opts);
 
   panels[0].groups.forEach((g,i)=>{
     const btn = document.createElement('button');
     btn.className = 'tab' + (i===curIdx ? ' on' : '');
-    btn.textContent = (i===0 ? '本月' : '下月') + ' · ' + g.month + '月';
+    const relativeMonth = (g.year-today.getFullYear())*12 + g.month-(today.getMonth()+1);
+    const monthLabel = ({'-1':'上月','0':'本月','1':'下月'})[relativeMonth] || (g.year+'年');
+    btn.textContent = monthLabel + ' · ' + g.month + '月';
     btn.addEventListener('click', ()=>switchTo(i));
     tabsEl.appendChild(btn);
   });
