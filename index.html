@@ -257,6 +257,9 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   .eyebrow{letter-spacing:.24em; margin-bottom:12px;}
   /* 月份标题固定在页签下方(移出动画区, 瞬时换字, 不再叠字) */
   #mhBar{margin:16px 6px 18px;}
+  /* 更新时间收在横线右端, 小字弱化(原来是独立一行, 突兀) */
+  .mh .mup{font-size:11px; color:var(--dim); white-space:nowrap;
+       font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",system-ui,sans-serif;}
   @media (max-width:640px){
     .pic{flex-basis:150px; width:150px; height:75px;}
     .list.mgrid{grid-template-columns:repeat(auto-fill,minmax(106px,1fr)); gap:10px;}
@@ -281,15 +284,13 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   </header>
   <!-- 月份页签移到视图外: 切游戏/电影时它不参与淡入淡出, 刷新也不会滑动 -->
   <div class="tabs" id="tabs"><span class="tabg"></span></div>
-  <div class="mh" id="mhBar"></div>
+  <div class="mh" id="mhBar"><span class="mn" id="mhMn"></span><span class="my" id="mhMy"></span><span class="msep2"></span><span class="mup" id="mhUp"></span></div>
   <div class="pages" id="viewStack">
   <div class="page on" id="viewGame">
-    <div class="meta"><span id="metaTxt"></span><span class="msep">·</span><span>每月初自动更新</span></div>
     <div class="err" id="errBox"></div>
     <div id="body"><div class="loading"><span class="spin"></span></div></div>
   </div>
   <div class="page" id="viewMovie">
-    <div class="meta"><span id="mmeta"></span><span class="msep">·</span><span>每月初自动更新</span></div>
     <div class="err" id="mErrBox"></div>
     <div id="movieBody"><div class="loading"><span class="spin"></span></div></div>
   </div>
@@ -415,8 +416,9 @@ function tabbed(tabsEl, panels){
       applyIdx(p, i, animate);
     });
     curIdx = i;
-    const mhBar = document.getElementById('mhBar');   /* 固定月份标题: 瞬时换字, 不参与交叉动画(避免大号衬线数字叠字) */
-    if(mhBar) mhBar.innerHTML = '<span class="mn">'+String(groups[i].month).padStart(2,'0')+'</span><span class="my">'+groups[i].year+'</span><span class="msep2"></span>';
+    const mhMn = document.getElementById('mhMn'), mhMy = document.getElementById('mhMy');   /* 固定月份标题: 瞬时换字, 不参与交叉动画(避免大号衬线数字叠字) */
+    if(mhMn) mhMn.textContent = String(groups[i].month).padStart(2,'0');
+    if(mhMy) mhMy.textContent = groups[i].year;
     try { localStorage.setItem(tabKey + '_month', monthKey(groups[i])); } catch(e) {}
     fitAll();
     stackFit();
@@ -433,7 +435,7 @@ function tabbed(tabsEl, panels){
     btn.className = 'tab' + (i===curIdx ? ' on' : '');
     const relativeMonth = (g.year-today.getFullYear())*12 + g.month-(today.getMonth()+1);
     const monthLabel = ({'-1':'上月','0':'本月','1':'下月'})[relativeMonth] || (g.year+'年');
-    btn.textContent = monthLabel + ' · ' + g.month + '月';
+    btn.textContent = monthLabel;   /* 具体月份由下方大标题显示, 页签只标相对位置(不再重复) */
     btn.addEventListener('click', ()=>switchTo(i));
     tabsEl.appendChild(btn);
   });
@@ -443,8 +445,9 @@ function tabbed(tabsEl, panels){
   window[fitKey] = fitAll;
   window.addEventListener('resize', fitAll);
   moveGlider(tabsEl, tabsEl.querySelectorAll('.tab')[curIdx], true);   // 恢复定位不滑动
-  const mhBar0 = document.getElementById('mhBar');
-  if(mhBar0) mhBar0.innerHTML = '<span class="mn">'+String(groups[curIdx].month).padStart(2,'0')+'</span><span class="my">'+groups[curIdx].year+'</span><span class="msep2"></span>';
+  const mhMn0 = document.getElementById('mhMn'), mhMy0 = document.getElementById('mhMy');
+  if(mhMn0) mhMn0.textContent = String(groups[curIdx].month).padStart(2,'0');
+  if(mhMy0) mhMy0.textContent = groups[curIdx].year;
   return fitAll;
 }
 
@@ -508,16 +511,17 @@ function paint(){
   const panels = [];
   if(state.game) panels.push({
     body: $('#body'), groups: state.game.groups || [], makeCard: card, unit: '款',
-    footFn: g => '共 ' + g.games.length + ' 款 · 评分来自 Metacritic'
+    footFn: g => '共 ' + g.games.length + ' 款 · 评分来自 Metacritic · 每月初自动更新'
   });
   if(state.movie) panels.push({
     body: $('#movieBody'), groups: state.movie.groups || [], makeCard: mcard, unit: '部', grid: true,
-    footFn: g => '共 ' + g.movies.length + ' 部 · 评分来自豆瓣'
+    footFn: g => '共 ' + g.movies.length + ' 部 · 评分来自豆瓣 · 每月初自动更新'
   });
   if(!panels.length) return;
   tabbed($('#tabs'), panels);
-  $('#metaTxt').textContent = '数据更新于 ' + ((state.game && state.game.updated) || '');
-  $('#mmeta').textContent = '数据更新于 ' + ((state.movie && state.movie.updated) || '');
+  const upd = (state.game && state.game.updated) || (state.movie && state.movie.updated) || '';
+  const mhUp = document.getElementById('mhUp');
+  if(mhUp && upd) mhUp.textContent = '更新于 ' + upd.slice(5, 16);   /* "2026-10-04 23:14:28" -> "10-04 23:14" */
   showCredit();
   stackFit();
   alignMc();

@@ -27,7 +27,7 @@ function fixture(months,today,saved={}){
 function active(p){return p.sections.findIndex(s=>s.classList.contains('on'));}
 const months=[[2026,9],[2026,10],[2026,11]];
 const normal=fixture(months,new Date(2026,9,1),{glwTab_tabs:'0'});
-assert.deepEqual(normal.tabs.children.map(c=>c.textContent),['上月 · 9月','本月 · 10月','下月 · 11月']);
+assert.deepEqual(normal.tabs.children.map(c=>c.textContent),['上月','本月','下月']);
 for(const p of normal.panels){assert.equal(active(p),1);assert(p.sections[0].classList.contains('off'));assert(p.sections[2].classList.contains('off'));}
 normal.tabs.children[2].handlers.click();
 for(const p of normal.panels)assert.equal(active(p),2);
@@ -39,5 +39,5 @@ for(const p of restored.panels)assert.equal(active(p),2);
 const expired=fixture(months,new Date(2026,9,1),{glwTab_tabs_month:'2026-08'});
 for(const p of expired.panels)assert.equal(active(p),1);
 const january=fixture([[2026,12],[2027,1],[2027,2]],new Date(2027,0,1));
-assert.deepEqual(january.tabs.children.map(c=>c.textContent),['上月 · 12月','本月 · 1月','下月 · 2月']);
+assert.deepEqual(january.tabs.children.map(c=>c.textContent),['上月','本月','下月']);
 console.log('Month tabs valid: labels, default current month, switching, reset, persistence and year boundary');
