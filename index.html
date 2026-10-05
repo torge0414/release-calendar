@@ -264,6 +264,23 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   .item{align-items:stretch;}
   .txt{display:flex; flex-direction:column;}
   .plats{margin-top:auto;}
+  /* 平台标签: 内联官方 logo; 悬停上浮(平移不动几何, 文字不糊) + 阴影加深 */
+  .chip .pi{width:12px; height:12px; fill:currentColor; flex:none;}
+  .chip{transition:transform .25s cubic-bezier(.4,0,.2,1), box-shadow .25s, color .6s, background-color .6s;}
+  .chip:hover{transform:translateY(-2px);
+       box-shadow:0 4px 10px rgba(0,0,0,.18), 0 0 0 2px rgba(0,0,0,.08), inset 0 0 0 99px rgba(0,0,0,.20);}
+  /* 卡片悬停: 封面缓慢放大(位图缩放, 不涉及文字锐度) */
+  .pic .cover{transition:transform .6s cubic-bezier(.4,0,.2,1);}
+  .item:hover .pic .cover{transform:scale(1.06);}
+  /* 主题滑块: 旋钮内嵌太阳/月亮矢量图标, 旋转交叉过渡 */
+  .theme-btn .tb-knob{display:flex; align-items:center; justify-content:center; overflow:hidden;}
+  .tb-ic{position:absolute; width:15px; height:15px; fill:none; stroke:currentColor;
+       stroke-width:2; stroke-linecap:round; stroke-linejoin:round;
+       transition:transform .6s cubic-bezier(.4,0,.2,1), opacity .6s;}
+  .tb-ic-sun{color:#d18a1d;}
+  .tb-ic-moon{color:#5b6b8c; opacity:0; transform:rotate(-90deg) scale(.4);}
+  html.dark .tb-ic-sun{opacity:0; transform:rotate(90deg) scale(.4);}
+  html.dark .tb-ic-moon{opacity:1; transform:rotate(0) scale(1);}
   @media (max-width:640px){
     .pic{flex-basis:150px; width:150px; height:75px;}
     .list.mgrid{grid-template-columns:repeat(auto-fill,minmax(106px,1fr)); gap:10px;}
@@ -284,7 +301,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
 <div id="boot"><span class="spin"></span></div>
 <div class="wrap">
   <button class="theme-btn" id="themeBtn" title="切换外观" aria-label="切换浅色/夜间模式">
-    <span class="tb-sun">☀</span><span class="tb-moon">☾</span><span class="tb-knob"></span>
+    <span class="tb-knob"><svg class="tb-ic tb-ic-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><line x1="12" y1="1.5" x2="12" y2="3.8"/><line x1="12" y1="20.2" x2="12" y2="22.5"/><line x1="4.6" y1="4.6" x2="6.2" y2="6.2"/><line x1="17.8" y1="17.8" x2="19.4" y2="19.4"/><line x1="1.5" y1="12" x2="3.8" y2="12"/><line x1="20.2" y1="12" x2="22.5" y2="12"/><line x1="4.6" y1="19.4" x2="6.2" y2="17.8"/><line x1="17.8" y1="6.2" x2="19.4" y2="4.6"/></svg><svg class="tb-ic tb-ic-moon" viewBox="0 0 24 24"><path d="M20.5 13.2A8.5 8.5 0 1 1 10.8 3.5a7 7 0 0 0 9.7 9.7z"/></svg></span>
   </button>
   <header>
     <div class="eyebrow">Curated Game &amp; Film Releases</div>
@@ -325,6 +342,12 @@ const PALS = [['#0071e3','#0a58a5'],['#af52de','#6d2fa8'],['#ff375f','#b0183a'],
   ['#34c759','#1e7a3e'],['#ff9f0a','#b26a00'],['#5e5ce6','#3634a8'],
   ['#ff6482','#a81d3a'],['#30b0c7','#1a6a78']];
 const today = new Date();
+/* 平台官方矢量 logo(simple-icons, CC0): 内联避免外部请求, 颜色跟随标签文字 */
+const PICONS = {
+  steam: '<svg class="pi" viewBox="0 0 24 24"><path d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.031 4.524 4.527s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911c0 .052.004.105.004.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.727L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 11.999-5.373 11.999-12S18.605 0 11.979 0zM7.54 18.21l-1.473-.61c.262.543.714.999 1.314 1.25 1.297.539 2.793-.076 3.332-1.375.263-.63.264-1.319.005-1.949s-.75-1.121-1.377-1.383c-.624-.26-1.29-.249-1.878-.03l1.523.63c.956.4 1.409 1.5 1.009 2.455-.397.957-1.497 1.41-2.454 1.012H7.54zm11.415-9.303c0-1.662-1.353-3.015-3.015-3.015-1.665 0-3.015 1.353-3.015 3.015 0 1.665 1.35 3.015 3.015 3.015 1.663 0 3.015-1.35 3.015-3.015zm-5.273-.005c0-1.252 1.013-2.266 2.265-2.266 1.249 0 2.266 1.014 2.266 2.266 0 1.251-1.017 2.265-2.266 2.265-1.253 0-2.265-1.014-2.265-2.265z"/></svg>',
+  ps: '<svg class="pi" viewBox="0 0 24 24"><path d="M8.984 2.596v17.547l3.915 1.261V6.688c0-.69.304-1.151.794-.991.636.18.76.814.76 1.505v5.875c2.441 1.193 4.362-.002 4.362-3.152 0-3.237-1.126-4.675-4.438-5.827-1.307-.448-3.728-1.186-5.39-1.502zm4.656 16.241l6.296-2.275c.715-.258.826-.625.246-.818-.586-.192-1.637-.139-2.357.123l-4.205 1.5V14.98l.24-.085s1.201-.42 2.913-.615c1.696-.18 3.785.03 5.437.661 1.848.601 2.04 1.472 1.576 2.072-.465.6-1.622 1.036-1.622 1.036l-8.544 3.107V18.86zM1.807 18.6c-1.9-.545-2.214-1.668-1.352-2.32.801-.586 2.16-1.052 2.16-1.052l5.615-2.013v2.313L4.205 17c-.705.271-.825.632-.239.826.586.195 1.637.15 2.343-.12L8.247 17v2.074c-.12.03-.256.044-.39.073-1.939.331-3.996.196-6.038-.479z"/></svg>',
+  ns: '<svg class="pi" viewBox="0 0 24 24"><path d="M14.176 24h3.674c3.376 0 6.15-2.774 6.15-6.15V6.15C24 2.775 21.226 0 17.85 0H14.1c-.074 0-.15.074-.15.15v23.7c-.001.076.075.15.226.15zm4.574-13.199c1.351 0 2.399 1.125 2.399 2.398 0 1.352-1.125 2.4-2.399 2.4-1.35 0-2.4-1.049-2.4-2.4-.075-1.349 1.05-2.398 2.4-2.398zM11.4 0H6.15C2.775 0 0 2.775 0 6.15v11.7C0 21.226 2.775 24 6.15 24h5.25c.074 0 .15-.074.15-.149V.15c.001-.076-.075-.15-.15-.15zM9.676 22.051H6.15c-2.326 0-4.201-1.875-4.201-4.201V6.15c0-2.326 1.875-4.201 4.201-4.201H9.6l.076 20.102zM3.75 7.199c0 1.275.975 2.25 2.25 2.25s2.25-.975 2.25-2.25c0-1.273-.975-2.25-2.25-2.25s-2.25.977-2.25 2.25z"/></svg>'
+};
 function phColor(t){ let h=0; for(const c of t) h=(h*31+c.codePointAt(0))>>>0;
   const [a,b]=PALS[h%PALS.length]; return 'linear-gradient(135deg,'+a+','+b+')'; }
 function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
@@ -578,7 +601,7 @@ function card(it){
     }
     const url = p.url ? 'href="'+esc(p.url)+'" target="_blank"' : '';
     const pm = (p.key==='steam'?'st':p.key);
-    return '<a class="chip '+pm+'" '+url+'>'+p.name+
+    return '<a class="chip '+pm+'" '+url+'>'+(PICONS[p.key]||'')+p.name+
       (pfmt?' · '+pfmt:'')+'</a>';
   }).join('');
   const mc = (typeof it.mc==='number' && it.mc>0) ? it.mc : null;

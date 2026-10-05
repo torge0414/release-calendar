@@ -11,6 +11,7 @@ const context = {
   esc: s => String(s), phColor: () => '#000', firstChar: () => 'D'
 };
 vm.createContext(context);
+vm.runInContext(html.slice(html.indexOf('const PICONS'), html.indexOf('function phColor')), context);   // card() 依赖内联平台图标表
 vm.runInContext(html.slice(html.indexOf('function card('), html.indexOf('function firstChar(')), context);
 vm.runInContext(html.slice(html.indexOf('function ckw('), html.indexOf('/* ---------- 电影')), context);
 const cover = 'img/game_dd2_dark_arisen.jpg';
