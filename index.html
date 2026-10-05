@@ -282,6 +282,9 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   html.dark .tb-ic-sun{opacity:0; transform:rotate(90deg) scale(.4);}
   html.dark .tb-ic-moon{opacity:1; transform:rotate(0) scale(1);}
   @media (max-width:640px){
+    /* 主标题随屏宽缩放(覆盖旧的固定 32px: 衬线+宽字距在窄屏会溢出) */
+    h1{font-size:clamp(18px,6.2vw,32px); letter-spacing:.04em; white-space:nowrap;}
+    .eyebrow{letter-spacing:.18em;}
     .pic{flex-basis:150px; width:150px; height:75px;}
     .list.mgrid{grid-template-columns:repeat(auto-fill,minmax(106px,1fr)); gap:10px;}
     .mh .mn{font-size:34px;}
