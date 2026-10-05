@@ -268,6 +268,15 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
     .pic{flex-basis:150px; width:150px; height:75px;}
     .list.mgrid{grid-template-columns:repeat(auto-fill,minmax(106px,1fr)); gap:10px;}
     .mh .mn{font-size:34px;}
+    /* 窄屏游戏卡专用网格: 封面居左跨标题+日期两行, 平台标签独占底部整行(单行, 永不折行),
+       标题/日期与封面上沿对齐, 标签行即卡片底部(评分块仍对齐标签行) */
+    #body .item{display:grid; grid-template-columns:150px 1fr; column-gap:16px;
+         row-gap:2px; align-items:start;}
+    #body .item .pic{grid-column:1; grid-row:1 / 3;}
+    #body .item .txt{display:contents;}
+    #body .item .tline{grid-column:2; grid-row:1;}
+    #body .item .tag{grid-column:2; grid-row:2;}
+    #body .item .plats{grid-column:1 / -1; grid-row:3; margin-top:8px;}
   }
 </style>
 </head>
