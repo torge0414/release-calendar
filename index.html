@@ -265,7 +265,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   .txt{display:flex; flex-direction:column;}
   .plats{margin-top:auto;}
   /* 平台标签: 内联官方 logo; 悬停上浮(平移不动几何, 文字不糊) + 阴影加深 */
-  .chip .pi{width:12px; height:12px; fill:currentColor; flex:none;}
+  .chip .pi{width:13px; height:13px; fill:currentColor; flex:none;}
   .chip{transition:transform .25s cubic-bezier(.4,0,.2,1), box-shadow .25s, color .6s, background-color .6s;}
   .chip:hover{transform:translateY(-2px);
        box-shadow:0 4px 10px rgba(0,0,0,.18), 0 0 0 2px rgba(0,0,0,.08), inset 0 0 0 99px rgba(0,0,0,.20);}
@@ -601,8 +601,8 @@ function card(it){
     }
     const url = p.url ? 'href="'+esc(p.url)+'" target="_blank"' : '';
     const pm = (p.key==='steam'?'st':p.key);
-    return '<a class="chip '+pm+'" '+url+'>'+(PICONS[p.key]||'')+p.name+
-      (pfmt?' · '+pfmt:'')+'</a>';
+    return '<a class="chip '+pm+'" '+url+' aria-label="'+p.name+(pfmt?' '+pfmt:'')+'">'+(PICONS[p.key]||'')+
+      (pfmt?pfmt:'')+'</a>';   /* logo 已可识别平台, 不再显示平台名(无障碍标签保留) */
   }).join('');
   const mc = (typeof it.mc==='number' && it.mc>0) ? it.mc : null;
   const mcBox = mc ? '<a class="mcbox '+(mc>=80?'g':(mc>=60?'y':'r'))+'" href="'+esc(it.mc_url||'https://www.metacritic.com/')+'" target="_blank" rel="noopener">'+
