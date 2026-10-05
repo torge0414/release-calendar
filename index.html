@@ -224,6 +224,44 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
     /* 窄屏: 平台标签让出右下角评分块区域, 放不下自动换行(宽屏不受影响) */
     .plats{padding-right:62px;}
   }
+  /* ===== 风格稿 B: 杂志海报墙 + 编辑排版(本地实验, 未发布) ===== */
+  /* 游戏封面放大(保持 2:1 画框) */
+  .pic{flex-basis:216px; width:216px; height:108px; border-radius:14px;}
+  .item{padding:18px 22px 18px 18px; gap:20px;}
+  .txt .tline .t{font-size:17px;}
+  .txt .tag{font-size:12.5px;}
+  /* 月份大标题(编辑排版: 大号衬线月份 + 年份 + 通栏细线) */
+  .mh{display:flex; align-items:center; gap:12px; margin:8px 6px 18px;
+      font-family:Georgia,"Times New Roman","Songti SC","SimSun",serif;}
+  .mh .mn{font-size:46px; font-weight:700; letter-spacing:-.02em; line-height:1;}
+  .mh .my{font-size:15px; color:var(--dim);}
+  .mh .msep2{flex:1; height:1px; background:var(--line);}
+  /* 电影: 海报墙网格(Letterboxd 式竖版海报卡) */
+  .list.mgrid{display:grid; grid-template-columns:repeat(auto-fill,minmax(158px,1fr)); gap:14px;}
+  .item.pc{flex-direction:column; align-items:stretch; padding:0; gap:0; overflow:hidden;}
+  .item.pc .pic.m{width:100%; height:auto; aspect-ratio:2/3; flex:none; border-radius:0;
+       box-shadow:none;}
+  .item.pc .pic.m .ph{font-size:34px;}
+  .item.pc .txt{padding:12px 14px 14px;}
+  .item.pc .txt .tline .t{white-space:normal; display:-webkit-box; -webkit-line-clamp:2;
+       -webkit-box-orient:vertical; font-size:14.5px;}
+  .item.pc .when{left:8px; right:auto; top:8px;}
+  .item.pc .tline.haswhen .t{padding-right:0;}
+  .item.pc .mcbox{top:8px; right:8px; bottom:auto; width:34px; height:34px; border-radius:9px;}
+  .item.pc .mcbox .mcv{font-size:14px;}
+  .item.pc .tag3{padding-right:0;}
+  .item.pc.today::before{top:14px; bottom:auto; height:44px;}
+  /* 主标题编辑排版: 衬线大字 + 上方眉线小字 */
+  h1{font-family:Georgia,"Times New Roman","Songti SC","SimSun",serif;
+     letter-spacing:.1em; font-weight:700;}
+  .eyebrow{letter-spacing:.24em; margin-bottom:12px;}
+  /* 月份标题固定在页签下方(移出动画区, 瞬时换字, 不再叠字) */
+  #mhBar{margin:16px 6px 18px;}
+  @media (max-width:640px){
+    .pic{flex-basis:150px; width:150px; height:75px;}
+    .list.mgrid{grid-template-columns:repeat(auto-fill,minmax(106px,1fr)); gap:10px;}
+    .mh .mn{font-size:34px;}
+  }
 </style>
 </head>
 <body>
@@ -233,6 +271,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
     <span class="tb-sun">☀</span><span class="tb-moon">☾</span><span class="tb-knob"></span>
   </button>
   <header>
+    <div class="eyebrow">Curated Game &amp; Film Releases</div>
     <h1>RELEASE CALENDAR</h1>
     <div class="tabs top" id="topTabs">
       <span class="tabg"></span>
@@ -242,6 +281,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   </header>
   <!-- 月份页签移到视图外: 切游戏/电影时它不参与淡入淡出, 刷新也不会滑动 -->
   <div class="tabs" id="tabs"><span class="tabg"></span></div>
+  <div class="mh" id="mhBar"></div>
   <div class="pages" id="viewStack">
   <div class="page on" id="viewGame">
     <div class="meta"><span id="metaTxt"></span><span class="msep">·</span><span>每月初自动更新</span></div>
@@ -320,7 +360,7 @@ function tabbed(tabsEl, panels){
       const items = g.games || g.movies || g.albums || [];
       const sect = document.createElement('div');
       sect.className = 'sect page' + (i===curIdx ? ' on' : '');
-      const list = document.createElement('div'); list.className='list';
+      const list = document.createElement('div'); list.className='list' + (p.grid?' mgrid':'');
       if(!items.length) list.innerHTML='<div class="empty">'+esc(p.emptyText || '该月暂无已定档')+'</div>';
       else items.forEach(it=>list.appendChild(p.makeCard(it)));
       sect.appendChild(list);
@@ -375,6 +415,8 @@ function tabbed(tabsEl, panels){
       applyIdx(p, i, animate);
     });
     curIdx = i;
+    const mhBar = document.getElementById('mhBar');   /* 固定月份标题: 瞬时换字, 不参与交叉动画(避免大号衬线数字叠字) */
+    if(mhBar) mhBar.innerHTML = '<span class="mn">'+String(groups[i].month).padStart(2,'0')+'</span><span class="my">'+groups[i].year+'</span><span class="msep2"></span>';
     try { localStorage.setItem(tabKey + '_month', monthKey(groups[i])); } catch(e) {}
     fitAll();
     stackFit();
@@ -401,6 +443,8 @@ function tabbed(tabsEl, panels){
   window[fitKey] = fitAll;
   window.addEventListener('resize', fitAll);
   moveGlider(tabsEl, tabsEl.querySelectorAll('.tab')[curIdx], true);   // 恢复定位不滑动
+  const mhBar0 = document.getElementById('mhBar');
+  if(mhBar0) mhBar0.innerHTML = '<span class="mn">'+String(groups[curIdx].month).padStart(2,'0')+'</span><span class="my">'+groups[curIdx].year+'</span><span class="msep2"></span>';
   return fitAll;
 }
 
@@ -443,7 +487,7 @@ function animSwap(cur, nxt, forward){
 function alignMc(){
   document.querySelectorAll('.item').forEach(it=>{
     const box = it.querySelector('.mcbox');
-    if(!box) return;
+    if(!box || it.classList.contains('pc')) return;   /* 海报卡的评分块固定在海报右上角, 不参与底对齐 */
     const ir = it.getBoundingClientRect();
     const cands = [];
     const pic = it.querySelector('.pic');
@@ -467,7 +511,7 @@ function paint(){
     footFn: g => '共 ' + g.games.length + ' 款 · 评分来自 Metacritic'
   });
   if(state.movie) panels.push({
-    body: $('#movieBody'), groups: state.movie.groups || [], makeCard: mcard, unit: '部',
+    body: $('#movieBody'), groups: state.movie.groups || [], makeCard: mcard, unit: '部', grid: true,
     footFn: g => '共 ' + g.movies.length + ' 部 · 评分来自豆瓣'
   });
   if(!panels.length) return;
@@ -570,7 +614,7 @@ function minfo(s){
 }
 
 function mcard(it){
-  const wrap = document.createElement('div'); wrap.className='item mv';
+  const wrap = document.createElement('div'); wrap.className='item mv pc';
   const sc = (typeof it.score==='number' && it.score>0) ? it.score : null;
   if(it.day===today.getDate() && it.month===today.getMonth()+1) wrap.classList.add('today');
   const date = new Date(it.year, it.month-1, it.day);
@@ -588,8 +632,7 @@ function mcard(it){
       '" target="_blank" rel="noopener">'+
       '<span class="mcv">'+Math.round(sc*10)+'</span></a>' : '';
   const mi = minfoParts(it.info);
-  const line2 = '<span>'+it.month+'月'+it.day+'日'+(mi.region?' · '+esc(mi.region):'')+'</span>';
-  /* 第三行: 优先条目接口的准确类型; 回退副标题第 3 段仅在结构完整(年/地区/类型/导演/演员共 5 段)时可信;
+  const line2 = '<span>'+it.month+'月'+it.day+'日'+(mi.region?' · '+esc(mi.region):'')+'</span>';  /* 第三行: 优先条目接口的准确类型; 回退副标题第 3 段仅在结构完整(年/地区/类型/导演/演员共 5 段)时可信;
      否则可能把导演名当类型(如"渔村之恋") → 留空 */
   const parts = String(it.info||'').split('/').map(s=>s.trim()).filter(Boolean);
   const genres = (it.genres && it.genres.length)
@@ -599,13 +642,14 @@ function mcard(it){
   wrap.innerHTML =
     '<div class="pic m">'+img+
       '<div class="ph" style="background:'+phColor(it.title)+(it.poster?';display:none':'')+'">'+esc(firstChar(it.title))+'</div>'+
+      whenTag+
     '</div>'+
     '<div class="txt">'+
-      '<div class="tline'+(whenTag?' haswhen':'')+'"><div class="t"></div>'+whenTag+'</div>'+
+      '<div class="tline"><div class="t"></div></div>'+
       '<div class="tag">'+line2+'</div>'+
       (line3?'<div class="tag tag3"><span>'+esc(line3)+'</span></div>':'')+
     '</div>'+mc;
-  wrap.querySelector('.t').textContent = it.title;   /* 电影名纯文本: 跳转只走右下角评分块 */
+  wrap.querySelector('.t').textContent = it.title;   /* 电影名纯文本: 跳转只走评分块 */
   return wrap;
 }
 

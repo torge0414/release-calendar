@@ -20,7 +20,7 @@ function fixture(months,today,saved={}){
   const memory=new Map(Object.entries(saved));const window={addEventListener(){},removeEventListener(){}};
   const tabs=new Element();tabs.id='tabs';
   const panels=[1,2].map(()=>({body:new Element(),groups:months.map(([year,month])=>({year,month,games:[]})),makeCard:()=>new Element()}));
-  const context={window,today,document:{createElement:()=>new Element()},localStorage:{getItem:key=>memory.get(key)||null,setItem:(key,value)=>memory.set(key,value)},moveGlider(){},stackFit(){},esc:s=>s,setTimeout:()=>0,clearTimeout(){},animSwap:(cur,nxt)=>{cur.classList.remove('on');cur.classList.add('off');nxt.classList.remove('off');nxt.classList.add('on');},PAGE_CLASSES:['on','off']};
+  const context={window,today,document:{createElement:()=>new Element(),getElementById:()=>null},localStorage:{getItem:key=>memory.get(key)||null,setItem:(key,value)=>memory.set(key,value)},moveGlider(){},stackFit(){},esc:s=>s,setTimeout:()=>0,clearTimeout(){},animSwap:(cur,nxt)=>{cur.classList.remove('on');cur.classList.add('off');nxt.classList.remove('off');nxt.classList.add('on');},PAGE_CLASSES:['on','off']};
   vm.createContext(context);vm.runInContext(code,context);context.tabbed(tabs,panels);
   return {tabs,panels,memory,window};
 }
