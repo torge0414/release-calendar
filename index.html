@@ -260,6 +260,10 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   /* 更新时间收在横线右端, 小字弱化(原来是独立一行, 突兀) */
   .mh .mup{font-size:11px; color:var(--dim); white-space:nowrap;
        font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",system-ui,sans-serif;}
+  /* 游戏卡: 标题/日期与封面上沿对齐, 平台标签与封面下沿对齐(原来文字块整体垂直居中) */
+  .item{align-items:stretch;}
+  .txt{display:flex; flex-direction:column;}
+  .plats{margin-top:auto;}
   @media (max-width:640px){
     .pic{flex-basis:150px; width:150px; height:75px;}
     .list.mgrid{grid-template-columns:repeat(auto-fill,minmax(106px,1fr)); gap:10px;}
