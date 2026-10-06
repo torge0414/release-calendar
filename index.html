@@ -198,16 +198,18 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
        border-top-color:var(--acc); border-radius:50%; animation:sp .6s linear infinite;}
   .err{background:#fff2f0; border:1px solid #ffd7d2; color:#c0422a; padding:11px 16px;
        border-radius:12px; font-size:13px; margin-top:14px; display:none; text-align:center;}
-  .tabs{display:flex; width:max-content; margin:20px auto 2px; background:var(--switch-bg);
+  .tabs{display:flex; width:max-content; max-width:100%; margin:20px auto 2px; background:var(--switch-bg);
        border-radius:999px; padding:3px; gap:2px; position:relative;
+       overflow-x:auto; scrollbar-width:none; -webkit-overflow-scrolling:touch; scroll-behavior:smooth;
        box-shadow:inset 0 0 0 .5px rgba(0,0,0,.06), inset 0 1px 2px rgba(0,0,0,.05);}
+  .tabs::-webkit-scrollbar{display:none;}
   .tabg{position:absolute; top:3px; left:3px; bottom:3px; background:#fff; border-radius:999px;
        box-shadow:0 1px 4px rgba(0,0,0,.14); z-index:0;
        transition:transform .6s cubic-bezier(.4,0,.2,1), width .6s cubic-bezier(.4,0,.2,1), background-color .6s;}
   html.dark .tabg{background:#2c2c31;}
   .tab{
     position:relative; z-index:1; border:0; background:transparent; cursor:pointer; font-family:inherit;
-    font-size:13px; font-weight:600; color:var(--dim); padding:7px 22px;
+    font-size:13px; font-weight:600; color:var(--dim); padding:7px 22px; flex:none; white-space:nowrap;
     border-radius:999px; transition:color .6s;
   }
   .tab:hover{color:var(--txt);}
@@ -466,7 +468,13 @@ function tabbed(tabsEl, panels){
     stackFit();
     tabsEl.querySelectorAll('.tab').forEach((b,j)=>b.classList.toggle('on', j===i));
     /* 滑块: 正常切换有动画; 静默归位默认瞬移, 但 opts.glide 时仍平滑滑动(视图切换时月份从下月回到本月) */
-    moveGlider(tabsEl, tabsEl.querySelectorAll('.tab')[i], !animate && !opts.glide);
+    const actBtn = tabsEl.querySelectorAll('.tab')[i];
+    moveGlider(tabsEl, actBtn, !animate && !opts.glide);
+    /* 窄屏页签多到溢出时, 把当前页签滚动居中(scroll-behavior:smooth 负责平滑) */
+    if(actBtn && tabsEl.scrollWidth > tabsEl.clientWidth + 1){
+      const x = actBtn.offsetLeft - (tabsEl.clientWidth - actBtn.offsetWidth)/2;
+      tabsEl.scrollTo({left: Math.max(0, x), behavior: (!animate && !opts.glide) ? 'auto' : 'smooth'});
+    }
   };
 
   /* 供顶层视图切换时把月份重置回「本月」: skipBody 跳过正在淡出的视图; force 用于动画后再补一次 */
@@ -487,6 +495,10 @@ function tabbed(tabsEl, panels){
   window[fitKey] = fitAll;
   window.addEventListener('resize', fitAll);
   moveGlider(tabsEl, tabsEl.querySelectorAll('.tab')[curIdx], true);   // 恢复定位不滑动
+  const initBtn = tabsEl.querySelectorAll('.tab')[curIdx];
+  if(initBtn && tabsEl.scrollWidth > tabsEl.clientWidth + 1){   // 恢复时若页签溢出, 瞬时居中当前月
+    tabsEl.scrollLeft = Math.max(0, initBtn.offsetLeft - (tabsEl.clientWidth - initBtn.offsetWidth)/2);
+  }
   const mhMn0 = document.getElementById('mhMn'), mhMy0 = document.getElementById('mhMy');
   if(mhMn0) mhMn0.textContent = String(groups[curIdx].month).padStart(2,'0');
   if(mhMy0) mhMy0.textContent = groups[curIdx].year;
