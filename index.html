@@ -573,7 +573,8 @@ function paint(){
   });
   if(!panels.length) return;
   tabbed($('#tabs'), panels);
-  const upd = (state.game && state.game.updated) || (state.movie && state.movie.updated) || '';
+  const upd = [state.game && state.game.updated, state.movie && state.movie.updated]
+    .filter(Boolean).sort().pop() || '';   /* 取游戏/电影里较新的时间: 只刷新了一边时不至于显示旧日期 */
   const mhUp = document.getElementById('mhUp');
   if(mhUp && upd) mhUp.textContent = '更新于 ' + upd.slice(5, 16);   /* "2026-10-04 23:14:28" -> "10-04 23:14" */
   showCredit();
