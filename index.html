@@ -559,6 +559,17 @@ function alignMc(){
 }
 
 let state = { game: null, movie: null, music: null };
+let curViewName = 'game';   // 当前顶层视图, 由下面的视图切换 IIFE 维护
+
+/* 页头更新时间按当前视图分别显示: 游戏页看 releases.json, 电影页看 movies.json(各自数据缺失时回退另一边) */
+function paintUp(){
+  const mhUp = document.getElementById('mhUp');
+  if(!mhUp) return;
+  const cur = curViewName==='movie' ? state.movie : state.game;
+  const other = curViewName==='movie' ? state.game : state.movie;
+  const upd = (cur && cur.updated) || (other && other.updated) || '';
+  mhUp.textContent = upd ? '更新于 ' + upd.slice(5, 16) : '';   /* "2026-10-04 23:14:28" -> "10-04 23:14" */
+}
 
 /* 两份数据任一到位就重建(月签只有一份, 同时控制两边列表) */
 function paint(){
@@ -573,10 +584,7 @@ function paint(){
   });
   if(!panels.length) return;
   tabbed($('#tabs'), panels);
-  const upd = [state.game && state.game.updated, state.movie && state.movie.updated]
-    .filter(Boolean).sort().pop() || '';   /* 取游戏/电影里较新的时间: 只刷新了一边时不至于显示旧日期 */
-  const mhUp = document.getElementById('mhUp');
-  if(mhUp && upd) mhUp.textContent = '更新于 ' + upd.slice(5, 16);   /* "2026-10-04 23:14:28" -> "10-04 23:14" */
+  paintUp();
   showCredit();
   stackFit();
   alignMc();
@@ -822,6 +830,7 @@ async function refreshMusic(){
       cur.classList.add('off');          // 静态隐藏(无动画), 刷新恢复时不会补播淡出
     }
     curView = v;
+    curViewName = v; paintUp();   // 更新时间随视图切换(游戏/电影各自的时间戳)
     btns.forEach(b=>b.classList.toggle('on', b.dataset.view === v));
     const curBtn = btns.find(b=>b.dataset.view === v);
     if(curBtn) moveGlider(top, curBtn);
