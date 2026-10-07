@@ -26,6 +26,9 @@
 | Edge of Memories | 官方介绍支持完整动作 RPG，但当前不足以确认符合本清单的大中型重点项目口径，暂不收录，而非断言为小游戏 | [Steam](https://store.steampowered.com/app/2738170/) |
 | SONIC PICO PARK | 多人合作解谜联动小品，不因索尼克授权自动入选 | [Steam](https://store.steampowered.com/app/4304060/) |
 | 暗影之路／Shadow of the Road | 官方介绍支持剧情驱动的独立回合制 RPG，但当前规模依据不足且未获用户指定，暂不收录 | [Steam](https://store.steampowered.com/app/1173980/) |
+| Clive Barker's Hellraiser: Revival | 2026 年 10 月 7 日用户决定剔除：知名度来自恐怖电影 IP，不是知名游戏系列；体量未公开，与 Remothered 同属影视授权恐怖衍生作 | [Steam](https://store.steampowered.com/app/1551980/) |
+
+2026 年 10 月 7 日用户补充确认：知名 IP 的衍生作（如 Hot Wheels、星球大战：银河赛车手、恶魔城、空之轨迹 2）仍按既有编辑判断保留，只剔除 Hellraiser。10 月清单由 12 款减为 11 款。
 
 保留《不朽遗志 Valor Mortis》：官方将其定位为有完整剧情、探索和成长系统的第一人称类魂动作项目，并由《幽灵行者》开发团队制作；这是当前重点新 IP 的编辑选择，不是已核实预算或游玩时长。[官方项目页](https://valormortis.com/)。
 
