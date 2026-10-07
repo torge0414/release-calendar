@@ -624,7 +624,7 @@ function card(it){
     if (pv!=null && pv!==false && pv!=='') {
       const n = Number(pv);
       pfmt = (n % 1 === 0) ? String(n) : n.toFixed(2);
-      pfmt = (p.key==='steam' ? '¥'+pfmt : 'HK'+pfmt);
+      pfmt = (p.key==='steam' ? '¥'+pfmt : 'HK$'+pfmt);
     }
     const url = p.url ? 'href="'+esc(p.url)+'" target="_blank"' : '';
     const pm = (p.key==='steam'?'st':p.key);
