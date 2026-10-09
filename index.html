@@ -273,9 +273,12 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   .chip{transition:transform .25s cubic-bezier(.4,0,.2,1), box-shadow .25s, color .6s, background-color .6s;}
   .chip:hover{transform:translateY(-2px);
        box-shadow:0 4px 10px rgba(0,0,0,.18), 0 0 0 2px rgba(0,0,0,.08), inset 0 0 0 99px rgba(0,0,0,.20);}
-  /* 卡片悬停: 封面缓慢放大(位图缩放, 不涉及文字锐度) */
-  .pic .cover{transition:transform .6s cubic-bezier(.4,0,.2,1);}
-  .item:hover .pic .cover{transform:scale(1.06);}
+  /* 封面悬停放大: 拉大图片盒并居中, 由画框裁切。不用 transform:scale,
+     scale 会把已栅格化的位图再拉伸, 过程中变糊、停住后又变清晰。 */
+  .pic .cover{position:absolute; left:0; top:0;
+       transition:width .6s cubic-bezier(.4,0,.2,1), height .6s cubic-bezier(.4,0,.2,1),
+                  left .6s cubic-bezier(.4,0,.2,1), top .6s cubic-bezier(.4,0,.2,1);}
+  .item:hover .pic .cover{width:106%; height:106%; left:-3%; top:-3%;}
   /* 主题滑块: 旋钮内嵌太阳/月亮矢量图标, 旋转交叉过渡 */
   .theme-btn .tb-knob{display:flex; align-items:center; justify-content:center; overflow:hidden;}
   .tb-ic{position:absolute; width:15px; height:15px; fill:none; stroke:currentColor;
