@@ -10,7 +10,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
 }catch(e){}</script>
 <style>
   :root{
-    --bg:#f5f5f7; --card:#ffffff; --txt:#1d1d1f; --sub:#6e6e73; --dim:#86868b;
+    --bg:#f5f5f7; --card:#ffffff; --txt:#1d1d1f; --sub:#6e6e73; --dim:#707072; --tab:#656567;
     --line:rgba(0,0,0,.05);
     --acc:#0071e3; --acc-bg:#e8f1fd;
     --today:#ff9f0a;
@@ -23,7 +23,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
     --r:18px;
   }
   html.dark{
-    --bg:#101013; --card:#1c1c21; --txt:#f5f5f7; --sub:#9b9ba1; --dim:#6f6f77;
+    --bg:#101013; --card:#1c1c21; --txt:#f5f5f7; --sub:#9b9ba1; --dim:#7c7c7e; --tab:#a4a4a6;
     --line:rgba(255,255,255,.09);
     --acc:#3fa2ff; --acc-bg:#0d2b4a;
     --st:#54aaff; --st-bg:#0d2b4a;
@@ -45,8 +45,10 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   .wrap{max-width:860px; margin:0 auto; position:relative;}
   /* 主题切换的变色节奏与全站统一 0.6s(否则有的元素瞬间跳、有的渐变, 看起来"慢半拍") */
   :where(body,.t,.tag,.sub,.meta,.ft,.credit,h1,.pic,.tabs,.tab,.err,.when){transition:background-color .6s, color .6s, border-color .6s;}
+  .title-row{position:relative;}
   .theme-btn{
-    position:relative; display:block; margin:0 0 18px auto; width:54px; height:31px; border-radius:999px;
+    position:absolute; right:0; top:0; bottom:0; margin-top:auto; margin-bottom:auto;
+    display:block; width:54px; height:31px; border-radius:999px;
     border:0; cursor:pointer; background:var(--switch-bg); padding:0;
     box-shadow:inset 0 0 0 .5px rgba(0,0,0,.06), inset 0 1px 2px rgba(0,0,0,.06);
     transition:background .6s, transform .6s cubic-bezier(.4,0,.2,1), box-shadow .6s; z-index:5;
@@ -63,15 +65,18 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   .theme-btn .tb-knob{
     position:absolute; top:2px; left:2px; width:27px; height:27px; border-radius:50%;
     background:#fff; box-shadow:0 2px 6px rgba(0,0,0,.25);
+    display:flex; align-items:center; justify-content:center; overflow:hidden;
     transition:left .6s cubic-bezier(.4,0,.2,1), background-color .6s;
   }
   /* 夜间主题旋钮用深色, 与浅色主题的白旋钮区分开(否则两个主题下都是白圆点) */
   html.dark .theme-btn .tb-knob{left:25px; background:#565661;
        box-shadow:0 2px 6px rgba(0,0,0,.45), inset 0 0 0 .5px rgba(255,255,255,.08);}
   header{text-align:center; padding:10px 0 4px;}
-  .eyebrow{font-size:12px; font-weight:600; color:var(--acc); letter-spacing:.12em;
-       text-transform:uppercase; margin-bottom:8px;}
-  h1{font-size:clamp(23px,6.8vw,40px); font-weight:700; letter-spacing:.02em; line-height:1.1; white-space:nowrap;}
+  .eyebrow{font-size:12px; font-weight:600; color:var(--acc); letter-spacing:.24em;
+       text-transform:uppercase; margin-bottom:12px;}
+  h1{font-family:Georgia,"Times New Roman","Songti SC","SimSun",serif;
+     font-size:clamp(23px,6.8vw,40px); font-weight:700; letter-spacing:.1em; line-height:1.1;
+     white-space:nowrap; padding:0 64px;}
   .sub{font-size:15px; color:var(--sub); margin-top:10px;}
   .meta{font-size:11.5px; color:var(--dim); margin-top:0; padding-top:10px; display:flex; align-items:center;
        justify-content:center; gap:7px;}
@@ -117,8 +122,8 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   /* 单列横卡: 封面左 信息右(封面用原始比例, 清晰度最佳) */
   .list{display:flex; flex-direction:column; gap:10px;}
   .item{
-    display:flex; align-items:center; gap:16px; background:var(--card);
-    border:1px solid var(--line); border-radius:var(--r); padding:14px 18px 14px 14px;
+    display:flex; align-items:stretch; gap:20px; background:var(--card);
+    border:1px solid var(--line); border-radius:var(--r); padding:18px 22px 18px 18px;
     box-shadow:var(--shadow); transition:transform .6s cubic-bezier(.4,0,.2,1), box-shadow .6s, background-color .6s, color .6s, border-color .6s;
     position:relative; min-width:0;
   }
@@ -128,18 +133,20 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
     content:""; position:absolute; left:-1px; top:18px; bottom:18px; width:3px;
     border-radius:0 3px 3px 0; background:var(--today);
   }
-  .pic{flex:0 0 132px; width:132px; height:66px; border-radius:12px; overflow:hidden;
+  .pic{flex:0 0 216px; width:216px; height:108px; border-radius:14px; overflow:hidden;
        position:relative; background:var(--pic-bg); flex:none;
        box-shadow:inset 0 0 0 1px rgba(0,0,0,.03);}
-  .pic .cover{width:100%; height:100%; object-fit:cover; display:block;}
+  .pic .cover{position:absolute; left:0; top:0; width:100%; height:100%; object-fit:cover; display:block;
+       transition:width .6s cubic-bezier(.4,0,.2,1), height .6s cubic-bezier(.4,0,.2,1),
+                  left .6s cubic-bezier(.4,0,.2,1), top .6s cubic-bezier(.4,0,.2,1);}
   .pic .cover.wide{object-fit:contain;}  /* 超宽横幅完整显示(不裁切) */
   .pic .ph{position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
        font-size:22px; font-weight:700; color:#fff; text-shadow:0 1px 2px rgba(0,0,0,.15);}
-  .txt{min-width:0; flex:1; padding:0;}
+  .txt{min-width:0; flex:1; padding:0; display:flex; flex-direction:column;}
   .txt .tline{display:flex; align-items:center; gap:8px; min-width:0;}
   .txt .tline a.t{color:inherit; text-decoration:none; transition:opacity .6s;}
   .txt .tline a.t:hover{opacity:.7;}
-  .txt .tline .t{font-size:15.5px; font-weight:600; letter-spacing:-.01em; line-height:1.3;
+  .txt .tline .t{font-size:17px; font-weight:600; letter-spacing:-.01em; line-height:1.3;
        white-space:nowrap; overflow:hidden; text-overflow:ellipsis; min-width:0;}
   .txt .when{position:absolute; right:18px; top:14px; flex:none; font-size:10.5px; font-weight:700; border-radius:7px; padding:2px 8px;
        line-height:1.4; letter-spacing:.01em; white-space:nowrap; z-index:2;}
@@ -149,7 +156,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   html.dark .when.today{background:#4a320f; color:#ffc46b;}
   .when.out{background:rgba(52,199,89,.14); color:#1f9d55;}
   html.dark .when.out{background:rgba(48,209,88,.18); color:#4cd964;}
-  .txt .tag{font-size:12px; color:var(--dim); margin-top:5px; display:flex; align-items:center; gap:7px;
+  .txt .tag{font-size:12.5px; color:var(--dim); margin-top:5px; display:flex; align-items:center; gap:7px;
        flex-wrap:wrap;}
   .txt .tag b{color:var(--today); font-weight:700;}
   .txt .tag .mc{display:none;}
@@ -164,13 +171,14 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   html.dark .mcbox:hover{box-shadow:0 2px 10px rgba(0,0,0,.45), inset 0 0 0 99px rgba(0,0,0,.26);}
   .mcbox .mcv{font-size:17px; font-weight:800; letter-spacing:-.02em; line-height:1; text-decoration:none;}
   .mcbox.g,.mcbox.y,.mcbox.r{text-align:center;}
-  .mcbox.g{background:#1f9d55;} .mcbox.y{background:#e2a03a;} .mcbox.r{background:#d6453f;}
+  .mcbox.g{background:#2a9257;} .mcbox.y{background:#d49d48;} .mcbox.r{background:#c8524d;}
   html.dark .mcbox{box-shadow:0 2px 10px rgba(0,0,0,.45);}
-  .plats{display:flex; gap:7px; margin-top:9px; flex-wrap:wrap;}
+  .plats{display:flex; gap:7px; margin-top:auto; flex-wrap:wrap;}
   .chip{
     font-size:11.5px; font-weight:600; text-decoration:none; border-radius:980px;
     padding:3px 11px; display:inline-flex; align-items:center; gap:5px;
-    transition:.6s; letter-spacing:.01em; white-space:nowrap;
+    transition:transform .25s cubic-bezier(.4,0,.2,1), box-shadow .25s, color .6s, background-color .6s;
+    letter-spacing:.01em; white-space:nowrap;
     height:20px; box-sizing:border-box;   /* 固定高度: 悬停放大字号时不撑开卡片、不推挤列表 */
     line-height:14px;                     /* 固定行盒: 否则字号变大时文字在胶囊内上下跳 */
   }
@@ -184,7 +192,8 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   .chip.ns{color:var(--ns); background:var(--ns-bg);}
   /* 悬停: 背景压暗 + 字体变亮(白)。必须放在平台色规则之后, 否则 .chip.st 的 color 会盖住这里的白。
      外描边不参与布局 → 无位移; 字号不变 → 文字不糊。 */
-  .chip:hover{color:rgba(255,255,255,.92); box-shadow:0 0 0 2px rgba(0,0,0,.08), inset 0 0 0 99px rgba(0,0,0,.20);}
+  .chip:hover{color:rgba(255,255,255,.92); transform:translateY(-2px);
+       box-shadow:0 4px 10px rgba(0,0,0,.18), 0 0 0 2px rgba(0,0,0,.08), inset 0 0 0 99px rgba(0,0,0,.20);}
   .empty{color:var(--dim); font-size:14px; padding:18px 8px; text-align:center;}
   .loading{color:var(--dim); font-size:14px; text-align:center; padding:52px 0;}
   .loading .spin{display:inline-block; width:22px; height:22px; border:2.5px solid var(--spin);
@@ -209,7 +218,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   html.dark .tabg{background:#2c2c31;}
   .tab{
     position:relative; z-index:1; border:0; background:transparent; cursor:pointer; font-family:inherit;
-    font-size:13px; font-weight:600; color:var(--dim); padding:7px 22px; flex:none; white-space:nowrap;
+    font-size:13px; font-weight:600; color:var(--tab); padding:7px 22px; flex:none; white-space:nowrap;
     border-radius:999px; transition:color .6s;
   }
   .tab:hover{color:var(--txt);}
@@ -218,22 +227,13 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   .pic.m{flex:0 0 68px; width:68px; height:100px;}
   .pic.sq{flex:0 0 68px; width:68px; height:68px;}   /* 专辑封面: 正方形 */
   .pic.m .ph{font-size:20px;}
-  .item.mv{align-items:flex-start;}   /* 电影: 信息与封面顶对齐 */
   footer{color:var(--dim); font-size:11.5px; margin-top:40px; text-align:center; padding-bottom:8px;}
   .pfoot{color:var(--dim); font-size:11.5px; margin-top:40px; text-align:center; padding-bottom:8px;}
   .credit{color:var(--dim); font-size:11px; text-align:center; padding-bottom:16px; opacity:.8;}
   @media (max-width:640px){
-    h1{font-size:32px;}
-    .pic{flex-basis:116px; width:116px; height:58px;}
     /* 窄屏: 平台标签让出右下角评分块区域, 放不下自动换行(宽屏不受影响) */
     .plats{padding-right:62px;}
   }
-  /* ===== 风格稿 B: 杂志海报墙 + 编辑排版(本地实验, 未发布) ===== */
-  /* 游戏封面放大(保持 2:1 画框) */
-  .pic{flex-basis:216px; width:216px; height:108px; border-radius:14px;}
-  .item{padding:18px 22px 18px 18px; gap:20px;}
-  .txt .tline .t{font-size:17px;}
-  .txt .tag{font-size:12.5px;}
   /* 月份大标题(编辑排版: 大号衬线月份 + 年份 + 通栏细线) */
   .mh{display:flex; align-items:center; gap:12px; margin:8px 6px 18px;
       font-family:Georgia,"Times New Roman","Songti SC","SimSun",serif;}
@@ -255,32 +255,17 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   .item.pc .mcbox .mcv{font-size:14px;}
   .item.pc .tag3{padding-right:0;}
   .item.pc.today::before{top:14px; bottom:auto; height:44px;}
-  /* 主标题编辑排版: 衬线大字 + 上方眉线小字 */
-  h1{font-family:Georgia,"Times New Roman","Songti SC","SimSun",serif;
-     letter-spacing:.1em; font-weight:700;}
-  .eyebrow{letter-spacing:.24em; margin-bottom:12px;}
   /* 月份标题固定在页签下方(移出动画区, 瞬时换字, 不再叠字) */
   #mhBar{margin:16px 6px 18px;}
   /* 更新时间收在横线右端, 小字弱化(原来是独立一行, 突兀) */
   .mh .mup{font-size:11px; color:var(--dim); white-space:nowrap;
        font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",system-ui,sans-serif;}
-  /* 游戏卡: 标题/日期与封面上沿对齐, 平台标签与封面下沿对齐(原来文字块整体垂直居中) */
-  .item{align-items:stretch;}
-  .txt{display:flex; flex-direction:column;}
-  .plats{margin-top:auto;}
-  /* 平台标签: 内联官方 logo; 悬停上浮(平移不动几何, 文字不糊) + 阴影加深 */
+  /* 平台标签内联官方 logo */
   .chip .pi{width:13px; height:13px; fill:currentColor; flex:none;}
-  .chip{transition:transform .25s cubic-bezier(.4,0,.2,1), box-shadow .25s, color .6s, background-color .6s;}
-  .chip:hover{transform:translateY(-2px);
-       box-shadow:0 4px 10px rgba(0,0,0,.18), 0 0 0 2px rgba(0,0,0,.08), inset 0 0 0 99px rgba(0,0,0,.20);}
   /* 封面悬停放大: 拉大图片盒并居中, 由画框裁切。不用 transform:scale,
      scale 会把已栅格化的位图再拉伸, 过程中变糊、停住后又变清晰。 */
-  .pic .cover{position:absolute; left:0; top:0;
-       transition:width .6s cubic-bezier(.4,0,.2,1), height .6s cubic-bezier(.4,0,.2,1),
-                  left .6s cubic-bezier(.4,0,.2,1), top .6s cubic-bezier(.4,0,.2,1);}
   .item:hover .pic .cover{width:106%; height:106%; left:-3%; top:-3%;}
   /* 主题滑块: 旋钮内嵌太阳/月亮矢量图标, 旋转交叉过渡 */
-  .theme-btn .tb-knob{display:flex; align-items:center; justify-content:center; overflow:hidden;}
   .tb-ic{position:absolute; width:15px; height:15px; fill:none; stroke:currentColor;
        stroke-width:2; stroke-linecap:round; stroke-linejoin:round;
        transition:transform .6s cubic-bezier(.4,0,.2,1), opacity .6s;}
@@ -291,7 +276,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   html.dark .tb-ic-moon{opacity:1; transform:rotate(0) scale(1);}
   @media (max-width:640px){
     /* 主标题随屏宽缩放(覆盖旧的固定 32px: 衬线+宽字距在窄屏会溢出) */
-    h1{font-size:clamp(18px,6.2vw,32px); letter-spacing:.04em; white-space:nowrap;}
+    h1{font-size:clamp(15px,4.8vw,32px); letter-spacing:.04em; white-space:nowrap; padding:0 60px;}
     .eyebrow{letter-spacing:.18em;}
     .pic{flex-basis:150px; width:150px; height:75px;}
     .list.mgrid{grid-template-columns:repeat(auto-fill,minmax(106px,1fr)); gap:10px;}
@@ -306,17 +291,22 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
     #body .item .tag{grid-column:2; grid-row:2;}
     #body .item .plats{grid-column:1 / -1; grid-row:3; margin-top:8px;}
   }
+  @media (max-width:360px){
+    h1{font-size:13.5px; letter-spacing:.01em;}
+  }
 </style>
 </head>
 <body>
 <div id="boot"><span class="spin"></span></div>
 <div class="wrap">
-  <button class="theme-btn" id="themeBtn" title="切换外观" aria-label="切换浅色/夜间模式">
-    <span class="tb-knob"><svg class="tb-ic tb-ic-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><line x1="12" y1="1.5" x2="12" y2="3.8"/><line x1="12" y1="20.2" x2="12" y2="22.5"/><line x1="4.6" y1="4.6" x2="6.2" y2="6.2"/><line x1="17.8" y1="17.8" x2="19.4" y2="19.4"/><line x1="1.5" y1="12" x2="3.8" y2="12"/><line x1="20.2" y1="12" x2="22.5" y2="12"/><line x1="4.6" y1="19.4" x2="6.2" y2="17.8"/><line x1="17.8" y1="6.2" x2="19.4" y2="4.6"/></svg><svg class="tb-ic tb-ic-moon" viewBox="0 0 24 24"><path d="M20.5 13.2A8.5 8.5 0 1 1 10.8 3.5a7 7 0 0 0 9.7 9.7z"/></svg></span>
-  </button>
   <header>
     <div class="eyebrow">Curated Game &amp; Film Releases</div>
-    <h1>RELEASE CALENDAR</h1>
+    <div class="title-row">
+      <h1>RELEASE CALENDAR</h1>
+      <button class="theme-btn" id="themeBtn" title="切换外观" aria-label="切换浅色/夜间模式">
+        <span class="tb-knob"><svg class="tb-ic tb-ic-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><line x1="12" y1="1.5" x2="12" y2="3.8"/><line x1="12" y1="20.2" x2="12" y2="22.5"/><line x1="4.6" y1="4.6" x2="6.2" y2="6.2"/><line x1="17.8" y1="17.8" x2="19.4" y2="19.4"/><line x1="1.5" y1="12" x2="3.8" y2="12"/><line x1="20.2" y1="12" x2="22.5" y2="12"/><line x1="4.6" y1="19.4" x2="6.2" y2="17.8"/><line x1="17.8" y1="6.2" x2="19.4" y2="4.6"/></svg><svg class="tb-ic tb-ic-moon" viewBox="0 0 24 24"><path d="M20.5 13.2A8.5 8.5 0 1 1 10.8 3.5a7 7 0 0 0 9.7 9.7z"/></svg></span>
+      </button>
+    </div>
     <div class="tabs top" id="topTabs">
       <span class="tabg"></span>
       <button class="tab on" data-view="game">游戏</button>
