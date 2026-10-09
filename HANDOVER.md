@@ -1,6 +1,6 @@
 # Release Calendar 网站维护交接
 
-编写日期：2026 年 10 月 6 日（第二版，Kimi Work → 下一位 agent；第一版为 Codex → Kimi Work）。所有面向用户的日期和时间使用北京时间（Asia/Shanghai，UTC+8）。
+编写日期：2026 年 10 月 9 日（第三版，Kimi Code → 下一位 agent；第二版为 Kimi Work → Kimi Code，第一版为 Codex → Kimi Work）。所有面向用户的日期和时间使用北京时间（Asia/Shanghai，UTC+8）。
 
 用途：让另一位 agent 接手现有网站，不重新建站、不扩大收录范围。本文记录已核对的仓库、线上快照和用户要求；不是对全部历史发行信息真实性的重新背书。接手时仍需核对官方来源。
 
@@ -10,22 +10,26 @@
 | --- | --- |
 | 网站 | https://torge0414.github.io/release-calendar/ |
 | GitHub 仓库 | https://github.com/torge0414/release-calendar |
-| 本机仓库（Kimi Work 工作区） | `C:\Users\Torge\Documents\kimi\tasks\2026-10-05\16-37-18-5342d6cc\release-calendar` |
+| 本机仓库（Kimi Code 工作区，工作目录 `H:\`） | `H:\release-calendar` |
 | 主分支 | `main` |
 | 部署 | GitHub Pages，`main` 分支根目录，legacy 构建方式 |
 | 页面技术 | `index.html` 内置 HTML/CSS/JavaScript，直接读取相对路径 JSON；无 npm 构建步骤 |
-| 交接时远端 main | `0cd00ce`（Revert 月度 Actions 工作流，见 §7C）；本地与远端已同步、工作区干净 |
+| 交接时远端 main | `db0d6b7`（每日评分／Steam 价格自动更新）；本地与远端已同步，但工作区保留一处未提交改动（见下） |
 
-注意：本机仓库位于 Kimi Work 的日期任务目录下，该目录可能随产品清理策略变化。**新 agent 应自行 `git clone` 一份到自己的工作区**，不要依赖上面的路径长期存在。
+注意：本机仓库位于 Kimi Code 工作目录下，该目录可能随产品和设备策略变化。**新 agent 应自行 `git clone` 一份到自己的工作区**，不要依赖上面的路径长期存在。
 
 本机 git 配置（repo-local，新克隆需重配）：`user.name = torge0414`，`user.email = 56673045+torge0414@users.noreply.github.com`，`pull.rebase = false`（每日机器人提交会造成分叉，push 前先 merge 同步，禁止强推）。
+
+**未提交的本地改动**：`index.html` 工作区有一处平台图标尺寸微调（`.chip .pi` 13px→14px，理由是整数像素对齐）。该改动**未经真实渲染视觉验收，尚未发布**；新克隆的工作区不包含它。新 agent 可按 §9 验收要求本地验证后提交，或与用户确认后放弃；不要在未验收前推送。
+
+2026-10-08 Kimi Code 接管检查结果：远端同步完成；`check_data.py`、`test_calendar.py`、`test_month_tabs.js`、`test_game_cover.js` 全部通过；`update_scores.py --dry-run` 成功（检查 24 款游戏、17 部电影，无来源错误）。
 
 截至交接，线上数据窗口为：
 
 | 月份 | 游戏 | 电影 |
 | --- | ---: | ---: |
 | 2026 年 9 月（上月） | 10 款 | 6 部 |
-| 2026 年 10 月（本月） | 12 款 | 10 部 |
+| 2026 年 10 月（本月） | 11 款 | 10 部 |
 | 2026 年 11 月（下月） | 3 款 | 1 部 |
 
 这些数量是快照，不是月度配额。不要为了凑数量补进不符合口径的作品。
@@ -81,6 +85,8 @@
 不要在月度更新里因预购开放、出现评分或商店推荐而自行重新加入。理由与原始来源见 `GAME_SELECTION.md`；新信息足以复审时先向用户解释并取得决定。
 
 已记录的保留边界决定包括《不朽遗志 Valor Mortis》、《时之笛（2026 重制版）》和《龙之信条2：Dark Arisen》大型扩展。它们是当时的编辑选择，不代表重新确认了未来发售承诺或制作预算。
+
+2026-10-07 用户确认剔除 Clive Barker's Hellraiser: Revival（提交 `3944245`），具体理由与来源见 `GAME_SELECTION.md` 和该提交。
 
 ## 5. 数据来源与数据结构
 
@@ -141,19 +147,25 @@
 
 不要再建一套重复的每日更新。每日机器人提交会造成 main 分叉，人工推送前先 `git pull`（本仓库已配 `pull.rebase = false`，走 merge），保留它更新的有效分数，不能强推。
 
-### B. 月度重整清单：当前在 Kimi Work 定时任务
+### B. 月度重整清单：当前在 Kimi Code 会话定时任务
 
-- 任务 id：`automation_988bdffa-61f0-49da-a0d7-8f268994d397`（Kimi Work Blueprint Automation，类型 local_conversation）。
-- 调度：cron `0 9 1 * *`，时区 Asia/Shanghai，即每月 1 日北京时间 09:00；已核对下一次执行为 2026 年 11 月 1 日 09:00 北京时间。
-- 任务说明包含推送重试步骤（见 §8 的网络注意事项）。
-- **它不是仓库内容**，仅克隆 GitHub 仓库不会把它迁移到新 agent；它绑定 Kimi Work 的工作区会话，依赖用户机器上 Kimi Work 运行。
+- 任务 id：`01M4D9CCEJ8D412AG5NM5J4VAX`（Kimi Code 内置 CronCreate 调度，绑定会话 `session_f58dcd7d-6e3f-47a1-bda0-54fe605b376a`，工作目录 `H:\`）。
+- 调度：cron `0 9 1 * *`，按本机时区 Asia/Shanghai 解析，即每月 1 日北京时间 09:00；创建时已核对下一次执行为 2026 年 11 月 1 日 09:06（含调度器防扎堆抖动）。
+- 旧 Kimi Work 任务 `automation_988bdffa-61f0-49da-a0d7-8f268994d397` 已由用户于 2026-10-08 停用；当前只有这一套月度维护在写入 main。
+- **它不是仓库内容**，仅克隆 GitHub 仓库不会把它迁移到新 agent；它绑定 Kimi Code 的会话，依赖用户机器上 Kimi Code 运行。
+
+Kimi Code 定时任务的已知行为（维护时必须考虑）：
+
+- **会话绑定**：任务只在其所属会话存活（被打开／恢复）时触发；错过的时间在会话下次醒来时合并补发一次（`<cron-fire>` 信封带 `coalescedCount`，只按最新一次处理）。不随新会话迁移，会话被删除则任务丢失。
+- **7 天过期规则**：循环任务存活超过 7 天后，下一次触发带 `stale="true"` 标记，随后被系统自动删除。每月 1 日的任务必然超过 7 天，所以**每次月度触发完成维护后，必须用相同 cron 和任务说明立即重建任务**（重建会重置 7 天窗口），否则下个月不会触发。
+- 用户已知晓需每月 1 日前后打开该会话一次；若会话丢失，在新环境按本节重建等效任务即可。
 
 迁移到下一位 agent 的正确顺序：
 
 1. 请用户明确新 agent 的维护和发布权限。
 2. 新 agent 阅读文档、克隆/同步远端、跑测试，完成一次可见的试运行／检查。
-3. 用户确认移交后，在新环境建立等效月度任务（cron `0 9 1 * *` Asia/Shanghai），**核对产品实际解析出的下一次执行时间**（历史教训：UTC 与北京时间混淆、不要机械照抄小时数字）。
-4. 新任务可用后，再由用户授权停用／删除 Kimi Work 旧任务，保证任何时刻只有一套月度维护在写入 main。
+3. 用户确认移交后，在新环境建立等效月度任务（cron `0 9 1 * *` Asia/Shanghai），**核对产品实际解析出的下一次执行时间**（历史教训：UTC 与北京时间混淆、不要机械照抄小时数字）。若新环境也是 Kimi Code，同样遵守上面的 7 天过期续建规则。
+4. 新任务可用后，再由用户授权停用／删除旧任务，保证任何时刻只有一套月度维护在写入 main。
 
 ### C. 不要复活已被回退的月度 Actions 工作流
 
@@ -184,6 +196,8 @@ python scripts/check_data.py --images
 
 Python 脚本使用标准库；Node 测试无需 npm 安装。`--images` 需要网络且受源站防护影响；失败时逐条复核，不删掉有效条目或直接把"网络失败"当成图片坏了。
 
+**Windows 控制台编码**：本机 Git Bash 控制台默认 GBK，`update_scores.py` 等脚本打印含特殊字符（如豆瓣标题中的 U+200E）的中文输出时会报 `UnicodeEncodeError`。运行时加 `PYTHONUTF8=1`（如 `PYTHONUTF8=1 python scripts/update_scores.py --dry-run`）；GitHub Actions 的 Ubuntu 环境无此问题。
+
 需要检查每日抓取效果时先运行 `python scripts/update_scores.py --dry-run`。去掉参数会写数据，必须审阅日志和差异，不在"只读交接检查"里直接执行写入版本。
 
 本地页面应通过 HTTP 查看，而非双击 HTML：
@@ -199,6 +213,7 @@ python -m http.server 8765 --bind 127.0.0.1
 ### 本机网络注意事项（实测教训）
 
 - 这台机器到 `github.com:443` 的连接**间歇性中断**（每次几分钟到二十分钟，已反复发生），但 `api.github.com` 和 Pages 站点一直可达。推送失败时用带 sleep 的重试循环，等窗口恢复即可，都能最终成功。
+- 小技巧：`git fetch` 成功后若紧随的 `git pull` 因断连失败，可直接 `git merge origin/main --no-edit` 用已抓取的引用完成同步，不需要再次联网。
 - 紧急时可用 REST API 替代 git 协议完成提交：`git credential fill` 取本机已存凭据（不要打印 token），用 Git Data API（create tree → create commit → update ref）在远端落提交，网络恢复后 `git fetch && git reset --hard origin/main` 对齐本地。2026-10-06 的回退提交 `0cd00ce` 就是这样推送的。
 - 不要在断连窗口里反复高频重试，间隔 40 秒以上。
 
@@ -242,6 +257,8 @@ python -m http.server 8765 --bind 127.0.0.1
 | `937a886` | 夜间主题旋钮改深色配浅色月亮 |
 | `d5e1574` | 月份页签防压缩 + 溢出滑动 + 自动居中保险 |
 | `66f63e4` → `0cd00ce` | 月度 Actions 工作流新增后**应用户要求回退**（见 §7C） |
+| `3944245` | 剔除 Clive Barker's Hellraiser: Revival 并记录决定 |
+| `0436b2d` / `46fb6d2` | 页头更新时间按视图分开显示；港币价格补 $ 符号 |
 
 改动可从 Git 历史恢复；不要使用破坏性重置"回到上个 agent 的版本"，也不要由旧截图逆向改回已经决定剔除的游戏。
 
@@ -255,4 +272,4 @@ python -m http.server 8765 --bind 127.0.0.1
 
 ## 12. 可交给新 agent 的接手指令
 
-接手 torge0414/release-calendar 的 GitHub Pages 维护。先阅读 HANDOVER.md、MAINTENANCE.md、GAME_SELECTION.md，克隆仓库到自己的新工作区（不要依赖旧 agent 的目录），配置 repo-local git 身份与 `pull.rebase=false`。网站只显示上月、本月、下月的游戏和电影，月份页签永远 3 个，音乐不维护。游戏遵守已确认的重点精选与排除决定，不自行加回旧作移植或暂不收录项目，保留龙之信条 DLC 的适配封面和正确套装身份。视觉设计按 §9 已敲定的方案维护，不擅自推翻；样式改动必须真实渲染验证后发布。先报告接管检查、测试和浏览器视觉验收能否完成；不要仅因读取本文就提交、推送、改变系统权限或迁移定时任务。每日评分／Steam 价格继续由现有 GitHub Actions 处理，分叉时先 merge 再推，禁止强推。月度任务当前在 Kimi Work（automation_988bdffa-61f0-49da-a0d7-8f268994d397，每月 1 日北京时间 09:00），请用户确认后再建立等效新任务并核对实际下一次执行时间，新任务可用后由用户授权停用旧任务，防止重复执行。注意本机到 github.com:443 的连接间歇性中断，推送失败按 §8 的重试策略处理。
+接手 torge0414/release-calendar 的 GitHub Pages 维护。先阅读 HANDOVER.md、MAINTENANCE.md、GAME_SELECTION.md，克隆仓库到自己的新工作区（不要依赖旧 agent 的目录），配置 repo-local git 身份与 `pull.rebase=false`。网站只显示上月、本月、下月的游戏和电影，月份页签永远 3 个，音乐不维护。游戏遵守已确认的重点精选与排除决定，不自行加回旧作移植或暂不收录项目，保留龙之信条 DLC 的适配封面和正确套装身份。视觉设计按 §9 已敲定的方案维护，不擅自推翻；样式改动必须真实渲染验证后发布。注意交接时旧工作区有一处未提交的平台图标尺寸微调（13px→14px，未视觉验收），新克隆不含此改动，提交前必须验收。先报告接管检查、测试和浏览器视觉验收能否完成；不要仅因读取本文就提交、推送、改变系统权限或迁移定时任务。每日评分／Steam 价格继续由现有 GitHub Actions 处理，分叉时先 merge 再推，禁止强推。月度任务当前在 Kimi Code 会话定时任务（`01M4D9CCEJ8D412AG5NM5J4VAX`，每月 1 日北京时间 09:00，绑定特定会话且有 7 天过期需每月重建，见 §7B），请用户确认后再建立等效新任务并核对实际下一次执行时间，新任务可用后由用户授权停用旧任务，防止重复执行。注意原维护机到 github.com:443 的连接间歇性中断，推送失败按 §8 的重试策略处理；Windows GBK 控制台运行 Python 脚本时加 `PYTHONUTF8=1`。
