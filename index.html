@@ -728,8 +728,7 @@ function card(it){
   const mc = (typeof it.mc==='number' && it.mc>0) ? it.mc : null;
   const scoreCls = mc==null ? '' : (mc>=80?'g':(mc>=60?'y':'r'));
   const score = mc ? scoreLink(mc, scoreCls, it.mc_url||'https://www.metacritic.com/', 'Metacritic '+mc) : '';
-  const fine = '<span>'+it.month+'月'+it.day+'日</span><span class="sep">·</span>'+whenTag
-    +(it.dev?'<span class="sep">·</span><span>'+esc(it.dev)+'</span>':'');
+  const fine = '<span>'+it.month+'月'+it.day+'日</span><span class="sep">·</span>'+whenTag;
   wrap.innerHTML =
     '<div class="pic">'+imgTag+
       '<div class="ph" style="background:'+phColor(it.title)+(imgUrl?';display:none':'')+'">'+esc(firstChar(gameTitle(it.title)))+'</div>'+
