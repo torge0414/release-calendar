@@ -250,9 +250,17 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   .item.pc .txt{padding:12px 14px 14px;}
   .item.pc .txt .tline .t{white-space:normal; display:-webkit-box; -webkit-line-clamp:2;
        -webkit-box-orient:vertical; font-size:14.5px;}
-  .item.pc .when{left:8px; right:auto; top:8px;}
+  #movieBody .pic .when,
+  #movieBody .pic .when.soon,
+  #movieBody .pic .when.today,
+  #movieBody .pic .when.out{position:absolute; left:8px; right:auto; top:auto; bottom:8px;
+       background:none; border-radius:0; padding:0; font-size:12.5px; font-weight:600;
+       text-shadow:0 1px 3px rgba(0,0,0,.55);}
+  html.dark #movieBody .pic .when.today,
+  html.dark #movieBody .pic .when.out{background:none;}
   .item.pc .tline.haswhen .t{padding-right:0;}
-  #movieBody .gscore{position:absolute; top:8px; right:8px; bottom:auto; margin:0; text-decoration:none;
+  #movieBody .gscore{position:absolute; top:auto; right:8px; bottom:8px; margin:0; text-decoration:none;
+       text-shadow:0 1px 3px rgba(0,0,0,.55);
        font-family:Georgia,"Times New Roman","Songti SC","SimSun",serif;
        font-size:22px; font-weight:700; letter-spacing:0; line-height:1;
        font-variant-numeric:lining-nums tabular-nums; font-feature-settings:"lnum" 1, "tnum" 1;
@@ -287,7 +295,8 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
     .eyebrow{letter-spacing:.18em;}
     .pic{flex-basis:150px; width:150px; height:75px;}
     .list.mgrid{grid-template-columns:repeat(auto-fill,minmax(106px,1fr)); gap:10px;}
-    #movieBody .gscore{font-size:18px; top:6px; right:6px;}
+    #movieBody .gscore{font-size:18px; top:auto; right:6px; bottom:6px;}
+    #movieBody .pic .when{left:6px; bottom:6px; font-size:11px;}
     .mh .mn{font-size:34px;}
     /* 窄屏游戏卡专用网格: 封面居左跨标题+日期两行, 平台标签独占底部整行(单行, 永不折行),
        标题/日期与封面上沿对齐, 标签行即卡片底部(评分块仍对齐标签行) */
@@ -757,13 +766,12 @@ function mcard(it){
   wrap.innerHTML =
     '<div class="pic m">'+img+
       '<div class="ph" style="background:'+phColor(it.title)+(it.poster?';display:none':'')+'">'+esc(firstChar(it.title))+'</div>'+
-      whenTag+
+      whenTag+mc+
     '</div>'+
     '<div class="txt">'+
       '<div class="tline"><div class="t"></div></div>'+
       '<div class="tag">'+line2+'</div>'+
       (line3?'<div class="tag tag3"><span>'+esc(line3)+'</span></div>':'')+
-      mc+
     '</div>';
   wrap.querySelector('.t').textContent = it.title;   /* 电影名纯文本: 跳转只走评分块 */
   return wrap;
