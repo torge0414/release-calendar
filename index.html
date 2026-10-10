@@ -269,11 +269,12 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   html.dark #movieBody .mstat.when.soon{background:none;}
   .item.pc .tline.haswhen .t{padding-right:0;}
   #movieBody .gscore{position:static; margin:0; flex:none; align-self:baseline;
-       display:inline-flex; justify-content:flex-end;
+       display:inline-grid; grid-auto-flow:column; grid-auto-columns:0.74em;
+       justify-content:end; align-items:center;
        text-decoration:none; text-shadow:none;
        font-family:var(--serif);
        font-size:28px; font-weight:700; letter-spacing:0; line-height:1;
-       font-variant-numeric:lining-nums tabular-nums; font-feature-settings:"lnum" 1, "tnum" 1;
+       font-variant-numeric:normal; font-feature-settings:normal;
        transition:opacity .22s;}
   #movieBody .gscore.g{color:#2a9257;}
   #movieBody .gscore.y{color:#d49d48;}
@@ -335,15 +336,17 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   #body .txt .tline .t{font-family:var(--serif);
        font-size:22px; font-weight:700; letter-spacing:0; line-height:1.15;
        font-variant-numeric:lining-nums tabular-nums; font-feature-settings:"lnum" 1, "tnum" 1;}
-  #body .gscore{position:static; margin:0; flex:none; text-decoration:none;
-       display:inline-flex; justify-content:flex-end;
+  #body .gscore{position:static; margin:0; flex:none; flex-shrink:0; text-decoration:none;
+       display:inline-grid; grid-auto-flow:column; grid-auto-columns:0.74em;
+       justify-content:end; align-items:center;
        font-family:var(--serif);
        font-size:32px; font-weight:700; letter-spacing:0; line-height:1;
-       font-variant-numeric:lining-nums tabular-nums;
+       font-variant-numeric:normal; font-feature-settings:normal;
        transition:opacity .22s;}
-  /* 每位固定 1ch：手机衬线没有等宽数字时，十位和个位仍上下对齐 */
+  /* 每位锁死同一宽度。手机上的 Georgia 没有等宽数字，flex/ch 会被字形撑开 */
   #body .gscore .dg,
-  #movieBody .gscore .dg{flex:0 0 1ch; width:1ch; text-align:center;}
+  #movieBody .gscore .dg{display:block; width:0.74em; min-width:0; max-width:0.74em;
+       text-align:center; font-variant-numeric:normal; font-feature-settings:normal;}
   #body .gscore.g{color:#2a9257;}
   #body .gscore.y{color:#d49d48;}
   #body .gscore.r{color:#c8524d;}
@@ -365,7 +368,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
     #body .item .pic{flex:0 0 148px; width:148px; height:auto; aspect-ratio:460 / 215; min-height:0;}
     #body .item .txt{display:flex;}
     #body .txt .tline{align-items:flex-start;}
-    #body .txt .tline .t{font-size:16px; white-space:normal; display:-webkit-box;
+    #body .txt .tline .t{flex:1; min-width:0; font-size:16px; white-space:normal; display:-webkit-box;
          -webkit-line-clamp:2; -webkit-box-orient:vertical;}
     #body .txt .when,#body .fine{font-size:12px;}
     #body .gscore{font-size:24px;}
