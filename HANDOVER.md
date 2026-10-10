@@ -121,7 +121,7 @@
 - DLC 官方条目：`https://store.steampowered.com/app/2593290/`。封面来自这个条目，不是 2024 年本体封面。
 - 优先封面：`cover_img = "img/game_dd2_dark_arisen.jpg"`，原图 460×215。
 
-旧套装横幅比例约 3.05:1；图片框为 2:1。页面 `ckw()` 对比例大于 2.35 的图片切换 `contain` 完整显示，导致该横幅留白、显得又扁又小。已通过增加适配 `cover_img` 修复，**未改变购买链接／价格、未全局改图片框或拉伸原图**。
+旧套装横幅比例约 3.05:1。游戏封面框现为 **460×215**。选图优先 Steam `header.jpg`（这个比例），不要用 `capsule_616x353` 或更宽的套装横幅当主封面。该扩展已用适配的 `cover_img` 修复，购买链接和价格没有改。
 
 当前游戏封面候选顺序为 `cover_img`、Steam、Nintendo、PlayStation；加载失败自动尝试后续来源。一些 Nintendo CDN 实际返回 JPEG，但 MIME 为 `application/octet-stream`，可能被图片检查判失败；已保存的本地封面不能被更新脚本覆盖回不适配外链。
 
