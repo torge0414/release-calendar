@@ -718,11 +718,6 @@ function ckw(img){
 }
 
 /* ---------- 电影(豆瓣) ---------- */
-function minfoParts(s){
-  const p = String(s||'').split('/').map(x=>x.trim()).filter(Boolean);
-  return { region: p[1] || '', kind: p[2] || '', director: p[3] || '' };   // 副标题: 年份/地区/类型/导演/主演
-}
-
 function minfo(s){
   const p = String(s||'').split('/').map(x=>x.trim()).filter(Boolean);
   return p.slice(1,4).join(' · ');
@@ -746,14 +741,12 @@ function mcard(it){
   const scoreCls = shown==null ? '' : (shown>=80?'g':(shown>=60?'y':'r'));
   const mc = shown!=null ? '<a class="gscore '+scoreCls+'" href="'+esc(it.url||'https://movie.douban.com/')+
       '" target="_blank" rel="noopener" aria-label="豆瓣 '+shown+'">'+shown+'</a>' : '';
-  const mi = minfoParts(it.info);
   const parts = String(it.info||'').split('/').map(s=>s.trim()).filter(Boolean);
   const genres = (it.genres && it.genres.length)
     ? it.genres.join(' ')
     : (parts.length >= 5 ? (parts[2] || '') : '');
   const metaBits = [it.month+'月'+it.day+'日'];
   if(genres) metaBits.push(genres);
-  if(mi.director) metaBits.push(mi.director);
   if(whenTxt) metaBits.push(whenTxt);
   const meta = metaBits.map(s=>esc(String(s))).join(' · ');
   wrap.innerHTML =
