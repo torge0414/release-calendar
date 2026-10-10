@@ -254,8 +254,16 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   #movieBody .tline .t{display:block; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
        font-size:15px; line-height:1.2; -webkit-line-clamp:unset;}
   #movieBody .mline,
-  #movieBody .mstat{margin:0; color:var(--dim); font-size:12px; font-weight:500; line-height:1.25;
+  #movieBody .mstat{margin:0; font-size:12px; font-weight:500; line-height:1.25;
        white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+  #movieBody .mline{color:var(--dim);}
+  #movieBody .mstat.when,
+  #movieBody .mstat.when.soon,
+  #movieBody .mstat.when.today,
+  #movieBody .mstat.when.out{position:static; top:auto; right:auto; left:auto;
+       background:none; border-radius:0; padding:0; font-weight:600;}
+  html.dark #movieBody .mstat.when.today,
+  html.dark #movieBody .mstat.when.out{background:none;}
   .item.pc .tline.haswhen .t{padding-right:0;}
   #movieBody .gscore{position:static; margin:0; flex:none; align-self:stretch;
        display:flex; align-items:center; justify-content:flex-end;
@@ -331,7 +339,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
        font-variant-numeric:lining-nums tabular-nums; font-feature-settings:"lnum" 1, "tnum" 1;}
   #body .gscore{position:absolute; right:22px; bottom:18px; margin:0; text-decoration:none;
        font-family:Georgia,"Times New Roman","Songti SC","SimSun",serif;
-       font-size:28px; font-weight:700; letter-spacing:0; line-height:1;
+       font-size:34px; font-weight:700; letter-spacing:0; line-height:1;
        font-variant-numeric:lining-nums tabular-nums;
        min-width:2ch; text-align:right; transition:opacity .6s;}
   #body .gscore.g{color:#2a9257;}
@@ -341,14 +349,14 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   #body .fine{display:flex; flex-wrap:wrap; align-items:center;
        color:var(--dim); font-size:12.5px; line-height:1;}
   #body .fine .sep{margin:0 6px; opacity:.55;}
-  #body .plats{padding-right:48px;}
+  #body .plats{padding-right:58px;}
   @media (max-width:640px){
     #body .item{display:flex; gap:14px; padding:12px; align-items:stretch;}
     #body .item .pic{flex-basis:148px; width:148px; height:83px;}
     #body .item .txt{display:flex;}
     #body .txt .tline .t{font-size:16px;}
     #body .txt .when{font-size:13px;}
-    #body .gscore{font-size:22px;}
+    #body .gscore{font-size:26px;}
   }
 </style>
 </head>
@@ -735,11 +743,11 @@ function mcard(it){
   if(it.day===today.getDate() && it.month===today.getMonth()+1) wrap.classList.add('today');
   const date = new Date(it.year, it.month-1, it.day);
   const diff = Math.round((date - new Date(today.getFullYear(),today.getMonth(),today.getDate()))/86400000);
-  let whenTxt='';
-  if(diff===0) whenTxt='今天上映';
-  else if(diff===1) whenTxt='明天上映';
-  else if(diff>1) whenTxt='还有 '+diff+' 天';
-  else whenTxt='已上映';
+  let whenTxt='', whenCls='';
+  if(diff===0){ whenTxt='今天上映'; whenCls='today'; }
+  else if(diff===1){ whenTxt='明天上映'; whenCls='today'; }
+  else if(diff>1){ whenTxt='还有 '+diff+' 天'; whenCls='soon'; }
+  else { whenTxt='已上映'; whenCls='out'; }
   const img = it.poster
     ? '<img class="cover" src="'+esc(it.poster)+'" alt="" loading="lazy" onerror="this.style.display=\'none\'">' : '';
   /* 豆瓣 10 分制 ×10，颜色规则与游戏相同：≥80 绿 / ≥60 黄 / <60 红 */
@@ -762,7 +770,7 @@ function mcard(it){
       '<div class="mcopy">'+
         '<div class="tline"><div class="t"></div></div>'+
         '<div class="mline">'+meta+'</div>'+
-        '<div class="mstat">'+esc(whenTxt)+'</div>'+
+        '<div class="mstat when '+whenCls+'">'+esc(whenTxt)+'</div>'+
       '</div>'+
       mc+
     '</div>';
