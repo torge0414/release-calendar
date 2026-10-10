@@ -137,9 +137,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   .pic{flex:0 0 216px; width:216px; height:108px; border-radius:14px; overflow:hidden;
        position:relative; background:var(--pic-bg); flex:none;
        box-shadow:inset 0 0 0 1px rgba(0,0,0,.03);}
-  .pic .cover{position:absolute; left:0; top:0; width:100%; height:100%; object-fit:cover; display:block;
-       transition:width .6s cubic-bezier(.4,0,.2,1), height .6s cubic-bezier(.4,0,.2,1),
-                  left .6s cubic-bezier(.4,0,.2,1), top .6s cubic-bezier(.4,0,.2,1);}
+  .pic .cover{position:absolute; left:0; top:0; width:100%; height:100%; object-fit:cover; display:block;}
   .pic .cover.wide{object-fit:contain;}  /* 超宽横幅完整显示(不裁切) */
   .pic .ph{position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
        font-size:22px; font-weight:700; color:#fff; text-shadow:0 1px 2px rgba(0,0,0,.15);}
@@ -276,9 +274,6 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   .mh .mup{font-size:11px; color:var(--dim); white-space:nowrap;}
   /* 平台标签内联官方 logo */
   .chip .pi{width:13px; height:13px; fill:currentColor; flex:none;}
-  /* 封面悬停放大: 拉大图片盒并居中, 由画框裁切。不用 transform:scale,
-     scale 会把已栅格化的位图再拉伸, 过程中变糊、停住后又变清晰。 */
-  .item:hover .pic .cover{width:106%; height:106%; left:-3%; top:-3%;}
   /* 主题滑块: 旋钮内嵌太阳/月亮矢量图标, 旋转交叉过渡 */
   .tb-ic{position:absolute; width:15px; height:15px; fill:none; stroke:currentColor;
        stroke-width:2; stroke-linecap:round; stroke-linejoin:round;
