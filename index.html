@@ -269,12 +269,12 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   html.dark #movieBody .mstat.when.soon{background:none;}
   .item.pc .tline.haswhen .t{padding-right:0;}
   #movieBody .gscore{position:static; margin:0; flex:none; align-self:baseline;
-       display:block;
+       display:inline-flex; justify-content:flex-end;
        text-decoration:none; text-shadow:none;
        font-family:var(--serif);
        font-size:28px; font-weight:700; letter-spacing:0; line-height:1;
        font-variant-numeric:lining-nums tabular-nums; font-feature-settings:"lnum" 1, "tnum" 1;
-       min-width:2ch; text-align:right; transition:opacity .22s;}
+       transition:opacity .22s;}
   #movieBody .gscore.g{color:#2a9257;}
   #movieBody .gscore.y{color:#d49d48;}
   #movieBody .gscore.r{color:#c8524d;}
@@ -336,10 +336,14 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
        font-size:22px; font-weight:700; letter-spacing:0; line-height:1.15;
        font-variant-numeric:lining-nums tabular-nums; font-feature-settings:"lnum" 1, "tnum" 1;}
   #body .gscore{position:static; margin:0; flex:none; text-decoration:none;
+       display:inline-flex; justify-content:flex-end;
        font-family:var(--serif);
        font-size:32px; font-weight:700; letter-spacing:0; line-height:1;
        font-variant-numeric:lining-nums tabular-nums;
-       min-width:2ch; text-align:right; transition:opacity .22s;}
+       transition:opacity .22s;}
+  /* 每位固定 1ch：手机衬线没有等宽数字时，十位和个位仍上下对齐 */
+  #body .gscore .dg,
+  #movieBody .gscore .dg{flex:0 0 1ch; width:1ch; text-align:center;}
   #body .gscore.g{color:#2a9257;}
   #body .gscore.y{color:#d49d48;}
   #body .gscore.r{color:#c8524d;}
@@ -677,6 +681,12 @@ function render(d){
   paint();
 }
 
+/* 评分按位拆开，每位一格。手机上的衬线数字不等宽，整段右对齐只能对齐个位 */
+function scoreLink(n, cls, href, label){
+  const digits = String(n).replace(/\d/g, d => '<span class="dg">'+d+'</span>');
+  return '<a class="gscore '+cls+'" href="'+esc(href)+'" target="_blank" rel="noopener" aria-label="'+esc(label)+'">'+digits+'</a>';
+}
+
 function card(it){
   const wrap = document.createElement('div'); wrap.className='item';
   const isToday = it.day===today.getDate() && it.month===today.getMonth()+1 && it.year===today.getFullYear();
@@ -714,7 +724,7 @@ function card(it){
   }).join('');
   const mc = (typeof it.mc==='number' && it.mc>0) ? it.mc : null;
   const scoreCls = mc==null ? '' : (mc>=80?'g':(mc>=60?'y':'r'));
-  const score = mc ? '<a class="gscore '+scoreCls+'" href="'+esc(it.mc_url||'https://www.metacritic.com/')+'" target="_blank" rel="noopener" aria-label="Metacritic '+mc+'">'+mc+'</a>' : '';
+  const score = mc ? scoreLink(mc, scoreCls, it.mc_url||'https://www.metacritic.com/', 'Metacritic '+mc) : '';
   const fine = '<span>'+it.month+'月'+it.day+'日</span><span class="sep">·</span>'+whenTag
     +(it.dev?'<span class="sep">·</span><span>'+esc(it.dev)+'</span>':'');
   wrap.innerHTML =
@@ -784,8 +794,7 @@ function mcard(it){
   /* 豆瓣 10 分制 ×10，颜色规则与游戏相同：≥80 绿 / ≥60 黄 / <60 红 */
   const shown = sc!=null ? Math.round(sc*10) : null;
   const scoreCls = shown==null ? '' : (shown>=80?'g':(shown>=60?'y':'r'));
-  const mc = shown!=null ? '<a class="gscore '+scoreCls+'" href="'+esc(it.url||'https://movie.douban.com/')+
-      '" target="_blank" rel="noopener" aria-label="豆瓣 '+shown+'">'+shown+'</a>' : '';
+  const mc = shown!=null ? scoreLink(shown, scoreCls, it.url||'https://movie.douban.com/', '豆瓣 '+shown) : '';
   const parts = String(it.info||'').split('/').map(s=>s.trim()).filter(Boolean);
   const genres = (it.genres && it.genres.length)
     ? it.genres.join(' ')
