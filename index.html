@@ -39,8 +39,9 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   *{box-sizing:border-box; margin:0; padding:0;}
   body{
     background:var(--bg); color:var(--txt); min-width:320px;
-    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro SC","Segoe UI","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+    font-family:Georgia,"Times New Roman","Songti SC","SimSun",serif;
     -webkit-font-smoothing:antialiased; padding:26px 20px 44px; overflow-x:hidden;
+    font-variant-numeric:lining-nums tabular-nums; font-feature-settings:"lnum" 1, "tnum" 1;
   }
   .wrap{max-width:860px; margin:0 auto; position:relative;}
   /* 主题切换的变色节奏与全站统一 0.6s(否则有的元素瞬间跳、有的渐变, 看起来"慢半拍") */
@@ -258,8 +259,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   /* 月份标题固定在页签下方(移出动画区, 瞬时换字, 不再叠字) */
   #mhBar{margin:16px 6px 18px;}
   /* 更新时间收在横线右端, 小字弱化(原来是独立一行, 突兀) */
-  .mh .mup{font-size:11px; color:var(--dim); white-space:nowrap;
-       font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",system-ui,sans-serif;}
+  .mh .mup{font-size:11px; color:var(--dim); white-space:nowrap;}
   /* 平台标签内联官方 logo */
   .chip .pi{width:13px; height:13px; fill:currentColor; flex:none;}
   /* 封面悬停放大: 拉大图片盒并居中, 由画框裁切。不用 transform:scale,
@@ -293,6 +293,47 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   }
   @media (max-width:360px){
     h1{font-size:13.5px; letter-spacing:.01em;}
+  }
+  /* 方案 A demo: 游戏改成目录行。电影海报墙沿用上面的卡片。 */
+  #body .list{gap:14px;}
+  #body .item{align-items:stretch; gap:22px; padding:16px 22px 16px 16px;}
+  #body .item .pic{flex-basis:256px; width:256px; height:128px;}
+  #body .txt{justify-content:flex-start; gap:8px;}
+  /* 两位数改用同高的等宽数字, 避免 2 和 6 一高一低 */
+  #body .fine,
+  #body .txt .when,
+  #body .item .chip{font-variant-numeric:lining-nums tabular-nums; font-feature-settings:"lnum" 1, "tnum" 1;}
+  #body .txt .when,
+  #body .txt .when.soon,
+  #body .txt .when.today,
+  #body .txt .when.out{position:static; top:auto; right:auto; background:none; border-radius:0; padding:0;
+       font-size:15px; font-weight:600; letter-spacing:0; line-height:1;}
+  html.dark #body .txt .when.today,
+  html.dark #body .txt .when.out{background:none;}
+  #body .txt .tline{align-items:center; gap:16px;}
+  #body .txt .tline .t{font-family:Georgia,"Times New Roman","Songti SC","SimSun",serif;
+       font-size:22px; font-weight:700; letter-spacing:0; line-height:1.15;
+       font-variant-numeric:lining-nums tabular-nums; font-feature-settings:"lnum" 1, "tnum" 1;}
+  #body .gscore{position:absolute; right:22px; bottom:18px; margin:0; text-decoration:none;
+       font-family:Georgia,"Times New Roman","Songti SC","SimSun",serif;
+       font-size:28px; font-weight:700; letter-spacing:0; line-height:1;
+       font-variant-numeric:lining-nums tabular-nums;
+       min-width:2ch; text-align:right; transition:opacity .6s;}
+  #body .gscore.g{color:#2a9257;}
+  #body .gscore.y{color:#d49d48;}
+  #body .gscore.r{color:#c8524d;}
+  #body .gscore:hover{opacity:.55;}
+  #body .fine{display:flex; flex-wrap:wrap; align-items:center;
+       color:var(--dim); font-size:12.5px; line-height:1;}
+  #body .fine .sep{margin:0 6px; opacity:.55;}
+  #body .plats{padding-right:48px;}
+  @media (max-width:640px){
+    #body .item{display:flex; gap:14px; padding:12px; align-items:stretch;}
+    #body .item .pic{flex-basis:148px; width:148px; height:74px;}
+    #body .item .txt{display:flex;}
+    #body .txt .tline .t{font-size:16px;}
+    #body .txt .when{font-size:13px;}
+    #body .gscore{font-size:22px;}
   }
 </style>
 </head>
@@ -600,7 +641,7 @@ function card(it){
   else if(diff===1){ whenTxt='明天发售'; whenCls='today'; }
   else if(diff>1){ whenTxt='还有 '+diff+' 天'; whenCls='soon'; }
   else { whenTxt='已发售'; whenCls='out'; }
-  const whenTag = whenCls ? '<span class="when '+whenCls+'">'+whenTxt+'</span>' : '';
+  const whenTag = '<span class="when '+whenCls+'">'+whenTxt+'</span>';
   const pl = it.plats||[];
   /* 封面优先横版图源; 候选链全部列出, 加载失败自动换下一张 */
   const cand = [];
@@ -619,23 +660,26 @@ function card(it){
       pfmt = (n % 1 === 0) ? String(n) : n.toFixed(2);
       pfmt = (p.key==='steam' ? '¥'+pfmt : 'HK$'+pfmt);
     }
-    const url = p.url ? 'href="'+esc(p.url)+'" target="_blank"' : '';
+    const url = p.url ? 'href="'+esc(p.url)+'" target="_blank" rel="noopener"' : '';
     const pm = (p.key==='steam'?'st':p.key);
-    return '<a class="chip '+pm+'" '+url+' aria-label="'+p.name+(pfmt?' '+pfmt:'')+'">'+(PICONS[p.key]||'')+
-      (pfmt?pfmt:'')+'</a>';   /* logo 已可识别平台, 不再显示平台名(无障碍标签保留) */
+    return '<a class="chip '+pm+'" '+url+' aria-label="'+esc(p.name+(pfmt?' '+pfmt:''))+'">'+(PICONS[p.key]||'')+
+      (pfmt?pfmt:'')+'</a>';
   }).join('');
   const mc = (typeof it.mc==='number' && it.mc>0) ? it.mc : null;
-  const mcBox = mc ? '<a class="mcbox '+(mc>=80?'g':(mc>=60?'y':'r'))+'" href="'+esc(it.mc_url||'https://www.metacritic.com/')+'" target="_blank" rel="noopener">'+
-      '<span class="mcv">'+mc+'</span></a>' : '';
+  const scoreCls = mc==null ? '' : (mc>=80?'g':(mc>=60?'y':'r'));
+  const score = mc ? '<a class="gscore '+scoreCls+'" href="'+esc(it.mc_url||'https://www.metacritic.com/')+'" target="_blank" rel="noopener" aria-label="Metacritic '+mc+'">'+mc+'</a>' : '';
+  const fine = '<span>'+it.month+'月'+it.day+'日</span>'+(it.dev?'<span class="sep">·</span><span>'+esc(it.dev)+'</span>':'');
   wrap.innerHTML =
     '<div class="pic">'+imgTag+
       '<div class="ph" style="background:'+phColor(it.title)+(imgUrl?';display:none':'')+'">'+esc(firstChar(it.title))+'</div>'+
     '</div>'+
     '<div class="txt">'+
-      '<div class="tline'+(whenTag?' haswhen':'')+'"><div class="t"></div>'+whenTag+'</div>'+
-      '<div class="tag"><span>'+it.month+'月'+it.day+'日'+(it.dev?' · '+esc(it.dev):'')+'</span></div>'+
+      '<div class="tline"><div class="t"></div></div>'+
+      '<div class="fine">'+fine+'</div>'+
+      whenTag+
       (chips?'<div class="plats">'+chips+'</div>':'')+
-    '</div>'+mcBox;
+      score+
+    '</div>';
   wrap.querySelector('.t').textContent = it.title;   /* 游戏名纯文本: 商店跳转靠下面的平台标签 */
   return wrap;
 }
