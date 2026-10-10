@@ -752,7 +752,6 @@ function mcard(it){
     ? it.genres.join(' ')
     : (parts.length >= 5 ? (parts[2] || '') : '');
   const metaBits = [it.month+'月'+it.day+'日'];
-  if(mi.region) metaBits.push(mi.region);
   if(genres) metaBits.push(genres);
   if(mi.director) metaBits.push(mi.director);
   if(whenTxt) metaBits.push(whenTxt);
