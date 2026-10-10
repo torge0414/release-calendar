@@ -25,6 +25,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   html.dark{
     --bg:#101013; --card:#1c1c21; --txt:#f5f5f7; --sub:#9b9ba1; --dim:#7c7c7e; --tab:#a4a4a6;
     --line:rgba(255,255,255,.09);
+    --card-line:rgba(255,255,255,.2);
     --acc:#3fa2ff; --acc-bg:#0d2b4a;
     --st:#54aaff; --st-bg:#0d2b4a;
     --ps:#a5a1ff; --ps-bg:#2a2852;
@@ -34,8 +35,9 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
     --shadow-hi:0 5px 12px rgba(0,0,0,.55), 0 22px 52px rgba(0,0,0,.45);
   }
   html.dark .err{background:#361d1a; border-color:#6b322c; color:#ffb4a6;}
-  /* 封面画框在夜间保持浅色, 超宽横幅(完整显示)的留白处能把深色封面衬出来 */
-  html.dark .pic{background:#c9c9cf;}
+  html.dark .item{border-color:var(--card-line);}
+  /* 夜间封面区比卡片更暗, 和右侧文字分开 */
+  html.dark .pic{background:#0b0b0e;}
   *{box-sizing:border-box; margin:0; padding:0;}
   body{
     background:var(--bg); color:var(--txt); min-width:320px;
@@ -153,8 +155,8 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   .when.soon{background:var(--acc-bg); color:var(--acc);}
   .when.today{background:#fff0dd; color:#b26a00;}
   html.dark .when.today{background:#4a320f; color:#ffc46b;}
-  .when.out{background:rgba(52,199,89,.14); color:#1f9d55;}
-  html.dark .when.out{background:rgba(48,209,88,.18); color:#4cd964;}
+  .when.out{background:transparent; color:var(--sub);}
+  html.dark .when.out{background:transparent; color:var(--sub);}
   .txt .tag{font-size:12.5px; color:var(--dim); margin-top:5px; display:flex; align-items:center; gap:7px;
        flex-wrap:wrap;}
   .txt .tag b{color:var(--today); font-weight:700;}
@@ -248,18 +250,14 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   .item.pc .txt{padding:12px 14px 14px;}
   .item.pc .txt .tline .t{white-space:normal; display:-webkit-box; -webkit-line-clamp:2;
        -webkit-box-orient:vertical; font-size:14.5px;}
-  #movieBody .mfoot{display:flex; align-items:baseline; justify-content:space-between; gap:8px; margin-top:auto; padding-top:14px;}
-  #movieBody .mfoot .when,
-  #movieBody .mfoot .when.soon,
-  #movieBody .mfoot .when.today,
-  #movieBody .mfoot .when.out{position:static; left:auto; right:auto; top:auto; bottom:auto;
-       background:none; border-radius:0; padding:0; font-size:12.5px; font-weight:600;}
-  html.dark #movieBody .mfoot .when.today,
-  html.dark #movieBody .mfoot .when.out{background:none;}
+  #movieBody .tline{align-items:flex-start; justify-content:space-between; gap:8px;}
+  #movieBody .tline .t{flex:1;}
+  #movieBody .mline{margin-top:6px; color:var(--dim); font-size:12px; font-weight:500; line-height:1.45;
+       white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
   .item.pc .tline.haswhen .t{padding-right:0;}
-  #movieBody .gscore{position:static; margin-left:auto; text-decoration:none; text-shadow:none;
+  #movieBody .gscore{position:static; margin:0; flex:none; text-decoration:none; text-shadow:none;
        font-family:Georgia,"Times New Roman","Songti SC","SimSun",serif;
-       font-size:22px; font-weight:700; letter-spacing:0; line-height:1;
+       font-size:22px; font-weight:700; letter-spacing:0; line-height:1.15;
        font-variant-numeric:lining-nums tabular-nums; font-feature-settings:"lnum" 1, "tnum" 1;
        min-width:2ch; text-align:right; transition:opacity .6s;}
   #movieBody .gscore.g{color:#2a9257;}
@@ -290,7 +288,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
     .pic{flex-basis:150px; width:150px; height:75px;}
     .list.mgrid{grid-template-columns:repeat(auto-fill,minmax(106px,1fr)); gap:10px;}
     #movieBody .gscore{font-size:18px;}
-    #movieBody .mfoot .when{font-size:11px;}
+    #movieBody .mline{font-size:11px;}
     .mh .mn{font-size:34px;}
     /* 窄屏游戏卡专用网格: 封面居左跨标题+日期两行, 平台标签独占底部整行(单行, 永不折行),
        标题/日期与封面上沿对齐, 标签行即卡片底部(评分块仍对齐标签行) */
@@ -308,7 +306,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   /* 方案 A demo: 游戏改成目录行。电影海报墙沿用上面的卡片。 */
   #body .list{gap:14px;}
   #body .item{align-items:stretch; gap:22px; padding:16px 22px 16px 16px;}
-  #body .item .pic{flex-basis:256px; width:256px; height:128px;}
+  #body .item .pic{flex-basis:256px; width:256px; height:144px;}
   #body .txt{justify-content:flex-start; gap:8px;}
   /* 两位数改用同高的等宽数字, 避免 2 和 6 一高一低 */
   #body .fine,
@@ -340,7 +338,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   #body .plats{padding-right:48px;}
   @media (max-width:640px){
     #body .item{display:flex; gap:14px; padding:12px; align-items:stretch;}
-    #body .item .pic{flex-basis:148px; width:148px; height:74px;}
+    #body .item .pic{flex-basis:148px; width:148px; height:83px;}
     #body .item .txt{display:flex;}
     #body .txt .tline .t{font-size:16px;}
     #body .txt .when{font-size:13px;}
@@ -736,12 +734,11 @@ function mcard(it){
   if(it.day===today.getDate() && it.month===today.getMonth()+1) wrap.classList.add('today');
   const date = new Date(it.year, it.month-1, it.day);
   const diff = Math.round((date - new Date(today.getFullYear(),today.getMonth(),today.getDate()))/86400000);
-  let whenTxt='', whenCls='';
-  if(diff===0){ whenTxt='今天上映'; whenCls='today'; }
-  else if(diff===1){ whenTxt='明天上映'; whenCls='today'; }
-  else if(diff>1){ whenTxt='还有 '+diff+' 天'; whenCls='soon'; }
-  else { whenTxt='已上映'; whenCls='out'; }
-  const whenTag = whenCls ? '<span class="when '+whenCls+'">'+whenTxt+'</span>' : '';
+  let whenTxt='';
+  if(diff===0) whenTxt='今天上映';
+  else if(diff===1) whenTxt='明天上映';
+  else if(diff>1) whenTxt='还有 '+diff+' 天';
+  else whenTxt='已上映';
   const img = it.poster
     ? '<img class="cover" src="'+esc(it.poster)+'" alt="" loading="lazy" onerror="this.style.display=\'none\'">' : '';
   /* 豆瓣 10 分制 ×10，颜色规则与游戏相同：≥80 绿 / ≥60 黄 / <60 红 */
@@ -750,22 +747,23 @@ function mcard(it){
   const mc = shown!=null ? '<a class="gscore '+scoreCls+'" href="'+esc(it.url||'https://movie.douban.com/')+
       '" target="_blank" rel="noopener" aria-label="豆瓣 '+shown+'">'+shown+'</a>' : '';
   const mi = minfoParts(it.info);
-  const line2 = '<span>'+it.month+'月'+it.day+'日'+(mi.region?' · '+esc(mi.region):'')+'</span>';  /* 第三行: 优先条目接口的准确类型; 回退副标题第 3 段仅在结构完整(年/地区/类型/导演/演员共 5 段)时可信;
-     否则可能把导演名当类型(如"渔村之恋") → 留空 */
   const parts = String(it.info||'').split('/').map(s=>s.trim()).filter(Boolean);
   const genres = (it.genres && it.genres.length)
     ? it.genres.join(' ')
     : (parts.length >= 5 ? (parts[2] || '') : '');
-  const line3 = genres;
+  const metaBits = [it.month+'月'+it.day+'日'];
+  if(mi.region) metaBits.push(mi.region);
+  if(genres) metaBits.push(genres);
+  if(mi.director) metaBits.push(mi.director);
+  if(whenTxt) metaBits.push(whenTxt);
+  const meta = metaBits.map(s=>esc(String(s))).join(' · ');
   wrap.innerHTML =
     '<div class="pic m">'+img+
       '<div class="ph" style="background:'+phColor(it.title)+(it.poster?';display:none':'')+'">'+esc(firstChar(it.title))+'</div>'+
     '</div>'+
     '<div class="txt">'+
-      '<div class="tline"><div class="t"></div></div>'+
-      '<div class="tag">'+line2+'</div>'+
-      (line3?'<div class="tag tag3"><span>'+esc(line3)+'</span></div>':'')+
-      '<div class="mfoot">'+whenTag+mc+'</div>'+
+      '<div class="tline"><div class="t"></div>'+mc+'</div>'+
+      '<div class="mline">'+meta+'</div>'+
     '</div>';
   wrap.querySelector('.t').textContent = it.title;   /* 电影名纯文本: 跳转只走评分块 */
   return wrap;
