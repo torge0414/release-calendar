@@ -15,14 +15,14 @@
 | 主分支 | `main` |
 | 部署 | GitHub Pages，`main` 分支根目录，legacy 构建 |
 | 页面 | 单个 `index.html`（HTML / CSS / JS），直接读取同目录的 `releases.json`、`movies.json`。没有 npm 构建 |
-| 交接时远端 `main` | `4e5f39d`（游戏列表去掉开发商名字）。工作区干净，与远端一致 |
+| 交接前远端 `main` | `e77e817`（每日任务「自动更新评分和 Steam 价格」）。其下是 `4e5f39d`（游戏列表去掉开发商名字）。本文提交在这两次评分更新之后 |
 | 用户 | Torge，设计师。视觉细节要逐项对着真实页面看，不能只看代码 |
 
 本机路径会变。写本文时仓库在 `C:\Users\Torge\release-calendar`。新 agent 应自己 `git clone` 到自己的工作区，不要依赖这条路径。
 
 仓库本地 git（不要改用户的全局配置）：`user.name = torge0414`，`user.email = 56673045+torge0414@users.noreply.github.com`，`pull.rebase = false`。每日机器人会往 `main` 提交评分，人工推送前先 fetch；若远端已有新提交，用 merge 接上，禁止强推。
 
-截至交接，数据窗口（`releases.json` / `movies.json` 的 `updated` 都是 `2026-10-10 00:55:09`；之后每日任务若没有分数或价格变化，就不会改这个时间）：
+截至交接，条目数量如下。`releases.json` 的 `updated` 是 `2026-10-10 23:48:58`，`movies.json` 的 `updated` 是 `2026-10-12 00:13:15`。每日任务只在分数或价格有变化时才改这个时间：
 
 | 月份 | 游戏 | 电影 |
 | --- | ---: | ---: |
