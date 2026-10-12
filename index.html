@@ -50,11 +50,15 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
     font-variant-numeric:lining-nums tabular-nums; font-feature-settings:"lnum" 1, "tnum" 1;
   }
   .wrap{max-width:860px; margin:0 auto; position:relative;}
-  /* 自己声明颜色的文字也要过渡；只继承颜色的子元素跟随父级 */
-  :where(body,.t,.tag,.sub,.meta,.ft,.credit,h1,.pic,.tabs,.tab,.err,.when,
+  /* WebKit 会给继承中的 color 再做过渡；文字直接取主题色，容器不重复渐变 */
+  h1,.mh .mn,.txt .tline .t{color:var(--txt);}
+  :where(body,.t,.tag,.sub,.meta,.credit,h1,.tab,.err,.when,.mh .mn,
          .fine,.mline,.pfoot,footer,.mh .my,.mh .mup,.empty,.loading,.h2c,
-         .sect h2,.sect h2 .n,.sect h2 .count,.txt .tag b,.mh .msep2){
+         .sect h2,.sect h2 .n,.sect h2 .count,.txt .tag b){
     transition:background-color var(--theme-duration) ease, color var(--theme-duration) ease, border-color var(--theme-duration) ease;
+  }
+  :where(.pic,.tabs,.mh .msep2){
+    transition:background-color var(--theme-duration) ease, border-color var(--theme-duration) ease;
   }
   .mast{position:relative;}
   .theme-btn{
@@ -137,7 +141,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   .item{
     display:flex; align-items:stretch; gap:20px; background:transparent;
     border:0; border-radius:0; padding:0;
-    box-shadow:none; transition:background-color var(--theme-duration) ease, color var(--theme-duration) ease, border-color var(--theme-duration) ease;
+    box-shadow:none; transition:background-color var(--theme-duration) ease, border-color var(--theme-duration) ease;
     position:relative; min-width:0;
   }
   .item:hover{box-shadow:none;}
@@ -155,7 +159,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
        font-size:22px; font-weight:700; color:#fff; text-shadow:0 1px 2px rgba(0,0,0,.15);}
   .txt{min-width:0; flex:1; padding:0; display:flex; flex-direction:column;}
   .txt .tline{display:flex; align-items:center; gap:8px; min-width:0;}
-  .txt .tline a.t{color:inherit; text-decoration:none; transition:opacity .6s;}
+  .txt .tline a.t{color:var(--txt); text-decoration:none; transition:opacity .6s, color var(--theme-duration) ease;}
   .txt .tline a.t:hover{opacity:.7;}
   .txt .tline .t{font-size:17px; font-weight:600; letter-spacing:-.01em; line-height:1.3;
        white-space:nowrap; overflow:hidden; text-overflow:ellipsis; min-width:0;}
