@@ -215,7 +215,7 @@ python -m http.server 8765 --bind 127.0.0.1
 
 ### 字体和颜色
 
-- 衬线（Georgia / Songti）只用于月份数字、标题和评分。
+- 月份数字和标题用 Georgia / Songti 衬线；评分用默认齐线数字的 Times New Roman / Times 衬线（`--score-serif`）。Georgia 默认旧式数字的高低不同，即使每位等宽也会看起来不齐，不要把评分字体改回 Georgia。
 - 无衬线（PingFang SC / 微软雅黑 / Noto Sans SC）用于日期、状态、价格、页签、页脚。
 - 浅色底 `#eef0f3`，深色底 `#101114`。文字 `#1c1d21` / `#f4f5f6`。
 - 「已发售」「已上映」是灰色。「还有 N 天」和「今天发售 / 今天上映」用 `#8a5200`（深色主题 `#ffc46b`）。

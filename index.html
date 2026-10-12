@@ -21,6 +21,8 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
     --shadow:none; --shadow-hi:none; --r:0px;
     --sans:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif;
     --serif:Georgia,"Times New Roman","Songti SC","SimSun",serif;
+    /* 评分使用默认齐线的衬线数字，避免 Georgia 旧式数字高低不齐 */
+    --score-serif:"Times New Roman",Times,"Liberation Serif","Noto Serif",serif;
   }
   html.dark{
     --bg:#101114; --card:transparent; --txt:#f4f5f6; --sub:#a7aab1; --dim:#8d9098; --tab:#9a9da4;
@@ -272,7 +274,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
        display:inline-grid; grid-auto-flow:column; grid-auto-columns:0.74em;
        justify-content:end; align-items:center;
        text-decoration:none; text-shadow:none;
-       font-family:var(--serif);
+       font-family:var(--score-serif);
        font-size:28px; font-weight:700; letter-spacing:0; line-height:1;
        font-variant-numeric:normal; font-feature-settings:normal;
        transition:opacity .22s;}
@@ -339,7 +341,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   #body .gscore{position:static; margin:0; flex:none; flex-shrink:0; text-decoration:none;
        display:inline-grid; grid-auto-flow:column; grid-auto-columns:0.74em;
        justify-content:end; align-items:center;
-       font-family:var(--serif);
+       font-family:var(--score-serif);
        font-size:32px; font-weight:700; letter-spacing:0; line-height:1;
        font-variant-numeric:normal; font-feature-settings:normal;
        transition:opacity .22s;}
