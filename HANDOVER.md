@@ -227,7 +227,7 @@ python -m http.server 8765 --bind 127.0.0.1
 - 封面桌面宽 256px，手机（≤640px）宽 148px，比例都是 460/215，`object-fit: cover`。
 - 平台只显示图标加价格，没有 Steam 紫、PS 蓝、NS 粉的色块。无障碍名字仍带平台名。
 - 评分和标题同一行，靠右。标题在手机上最多两行。
-- 评分由 `scoreLink()` 拆成每位一个 `.dg`。格子是 `inline-grid`，列宽 `0.74em`。不要改回整段文字加 `min-width: 2ch`，也不要改回 `flex` + `1ch`。手机上的 Georgia 数字不等宽，`1ch` 的 flex 格子会被字形撑开，十位和个位会对不齐。评分上的 `font-feature-settings` 保持 `normal`，避免手机为了等宽特性把某一位换成另一套字体。
+- 评分由 `scoreLink()` 拆成每位一个 `.dg`。格子是 `inline-grid`，列宽用 `--score-digit-width: 0.56em`（2026-10-12 按用户要求收紧间距，适配新的齐线评分字体）。不要改回整段文字加 `min-width: 2ch`，也不要改回 `flex` + `1ch`。手机上的 Georgia 数字不等宽，`1ch` 的 flex 格子会被字形撑开，十位和个位会对不齐。评分上的 `font-feature-settings` 保持 `normal`，避免手机为了等宽特性把某一位换成另一套字体。
 - 游戏名用 `gameTitle()` 在显示时处理，不要为此改 `releases.json`。有中文就只留中文，去掉英文名。括号里和名字无关的说明要去掉，例如「塞尔达传说 时之笛（2026 重制版）」显示为「塞尔达传说 时之笛」。纯英文标题保持原样。紧贴中文的罗马数字留下，例如「侠盗猎车手VI」。
 - `gameTitle()` 必须留在 `function card(` 和 `function firstChar(` 之间。`scripts/test_game_cover.js` 会把这一段切出来单独跑。`scoreLink()` 在 `card()` 前面；测试用的条目没有 `mc`，所以不会调用它。
 - 日期行只有「10月2日 · 已发售」这种日期和状态。不显示 `dev`。
@@ -276,6 +276,6 @@ python -m http.server 8765 --bind 127.0.0.1
 
 接手 https://github.com/torge0414/release-calendar 的 GitHub Pages 维护。先读 `HANDOVER.md`、`MAINTENANCE.md`、`GAME_SELECTION.md`，克隆到自己的工作区。网站只显示上月、本月、下月的游戏和电影，月份页签永远 3 个，音乐不维护。游戏按 `GAME_SELECTION.md` 精选，不要加回已剔除的移植和暂不收录条目。
 
-页面以 HANDOVER §9 为准，不要恢复旧版刊头、英文眉题、白卡片、彩色平台底、每张封面各自的比例，或游戏/电影切换时的横向滑动。游戏封面保持 460×215。有中文名时只显示中文名，并去掉括号里的重制说明。不显示开发商。评分保持每位 `0.74em` 的格子。游戏和电影共用 860px 栏宽。
+页面以 HANDOVER §9 为准，不要恢复旧版刊头、英文眉题、白卡片、彩色平台底、每张封面各自的比例，或游戏/电影切换时的横向滑动。游戏封面保持 460×215。有中文名时只显示中文名，并去掉括号里的重制说明。不显示开发商。评分保持每位 `0.56em` 的等宽格子和齐线衬线数字。游戏和电影共用 860px 栏宽。
 
 用户要求的改动在本地看过之后直接推 `main`，除非用户说只改本地。推送前先 fetch，和每日评分提交分叉时 merge，禁止强推。样式改动要在真实页面上看桌面和手机宽度。每日评分和 Steam 国区现价继续交给现有 GitHub Actions，不要再做一套。月度重整不在仓库里，也不要自行恢复已回退的 `monthly-curate.yml`；11 月 1 日由谁做，先问用户。Windows 上跑 Python 加 `PYTHONUTF8=1`。只读完本文不要就提交、推送或新建定时任务。

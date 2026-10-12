@@ -23,6 +23,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
     --serif:Georgia,"Times New Roman","Songti SC","SimSun",serif;
     /* 评分使用默认齐线的衬线数字，避免 Georgia 旧式数字高低不齐 */
     --score-serif:"Times New Roman",Times,"Liberation Serif","Noto Serif",serif;
+    --score-digit-width:0.56em;
   }
   html.dark{
     --bg:#101114; --card:transparent; --txt:#f4f5f6; --sub:#a7aab1; --dim:#8d9098; --tab:#9a9da4;
@@ -271,7 +272,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   html.dark #movieBody .mstat.when.soon{background:none;}
   .item.pc .tline.haswhen .t{padding-right:0;}
   #movieBody .gscore{position:static; margin:0; flex:none; align-self:baseline;
-       display:inline-grid; grid-auto-flow:column; grid-auto-columns:0.74em;
+       display:inline-grid; grid-auto-flow:column; grid-auto-columns:var(--score-digit-width);
        justify-content:end; align-items:center;
        text-decoration:none; text-shadow:none;
        font-family:var(--score-serif);
@@ -339,15 +340,15 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
        font-size:22px; font-weight:700; letter-spacing:0; line-height:1.15;
        font-variant-numeric:lining-nums tabular-nums; font-feature-settings:"lnum" 1, "tnum" 1;}
   #body .gscore{position:static; margin:0; flex:none; flex-shrink:0; text-decoration:none;
-       display:inline-grid; grid-auto-flow:column; grid-auto-columns:0.74em;
+       display:inline-grid; grid-auto-flow:column; grid-auto-columns:var(--score-digit-width);
        justify-content:end; align-items:center;
        font-family:var(--score-serif);
        font-size:32px; font-weight:700; letter-spacing:0; line-height:1;
        font-variant-numeric:normal; font-feature-settings:normal;
        transition:opacity .22s;}
-  /* 每位锁死同一宽度。手机上的 Georgia 没有等宽数字，flex/ch 会被字形撑开 */
+  /* 每位保持等宽格子，按齐线字体收紧间距；不用 flex/ch，避免字形撑开 */
   #body .gscore .dg,
-  #movieBody .gscore .dg{display:block; width:0.74em; min-width:0; max-width:0.74em;
+  #movieBody .gscore .dg{display:block; width:var(--score-digit-width); min-width:0; max-width:var(--score-digit-width);
        text-align:center; font-variant-numeric:normal; font-feature-settings:normal;}
   #body .gscore.g{color:#2a9257;}
   #body .gscore.y{color:#d49d48;}
