@@ -234,7 +234,10 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
        color:var(--sub); transition:background-color .22s, color .22s;}
   #topTabs .tab:hover{background:var(--pic-bg); color:var(--txt);}
   #topTabs .tab.on,#topTabs .tab.on:hover{background:var(--txt); color:var(--bg);}
-  #tabs .tab.on{box-shadow:inset 0 -1px 0 currentColor;}
+  /* 月份共用一条下划线，和列表的 0.6s 渐隐滑动一起移动 */
+  #tabs > .tabg{display:block; position:absolute; left:0; bottom:0; height:1px;
+       background:var(--txt); pointer-events:none;
+       transition:transform .6s cubic-bezier(.4,0,.2,1), width .6s cubic-bezier(.4,0,.2,1), background-color .22s;}
   .pic.m{flex:0 0 68px; width:68px; height:100px;}
   .pic.sq{flex:0 0 68px; width:68px; height:68px;}   /* 专辑封面: 正方形 */
   .pic.m .ph{font-size:20px;}
@@ -470,14 +473,14 @@ function moveGlider(tabsEl, btn, instant){
   if(!g || !btn) return;
   if(instant) g.style.transition = 'none';     // 首次/恢复定位: 不要滑动过程
   g.style.width = btn.offsetWidth + 'px';
-  g.style.transform = 'translateX(' + (btn.offsetLeft - 3) + 'px)';
+  g.style.transform = 'translateX(' + btn.offsetLeft + 'px)';
   if(instant){ void g.offsetWidth; g.style.transition = ''; }
 }
 
 /* 通用: 月份页签 + 交叉重叠过渡; panels = [{body, groups, makeCard, unit, footFn}]
    一份页签可同时控制多个 panel(游戏/电影各自的列表), 切月时两边同步 */
 function tabbed(tabsEl, panels){
-  tabsEl.innerHTML = '<span class="tabg"></span>';  // 滑块层
+  tabsEl.innerHTML = '<span class="tabg"></span>';  // 共享下划线层
   const tabKey = 'glwTab_' + (tabsEl.id || 'x');
   const groups = panels[0].groups;
   const monthKey = g => g.year + '-' + String(g.month).padStart(2, '0');
