@@ -226,6 +226,14 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   .tab:hover{color:var(--txt);}
   .tab.on{color:var(--txt); font-weight:600;}
   .tabs.top{margin:0;}
+  /* 视图切换有独立的按钮轮廓，与静态年份区分 */
+  #topTabs{gap:2px; padding:3px; border:1px solid var(--line); border-radius:7px;
+       align-items:center; overflow:visible;}
+  #topTabs .tab{display:inline-flex; align-items:center; justify-content:center;
+       min-height:30px; padding:4px 12px; border-radius:4px; line-height:20px;
+       color:var(--sub); transition:background-color .22s, color .22s;}
+  #topTabs .tab:hover{background:var(--pic-bg); color:var(--txt);}
+  #topTabs .tab.on,#topTabs .tab.on:hover{background:var(--txt); color:var(--bg);}
   #tabs .tab.on{box-shadow:inset 0 -1px 0 currentColor;}
   .pic.m{flex:0 0 68px; width:68px; height:100px;}
   .pic.sq{flex:0 0 68px; width:68px; height:68px;}   /* 专辑封面: 正方形 */
@@ -396,10 +404,10 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
     <div class="mh" id="mhBar">
       <span class="mn" id="mhMn"></span>
       <span class="my" id="mhMy"></span>
-      <div class="tabs top" id="topTabs">
+      <div class="tabs top" id="topTabs" role="group" aria-label="切换游戏和电影">
         <span class="tabg"></span>
-        <button class="tab on" data-view="game">游戏</button>
-        <button class="tab" data-view="movie">电影</button>
+        <button class="tab on" type="button" data-view="game" aria-pressed="true">游戏</button>
+        <button class="tab" type="button" data-view="movie" aria-pressed="false">电影</button>
       </div>
       <span class="msep2"></span>
       <div class="tabs" id="tabs"><span class="tabg"></span></div>
@@ -930,7 +938,11 @@ async function refreshMusic(){
     }
     curView = v;
     curViewName = v; paintUp();   // 更新时间随视图切换(游戏/电影各自的时间戳)
-    btns.forEach(b=>b.classList.toggle('on', b.dataset.view === v));
+    btns.forEach(b=>{
+      const selected = b.dataset.view === v;
+      b.classList.toggle('on', selected);
+      b.setAttribute('aria-pressed', String(selected));
+    });
     const curBtn = btns.find(b=>b.dataset.view === v);
     if(curBtn) moveGlider(top, curBtn);
     if(v === 'movie') refreshMovies();
