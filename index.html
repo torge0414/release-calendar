@@ -246,7 +246,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   #tabs > .tabg,#topTabs > .tabg{display:block; position:absolute; left:0; bottom:0; height:1px;
        background:var(--txt); pointer-events:none;
        transition:transform .6s cubic-bezier(.4,0,.2,1), width .6s cubic-bezier(.4,0,.2,1), background-color var(--theme-duration) ease;}
-  #topTabs > .tabg{transition-duration:.22s;}
+  #topTabs > .tabg{transition:background-color var(--theme-duration) ease;}
   .pic.m{flex:0 0 68px; width:68px; height:100px;}
   .pic.sq{flex:0 0 68px; width:68px; height:68px;}   /* 专辑封面: 正方形 */
   .pic.m .ph{font-size:20px;}
@@ -981,7 +981,7 @@ async function refreshMusic(){
       b.setAttribute('aria-pressed', String(selected));
     });
     const curBtn = btns.find(b=>b.dataset.view === v);
-    if(curBtn) moveGlider(top, curBtn);
+    if(curBtn) moveGlider(top, curBtn, true);   // 类别只淡入淡出，下划线直接定位，不横向滑动
     if(v === 'movie') refreshMovies();
     /* 直接用新视图高度(切换瞬间它可能还没拿到 on), 高度瞬时调整 */
     const stack = document.getElementById('viewStack');
