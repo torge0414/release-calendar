@@ -14,7 +14,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
     --line:rgba(28,29,33,.14);
     --acc:#1c1d21; --acc-bg:transparent;
     --today:#8a5200; --soon:#8a5200;
-    --score-good:#1d6a43; --score-mid:#535a66; --score-low:#a3333b;
+    --score-good:#1d6a43; --score-mid:#d49d48; --score-low:#a3333b;
     --st:#1c1d21; --st-bg:transparent;
     --ps:#1c1d21; --ps-bg:transparent;
     --ns:#1c1d21; --ns-bg:transparent;
@@ -35,7 +35,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
     --card-line:rgba(255,255,255,.14);
     --acc:#f4f5f6; --acc-bg:transparent;
     --today:#e8b764; --soon:#e8b764;
-    --score-good:#72c698; --score-mid:#aeb7c5; --score-low:#ef9398;
+    --score-good:#72c698; --score-mid:#d49d48; --score-low:#ef9398;
     --st:#f4f5f6; --st-bg:transparent;
     --ps:#f4f5f6; --ps-bg:transparent;
     --ns:#f4f5f6; --ns-bg:transparent;
@@ -278,7 +278,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   #movieBody .item.pc .txt{flex-direction:column; align-items:stretch; gap:var(--content-gap);}
   #movieBody .tline{display:block;}
   #movieBody .tline .t{display:-webkit-box; white-space:normal; overflow:hidden; text-overflow:ellipsis;
-       font-family:var(--work-title-font); font-size:18px; font-weight:700; line-height:1.4; min-height:2.8em;
+       font-family:var(--work-title-font); font-size:18px; font-weight:700; line-height:1.4;
        -webkit-line-clamp:2; -webkit-box-orient:vertical;}
   #movieBody .mline,
   #movieBody .mstat{margin:0; font-family:var(--sans); font-size:13px; font-weight:500; line-height:1.5;
@@ -841,7 +841,7 @@ function mcard(it){
   else { whenTxt='已上映'; whenCls='out'; }
   const img = it.poster
     ? '<img class="cover" src="'+esc(it.poster)+'" alt="" loading="lazy" onerror="this.style.display=\'none\'">' : '';
-  /* 豆瓣 10 分制 ×10，颜色规则与游戏相同：≥80 绿 / ≥60 灰 / <60 红 */
+  /* 豆瓣 10 分制 ×10，颜色规则与游戏相同：≥80 绿 / ≥60 黄 / <60 红 */
   const shown = sc!=null ? Math.round(sc*10) : null;
   const scoreCls = shown==null ? '' : (shown>=80?'g':(shown>=60?'y':'r'));
   const mc = shown!=null ? scoreLink(shown, scoreCls, it.url||'https://movie.douban.com/', '豆瓣 '+shown) : '';
