@@ -275,33 +275,31 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
        box-shadow:none;}
   .item.pc .pic.m .ph{font-size:34px;}
   .item.pc .txt{padding:12px 0 0;}
-  #movieBody .item.pc .txt{flex-direction:column; align-items:stretch; gap:var(--content-gap);}
+  #movieBody .item.pc .txt{flex-direction:column; align-items:stretch; gap:3px;}
   #movieBody .tline{display:flex; align-items:flex-start; gap:10px; min-width:0;}
   #movieBody .tline .t{flex:1; min-width:0; display:-webkit-box; white-space:normal; overflow:hidden; text-overflow:ellipsis;
        font-family:var(--work-title-font); font-size:18px; font-weight:700; line-height:1.4;
        -webkit-line-clamp:2; -webkit-box-orient:vertical;}
   #movieBody .mline,
-  #movieBody .mstat{margin:0; font-family:var(--sans); font-size:13px; font-weight:500; line-height:1.5;
+  #movieBody .mstat{margin:0; font-family:var(--sans); font-size:16px; font-weight:600; line-height:1.5;
        white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
-  #movieBody .mline{display:flex; align-items:baseline; gap:6px; color:var(--dim);}
-  #movieBody .mline .genres{min-width:0; overflow:hidden; text-overflow:ellipsis;}
+  #movieBody .mline{display:flex; align-items:baseline; gap:8px; color:var(--dim);}
   #body .release-date,#movieBody .release-date{flex:none; color:var(--sub); font-weight:600;
        transition:color var(--theme-duration) ease;}
-  #body .fine .sep,#movieBody .mline .sep{color:var(--dim); opacity:.65;}
-  /* 状态保持在日期下方，评分移到标题行，不再影响状态间距。 */
-  #movieBody .mfoot{display:flex; align-items:flex-start; margin-top:0;}
+  #body .fine .sep{color:var(--dim); opacity:.65;}
   #movieBody .mstat.when,
   #movieBody .mstat.when.soon,
   #movieBody .mstat.when.today,
   #movieBody .mstat.when.out{position:static; top:auto; right:auto; left:auto;
-       background:none; border-radius:0; padding:0; font-weight:500; color:var(--dim);}
+       background:none; border-radius:0; padding:0; font-weight:600; color:var(--dim);}
   #movieBody .mstat.when.soon,
   #movieBody .mstat.when.today{color:var(--soon); font-weight:600;}
   html.dark #movieBody .mstat.when.today,
   html.dark #movieBody .mstat.when.out,
   html.dark #movieBody .mstat.when.soon{background:none;}
   .item.pc .tline.haswhen .t{padding-right:0;}
-  #movieBody .gscore{position:static; margin:0; flex:none; align-self:flex-start;
+  /* 大号评分不撑高标题行，日期按片名实际高度紧接其后。 */
+  #movieBody .gscore{position:static; margin:0 0 -10.8px; flex:none; align-self:flex-start;
        display:inline-grid; grid-auto-flow:column; grid-auto-columns:var(--score-digit-width);
        justify-content:end; align-items:center;
        text-decoration:none; text-shadow:none;
@@ -339,7 +337,8 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
     .list.mgrid{grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px 12px;}
     #movieBody .tline .t{font-size:16px; font-weight:600;}
     #movieBody .mline,
-    #movieBody .mstat{font-size:13px;}
+    #movieBody .mstat{font-size:14px;}
+    #movieBody .mline{gap:4px;}
     #movieBody .gscore{font-size:28px;}
     .mh .mn{font-size:52px;}
     .mh .msep2{flex-basis:100%; height:0; min-width:0;}
@@ -424,7 +423,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
     #body .chip .pi{width:13px; height:13px;}
     #body .gscore{min-width:44px; min-height:44px; align-content:center;}
     #movieBody .gscore{position:relative; z-index:3; min-width:44px; min-height:28px; height:28px;
-         margin-left:calc(2 * var(--score-digit-width) - 44px); align-content:start;}
+         margin-left:calc(2 * var(--score-digit-width) - 44px); margin-bottom:-5.6px; align-content:start;}
     #movieBody .gscore::after{content:""; position:absolute; inset:-8px 0;}
     /* 紧凑行盒配合 44px 触摸范围，点击区不再撑开文字间距。 */
     #body .gscore{position:relative; z-index:3; min-height:24px; height:24px;
@@ -853,7 +852,7 @@ function mcard(it){
   let whenTxt='', whenCls='';
   if(diff===0){ whenTxt='今天上映'; whenCls='today'; }
   else if(diff===1){ whenTxt='明天上映'; whenCls='today'; }
-  else if(diff>1){ whenTxt='还有 '+diff+' 天'; whenCls='soon'; }
+  else if(diff>1){ whenTxt='还有'+diff+'天'; whenCls='soon'; }
   else { whenTxt='已上映'; whenCls='out'; }
   const img = it.poster
     ? '<img class="cover" src="'+esc(it.poster)+'" alt="" loading="lazy" onerror="this.style.display=\'none\'">' : '';
@@ -861,12 +860,8 @@ function mcard(it){
   const shown = sc!=null ? Math.round(sc*10) : null;
   const scoreCls = shown==null ? '' : (shown>=80?'g':(shown>=60?'y':'r'));
   const mc = shown!=null ? scoreLink(shown, scoreCls, it.url||'https://movie.douban.com/', '豆瓣 '+shown) : '';
-  const parts = String(it.info||'').split('/').map(s=>s.trim()).filter(Boolean);
-  const genres = (it.genres && it.genres.length)
-    ? it.genres.join(' ')
-    : (parts.length >= 5 ? (parts[2] || '') : '');
   const meta = '<span class="release-date">'+it.month+'月'+it.day+'日</span>'+
-    (genres?'<span class="sep">·</span><span class="genres">'+esc(genres)+'</span>':'');
+    '<span class="mstat when '+whenCls+'">'+esc(whenTxt)+'</span>';
   wrap.innerHTML =
     '<div class="pic m">'+img+
       '<div class="ph" style="background:'+phColor(it.title)+(it.poster?';display:none':'')+'">'+esc(firstChar(it.title))+'</div>'+
@@ -874,7 +869,6 @@ function mcard(it){
     '<div class="txt">'+
       '<div class="tline"><div class="t"></div>'+mc+'</div>'+
       '<div class="mline">'+meta+'</div>'+
-      '<div class="mfoot"><div class="mstat when '+whenCls+'">'+esc(whenTxt)+'</div></div>'+
     '</div>';
   wrap.querySelector('.t').textContent = it.title;   /* 电影名纯文本: 跳转只走评分块 */
   return wrap;
