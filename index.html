@@ -10,10 +10,11 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
 }catch(e){}</script>
 <style>
   :root{
-    --bg:#eef0f3; --card:transparent; --txt:#1c1d21; --sub:#5c5f66; --dim:#6a6e76; --tab:#6a6e76;
+    --bg:#eef0f3; --card:transparent; --txt:#1c1d21; --sub:#444c59; --dim:#606772; --tab:#606772;
     --line:rgba(28,29,33,.14);
     --acc:#1c1d21; --acc-bg:transparent;
     --today:#8a5200; --soon:#8a5200;
+    --score-good:#1d6a43; --score-mid:#535a66; --score-low:#a3333b;
     --st:#1c1d21; --st-bg:transparent;
     --ps:#1c1d21; --ps-bg:transparent;
     --ns:#1c1d21; --ns-bg:transparent;
@@ -21,17 +22,20 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
     --shadow:none; --shadow-hi:none; --r:0px;
     --sans:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif;
     --serif:Georgia,"Times New Roman","Songti SC","SimSun",serif;
+    --work-title-font:var(--serif);
+    --content-gap:6px;
     /* 评分使用默认齐线的衬线数字，避免 Georgia 旧式数字高低不齐 */
     --score-serif:"Times New Roman",Times,"Liberation Serif","Noto Serif",serif;
     --score-digit-width:0.56em;
     --theme-duration:.22s;
   }
   html.dark{
-    --bg:#101114; --card:transparent; --txt:#f4f5f6; --sub:#a7aab1; --dim:#8d9098; --tab:#9a9da4;
+    --bg:#101114; --card:transparent; --txt:#f4f5f6; --sub:#c5ccd6; --dim:#a3aab4; --tab:#a3aab4;
     --line:rgba(255,255,255,.14);
     --card-line:rgba(255,255,255,.14);
     --acc:#f4f5f6; --acc-bg:transparent;
-    --today:#ffc46b; --soon:#ffc46b;
+    --today:#e8b764; --soon:#e8b764;
+    --score-good:#72c698; --score-mid:#aeb7c5; --score-low:#ef9398;
     --st:#f4f5f6; --st-bg:transparent;
     --ps:#f4f5f6; --ps-bg:transparent;
     --ns:#f4f5f6; --ns-bg:transparent;
@@ -207,7 +211,8 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   .chip.ns{color:var(--ns); background:var(--ns-bg);}
   /* 悬停: 背景压暗 + 字体变亮(白)。必须放在平台色规则之后, 否则 .chip.st 的 color 会盖住这里的白。
      外描边不参与布局 → 无位移; 字号不变 → 文字不糊。 */
-  .chip:hover{opacity:.55; transform:none; box-shadow:none; color:var(--txt);}
+  .chip:hover{opacity:1; transform:none; box-shadow:none; color:var(--txt);
+       text-decoration:underline; text-underline-offset:4px;}
   .empty{color:var(--dim); font-size:14px; padding:18px 8px; text-align:center;}
   .loading{color:var(--dim); font-size:14px; text-align:center; padding:52px 0;}
   .loading .spin{display:inline-block; width:22px; height:22px; border:2.5px solid var(--spin);
@@ -269,17 +274,21 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   .item.pc .pic.m{width:100%; height:auto; aspect-ratio:2/3; flex:none; border-radius:8px;
        box-shadow:none;}
   .item.pc .pic.m .ph{font-size:34px;}
-  .item.pc .txt{padding:10px 2px 0;}
-  #movieBody .item.pc .txt{flex-direction:column; align-items:stretch; gap:4px;}
+  .item.pc .txt{padding:12px 0 0;}
+  #movieBody .item.pc .txt{flex-direction:column; align-items:stretch; gap:var(--content-gap);}
   #movieBody .tline{display:block;}
   #movieBody .tline .t{display:-webkit-box; white-space:normal; overflow:hidden; text-overflow:ellipsis;
-       font-family:var(--serif); font-size:16px; font-weight:700; line-height:1.3;
+       font-family:var(--work-title-font); font-size:18px; font-weight:700; line-height:1.4; min-height:2.8em;
        -webkit-line-clamp:2; -webkit-box-orient:vertical;}
   #movieBody .mline,
-  #movieBody .mstat{margin:0; font-family:var(--sans); font-size:13px; font-weight:500; line-height:1.3;
+  #movieBody .mstat{margin:0; font-family:var(--sans); font-size:13px; font-weight:500; line-height:1.5;
        white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
-  #movieBody .mline{color:var(--dim);}
-  #movieBody .mfoot{display:flex; align-items:baseline; justify-content:space-between; gap:10px; margin-top:2px;}
+  #movieBody .mline{display:flex; align-items:baseline; gap:6px; color:var(--dim);}
+  #movieBody .mline .genres{min-width:0; overflow:hidden; text-overflow:ellipsis;}
+  #body .release-date,#movieBody .release-date{flex:none; color:var(--sub); font-weight:600;
+       transition:color var(--theme-duration) ease;}
+  #body .fine .sep,#movieBody .mline .sep{color:var(--dim); opacity:.65;}
+  #movieBody .mfoot{display:flex; align-items:baseline; justify-content:space-between; gap:10px; margin-top:0; min-height:28px;}
   #movieBody .mstat.when,
   #movieBody .mstat.when.soon,
   #movieBody .mstat.when.today,
@@ -298,11 +307,11 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
        font-family:var(--score-serif);
        font-size:28px; font-weight:700; letter-spacing:0; line-height:1;
        font-variant-numeric:normal; font-feature-settings:normal;
-       transition:opacity .22s;}
-  #movieBody .gscore.g{color:#2a9257;}
-  #movieBody .gscore.y{color:#d49d48;}
-  #movieBody .gscore.r{color:#c8524d;}
-  #movieBody .gscore:hover{opacity:.55;}
+       transition:color var(--theme-duration) ease;}
+  #movieBody .gscore.g{color:var(--score-good);}
+  #movieBody .gscore.y{color:var(--score-mid);}
+  #movieBody .gscore.r{color:var(--score-low);}
+  #body .gscore:hover .dg,#movieBody .gscore:hover .dg{text-decoration:underline; text-underline-offset:4px;}
   .item.pc .tag3{padding-right:0;}
   .item.pc.today::before{top:14px; bottom:auto; height:44px;}
   /* 月份标题固定在页签下方(移出动画区, 瞬时换字, 不再叠字) */
@@ -325,10 +334,11 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
     h1{font-size:clamp(15px,4.8vw,32px); letter-spacing:.04em; white-space:nowrap; padding:0 60px;}
     .eyebrow{letter-spacing:.18em;}
     .pic{flex-basis:150px; width:150px; height:75px;}
-    .list.mgrid{grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px 12px;}
-    #movieBody .tline .t{font-size:14px;}
+    :root{--work-title-font:var(--sans);}
+    .list.mgrid{grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px 12px;}
+    #movieBody .tline .t{font-size:16px; font-weight:600;}
     #movieBody .mline,
-    #movieBody .mstat{font-size:12px;}
+    #movieBody .mstat{font-size:13px;}
     #movieBody .gscore{font-size:22px;}
     .mh .mn{font-size:52px;}
     .mh .msep2{flex-basis:100%; height:0; min-width:0;}
@@ -341,7 +351,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   #body .item{align-items:center; gap:22px; padding:16px 0; border-bottom:1px solid var(--line);}
   #body .item .pic{flex:0 0 256px; width:256px; height:auto; aspect-ratio:460 / 215; min-height:0; border-radius:8px;}
   #body .item .pic .cover,#body .item .pic .cover.wide{position:absolute; left:0; top:0; width:100%; height:100%; object-fit:cover;}
-  #body .txt{justify-content:center; gap:7px;}
+  #body .txt{justify-content:center; gap:var(--content-gap);}
   #body .fine,
   #body .txt .when,
   #body .item .chip{font-family:var(--sans); font-variant-numeric:lining-nums tabular-nums; font-feature-settings:"lnum" 1, "tnum" 1;}
@@ -349,15 +359,15 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   #body .txt .when.soon,
   #body .txt .when.today,
   #body .txt .when.out{position:static; top:auto; right:auto; background:none; border-radius:0; padding:0;
-       font-size:13px; font-weight:500; letter-spacing:0; line-height:1; color:var(--dim);}
+       font-size:13px; font-weight:500; letter-spacing:0; line-height:1.5; color:var(--dim);}
   #body .txt .when.soon,
   #body .txt .when.today{color:var(--soon); font-weight:600;}
   html.dark #body .txt .when.today,
   html.dark #body .txt .when.out,
   html.dark #body .txt .when.soon{background:none;}
   #body .txt .tline{align-items:baseline; justify-content:space-between; gap:16px;}
-  #body .txt .tline .t{font-family:var(--serif);
-       font-size:22px; font-weight:700; letter-spacing:0; line-height:1.15;
+  #body .txt .tline .t{font-family:var(--work-title-font);
+       font-size:20px; font-weight:700; letter-spacing:0; line-height:1.4;
        font-variant-numeric:lining-nums tabular-nums; font-feature-settings:"lnum" 1, "tnum" 1;}
   #body .gscore{position:static; margin:0; flex:none; flex-shrink:0; text-decoration:none;
        display:inline-grid; grid-auto-flow:column; grid-auto-columns:var(--score-digit-width);
@@ -365,19 +375,18 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
        font-family:var(--score-serif);
        font-size:32px; font-weight:700; letter-spacing:0; line-height:1;
        font-variant-numeric:normal; font-feature-settings:normal;
-       transition:opacity .22s;}
+       transition:color var(--theme-duration) ease;}
   /* 每位保持等宽格子，按齐线字体收紧间距；不用 flex/ch，避免字形撑开 */
   #body .gscore .dg,
   #movieBody .gscore .dg{display:block; width:var(--score-digit-width); min-width:0; max-width:var(--score-digit-width);
        text-align:center; font-variant-numeric:normal; font-feature-settings:normal;}
-  #body .gscore.g{color:#2a9257;}
-  #body .gscore.y{color:#d49d48;}
-  #body .gscore.r{color:#c8524d;}
-  #body .gscore:hover{opacity:.55;}
+  #body .gscore.g{color:var(--score-good);}
+  #body .gscore.y{color:var(--score-mid);}
+  #body .gscore.r{color:var(--score-low);}
   #body .fine{display:flex; flex-wrap:wrap; align-items:baseline;
-       color:var(--dim); font-size:13px; line-height:1.4;}
-  #body .fine .sep{margin:0 6px; opacity:.55;}
-  #body .plats{padding-right:0; margin-top:2px; gap:16px;}
+       color:var(--dim); font-size:13px; line-height:1.5;}
+  #body .fine .sep{margin:0 6px;}
+  #body .plats{padding-right:0; margin-top:0; gap:16px;}
   .chip,
   .chip.st,.chip.ps,.chip.ns{color:var(--txt); background:transparent; border-radius:0;
        padding:0; height:auto; font-size:13px; font-weight:500; letter-spacing:0; box-shadow:none;}
@@ -388,19 +397,18 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   button:focus-visible,a:focus-visible{outline:2px solid var(--txt); outline-offset:3px;}
   @media (max-width:640px){
     #body .item{display:flex; gap:14px; padding:14px 0; align-items:center;}
-    #body .item .pic{flex:0 0 148px; width:148px; height:auto; aspect-ratio:460 / 215; min-height:0;}
+    #body .item .pic{flex:0 0 clamp(108px,32vw,148px); width:clamp(108px,32vw,148px); height:auto; aspect-ratio:460 / 215; min-height:0;}
     #body .item .txt{display:flex;}
     #body .txt .tline{align-items:flex-start;}
-    #body .txt .tline .t{flex:1; min-width:0; font-size:16px; white-space:normal; display:-webkit-box;
+    #body .txt .tline .t{flex:1; min-width:0; font-size:16px; font-weight:600; min-height:2.8em; white-space:normal; display:-webkit-box;
          -webkit-line-clamp:2; -webkit-box-orient:vertical;}
-    #body .txt .when,#body .fine{font-size:12px;}
+    #body .txt .when,#body .fine{font-size:13px;}
     #body .gscore{font-size:24px;}
     /* 手机操作保留文字样式，点击范围至少 44px，平台换行不重叠。 */
     .mh{gap:12px;}
     #tabs{gap:4px;}
     #tabs .tab{min-width:44px; min-height:44px;}
     #topTabs .tab{min-width:44px; min-height:44px;}
-    #body .txt{gap:4px;}
     #body .plats{gap:0 12px; margin-top:0;}
     #body .chip{min-width:44px; min-height:44px;}
     #body .gscore,#movieBody .gscore{min-width:44px; min-height:44px; align-content:center;}
@@ -768,7 +776,7 @@ function card(it){
   const mc = (typeof it.mc==='number' && it.mc>0) ? it.mc : null;
   const scoreCls = mc==null ? '' : (mc>=80?'g':(mc>=60?'y':'r'));
   const score = mc ? scoreLink(mc, scoreCls, it.mc_url||'https://www.metacritic.com/', 'Metacritic '+mc) : '';
-  const fine = '<span>'+it.month+'月'+it.day+'日</span><span class="sep">·</span>'+whenTag;
+  const fine = '<span class="release-date">'+it.month+'月'+it.day+'日</span><span class="sep">·</span>'+whenTag;
   wrap.innerHTML =
     '<div class="pic">'+imgTag+
       '<div class="ph" style="background:'+phColor(it.title)+(imgUrl?';display:none':'')+'">'+esc(firstChar(gameTitle(it.title)))+'</div>'+
@@ -833,7 +841,7 @@ function mcard(it){
   else { whenTxt='已上映'; whenCls='out'; }
   const img = it.poster
     ? '<img class="cover" src="'+esc(it.poster)+'" alt="" loading="lazy" onerror="this.style.display=\'none\'">' : '';
-  /* 豆瓣 10 分制 ×10，颜色规则与游戏相同：≥80 绿 / ≥60 黄 / <60 红 */
+  /* 豆瓣 10 分制 ×10，颜色规则与游戏相同：≥80 绿 / ≥60 灰 / <60 红 */
   const shown = sc!=null ? Math.round(sc*10) : null;
   const scoreCls = shown==null ? '' : (shown>=80?'g':(shown>=60?'y':'r'));
   const mc = shown!=null ? scoreLink(shown, scoreCls, it.url||'https://movie.douban.com/', '豆瓣 '+shown) : '';
@@ -841,9 +849,8 @@ function mcard(it){
   const genres = (it.genres && it.genres.length)
     ? it.genres.join(' ')
     : (parts.length >= 5 ? (parts[2] || '') : '');
-  const metaBits = [it.month+'月'+it.day+'日'];
-  if(genres) metaBits.push(genres);
-  const meta = metaBits.map(s=>esc(String(s))).join(' · ');
+  const meta = '<span class="release-date">'+it.month+'月'+it.day+'日</span>'+
+    (genres?'<span class="sep">·</span><span class="genres">'+esc(genres)+'</span>':'');
   wrap.innerHTML =
     '<div class="pic m">'+img+
       '<div class="ph" style="background:'+phColor(it.title)+(it.poster?';display:none':'')+'">'+esc(firstChar(it.title))+'</div>'+
