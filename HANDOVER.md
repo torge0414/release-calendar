@@ -245,9 +245,11 @@ python -m http.server 8765 --bind 127.0.0.1
 - 主题变色统一用 `--theme-duration: .22s` 和 `ease`，文字、平台价格、年份、更新时间、游戏日期、电影信息、页脚都要同步；自己声明颜色的元素不能漏掉过渡，只继承颜色的子元素跟随父级。主题旋钮移动仍约 0.35 秒。`prefers-reduced-motion` 要保留。
 - iPhone Safari / WebKit 会对继承中的 `color` 叠加过渡，导致衬线字标和作品标题延迟到约 0.4～0.6 秒。`h1`、`.mh .mn`、`.txt .tline .t` 必须直接取 `var(--txt)`；`.item`、`.pic`、`.tabs` 等只继承文字色的容器不能再做 `color` 过渡。保留衬线字体，验收必须包含 WebKit 的手机宽度和双向切换，不能只测 Chromium。
 - 主题按钮必须是 `position: relative`。旋钮是绝对定位；按钮若是 static，旋钮会相对 `.mast` 定位，叠到字标上。浅色旋钮是白底琥珀色太阳（`#d18a1d`）。夜间旋钮是深灰（`#565661`）加浅蓝灰月亮（`#d6ddf2`）。不要两个主题都用白旋钮。
-- 偏好键：主题 `glwTheme`（`dark` / `light`，没有存过则跟系统），视图 `glwView`（`game` / `movie`），月份 `glwTab_tabs_month`（如 `2026-10`，存的是年月不是页码）。切换游戏 / 电影会把月份重置到真正的本月。
+- 偏好键：主题 `glwTheme`（`dark` / `light`，没有存过则跟系统），视图 `glwView`（`game` / `movie`），月份 `glwTab_tabs_month`（如 `2026-10`，存的是年月不是页码）。2026-10-13 按用户要求，切换游戏 / 电影保留当前所选月份，不再重置到本月。
+- 隐藏类别和月份页都用 `inert` 和 `aria-hidden="true"` 退出键盘、读屏导航；切换开始即更新，保留原有淡出动画。月份按钮用 `aria-pressed` 表示选择。
+- 手机（≤640px）月份和类别按钮、平台和评分链接点击范围至少 44×44px；主题按钮保留原尺寸，用伪元素把触摸高度扩到 45px。平台行的间距按扩大后的链接计算，不允许触摸区域重叠。
 - 启动时 `#boot` 盖住页面，数据画完才揭开。验收时等它消失再看布局。
-- `scripts/test_month_tabs.js` 会把 `function tabbed` 到 `function showCredit` 切出去跑。不要弄坏它依赖的自由变量：`PAGE_CLASSES`、`animSwap`、`moveGlider`、`stackFit`、`esc`、`today`、`document`、`localStorage`。
+- `scripts/test_month_tabs.js` 会把 `function setPageActive` 到 `function showCredit` 切出去跑。不要弄坏它依赖的自由变量：`PAGE_CLASSES`、`animSwap`、`moveGlider`、`stackFit`、`esc`、`today`、`document`、`localStorage`。
 - 键盘焦点用 `focus-visible` 描边。不要拿掉。
 
 ## 10. 和当前页面对得上的近期提交

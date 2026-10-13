@@ -395,6 +395,18 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
          -webkit-line-clamp:2; -webkit-box-orient:vertical;}
     #body .txt .when,#body .fine{font-size:12px;}
     #body .gscore{font-size:24px;}
+    /* 手机操作保留文字样式，点击范围至少 44px，平台换行不重叠。 */
+    .mh{gap:12px;}
+    #tabs{gap:4px;}
+    #tabs .tab{min-width:44px; min-height:44px;}
+    #topTabs .tab{min-width:44px; min-height:44px;}
+    #body .txt{gap:4px;}
+    #body .plats{gap:0 12px; margin-top:0;}
+    #body .chip{min-width:44px; min-height:44px;}
+    #body .gscore,#movieBody .gscore{min-width:44px; min-height:44px; align-content:center;}
+    #body .gscore{margin-left:calc(2 * var(--score-digit-width) - 44px);}
+    #movieBody .mfoot{min-height:44px;}
+    .theme-btn::after{content:""; position:absolute; inset:-7px 0; border-radius:999px;}
     h1{font-size:14px; letter-spacing:0; padding:0;}
   }
   @media (prefers-reduced-motion:reduce){
@@ -422,16 +434,16 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
         <button class="tab" type="button" data-view="movie" aria-pressed="false">电影</button>
       </div>
       <span class="msep2"></span>
-      <div class="tabs" id="tabs"><span class="tabg"></span></div>
+      <div class="tabs" id="tabs" role="group" aria-label="切换月份"><span class="tabg"></span></div>
       <span class="mup" id="mhUp"></span>
     </div>
   </header>
   <div class="pages" id="viewStack">
-  <div class="page on" id="viewGame">
+  <div class="page on" id="viewGame" aria-hidden="false">
     <div class="err" id="errBox"></div>
     <div id="body"><div class="loading"><span class="spin"></span></div></div>
   </div>
-  <div class="page" id="viewMovie">
+  <div class="page" id="viewMovie" inert aria-hidden="true">
     <div class="err" id="mErrBox"></div>
     <div id="movieBody"><div class="loading"><span class="spin"></span></div></div>
   </div>
@@ -488,6 +500,11 @@ function moveGlider(tabsEl, btn, instant){
 
 /* 通用: 月份页签 + 交叉重叠过渡; panels = [{body, groups, makeCard, unit, footFn}]
    一份页签可同时控制多个 panel(游戏/电影各自的列表), 切月时两边同步 */
+function setPageActive(page, active){
+  page.inert = !active;
+  page.setAttribute('aria-hidden', String(!active));
+}
+
 function tabbed(tabsEl, panels){
   tabsEl.innerHTML = '<span class="tabg"></span>';  // 共享下划线层
   const tabKey = 'glwTab_' + (tabsEl.id || 'x');
@@ -508,6 +525,7 @@ function tabbed(tabsEl, panels){
       const items = g.games || g.movies || g.albums || [];
       const sect = document.createElement('div');
       sect.className = 'sect page' + (i===curIdx ? ' on' : '');
+      setPageActive(sect, i===curIdx);
       const list = document.createElement('div'); list.className='list' + (p.grid?' mgrid':'');
       if(!items.length) list.innerHTML='<div class="empty">'+esc(p.emptyText || '该月暂无已定档')+'</div>';
       else items.forEach(it=>list.appendChild(p.makeCard(it)));
@@ -526,13 +544,15 @@ function tabbed(tabsEl, panels){
   });
 
   const fitAll = ()=> panels.forEach(p=>p.fit());
-  /* 按 panel 实际显示的页来切(各 panel 可能因重置时机不同而暂时不同步) */
+  /* 两个类别共享所选月份，隐藏页在动画开始时就退出交互。 */
   const applyIdx = (p, i, animate)=>{
     const onIdx = p.sections.findIndex(s=>s.classList.contains('on'));
     const pCur = onIdx >= 0 ? onIdx : 0;
     if(pCur === i) return;
     const cur = p.sections[pCur], nxt = p.sections[i];
     if(!cur || !nxt) return;
+    setPageActive(cur, false);
+    setPageActive(nxt, true);
     if(animate){
       /* 动画期间容器按两页里更高的那页撑住: 否则高度立即缩到新页, 旧页多出的部分会被 .pages 的
          overflow:hidden 直接切掉(表现为"一部分内容没有动效就消失")。640ms 后再收敛到新页高度。 */
@@ -547,19 +567,10 @@ function tabbed(tabsEl, panels){
       nxt.classList.add('on');
     }
   };
-  const switchTo = (i, animate, opts)=>{
-    opts = opts || {};
-    if(opts.onlyBody){
-      /* 只把某个视图的列表归位(不碰月签/记忆/别的视图), 用于切视图后旧视图的延迟归位 */
-      const p = panels.find(x=>x.body === opts.onlyBody);
-      if(p) applyIdx(p, i, false);
-      fitAll();
-      return;
-    }
-    if(i === curIdx && !opts.force) return;
+  const switchTo = (i, animate)=>{
+    if(i === curIdx) return;
     if(animate === undefined) animate = true;
     panels.forEach(p=>{
-      if(opts.skipBody && p.body === opts.skipBody) return;   // 正在淡出的视图先不动(否则会闪现)
       applyIdx(p, i, animate);
     });
     curIdx = i;
@@ -569,23 +580,25 @@ function tabbed(tabsEl, panels){
     try { localStorage.setItem(tabKey + '_month', monthKey(groups[i])); } catch(e) {}
     fitAll();
     stackFit();
-    tabsEl.querySelectorAll('.tab').forEach((b,j)=>b.classList.toggle('on', j===i));
-    /* 滑块: 正常切换有动画; 静默归位默认瞬移, 但 opts.glide 时仍平滑滑动(视图切换时月份从下月回到本月) */
+    tabsEl.querySelectorAll('.tab').forEach((b,j)=>{
+      b.classList.toggle('on', j===i);
+      b.setAttribute('aria-pressed', String(j===i));
+    });
+    /* 下划线和月份列表一起切换。 */
     const actBtn = tabsEl.querySelectorAll('.tab')[i];
-    moveGlider(tabsEl, actBtn, !animate && !opts.glide);
+    moveGlider(tabsEl, actBtn, !animate);
     /* 窄屏页签多到溢出时, 把当前页签滚动居中(scroll-behavior:smooth 负责平滑) */
     if(actBtn && tabsEl.scrollWidth > tabsEl.clientWidth + 1){
       const x = actBtn.offsetLeft - (tabsEl.clientWidth - actBtn.offsetWidth)/2;
-      tabsEl.scrollTo({left: Math.max(0, x), behavior: (!animate && !opts.glide) ? 'auto' : 'smooth'});
+      tabsEl.scrollTo({left: Math.max(0, x), behavior: animate ? 'smooth' : 'auto'});
     }
   };
 
-  /* 供顶层视图切换时把月份重置回「本月」: skipBody 跳过正在淡出的视图; force 用于动画后再补一次 */
-  window['_resetMonth_' + (tabsEl.id || 'x')] = (opts)=> switchTo(currentIdx, false, opts);
-
   panels[0].groups.forEach((g,i)=>{
     const btn = document.createElement('button');
+    btn.type = 'button';
     btn.className = 'tab' + (i===curIdx ? ' on' : '');
+    btn.setAttribute('aria-pressed', String(i===curIdx));
     const relativeMonth = (g.year-today.getFullYear())*12 + g.month-(today.getMonth()+1);
     const monthLabel = ({'-1':'上月','0':'本月','1':'下月'})[relativeMonth] || (g.year+'年');
     btn.textContent = monthLabel;   /* 具体月份由下方大标题显示, 页签只标相对位置(不再重复) */
@@ -595,8 +608,12 @@ function tabbed(tabsEl, panels){
 
   const fitKey = '_fit_' + (tabsEl.id || 'x');
   if(window[fitKey]) window.removeEventListener('resize', window[fitKey]);
-  window[fitKey] = fitAll;
-  window.addEventListener('resize', fitAll);
+  const resizeFit = ()=>{
+    fitAll();
+    moveGlider(tabsEl, tabsEl.querySelectorAll('.tab')[curIdx], true);
+  };
+  window[fitKey] = resizeFit;
+  window.addEventListener('resize', resizeFit);
   moveGlider(tabsEl, tabsEl.querySelectorAll('.tab')[curIdx], true);   // 恢复定位不滑动
   const initBtn = tabsEl.querySelectorAll('.tab')[curIdx];
   if(initBtn && tabsEl.scrollWidth > tabsEl.clientWidth + 1){   // 恢复时若页签溢出, 瞬时居中当前月
@@ -930,6 +947,8 @@ async function refreshMusic(){
   function setView(v, animate){
     if(v === curView || VIEWS.indexOf(v) < 0) return;
     const cur = viewEl[curView], nxt = viewEl[v];
+    setPageActive(cur, false);
+    setPageActive(nxt, true);
     if(animate){
       const stackEl = document.getElementById('viewStack');
       const hh = Math.max(cur.offsetHeight, nxt.offsetHeight);
@@ -938,11 +957,6 @@ async function refreshMusic(){
       clearTimeout(stackHT);
       stackHT = setTimeout(()=>{ holdStackH = 0; stackFit(); }, 260);
       animFade(cur, nxt);          // 类别切换只淡入淡出; 月份切换仍走 animSwap 的横向过渡
-      /* 月份重置: 新视图立即归位(它刚从透明淡入, 看不到); 旧视图正在淡出, 等动画结束再归位(否则会闪出"本月"列表) */
-      const BODY_ID = { game: 'body', movie: 'movieBody' };
-      const oldBody = document.getElementById(BODY_ID[curView]);   // 旧视图的列表容器(月签重置时要跳过它)
-      if(window['_resetMonth_tabs']) window['_resetMonth_tabs']({ skipBody: oldBody, glide: true });
-      setTimeout(()=>{ if(window['_resetMonth_tabs']) window['_resetMonth_tabs']({ onlyBody: oldBody }); }, 280);
     } else {
       PAGE_CLASSES.forEach(c=>{ cur.classList.remove(c); nxt.classList.remove(c); });
       nxt.classList.add('on');

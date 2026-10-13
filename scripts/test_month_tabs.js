@@ -5,7 +5,7 @@ const path = require('node:path');
 const vm = require('node:vm');
 const html = fs.readFileSync(path.join(__dirname, '..', 'index.html'), 'utf8');
 for (const [, script] of html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)) new vm.Script(script);
-const code = html.slice(html.indexOf('function tabbed('), html.indexOf('function showCredit('));
+const code = html.slice(html.indexOf('function setPageActive('), html.indexOf('function showCredit('));
 class Element {
   constructor(){this.children=[];this.names=new Set();this.style={};this.handlers={};this.offsetHeight=100;this.offsetWidth=100;this.offsetLeft=3;
     this.classList={add:(...v)=>v.forEach(x=>this.names.add(x)),remove:(...v)=>v.forEach(x=>this.names.delete(x)),contains:v=>this.names.has(v),toggle:(v,on)=>on?this.names.add(v):this.names.delete(v)};
@@ -14,6 +14,7 @@ class Element {
   set innerHTML(value){this.children=[];}
   appendChild(child){this.children.push(child);return child;}
   addEventListener(event,fn){this.handlers[event]=fn;}
+  setAttribute(key,value){(this.attributes ||= {})[key]=value;}
   querySelectorAll(){return this.children.filter(c=>c.names.has('tab'));}
 }
 function fixture(months,today,saved={}){
@@ -25,19 +26,31 @@ function fixture(months,today,saved={}){
   return {tabs,panels,memory,window};
 }
 function active(p){return p.sections.findIndex(s=>s.classList.contains('on'));}
+function assertActive(f,index){
+  for(const p of f.panels){
+    assert.equal(active(p),index);
+    p.sections.forEach((s,i)=>{
+      assert.equal(s.inert,i!==index);
+      assert.equal(s.attributes['aria-hidden'],String(i!==index));
+    });
+  }
+  f.tabs.children.forEach((b,i)=>assert.equal(b.attributes['aria-pressed'],String(i===index)));
+}
 const months=[[2026,9],[2026,10],[2026,11]];
 const normal=fixture(months,new Date(2026,9,1),{glwTab_tabs:'0'});
 assert.deepEqual(normal.tabs.children.map(c=>c.textContent),['上月','本月','下月']);
-for(const p of normal.panels){assert.equal(active(p),1);assert(p.sections[0].classList.contains('off'));assert(p.sections[2].classList.contains('off'));}
+assertActive(normal,1);
 normal.tabs.children[2].handlers.click();
-for(const p of normal.panels)assert.equal(active(p),2);
+assertActive(normal,2);
 assert.equal(normal.memory.get('glwTab_tabs_month'),'2026-11');
-normal.window._resetMonth_tabs();
-for(const p of normal.panels)assert.equal(active(p),1);
+normal.tabs.children[0].handlers.click();
+assertActive(normal,0);
+normal.tabs.children[1].handlers.click();
+assertActive(normal,1);
 const restored=fixture(months,new Date(2026,9,1),{glwTab_tabs_month:'2026-11'});
-for(const p of restored.panels)assert.equal(active(p),2);
+assertActive(restored,2);
 const expired=fixture(months,new Date(2026,9,1),{glwTab_tabs_month:'2026-08'});
-for(const p of expired.panels)assert.equal(active(p),1);
+assertActive(expired,1);
 const january=fixture([[2026,12],[2027,1],[2027,2]],new Date(2027,0,1));
 assert.deepEqual(january.tabs.children.map(c=>c.textContent),['上月','本月','下月']);
-console.log('Month tabs valid: labels, default current month, switching, reset, persistence and year boundary');
+console.log('Month tabs valid: labels, default month, shared selection, inert hidden pages, accessible selection, persistence and year boundary');
