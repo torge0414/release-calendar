@@ -278,20 +278,20 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   #movieBody .item.pc .txt{flex-direction:column; align-items:stretch; gap:3px;}
   #movieBody .tline{display:flex; align-items:flex-start; gap:10px; min-width:0;}
   #movieBody .tline .t{flex:1; min-width:0; display:-webkit-box; white-space:normal; overflow:hidden; text-overflow:ellipsis;
-       font-family:var(--work-title-font); font-size:18px; font-weight:700; line-height:1.4;
+       font-family:var(--work-title-font); font-size:26px; font-weight:700; line-height:1.25;
        -webkit-line-clamp:2; -webkit-box-orient:vertical;}
   #movieBody .mline,
-  #movieBody .mstat{margin:0; font-family:var(--sans); font-size:16px; font-weight:600; line-height:1.5;
+  #movieBody .mstat{margin:0; font-family:var(--sans); font-size:13px; font-weight:500; line-height:1.5;
        white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
-  #movieBody .mline{display:flex; align-items:baseline; gap:8px; color:var(--dim);}
+  #movieBody .mline{display:flex; align-items:baseline; color:var(--dim);}
   #body .release-date,#movieBody .release-date{flex:none; color:var(--sub); font-weight:600;
        transition:color var(--theme-duration) ease;}
-  #body .fine .sep{color:var(--dim); opacity:.65;}
+  #body .fine .sep,#movieBody .mline .sep{color:var(--dim); opacity:.65; flex:none; margin:0 6px; font-weight:400;}
   #movieBody .mstat.when,
   #movieBody .mstat.when.soon,
   #movieBody .mstat.when.today,
   #movieBody .mstat.when.out{position:static; top:auto; right:auto; left:auto;
-       background:none; border-radius:0; padding:0; font-weight:600; color:var(--dim);}
+       background:none; border-radius:0; padding:0; font-weight:500; color:var(--dim);}
   #movieBody .mstat.when.soon,
   #movieBody .mstat.when.today{color:var(--soon); font-weight:600;}
   html.dark #movieBody .mstat.when.today,
@@ -299,7 +299,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   html.dark #movieBody .mstat.when.soon{background:none;}
   .item.pc .tline.haswhen .t{padding-right:0;}
   /* 大号评分不撑高标题行，日期按片名实际高度紧接其后。 */
-  #movieBody .gscore{position:static; margin:0 0 -10.8px; flex:none; align-self:flex-start;
+  #movieBody .gscore{position:static; margin:0 0 -3.5px; flex:none; align-self:flex-start;
        display:inline-grid; grid-auto-flow:column; grid-auto-columns:var(--score-digit-width);
        justify-content:end; align-items:center;
        text-decoration:none; text-shadow:none;
@@ -335,10 +335,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
     .pic{flex-basis:150px; width:150px; height:75px;}
     :root{--work-title-font:var(--sans);}
     .list.mgrid{grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px 12px;}
-    #movieBody .tline .t{font-size:16px; font-weight:600;}
-    #movieBody .mline,
-    #movieBody .mstat{font-size:14px;}
-    #movieBody .mline{gap:4px;}
+    #movieBody .tline .t{font-size:16px; font-weight:600; line-height:1.4;}
     #movieBody .gscore{font-size:28px;}
     .mh .mn{font-size:52px;}
     .mh .msep2{flex-basis:100%; height:0; min-width:0;}
@@ -385,7 +382,6 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   #body .gscore.r{color:var(--score-low);}
   #body .fine{display:flex; flex-wrap:wrap; align-items:baseline;
        color:var(--dim); font-size:13px; line-height:1.5;}
-  #body .fine .sep{margin:0 6px;}
   #body .plats{padding-right:0; margin-top:0; gap:16px;}
   .chip,
   .chip.st,.chip.ps,.chip.ns{color:var(--txt); background:transparent; border-radius:0;
@@ -861,6 +857,7 @@ function mcard(it){
   const scoreCls = shown==null ? '' : (shown>=80?'g':(shown>=60?'y':'r'));
   const mc = shown!=null ? scoreLink(shown, scoreCls, it.url||'https://movie.douban.com/', '豆瓣 '+shown) : '';
   const meta = '<span class="release-date">'+it.month+'月'+it.day+'日</span>'+
+    '<span class="sep">·</span>'+
     '<span class="mstat when '+whenCls+'">'+esc(whenTxt)+'</span>';
   wrap.innerHTML =
     '<div class="pic m">'+img+
