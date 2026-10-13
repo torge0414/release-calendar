@@ -15,6 +15,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
     --acc:#1c1d21; --acc-bg:transparent;
     --today:#8a5200; --soon:#8a5200;
     --score-good:#1d6a43; --score-mid:#d49d48; --score-low:#a3333b;
+    --score-good-hover:#124c2e; --score-mid-hover:#a86b14; --score-low-hover:#7c2028;
     --st:#1c1d21; --st-bg:transparent;
     --ps:#1c1d21; --ps-bg:transparent;
     --ns:#1c1d21; --ns-bg:transparent;
@@ -36,6 +37,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
     --acc:#f4f5f6; --acc-bg:transparent;
     --today:#e8b764; --soon:#e8b764;
     --score-good:#72c698; --score-mid:#d49d48; --score-low:#ef9398;
+    --score-good-hover:#9ae3bb; --score-mid-hover:#f1c06f; --score-low-hover:#ffb4bc;
     --st:#f4f5f6; --st-bg:transparent;
     --ps:#f4f5f6; --ps-bg:transparent;
     --ns:#f4f5f6; --ns-bg:transparent;
@@ -240,18 +242,11 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   .tab:hover{color:var(--txt);}
   .tab.on{color:var(--txt); font-weight:600;}
   .tabs.top{margin:0;}
-  /* 视图切换有独立的按钮轮廓，与静态年份区分 */
-  #topTabs{gap:2px; padding:3px; border:1px solid var(--line); border-radius:7px;
-       align-items:center; overflow:visible;}
-  #topTabs .tab{display:inline-flex; align-items:center; justify-content:center;
-       min-height:30px; padding:4px 12px; border-radius:4px; line-height:20px;
-       color:var(--sub); transition:background-color var(--theme-duration) ease, color var(--theme-duration) ease;}
-  #topTabs .tab:hover{background:var(--pic-bg); color:var(--txt);}
-  #topTabs .tab.on,#topTabs .tab.on:hover{background:var(--txt); color:var(--bg);}
-  /* 月份共用一条下划线，和列表的 0.6s 渐隐滑动一起移动 */
-  #tabs > .tabg{display:block; position:absolute; left:0; bottom:0; height:1px;
+  /* 类别和月份使用相同的文字页签与共享下划线。 */
+  #tabs > .tabg,#topTabs > .tabg{display:block; position:absolute; left:0; bottom:0; height:1px;
        background:var(--txt); pointer-events:none;
        transition:transform .6s cubic-bezier(.4,0,.2,1), width .6s cubic-bezier(.4,0,.2,1), background-color var(--theme-duration) ease;}
+  #topTabs > .tabg{transition-duration:.22s;}
   .pic.m{flex:0 0 68px; width:68px; height:100px;}
   .pic.sq{flex:0 0 68px; width:68px; height:68px;}   /* 专辑封面: 正方形 */
   .pic.m .ph{font-size:20px;}
@@ -310,7 +305,9 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   #movieBody .gscore.g{color:var(--score-good);}
   #movieBody .gscore.y{color:var(--score-mid);}
   #movieBody .gscore.r{color:var(--score-low);}
-  #body .gscore:hover .dg,#movieBody .gscore:hover .dg{text-decoration:underline; text-underline-offset:4px;}
+  :is(#body,#movieBody) .gscore.g:is(:hover,:focus-visible){color:var(--score-good-hover);}
+  :is(#body,#movieBody) .gscore.y:is(:hover,:focus-visible){color:var(--score-mid-hover);}
+  :is(#body,#movieBody) .gscore.r:is(:hover,:focus-visible){color:var(--score-low-hover);}
   .item.pc .tag3{padding-right:0;}
   .item.pc.today::before{top:14px; bottom:auto; height:44px;}
   /* 月份标题固定在页签下方(移出动画区, 瞬时换字, 不再叠字) */
@@ -411,7 +408,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
     #body .gscore{font-size:24px;}
     /* 手机操作保留文字样式，点击范围至少 44px，平台换行不重叠。 */
     .mh{gap:12px;}
-    #tabs{gap:4px;}
+    #tabs,#topTabs{gap:4px;}
     #tabs .tab{min-width:44px; min-height:44px;}
     #topTabs .tab{min-width:44px; min-height:44px;}
     #body .plats{gap:20px 6px; margin-top:0;}
@@ -999,6 +996,9 @@ async function refreshMusic(){
   try { saved = localStorage.getItem('glwView') || 'game'; } catch(e) {}
   if(saved === 'movie' || saved === 'music') setView(saved, false);   // 恢复上次视图(无动画, 三个视图都要认)
   moveGlider(top, top.querySelector('.tab.on') || btns[0], true);   // 恢复定位不滑动
+  const alignViewGlider = ()=>moveGlider(top, top.querySelector('.tab.on') || btns[0], true);
+  window.addEventListener('resize', alignViewGlider);
+  window.addEventListener('load', alignViewGlider);
   window.addEventListener('resize', stackFit);
   window.addEventListener('resize', alignMc);
   stackFit();
