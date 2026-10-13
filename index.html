@@ -59,7 +59,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   /* WebKit 会给继承中的 color 再做过渡；文字直接取主题色，容器不重复渐变 */
   h1,.mh .mn,.txt .tline .t{color:var(--txt);}
   :where(body,.t,.tag,.sub,.meta,.credit,h1,.tab,.err,.when,.mh .mn,
-         .fine,.mline,.pfoot,footer,.mh .my,.mh .mup,.empty,.loading,.h2c,
+         .fine,.mline,.pfoot,footer,.mh .mup,.empty,.loading,.h2c,
          .sect h2,.sect h2 .n,.sect h2 .count,.txt .tag b){
     transition:background-color var(--theme-duration) ease, color var(--theme-duration) ease, border-color var(--theme-duration) ease;
   }
@@ -257,11 +257,10 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
     /* 窄屏: 平台标签让出右下角评分块区域, 放不下自动换行(宽屏不受影响) */
     .plats{padding-right:62px;}
   }
-  /* 月份大标题(编辑排版: 大号衬线月份 + 年份 + 通栏细线) */
+  /* 月份大标题(编辑排版: 大号衬线月份 + 分类页签 + 通栏细线) */
   .mh{display:flex; align-items:baseline; gap:16px; margin:0 0 4px; flex-wrap:wrap;
       font-family:var(--serif);}
   .mh .mn{font-size:72px; font-weight:700; letter-spacing:-.03em; line-height:.8; font-family:var(--serif);}
-  .mh .my{font-family:var(--sans); font-size:14px; color:var(--dim); font-weight:500;}
   .mh .msep2{flex:1 1 32px; height:1px; background:var(--line); min-width:24px;}
   /* 电影: 海报墙网格(Letterboxd 式竖版海报卡) */
   .list.mgrid{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:28px 20px;}
@@ -445,7 +444,6 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
     <!-- 月份和分类都在页头: 切视图时这条不参与淡入淡出 -->
     <div class="mh" id="mhBar">
       <span class="mn" id="mhMn"></span>
-      <span class="my" id="mhMy"></span>
       <div class="tabs top" id="topTabs" role="group" aria-label="切换游戏和电影">
         <span class="tabg"></span>
         <button class="tab on" type="button" data-view="game" aria-pressed="true">游戏</button>
@@ -592,9 +590,8 @@ function tabbed(tabsEl, panels){
       applyIdx(p, i, animate);
     });
     curIdx = i;
-    const mhMn = document.getElementById('mhMn'), mhMy = document.getElementById('mhMy');   /* 固定月份标题: 瞬时换字, 不参与交叉动画(避免大号衬线数字叠字) */
+    const mhMn = document.getElementById('mhMn');   /* 固定月份标题: 瞬时换字, 不参与交叉动画(避免大号衬线数字叠字) */
     if(mhMn) mhMn.textContent = String(groups[i].month).padStart(2,'0');
-    if(mhMy) mhMy.textContent = groups[i].year;
     try { localStorage.setItem(tabKey + '_month', monthKey(groups[i])); } catch(e) {}
     fitAll();
     stackFit();
@@ -637,9 +634,8 @@ function tabbed(tabsEl, panels){
   if(initBtn && tabsEl.scrollWidth > tabsEl.clientWidth + 1){   // 恢复时若页签溢出, 瞬时居中当前月
     tabsEl.scrollLeft = Math.max(0, initBtn.offsetLeft - (tabsEl.clientWidth - initBtn.offsetWidth)/2);
   }
-  const mhMn0 = document.getElementById('mhMn'), mhMy0 = document.getElementById('mhMy');
+  const mhMn0 = document.getElementById('mhMn');
   if(mhMn0) mhMn0.textContent = String(groups[curIdx].month).padStart(2,'0');
-  if(mhMy0) mhMy0.textContent = groups[curIdx].year;
   return fitAll;
 }
 
