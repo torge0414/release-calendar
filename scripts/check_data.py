@@ -137,6 +137,23 @@ def validate(root: Path, check_images: bool) -> list[str]:
     return errors
 
 
+def missing_title_font_chars(root: Path) -> list[str]:
+    """CJK characters in titles that the bundled serif subset font does not cover."""
+    chars_file = root / "fonts" / "title-serif-chars.txt"
+    if not chars_file.exists():
+        return []
+    covered = set(chars_file.read_text(encoding="utf-8"))
+    missing = set()
+    for name, key in (("releases.json", "games"), ("movies.json", "movies")):
+        data = json.loads((root / name).read_text(encoding="utf-8"))
+        for group in data.get("groups", []):
+            for item in group.get(key, []):
+                for ch in str(item.get("title", "")):
+                    if ("\u3000" <= ch <= "\u9fff" or "\uff00" <= ch <= "\uffef") and ch not in covered:
+                        missing.add(ch)
+    return sorted(missing)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--images", action="store_true", help="also request external images")
@@ -146,6 +163,10 @@ def main() -> int:
         for error in errors:
             print(error)
         return 1
+    missing = missing_title_font_chars(ROOT)
+    if missing:
+        # 只提醒不报错：缺字会回落到系统宋体，不影响数据和每日任务
+        print("warning: title font subset lacks " + "".join(missing) + "; rebuild fonts/title-serif-sc-bold.woff2 (see HANDOVER.md)")
     print("Calendar data valid" + ("; displayed image sources reachable" if args.images else ""))
     return 0
 

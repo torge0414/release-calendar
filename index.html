@@ -9,20 +9,25 @@ try{var _t=localStorage.getItem('glwTheme');
 if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark');
 }catch(e){}</script>
 <style>
+  /* 桌面中文标题用的思源宋体 Bold 子集（常用 3755 字 + 当前标题用字）。
+     排在 Songti SC 之后：Mac 用系统宋体，不下载；Windows 没有带真粗体的中文衬线体，才会加载它。 */
+  @font-face{font-family:"RC Title Serif SC"; src:url("fonts/title-serif-sc-bold.woff2") format("woff2");
+       font-weight:700; font-style:normal; font-display:swap;
+       unicode-range:U+00B7,U+2014,U+2026,U+3000-303F,U+4E00-9FFF,U+FF00-FFEF;}
   :root{
     --bg:#eef0f3; --card:transparent; --txt:#1c1d21; --sub:#444c59; --dim:#606772; --tab:#606772;
     --line:rgba(28,29,33,.14);
     --acc:#1c1d21; --acc-bg:transparent;
     --today:#8a5200; --soon:#8a5200;
-    --score-good:#1d6a43; --score-mid:#d49d48; --score-low:#a3333b;
-    --score-good-hover:#124c2e; --score-mid-hover:#a86b14; --score-low-hover:#7c2028;
+    --score-good:#1d6a43; --score-mid:#a86b14; --score-low:#a3333b;
+    --score-good-hover:#124c2e; --score-mid-hover:#7a4b08; --score-low-hover:#7c2028;
     --st:#1c1d21; --st-bg:transparent;
     --ps:#1c1d21; --ps-bg:transparent;
     --ns:#1c1d21; --ns-bg:transparent;
     --pic-bg:#e4e6ea; --spin:#c8ccd2; --switch-bg:#e3e4e8;
     --shadow:none; --shadow-hi:none; --r:0px;
     --sans:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif;
-    --serif:Georgia,"Times New Roman","Songti SC","SimSun",serif;
+    --serif:Georgia,"Times New Roman","Songti SC","RC Title Serif SC","SimSun",serif;
     --work-title-font:var(--serif);
     --content-gap:6px;
     /* 评分使用默认齐线的衬线数字，避免 Georgia 旧式数字高低不齐 */
@@ -151,11 +156,6 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
     position:relative; min-width:0;
   }
   .item:hover{box-shadow:none;}
-  .item.today{border-color:rgba(255,159,10,.45);}
-  .item.today::before{
-    content:""; position:absolute; left:-1px; top:18px; bottom:18px; width:3px;
-    border-radius:0 3px 3px 0; background:var(--today);
-  }
   .pic{flex:0 0 216px; width:216px; height:108px; border-radius:8px; overflow:hidden;
        position:relative; background:var(--pic-bg); flex:none;
        box-shadow:inset 0 0 0 1px rgba(0,0,0,.03);}
@@ -308,13 +308,13 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   :is(#body,#movieBody) .gscore.y:is(:hover,:focus-visible){color:var(--score-mid-hover);}
   :is(#body,#movieBody) .gscore.r:is(:hover,:focus-visible){color:var(--score-low-hover);}
   .item.pc .tag3{padding-right:0;}
-  .item.pc.today::before{top:14px; bottom:auto; height:44px;}
   /* 月份标题固定在页签下方(移出动画区, 瞬时换字, 不再叠字) */
   #mhBar{margin:0 0 2px;}
   /* 更新时间收在横线右端, 小字弱化(原来是独立一行, 突兀) */
   .mh .mup{font-family:var(--sans); font-size:12px; color:var(--dim); white-space:nowrap;}
   /* 平台标签内联官方 logo */
   .chip .pi{width:13px; height:13px; fill:currentColor; flex:none;}
+  .chip .np{color:var(--dim); transition:color var(--theme-duration) ease;}   /* 平台暂无价格 */
   /* 主题滑块: 旋钮内嵌太阳/月亮矢量图标, 旋转交叉过渡 */
   .tb-ic{position:absolute; width:15px; height:15px; fill:none; stroke:currentColor;
        stroke-width:2; stroke-linecap:round; stroke-linejoin:round;
@@ -647,8 +647,17 @@ function showCredit(){
 /* 数据就位后淡出启动遮罩 */
 function hideBoot(){
   const b = document.getElementById('boot');
-  if(b) setTimeout(()=>b.classList.add('hide'), 60);
+  if(!b) return;
+  /* 先排版触发标题字体加载；Windows 桌面要等子集字体到位（最多 1.2 秒）再揭开，避免宋体闪一下再换 */
+  void document.body.offsetHeight;
+  const ready = (document.fonts && document.fonts.ready) || Promise.resolve();
+  Promise.race([ready, new Promise(r=>setTimeout(r, 1200))]).then(()=>setTimeout(()=>b.classList.add('hide'), 60));
 }
+/* 字体换上后标题高度可能变化，重算列表容器高度，防止被 overflow:hidden 裁掉 */
+if(document.fonts) document.fonts.addEventListener('loadingdone', ()=>{
+  if(window['_fit_tabs']) window['_fit_tabs']();
+  stackFit(); alignMc();
+});
 
 let holdStackH = 0, stackHT = null;   // 视图切换动画期间锁住容器高度(避免旧视图被提前裁掉)
 function stackFit(){
@@ -718,11 +727,11 @@ function paint(){
   const panels = [];
   if(state.game) panels.push({
     body: $('#body'), groups: state.game.groups || [], makeCard: card, unit: '款',
-    footFn: g => '共 ' + g.games.length + ' 款 · 评分来自 Metacritic · 每月初自动更新'
+    footFn: g => '共 ' + g.games.length + ' 款 · 评分来自 Metacritic · 每月初更新'
   });
   if(state.movie) panels.push({
     body: $('#movieBody'), groups: state.movie.groups || [], makeCard: mcard, unit: '部', grid: true,
-    footFn: g => '共 ' + g.movies.length + ' 部 · 评分来自豆瓣 · 每月初自动更新'
+    footFn: g => '共 ' + g.movies.length + ' 部 · 评分来自豆瓣 · 每月初更新'
   });
   if(!panels.length) return;
   tabbed($('#tabs'), panels);
@@ -776,8 +785,8 @@ function card(it){
     }
     const url = p.url ? 'href="'+esc(p.url)+'" target="_blank" rel="noopener"' : '';
     const pm = (p.key==='steam'?'st':p.key);
-    return '<a class="chip '+pm+'" '+url+' aria-label="'+esc(p.name+(pfmt?' '+pfmt:''))+'">'+(PICONS[p.key]||'')+
-      (pfmt?pfmt:'')+'</a>';
+    return '<a class="chip '+pm+'" '+url+' aria-label="'+esc(p.name+' '+(pfmt||'暂无价格'))+'">'+(PICONS[p.key]||'')+
+      (pfmt?pfmt:'<span class="np">暂无价格</span>')+'</a>';
   }).join('');
   const mc = (typeof it.mc==='number' && it.mc>0) ? it.mc : null;
   const scoreCls = mc==null ? '' : (mc>=80?'g':(mc>=60?'y':'r'));
@@ -796,9 +805,9 @@ function card(it){
   return wrap;
 }
 
-/* 有中文名时只留中文；去掉括号里的年份、重制版等和名字无关的说明 */
+/* 有中文名时只留中文；去掉括号里的年份、重制版等和名字无关的说明，以及 ™ ® © 符号 */
 function gameTitle(raw){
-  let t = String(raw==null?'':raw).replace(/\s*[（(][^）)]*[）)]/g, ' ').replace(/\s+/g, ' ').trim();
+  let t = String(raw==null?'':raw).replace(/[™®©]/g, '').replace(/\s*[（(][^）)]*[）)]/g, ' ').replace(/\s+/g, ' ').trim();
   if(/[\u4e00-\u9fff]/.test(t)){
     t = t.replace(/(^|[\s:：/／|])[A-Za-z][A-Za-z0-9'’&.:+-]*(?:\s+[A-Za-z0-9][A-Za-z0-9'’&.:+-]*)*/g, '$1');
     t = t.replace(/\s+/g, ' ').trim();

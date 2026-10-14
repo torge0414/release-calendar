@@ -46,4 +46,9 @@ assert(dimensions.width / dimensions.height >= 1.7 && dimensions.width / dimensi
 const data = JSON.parse(fs.readFileSync(path.join(root, 'releases.json'), 'utf8'));
 const listed = data.groups.flatMap(g => g.games).find(g => g.title === fixture.title);
 if (listed) assert.equal(listed.cover_img, cover);
-console.log('Game cover valid: priority source, suitable JPEG ratio and unchanged wide-banner fallback');
+assert.equal(context.gameTitle('星球大战：银河赛车手™'), '星球大战：银河赛车手');
+assert.equal(context.gameTitle('Star Wars® Galactic Racer™'), 'Star Wars Galactic Racer');
+const noPrice = context.card({title: '测试', year: 2026, month: 10, day: 9,
+  plats: [{key: 'ps', name: 'PS', url: 'https://example.test/'}]}).innerHTML;
+assert(noPrice.includes('暂无价格'), 'A platform without price must say so instead of showing a bare icon');
+console.log('Game cover valid: priority source, suitable JPEG ratio, unchanged wide-banner fallback, title symbols and missing prices');
