@@ -227,11 +227,11 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
        border-top-color:var(--acc); border-radius:50%; animation:sp .6s linear infinite;}
   .err{background:#fff2f0; border:1px solid #ffd7d2; color:#c0422a; padding:11px 16px;
        border-radius:12px; font-size:13px; margin-top:14px; display:none; text-align:center;}
+  /* 页签只有两三个，不做横向滚动。不能设 overflow：页签 ::after 扩出的点击区会被裁掉，
+     还会被算成可滚动宽度，切到最后一个页签时整组被滚走、第一个页签被裁（2026-10-14 修过）。 */
   .tabs{display:flex; width:max-content; max-width:100%; margin:0; background:transparent;
-       border-radius:0; padding:0; gap:14px; position:relative;
-       overflow-x:auto; scrollbar-width:none; -webkit-overflow-scrolling:touch; scroll-behavior:smooth;
+       border-radius:0; padding:0; gap:14px; position:relative; overflow:visible;
        box-shadow:none; flex:none; align-items:baseline;}
-  .tabs::-webkit-scrollbar{display:none;}
   .tabg{display:none;}
   .tab{
     position:relative; z-index:1; border:0; background:transparent; cursor:pointer; font-family:var(--sans);
@@ -620,11 +620,6 @@ function tabbed(tabsEl, panels){
     /* 下划线和月份列表一起切换。 */
     const actBtn = tabsEl.querySelectorAll('.tab')[i];
     moveGlider(tabsEl, actBtn, !animate);
-    /* 窄屏页签多到溢出时, 把当前页签滚动居中(scroll-behavior:smooth 负责平滑) */
-    if(actBtn && tabsEl.scrollWidth > tabsEl.clientWidth + 1){
-      const x = actBtn.offsetLeft - (tabsEl.clientWidth - actBtn.offsetWidth)/2;
-      tabsEl.scrollTo({left: Math.max(0, x), behavior: animate ? 'smooth' : 'auto'});
-    }
   };
 
   /* 供手机左右滑动换月调用 */
@@ -649,10 +644,6 @@ function tabbed(tabsEl, panels){
   window[fitKey] = resizeFit;
   window.addEventListener('resize', resizeFit);
   moveGlider(tabsEl, tabsEl.querySelectorAll('.tab')[curIdx], true);   // 恢复定位不滑动
-  const initBtn = tabsEl.querySelectorAll('.tab')[curIdx];
-  if(initBtn && tabsEl.scrollWidth > tabsEl.clientWidth + 1){   // 恢复时若页签溢出, 瞬时居中当前月
-    tabsEl.scrollLeft = Math.max(0, initBtn.offsetLeft - (tabsEl.clientWidth - initBtn.offsetWidth)/2);
-  }
   const mhMn0 = document.getElementById('mhMn');
   if(mhMn0) mhMn0.textContent = String(groups[curIdx].month).padStart(2,'0');
   return fitAll;
