@@ -17,13 +17,13 @@ class Element {
   setAttribute(key,value){(this.attributes ||= {})[key]=value;}
   querySelectorAll(){return this.children.filter(c=>c.names.has('tab'));}
 }
-function fixture(months,today,saved={}){
-  const memory=new Map(Object.entries(saved));const window={addEventListener(){},removeEventListener(){}};
+function fixture(months,today,saved={},games=()=>[]){
+  const memory=new Map(Object.entries(saved));const local=new Map();const window={addEventListener(){},removeEventListener(){}};
   const tabs=new Element();tabs.id='tabs';
-  const panels=[1,2].map(()=>({body:new Element(),groups:months.map(([year,month])=>({year,month,games:[]})),makeCard:()=>new Element()}));
-  const context={window,today,document:{createElement:()=>new Element(),getElementById:()=>null},localStorage:{getItem:key=>memory.get(key)||null,setItem:(key,value)=>memory.set(key,value)},moveGlider(){},stackFit(){},esc:s=>s,setTimeout:()=>0,clearTimeout(){},animSwap:(cur,nxt)=>{cur.classList.remove('on');cur.classList.add('off');nxt.classList.remove('off');nxt.classList.add('on');},PAGE_CLASSES:['on','off']};
+  const panels=[1,2].map(()=>({body:new Element(),groups:months.map(([year,month])=>({year,month,games:games(year,month)})),makeCard:()=>new Element()}));
+  const context={window,today,document:{createElement:()=>new Element(),getElementById:()=>null},sessionStorage:{getItem:key=>memory.get(key)||null,setItem:(key,value)=>memory.set(key,value)},localStorage:{getItem:key=>local.get(key)||null,setItem:(key,value)=>local.set(key,value)},moveGlider(){},stackFit(){},esc:s=>s,setTimeout:()=>0,clearTimeout(){},animSwap:(cur,nxt)=>{cur.classList.remove('on');cur.classList.add('off');nxt.classList.remove('off');nxt.classList.add('on');},PAGE_CLASSES:['on','off']};
   vm.createContext(context);vm.runInContext(code,context);context.tabbed(tabs,panels);
-  return {tabs,panels,memory,window};
+  return {tabs,panels,memory,local,window};
 }
 function active(p){return p.sections.findIndex(s=>s.classList.contains('on'));}
 function assertActive(f,index){
@@ -43,6 +43,7 @@ assertActive(normal,1);
 normal.tabs.children[2].handlers.click();
 assertActive(normal,2);
 assert.equal(normal.memory.get('glwTab_tabs_month'),'2026-11');
+assert.equal(normal.local.get('glwTab_tabs_month'),undefined,'Month choice must only last for the session');
 normal.tabs.children[0].handlers.click();
 assertActive(normal,0);
 normal.tabs.children[1].handlers.click();
@@ -51,6 +52,27 @@ const restored=fixture(months,new Date(2026,9,1),{glwTab_tabs_month:'2026-11'});
 assertActive(restored,2);
 const expired=fixture(months,new Date(2026,9,1),{glwTab_tabs_month:'2026-08'});
 assertActive(expired,1);
+// 页底换月按钮和滑动入口
+const navOf=section=>section.children.find(c=>c.names.has('mnav'));
+const footer=fixture(months,new Date(2026,9,14));
+assert.deepEqual(navOf(footer.panels[0].sections[1]).children.map(b=>b.textContent),['← 上月','下月 →']);
+assert.deepEqual(navOf(footer.panels[0].sections[0]).children.map(b=>b.textContent),['本月 →']);
+navOf(footer.panels[0].sections[1]).children[1].handlers.click();
+assertActive(footer,2);
+footer.tabs._switchBy(-1);
+assertActive(footer,1);
+footer.tabs._switchBy(-5);
+assertActive(footer,1);
+// 本月列表在今天的位置插入分隔线，其他月份不插
+const days=(y,m)=>[2,10,14,20].map(day=>({year:y,month:m,day}));
+const divided=fixture(months,new Date(2026,9,14),{},days);
+const listOf=section=>section.children.find(c=>c.names.has('list'));
+const lineAt=section=>listOf(section).children.findIndex(c=>c.names.has('today-line'));
+assert.equal(lineAt(divided.panels[0].sections[1]),2,'Today line goes before the first item released today or later');
+assert.equal(lineAt(divided.panels[0].sections[0]),-1);
+assert.equal(lineAt(divided.panels[0].sections[2]),-1);
+const allUpcoming=fixture(months,new Date(2026,9,1),{},days);
+assert.equal(lineAt(allUpcoming.panels[0].sections[1]),-1,'No line when nothing has been released yet');
 const january=fixture([[2026,12],[2027,1],[2027,2]],new Date(2027,0,1));
 assert.deepEqual(january.tabs.children.map(c=>c.textContent),['上月','本月','下月']);
-console.log('Month tabs valid: labels, default month, shared selection, inert hidden pages, accessible selection, persistence and year boundary');
+console.log('Month tabs valid: labels, default month, shared selection, inert hidden pages, accessible selection, session-only persistence, footer navigation, today line and year boundary');

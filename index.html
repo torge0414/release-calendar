@@ -24,7 +24,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
     --st:#1c1d21; --st-bg:transparent;
     --ps:#1c1d21; --ps-bg:transparent;
     --ns:#1c1d21; --ns-bg:transparent;
-    --pic-bg:#e4e6ea; --spin:#c8ccd2; --switch-bg:#e3e4e8;
+    --pic-bg:#e4e6ea; --spin:#c8ccd2; --switch-bg:#e3e4e8; --switch-bg-hover:#d6d8de;
     --shadow:none; --shadow-hi:none; --r:0px;
     --sans:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif;
     --serif:Georgia,"Times New Roman","Songti SC","RC Title Serif SC","SimSun",serif;
@@ -46,7 +46,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
     --st:#f4f5f6; --st-bg:transparent;
     --ps:#f4f5f6; --ps-bg:transparent;
     --ns:#f4f5f6; --ns-bg:transparent;
-    --pic-bg:#1a1c21; --spin:#4a4c54; --switch-bg:#2c2e33;
+    --pic-bg:#1a1c21; --spin:#4a4c54; --switch-bg:#2c2e33; --switch-bg-hover:#383a40;
     --shadow:none; --shadow-hi:none;
   }
   html.dark .err{background:#361d1a; border-color:#6b322c; color:#ffb4a6;}
@@ -77,11 +77,10 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
     display:block; width:54px; height:31px; border-radius:999px;
     border:0; cursor:pointer; background:var(--switch-bg); padding:0;
     box-shadow:inset 0 0 0 .5px rgba(0,0,0,.06), inset 0 1px 2px rgba(0,0,0,.06);
-    transition:background-color var(--theme-duration) ease, transform .35s cubic-bezier(.4,0,.2,1), box-shadow .35s; z-index:5;
+    transition:background-color var(--theme-duration) ease; z-index:5;
   }
-  .theme-btn:hover{transform:scale(1.06); box-shadow:inset 0 0 0 .5px rgba(0,0,0,.08),
-       inset 0 1px 2px rgba(0,0,0,.06), 0 2px 8px rgba(0,0,0,.14);}
-  .theme-btn:active{transform:scale(.96);}
+  /* 悬停只加深底色，和全站「悬停只变色」一致 */
+  .theme-btn:hover{background:var(--switch-bg-hover);}
   .theme-btn .tb-sun,.theme-btn .tb-moon{position:absolute; top:50%; transform:translateY(-50%);
        font-size:12px; line-height:1; color:var(--dim); pointer-events:none; transition:color var(--theme-duration) ease;}
   .theme-btn .tb-sun{left:9px;}
@@ -251,6 +250,20 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   .pic.sq{flex:0 0 68px; width:68px; height:68px;}   /* 专辑封面: 正方形 */
   .pic.m .ph{font-size:20px;}
   footer{color:var(--dim); font-size:11.5px; margin-top:40px; text-align:center; padding-bottom:8px;}
+  /* 本月列表里「今天」的位置：已发售在上，即将发售在下 */
+  .today-line{display:flex; align-items:center; gap:10px; margin:2px 0; padding:10px 0 0;
+       font-family:var(--sans); font-size:12px; font-weight:600; line-height:1.5; color:var(--today);
+       transition:color var(--theme-duration) ease;}
+  .today-line::after{content:""; flex:1; height:1px; background:currentColor; opacity:.55;}
+  .list.mgrid .today-line{grid-column:1 / -1; margin:-6px 0;}
+  /* 页底换月：长列表滚到底不用再回到页头 */
+  .mnav{display:flex; justify-content:space-between; gap:16px; margin-top:28px;}
+  .mnav button{position:relative; border:0; background:transparent; cursor:pointer; padding:0;
+       font-family:var(--sans); font-size:14px; font-weight:500; line-height:1.5; color:var(--dim);
+       transition:color var(--theme-duration) ease;}
+  .mnav button:hover{color:var(--txt);}
+  .mnav button.next{margin-left:auto;}
+  .mnav button::after{content:""; position:absolute; inset:-12px -10px;}
   .pfoot{color:var(--dim); font-size:11.5px; margin-top:40px; text-align:center; padding-bottom:8px;}
   .credit{color:var(--dim); font-size:11px; text-align:center; padding-bottom:16px; opacity:.8;}
   @media (max-width:640px){
@@ -336,8 +349,9 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
     /* 手机用默认齐线的衬线数字，避免 Georgia 旧式 9 的高度差；固定两位数字宽度。 */
     .mh .mn{font-size:52px; font-family:var(--score-serif); font-variant-numeric:normal;
          font-feature-settings:normal; flex:0 0 2ch; min-width:0;}
-    .mh .msep2{flex-basis:100%; height:0; min-width:0;}
-    .mh .mup{margin-left:auto;}
+    /* 月份数字、类别、月份页签放在同一行；更新时间单独一小行靠右 */
+    .mh .msep2{flex:1 1 0; height:0; min-width:4px;}
+    .mh .mup{flex-basis:100%; text-align:right; font-size:11.5px; margin-top:6px;}
   }
   @media (max-width:360px){
     h1{font-size:13.5px; letter-spacing:.01em;}
@@ -408,10 +422,10 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
     #body .txt .when,#body .fine{font-size:13px;}
     #body .gscore{font-size:24px;}
     /* 手机操作保留文字样式，点击范围至少 44px，平台换行不重叠。 */
-    .mh{gap:12px;}
-    #tabs,#topTabs{gap:4px;}
-    #tabs .tab{min-width:44px; min-height:44px;}
-    #topTabs .tab{min-width:44px; min-height:44px;}
+    .mh{gap:10px;}
+    /* 按钮宽度等于文字，下划线和文字对齐；点击范围靠伪元素扩到 44×44，相邻按钮之间留 16px 不重叠 */
+    #tabs,#topTabs{gap:16px;}
+    #tabs .tab::after,#topTabs .tab::after{content:""; position:absolute; inset:-11px -8px;}
     #body .plats{gap:20px 6px; margin-top:0;}
     #body .chip{position:relative; z-index:3; min-width:44px; min-height:24px; height:24px; gap:4px;}
     #body .chip .pi{width:13px; height:13px;}
@@ -472,9 +486,20 @@ const $ = s => document.querySelector(s);
 /* 夜间模式切换(iOS 开关样式, 状态由 CSS html.dark 驱动) */
 (function(){
   const btn = document.getElementById('themeBtn');
+  const mq = window.matchMedia ? matchMedia('(prefers-color-scheme: dark)') : null;
+  /* 切到和系统一致的外观时清掉偏好，之后重新跟随系统；只有和系统相反时才记住 */
   if(btn) btn.addEventListener('click', ()=>{
     const dark = document.documentElement.classList.toggle('dark');
-    try{ localStorage.setItem('glwTheme', dark ? 'dark' : 'light'); }catch(e){}
+    try{
+      if(mq && dark === mq.matches) localStorage.removeItem('glwTheme');
+      else localStorage.setItem('glwTheme', dark ? 'dark' : 'light');
+    }catch(e){}
+  });
+  /* 没有偏好时，系统外观变化立即跟随 */
+  if(mq && mq.addEventListener) mq.addEventListener('change', e=>{
+    let saved = null;
+    try{ saved = localStorage.getItem('glwTheme'); }catch(err){}
+    if(!saved) document.documentElement.classList.toggle('dark', e.matches);
   });
 })();
 const PALS = [['#0071e3','#0a58a5'],['#af52de','#6d2fa8'],['#ff375f','#b0183a'],
@@ -528,10 +553,16 @@ function tabbed(tabsEl, panels){
   const monthKey = g => g.year + '-' + String(g.month).padStart(2, '0');
   const currentKey = today.getFullYear() + '-' + String(today.getMonth()+1).padStart(2, '0');
   const currentIdx = Math.max(0, groups.findIndex(g=>monthKey(g)===currentKey));
+  /* 所选月份只在本次浏览里记住（sessionStorage）；重新打开网站总是回到本月 */
   let savedMonth = '';
-  try { savedMonth = localStorage.getItem(tabKey + '_month') || ''; } catch(e) {}
+  try { savedMonth = sessionStorage.getItem(tabKey + '_month') || ''; } catch(e) {}
   const savedIdx = groups.findIndex(g=>monthKey(g)===savedMonth);
   let curIdx = savedIdx >= 0 ? savedIdx : currentIdx;
+  const labelOf = g => {
+    const relativeMonth = (g.year-today.getFullYear())*12 + g.month-(today.getMonth()+1);
+    return ({'-1':'上月','0':'本月','1':'下月'})[relativeMonth] || (g.year+'年');
+  };
+  const today0 = new Date(today.getFullYear(), today.getMonth(), today.getDate());
 
   panels.forEach(p=>{
     p.body.innerHTML = '';
@@ -544,8 +575,30 @@ function tabbed(tabsEl, panels){
       setPageActive(sect, i===curIdx);
       const list = document.createElement('div'); list.className='list' + (p.grid?' mgrid':'');
       if(!items.length) list.innerHTML='<div class="empty">'+esc(p.emptyText || '该月暂无已定档')+'</div>';
-      else items.forEach(it=>list.appendChild(p.makeCard(it)));
+      else {
+        /* 本月：在第一部今天或之后发行的作品前插一条「今天」分隔线（前面没有已发行作品时不插） */
+        const todayAt = monthKey(g)===currentKey ? items.findIndex(it=>new Date(it.year, it.month-1, it.day) >= today0) : -1;
+        items.forEach((it,k)=>{
+          if(k===todayAt && k>0){
+            const line = document.createElement('div'); line.className = 'today-line';
+            line.textContent = '今天 ' + (today.getMonth()+1) + '月' + today.getDate() + '日';
+            list.appendChild(line);
+          }
+          list.appendChild(p.makeCard(it));
+        });
+      }
       sect.appendChild(list);
+      /* 页底换月 */
+      const nav = document.createElement('nav'); nav.className = 'mnav';
+      nav.setAttribute('aria-label', '切换月份');
+      [[i-1,'prev'],[i+1,'next']].forEach(([j,cls])=>{
+        if(j<0 || j>=p.groups.length) return;
+        const b = document.createElement('button'); b.type = 'button'; b.className = cls;
+        b.textContent = cls==='prev' ? '← ' + labelOf(p.groups[j]) : labelOf(p.groups[j]) + ' →';
+        b.addEventListener('click', ()=>footSwitch(j));
+        nav.appendChild(b);
+      });
+      sect.appendChild(nav);
       const ft = document.createElement('div'); ft.className = 'pfoot';
       ft.textContent = p.footFn ? p.footFn(g, items) : '';
       sect.appendChild(ft);
@@ -592,7 +645,7 @@ function tabbed(tabsEl, panels){
     curIdx = i;
     const mhMn = document.getElementById('mhMn');   /* 固定月份标题: 瞬时换字, 不参与交叉动画(避免大号衬线数字叠字) */
     if(mhMn) mhMn.textContent = String(groups[i].month).padStart(2,'0');
-    try { localStorage.setItem(tabKey + '_month', monthKey(groups[i])); } catch(e) {}
+    try { sessionStorage.setItem(tabKey + '_month', monthKey(groups[i])); } catch(e) {}
     fitAll();
     stackFit();
     tabsEl.querySelectorAll('.tab').forEach((b,j)=>{
@@ -609,14 +662,23 @@ function tabbed(tabsEl, panels){
     }
   };
 
+  /* 页底按钮换月后回到页头，从新列表的第一条开始看 */
+  const footSwitch = j=>{
+    switchTo(j);
+    if(window.scrollTo){
+      const reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({top:0, behavior: reduce ? 'auto' : 'smooth'});
+    }
+  };
+  /* 供手机左右滑动换月调用 */
+  tabsEl._switchBy = d=>{ const j = curIdx + d; if(j>=0 && j<groups.length) switchTo(j); };
+
   panels[0].groups.forEach((g,i)=>{
     const btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'tab' + (i===curIdx ? ' on' : '');
     btn.setAttribute('aria-pressed', String(i===curIdx));
-    const relativeMonth = (g.year-today.getFullYear())*12 + g.month-(today.getMonth()+1);
-    const monthLabel = ({'-1':'上月','0':'本月','1':'下月'})[relativeMonth] || (g.year+'年');
-    btn.textContent = monthLabel;   /* 具体月份由下方大标题显示, 页签只标相对位置(不再重复) */
+    btn.textContent = labelOf(g);   /* 具体月份由下方大标题显示, 页签只标相对位置(不再重复) */
     btn.addEventListener('click', ()=>switchTo(i));
     tabsEl.appendChild(btn);
   });
@@ -1009,6 +1071,27 @@ async function refreshMusic(){
   window.addEventListener('resize', stackFit);
   window.addEventListener('resize', alignMc);
   stackFit();
+})();
+
+/* 手机左右滑动换月：左滑看下一个月，右滑看上一个月。避开屏幕边缘，留给系统的返回手势 */
+(function(){
+  const stack = document.getElementById('viewStack');
+  if(!stack) return;
+  let sx = 0, sy = 0, st = 0, track = false;
+  stack.addEventListener('touchstart', e=>{
+    if(e.touches.length !== 1){ track = false; return; }
+    const t = e.touches[0];
+    track = t.clientX > 24 && t.clientX < window.innerWidth - 24;
+    sx = t.clientX; sy = t.clientY; st = Date.now();
+  }, {passive:true});
+  stack.addEventListener('touchend', e=>{
+    if(!track) return;
+    track = false;
+    const t = e.changedTouches[0], dx = t.clientX - sx, dy = t.clientY - sy;
+    if(Date.now() - st > 700 || Math.abs(dx) < 60 || Math.abs(dx) < Math.abs(dy) * 2) return;
+    const tabs = document.getElementById('tabs');
+    if(tabs && tabs._switchBy) tabs._switchBy(dx < 0 ? 1 : -1);
+  }, {passive:true});
 })();
 
 window.addEventListener('load', ()=>{ alignMc(); stackFit(); });   // 字体/图片就位后重算布局对齐

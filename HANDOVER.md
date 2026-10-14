@@ -190,6 +190,8 @@ GPT 和 Claude 两位 agent 都是项目负责人，地位对等，不设单一�
 - 「游戏 / 电影」在月份数字旁边，和月份用相同的文字页签与 1px 下划线，无外框和反色底。类别列表只淡入淡出，所以类别下划线直接定位到选中项、不滑动，只保留主题颜色过渡；`aria-pressed` 随切换更新。
 - 上月 / 本月 / 下月在右侧细线上，共用一条 1px 下划线（`#tabs > .tabg`），切月时和列表一起以约 0.6 秒滑向选中项。首次加载、恢复偏好和调整屏宽时直接定位下划线，不补播动画。
 - 更新时间在细线右端，游戏和电影各用自己 JSON 的 `updated`。
+- 手机（≤640px）页头只有两行：字标和主题开关一行；月份数字、「游戏 / 电影」、「上月 / 本月 / 下月」同一行，更新时间在下面单独一小行靠右（2026-10-14 起，内容从约 154px 处开始）。320px 宽时这一行刚好放下，放不下会自动换行。
+- 页签按钮宽度等于文字宽度，下划线和文字一样宽；手机上的 44×44px 点击范围由 `.tab::after` 伪元素扩出来（上下各 11px、左右各 8px），相邻页签间距 16px，扩展区不重叠。不要再用 `min-width` / `min-height` 撑按钮，那样下划线会比文字宽。
 - 两栏共用 `.wrap` 的 `max-width: 860px`。不要再加 `body.view-movie .wrap { max-width: 1040px }`，那条规则会在淡出时把还看得见的游戏列表突然拉宽。
 
 ### 字体和颜色
@@ -232,9 +234,15 @@ GPT 和 Claude 两位 agent 都是项目负责人，地位对等，不设单一�
 - 主题变色统一用 `--theme-duration: .22s` 和 `ease`，所有自己声明颜色的元素都要同步过渡，只继承颜色的子元素跟随父级。主题旋钮移动约 0.35 秒。保留 `prefers-reduced-motion`。
 - iPhone Safari / WebKit 会对继承中的 `color` 叠加过渡，导致衬线字标和标题晚约 0.4～0.6 秒变色。`h1`、`.mh .mn`、`.txt .tline .t` 必须直接取 `var(--txt)`；`.item`、`.pic`、`.tabs` 等只继承文字色的容器不能再做 `color` 过渡。动到主题或字体时，验收必须包含 WebKit 手机宽度的浅→深、深→浅双向切换，只测 Chromium 不够。
 - 主题按钮必须是 `position: relative`，否则绝对定位的旋钮会叠到字标上。浅色旋钮是白底琥珀色太阳（`#d18a1d`），夜间旋钮是深灰（`#565661`）加浅蓝灰月亮（`#d6ddf2`）。不要两个主题都用白旋钮。
-- 偏好键：主题 `glwTheme`（`dark` / `light`，没存过则跟系统），视图 `glwView`（`game` / `movie`），月份 `glwTab_tabs_month`（存年月如 `2026-10`，不存页码）。
+- 偏好键：
+  - 主题 `glwTheme`（localStorage）：只在所选外观和系统相反时才保存；切回和系统一致的外观就删掉，重新跟随系统，系统外观变化时页面立即跟着变。
+  - 视图 `glwView`（localStorage，`game` / `movie`）。
+  - 月份 `glwTab_tabs_month`（sessionStorage，存年月如 `2026-10`，不存页码）：只在本次浏览里记住，重新打开网站总是回到本月（2026-10-14 起）。
+- 主题开关悬停只加深底色（`--switch-bg-hover`），不放大、不加阴影。
 - 隐藏的类别和月份页用 `inert` 和 `aria-hidden="true"` 退出键盘与读屏导航，切换开始即更新，保留原有淡出动画。月份和类别按钮用 `aria-pressed` 表示选择。键盘焦点用 `focus-visible` 描边，不要拿掉。
 - 手机（≤640px）月份、类别按钮和平台、评分链接的点击范围至少 44×44px。主题按钮保留原尺寸，用伪元素把触摸高度扩到 45px。检查扩展后的范围有没有重叠或被附近文字挡住。
+- 本月列表里，在第一部今天或之后发行的作品前插一条金色的「今天 10月14日」分隔线；前面没有已发行作品、或不是本月时不插。电影网格里它独占一整行。
+- 每个月列表底部有「← 上月 / 下月 →」按钮（文字随相对月份变化），点了换月并回到页头。手机上在列表区左右滑动也能换月（左滑看下一个月），距屏幕左右边缘 24px 以内的触摸不算，留给系统返回手势。
 - 启动时 `#boot` 盖住页面。游戏和电影数据在启动时都会请求并预渲染，任一份到位后 `paint()` 重建共享月份界面，内容画完 `#boot` 才退出。验收时等它消失再看布局。
 
 ## 8. 代码入口
@@ -282,7 +290,7 @@ release-calendar/
 
 测试通过源码边界切出片段单独运行，移动或重构函数时要同步调整测试：
 
-- `scripts/test_month_tabs.js` 切出 `function setPageActive(` 到 `function showCredit(`，依赖自由变量 `PAGE_CLASSES`、`animSwap`、`moveGlider`、`stackFit`、`esc`、`today`、`document`、`localStorage`。
+- `scripts/test_month_tabs.js` 切出 `function setPageActive(` 到 `function showCredit(`，依赖自由变量 `PAGE_CLASSES`、`animSwap`、`moveGlider`、`stackFit`、`esc`、`today`、`document`、`window`、`sessionStorage`。它还检查页底换月按钮、滑动入口 `_switchBy` 和「今天」分隔线。
 - `scripts/test_game_cover.js` 切出 `function card(` 到 `function firstChar(`。`gameTitle()` 必须留在这一段里；`scoreLink()` 在 `card()` 前面，测试条目没有 `mc`，不会调用它。
 
 ## 9. 每日自动化
