@@ -18,7 +18,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
     --bg:#eef0f3; --card:transparent; --txt:#1c1d21; --sub:#444c59; --dim:#606772; --tab:#606772;
     --line:rgba(28,29,33,.14);
     --acc:#1c1d21; --acc-bg:transparent;
-    --today:#8a5200; --soon:#8a5200;
+    --today:#8a5200; --soon:#36598a;
     --score-good:#1d6a43; --score-mid:#a86b14; --score-low:#a3333b;
     --score-good-hover:#124c2e; --score-mid-hover:#7a4b08; --score-low-hover:#7c2028;
     --st:#1c1d21; --st-bg:transparent;
@@ -40,7 +40,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
     --line:rgba(255,255,255,.14);
     --card-line:rgba(255,255,255,.14);
     --acc:#f4f5f6; --acc-bg:transparent;
-    --today:#e8b764; --soon:#e8b764;
+    --today:#e8b764; --soon:#9cb7de;
     --score-good:#72c698; --score-mid:#d49d48; --score-low:#ef9398;
     --score-good-hover:#9ae3bb; --score-mid-hover:#f1c06f; --score-low-hover:#ffb4bc;
     --st:#f4f5f6; --st-bg:transparent;
@@ -250,12 +250,6 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   .pic.sq{flex:0 0 68px; width:68px; height:68px;}   /* 专辑封面: 正方形 */
   .pic.m .ph{font-size:20px;}
   footer{color:var(--dim); font-size:11.5px; margin-top:40px; text-align:center; padding-bottom:8px;}
-  /* 本月列表里「今天」的位置：已发售在上，即将发售在下 */
-  .today-line{display:flex; align-items:center; gap:10px; margin:2px 0; padding:10px 0 0;
-       font-family:var(--sans); font-size:12px; font-weight:600; line-height:1.5; color:var(--today);
-       transition:color var(--theme-duration) ease;}
-  .today-line::after{content:""; flex:1; height:1px; background:currentColor; opacity:.55;}
-  .list.mgrid .today-line{grid-column:1 / -1; margin:-6px 0;}
 
   .pfoot{color:var(--dim); font-size:11.5px; margin-top:40px; text-align:center; padding-bottom:8px;}
   .credit{color:var(--dim); font-size:11px; text-align:center; padding-bottom:16px; opacity:.8;}
@@ -292,8 +286,8 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   #movieBody .mstat.when.today,
   #movieBody .mstat.when.out{position:static; top:auto; right:auto; left:auto;
        background:none; border-radius:0; padding:0; font-weight:500; color:var(--dim);}
-  #movieBody .mstat.when.soon,
-  #movieBody .mstat.when.today{color:var(--soon); font-weight:600;}
+  #movieBody .mstat.when.soon{color:var(--soon); font-weight:600;}
+  #movieBody .mstat.when.today{color:var(--today); font-weight:600;}
   html.dark #movieBody .mstat.when.today,
   html.dark #movieBody .mstat.when.out,
   html.dark #movieBody .mstat.when.soon{background:none;}
@@ -362,8 +356,9 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   #body .txt .when.today,
   #body .txt .when.out{position:static; top:auto; right:auto; background:none; border-radius:0; padding:0;
        font-size:13px; font-weight:500; letter-spacing:0; line-height:1.5; color:var(--dim);}
-  #body .txt .when.soon,
-  #body .txt .when.today{color:var(--soon); font-weight:600;}
+  /* 今天 / 明天发售用金色，「还有 N 天」用蓝灰色，两种状态一眼分开 */
+  #body .txt .when.soon{color:var(--soon); font-weight:600;}
+  #body .txt .when.today{color:var(--today); font-weight:600;}
   html.dark #body .txt .when.today,
   html.dark #body .txt .when.out,
   html.dark #body .txt .when.soon{background:none;}
@@ -555,7 +550,6 @@ function tabbed(tabsEl, panels){
     const relativeMonth = (g.year-today.getFullYear())*12 + g.month-(today.getMonth()+1);
     return ({'-1':'上月','0':'本月','1':'下月'})[relativeMonth] || (g.year+'年');
   };
-  const today0 = new Date(today.getFullYear(), today.getMonth(), today.getDate());
 
   panels.forEach(p=>{
     p.body.innerHTML = '';
@@ -568,18 +562,7 @@ function tabbed(tabsEl, panels){
       setPageActive(sect, i===curIdx);
       const list = document.createElement('div'); list.className='list' + (p.grid?' mgrid':'');
       if(!items.length) list.innerHTML='<div class="empty">'+esc(p.emptyText || '该月暂无已定档')+'</div>';
-      else {
-        /* 本月：在第一部今天或之后发行的作品前插一条「今天」分隔线（前面没有已发行作品时不插） */
-        const todayAt = monthKey(g)===currentKey ? items.findIndex(it=>new Date(it.year, it.month-1, it.day) >= today0) : -1;
-        items.forEach((it,k)=>{
-          if(k===todayAt && k>0){
-            const line = document.createElement('div'); line.className = 'today-line';
-            line.textContent = '今天 ' + (today.getMonth()+1) + '月' + today.getDate() + '日';
-            list.appendChild(line);
-          }
-          list.appendChild(p.makeCard(it));
-        });
-      }
+      else items.forEach(it=>list.appendChild(p.makeCard(it)));
       sect.appendChild(list);
       const ft = document.createElement('div'); ft.className = 'pfoot';
       ft.textContent = p.footFn ? p.footFn(g, items) : '';

@@ -60,16 +60,6 @@ swipe.tabs._switchBy(1);
 assertActive(swipe,2);
 swipe.tabs._switchBy(-1);
 assertActive(swipe,1);
-// 本月列表在今天的位置插入分隔线，其他月份不插
-const days=(y,m)=>[2,10,14,20].map(day=>({year:y,month:m,day}));
-const divided=fixture(months,new Date(2026,9,14),{},days);
-const listOf=section=>section.children.find(c=>c.names.has('list'));
-const lineAt=section=>listOf(section).children.findIndex(c=>c.names.has('today-line'));
-assert.equal(lineAt(divided.panels[0].sections[1]),2,'Today line goes before the first item released today or later');
-assert.equal(lineAt(divided.panels[0].sections[0]),-1);
-assert.equal(lineAt(divided.panels[0].sections[2]),-1);
-const allUpcoming=fixture(months,new Date(2026,9,1),{},days);
-assert.equal(lineAt(allUpcoming.panels[0].sections[1]),-1,'No line when nothing has been released yet');
 const january=fixture([[2026,12],[2027,1],[2027,2]],new Date(2027,0,1));
 assert.deepEqual(january.tabs.children.map(c=>c.textContent),['上月','本月','下月']);
-console.log('Month tabs valid: labels, default month, shared selection, inert hidden pages, accessible selection, session-only persistence, swipe navigation, today line and year boundary');
+console.log('Month tabs valid: labels, default month, shared selection, inert hidden pages, accessible selection, session-only persistence, swipe navigation and year boundary');
