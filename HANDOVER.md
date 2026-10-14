@@ -363,6 +363,7 @@ Python 脚本只用标准库，建议 Python 3.12（与 Actions 一致）；Node
 
 ## 12. 提交与发布
 
+- GPT 的推送授权方式（2026-10-14 用户要求）：必须通过安装到 `torge0414` 账号、并获准访问本仓库的官方 GitHub App 完成远端写入。仅有 GitHub 插件已连接或个人账号有 push 权限，不代表已经满足此要求；先确认连接实际使用 GitHub App 安装授权，再发布。未确认前不推送，也不回退到本机 GitHub CLI 的个人 OAuth / PAT 或个人 SSH 凭据。此要求不改变 Claude 和现有每日 Actions 的授权方式。
 - 只暂存任务相关的文件，不要 `git add .`。
 - 推送前 `git fetch origin`，看远端有没有每日机器人或另一位 agent 的新提交；有就 `git merge` 接上，解决冲突后再推。
 - 不要强推、`reset --hard`，也不要用旧 JSON 覆盖机器人刚写入的数据。需要旧实现时用 git 历史查看。
