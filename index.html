@@ -178,7 +178,8 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   .pic .ph{position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
        font-size:22px; font-weight:700; color:#fff; text-shadow:0 1px 2px rgba(0,0,0,.15);}
   .txt{min-width:0; flex:1; display:flex; flex-direction:column;}
-  .txt .tline{display:flex; min-width:0;}
+  /* 评分数字的基线和标题第一行的基线对齐（游戏、电影、桌面、手机都一样） */
+  .txt .tline{display:flex; align-items:baseline; min-width:0;}
   .txt .tline .t{font-weight:600; letter-spacing:-.01em; line-height:1.3;
        white-space:normal; overflow:hidden; text-overflow:ellipsis; min-width:0;
        display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical;}
@@ -189,7 +190,8 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   .when.soon{color:var(--soon); font-weight:600;}
   .when.today{color:var(--today); font-weight:600;}
   /* 评分按位拆格：每位保持等宽格子，按齐线字体收紧间距；不用 flex/ch，避免字形撑开 */
-  .gscore{position:static; flex:none; text-decoration:none;
+  /* 上下负外边距让评分不参与标题行的高度计算：基线对齐时不会把标题往下推，也不会撑高标题行 */
+  .gscore{position:static; flex:none; text-decoration:none; margin-block:-1em;
        display:inline-grid; grid-auto-flow:column; grid-auto-columns:var(--score-digit-width);
        justify-content:end; align-items:center;
        font-family:var(--score-serif); font-weight:700; letter-spacing:0; line-height:1;
@@ -208,11 +210,11 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   #body .item{align-items:center; gap:22px; padding:16px 0; border-bottom:1px solid var(--line);}
   #body .item .pic{flex:0 0 256px; width:256px; aspect-ratio:460 / 215;}
   #body .txt{justify-content:center; gap:var(--content-gap);}
-  #body .txt .tline{align-items:flex-start; justify-content:space-between; gap:16px;}
+  #body .txt .tline{justify-content:space-between; gap:16px;}
   #body .txt .tline .t{font-family:var(--work-title-font);
        font-size:20px; font-weight:700; letter-spacing:0; line-height:1.4;
        font-variant-numeric:lining-nums tabular-nums; font-feature-settings:"lnum" 1, "tnum" 1;}
-  #body .gscore{margin:0; font-size:32px;}
+  #body .gscore{font-size:32px;}
   #body .fine{display:flex; flex-wrap:wrap; align-items:baseline; color:var(--dim); font-size:13px; line-height:1.5;}
   #body .fine,#body .when,#body .chip{font-family:var(--sans); font-variant-numeric:lining-nums tabular-nums; font-feature-settings:"lnum" 1, "tnum" 1;}
   #body .when{font-size:13px; line-height:1.5;}
@@ -232,7 +234,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   .item.pc .pic.m{width:100%; aspect-ratio:2/3; flex:none; box-shadow:none;}
   .item.pc .pic.m .ph{font-size:34px;}
   .item.pc .txt{padding:12px 0 0; gap:3px;}
-  #movieBody .tline{align-items:flex-start; gap:10px;}
+  #movieBody .tline{gap:10px;}
   #movieBody .tline .t{flex:1; font-family:var(--work-title-font); font-size:26px; font-weight:700; line-height:1.25;}
   #movieBody .mline{display:flex; align-items:baseline; color:var(--dim);}
   #movieBody .mline,
@@ -240,8 +242,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
        white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
   #movieBody .mstat{letter-spacing:.01em;}
   #movieBody .mstat.soon,#movieBody .mstat.today{font-weight:600;}
-  /* 大号评分不撑高标题行，日期按片名实际高度紧接其后。 */
-  #movieBody .gscore{margin:0 0 -3.5px; align-self:flex-start; text-shadow:none; font-size:36px;}
+  #movieBody .gscore{text-shadow:none; font-size:36px;}
 
   /* ---------- 桌面 ---------- */
   @media (min-width:641px){
@@ -281,7 +282,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
     .list.mgrid{grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px 12px; padding-top:14px;}
     #movieBody .tline .t{font-size:16px; font-weight:600; line-height:1.4;}
     #movieBody .gscore{font-size:28px; position:relative; z-index:3; min-width:44px; min-height:28px; height:28px;
-         margin-left:calc(2 * var(--score-digit-width) - 44px); margin-bottom:-5.6px; align-content:start;}
+         margin-left:calc(2 * var(--score-digit-width) - 44px); align-content:start;}
     #movieBody .gscore::after{content:""; position:absolute; inset:-8px 0;}
   }
   @media (prefers-reduced-motion:reduce){
