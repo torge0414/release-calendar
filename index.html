@@ -52,10 +52,10 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   .wrap{max-width:860px; margin:0 auto; position:relative;}
   /* WebKit 会给继承中的 color 再做过渡；文字直接取主题色，容器不重复渐变 */
   h1,.mh .mn,.txt .tline .t{color:var(--txt);}
-  :where(body,.t,.credit,h1,.tab,.err,.when,.mh .mn,.fine,.mline,.pfoot,.mh .mup,.empty,.loading){
+  :where(body,.t,.credit,h1,.tab,.err,.when,.mh .mn,.fine,.mline,.pfoot,.empty,.loading){
     transition:background-color var(--theme-duration) ease, color var(--theme-duration) ease, border-color var(--theme-duration) ease;
   }
-  :where(.pic,.tabs,.mh .msep2){
+  :where(.pic,.tabs){
     transition:background-color var(--theme-duration) ease, border-color var(--theme-duration) ease;
   }
   button:focus-visible,a:focus-visible{outline:2px solid var(--txt); outline-offset:3px;}
@@ -115,9 +115,8 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   .mh{display:flex; align-items:baseline; gap:16px; margin:0 0 2px; flex-wrap:wrap;
       font-family:var(--serif);}
   .mh .mn{font-size:72px; font-weight:700; letter-spacing:-.03em; line-height:.8; font-family:var(--serif);}
-  .mh .msep2{flex:1 1 32px; height:1px; background:var(--line); min-width:24px;}
-  /* 更新时间收在横线右端, 小字弱化 */
-  .mh .mup{font-family:var(--sans); font-size:12px; color:var(--dim); white-space:nowrap;}
+  /* 类别页签和月份页签之间只留空白、不画横线，把月份页签推到右侧（2026-10-14 起不显示更新时间） */
+  .mh .gap{flex:1 1 32px; min-width:24px;}
   /* 页签只有两三个，不做横向滚动。不能设 overflow：页签 ::after 扩出的点击区会被裁掉，
      还会被算成可滚动宽度，切到最后一个页签时整组被滚走、第一个页签被裁（2026-10-14 修过）。 */
   .tabs{display:flex; width:max-content; max-width:100%; margin:0; background:transparent;
@@ -256,13 +255,12 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
     :root{--work-title-font:var(--sans);}
     h1{font-size:14px;}
     .theme-btn::after{content:""; position:absolute; inset:-7px 0; border-radius:999px;}
-    /* 月份数字、类别、月份页签放在同一行；更新时间单独一小行靠右。
+    /* 月份数字、类别、月份页签放在同一行。
        手机用默认齐线的衬线数字，避免 Georgia 旧式 9 的高度差；固定两位数字宽度。 */
     .mh{gap:10px;}
     .mh .mn{font-size:52px; font-family:var(--score-serif); font-variant-numeric:normal;
          font-feature-settings:normal; flex:0 0 2ch; min-width:0;}
-    .mh .msep2{flex:1 1 0; height:0; min-width:4px;}
-    .mh .mup{flex-basis:100%; text-align:right; font-size:11.5px; margin-top:6px;}
+    .mh .gap{flex:1 1 0; min-width:4px;}
     /* 按钮宽度等于文字，下划线和文字对齐；点击范围靠伪元素扩到 44×44，相邻按钮之间留 16px 不重叠 */
     #tabs,#topTabs{gap:16px;}
     #tabs .tab::after,#topTabs .tab::after{content:""; position:absolute; inset:-11px -8px;}
@@ -308,9 +306,8 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
         <button class="tab on" type="button" data-view="game" aria-pressed="true">游戏</button>
         <button class="tab" type="button" data-view="movie" aria-pressed="false">电影</button>
       </div>
-      <span class="msep2"></span>
+      <span class="gap"></span>
       <div class="tabs" id="tabs" role="group" aria-label="切换月份"><span class="tabg"></span></div>
-      <span class="mup" id="mhUp"></span>
     </div>
   </header>
   <div class="pages" id="viewStack">
@@ -583,18 +580,6 @@ function animFade(cur, nxt){
 }
 
 let state = { game: null, movie: null };
-let curViewName = 'game';   // 当前顶层视图, 由下面的视图切换 IIFE 维护
-
-/* 页头更新时间按当前视图分别显示: 游戏页看 releases.json, 电影页看 movies.json(各自数据缺失时回退另一边) */
-function paintUp(){
-  const mhUp = document.getElementById('mhUp');
-  if(!mhUp) return;
-  const cur = curViewName==='movie' ? state.movie : state.game;
-  const other = curViewName==='movie' ? state.game : state.movie;
-  const upd = (cur && cur.updated) || (other && other.updated) || '';
-  mhUp.textContent = upd ? '更新于 ' + upd.slice(5, 16) : '';   /* "2026-10-04 23:14:28" -> "10-04 23:14" */
-}
-
 /* 两份数据任一到位就重建(月签只有一份, 同时控制两边列表) */
 function paint(){
   const panels = [];
@@ -608,7 +593,6 @@ function paint(){
   });
   if(!panels.length) return;
   tabbed($('#tabs'), panels);
-  paintUp();
   showCredit();
   stackFit();
   wakeVisible();
@@ -790,7 +774,6 @@ async function refreshMovies(){
       cur.classList.add('off');          // 静态隐藏(无动画), 刷新恢复时不会补播淡出
     }
     curView = v;
-    curViewName = v; paintUp();   // 更新时间随视图切换(游戏/电影各自的时间戳)
     btns.forEach(b=>{
       const selected = b.dataset.view === v;
       b.classList.toggle('on', selected);
