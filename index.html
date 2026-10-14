@@ -256,14 +256,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
        transition:color var(--theme-duration) ease;}
   .today-line::after{content:""; flex:1; height:1px; background:currentColor; opacity:.55;}
   .list.mgrid .today-line{grid-column:1 / -1; margin:-6px 0;}
-  /* 页底换月：长列表滚到底不用再回到页头 */
-  .mnav{display:flex; justify-content:space-between; gap:16px; margin-top:28px;}
-  .mnav button{position:relative; border:0; background:transparent; cursor:pointer; padding:0;
-       font-family:var(--sans); font-size:14px; font-weight:500; line-height:1.5; color:var(--dim);
-       transition:color var(--theme-duration) ease;}
-  .mnav button:hover{color:var(--txt);}
-  .mnav button.next{margin-left:auto;}
-  .mnav button::after{content:""; position:absolute; inset:-12px -10px;}
+
   .pfoot{color:var(--dim); font-size:11.5px; margin-top:40px; text-align:center; padding-bottom:8px;}
   .credit{color:var(--dim); font-size:11px; text-align:center; padding-bottom:16px; opacity:.8;}
   @media (max-width:640px){
@@ -588,17 +581,6 @@ function tabbed(tabsEl, panels){
         });
       }
       sect.appendChild(list);
-      /* 页底换月 */
-      const nav = document.createElement('nav'); nav.className = 'mnav';
-      nav.setAttribute('aria-label', '切换月份');
-      [[i-1,'prev'],[i+1,'next']].forEach(([j,cls])=>{
-        if(j<0 || j>=p.groups.length) return;
-        const b = document.createElement('button'); b.type = 'button'; b.className = cls;
-        b.textContent = cls==='prev' ? '← ' + labelOf(p.groups[j]) : labelOf(p.groups[j]) + ' →';
-        b.addEventListener('click', ()=>footSwitch(j));
-        nav.appendChild(b);
-      });
-      sect.appendChild(nav);
       const ft = document.createElement('div'); ft.className = 'pfoot';
       ft.textContent = p.footFn ? p.footFn(g, items) : '';
       sect.appendChild(ft);
@@ -662,14 +644,6 @@ function tabbed(tabsEl, panels){
     }
   };
 
-  /* 页底按钮换月后回到页头，从新列表的第一条开始看 */
-  const footSwitch = j=>{
-    switchTo(j);
-    if(window.scrollTo){
-      const reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
-      window.scrollTo({top:0, behavior: reduce ? 'auto' : 'smooth'});
-    }
-  };
   /* 供手机左右滑动换月调用 */
   tabsEl._switchBy = d=>{ const j = curIdx + d; if(j>=0 && j<groups.length) switchTo(j); };
 

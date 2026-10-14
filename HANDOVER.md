@@ -242,7 +242,7 @@ GPT 和 Claude 两位 agent 都是项目负责人，地位对等，不设单一�
 - 隐藏的类别和月份页用 `inert` 和 `aria-hidden="true"` 退出键盘与读屏导航，切换开始即更新，保留原有淡出动画。月份和类别按钮用 `aria-pressed` 表示选择。键盘焦点用 `focus-visible` 描边，不要拿掉。
 - 手机（≤640px）月份、类别按钮和平台、评分链接的点击范围至少 44×44px。主题按钮保留原尺寸，用伪元素把触摸高度扩到 45px。检查扩展后的范围有没有重叠或被附近文字挡住。
 - 本月列表里，在第一部今天或之后发行的作品前插一条金色的「今天 10月14日」分隔线；前面没有已发行作品、或不是本月时不插。电影网格里它独占一整行。
-- 每个月列表底部有「← 上月 / 下月 →」按钮（文字随相对月份变化），点了换月并回到页头。手机上在列表区左右滑动也能换月（左滑看下一个月），距屏幕左右边缘 24px 以内的触摸不算，留给系统返回手势。
+- 手机上在列表区左右滑动可以换月（左滑看下一个月），距屏幕左右边缘 24px 以内的触摸不算，留给系统返回手势。列表底部不放换月按钮（2026-10-14 试加后按用户要求去掉）。
 - 启动时 `#boot` 盖住页面。游戏和电影数据在启动时都会请求并预渲染，任一份到位后 `paint()` 重建共享月份界面，内容画完 `#boot` 才退出。验收时等它消失再看布局。
 
 ## 8. 代码入口
@@ -290,7 +290,7 @@ release-calendar/
 
 测试通过源码边界切出片段单独运行，移动或重构函数时要同步调整测试：
 
-- `scripts/test_month_tabs.js` 切出 `function setPageActive(` 到 `function showCredit(`，依赖自由变量 `PAGE_CLASSES`、`animSwap`、`moveGlider`、`stackFit`、`esc`、`today`、`document`、`window`、`sessionStorage`。它还检查页底换月按钮、滑动入口 `_switchBy` 和「今天」分隔线。
+- `scripts/test_month_tabs.js` 切出 `function setPageActive(` 到 `function showCredit(`，依赖自由变量 `PAGE_CLASSES`、`animSwap`、`moveGlider`、`stackFit`、`esc`、`today`、`document`、`window`、`sessionStorage`。它还检查滑动入口 `_switchBy` 和「今天」分隔线。
 - `scripts/test_game_cover.js` 切出 `function card(` 到 `function firstChar(`。`gameTitle()` 必须留在这一段里；`scoreLink()` 在 `card()` 前面，测试条目没有 `mc`，不会调用它。
 
 ## 9. 每日自动化

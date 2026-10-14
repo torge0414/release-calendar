@@ -52,17 +52,14 @@ const restored=fixture(months,new Date(2026,9,1),{glwTab_tabs_month:'2026-11'});
 assertActive(restored,2);
 const expired=fixture(months,new Date(2026,9,1),{glwTab_tabs_month:'2026-08'});
 assertActive(expired,1);
-// 页底换月按钮和滑动入口
-const navOf=section=>section.children.find(c=>c.names.has('mnav'));
-const footer=fixture(months,new Date(2026,9,14));
-assert.deepEqual(navOf(footer.panels[0].sections[1]).children.map(b=>b.textContent),['← 上月','下月 →']);
-assert.deepEqual(navOf(footer.panels[0].sections[0]).children.map(b=>b.textContent),['本月 →']);
-navOf(footer.panels[0].sections[1]).children[1].handlers.click();
-assertActive(footer,2);
-footer.tabs._switchBy(-1);
-assertActive(footer,1);
-footer.tabs._switchBy(-5);
-assertActive(footer,1);
+// 手机滑动换月入口
+const swipe=fixture(months,new Date(2026,9,14));
+swipe.tabs._switchBy(1);
+assertActive(swipe,2);
+swipe.tabs._switchBy(1);
+assertActive(swipe,2);
+swipe.tabs._switchBy(-1);
+assertActive(swipe,1);
 // 本月列表在今天的位置插入分隔线，其他月份不插
 const days=(y,m)=>[2,10,14,20].map(day=>({year:y,month:m,day}));
 const divided=fixture(months,new Date(2026,9,14),{},days);
@@ -75,4 +72,4 @@ const allUpcoming=fixture(months,new Date(2026,9,1),{},days);
 assert.equal(lineAt(allUpcoming.panels[0].sections[1]),-1,'No line when nothing has been released yet');
 const january=fixture([[2026,12],[2027,1],[2027,2]],new Date(2027,0,1));
 assert.deepEqual(january.tabs.children.map(c=>c.textContent),['上月','本月','下月']);
-console.log('Month tabs valid: labels, default month, shared selection, inert hidden pages, accessible selection, session-only persistence, footer navigation, today line and year boundary');
+console.log('Month tabs valid: labels, default month, shared selection, inert hidden pages, accessible selection, session-only persistence, swipe navigation, today line and year boundary');
