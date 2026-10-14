@@ -781,7 +781,7 @@ function card(it){
   let whenTxt, whenCls;
   if(diff===0){ whenTxt='今天发售'; whenCls='today'; }
   else if(diff===1){ whenTxt='明天发售'; whenCls='today'; }
-  else if(diff>1){ whenTxt='还有 '+diff+' 天'; whenCls='soon'; }
+  else if(diff>1){ whenTxt='还有'+diff+'天'; whenCls='soon'; }   /* 和电影一致，不加空格 */
   else { whenTxt='已发售'; whenCls='out'; }
   const whenTag = '<span class="when '+whenCls+'">'+whenTxt+'</span>';
   const pl = it.plats||[];
