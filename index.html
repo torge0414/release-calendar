@@ -282,7 +282,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
     .list.mgrid{grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px 12px; padding-top:14px;}
     #movieBody .tline .t{font-size:16px; font-weight:600; line-height:1.4;}
     #movieBody .gscore{font-size:28px; position:relative; z-index:3; min-width:44px; min-height:28px; height:28px;
-         margin-left:calc(2 * var(--score-digit-width) - 44px); align-content:start;}
+         margin-left:calc(2 * var(--score-digit-width) - 44px); align-content:start; top:3px;}   /* 大号衬线数字光学下移，和手机片名首行对齐 */
     #movieBody .gscore::after{content:""; position:absolute; inset:-8px 0;}
   }
   @media (prefers-reduced-motion:reduce){
