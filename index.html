@@ -414,7 +414,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
     /* 按钮宽度等于文字，下划线和文字对齐；点击范围靠伪元素扩到 44×44，相邻按钮之间留 16px 不重叠 */
     #tabs,#topTabs{gap:16px;}
     #tabs .tab::after,#topTabs .tab::after{content:""; position:absolute; inset:-11px -8px;}
-    #body .plats{gap:20px 6px; margin-top:0;}
+    #body .plats{gap:20px 12px; margin-top:0;}   /* 平台之间 12px、图标和价格 4px，一眼分清哪个图标配哪个价格 */
     #body .chip{position:relative; z-index:3; min-width:44px; min-height:24px; height:24px; gap:4px;}
     #body .chip .pi{width:13px; height:13px;}
     #body .gscore{min-width:44px; min-height:44px; align-content:center;}
