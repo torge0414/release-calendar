@@ -80,9 +80,11 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   header{text-align:left; padding:2px 0 0;}
   .mast{position:relative;}
   .mast-top{display:flex; align-items:center; justify-content:space-between; margin:0 0 18px;}
+  /* 字标字形高度（Georgia 升部顶到基线约 0.78em）与右侧主题开关同高 31px：40px × 0.78 ≈ 31px。
+     行高 1 时字形中心比行框中心高约 0.02em，下移同样距离和开关居中对齐。 */
   h1{font-family:var(--serif);
-     font-size:15px; font-weight:600; letter-spacing:0; line-height:1.2;
-     white-space:nowrap; padding:0;}
+     font-size:40px; font-weight:600; letter-spacing:0; line-height:1;
+     white-space:nowrap; padding:0; position:relative; top:.02em;}
   .theme-btn{
     position:relative; margin:0; flex:none;
     display:block; width:54px; height:31px; border-radius:999px;
@@ -253,7 +255,8 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   /* ---------- 手机 ---------- */
   @media (max-width:640px){
     :root{--work-title-font:var(--sans);}
-    h1{font-size:14px;}
+    /* 手机放不下 40px：按屏宽缩放，给主题开关和间距留出位置（390px 宽约 30px，320px 宽约 22px） */
+    h1{font-size:clamp(14px, calc((100vw - 110px) / 9.4), 40px);}
     .theme-btn::after{content:""; position:absolute; inset:-7px 0; border-radius:999px;}
     /* 月份数字、类别、月份页签放在同一行。
        手机用默认齐线的衬线数字，避免 Georgia 旧式 9 的高度差；固定两位数字宽度。 */
