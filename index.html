@@ -14,18 +14,15 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   @font-face{font-family:"RC Title Serif SC"; src:url("fonts/title-serif-sc-bold.woff2") format("woff2");
        font-weight:700; font-style:normal; font-display:swap;
        unicode-range:U+00B7,U+2014,U+2026,U+3000-303F,U+4E00-9FFF,U+FF00-FFEF;}
+
+  /* ---------- 主题变量 ---------- */
   :root{
-    --bg:#eef0f3; --card:transparent; --txt:#1c1d21; --sub:#444c59; --dim:#606772; --tab:#606772;
+    --bg:#eef0f3; --txt:#1c1d21; --sub:#444c59; --dim:#606772; --acc:#1c1d21;
     --line:rgba(28,29,33,.14);
-    --acc:#1c1d21; --acc-bg:transparent;
     --today:#8a5200; --soon:#36598a;
     --score-good:#1d6a43; --score-mid:#a86b14; --score-low:#a3333b;
     --score-good-hover:#124c2e; --score-mid-hover:#7a4b08; --score-low-hover:#7c2028;
-    --st:#1c1d21; --st-bg:transparent;
-    --ps:#1c1d21; --ps-bg:transparent;
-    --ns:#1c1d21; --ns-bg:transparent;
     --pic-bg:#e4e6ea; --spin:#c8ccd2; --switch-bg:#e3e4e8; --switch-bg-hover:#d6d8de;
-    --shadow:none; --shadow-hi:none; --r:0px;
     --sans:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif;
     --serif:Georgia,"Times New Roman","Songti SC","RC Title Serif SC","SimSun",serif;
     --work-title-font:var(--serif);
@@ -36,23 +33,15 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
     --theme-duration:.22s;
   }
   html.dark{
-    --bg:#101114; --card:transparent; --txt:#f4f5f6; --sub:#c5ccd6; --dim:#a3aab4; --tab:#a3aab4;
+    --bg:#101114; --txt:#f4f5f6; --sub:#c5ccd6; --dim:#a3aab4; --acc:#f4f5f6;
     --line:rgba(255,255,255,.14);
-    --card-line:rgba(255,255,255,.14);
-    --acc:#f4f5f6; --acc-bg:transparent;
     --today:#e8b764; --soon:#9cb7de;
     --score-good:#72c698; --score-mid:#d49d48; --score-low:#ef9398;
     --score-good-hover:#9ae3bb; --score-mid-hover:#f1c06f; --score-low-hover:#ffb4bc;
-    --st:#f4f5f6; --st-bg:transparent;
-    --ps:#f4f5f6; --ps-bg:transparent;
-    --ns:#f4f5f6; --ns-bg:transparent;
     --pic-bg:#1a1c21; --spin:#4a4c54; --switch-bg:#2c2e33; --switch-bg-hover:#383a40;
-    --shadow:none; --shadow-hi:none;
   }
-  html.dark .err{background:#361d1a; border-color:#6b322c; color:#ffb4a6;}
-  html.dark .item{border-color:var(--card-line);}
-  /* 夜间封面区比卡片更暗, 和右侧文字分开 */
-  html.dark .pic{background:#0b0b0e;}
+
+  /* ---------- 基础 ---------- */
   *{box-sizing:border-box; margin:0; padding:0;}
   body{
     background:var(--bg); color:var(--txt); min-width:320px;
@@ -63,15 +52,37 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   .wrap{max-width:860px; margin:0 auto; position:relative;}
   /* WebKit 会给继承中的 color 再做过渡；文字直接取主题色，容器不重复渐变 */
   h1,.mh .mn,.txt .tline .t{color:var(--txt);}
-  :where(body,.t,.tag,.sub,.meta,.credit,h1,.tab,.err,.when,.mh .mn,
-         .fine,.mline,.pfoot,footer,.mh .mup,.empty,.loading,.h2c,
-         .sect h2,.sect h2 .n,.sect h2 .count,.txt .tag b){
+  :where(body,.t,.credit,h1,.tab,.err,.when,.mh .mn,.fine,.mline,.pfoot,.mh .mup,.empty,.loading){
     transition:background-color var(--theme-duration) ease, color var(--theme-duration) ease, border-color var(--theme-duration) ease;
   }
   :where(.pic,.tabs,.mh .msep2){
     transition:background-color var(--theme-duration) ease, border-color var(--theme-duration) ease;
   }
+  button:focus-visible,a:focus-visible{outline:2px solid var(--txt); outline-offset:3px;}
+
+  /* ---------- 启动遮罩、加载与错误 ---------- */
+  /* 数据就位前盖住整页, 所有布局变化都发生在遮罩下(刷新时看不到元素移动) */
+  #boot{position:fixed; inset:0; background:var(--bg); z-index:99; display:flex;
+       align-items:center; justify-content:center; transition:opacity .35s ease;}
+  #boot.hide{opacity:0; pointer-events:none;}
+  #boot .spin{display:inline-block; width:26px; height:26px; border:2.5px solid var(--spin);
+       border-top-color:var(--acc); border-radius:50%; animation:sp .6s linear infinite;}
+  .loading{color:var(--dim); font-size:14px; text-align:center; padding:52px 0;}
+  .loading .spin{display:inline-block; width:22px; height:22px; border:2.5px solid var(--spin);
+       border-top-color:var(--acc); border-radius:50%; animation:sp .6s linear infinite;}
+  @keyframes sp{to{transform:rotate(360deg);}}
+  .err{background:#fff2f0; border:1px solid #ffd7d2; color:#c0422a; padding:11px 16px;
+       border-radius:12px; font-size:13px; margin-top:14px; display:none; text-align:center;}
+  html.dark .err{background:#361d1a; border-color:#6b322c; color:#ffb4a6;}
+  .empty{color:var(--dim); font-size:14px; padding:18px 8px; text-align:center;}
+
+  /* ---------- 页头：字标与主题开关 ---------- */
+  header{text-align:left; padding:2px 0 0;}
   .mast{position:relative;}
+  .mast-top{display:flex; align-items:center; justify-content:space-between; margin:0 0 18px;}
+  h1{font-family:var(--serif);
+     font-size:15px; font-weight:600; letter-spacing:0; line-height:1.2;
+     white-space:nowrap; padding:0;}
   .theme-btn{
     position:relative; margin:0; flex:none;
     display:block; width:54px; height:31px; border-radius:999px;
@@ -81,12 +92,6 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   }
   /* 悬停只加深底色，和全站「悬停只变色」一致 */
   .theme-btn:hover{background:var(--switch-bg-hover);}
-  .theme-btn .tb-sun,.theme-btn .tb-moon{position:absolute; top:50%; transform:translateY(-50%);
-       font-size:12px; line-height:1; color:var(--dim); pointer-events:none; transition:color var(--theme-duration) ease;}
-  .theme-btn .tb-sun{left:9px;}
-  .theme-btn .tb-moon{right:8px;}
-  html.dark .theme-btn .tb-sun{color:#d8a13a;}
-  html.dark .theme-btn .tb-moon{color:#9aa0a6;}
   .theme-btn .tb-knob{
     position:absolute; top:2px; left:2px; width:27px; height:27px; border-radius:50%;
     background:#fff; box-shadow:0 2px 6px rgba(0,0,0,.25);
@@ -96,24 +101,51 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   /* 夜间主题旋钮用深色, 与浅色主题的白旋钮区分开(否则两个主题下都是白圆点) */
   html.dark .theme-btn .tb-knob{left:25px; background:#565661;
        box-shadow:0 2px 6px rgba(0,0,0,.45), inset 0 0 0 .5px rgba(255,255,255,.08);}
-  header{text-align:left; padding:2px 0 0;}
-  h1{font-family:var(--serif);
-     font-size:15px; font-weight:600; letter-spacing:0; line-height:1.2;
-     white-space:nowrap; padding:0;}
-  .sub{font-size:15px; color:var(--sub); margin-top:10px;}
-  .meta{font-size:11.5px; color:var(--dim); margin-top:0; padding-top:10px; display:flex; align-items:center;
-       justify-content:center; gap:7px;}
-  .meta .msep{opacity:.5;}
-  .sect{margin-top:16px;}
-  /* 页切换: 两列表叠放交叉过渡(重叠淡入淡出); 容器高度瞬时调整, 不做高度动画(否则下方内容会慢慢滑=下沉感) */
-  .pages{position:relative;}
+  /* 旋钮内嵌太阳/月亮矢量图标, 旋转交叉过渡 */
+  .tb-ic{position:absolute; width:15px; height:15px; fill:none; stroke:currentColor;
+       stroke-width:2; stroke-linecap:round; stroke-linejoin:round;
+       transition:transform .35s cubic-bezier(.4,0,.2,1), opacity .35s;}
+  .tb-ic-sun{color:#d18a1d;}
+  /* 月亮只在夜间主题可见(深色旋钮上), 用浅蓝灰保证对比度 */
+  .tb-ic-moon{color:#d6ddf2; opacity:0; transform:rotate(-90deg) scale(.4);}
+  html.dark .tb-ic-sun{opacity:0; transform:rotate(90deg) scale(.4);}
+  html.dark .tb-ic-moon{opacity:1; transform:rotate(0) scale(1);}
+
+  /* ---------- 页头：月份数字、类别和月份页签 ---------- */
+  .mh{display:flex; align-items:baseline; gap:16px; margin:0 0 2px; flex-wrap:wrap;
+      font-family:var(--serif);}
+  .mh .mn{font-size:72px; font-weight:700; letter-spacing:-.03em; line-height:.8; font-family:var(--serif);}
+  .mh .msep2{flex:1 1 32px; height:1px; background:var(--line); min-width:24px;}
+  /* 更新时间收在横线右端, 小字弱化 */
+  .mh .mup{font-family:var(--sans); font-size:12px; color:var(--dim); white-space:nowrap;}
+  /* 页签只有两三个，不做横向滚动。不能设 overflow：页签 ::after 扩出的点击区会被裁掉，
+     还会被算成可滚动宽度，切到最后一个页签时整组被滚走、第一个页签被裁（2026-10-14 修过）。 */
+  .tabs{display:flex; width:max-content; max-width:100%; margin:0; background:transparent;
+       border-radius:0; padding:0; gap:14px; position:relative; overflow:visible;
+       box-shadow:none; flex:none; align-items:baseline;}
+  .tab{
+    position:relative; z-index:1; border:0; background:transparent; cursor:pointer; font-family:var(--sans);
+    font-size:14px; font-weight:500; color:var(--dim); padding:0 0 2px; flex:none; white-space:nowrap;
+    border-radius:0; transition:color var(--theme-duration) ease;
+  }
+  .tab:hover{color:var(--txt);}
+  .tab.on{color:var(--txt); font-weight:600;}
+  /* 类别和月份使用相同的文字页签与共享下划线；类别下划线不滑动 */
+  .tabg{display:block; position:absolute; left:0; bottom:0; height:1px;
+       background:var(--txt); pointer-events:none;
+       transition:transform .6s cubic-bezier(.4,0,.2,1), width .6s cubic-bezier(.4,0,.2,1), background-color var(--theme-duration) ease;}
+  #topTabs > .tabg{transition:background-color var(--theme-duration) ease;}
+
+  /* ---------- 视图与月份切换 ---------- */
+  /* 页切换: 列表叠放交叉过渡; 容器高度瞬时调整, 不做高度动画(否则下方内容会慢慢滑=下沉感) */
+  .pages{position:relative; overflow:hidden;}
+  /* 内容区初始就占满视口: 加载期间底部署名不在首屏内, 避免刷新时的跳动/闪烁 */
+  #viewStack{min-height:calc(100vh - 100px);}
   .page{position:absolute; top:0; left:0; width:100%; opacity:0; pointer-events:none;
         transform:translateX(0); margin-top:0;
         transition:opacity .6s cubic-bezier(.4,0,.2,1), transform .6s cubic-bezier(.4,0,.2,1);}
-  .page.on{position:relative; opacity:1; pointer-events:auto; transform:translateX(0);}  /* 活动页留在文档流, 避免加载瞬间容器塌陷(底部元素上跳) */
-  .page.pre-r{opacity:0; transform:translateX(44px);}
-  .page.pre-l{opacity:0; transform:translateX(-44px);}
-  /* 进出场都用 keyframes: 显式定义起点, 不依赖元素残留状态(transition 会被起点问题吞掉) */
+  .page.on{position:relative; opacity:1; pointer-events:auto; transform:translateX(0);}  /* 活动页留在文档流, 避免加载瞬间容器塌陷 */
+  /* 进出场都用 keyframes: 显式定义起点, 不依赖元素残留状态 */
   @keyframes inR{from{opacity:0; transform:translateX(44px);} to{opacity:1; transform:translateX(0);}}
   @keyframes inL{from{opacity:0; transform:translateX(-44px);} to{opacity:1; transform:translateX(0);}}
   @keyframes outL{from{opacity:1; transform:translateX(0);} to{opacity:0; transform:translateX(-44px);}}
@@ -128,305 +160,129 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   .page.anim-fade-out{animation:fadeOut .22s ease both; transition:none;}
   /* 静态隐藏态: 恢复视图时用, 绝不能带动画(否则刷新会补播一次淡出) */
   .page.off{opacity:0; pointer-events:none; transform:translateX(-44px); animation:none; transition:none;}
-  /* 非活动视图整体不接收点击(含其内部元素): 否则卡片自身 pointer-events:auto 会盖住当前视图的胶囊/评分块 */
+  /* 非活动视图整体不接收点击(含其内部元素) */
   #viewStack > .page:not(.on), #viewStack > .page:not(.on) *{pointer-events:none !important;}
-  /* 非活动视图(静止态 .off)高度归零并裁剪: absolute 元素即使不占布局, 也会把超出部分算进文档滚动高度,
-     导致「当前列表很短但滚动条很长」(最长的那份列表在撑高页面)。只在静止态生效, 动画中的 anim-* 类不受影响。 */
-  /* 列表很短但滚动条很长: absolute 的页面即使不占布局, 超出部分仍算进文档滚动高度。
-     .pages(顶层 #viewStack 和视图内的月份容器)的高度已由 JS 设为"当前显示页"的高度,
-     再加 overflow:hidden 裁掉其余页的溢出, 文档高度就只随当前列表变化。 */
-  .pages{overflow:hidden;}
-  /* 内容区初始就占满视口: 加载期间底部署名不在首屏内, 避免刷新时的跳动/闪烁 */
-  #viewStack{min-height:calc(100vh - 100px);}
-  .h2c{font-size:12.5px; color:var(--dim); font-weight:500; text-align:center; margin:0 0 12px; padding-top:16px;}
-  .sect{padding-top:16px;}   /* 顶部间距(原来挂在列表上方的计数行上) */
-  .sect h2{
-    font-size:17px; font-weight:700; color:var(--txt); letter-spacing:-.01em;
-    display:flex; align-items:baseline; gap:10px; margin:0 6px 14px;
-  }
-  .sect h2 .n{color:var(--acc); font-size:24px;}
-  .sect h2 .count{font-size:12.5px; font-weight:500; color:var(--dim); margin-left:auto;}
-  /* 单列横卡: 封面左 信息右。游戏封面框固定 460×215 */
-  .list{display:flex; flex-direction:column; gap:10px;}
-  .item{
-    display:flex; align-items:stretch; gap:20px; background:transparent;
-    border:0; border-radius:0; padding:0;
-    box-shadow:none; transition:background-color var(--theme-duration) ease, border-color var(--theme-duration) ease;
-    position:relative; min-width:0;
-  }
-  .item:hover{box-shadow:none;}
-  .pic{flex:0 0 216px; width:216px; height:108px; border-radius:8px; overflow:hidden;
-       position:relative; background:var(--pic-bg); flex:none;
+  .sect{padding-top:8px;}
+  .pfoot{color:var(--dim); font-size:11.5px; margin-top:40px; text-align:center; padding-bottom:8px; font-family:var(--sans);}
+  .credit{color:var(--dim); font-size:11px; text-align:center; padding-bottom:16px; opacity:.8; font-family:var(--sans);}
+
+  /* ---------- 列表通用：封面、标题行、日期状态、评分 ---------- */
+  .list{display:flex; flex-direction:column;}
+  .item{display:flex; align-items:stretch; position:relative; min-width:0;
+       transition:background-color var(--theme-duration) ease, border-color var(--theme-duration) ease;}
+  .pic{border-radius:8px; overflow:hidden; position:relative; background:var(--pic-bg);
        box-shadow:inset 0 0 0 1px rgba(0,0,0,.03);}
+  html.dark .pic{background:#0b0b0e;}   /* 夜间封面区比底色更暗 */
   .pic .cover{position:absolute; left:0; top:0; width:100%; height:100%; object-fit:cover; display:block;}
-  .pic .cover.wide{object-fit:contain;}  /* 超宽横幅完整显示(不裁切) */
   .pic .ph{position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
        font-size:22px; font-weight:700; color:#fff; text-shadow:0 1px 2px rgba(0,0,0,.15);}
-  .txt{min-width:0; flex:1; padding:0; display:flex; flex-direction:column;}
-  .txt .tline{display:flex; align-items:center; gap:8px; min-width:0;}
-  .txt .tline a.t{color:var(--txt); text-decoration:none; transition:opacity .6s, color var(--theme-duration) ease;}
-  .txt .tline a.t:hover{opacity:.7;}
-  .txt .tline .t{font-size:17px; font-weight:600; letter-spacing:-.01em; line-height:1.3;
-       white-space:nowrap; overflow:hidden; text-overflow:ellipsis; min-width:0;}
-  .txt .when{position:absolute; right:18px; top:14px; flex:none; font-size:10.5px; font-weight:700; border-radius:7px; padding:2px 8px;
-       line-height:1.4; letter-spacing:.01em; white-space:nowrap; z-index:2;}
-  .txt .tline.haswhen .t{padding-right:64px;}   /* 有徽章时给右上角让位 */
-  .when.soon{background:var(--acc-bg); color:var(--acc);}
-  .when.today{background:#fff0dd; color:#b26a00;}
-  html.dark .when.today{background:#4a320f; color:#ffc46b;}
-  .when.out{background:transparent; color:var(--sub);}
-  html.dark .when.out{background:transparent; color:var(--sub);}
-  .txt .tag{font-size:12.5px; color:var(--dim); margin-top:5px; display:flex; align-items:center; gap:7px;
-       flex-wrap:wrap;}
-  .txt .tag b{color:var(--today); font-weight:700;}
-  .txt .tag .mc{display:none;}
-  .txt .tag.tag3{margin-top:2px; padding-right:56px;}   /* 给右下角评分块让位 */
-  .mcbox{position:absolute; right:18px; bottom:14px; border-radius:11px; padding:0;
-       width:42px; height:42px; box-sizing:border-box; color:#fff; display:flex; align-items:center; justify-content:center;
-       line-height:1; z-index:2; box-shadow:0 2px 8px rgba(0,0,0,.18); text-decoration:none;
-       transition:box-shadow .6s;}   /* 悬停压暗要有过渡(全站统一 0.6s) */
-  /* 悬停: 背景压暗(与平台标签同一套效果)。数字本身已是白色, 压暗底色后对比度更高、白字更跳。
-     保留原有的投影, 只叠一层 inset 黑。暗色主题有更高特异性的投影规则, 需单独补一条。 */
-  .mcbox:hover{box-shadow:0 2px 8px rgba(0,0,0,.18), inset 0 0 0 99px rgba(0,0,0,.26);}
-  html.dark .mcbox:hover{box-shadow:0 2px 10px rgba(0,0,0,.45), inset 0 0 0 99px rgba(0,0,0,.26);}
-  .mcbox .mcv{font-size:17px; font-weight:800; letter-spacing:-.02em; line-height:1; text-decoration:none;}
-  .mcbox.g,.mcbox.y,.mcbox.r{text-align:center;}
-  .mcbox.g{background:#2a9257;} .mcbox.y{background:#d49d48;} .mcbox.r{background:#c8524d;}
-  html.dark .mcbox{box-shadow:0 2px 10px rgba(0,0,0,.45);}
-  .plats{display:flex; gap:7px; margin-top:auto; flex-wrap:wrap;}
-  .chip{
-    font-size:11.5px; font-weight:600; text-decoration:none; border-radius:980px;
-    padding:3px 11px; display:inline-flex; align-items:center; gap:5px;
-    transition:transform .25s cubic-bezier(.4,0,.2,1), box-shadow .25s, color var(--theme-duration) ease, background-color var(--theme-duration) ease;
-    letter-spacing:.01em; white-space:nowrap;
-    height:20px; box-sizing:border-box;   /* 固定高度: 悬停放大字号时不撑开卡片、不推挤列表 */
-    line-height:14px;                     /* 固定行盒: 否则字号变大时文字在胶囊内上下跳 */
-  }
-  /* 悬停放大用字号/内边距(而非 transform:scale): scale 会按位图栅格化文字,动画期间发糊 */
-  /* 悬停反馈只改色彩、不动几何: 放大必然让字形变高(糊/位移); filter/transform 会提升合成层重栅格化文字。
-     内阴影铺一层半透明黑 = 底色加深, 纯绘制、文字保持矢量清晰、布局零变化。 */
-  .chip .pd{font-weight:500; opacity:.65; font-size:10.5px;}
-  /* 按 torge 要求: Steam 与 PS 的配色对调(Steam 用原 PS 的紫蓝, PS 用原 Steam 的亮蓝) */
-  .chip.st{color:var(--ps); background:var(--ps-bg);}
-  .chip.ps{color:var(--st); background:var(--st-bg);}
-  .chip.ns{color:var(--ns); background:var(--ns-bg);}
-  /* 悬停: 背景压暗 + 字体变亮(白)。必须放在平台色规则之后, 否则 .chip.st 的 color 会盖住这里的白。
-     外描边不参与布局 → 无位移; 字号不变 → 文字不糊。 */
-  .chip:hover{opacity:1; transform:none; box-shadow:none; color:var(--txt);
-       text-decoration:underline; text-underline-offset:4px;}
-  .empty{color:var(--dim); font-size:14px; padding:18px 8px; text-align:center;}
-  .loading{color:var(--dim); font-size:14px; text-align:center; padding:52px 0;}
-  .loading .spin{display:inline-block; width:22px; height:22px; border:2.5px solid var(--spin);
-       border-top-color:var(--acc); border-radius:50%; animation:sp .6s linear infinite;}
-  @keyframes sp{to{transform:rotate(360deg);}}
-  /* 启动遮罩: 数据就位前盖住整页, 所有布局变化都发生在遮罩下(刷新时看不到元素移动) */
-  #boot{position:fixed; inset:0; background:var(--bg); z-index:99; display:flex;
-       align-items:center; justify-content:center; transition:opacity .35s ease;}
-  #boot.hide{opacity:0; pointer-events:none;}
-  #boot .spin{display:inline-block; width:26px; height:26px; border:2.5px solid var(--spin);
-       border-top-color:var(--acc); border-radius:50%; animation:sp .6s linear infinite;}
-  .err{background:#fff2f0; border:1px solid #ffd7d2; color:#c0422a; padding:11px 16px;
-       border-radius:12px; font-size:13px; margin-top:14px; display:none; text-align:center;}
-  /* 页签只有两三个，不做横向滚动。不能设 overflow：页签 ::after 扩出的点击区会被裁掉，
-     还会被算成可滚动宽度，切到最后一个页签时整组被滚走、第一个页签被裁（2026-10-14 修过）。 */
-  .tabs{display:flex; width:max-content; max-width:100%; margin:0; background:transparent;
-       border-radius:0; padding:0; gap:14px; position:relative; overflow:visible;
-       box-shadow:none; flex:none; align-items:baseline;}
-  .tabg{display:none;}
-  .tab{
-    position:relative; z-index:1; border:0; background:transparent; cursor:pointer; font-family:var(--sans);
-    font-size:14px; font-weight:500; color:var(--dim); padding:0 0 2px; flex:none; white-space:nowrap;
-    border-radius:0; transition:color var(--theme-duration) ease;
-  }
-  .tab:hover{color:var(--txt);}
-  .tab.on{color:var(--txt); font-weight:600;}
-  .tabs.top{margin:0;}
-  /* 类别和月份使用相同的文字页签与共享下划线。 */
-  #tabs > .tabg,#topTabs > .tabg{display:block; position:absolute; left:0; bottom:0; height:1px;
-       background:var(--txt); pointer-events:none;
-       transition:transform .6s cubic-bezier(.4,0,.2,1), width .6s cubic-bezier(.4,0,.2,1), background-color var(--theme-duration) ease;}
-  #topTabs > .tabg{transition:background-color var(--theme-duration) ease;}
-  .pic.m{flex:0 0 68px; width:68px; height:100px;}
-  .pic.sq{flex:0 0 68px; width:68px; height:68px;}   /* 专辑封面: 正方形 */
-  .pic.m .ph{font-size:20px;}
-  footer{color:var(--dim); font-size:11.5px; margin-top:40px; text-align:center; padding-bottom:8px;}
-
-  .pfoot{color:var(--dim); font-size:11.5px; margin-top:40px; text-align:center; padding-bottom:8px;}
-  .credit{color:var(--dim); font-size:11px; text-align:center; padding-bottom:16px; opacity:.8;}
-  @media (max-width:640px){
-    /* 窄屏: 平台标签让出右下角评分块区域, 放不下自动换行(宽屏不受影响) */
-    .plats{padding-right:62px;}
-  }
-  /* 月份大标题(编辑排版: 大号衬线月份 + 分类页签 + 通栏细线) */
-  .mh{display:flex; align-items:baseline; gap:16px; margin:0 0 4px; flex-wrap:wrap;
-      font-family:var(--serif);}
-  .mh .mn{font-size:72px; font-weight:700; letter-spacing:-.03em; line-height:.8; font-family:var(--serif);}
-  .mh .msep2{flex:1 1 32px; height:1px; background:var(--line); min-width:24px;}
-  /* 电影: 海报墙网格(Letterboxd 式竖版海报卡) */
-  .list.mgrid{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:28px 20px;}
-  .item.pc{flex-direction:column; align-items:stretch; padding:0; gap:0; overflow:hidden;}
-  .item.pc .pic.m{width:100%; height:auto; aspect-ratio:2/3; flex:none; border-radius:8px;
-       box-shadow:none;}
-  .item.pc .pic.m .ph{font-size:34px;}
-  .item.pc .txt{padding:12px 0 0;}
-  #movieBody .item.pc .txt{flex-direction:column; align-items:stretch; gap:3px;}
-  #movieBody .tline{display:flex; align-items:flex-start; gap:10px; min-width:0;}
-  #movieBody .tline .t{flex:1; min-width:0; display:-webkit-box; white-space:normal; overflow:hidden; text-overflow:ellipsis;
-       font-family:var(--work-title-font); font-size:26px; font-weight:700; line-height:1.25;
-       -webkit-line-clamp:2; -webkit-box-orient:vertical;}
-  #movieBody .mline,
-  #movieBody .mstat{margin:0; font-family:var(--sans); font-size:13px; font-weight:500; line-height:1.5;
-       white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
-  #movieBody .mline{display:flex; align-items:baseline; color:var(--dim);}
-  #body .release-date,#movieBody .release-date{flex:none; color:var(--sub); font-weight:600;
-       transition:color var(--theme-duration) ease;}
-  #body .fine .sep,#movieBody .mline .sep{color:var(--dim); opacity:.65; flex:none; margin:0 6px; font-weight:400;}
-  #movieBody .mstat.when,
-  #movieBody .mstat.when.soon,
-  #movieBody .mstat.when.today,
-  #movieBody .mstat.when.out{position:static; top:auto; right:auto; left:auto;
-       background:none; border-radius:0; padding:0; font-weight:500; color:var(--dim);}
-  #movieBody .mstat.when.soon{color:var(--soon); font-weight:600;}
-  #movieBody .mstat.when.today{color:var(--today); font-weight:600;}
-  html.dark #movieBody .mstat.when.today,
-  html.dark #movieBody .mstat.when.out,
-  html.dark #movieBody .mstat.when.soon{background:none;}
-  .item.pc .tline.haswhen .t{padding-right:0;}
-  /* 大号评分不撑高标题行，日期按片名实际高度紧接其后。 */
-  #movieBody .gscore{position:static; margin:0 0 -3.5px; flex:none; align-self:flex-start;
+  .txt{min-width:0; flex:1; display:flex; flex-direction:column;}
+  .txt .tline{display:flex; min-width:0;}
+  .txt .tline .t{font-weight:600; letter-spacing:-.01em; line-height:1.3;
+       white-space:normal; overflow:hidden; text-overflow:ellipsis; min-width:0;
+       display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical;}
+  .release-date{flex:none; color:var(--sub); font-weight:600; transition:color var(--theme-duration) ease;}
+  .fine .sep,.mline .sep{color:var(--dim); opacity:.65; flex:none; margin:0 6px; font-weight:400;}
+  /* 状态：已发售灰色；今天 / 明天发售用金色，「还有 N 天」用蓝灰色，两种状态一眼分开 */
+  .when{flex:none; white-space:nowrap; font-weight:500; color:var(--dim);}
+  .when.soon{color:var(--soon); font-weight:600;}
+  .when.today{color:var(--today); font-weight:600;}
+  /* 评分按位拆格：每位保持等宽格子，按齐线字体收紧间距；不用 flex/ch，避免字形撑开 */
+  .gscore{position:static; flex:none; text-decoration:none;
        display:inline-grid; grid-auto-flow:column; grid-auto-columns:var(--score-digit-width);
        justify-content:end; align-items:center;
-       text-decoration:none; text-shadow:none;
-       font-family:var(--score-serif);
-       font-size:36px; font-weight:700; letter-spacing:0; line-height:1;
+       font-family:var(--score-serif); font-weight:700; letter-spacing:0; line-height:1;
        font-variant-numeric:normal; font-feature-settings:normal;
        transition:color var(--theme-duration) ease;}
-  #movieBody .gscore.g{color:var(--score-good);}
-  #movieBody .gscore.y{color:var(--score-mid);}
-  #movieBody .gscore.r{color:var(--score-low);}
-  :is(#body,#movieBody) .gscore.g:is(:hover,:focus-visible){color:var(--score-good-hover);}
-  :is(#body,#movieBody) .gscore.y:is(:hover,:focus-visible){color:var(--score-mid-hover);}
-  :is(#body,#movieBody) .gscore.r:is(:hover,:focus-visible){color:var(--score-low-hover);}
-  .item.pc .tag3{padding-right:0;}
-  /* 月份标题固定在页签下方(移出动画区, 瞬时换字, 不再叠字) */
-  #mhBar{margin:0 0 2px;}
-  /* 更新时间收在横线右端, 小字弱化(原来是独立一行, 突兀) */
-  .mh .mup{font-family:var(--sans); font-size:12px; color:var(--dim); white-space:nowrap;}
-  /* 平台标签内联官方 logo */
-  .chip .pi{width:13px; height:13px; fill:currentColor; flex:none;}
-  .chip .np{color:var(--dim); transition:color var(--theme-duration) ease;}   /* 平台暂无价格 */
-  /* 主题滑块: 旋钮内嵌太阳/月亮矢量图标, 旋转交叉过渡 */
-  .tb-ic{position:absolute; width:15px; height:15px; fill:none; stroke:currentColor;
-       stroke-width:2; stroke-linecap:round; stroke-linejoin:round;
-       transition:transform .35s cubic-bezier(.4,0,.2,1), opacity .35s;}
-  .tb-ic-sun{color:#d18a1d;}
-  /* 月亮只在夜间主题可见(深色旋钮上), 用浅蓝灰保证对比度 */
-  .tb-ic-moon{color:#d6ddf2; opacity:0; transform:rotate(-90deg) scale(.4);}
-  html.dark .tb-ic-sun{opacity:0; transform:rotate(90deg) scale(.4);}
-  html.dark .tb-ic-moon{opacity:1; transform:rotate(0) scale(1);}
-  @media (max-width:640px){
-    /* 主标题随屏宽缩放(覆盖旧的固定 32px: 衬线+宽字距在窄屏会溢出) */
-    h1{font-size:clamp(15px,4.8vw,32px); letter-spacing:.04em; white-space:nowrap; padding:0 60px;}
-    .eyebrow{letter-spacing:.18em;}
-    .pic{flex-basis:150px; width:150px; height:75px;}
-    :root{--work-title-font:var(--sans);}
-    .list.mgrid{grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px 12px;}
-    #movieBody .tline .t{font-size:16px; font-weight:600; line-height:1.4;}
-    #movieBody .gscore{font-size:28px;}
-    /* 手机用默认齐线的衬线数字，避免 Georgia 旧式 9 的高度差；固定两位数字宽度。 */
-    .mh .mn{font-size:52px; font-family:var(--score-serif); font-variant-numeric:normal;
-         font-feature-settings:normal; flex:0 0 2ch; min-width:0;}
-    /* 月份数字、类别、月份页签放在同一行；更新时间单独一小行靠右 */
-    .mh .msep2{flex:1 1 0; height:0; min-width:4px;}
-    .mh .mup{flex-basis:100%; text-align:right; font-size:11.5px; margin-top:6px;}
-  }
-  @media (max-width:360px){
-    h1{font-size:13.5px; letter-spacing:.01em;}
-  }
-  #body .list{gap:0;}
+  .gscore .dg{display:block; width:var(--score-digit-width); min-width:0; max-width:var(--score-digit-width);
+       text-align:center; font-variant-numeric:normal; font-feature-settings:normal;}
+  .gscore.g{color:var(--score-good);}
+  .gscore.y{color:var(--score-mid);}
+  .gscore.r{color:var(--score-low);}
+  .gscore.g:is(:hover,:focus-visible){color:var(--score-good-hover);}
+  .gscore.y:is(:hover,:focus-visible){color:var(--score-mid-hover);}
+  .gscore.r:is(:hover,:focus-visible){color:var(--score-low-hover);}
+
+  /* ---------- 游戏：单列横排，封面 460×215 ---------- */
   #body .item{align-items:center; gap:22px; padding:16px 0; border-bottom:1px solid var(--line);}
-  #body .item .pic{flex:0 0 256px; width:256px; height:auto; aspect-ratio:460 / 215; min-height:0; border-radius:8px;}
-  #body .item .pic .cover,#body .item .pic .cover.wide{position:absolute; left:0; top:0; width:100%; height:100%; object-fit:cover;}
+  #body .item .pic{flex:0 0 256px; width:256px; aspect-ratio:460 / 215;}
   #body .txt{justify-content:center; gap:var(--content-gap);}
-  #body .fine,
-  #body .txt .when,
-  #body .item .chip{font-family:var(--sans); font-variant-numeric:lining-nums tabular-nums; font-feature-settings:"lnum" 1, "tnum" 1;}
-  #body .txt .when,
-  #body .txt .when.soon,
-  #body .txt .when.today,
-  #body .txt .when.out{position:static; top:auto; right:auto; background:none; border-radius:0; padding:0;
-       font-size:13px; font-weight:500; letter-spacing:0; line-height:1.5; color:var(--dim);}
-  /* 今天 / 明天发售用金色，「还有 N 天」用蓝灰色，两种状态一眼分开 */
-  #body .txt .when.soon{color:var(--soon); font-weight:600;}
-  #body .txt .when.today{color:var(--today); font-weight:600;}
-  html.dark #body .txt .when.today,
-  html.dark #body .txt .when.out,
-  html.dark #body .txt .when.soon{background:none;}
-  #body .txt .tline{align-items:baseline; justify-content:space-between; gap:16px;}
+  #body .txt .tline{align-items:flex-start; justify-content:space-between; gap:16px;}
   #body .txt .tline .t{font-family:var(--work-title-font);
        font-size:20px; font-weight:700; letter-spacing:0; line-height:1.4;
        font-variant-numeric:lining-nums tabular-nums; font-feature-settings:"lnum" 1, "tnum" 1;}
-  #body .gscore{position:static; margin:0; flex:none; flex-shrink:0; text-decoration:none;
-       display:inline-grid; grid-auto-flow:column; grid-auto-columns:var(--score-digit-width);
-       justify-content:end; align-items:center;
-       font-family:var(--score-serif);
-       font-size:32px; font-weight:700; letter-spacing:0; line-height:1;
-       font-variant-numeric:normal; font-feature-settings:normal;
+  #body .gscore{margin:0; font-size:32px;}
+  #body .fine{display:flex; flex-wrap:wrap; align-items:baseline; color:var(--dim); font-size:13px; line-height:1.5;}
+  #body .fine,#body .when,#body .chip{font-family:var(--sans); font-variant-numeric:lining-nums tabular-nums; font-feature-settings:"lnum" 1, "tnum" 1;}
+  #body .when{font-size:13px; line-height:1.5;}
+  .plats{display:flex; flex-wrap:wrap; gap:16px; margin-top:0;}
+  /* 平台只显示图标加价格；悬停加下划线 */
+  .chip{display:inline-flex; align-items:center; gap:5px; white-space:nowrap;
+       font-size:13px; font-weight:500; line-height:14px; color:var(--txt); text-decoration:none;
        transition:color var(--theme-duration) ease;}
-  /* 每位保持等宽格子，按齐线字体收紧间距；不用 flex/ch，避免字形撑开 */
-  #body .gscore .dg,
-  #movieBody .gscore .dg{display:block; width:var(--score-digit-width); min-width:0; max-width:var(--score-digit-width);
-       text-align:center; font-variant-numeric:normal; font-feature-settings:normal;}
-  #body .gscore.g{color:var(--score-good);}
-  #body .gscore.y{color:var(--score-mid);}
-  #body .gscore.r{color:var(--score-low);}
-  #body .fine{display:flex; flex-wrap:wrap; align-items:baseline;
-       color:var(--dim); font-size:13px; line-height:1.5;}
-  #body .plats{padding-right:0; margin-top:0; gap:16px;}
-  .chip,
-  .chip.st,.chip.ps,.chip.ns{color:var(--txt); background:transparent; border-radius:0;
-       padding:0; height:auto; font-size:13px; font-weight:500; letter-spacing:0; box-shadow:none;}
-  .chip .pi{width:15px; height:15px;}
-  .mast-top{display:flex; align-items:center; justify-content:space-between; margin:0 0 18px;}
-  #body .sect,#movieBody .sect{margin-top:0; padding-top:8px;}
-  .pfoot,.credit,footer{font-family:var(--sans);}
-  button:focus-visible,a:focus-visible{outline:2px solid var(--txt); outline-offset:3px;}
-  /* 桌面信息区与封面等高：标题和日期靠上，平台价格贴齐封面底部。 */
+  .chip:hover{color:var(--txt); text-decoration:underline; text-underline-offset:4px;}
+  .chip .pi{width:15px; height:15px; fill:currentColor; flex:none;}
+  .chip .np{color:var(--dim); transition:color var(--theme-duration) ease;}   /* 平台暂无价格 */
+
+  /* ---------- 海报网格（电影），海报 2:3 ---------- */
+  .list.mgrid{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:28px 20px;}
+  .item.pc{flex-direction:column; overflow:hidden;}
+  .item.pc .pic.m{width:100%; aspect-ratio:2/3; flex:none; box-shadow:none;}
+  .item.pc .pic.m .ph{font-size:34px;}
+  .item.pc .txt{padding:12px 0 0; gap:3px;}
+  #movieBody .tline{align-items:flex-start; gap:10px;}
+  #movieBody .tline .t{flex:1; font-family:var(--work-title-font); font-size:26px; font-weight:700; line-height:1.25;}
+  #movieBody .mline{display:flex; align-items:baseline; color:var(--dim);}
+  #movieBody .mline,
+  #movieBody .mstat{margin:0; font-family:var(--sans); font-size:13px; font-weight:500; line-height:1.5;
+       white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+  #movieBody .mstat{letter-spacing:.01em;}
+  #movieBody .mstat.soon,#movieBody .mstat.today{font-weight:600;}
+  /* 大号评分不撑高标题行，日期按片名实际高度紧接其后。 */
+  #movieBody .gscore{margin:0 0 -3.5px; align-self:flex-start; text-shadow:none; font-size:36px;}
+
+  /* ---------- 桌面 ---------- */
   @media (min-width:641px){
+    /* 信息区与封面等高：标题和日期靠上，平台价格贴齐封面底部。 */
     #body .item{align-items:stretch;}
     #body .txt{justify-content:flex-start; gap:8px;}
-    #body .txt .tline{align-items:flex-start;}
-    #body .txt .tline .t{font-size:26px; line-height:1.25; white-space:normal; display:-webkit-box;
-         -webkit-line-clamp:2; -webkit-box-orient:vertical;}
+    #body .txt .tline .t{font-size:26px; line-height:1.25;}
     #body .plats{margin-top:auto;}
   }
+
+  /* ---------- 手机 ---------- */
   @media (max-width:640px){
-    #body .item{display:flex; gap:14px; padding:14px 0; align-items:center;}
-    #body .item .pic{flex:0 0 clamp(108px,32vw,148px); width:clamp(108px,32vw,148px); height:auto; aspect-ratio:460 / 215; min-height:0;}
-    #body .item .txt{display:flex; gap:4px;}
-    #body .txt .tline{align-items:flex-start;}
-    #body .txt .tline .t{flex:1; min-width:0; font-size:16px; font-weight:600; white-space:normal; display:-webkit-box;
-         -webkit-line-clamp:2; -webkit-box-orient:vertical;}
-    #body .txt .when,#body .fine{font-size:13px;}
-    #body .gscore{font-size:24px;}
-    /* 手机操作保留文字样式，点击范围至少 44px，平台换行不重叠。 */
+    :root{--work-title-font:var(--sans);}
+    h1{font-size:14px;}
+    .theme-btn::after{content:""; position:absolute; inset:-7px 0; border-radius:999px;}
+    /* 月份数字、类别、月份页签放在同一行；更新时间单独一小行靠右。
+       手机用默认齐线的衬线数字，避免 Georgia 旧式 9 的高度差；固定两位数字宽度。 */
     .mh{gap:10px;}
+    .mh .mn{font-size:52px; font-family:var(--score-serif); font-variant-numeric:normal;
+         font-feature-settings:normal; flex:0 0 2ch; min-width:0;}
+    .mh .msep2{flex:1 1 0; height:0; min-width:4px;}
+    .mh .mup{flex-basis:100%; text-align:right; font-size:11.5px; margin-top:6px;}
     /* 按钮宽度等于文字，下划线和文字对齐；点击范围靠伪元素扩到 44×44，相邻按钮之间留 16px 不重叠 */
     #tabs,#topTabs{gap:16px;}
     #tabs .tab::after,#topTabs .tab::after{content:""; position:absolute; inset:-11px -8px;}
-    #body .plats{gap:20px 12px; margin-top:0;}   /* 平台之间 12px、图标和价格 4px，一眼分清哪个图标配哪个价格 */
+    /* 游戏 */
+    #body .item{gap:14px; padding:14px 0;}
+    #body .item .pic{flex:0 0 clamp(108px,32vw,148px); width:clamp(108px,32vw,148px);}
+    #body .item .txt{gap:4px;}
+    #body .txt .tline .t{flex:1; font-size:16px; font-weight:600;}
+    /* 紧凑行盒配合 44px 触摸范围，点击区不再撑开文字间距；平台换行不重叠。 */
+    #body .gscore{font-size:24px; position:relative; z-index:3; min-width:44px; min-height:24px; height:24px;
+         align-content:center; margin-left:calc(2 * var(--score-digit-width) - 44px);}
+    #body .plats{gap:20px 12px;}   /* 平台之间 12px、图标和价格 4px，一眼分清哪个图标配哪个价格 */
     #body .chip{position:relative; z-index:3; min-width:44px; min-height:24px; height:24px; gap:4px;}
     #body .chip .pi{width:13px; height:13px;}
-    #body .gscore{min-width:44px; min-height:44px; align-content:center;}
-    #movieBody .gscore{position:relative; z-index:3; min-width:44px; min-height:28px; height:28px;
+    #body .chip::after,#body .gscore::after{content:""; position:absolute; inset:-10px 0;}
+    /* 电影 */
+    .list.mgrid{grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px 12px;}
+    #movieBody .tline .t{font-size:16px; font-weight:600; line-height:1.4;}
+    #movieBody .gscore{font-size:28px; position:relative; z-index:3; min-width:44px; min-height:28px; height:28px;
          margin-left:calc(2 * var(--score-digit-width) - 44px); margin-bottom:-5.6px; align-content:start;}
     #movieBody .gscore::after{content:""; position:absolute; inset:-8px 0;}
-    /* 紧凑行盒配合 44px 触摸范围，点击区不再撑开文字间距。 */
-    #body .gscore{position:relative; z-index:3; min-height:24px; height:24px;
-         margin-left:calc(2 * var(--score-digit-width) - 44px);}
-    #body .chip::after,#body .gscore::after{content:""; position:absolute; inset:-10px 0;}
-    .theme-btn::after{content:""; position:absolute; inset:-7px 0; border-radius:999px;}
-    h1{font-size:14px; letter-spacing:0; padding:0;}
   }
   @media (prefers-reduced-motion:reduce){
     *,*::before,*::after{animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important;}
@@ -613,6 +469,7 @@ function tabbed(tabsEl, panels){
     try { sessionStorage.setItem(tabKey + '_month', monthKey(groups[i])); } catch(e) {}
     fitAll();
     stackFit();
+    if(typeof wakeVisible === 'function') wakeVisible();   /* 新月份的图片此时才加载 */
     tabsEl.querySelectorAll('.tab').forEach((b,j)=>{
       b.classList.toggle('on', j===i);
       b.setAttribute('aria-pressed', String(j===i));
@@ -649,6 +506,29 @@ function tabbed(tabsEl, panels){
   return fitAll;
 }
 
+/* 图片按需加载：卡片里的 <img> 只写 data-src，当前视图的当前月份显示时才换成 src。
+   隐藏的月份和视图叠在首屏位置，浏览器的 loading="lazy" 会把它们当成可见，一打开就全部下载。 */
+function wakeImages(root){
+  if(!root) return;
+  root.querySelectorAll('img[data-src]').forEach(img=>{
+    img.setAttribute('src', img.dataset.src);
+    img.removeAttribute('data-src');
+  });
+}
+function visibleView(){
+  const stack = document.getElementById('viewStack');
+  return stack ? Array.from(stack.children).find(el=>el.classList.contains('on')) : null;
+}
+let warmT = null;
+function wakeVisible(){
+  const view = visibleView();
+  if(!view) return;
+  wakeImages(Array.from(view.querySelectorAll('.sect')).find(s=>s.classList.contains('on')));
+  /* 稍后预载同一视图的其他月份，切月时图片已就位；另一个视图要切过去才加载 */
+  clearTimeout(warmT);
+  warmT = setTimeout(()=>{ const v = visibleView(); if(v) v.querySelectorAll('.sect').forEach(wakeImages); }, 1500);
+}
+
 function showCredit(){
   const c = document.querySelector('.credit');
   if(c) c.classList.add('show');
@@ -666,7 +546,7 @@ function hideBoot(){
 /* 字体换上后标题高度可能变化，重算列表容器高度，防止被 overflow:hidden 裁掉 */
 if(document.fonts) document.fonts.addEventListener('loadingdone', ()=>{
   if(window['_fit_tabs']) window['_fit_tabs']();
-  stackFit(); alignMc();
+  stackFit();
 });
 
 let holdStackH = 0, stackHT = null;   // 视图切换动画期间锁住容器高度(避免旧视图被提前裁掉)
@@ -680,7 +560,7 @@ function stackFit(){
   stack.style.height = on.offsetHeight + 'px';   // 瞬时, 不做高度动画
 }
 
-const PAGE_CLASSES = ['on','off','pre-r','pre-l','out-l','out-r','anim-in-r','anim-in-l','anim-out-l','anim-out-r','anim-fade-in','anim-fade-out'];
+const PAGE_CLASSES = ['on','off','anim-in-r','anim-in-l','anim-out-l','anim-out-r','anim-fade-in','anim-fade-out'];
 
 /* 交叉重叠过渡: 旧页出场 + 新页进场(都用 keyframes, 每次强制重播) */
 function animSwap(cur, nxt, forward){
@@ -701,25 +581,7 @@ function animFade(cur, nxt){
   nxt.classList.add('anim-fade-in', 'on');
 }
 
-/* 评分块纵向对齐: 默认与封面底对齐; 平台标签换行(手机端)时与最后一行标签对齐 */
-function alignMc(){
-  document.querySelectorAll('.item').forEach(it=>{
-    const box = it.querySelector('.mcbox');
-    if(!box || it.classList.contains('pc')) return;   /* 海报卡的评分块固定在海报右上角, 不参与底对齐 */
-    const ir = it.getBoundingClientRect();
-    const cands = [];
-    const pic = it.querySelector('.pic');
-    const plats = it.querySelector('.plats');
-    if(pic) cands.push(pic.getBoundingClientRect().bottom);
-    if(plats && plats.children.length) cands.push(plats.getBoundingClientRect().bottom);
-    if(!cands.length) return;
-    const ref = Math.max.apply(null, cands);    // 取更靠下的参照 = 平台标签换行时对齐最后一行
-    const gap = Math.round(ir.bottom - ref);
-    if(gap >= 0 && gap < 300) box.style.bottom = gap + 'px';
-  });
-}
-
-let state = { game: null, movie: null, music: null };
+let state = { game: null, movie: null };
 let curViewName = 'game';   // 当前顶层视图, 由下面的视图切换 IIFE 维护
 
 /* 页头更新时间按当前视图分别显示: 游戏页看 releases.json, 电影页看 movies.json(各自数据缺失时回退另一边) */
@@ -748,7 +610,7 @@ function paint(){
   paintUp();
   showCredit();
   stackFit();
-  alignMc();
+  wakeVisible();
   hideBoot();
 }
 
@@ -765,8 +627,6 @@ function scoreLink(n, cls, href, label){
 
 function card(it){
   const wrap = document.createElement('div'); wrap.className='item';
-  const isToday = it.day===today.getDate() && it.month===today.getMonth()+1 && it.year===today.getFullYear();
-  if(isToday) wrap.classList.add('today');
   const date = new Date(it.year, it.month-1, it.day);
   const diff = Math.round((date - new Date(today.getFullYear(),today.getMonth(),today.getDate()))/86400000);
   let whenTxt, whenCls;
@@ -783,7 +643,7 @@ function card(it){
   const imgUrl = cand[0] || '';
   const candJson = JSON.stringify(cand).replace(/'/g, "&#39;");
   const imgTag = imgUrl
-    ? '<img class="cover" src="'+esc(imgUrl)+'" alt="" loading="lazy" data-cand="'+candJson+'" onerror="cf(this)" onload="ckw(this)">'
+    ? '<img class="cover" data-src="'+esc(imgUrl)+'" alt="" loading="lazy" data-cand="'+candJson+'" onerror="cf(this)" onload="ckw(this)">'
     : '';
   const chips = pl.map(p=>{
     const pv = p.price;
@@ -830,7 +690,7 @@ function firstChar(t){ t=(t||'').trim(); return t?Array.from(t)[0]:'?'; }
 /* 封面多级兜底: 当前图加载失败 -> 依次试候选链中下一张 -> 全失败显示首字占位 */
 function cf(img){
   const cand = JSON.parse(img.dataset.cand || '[]');
-  const idx = cand.indexOf(img.src);
+  const idx = cand.indexOf(img.getAttribute('src'));   /* 用原始写法比对；img.src 是补全后的绝对地址 */
   const next = cand[idx + 1];
   if(next){ img.src = next; return; }
   img.style.display='none';
@@ -848,15 +708,9 @@ function ckw(img){
 }
 
 /* ---------- 电影(豆瓣) ---------- */
-function minfo(s){
-  const p = String(s||'').split('/').map(x=>x.trim()).filter(Boolean);
-  return p.slice(1,4).join(' · ');
-}
-
 function mcard(it){
   const wrap = document.createElement('div'); wrap.className='item mv pc';
   const sc = (typeof it.score==='number' && it.score>0) ? it.score : null;
-  if(it.day===today.getDate() && it.month===today.getMonth()+1) wrap.classList.add('today');
   const date = new Date(it.year, it.month-1, it.day);
   const diff = Math.round((date - new Date(today.getFullYear(),today.getMonth(),today.getDate()))/86400000);
   let whenTxt='', whenCls='';
@@ -865,7 +719,7 @@ function mcard(it){
   else if(diff>1){ whenTxt='还有'+diff+'天'; whenCls='soon'; }
   else { whenTxt='已上映'; whenCls='out'; }
   const img = it.poster
-    ? '<img class="cover" src="'+esc(it.poster)+'" alt="" loading="lazy" onerror="this.style.display=\'none\'">' : '';
+    ? '<img class="cover" data-src="'+esc(it.poster)+'" alt="" loading="lazy" onerror="this.style.display=\'none\'">' : '';
   /* 豆瓣 10 分制 ×10，颜色规则与游戏相同：≥80 绿 / ≥60 黄 / <60 红 */
   const shown = sc!=null ? Math.round(sc*10) : null;
   const scoreCls = shown==null ? '' : (shown>=80?'g':(shown>=60?'y':'r'));
@@ -906,63 +760,7 @@ async function refreshMovies(){
   }
 }
 
-/* ---------- 音乐(Apple Music + Metacritic) ---------- */
-function mucard(it){
-  const wrap = document.createElement('div'); wrap.className='item mv';
-  const sc = (typeof it.score==='number' && it.score>0) ? it.score : null;
-  if(it.day===today.getDate() && it.month===today.getMonth()+1) wrap.classList.add('today');
-  const date = new Date(it.year, it.month-1, it.day);
-  const diff = Math.round((date - new Date(today.getFullYear(),today.getMonth(),today.getDate()))/86400000);
-  let whenTxt='', whenCls='';
-  if(diff===0){ whenTxt='今天发行'; whenCls='today'; }
-  else if(diff===1){ whenTxt='明天发行'; whenCls='today'; }
-  else if(diff>1){ whenTxt='还有 '+diff+' 天'; whenCls='soon'; }
-  else { whenTxt='已发行'; whenCls='out'; }
-  const whenTag = whenCls ? '<span class="when '+whenCls+'">'+whenTxt+'</span>' : '';
-  const img = it.art ? '<img class="cover" src="'+esc(it.art)+'" alt="" loading="lazy" onerror="this.style.display=\'none\'">' : '';
-  /* Metacritic 专业均分(百分制): ≥80 绿 / ≥60 黄 / <60 红 */
-  const mcBox = sc!=null ? '<a class="mcbox '+(sc>=80?'g':(sc>=60?'y':'r'))+'" href="'+esc(it.score_url||'https://pitchfork.com/reviews/albums/')+
-      '" target="_blank" rel="noopener">'+
-      '<span class="mcv">'+sc+'</span></a>' : '';
-  const line2 = '<span>'+esc(it.artist||'')+'</span>';
-  const line3 = [it.kind||it.genre||'', it.date? ((+it.date.slice(5,7))+'月'+(+it.date.slice(8,10))+'日') : ''].filter(Boolean).join(' · ');
-  /* 专辑名不加超链接(用户要求) */
-  wrap.innerHTML =
-    '<div class="pic sq">'+img+
-      '<div class="ph" style="background:'+phColor(it.title)+(it.art?';display:none':'')+'">'+esc(firstChar(it.title))+'</div>'+
-    '</div>'+
-    '<div class="txt">'+
-      '<div class="tline'+(whenTag?' haswhen':'')+'"><div class="t"></div>'+whenTag+'</div>'+
-      '<div class="tag">'+line2+'</div>'+
-      (line3?'<div class="tag tag3"><span>'+esc(line3)+'</span></div>':'')+
-    '</div>'+mcBox;
-  const t = wrap.querySelector('.t');
-  t.textContent = it.title;
-  return wrap;
-}
-
-function renderMusic(d){
-  state.music = d;
-  paint();
-}
-
-let musicLoaded = false;
-async function refreshMusic(){
-  if(musicLoaded) return;
-  const box = $('#muErrBox');
-  box.style.display='none';
-  try{
-    const r = await fetch('music.json'); const d = await r.json();
-    if(d.error) throw new Error(d.error);
-    renderMusic(d);
-    musicLoaded = true;
-  }catch(e){
-    box.textContent='获取失败：'+e.message;
-    box.style.display='block';
-  }
-}
-
-/* 顶层切换: 游戏 / 电影 / 音乐 (交叉重叠过渡, 与本月/下月页签同款; 记住上次视图) */
+/* 顶层切换: 游戏 / 电影（淡入淡出，记住上次视图） */
 (function(){
   const top = document.getElementById('topTabs');
   if(!top) return;
@@ -970,7 +768,7 @@ async function refreshMusic(){
   const g = document.getElementById('viewGame'), m = document.getElementById('viewMovie');
   let curView = 'game';
 
-  const VIEWS = ['game', 'movie'];   // 音乐页签已按用户要求下线(相关代码保留, 需要时把 music 加回来即可)
+  const VIEWS = ['game', 'movie'];
   const viewEl = { game: g, movie: m };
   function setView(v, animate){
     if(v === curView || VIEWS.indexOf(v) < 0) return;
@@ -1004,6 +802,7 @@ async function refreshMusic(){
     const stack = document.getElementById('viewStack');
     if(stack) stack.style.height = nxt.offsetHeight + 'px';
     if(window['_fit_tabs']) window['_fit_tabs']();
+    wakeVisible();
     try { localStorage.setItem('glwView', v); } catch(e) {}
   }
 
@@ -1011,13 +810,12 @@ async function refreshMusic(){
 
   let saved = 'game';
   try { saved = localStorage.getItem('glwView') || 'game'; } catch(e) {}
-  if(saved === 'movie' || saved === 'music') setView(saved, false);   // 恢复上次视图(无动画, 三个视图都要认)
+  if(saved === 'movie') setView(saved, false);   // 恢复上次视图(无动画)
   moveGlider(top, top.querySelector('.tab.on') || btns[0], true);   // 恢复定位不滑动
   const alignViewGlider = ()=>moveGlider(top, top.querySelector('.tab.on') || btns[0], true);
   window.addEventListener('resize', alignViewGlider);
   window.addEventListener('load', alignViewGlider);
   window.addEventListener('resize', stackFit);
-  window.addEventListener('resize', alignMc);
   stackFit();
 })();
 
@@ -1042,7 +840,7 @@ async function refreshMusic(){
   }, {passive:true});
 })();
 
-window.addEventListener('load', ()=>{ alignMc(); stackFit(); });   // 字体/图片就位后重算布局对齐
+window.addEventListener('load', stackFit);   // 字体/图片就位后重算高度
 refresh();
 refreshMovies();   // 预渲染电影视图: 首次切换时高度已就位, 避免"先塌后撑"的下沉
 </script>

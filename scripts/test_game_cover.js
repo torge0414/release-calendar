@@ -17,7 +17,7 @@ vm.runInContext(html.slice(html.indexOf('function ckw('), html.indexOf('/* -----
 const cover = 'img/game_dd2_dark_arisen.jpg';
 const fixture = {title: "Dragon's Dogma 2: Dark Arisen", cover_img: cover, year: 2026, month: 10, day: 9,
   plats: [{key: 'steam', name: 'Steam', img: 'https://example.test/ultrawide-package.jpg'}]};
-assert(context.card(fixture).innerHTML.includes('class="cover" src="' + cover + '"'));
+assert(context.card(fixture).innerHTML.includes('class="cover" data-src="' + cover + '"'), 'Covers load on demand from data-src, priority cover first');
 const names = new Set();
 const image = {naturalWidth: 460, naturalHeight: 215, classList: {add: x => names.add(x)}};
 context.ckw(image);

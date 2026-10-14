@@ -154,6 +154,23 @@ def missing_title_font_chars(root: Path) -> list[str]:
     return sorted(missing)
 
 
+LOCAL_IMAGE_WARN_KB = 220
+
+
+def oversized_local_images(root: Path) -> list[str]:
+    """Local covers/posters that are much larger than the page needs (posters: about 600px wide)."""
+    heavy = []
+    for name, key, field in (("releases.json", "games", "cover_img"), ("movies.json", "movies", "poster")):
+        data = json.loads((root / name).read_text(encoding="utf-8"))
+        for group in data.get("groups", []):
+            for item in group.get(key, []):
+                rel = str(item.get(field) or "")
+                path = root / rel
+                if rel.startswith("img/") and path.exists() and path.stat().st_size > LOCAL_IMAGE_WARN_KB * 1024:
+                    heavy.append(f"{rel} ({path.stat().st_size // 1024} KB)")
+    return heavy
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--images", action="store_true", help="also request external images")
@@ -163,6 +180,10 @@ def main() -> int:
         for error in errors:
             print(error)
         return 1
+    heavy = oversized_local_images(ROOT)
+    if heavy:
+        # 只提醒不报错：海报缩到约 600px 宽、JPEG 质量 80 左右即可
+        print("warning: large local images, resize before committing: " + ", ".join(heavy))
     missing = missing_title_font_chars(ROOT)
     if missing:
         # 只提醒不报错：缺字会回落到系统宋体，不影响数据和每日任务
