@@ -247,7 +247,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   :is(#movieBody,#albumBody) .mstat:is(.soon,.today){font-weight:600;}
   :is(#movieBody,#albumBody) .gscore{text-shadow:none; font-size:36px;}
 
-  /* ---------- 专辑网格，封面 1:1；版式沿用电影网格，标题下多一行艺人 ---------- */
+  /* ---------- 音乐网格（专辑和 EP），封面 1:1；版式沿用电影网格，标题下多一行艺人 ---------- */
   .item.pc .pic.al{width:100%; aspect-ratio:1/1; flex:none; box-shadow:none;}
   .item.pc .pic.al .ph{font-size:34px;}
   #albumBody .artist{margin:0; font-family:var(--sans); font-size:14px; font-weight:500; line-height:1.5;
@@ -314,11 +314,11 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
     <!-- 月份和分类都在页头: 切视图时这条不参与淡入淡出 -->
     <div class="mh" id="mhBar">
       <span class="mn" id="mhMn"></span>
-      <div class="tabs top" id="topTabs" role="group" aria-label="切换游戏、电影和专辑">
+      <div class="tabs top" id="topTabs" role="group" aria-label="切换游戏、电影和音乐">
         <span class="tabg"></span>
         <button class="tab on" type="button" data-view="game" aria-pressed="true">游戏</button>
         <button class="tab" type="button" data-view="movie" aria-pressed="false">电影</button>
-        <button class="tab" type="button" data-view="album" aria-pressed="false">专辑</button>
+        <button class="tab" type="button" data-view="album" aria-pressed="false">音乐</button>
       </div>
       <span class="gap"></span>
       <div class="tabs" id="tabs" role="group" aria-label="切换月份"><span class="tabg"></span></div>
@@ -598,7 +598,7 @@ function animFade(cur, nxt){
 }
 
 let state = { game: null, movie: null, album: null };
-/* 任一份数据到位就重建(月签只有一份, 同时控制游戏、电影、专辑的列表) */
+/* 任一份数据到位就重建(月签只有一份, 同时控制游戏、电影、音乐的列表) */
 function paint(){
   const panels = [];
   if(state.game) panels.push({
@@ -767,7 +767,7 @@ async function refreshMovies(){
   }
 }
 
-/* ---------- 专辑(Metacritic 评分，Apple Music 封面) ---------- */
+/* ---------- 音乐：专辑和 EP(Metacritic 评分，Apple Music 封面) ---------- */
 function acard(it){
   const wrap = document.createElement('div'); wrap.className='item al pc';
   const date = new Date(it.year, it.month-1, it.day);
@@ -795,8 +795,8 @@ function acard(it){
       '<div class="artist"></div>'+
       '<div class="mline">'+meta+'</div>'+
     '</div>';
-  wrap.querySelector('.t').textContent = it.title;      /* 专辑名、艺人纯文本：跳转只走评分 */
-  wrap.querySelector('.artist').textContent = it.artist + (it.kind==='EP' ? ' · EP' : '');   /* EP 在艺人后注明 */
+  wrap.querySelector('.t').textContent = it.title;      /* 作品名、艺人纯文本：跳转只走评分 */
+  wrap.querySelector('.artist').textContent = it.artist;   /* 分类叫「音乐」，EP 不单独标注 */
   return wrap;
 }
 
@@ -817,7 +817,7 @@ async function refreshAlbums(){
   }
 }
 
-/* 顶层切换: 游戏 / 电影 / 专辑（淡入淡出，记住上次视图） */
+/* 顶层切换: 游戏 / 电影 / 音乐（淡入淡出，记住上次视图） */
 (function(){
   const top = document.getElementById('topTabs');
   if(!top) return;
@@ -899,7 +899,7 @@ async function refreshAlbums(){
 
 window.addEventListener('load', stackFit);   // 字体/图片就位后重算高度
 refresh();
-refreshMovies();   // 预渲染电影、专辑视图: 首次切换时高度已就位, 避免"先塌后撑"的下沉
+refreshMovies();   // 预渲染电影、音乐视图: 首次切换时高度已就位, 避免"先塌后撑"的下沉
 refreshAlbums();
 </script>
 </body>
