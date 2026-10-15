@@ -190,8 +190,11 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   .when.soon{color:var(--soon); font-weight:600;}
   .when.today{color:var(--today); font-weight:600;}
   /* 评分按位拆格：每位保持等宽格子，按齐线字体收紧间距；不用 flex/ch，避免字形撑开 */
-  /* 上下负外边距让评分不参与标题行的高度计算：基线对齐时不会把标题往下推，也不会撑高标题行 */
-  .gscore{position:static; flex:none; text-decoration:none; margin-block:-1em;
+  /* 评分和标题第一行的中文字形上下对齐：
+     - 字号让数字字形高度等于中文字形高度（Times 数字约 0.68em，中文约 0.96em）：桌面 36px 配 26px 标题，手机 24px 配 16px 标题；
+     - 先按基线对齐，再下移一点（中文字形会沉到基线以下约 0.1em，数字不会），让两者的字形中心重合；
+     - 上下负外边距让评分不参与标题行的高度计算，不会把标题往下推，也不会撑高标题行。 */
+  .gscore{position:relative; top:.065em; flex:none; text-decoration:none; margin-block:-1em;
        display:inline-grid; grid-auto-flow:column; grid-auto-columns:var(--score-digit-width);
        justify-content:end; align-items:center;
        font-family:var(--score-serif); font-weight:700; letter-spacing:0; line-height:1;
@@ -214,7 +217,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   #body .txt .tline .t{font-family:var(--work-title-font);
        font-size:20px; font-weight:700; letter-spacing:0; line-height:1.4;
        font-variant-numeric:lining-nums tabular-nums; font-feature-settings:"lnum" 1, "tnum" 1;}
-  #body .gscore{font-size:32px;}
+  #body .gscore{font-size:36px;}
   #body .fine{display:flex; flex-wrap:wrap; align-items:baseline; color:var(--dim); font-size:13px; line-height:1.5;}
   #body .fine,#body .when,#body .chip{font-family:var(--sans); font-variant-numeric:lining-nums tabular-nums; font-feature-settings:"lnum" 1, "tnum" 1;}
   #body .when{font-size:13px; line-height:1.5;}
@@ -272,6 +275,7 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
     #body .item .txt{gap:4px;}
     #body .txt .tline .t{flex:1; font-size:16px; font-weight:600;}
     /* 紧凑行盒配合 44px 触摸范围，点击区不再撑开文字间距；平台换行不重叠。 */
+    .gscore{top:.085em;}
     #body .gscore{font-size:24px; position:relative; z-index:3; min-width:44px; min-height:24px; height:24px;
          align-content:center; margin-left:calc(2 * var(--score-digit-width) - 44px);}
     #body .plats{gap:20px 12px;}   /* 平台之间 12px、图标和价格 4px，一眼分清哪个图标配哪个价格 */
@@ -281,8 +285,8 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
     /* 电影 */
     .list.mgrid{grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px 12px; padding-top:14px;}
     #movieBody .tline .t{font-size:16px; font-weight:600; line-height:1.4;}
-    #movieBody .gscore{font-size:28px; position:relative; z-index:3; min-width:44px; min-height:28px; height:28px;
-         margin-left:calc(2 * var(--score-digit-width) - 44px); align-content:start; top:3px;}   /* 大号衬线数字光学下移，和手机片名首行对齐 */
+    #movieBody .gscore{font-size:24px; position:relative; z-index:3; min-width:44px; min-height:28px; height:28px;
+         margin-left:calc(2 * var(--score-digit-width) - 44px); align-content:start;}   /* 垂直位置由通用 .gscore 规则统一处理（替代原来单独的 top:3px） */
     #movieBody .gscore::after{content:""; position:absolute; inset:-8px 0;}
   }
   @media (prefers-reduced-motion:reduce){
