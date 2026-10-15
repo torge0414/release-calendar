@@ -598,6 +598,14 @@ function animFade(cur, nxt){
 }
 
 let state = { game: null, movie: null, album: null };
+/* 电影热度门槛（2026-10-15 用户确认按热度筛，不按评分）：上映满 7 天、豆瓣评分人数仍不到 5000（含「暂无评分」）就不显示。
+   数据仍留在 movies.json，每日任务刷新人数后过线会重新出现；未上映的片子由每月整理按「想看」人数把关。 */
+const MOVIE_MIN_VOTES = 5000, MOVIE_GRACE_DAYS = 7;
+function movieVisible(m){
+  const released = new Date(m.year, m.month-1, m.day);
+  const days = Math.round((new Date(today.getFullYear(),today.getMonth(),today.getDate()) - released)/86400000);
+  return days < MOVIE_GRACE_DAYS || (Number(m.votes) || 0) >= MOVIE_MIN_VOTES;
+}
 /* 任一份数据到位就重建(月签只有一份, 同时控制游戏、电影、音乐的列表) */
 function paint(){
   const panels = [];
@@ -606,7 +614,8 @@ function paint(){
     footFn: g => '共 ' + g.games.length + ' 款 · 评分来自 Metacritic · 每月初更新'
   });
   if(state.movie) panels.push({
-    body: $('#movieBody'), groups: state.movie.groups || [], makeCard: mcard, unit: '部', grid: true,
+    body: $('#movieBody'), unit: '部', grid: true, makeCard: mcard, emptyText: '暂无符合条件的影片',
+    groups: (state.movie.groups || []).map(g => Object.assign({}, g, { movies: (g.movies || []).filter(movieVisible) })),
     footFn: g => '共 ' + g.movies.length + ' 部 · 评分来自豆瓣 · 每月初更新'
   });
   if(state.album) panels.push({
