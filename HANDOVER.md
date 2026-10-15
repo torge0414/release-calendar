@@ -64,7 +64,7 @@ GPT 和 Claude 两位 agent 都是项目负责人，地位对等，不设单一�
 - 日常刷新不得增删清单、改发行日期或平台。Steam 国区现价由现有自动任务更新。
 - 来源失败、未开放评分或价格时保留有效旧值。不能清空，也不能用未评分的 0 覆盖有效的电影评分或人数。
 - 游戏是重点精选，不是所有新发售作品。旧作换平台上市要剔除（§4）。
-- 2026-10-15 用户决定重新加入「音乐」分类（当天先叫「专辑」，随后按用户要求改名）：欧美主流和 K-pop 女团的新专辑和 EP，不显示评分（§4A、§5）。旧版音乐（`music.json`、Apple Music 名单 + AOTY 评分、`fame` 打分，2026-10-14 已删除）不要从 git 历史恢复：那一版 11 张里只有 1 张拿到评分。
+- 2026-10-15 用户决定重新加入「音乐」分类（当天先叫「专辑」，随后按用户要求改名）：欧美主流女歌手和 K-pop 女团（含成员 solo）的新专辑和 EP，不收男歌手，不显示评分（§4A、§5）。旧版音乐（`music.json`、Apple Music 名单 + AOTY 评分、`fame` 打分，2026-10-14 已删除）不要从 git 历史恢复：那一版 11 张里只有 1 张拿到评分。
 - 用户对视觉很严。样式改动要在真实页面上看过（桌面和手机宽度）再推送。功能能跑不等于视觉验收完成。
 - 发布授权（2026-10-10、10-13）：按用户要求完成的改动，检查通过后直接提交并推送 `main`，确认 Pages 部署和线上效果，不再逐版询问；用户特别说「只改本地」时服从。无实际变化不提交。实际更新、连续来源失败、部署失败或需要决定时简要说明。这项授权针对现有网站的修改发布，不表示可以自行扩大产品范围。
 - 改变收录口径、加回已否决作品、恢复旧版音乐数据、新建或关掉月度任务、改系统权限，都要先得到用户的具体决定，不能当作普通修复顺带做掉。
@@ -129,7 +129,7 @@ GPT 和 Claude 两位 agent 都是项目负责人，地位对等，不设单一�
 
 ## 4A. 音乐收录口径
 
-2026-10-15 用户确认：收**欧美主流**（流行、嘻哈、R&B、舞曲的知名艺人，**不收摇滚**）和**主流 K-pop 女团、女团成员 solo**（男团和男团成员 solo 不收；男女混合团体如 ALLDAY PROJECT 保留）的新专辑，主流艺人的 **EP / 迷你专辑也收**（数据里记 `kind: "EP"`；分类叫「音乐」，页面不单独标注 EP）。
+2026-10-15 用户确认：只收**女歌手和女团**——**欧美主流女歌手**（流行、嘻哈、R&B、舞曲，**不收摇滚**）和**主流 K-pop 女团、女团成员 solo**的新专辑；**男歌手、男团、男性组合都不收**（男女混合团体 ALLDAY PROJECT 暂时保留）。主流艺人的 **EP / 迷你专辑也收**（数据里记 `kind: "EP"`；分类叫「音乐」，页面不单独标注 EP）。
 
 用户没有采用数字门槛（试过 Last.fm 听众数，它高估独立和老牌摇滚、低估嘻哈 / R&B / 乡村 / K-pop，和用户的判断对不上），按编辑判断加用户的风格偏好来选：
 
@@ -148,7 +148,7 @@ GPT 和 Claude 两位 agent 都是项目负责人，地位对等，不设单一�
 
 候选来源：Metacritic「New Releases」和「Coming Soon」、Wikipedia「List of 2026 albums」（专辑名带词条链接的优先看）、Official Charts 发行日历、Apple Music 美区热门专辑榜（`rss.marketingtools.apple.com`）；K-pop 看 Wikipedia「2026 in South Korean music」和 kpopofficial.com 的月度回归表。不能因为评价高就把小众作品加进来。
 
-2026-10-15 初始名单（9 月 10 张、10 月 14 张、11 月 4 张）的记录：
+2026-10-15 初始名单（9 月 8 张、10 月 7 张、11 月 1 张）的记录：
 
 | 条目 | 决定 |
 | --- | --- |
@@ -160,6 +160,7 @@ GPT 和 Claude 两位 agent 都是项目负责人，地位对等，不设单一�
 | Miranda Lambert《Crisco》、Sheryl Crow《Pick You Up》、Peter Gabriel《o\\i》 | 乡村 / Americana、老牌艺术摇滚，按用户风格偏好剔除 |
 | K-pop 团体 | ALLDAY PROJECT《CRASH》（男女混合）、NMIXX《Strange Muse》、ILLIT《BREAK EVEN》、IVE《Looks Can Kill》 |
 | K-pop solo | JEON SOYEON《What a Wonderful Life》（i-dle）、YUQI《27》（i-dle，中文 EP） |
+| 男歌手（用户要求剔除） | Yeat、Leon Bridges、Quavo、Troye Sivan、Pet Shop Boys、Lucky Daye、Anderson .Paak & Cordae、John Legend、Michael Kiwanuka、Dominic Fike、James Blunt、Skepta、Take That |
 | 男团和男团 solo，用户要求剔除 | MONSTA X、NCT WISH、MINHO、D.O.、YESUNG、MAX CHANGMIN；待上架的 ATEEZ、TOMORROW X TOGETHER、XIAOJUN 也不再补 |
 | K-pop solo 不收 | ONEW《KAKERA》（日语 EP）；JISOO、ROSÉ、NAYEON、IU 这几个月只有单曲；Yves（11-20）的迷你专辑 Apple Music 还没有条目，上架后补 |
 | 摇滚，用户要求剔除 | Kasabian、beabadoobee、Beck、Greta Van Fleet、Fontaines D.C.、Nickelback、Queens of the Stone Age、Kings of Leon、Bryan Adams、Royal Blood、U2 |
@@ -489,6 +490,6 @@ Python 脚本只用标准库，建议 Python 3.12（与 Actions 一致）；Node
 
 > 请参与维护 Release Calendar：https://github.com/torge0414/release-calendar ，线上 https://torge0414.github.io/release-calendar/ 。先读仓库里的 `HANDOVER.md`（唯一的维护、协作与收录说明），再核对实际 HEAD 和远端。
 >
-> 网站是原生单页加三份 JSON，没有 npm 构建，只维护上月、本月、下月的游戏精选、内地院线电影和音乐精选（欧美主流加 K-pop 女团的专辑和 EP，不显示评分）。旧版音乐数据不要恢复。保持当前的月份目录页头、860px 共用栏宽、460×215 游戏封面、齐线衬线评分，以及手机触摸和可访问性规则。不要恢复旧视觉。
+> 网站是原生单页加三份 JSON，没有 npm 构建，只维护上月、本月、下月的游戏精选、内地院线电影和音乐精选（欧美主流女歌手加 K-pop 女团的专辑和 EP，不收男歌手，不显示评分）。旧版音乐数据不要恢复。保持当前的月份目录页头、860px 共用栏宽、460×215 游戏封面、齐线衬线评分，以及手机触摸和可访问性规则。不要恢复旧视觉。
 >
 > GPT 和 Claude 都是项目负责人，谁改动谁负责验收发布；每月精选由 GPT 负责。两位共用 `H:\Release Calendar\release-calendar`，先分清任务和文件，避免同时改 `index.html`。提交前跑四项基础检查，样式改动看真实桌面、手机和两种主题，主题 / 字体改动补 WebKit 双向切换。每日 Actions 会提交评分和 Steam 价格，推送前先 fetch，禁止强推和覆盖新数据。不要自行新建月度任务或扩大清单。
