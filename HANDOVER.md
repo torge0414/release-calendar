@@ -129,18 +129,25 @@ GPT 和 Claude 两位 agent 都是项目负责人，地位对等，不设单一�
 
 ## 4A. 音乐收录口径
 
-2026-10-15 用户确认：只收**欧美主流**（流行、嘻哈、R&B、摇滚、乡村的知名艺人）的**新录音室专辑**，主流艺人的 **EP 也收**（数据里记 `kind: "EP"`；分类叫「音乐」，页面不单独标注 EP）。偏边缘的艺人不收（同日用户剔除了 Remi Wolf、M83、Neil Young、Luke Bryan、Rex Orange County）。
+2026-10-15 用户确认：收**欧美主流**（流行、嘻哈、R&B、摇滚的知名艺人）和**主流 K-pop 团体**的新专辑，主流艺人的 **EP / 迷你专辑也收**（数据里记 `kind: "EP"`；分类叫「音乐」，页面不单独标注 EP）。
+
+用户没有采用数字门槛（试过 Last.fm 听众数，它高估独立和老牌摇滚、低估嘻哈 / R&B / 乡村 / K-pop，和用户的判断对不上），按编辑判断加用户的风格偏好来选：
+
+- 不收**乡村 / Americana**（Apple Music 流派是 Country 或 Americana 的直接排除）。
+- 不收**独立、实验、爵士、电子小众**作品，即使 Metacritic 分数很高。
+- 不收**老派民谣 / 艺术摇滚**这类偏情怀的老牌艺人新作（Neil Young、Peter Gabriel）；仍有大众流行度的老牌流行 / 摇滚（U2、Bryan Adams、Pet Shop Boys、Take That、Nickelback）保留。
+- 同日用户剔除过：Remi Wolf、M83、Neil Young、Luke Bryan、Rex Orange County、Miranda Lambert（乡村）；按同一偏好我另外剔除了 Sheryl Crow（Americana）、Peter Gabriel。
+- K-pop 只收团体的正规专辑和迷你专辑（Apple Music 标 EP 的）。单曲专辑（single album）、数字单曲、改版重发（repackage / deluxe）、日语作品、现场专辑不收。韩国作品在国区 Apple Music 一般没有上架，`apple_url` 为空，封面用美区图。
 
 - 不收：再版 / 周年版、box set、现场专辑、精选集、合辑、致敬专辑、节日（圣诞）专辑、mixtape。
 - 扩充版（例如 Taylor Swift《The Life Of A Showgirl: The Encore》，原专辑加 4 首新歌）按游戏「完全版」规则处理，不收。
-- 曲目少但艺人或商店没有标成 EP 的按专辑记（例如 Yeat《COCOON》、Sheryl Crow《Pick You Up》都是 7 首）；官方或媒体明确称为 EP 的记为 `EP`（LISA《PRESS PLAY》）。
-- 独立、实验、爵士、电子小众作品默认不收，即使 Metacritic 分数很高。
+- 曲目少但艺人或商店没有标成 EP 的按专辑记（例如 Yeat《COCOON》7 首）；官方或媒体明确称为 EP 的记为 `EP`（LISA《PRESS PLAY》）。
 - 日期以 Apple Music 商店日期为准（`releaseDate` 是美西零点，取日期部分）。和媒体日历不一致时以商店为准，并在这里记录。
 - 没有可核对的商店条目（Apple Music 上还没有预购）就先不收，不猜日期。
 
-候选来源：Metacritic「New Releases」和「Coming Soon」、Wikipedia「List of 2026 albums」（专辑名带词条链接的优先看）、Official Charts 发行日历。不能因为 Metacritic 分数高就把小众作品加进来。
+候选来源：Metacritic「New Releases」和「Coming Soon」、Wikipedia「List of 2026 albums」（专辑名带词条链接的优先看）、Official Charts 发行日历、Apple Music 美区热门专辑榜（`rss.marketingtools.apple.com`）；K-pop 看 Wikipedia「2026 in South Korean music」和 kpopofficial.com 的月度回归表。不能因为 Metacritic 分数高就把小众作品加进来。
 
-2026-10-15 初始名单（9 月 11 张、10 月 16 张、11 月 9 张）的记录：
+2026-10-15 初始名单（9 月 13 张、10 月 18 张、11 月 8 张）的记录：
 
 | 条目 | 决定 |
 | --- | --- |
@@ -149,12 +156,17 @@ GPT 和 Claude 两位 agent 都是项目负责人，地位对等，不设单一�
 | LISA《PRESS PLAY》（10-23） | 主流艺人 EP，收（Apple Music 7 首） |
 | Drake《HABIBTI (FOMO)》（10-02） | 2026-05 已发行的《Habibti》扩充版（11 首扩到 24 首），不收 |
 | Remi Wolf、M83、Neil Young、Luke Bryan、Rex Orange County | 用户认为偏边缘，剔除 |
+| Miranda Lambert《Crisco》、Sheryl Crow《Pick You Up》、Peter Gabriel《o\\i》 | 乡村 / Americana、老牌艺术摇滚，按用户风格偏好剔除 |
+| K-pop 收录 | MONSTA X《The Phase》、ALLDAY PROJECT《CRASH》、NCT WISH《I SPY》、NMIXX《Strange Muse》、ILLIT《BREAK EVEN》、IVE《Looks Can Kill》 |
+| ATEEZ《GOLDEN HOUR : Part.6》（11-13）、TOMORROW X TOGETHER《PERFECT STORM》（11-16） | 已官宣，Apple Music 还没有条目，暂不收；上架后（最迟 11 月 1 日整理时）补进 |
+| MEOVV《GO HARD》、LE SSERAFIM《Made My Night》、TWS《TO US》 | 单曲 / 单曲专辑，不收 |
+| BOYNEXTDOOR《HOME: DELUXE》 | 改版重发，不收 |
 | Taylor Swift《The Life Of A Showgirl: The Encore》（09-25） | 扩充版，不收 |
 | Carly Rae Jepsen《Day and Night (Continued)》（10-09） | 扩充版，只保留 09-18 的原专辑 |
 | Royal Blood《Dead Company》 | Apple Music 写 11-06，Wikipedia / Official Charts 写 11-13，按商店日期 11-06，下月整理时复核 |
 | Quavo《QRÖMELIFE》 | Apple Music 写 10-01，Wikipedia 写 10-02，按商店日期 |
 | beabadoobee《Pylon》 | Apple Music 写 09-16，Metacritic / Wikipedia 写 09-18，按商店日期 |
-| Troye Sivan《She's the Best》、Peter Gabriel《o\i》 | 国区 Apple Music 没有上架，`apple_url` 为空，封面用美区图 |
+| Troye Sivan《She's the Best》 | 国区 Apple Music 没有上架，`apple_url` 为空，封面用美区图 |
 
 ## 5. 数据来源与结构
 
