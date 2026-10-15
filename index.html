@@ -611,7 +611,7 @@ function paint(){
   });
   if(state.album) panels.push({
     body: $('#albumBody'), groups: state.album.groups || [], makeCard: acard, unit: '张', grid: true,
-    footFn: g => '共 ' + g.albums.length + ' 张 · 评分来自 Metacritic · 每月初更新'
+    footFn: g => '共 ' + g.albums.length + ' 张 · 每月初更新'
   });
   if(!panels.length) return;
   tabbed($('#tabs'), panels);
@@ -767,7 +767,7 @@ async function refreshMovies(){
   }
 }
 
-/* ---------- 音乐：专辑和 EP(Metacritic 评分，Apple Music 封面) ---------- */
+/* ---------- 音乐：专辑和 EP(不显示评分，封面来自 Apple Music) ---------- */
 function acard(it){
   const wrap = document.createElement('div'); wrap.className='item al pc';
   const date = new Date(it.year, it.month-1, it.day);
@@ -779,10 +779,6 @@ function acard(it){
   else { whenTxt='已发行'; whenCls='out'; }
   const img = it.art
     ? '<img class="cover" data-src="'+esc(it.art)+'" alt="" loading="lazy" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'">' : '';
-  /* Metacritic 100 分制，颜色规则与游戏相同：≥80 绿 / ≥60 黄 / <60 红 */
-  const mc = (typeof it.mc==='number' && it.mc>0) ? it.mc : null;
-  const scoreCls = mc==null ? '' : (mc>=80?'g':(mc>=60?'y':'r'));
-  const score = mc!=null ? scoreLink(mc, scoreCls, it.mc_url||'https://www.metacritic.com/', 'Metacritic '+mc) : '';
   const meta = '<span class="release-date">'+it.month+'月'+it.day+'日</span>'+
     '<span class="sep">·</span>'+
     '<span class="mstat when '+whenCls+'">'+esc(whenTxt)+'</span>';
@@ -791,11 +787,11 @@ function acard(it){
       '<div class="ph" style="background:'+phColor(it.title)+(it.art?';display:none':'')+'">'+esc(firstChar(it.title))+'</div>'+
     '</div>'+
     '<div class="txt">'+
-      '<div class="tline"><div class="t"></div>'+score+'</div>'+
+      '<div class="tline"><div class="t"></div></div>'+   /* 2026-10-15 起音乐不显示评分 */
       '<div class="artist"></div>'+
       '<div class="mline">'+meta+'</div>'+
     '</div>';
-  wrap.querySelector('.t').textContent = it.title;      /* 作品名、艺人纯文本：跳转只走评分 */
+  wrap.querySelector('.t').textContent = it.title;      /* 作品名、艺人纯文本 */
   wrap.querySelector('.artist').textContent = it.artist;   /* 分类叫「音乐」，EP 不单独标注 */
   return wrap;
 }

@@ -64,7 +64,7 @@ GPT 和 Claude 两位 agent 都是项目负责人，地位对等，不设单一�
 - 日常刷新不得增删清单、改发行日期或平台。Steam 国区现价由现有自动任务更新。
 - 来源失败、未开放评分或价格时保留有效旧值。不能清空，也不能用未评分的 0 覆盖有效的电影评分或人数。
 - 游戏是重点精选，不是所有新发售作品。旧作换平台上市要剔除（§4）。
-- 2026-10-15 用户决定重新加入「音乐」分类（当天先叫「专辑」，随后按用户要求改名）：欧美主流新专辑和 EP，评分用 Metacritic（§4A、§5）。旧版音乐（`music.json`、Apple Music 名单 + AOTY 评分、`fame` 打分，2026-10-14 已删除）不要从 git 历史恢复：那一版 11 张里只有 1 张拿到评分。
+- 2026-10-15 用户决定重新加入「音乐」分类（当天先叫「专辑」，随后按用户要求改名）：欧美主流和 K-pop 女团的新专辑和 EP，不显示评分（§4A、§5）。旧版音乐（`music.json`、Apple Music 名单 + AOTY 评分、`fame` 打分，2026-10-14 已删除）不要从 git 历史恢复：那一版 11 张里只有 1 张拿到评分。
 - 用户对视觉很严。样式改动要在真实页面上看过（桌面和手机宽度）再推送。功能能跑不等于视觉验收完成。
 - 发布授权（2026-10-10、10-13）：按用户要求完成的改动，检查通过后直接提交并推送 `main`，确认 Pages 部署和线上效果，不再逐版询问；用户特别说「只改本地」时服从。无实际变化不提交。实际更新、连续来源失败、部署失败或需要决定时简要说明。这项授权针对现有网站的修改发布，不表示可以自行扩大产品范围。
 - 改变收录口径、加回已否决作品、恢复旧版音乐数据、新建或关掉月度任务、改系统权限，都要先得到用户的具体决定，不能当作普通修复顺带做掉。
@@ -146,7 +146,7 @@ GPT 和 Claude 两位 agent 都是项目负责人，地位对等，不设单一�
 - 日期以 Apple Music 商店日期为准（`releaseDate` 是美西零点，取日期部分）。和媒体日历不一致时以商店为准，并在这里记录。
 - 没有可核对的商店条目（Apple Music 上还没有预购）就先不收，不猜日期。
 
-候选来源：Metacritic「New Releases」和「Coming Soon」、Wikipedia「List of 2026 albums」（专辑名带词条链接的优先看）、Official Charts 发行日历、Apple Music 美区热门专辑榜（`rss.marketingtools.apple.com`）；K-pop 看 Wikipedia「2026 in South Korean music」和 kpopofficial.com 的月度回归表。不能因为 Metacritic 分数高就把小众作品加进来。
+候选来源：Metacritic「New Releases」和「Coming Soon」、Wikipedia「List of 2026 albums」（专辑名带词条链接的优先看）、Official Charts 发行日历、Apple Music 美区热门专辑榜（`rss.marketingtools.apple.com`）；K-pop 看 Wikipedia「2026 in South Korean music」和 kpopofficial.com 的月度回归表。不能因为评价高就把小众作品加进来。
 
 2026-10-15 初始名单（9 月 10 张、10 月 14 张、11 月 4 张）的记录：
 
@@ -199,11 +199,10 @@ GPT 和 Claude 两位 agent 都是项目负责人，地位对等，不设单一�
 
 ### 音乐（`albums.json`，文件名沿用 albums）
 
-- 评分：Metacritic（100 分制，和游戏同一套颜色阈值）。每日脚本只读「New Releases」列表页 `https://www.metacritic.com/browse/albums/release-date/new-releases/date?page={0,1}`（按日期排序、每页约 100 张、自带分数），先按 `mc_url` 匹配，匹配不上再按艺人 + 专辑名匹配，匹配成功时顺带改正 `mc_url`。单张专辑页会弹 Cloudflare 验证（2026-10-15 实测），不要改成逐张抓专辑页。只有评测够数的专辑才会出现在列表里，下月专辑基本都是「暂无评分」，正常。
-- 没有分数的专辑，`mc_url` 按 Metacritic 的规则拼：`/music/{专辑名}/{艺人}`，小写，去掉撇号、句点和重音，`&` 和其他符号换成连字符（`!` 保留）。拼错也没关系，列表里出现后脚本会按名称匹配并改正。
-- AOTY 不能用：真浏览器打开也一直停在 Cloudflare 验证页。Spotify 不考虑：2026-02 起开发模式应用删掉了新发列表接口，还要求开发者开 Premium。
+- **不显示评分**（2026-10-15 用户决定）。试过的来源：Metacritic 只评欧美作品、基本不评 K-pop（每日任务能读到它的「New Releases」列表页，单张专辑页会弹 Cloudflare 验证）；豆瓣音乐对新专辑出分很慢（9 月初的作品 5～6 周后仍「暂无评分」），K-pop 分数还受粉丝互刷影响；AOTY、RateYourMusic 的用户分最及时，但都卡在 Cloudflare 验证，无法自动抓取。以后要恢复评分，先和用户确认来源。
+- Spotify 不考虑：2026-02 起开发模式应用删掉了新发列表接口，还要求开发者开 Premium。
 - 封面和链接：iTunes Lookup API（`https://itunes.apple.com/lookup?id={id}&country=cn`）。`cn` 区的 search 接口不返回结果，要先在 `us` 区按艺人查到专辑编号，再用 lookup 查国区有没有上架。封面用 `…/600x600bb.jpg` 外链（1:1）。
-- 结构同样是三个 groups，内容数组为 `albums`。条目字段：`title`、`artist`、`date`、`year/month/day`、`kind`（目前都是 `LP`）、`mc`（整数或 `null`）、`mc_url`、`apple_id`、`apple_url`（国区链接，没上架为 `null`）、`art`。页面目前只显示封面、专辑名、艺人、日期状态和评分，`apple_url` 先只存不显示。
+- 结构同样是三个 groups，内容数组为 `albums`。条目字段：`title`、`artist`、`date`、`year/month/day`、`kind`（`LP` 或 `EP`）、`apple_id`、`apple_url`（国区链接，没上架为 `null`）、`art`。不存评分字段（`check_data.py` 会拦 `mc` / `mc_url`）。页面只显示封面、作品名、艺人和日期状态，`apple_url` 先只存不显示。
 
 ### 来源失败
 
@@ -290,9 +289,9 @@ GPT 和 Claude 两位 agent 都是项目负责人，地位对等，不设单一�
 ### 音乐列表
 
 - 版式沿用电影海报网格：860px 栏里 3 列，≤640px 为 2 列，网格顶部留白相同。封面 1:1（`.pic.al`），Apple Music 600×600 外链。
-- 标题行和评分规则与电影完全相同（CSS 用 `:is(#movieBody,#albumBody)` 共用）。标题下面多一行艺人（`.artist`）：无衬线，桌面 14px、手机 13px，500 字重，主文字色，单行省略。再下面是日期和状态。
+- 标题行样式与电影相同（CSS 用 `:is(#movieBody,#albumBody)` 共用），但不显示评分。标题下面多一行艺人（`.artist`）：无衬线，桌面 14px、手机 13px，500 字重，主文字色，单行省略。再下面是日期和状态。
 - 状态写「今天发行 / 明天发行 / 还有N天 / 已发行」，颜色规则同游戏。
-- 专辑名和艺人都是纯文本，跳转只走评分（Metacritic）。页脚「共 N 张 · 评分来自 Metacritic · 每月初更新」。
+- 作品名和艺人都是纯文本，卡片没有外链。页脚「共 N 张 · 每月初更新」。
 - 封面加载失败时显示首字母色块（`.ph`）。
 
 ### 动效、主题与可访问性
@@ -364,15 +363,14 @@ release-calendar/
 
 计划时间每天 UTC 10:00（北京时间 18:00），也可手动 `workflow_dispatch`。scheduled run 经常晚点，不要向用户承诺每天 18:00 一定更新完。
 
-用 Python 3.12 跑 `scripts/update_scores.py`，前后各跑一次 `check_data.py`。只有 `releases.json`、`movies.json` 或 `albums.json` 真有变化才提交并推 `main`，提交说明是「自动更新评分和 Steam 价格」。用仓库 `GITHUB_TOKEN`，不需要私人 token。
+用 Python 3.12 跑 `scripts/update_scores.py`，前后各跑一次 `check_data.py`。只有 `releases.json` 或 `movies.json` 真有变化才提交并推 `main`（音乐不刷新），提交说明是「自动更新评分和 Steam 价格」。用仓库 `GITHUB_TOKEN`，不需要私人 token。
 
 脚本行为：
 
 - 只读取现有 `mc_url`、电影 `sid` 和 Steam 链接，遍历全部保留月份，不区分已发售或未发售。不增删作品，不改日期或平台。
-- 游戏更新 `mc`，电影更新 `score` 和 `votes`，音乐更新 `mc`（必要时改正 `mc_url`）。没有游戏媒体评论数量字段，不要承诺这个功能存在。
+- 游戏更新 `mc`，电影更新 `score` 和 `votes`。音乐没有评分，每日任务不碰 `albums.json`。没有游戏媒体评论数量字段，不要承诺这个功能存在。
 - Steam 更新顶层 `steam_price` 和 `plats` 内价格（中国区人民币现价，含折扣）；编号或币种不符、价格未开放、接口失败时保留旧价。套装先核对 `steam_package_apps` 再接受价格。不刷新 PS / Nintendo 价格。
 - 豆瓣没有评分或人数时，不用空或 0 覆盖旧值。
-- 音乐：Metacritic 列表页每页算一个评分来源，打不开或解析不到行都记为请求错误。列表里找不到、或者分数是 `tbd` 的专辑保留旧值。2026-10-15 手动运行确认 GitHub Actions 能读到列表页（日志没有 `Metacritic album list page` 错误）；以后出现这条错误就说明被拦了。
 - 评分来源请求错误超过计入来源的一半时，整次失败且不写文件。Steam 错误不计入这个门槛；这只保护评分请求，不是所有外部失败的总开关。
 - Metacritic 页面打开了但解析不到分数时记为 `unrated`，不算请求错误。页面改版后旧分数可能一直留着、也没有失败报警，要看日志。来源改版时需更新 `update_scores.py`。
 
@@ -491,6 +489,6 @@ Python 脚本只用标准库，建议 Python 3.12（与 Actions 一致）；Node
 
 > 请参与维护 Release Calendar：https://github.com/torge0414/release-calendar ，线上 https://torge0414.github.io/release-calendar/ 。先读仓库里的 `HANDOVER.md`（唯一的维护、协作与收录说明），再核对实际 HEAD 和远端。
 >
-> 网站是原生单页加三份 JSON，没有 npm 构建，只维护上月、本月、下月的游戏精选、内地院线电影和欧美主流音乐（专辑和 EP）精选（评分来自 Metacritic）。旧版音乐数据不要恢复。保持当前的月份目录页头、860px 共用栏宽、460×215 游戏封面、齐线衬线评分，以及手机触摸和可访问性规则。不要恢复旧视觉。
+> 网站是原生单页加三份 JSON，没有 npm 构建，只维护上月、本月、下月的游戏精选、内地院线电影和音乐精选（欧美主流加 K-pop 女团的专辑和 EP，不显示评分）。旧版音乐数据不要恢复。保持当前的月份目录页头、860px 共用栏宽、460×215 游戏封面、齐线衬线评分，以及手机触摸和可访问性规则。不要恢复旧视觉。
 >
 > GPT 和 Claude 都是项目负责人，谁改动谁负责验收发布；每月精选由 GPT 负责。两位共用 `H:\Release Calendar\release-calendar`，先分清任务和文件，避免同时改 `index.html`。提交前跑四项基础检查，样式改动看真实桌面、手机和两种主题，主题 / 字体改动补 WebKit 双向切换。每日 Actions 会提交评分和 Steam 价格，推送前先 fetch，禁止强推和覆盖新数据。不要自行新建月度任务或扩大清单。

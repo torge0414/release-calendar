@@ -107,13 +107,11 @@ def validate(root: Path, check_images: bool) -> list[str]:
                     if cover and not cover.startswith("https://") and not (root / cover).is_file():
                         fail(errors, f"{label}: missing local cover {cover}")
                 elif kind == "album":
-                    score = item.get("mc")
-                    if score is not None and (not isinstance(score, int) or not 0 <= score <= 100):
-                        fail(errors, f"{label}: invalid Metacritic score")
+                    # 2026-10-15 起音乐不显示评分，也不存评分字段
                     if not isinstance(item.get("artist"), str) or not item["artist"].strip():
                         fail(errors, f"{label}: empty artist")
-                    if not str(item.get("mc_url") or "").startswith("https://www.metacritic.com/music/"):
-                        fail(errors, f"{label}: invalid Metacritic album URL")
+                    if "mc" in item or "mc_url" in item:
+                        fail(errors, f"{label}: music entries no longer carry scores")
                     apple = item.get("apple_url")
                     if apple and not str(apple).startswith("https://music.apple.com/"):
                         fail(errors, f"{label}: invalid Apple Music URL")
