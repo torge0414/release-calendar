@@ -134,7 +134,7 @@ GPT 和 Claude 两位 agent 都是项目负责人，地位对等，不设单一�
 用户没有采用数字门槛（试过 Last.fm 听众数，它高估独立和老牌摇滚、低估嘻哈 / R&B / 乡村 / K-pop，和用户的判断对不上），按编辑判断加用户的风格偏好来选：
 
 - 不收**摇滚**：Apple Music 流派是 Rock、Hard Rock、Pop/Rock 的直接排除；流派是 Alternative 的看实际曲风，摇滚乐队排除（Fontaines D.C.、Queens of the Stone Age、Kings of Leon、Beck），合成器流行 / 灵魂乐 / 另类流行保留（Pet Shop Boys、Michael Kiwanuka、Dominic Fike）。
-- **主流程度**（2026-10-15 起用于女歌手复查）：欧美艺人要在美国或英国有过前 10 的专辑或单曲，或者这张新作本身进了 Billboard 200 / 英国专辑榜前 10、或在 Apple Music 美区热门专辑榜上。只在本国（如法语区）走红的不算。早年走红、现在已没有流行度的老牌艺人不收。K-pop 女团和女团 solo 看团体是否一线。
+- **主流程度**（2026-10-15 用户确认，先试前 10，随后放宽到前 40）：欧美艺人要在美国（Billboard Hot 100 / Billboard 200）或英国（官方单曲榜 / 专辑榜）有过**前 40** 的单曲或专辑（署名合作、所在组合的成绩也算），或者这张新作本身进了前 40、或在 Apple Music 美区热门专辑榜上。查 Wikipedia 的艺人或 discography 页面核对。只在本国（如法语区）走红的不算。早年走红、现在已没有流行度的老牌艺人不收。K-pop 女团和女团 solo 看团体是否一线。
 - 不收**乡村 / Americana**（Apple Music 流派是 Country 或 Americana 的直接排除）。
 - 不收**独立、实验、爵士、电子小众**作品，即使 Metacritic 分数很高。
 - 不收**老派民谣 / 艺术摇滚**这类偏情怀的老牌艺人新作（Neil Young、Peter Gabriel）；仍有大众流行度的老牌流行（Pet Shop Boys、Take That、James Blunt）保留。
@@ -149,7 +149,7 @@ GPT 和 Claude 两位 agent 都是项目负责人，地位对等，不设单一�
 
 候选来源：Metacritic「New Releases」和「Coming Soon」、Wikipedia「List of 2026 albums」（专辑名带词条链接的优先看）、Official Charts 发行日历、Apple Music 美区热门专辑榜（`rss.marketingtools.apple.com`）；K-pop 看 Wikipedia「2026 in South Korean music」和 kpopofficial.com 的月度回归表。不能因为评价高就把小众作品加进来。
 
-2026-10-15 初始名单（9 月 10 张、10 月 6 张、11 月 2 张）的记录：
+2026-10-15 初始名单（9 月 11 张、10 月 8 张、11 月 3 张）的记录：
 
 | 条目 | 决定 |
 | --- | --- |
@@ -162,7 +162,9 @@ GPT 和 Claude 两位 agent 都是项目负责人，地位对等，不设单一�
 | K-pop 团体 | ALLDAY PROJECT《CRASH》（男女混合）、NMIXX《Strange Muse》、ILLIT《BREAK EVEN》、IVE《Looks Can Kill》 |
 | K-pop solo | JEON SOYEON《What a Wonderful Life》（i-dle）、YUQI《27》（i-dle，中文 EP） |
 | 女歌手复查后加入 | ADÉLA《PRIMA》（09-04，Billboard 200 第 4）、GAYLE《Observing Chaos》（09-18，「abcdefu」美国前 3）、La Roux《Old Flames》（11-06，「Bulletproof」英国第 1） |
-| 女歌手复查后不收（主流程度不够） | Ashe、Lennon Stella、Yung Miami、Shygirl、Tove Styrke、Rebecca Black、Bea Miller、Nessa Barrett、Cara Delevingne、Lizzy McAlpine、Rachel Chinouriri、Angèle（法语区走红，英美没有前 10）、Natalie Imbruglia / Chaka Khan（老牌，现在流行度低）、Hyojung、YUJU、RESCENE |
+| 放宽到前 40 后加入 | Bea Miller《Mr. Peaked In High School》（09-18，Billboard 200 第 7）、Lennon Stella《Sleeping Lion》（10-23，英国单曲第 12）、Yung Miami《Watch Dis》（10-23，City Girls 美国单曲第 26）、Shygirl《SWALLOW!》（11-06，英国专辑第 34） |
+| 过了前 40 但按流派不收 | Lizzy McAlpine《Angel》（英国单曲第 6，独立民谣）、Rachel Chinouriri《I think I spoke too soon》（英国专辑第 17，偏独立摇滚）、Paris Paloma《The Fatal Flaw》（英国单曲第 22，独立民谣） |
+| 前 40 也不够 | Ashe（美国最高第 71）、Tove Styrke（只在瑞典上榜）、Rebecca Black（美国第 55）、Nessa Barrett（美国第 80）、Angèle（英国第 79）、Cara Delevingne、Katie Gregson-MacLeod（查不到英美上榜记录）；Natalie Imbruglia、Chaka Khan 按老牌规则不收；K-pop 的 Hyojung、YUJU、RESCENE 不算一线 |
 | 女歌手复查后不收（其他原因） | Holly Humberstone《Cruel World… So It Ends》（旧专辑扩充版）、Alanis Morissette（节日专辑）、K. Michelle《Jesus & Whiskey》（转型乡村）、Kaitlin Butts（乡村）、Björk《Orkestral》（现场管弦乐版） |
 | 男歌手（用户要求剔除） | Yeat、Leon Bridges、Quavo、Troye Sivan、Pet Shop Boys、Lucky Daye、Anderson .Paak & Cordae、John Legend、Michael Kiwanuka、Dominic Fike、James Blunt、Skepta、Take That |
 | 男团和男团 solo，用户要求剔除 | MONSTA X、NCT WISH、MINHO、D.O.、YESUNG、MAX CHANGMIN；待上架的 ATEEZ、TOMORROW X TOGETHER、XIAOJUN 也不再补 |
