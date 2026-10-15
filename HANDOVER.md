@@ -136,7 +136,7 @@ GPT 和 Claude 两位 agent 都是项目负责人，地位对等，不设单一�
 - 不收**摇滚**：Apple Music 流派是 Rock、Hard Rock、Pop/Rock 的直接排除；流派是 Alternative 的看实际曲风，摇滚乐队排除（Fontaines D.C.、Queens of the Stone Age、Kings of Leon、Beck），合成器流行 / 灵魂乐 / 另类流行保留（Pet Shop Boys、Michael Kiwanuka、Dominic Fike）。
 - **主流程度**（2026-10-15 用户确认，先试前 10，随后放宽到前 40）：欧美艺人要在美国（Billboard Hot 100 / Billboard 200）或英国（官方单曲榜 / 专辑榜）有过**前 40** 的单曲或专辑（署名合作、所在组合的成绩也算），或者这张新作本身进了前 40、或在 Apple Music 美区热门专辑榜上。查 Wikipedia 的艺人或 discography 页面核对。只在本国（如法语区）走红的不算。早年走红、现在已没有流行度的老牌艺人不收。K-pop 女团和女团 solo 看团体是否一线。
 - 不收**乡村 / Americana**（Apple Music 流派是 Country 或 Americana 的直接排除）。
-- 不收**独立、实验、爵士、电子小众**作品，即使 Metacritic 分数很高。
+- 不收**独立、民谣、实验、爵士、电子小众**作品（2026-10-15 用户确认独立和民谣不要），即使榜单成绩或评价过线。
 - 不收**老派民谣 / 艺术摇滚**这类偏情怀的老牌艺人新作（Neil Young、Peter Gabriel）；仍有大众流行度的老牌流行（Pet Shop Boys、Take That、James Blunt）保留。
 - 同日用户剔除过：Remi Wolf、M83、Neil Young、Luke Bryan、Rex Orange County、Miranda Lambert（乡村）；按同一偏好我另外剔除了 Sheryl Crow（Americana）、Peter Gabriel。
 - K-pop 收女团和顶级女团成员 solo 的正规专辑和迷你专辑（Apple Music 标 EP 的；用户 2026-10-15 确认 solo 也收，同日要求剔除男团和男团 solo）。中文作品照收（YUQI《27》）。单曲专辑（single album）、数字单曲、改版重发（repackage / deluxe）、日语作品、现场专辑不收。韩国作品在国区 Apple Music 一般没有上架，`apple_url` 为空，封面用美区图。
