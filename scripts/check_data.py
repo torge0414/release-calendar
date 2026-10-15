@@ -36,14 +36,19 @@ def validate(root: Path, check_images: bool) -> list[str]:
     errors = []
     games_data = json.loads((root / "releases.json").read_text(encoding="utf-8"))
     movies_data = json.loads((root / "movies.json").read_text(encoding="utf-8"))
+    albums_data = json.loads((root / "albums.json").read_text(encoding="utf-8"))
     game_months = [(g.get("year"), g.get("month")) for g in games_data.get("groups", [])]
     movie_months = [(g.get("year"), g.get("month")) for g in movies_data.get("groups", [])]
+    album_months = [(g.get("year"), g.get("month")) for g in albums_data.get("groups", [])]
     if game_months != movie_months:
         fail(errors, "game/movie month groups disagree")
+    if game_months != album_months:
+        fail(errors, "game/album month groups disagree")
     image_jobs = []
     for kind, data, list_key in (
         ("game", games_data, "games"),
         ("movie", movies_data, "movies"),
+        ("album", albums_data, "albums"),
     ):
         groups = data.get("groups")
         if not isinstance(groups, list) or len(groups) != 3:
@@ -67,7 +72,7 @@ def validate(root: Path, check_images: bool) -> list[str]:
                 if not isinstance(title, str) or not title.strip():
                     fail(errors, f"{label}: empty title")
                     continue
-                identity = item.get("sid") if kind == "movie" else title
+                identity = {"movie": item.get("sid"), "album": (item.get("artist"), title)}.get(kind, title)
                 if identity in seen:
                     fail(errors, f"{label}: duplicate entry")
                 seen.add(identity)
@@ -101,6 +106,23 @@ def validate(root: Path, check_images: bool) -> list[str]:
                     cover = item.get("cover_img")
                     if cover and not cover.startswith("https://") and not (root / cover).is_file():
                         fail(errors, f"{label}: missing local cover {cover}")
+                elif kind == "album":
+                    score = item.get("mc")
+                    if score is not None and (not isinstance(score, int) or not 0 <= score <= 100):
+                        fail(errors, f"{label}: invalid Metacritic score")
+                    if not isinstance(item.get("artist"), str) or not item["artist"].strip():
+                        fail(errors, f"{label}: empty artist")
+                    if not str(item.get("mc_url") or "").startswith("https://www.metacritic.com/music/"):
+                        fail(errors, f"{label}: invalid Metacritic album URL")
+                    apple = item.get("apple_url")
+                    if apple and not str(apple).startswith("https://music.apple.com/"):
+                        fail(errors, f"{label}: invalid Apple Music URL")
+                    art = item.get("art")
+                    if art and not art.startswith("https://"):
+                        if not (root / art).is_file():
+                            fail(errors, f"{label}: missing local cover {art}")
+                    elif art:
+                        image_jobs.append((label, [art]))
                 else:
                     score = item.get("score")
                     votes = item.get("votes")
@@ -144,7 +166,7 @@ def missing_title_font_chars(root: Path) -> list[str]:
         return []
     covered = set(chars_file.read_text(encoding="utf-8"))
     missing = set()
-    for name, key in (("releases.json", "games"), ("movies.json", "movies")):
+    for name, key in (("releases.json", "games"), ("movies.json", "movies"), ("albums.json", "albums")):
         data = json.loads((root / name).read_text(encoding="utf-8"))
         for group in data.get("groups", []):
             for item in group.get(key, []):
@@ -160,7 +182,11 @@ LOCAL_IMAGE_WARN_KB = 220
 def oversized_local_images(root: Path) -> list[str]:
     """Local covers/posters that are much larger than the page needs (posters: about 600px wide)."""
     heavy = []
-    for name, key, field in (("releases.json", "games", "cover_img"), ("movies.json", "movies", "poster")):
+    for name, key, field in (
+        ("releases.json", "games", "cover_img"),
+        ("movies.json", "movies", "poster"),
+        ("albums.json", "albums", "art"),
+    ):
         data = json.loads((root / name).read_text(encoding="utf-8"))
         for group in data.get("groups", []):
             for item in group.get(key, []):

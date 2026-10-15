@@ -1,12 +1,15 @@
-"""Refresh scores and Steam prices without changing the monthly selection."""
+"""Refresh scores (games, movies, albums) and Steam prices without changing the monthly selection."""
 from __future__ import annotations
 
 import argparse
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timedelta, timezone
+import html
 import json
 from pathlib import Path
 import re
+import unicodedata
+from urllib.parse import urlparse
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
@@ -17,6 +20,18 @@ METASCORE = re.compile(
     re.IGNORECASE,
 )
 TIMEOUT = 25
+# 专辑评分只读 Metacritic「New Releases」列表页（按日期排序，每页约 100 张，自带分数）。
+# 单张专辑页会被 Cloudflare 验证拦下，列表页可以正常访问（2026-10-15 实测）。
+ALBUM_LIST_URL = "https://www.metacritic.com/browse/albums/release-date/new-releases/date?page={page}"
+ALBUM_LIST_PAGES = 2
+ALBUM_ROW = re.compile(r'<td class="clamp-summary-wrap">(.*?)</td>', re.S)
+ALBUM_LINK = re.compile(r'<a href="(/music/[^"]+)" class="title">\s*<h3>(.*?)</h3>', re.S)
+ALBUM_ARTIST = re.compile(r'<div class="artist">\s*(?:by\s+)?(.*?)\s*</div>', re.S)
+ALBUM_SCORE = re.compile(r'<div class="metascore_w[^"]*">\s*(\d+|tbd)\s*</div>')
+BROWSER_HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/140 Safari/537.36",
+    "Accept-Language": "en-US,en;q=0.9",
+}
 
 
 def fetch(url: str, headers: dict[str, str]) -> str:
@@ -29,10 +44,7 @@ def game_score(item: dict) -> tuple[str, int | None]:
     if not url:
         return ("no_url", None)
     try:
-        page = fetch(url, {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/140 Safari/537.36",
-            "Accept-Language": "en-US,en;q=0.9",
-        })
+        page = fetch(url, BROWSER_HEADERS)
         match = METASCORE.search(page)
         if not match:
             return ("unrated", None)
@@ -69,6 +81,65 @@ def movie_score(item: dict) -> tuple[str, tuple[float | None, int | None] | None
         return ("ok", (value, count))
     except (HTTPError, URLError, TimeoutError, ValueError, TypeError, json.JSONDecodeError) as exc:
         return (f"error: {exc}", None)
+
+
+def norm(text: str) -> str:
+    """Compare album and artist names without case, accents, punctuation or spacing."""
+    text = unicodedata.normalize("NFKD", html.unescape(str(text or ""))).lower()
+    text = "".join(ch for ch in text if not unicodedata.combining(ch))
+    return re.sub(r"[^a-z0-9]", "", text.replace("&", "and"))
+
+
+def mc_path(url: str) -> str:
+    return urlparse(url or "").path.rstrip("/").lower()
+
+
+def parse_album_list(page: str) -> list[dict]:
+    rows = []
+    for block in ALBUM_ROW.findall(page):
+        link = ALBUM_LINK.search(block)
+        if not link:
+            continue
+        artist = ALBUM_ARTIST.search(block)
+        score = ALBUM_SCORE.search(block)
+        value = score.group(1) if score else "tbd"
+        rows.append({
+            "path": link.group(1).rstrip("/").lower(),
+            "title": html.unescape(re.sub(r"<[^>]+>", "", link.group(2))).strip(),
+            "artist": html.unescape(artist.group(1)).strip() if artist else "",
+            "score": int(value) if value.isdigit() else None,
+        })
+    return rows
+
+
+def album_list() -> tuple[list[dict], list[str]]:
+    """All rows from the Metacritic new-release list pages, plus one error per failed page."""
+    rows, errors = [], []
+    for number in range(ALBUM_LIST_PAGES):
+        try:
+            parsed = parse_album_list(fetch(ALBUM_LIST_URL.format(page=number), BROWSER_HEADERS))
+            if not parsed:
+                raise ValueError("no album rows (page layout changed or verification page)")
+            rows.extend(parsed)
+        except (HTTPError, URLError, TimeoutError, ValueError) as exc:
+            errors.append(f"Metacritic album list page {number}: error: {exc}")
+    return rows, errors
+
+
+def match_album(item: dict, rows: list[dict]) -> dict | None:
+    """Match by the stored mc_url first; fall back to artist + title for a slug that differs."""
+    path = mc_path(item.get("mc_url"))
+    for row in rows:
+        if path and row["path"] == path:
+            return row
+    title, artist = norm(item.get("title")), norm(item.get("artist"))
+    for row in rows:
+        row_artist = norm(row["artist"])
+        if title and norm(row["title"]) == title and artist and (
+            row_artist == artist or artist in row_artist or row_artist in artist
+        ):
+            return row
+    return None
 
 
 def steam_price(item: dict) -> tuple[str, float | None]:
@@ -127,11 +198,13 @@ def main() -> int:
     parser.add_argument("--dry-run", action="store_true", help="check sources but do not write files")
     args = parser.parse_args()
 
-    game_path, movie_path = ROOT / "releases.json", ROOT / "movies.json"
+    game_path, movie_path, album_path = ROOT / "releases.json", ROOT / "movies.json", ROOT / "albums.json"
     games_data = json.loads(game_path.read_text(encoding="utf-8"))
     movies_data = json.loads(movie_path.read_text(encoding="utf-8"))
     games = [entry for group in games_data["groups"] for entry in group["games"]]
     movies = [entry for group in movies_data["groups"] for entry in group["movies"]]
+    albums_data = json.loads(album_path.read_text(encoding="utf-8"))
+    albums = [entry for group in albums_data["groups"] for entry in group["albums"]]
     jobs = [("game", item) for item in games] + [("movie", item) for item in movies]
     with ThreadPoolExecutor(max_workers=5) as pool:
         results = list(pool.map(
@@ -143,7 +216,7 @@ def main() -> int:
     errors = []
     score_errors = []
     changes = []
-    game_changed = movie_changed = False
+    game_changed = movie_changed = album_changed = False
     for (kind, item), (status, rating) in zip(jobs, results):
         if status not in ("no_url", "no_sid"):
             total_sources += 1
@@ -168,6 +241,26 @@ def main() -> int:
                 item["votes"] = count
                 movie_changed = True
 
+    # 专辑：每个列表页算一个评分来源；列表里找不到的专辑（还没有足够评测）保留旧值
+    if albums:
+        rows, list_errors = album_list()
+        total_sources += ALBUM_LIST_PAGES
+        score_errors.extend(list_errors)
+        errors.extend(list_errors)
+        for item in albums if rows else []:
+            row = match_album(item, rows)
+            if not row or row["score"] is None:
+                continue
+            if item.get("mc") != row["score"]:
+                changes.append(f"专辑 {item['artist']} - {item['title']}: {item.get('mc')} → {row['score']}")
+                item["mc"] = row["score"]
+                album_changed = True
+            url = "https://www.metacritic.com" + row["path"]
+            if mc_path(item.get("mc_url")) != row["path"]:
+                changes.append(f"专辑 {item['artist']} - {item['title']} 评分链接: {item.get('mc_url')} → {url}")
+                item["mc_url"] = url
+                album_changed = True
+
     steam_games = [item for item in games if item.get("steam_url")]
     with ThreadPoolExecutor(max_workers=5) as pool:
         price_results = list(pool.map(steam_price, steam_games))
@@ -187,7 +280,7 @@ def main() -> int:
                 game_changed = True
 
     print(json.dumps({
-        "checked": {"games": len(games), "movies": len(movies)},
+        "checked": {"games": len(games), "movies": len(movies), "albums": len(albums)},
         "changes": changes,
         "errors": errors,
     }, ensure_ascii=False, indent=2))
@@ -199,6 +292,7 @@ def main() -> int:
         for changed, data, path in (
             (game_changed, games_data, game_path),
             (movie_changed, movies_data, movie_path),
+            (album_changed, albums_data, album_path),
         ):
             if changed:
                 data["updated"] = now
