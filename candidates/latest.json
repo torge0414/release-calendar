@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-18 02:42:40",
+ "generated_at": "2026-10-18 03:06:09",
  "window": [
   {
    "year": 2026,
@@ -22,7 +22,7 @@
    "release_hint": "10.05",
    "wish": null,
    "score": 7.3,
-   "votes": 172265,
+   "votes": 172298,
    "pubdate": "2026-10-05(中国大陆)",
    "mainland_date": "2026-10-05",
    "year": "2026",
@@ -44,7 +44,7 @@
     "扎克·切利",
     "卡莉·瑞斯"
    ],
-   "comments": 78071,
+   "comments": 78080,
    "null_rating_reason": "",
    "poster_url": "https://img2.doubanio.com/view/photo/m_ratio_poster/public/p2936442661.jpg",
    "in_window": true,
@@ -78,7 +78,7 @@
     "乔什·布洛林",
     "伊丽莎白·苏"
    ],
-   "comments": 1862,
+   "comments": 1864,
    "null_rating_reason": "暂无评分",
    "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2935800697.jpg",
    "in_window": true,
@@ -122,7 +122,7 @@
    "release_hint": "10.01",
    "wish": null,
    "score": 6.8,
-   "votes": 75668,
+   "votes": 75676,
    "pubdate": "2026-10-01(中国大陆)",
    "mainland_date": "2026-10-01",
    "year": "2026",
@@ -140,7 +140,7 @@
     "马丽",
     "陈明昊"
    ],
-   "comments": 35508,
+   "comments": 35513,
    "null_rating_reason": "",
    "poster_url": "https://img2.doubanio.com/view/photo/m_ratio_poster/public/p2935867001.jpg",
    "in_window": true,
@@ -154,7 +154,7 @@
    "release_hint": "09.30",
    "wish": null,
    "score": 7.3,
-   "votes": 20694,
+   "votes": 20695,
    "pubdate": "2026-09-30(中国大陆)",
    "mainland_date": "2026-09-30",
    "year": "2026",
@@ -188,7 +188,7 @@
    "release_hint": "10.01",
    "wish": null,
    "score": 7.0,
-   "votes": 14453,
+   "votes": 14454,
    "pubdate": "2026-10-01(中国大陆)",
    "mainland_date": "2026-10-01",
    "year": "2026",
@@ -220,7 +220,7 @@
    "release_hint": "10.01",
    "wish": null,
    "score": 6.4,
-   "votes": 24047,
+   "votes": 24050,
    "pubdate": "2026-10-01(中国大陆)",
    "mainland_date": "2026-10-01",
    "year": "2026",
@@ -239,7 +239,7 @@
     "沈春阳",
     "贾冰"
    ],
-   "comments": 12216,
+   "comments": 12218,
    "null_rating_reason": "",
    "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2936493940.jpg",
    "in_window": true,
@@ -253,7 +253,7 @@
    "release_hint": "10.03",
    "wish": null,
    "score": 6.6,
-   "votes": 18635,
+   "votes": 18636,
    "pubdate": "2026-10-03(中国大陆)",
    "mainland_date": "2026-10-03",
    "year": "2026",
@@ -272,7 +272,7 @@
     "文俊辉",
     "洪金宝"
    ],
-   "comments": 11825,
+   "comments": 11826,
    "null_rating_reason": "",
    "poster_url": "https://img2.doubanio.com/view/photo/m_ratio_poster/public/p2936087801.jpg",
    "in_window": true,
@@ -286,7 +286,7 @@
    "release_hint": "09.04",
    "wish": null,
    "score": 8.7,
-   "votes": 126652,
+   "votes": 126653,
    "pubdate": "2026-09-04(中国大陆)",
    "mainland_date": "2026-09-04",
    "year": "2004",
@@ -352,7 +352,7 @@
    "release_hint": "09.04",
    "wish": null,
    "score": 5.3,
-   "votes": 25017,
+   "votes": 25021,
    "pubdate": "2026-09-04(中国大陆)",
    "mainland_date": "2026-09-04",
    "year": "2026",
@@ -373,7 +373,7 @@
     "阿塞玛·托马斯",
     "汤姆·布里特尼"
    ],
-   "comments": 11815,
+   "comments": 11817,
    "null_rating_reason": "",
    "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2935283013.jpg",
    "in_window": true,
@@ -387,30 +387,55 @@
    "release_hint": "08.11",
    "wish": null,
    "score": 8.7,
-   "votes": 767117,
-   "pubdate": "2026-08-11(中国大陆)",
-   "mainland_date": "2026-08-11",
+   "votes": 767128,
+   "skipped": "release month outside window",
+   "heat_ok": true
+  },
+  {
+   "sid": "1292052",
+   "title": "肖申克的救赎",
+   "list": "movie_showing",
+   "release_hint": "08.28",
+   "wish": null,
+   "score": 9.7,
+   "votes": 3351321,
+   "skipped": "release month outside window",
+   "heat_ok": true
+  },
+  {
+   "sid": "35840408",
+   "title": "老江湖",
+   "list": "movie_showing",
+   "release_hint": "09.25",
+   "wish": null,
+   "score": 4.8,
+   "votes": 6244,
+   "pubdate": "2026-09-25(中国大陆)",
+   "mainland_date": "2026-09-25",
    "year": "2026",
    "genres": [
-    "剧情",
-    "战争"
+    "喜剧",
+    "动作",
+    "犯罪"
    ],
    "countries": [
     "中国大陆"
    ],
    "directors": [
-    "文牧野"
+    "刘誉",
+    "李太阁"
    ],
    "actors": [
-    "沈腾",
-    "蒋奇明",
-    "奥马尔·谢里夫"
+    "于谦",
+    "梁家辉",
+    "王影璐"
    ],
-   "comments": 290215,
+   "comments": 4221,
    "null_rating_reason": "",
-   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2935109312.jpg",
-   "in_window": false,
-   "heat_ok": true
+   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2936005892.jpg",
+   "in_window": true,
+   "heat_ok": true,
+   "poster_file": "img/movie_35840408.jpg"
   },
   {
    "sid": "36808876",
@@ -419,35 +444,8 @@
    "release_hint": "08.14",
    "wish": null,
    "score": 8.6,
-   "votes": 564129,
-   "pubdate": "2026-08-14(中国大陆)",
-   "mainland_date": "2026-08-14",
-   "year": "2026",
-   "genres": [
-    "动作",
-    "历史",
-    "奇幻"
-   ],
-   "countries": [
-    "美国",
-    "加拿大",
-    "冰岛",
-    "新西兰",
-    "摩洛哥",
-    "英国"
-   ],
-   "directors": [
-    "克里斯托弗·诺兰"
-   ],
-   "actors": [
-    "马特·达蒙",
-    "汤姆·霍兰德",
-    "安妮·海瑟薇"
-   ],
-   "comments": 209779,
-   "null_rating_reason": "",
-   "poster_url": "https://img9.doubanio.com/view/photo/m_ratio_poster/public/p2933569626.jpg",
-   "in_window": false,
+   "votes": 564132,
+   "skipped": "release month outside window",
    "heat_ok": true
   },
   {
@@ -487,29 +485,8 @@
    "release_hint": "07.24",
    "wish": null,
    "score": 7.6,
-   "votes": 292477,
-   "pubdate": "2026-07-24(中国大陆)",
-   "mainland_date": "2026-07-24",
-   "year": "2025",
-   "genres": [
-    "恐怖",
-    "奇幻"
-   ],
-   "countries": [
-    "美国"
-   ],
-   "directors": [
-    "库里·巴克"
-   ],
-   "actors": [
-    "迈克尔·约翰斯顿",
-    "印达·纳瓦雷特",
-    "库珀·汤姆林森"
-   ],
-   "comments": 119183,
-   "null_rating_reason": "",
-   "poster_url": "https://img9.doubanio.com/view/photo/m_ratio_poster/public/p2934049524.jpg",
-   "in_window": false,
+   "votes": 292484,
+   "skipped": "release month outside window",
    "heat_ok": true
   },
   {
@@ -519,30 +496,8 @@
    "release_hint": "08.19",
    "wish": null,
    "score": 7.2,
-   "votes": 150104,
-   "pubdate": "2026-08-19(中国大陆)",
-   "mainland_date": "2026-08-19",
-   "year": "2026",
-   "genres": [
-    "剧情",
-    "犯罪"
-   ],
-   "countries": [
-    "中国大陆",
-    "中国香港"
-   ],
-   "directors": [
-    "韩延"
-   ],
-   "actors": [
-    "朱一龙",
-    "檀健次",
-    "梁家辉"
-   ],
-   "comments": 74223,
-   "null_rating_reason": "",
-   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2934946788.jpg",
-   "in_window": false,
+   "votes": 150106,
+   "skipped": "release month outside window",
    "heat_ok": true
   },
   {
@@ -585,31 +540,8 @@
    "release_hint": "04.24",
    "wish": null,
    "score": 8.5,
-   "votes": 1177123,
-   "pubdate": "2019-04-24(中国大陆)",
-   "mainland_date": "2019-04-24",
-   "year": "2019",
-   "genres": [
-    "剧情",
-    "动作",
-    "科幻"
-   ],
-   "countries": [
-    "美国"
-   ],
-   "directors": [
-    "安东尼·罗素",
-    "乔·罗素"
-   ],
-   "actors": [
-    "小罗伯特·唐尼",
-    "克里斯·埃文斯",
-    "克里斯·海姆斯沃斯"
-   ],
-   "comments": 341919,
-   "null_rating_reason": "",
-   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2935257489.jpg",
-   "in_window": false,
+   "votes": 1177125,
+   "skipped": "release month outside window",
    "heat_ok": true
   },
   {
@@ -737,6 +669,784 @@
    "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2936068590.jpg",
    "in_window": true,
    "heat_ok": false
+  },
+  {
+   "sid": "36903929",
+   "title": "燃烧吧！爸爸",
+   "list": "movie_showing",
+   "release_hint": "09.05",
+   "wish": null,
+   "score": 6.8,
+   "votes": 10505,
+   "pubdate": "2026-09-05(中国大陆)",
+   "mainland_date": "2026-09-05",
+   "year": "2026",
+   "genres": [
+    "剧情",
+    "喜剧"
+   ],
+   "countries": [
+    "中国大陆"
+   ],
+   "directors": [
+    "刘潇阳"
+   ],
+   "actors": [
+    "文淇",
+    "倪虹洁",
+    "喻恩泰"
+   ],
+   "comments": 6574,
+   "null_rating_reason": "",
+   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2935535832.jpg",
+   "in_window": true,
+   "heat_ok": true,
+   "poster_file": "img/movie_36903929.jpg"
+  },
+  {
+   "sid": "38581618",
+   "title": "牛来",
+   "list": "movie_showing",
+   "release_hint": "08.05",
+   "wish": null,
+   "score": 6.0,
+   "votes": 52900,
+   "skipped": "release month outside window",
+   "heat_ok": true
+  },
+  {
+   "sid": "37054065",
+   "title": "红孩儿火焰山之王",
+   "list": "movie_showing",
+   "release_hint": "09.25",
+   "wish": null,
+   "score": 0,
+   "votes": 0,
+   "pubdate": "2026-09-25(中国大陆)",
+   "mainland_date": "2026-09-25",
+   "year": "2026",
+   "genres": [
+    "动画",
+    "奇幻"
+   ],
+   "countries": [
+    "中国大陆"
+   ],
+   "directors": [
+    "何状志",
+    "文静",
+    "谢嘉业"
+   ],
+   "actors": [
+    "唐梦",
+    "不喝开水"
+   ],
+   "comments": 177,
+   "null_rating_reason": "暂无评分",
+   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2931174263.jpg",
+   "in_window": true,
+   "heat_ok": false
+  },
+  {
+   "sid": "37388212",
+   "title": "喂喂喂，足球队",
+   "list": "movie_showing",
+   "release_hint": "10.15",
+   "wish": null,
+   "score": 0,
+   "votes": 0,
+   "pubdate": "2026-10-15(中国大陆)",
+   "mainland_date": "2026-10-15",
+   "year": "2026",
+   "genres": [
+    "纪录片"
+   ],
+   "countries": [
+    "中国大陆"
+   ],
+   "directors": [
+    "李志伟",
+    "刘翛然"
+   ],
+   "actors": [],
+   "comments": 25,
+   "null_rating_reason": "暂无评分",
+   "poster_url": "https://img9.doubanio.com/view/photo/m_ratio_poster/public/p2935221014.jpg",
+   "in_window": true,
+   "heat_ok": false
+  },
+  {
+   "sid": "35209727",
+   "title": "密档",
+   "list": "movie_showing",
+   "release_hint": "08.28",
+   "wish": null,
+   "score": 6.7,
+   "votes": 3744,
+   "skipped": "release month outside window",
+   "heat_ok": false
+  },
+  {
+   "sid": "2131459",
+   "title": "机器人总动员",
+   "list": "movie_showing",
+   "release_hint": "08.19",
+   "wish": null,
+   "score": 9.3,
+   "votes": 1528613,
+   "skipped": "release month outside window",
+   "heat_ok": true
+  },
+  {
+   "sid": "35390242",
+   "title": "我想留在你身边",
+   "list": "movie_showing",
+   "release_hint": "09.12",
+   "wish": null,
+   "score": 0,
+   "votes": 0,
+   "pubdate": "2026-09-12(中国大陆)",
+   "mainland_date": "2026-09-12",
+   "year": "2026",
+   "genres": [
+    "爱情",
+    "奇幻"
+   ],
+   "countries": [
+    "中国大陆"
+   ],
+   "directors": [
+    "相国强"
+   ],
+   "actors": [
+    "毕雯珺",
+    "何蓝逗",
+    "王砚辉"
+   ],
+   "comments": 1434,
+   "null_rating_reason": "暂无评分",
+   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2935129539.jpg",
+   "in_window": true,
+   "heat_ok": false
+  },
+  {
+   "sid": "35275131",
+   "title": "去你的岛",
+   "list": "movie_showing",
+   "release_hint": "08.07",
+   "wish": null,
+   "score": 7.5,
+   "votes": 26955,
+   "skipped": "release month outside window",
+   "heat_ok": true
+  },
+  {
+   "sid": "36961914",
+   "title": "床下有人4",
+   "list": "movie_showing",
+   "release_hint": "09.12",
+   "wish": null,
+   "score": 0,
+   "votes": 0,
+   "pubdate": "2026-09-12(中国大陆)",
+   "mainland_date": "2026-09-12",
+   "year": "2026",
+   "genres": [
+    "悬疑",
+    "惊悚"
+   ],
+   "countries": [
+    "中国大陆"
+   ],
+   "directors": [
+    "苗陈山"
+   ],
+   "actors": [
+    "詹明君",
+    "刘美伦",
+    "田煜玮"
+   ],
+   "comments": 80,
+   "null_rating_reason": "暂无评分",
+   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2935430382.jpg",
+   "in_window": true,
+   "heat_ok": false
+  },
+  {
+   "sid": "25921812",
+   "title": "驴得水",
+   "list": "movie_showing",
+   "release_hint": "10.28",
+   "wish": null,
+   "score": 8.3,
+   "votes": 1011920,
+   "pubdate": "2016-10-28(中国大陆)",
+   "mainland_date": "2016-10-28",
+   "year": "2016",
+   "genres": [
+    "剧情",
+    "喜剧"
+   ],
+   "countries": [
+    "中国大陆"
+   ],
+   "directors": [
+    "周申",
+    "刘露"
+   ],
+   "actors": [
+    "任素汐",
+    "大力",
+    "刘帅良"
+   ],
+   "comments": 251055,
+   "null_rating_reason": "",
+   "poster_url": "https://img2.doubanio.com/view/photo/m_ratio_poster/public/p2393044761.jpg",
+   "in_window": false,
+   "heat_ok": true
+  },
+  {
+   "sid": "25964071",
+   "title": "夏洛特烦恼",
+   "list": "movie_showing",
+   "release_hint": "09.30",
+   "wish": null,
+   "score": 7.9,
+   "votes": 1141398,
+   "pubdate": "2015-09-30(中国大陆)",
+   "mainland_date": "2015-09-30",
+   "year": "2015",
+   "genres": [
+    "喜剧",
+    "爱情"
+   ],
+   "countries": [
+    "中国大陆"
+   ],
+   "directors": [
+    "闫非",
+    "彭大魔"
+   ],
+   "actors": [
+    "沈腾",
+    "马丽",
+    "尹正"
+   ],
+   "comments": 291292,
+   "null_rating_reason": "",
+   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2264377763.jpg",
+   "in_window": false,
+   "heat_ok": true
+  },
+  {
+   "sid": "33422507",
+   "title": "大熊雨林",
+   "list": "movie_showing",
+   "release_hint": "09.05",
+   "wish": null,
+   "score": 8.4,
+   "votes": 1543,
+   "pubdate": "2026-09-05(中国大陆)",
+   "mainland_date": "2026-09-05",
+   "year": "2019",
+   "genres": [
+    "纪录片",
+    "短片"
+   ],
+   "countries": [
+    "加拿大"
+   ],
+   "directors": [
+    "马克·格里菲斯",
+    "丽贝卡·乔根森",
+    "伊恩·麦卡利斯特"
+   ],
+   "actors": [
+    "瑞安·雷诺兹",
+    "詹姆斯·克伦威尔",
+    "伊恩·麦卡利斯特"
+   ],
+   "comments": 863,
+   "null_rating_reason": "",
+   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2935337748.jpg",
+   "in_window": true,
+   "heat_ok": false
+  },
+  {
+   "sid": "38215445",
+   "title": "惊魂迷影",
+   "list": "movie_showing",
+   "release_hint": "09.18",
+   "wish": null,
+   "score": 0,
+   "votes": 0,
+   "pubdate": "2026-09-18(中国大陆)",
+   "mainland_date": "2026-09-18",
+   "year": "2026",
+   "genres": [
+    "悬疑",
+    "惊悚",
+    "恐怖"
+   ],
+   "countries": [
+    "中国大陆"
+   ],
+   "directors": [
+    "徐捷"
+   ],
+   "actors": [
+    "郭嘉琦",
+    "甘亦弘",
+    "王辉"
+   ],
+   "comments": 40,
+   "null_rating_reason": "暂无评分",
+   "poster_url": "https://img9.doubanio.com/view/photo/m_ratio_poster/public/p2930340534.jpg",
+   "in_window": true,
+   "heat_ok": false
+  },
+  {
+   "sid": "36791178",
+   "title": "汪汪队立大功大电影3：勇闯恐龙岛",
+   "list": "movie_showing",
+   "release_hint": "08.08",
+   "wish": null,
+   "score": 7.1,
+   "votes": 3616,
+   "skipped": "release month outside window",
+   "heat_ok": false
+  },
+  {
+   "sid": "37171813",
+   "title": "红闪电",
+   "list": "movie_showing",
+   "release_hint": "09.05",
+   "wish": null,
+   "score": 0,
+   "votes": 0,
+   "pubdate": "2026-09-05(中国大陆)",
+   "mainland_date": "2026-09-05",
+   "year": "2026",
+   "genres": [
+    "剧情"
+   ],
+   "countries": [
+    "中国大陆"
+   ],
+   "directors": [
+    "霍亮"
+   ],
+   "actors": [
+    "黄曦彦",
+    "张熙然",
+    "公磊"
+   ],
+   "comments": 57,
+   "null_rating_reason": "暂无评分",
+   "poster_url": "https://img9.doubanio.com/view/photo/m_ratio_poster/public/p2931409464.jpg",
+   "in_window": true,
+   "heat_ok": false
+  },
+  {
+   "sid": "35493879",
+   "title": "天工苏作",
+   "list": "movie_showing",
+   "release_hint": "07.10",
+   "wish": null,
+   "score": 7.0,
+   "votes": 1295,
+   "skipped": "release month outside window",
+   "heat_ok": false
+  },
+  {
+   "sid": "26421039",
+   "title": "穆桂英挂帅(京剧)",
+   "list": "movie_showing",
+   "release_hint": "04.21",
+   "wish": null,
+   "score": 8.7,
+   "votes": 1158,
+   "skipped": "release month outside window",
+   "heat_ok": false
+  },
+  {
+   "sid": "36745791",
+   "title": "塞伦盖提大草原",
+   "list": "movie_showing",
+   "release_hint": "04.21",
+   "wish": null,
+   "score": null,
+   "votes": null,
+   "skipped": "release month outside window",
+   "heat_ok": false
+  },
+  {
+   "sid": "20645021",
+   "title": "龙凤呈祥(京剧)",
+   "list": "movie_showing",
+   "release_hint": "04.23",
+   "wish": null,
+   "score": 8.4,
+   "votes": 454,
+   "skipped": "release month outside window",
+   "heat_ok": false
+  },
+  {
+   "sid": "26347311",
+   "title": "状元媒(京剧)",
+   "list": "movie_showing",
+   "release_hint": "04.23",
+   "wish": null,
+   "score": 7.9,
+   "votes": 296,
+   "skipped": "release month outside window",
+   "heat_ok": false
+  },
+  {
+   "sid": "27005362",
+   "title": "赵氏孤儿(京剧)",
+   "list": "movie_showing",
+   "release_hint": "04.21",
+   "wish": null,
+   "score": null,
+   "votes": null,
+   "skipped": "release month outside window",
+   "heat_ok": false
+  },
+  {
+   "sid": "27005365",
+   "title": "谢瑶环(京剧)",
+   "list": "movie_showing",
+   "release_hint": "04.21",
+   "wish": null,
+   "score": null,
+   "votes": null,
+   "skipped": "release month outside window",
+   "heat_ok": false
+  },
+  {
+   "sid": "37322586",
+   "title": "生日快乐",
+   "list": "movie_soon",
+   "release_hint": "10.23",
+   "wish": 27498,
+   "score": 8.9,
+   "votes": 5808,
+   "pubdate": "2026-10-23(中国大陆)",
+   "mainland_date": "2026-10-23",
+   "year": "2025",
+   "genres": [
+    "剧情"
+   ],
+   "countries": [
+    "埃及"
+   ],
+   "directors": [
+    "萨拉·戈赫尔"
+   ],
+   "actors": [
+    "朵哈·拉马丹",
+    "哈南·莫特韦",
+    "哈南·优素福"
+   ],
+   "comments": 3268,
+   "null_rating_reason": "",
+   "poster_url": "https://img9.doubanio.com/view/photo/m_ratio_poster/public/p2935834896.jpg",
+   "in_window": true,
+   "heat_ok": true,
+   "poster_file": "img/movie_37322586.jpg"
+  },
+  {
+   "sid": "37088929",
+   "title": "愤怒的老虎",
+   "list": "movie_soon",
+   "release_hint": "10.23",
+   "wish": 2117,
+   "score": 0,
+   "votes": 0,
+   "pubdate": "2026-10-23(中国大陆)",
+   "mainland_date": "2026-10-23",
+   "year": "2026",
+   "genres": [
+    "剧情",
+    "惊悚",
+    "犯罪"
+   ],
+   "countries": [
+    "中国大陆"
+   ],
+   "directors": [
+    "李锐"
+   ],
+   "actors": [
+    "朱正廷",
+    "蒋梦婕",
+    "黄璐"
+   ],
+   "comments": 420,
+   "null_rating_reason": "尚未上映",
+   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2936706808.jpg",
+   "in_window": true,
+   "heat_ok": false
+  },
+  {
+   "sid": "37509917",
+   "title": "三星堆：未来往事",
+   "list": "movie_soon",
+   "release_hint": "10.23",
+   "wish": 938,
+   "score": 0,
+   "votes": 0,
+   "pubdate": "2026-10-23(中国大陆)",
+   "mainland_date": "2026-10-23",
+   "year": "2026",
+   "genres": [
+    "科幻",
+    "动画"
+   ],
+   "countries": [
+    "中国大陆"
+   ],
+   "directors": [
+    "越明"
+   ],
+   "actors": [],
+   "comments": 59,
+   "null_rating_reason": "尚未上映",
+   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2936184840.jpg",
+   "in_window": true,
+   "heat_ok": false
+  },
+  {
+   "sid": "36624248",
+   "title": "落凡尘",
+   "list": "movie_soon",
+   "release_hint": "07.12",
+   "wish": 45035,
+   "score": 7.7,
+   "votes": 73873,
+   "pubdate": "2024-07-12(中国大陆)",
+   "mainland_date": "2024-07-12",
+   "year": "2024",
+   "genres": [
+    "剧情",
+    "动画",
+    "奇幻"
+   ],
+   "countries": [
+    "中国大陆"
+   ],
+   "directors": [
+    "钟鼎"
+   ],
+   "actors": [
+    "李昕",
+    "刘校妤",
+    "星潮"
+   ],
+   "comments": 35096,
+   "null_rating_reason": "",
+   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2910990607.jpg",
+   "in_window": false,
+   "heat_ok": true
+  },
+  {
+   "sid": "37344902",
+   "title": "小羊肖恩3：怪兽来袭",
+   "list": "movie_soon",
+   "release_hint": "10.24",
+   "wish": 1382,
+   "score": 0,
+   "votes": 0,
+   "pubdate": "2026-10-24(中国大陆)",
+   "mainland_date": "2026-10-24",
+   "year": "2026",
+   "genres": [
+    "喜剧",
+    "动画"
+   ],
+   "countries": [
+    "英国"
+   ],
+   "directors": [
+    "史蒂夫·考克斯",
+    "马修·沃克"
+   ],
+   "actors": [
+    "贾斯汀·弗莱彻",
+    "约翰·斯帕克斯",
+    "尼娜·索珊娅"
+   ],
+   "comments": 76,
+   "null_rating_reason": "暂无评分",
+   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2936509282.jpg",
+   "in_window": true,
+   "heat_ok": false
+  },
+  {
+   "sid": "25798131",
+   "title": "疾速追杀",
+   "list": "movie_soon",
+   "release_hint": "10.30",
+   "wish": 88566,
+   "score": 7.8,
+   "votes": 260458,
+   "pubdate": "2026-10-30(中国大陆)",
+   "mainland_date": "2026-10-30",
+   "year": "2014",
+   "genres": [
+    "动作",
+    "惊悚",
+    "犯罪"
+   ],
+   "countries": [
+    "美国"
+   ],
+   "directors": [
+    "查德·斯塔赫斯基"
+   ],
+   "actors": [
+    "基努·里维斯",
+    "迈克尔·恩奎斯特",
+    "阿尔菲·艾伦"
+   ],
+   "comments": 65168,
+   "null_rating_reason": "",
+   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2936502228.jpg",
+   "in_window": true,
+   "heat_ok": true,
+   "poster_file": "img/movie_25798131.jpg"
+  },
+  {
+   "sid": "1294417",
+   "title": "笑傲江湖2：东方不败",
+   "list": "movie_soon",
+   "release_hint": "10.30",
+   "wish": 50241,
+   "score": 8.5,
+   "votes": 241499,
+   "pubdate": "2026-10-30(中国大陆)",
+   "mainland_date": "2026-10-30",
+   "year": "1992",
+   "genres": [
+    "动作",
+    "爱情",
+    "武侠"
+   ],
+   "countries": [
+    "中国香港"
+   ],
+   "directors": [
+    "程小东"
+   ],
+   "actors": [
+    "李连杰",
+    "林青霞",
+    "关之琳"
+   ],
+   "comments": 50929,
+   "null_rating_reason": "",
+   "poster_url": "https://img9.doubanio.com/view/photo/m_ratio_poster/public/p2936706694.jpg",
+   "in_window": true,
+   "heat_ok": true,
+   "poster_file": "candidates/posters/movie_1294417.jpg"
+  },
+  {
+   "sid": "37047880",
+   "title": "民宿惊魂",
+   "list": "movie_soon",
+   "release_hint": "10.31",
+   "wish": 62,
+   "score": 0,
+   "votes": 0,
+   "pubdate": "2026-10-31(中国大陆)",
+   "mainland_date": "2026-10-31",
+   "year": "2026",
+   "genres": [
+    "悬疑",
+    "惊悚",
+    "恐怖"
+   ],
+   "countries": [
+    "中国大陆"
+   ],
+   "directors": [
+    "宋小君"
+   ],
+   "actors": [
+    "胡连馨",
+    "高维蔓",
+    "蒋昀霖"
+   ],
+   "comments": 4,
+   "null_rating_reason": "尚未上映",
+   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2936625519.jpg",
+   "in_window": true,
+   "heat_ok": false
+  },
+  {
+   "sid": "35299923",
+   "title": "白衣逆行者",
+   "list": "movie_soon",
+   "release_hint": "11.06",
+   "wish": 1202,
+   "score": 0,
+   "votes": 0,
+   "pubdate": "2026-11-06(中国大陆)",
+   "mainland_date": "2026-11-06",
+   "year": "2026",
+   "genres": [
+    "剧情"
+   ],
+   "countries": [
+    "中国香港"
+   ],
+   "directors": [
+    "邱礼涛"
+   ],
+   "actors": [
+    "刘德华",
+    "杨子姗",
+    "秦海璐"
+   ],
+   "comments": 81,
+   "null_rating_reason": "尚未上映",
+   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2936741903.jpg",
+   "in_window": true,
+   "heat_ok": false
+  },
+  {
+   "sid": "23774856",
+   "title": "戴帽子的猫",
+   "list": "movie_soon",
+   "release_hint": "11.06",
+   "wish": 682,
+   "score": null,
+   "votes": null,
+   "skipped": "douban rate limit",
+   "heat_ok": false
+  },
+  {
+   "sid": "35068655",
+   "title": "试探",
+   "list": "movie_soon",
+   "release_hint": "11.20",
+   "wish": 1195,
+   "score": null,
+   "votes": null,
+   "skipped": "douban rate limit / detail cap",
+   "heat_ok": false
+  },
+  {
+   "sid": "36011202",
+   "title": "复仇者联盟5",
+   "list": "movie_soon",
+   "release_hint": "12.16",
+   "wish": 88925,
+   "score": null,
+   "votes": null,
+   "skipped": "douban rate limit / detail cap",
+   "heat_ok": true
   }
  ],
  "music": {
@@ -846,6 +1556,12 @@
     "itunes": null
    },
    {
+    "date": "2026-09-25",
+    "artist": "Ms. Rachel",
+    "title": "I'm So Happy",
+    "id": "6792048044"
+   },
+   {
     "date": "2026-10-09",
     "artist": "Remi Wolf",
     "title": "Mud",
@@ -858,12 +1574,6 @@
     "title": "Flavorz Pack",
     "id": "6820239289",
     "itunes": null
-   },
-   {
-    "date": "2026-09-25",
-    "artist": "Ms. Rachel",
-    "title": "I'm So Happy",
-    "id": "6792048044"
    },
    {
     "date": "2026-09-25",
@@ -918,17 +1628,17 @@
     }
    },
    {
-    "date": "2026-10-02",
-    "artist": "Victoria Monét",
-    "title": "Frequency Of Love",
-    "id": "6791645195",
-    "itunes": null
-   },
-   {
     "date": "2026-10-16",
     "artist": "Ashe",
     "title": "The Girl Of Your Dreams",
     "id": "6805240956",
+    "itunes": null
+   },
+   {
+    "date": "2026-10-02",
+    "artist": "Victoria Monét",
+    "title": "Frequency Of Love",
+    "id": "6791645195",
     "itunes": null
    },
    {
@@ -958,6 +1668,13 @@
     "id": "6801309650"
    },
    {
+    "date": "2026-10-03",
+    "artist": "Quavo",
+    "title": "QRÖMELIFE (Extended Version)",
+    "id": "6818618350",
+    "itunes": null
+   },
+   {
     "date": "2026-10-16",
     "artist": "Pi’erre Bourne",
     "title": "Made In Paris (Deluxe)",
@@ -971,36 +1688,6 @@
      "primaryGenreName": "Hip-Hop",
      "collectionExplicitness": "cleaned",
      "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/de/54/11/de54110d-915b-8393-fcde-2b58bfeba0dc/26UM1IM30211.rgb.jpg/600x600bb.jpg",
-     "cn_url": null
-    }
-   },
-   {
-    "date": "2026-10-03",
-    "artist": "Quavo",
-    "title": "QRÖMELIFE (Extended Version)",
-    "id": "6818618350",
-    "itunes": null
-   },
-   {
-    "date": "2026-09-25",
-    "artist": "DDG",
-    "title": "HIT-A-THON",
-    "id": "6815843152"
-   },
-   {
-    "date": "2026-10-02",
-    "artist": "Mac Miller",
-    "title": "The Divine Feminine (10th Anniversary)",
-    "id": "6802879203",
-    "itunes": {
-     "collectionId": 1147227630,
-     "artistName": "Mac Miller",
-     "collectionName": "The Divine Feminine",
-     "releaseDate": "2016-09-16T07:00:00Z",
-     "trackCount": 10,
-     "primaryGenreName": "Hip-Hop",
-     "collectionExplicitness": "cleaned",
-     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/1e/5c/ad/1e5cadeb-6f0c-86a0-9e85-6487a848d866/093624917168.jpg/600x600bb.jpg",
      "cn_url": null
     }
    },
@@ -1019,6 +1706,36 @@
      "collectionExplicitness": "cleaned",
      "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/a2/71/03/a27103a6-ca4b-1d36-fec1-8956b27f803b/26UM1IM02470.rgb.jpg/600x600bb.jpg",
      "cn_url": "https://music.apple.com/cn/album/friends-that-i-dont-like/6810903768"
+    }
+   },
+   {
+    "date": "2026-09-25",
+    "artist": "DDG",
+    "title": "HIT-A-THON",
+    "id": "6815843152"
+   },
+   {
+    "date": "2026-10-16",
+    "artist": "Z-Ro",
+    "title": "Forever King",
+    "id": "6810989535",
+    "itunes": null
+   },
+   {
+    "date": "2026-10-02",
+    "artist": "Mac Miller",
+    "title": "The Divine Feminine (10th Anniversary)",
+    "id": "6802879203",
+    "itunes": {
+     "collectionId": 1147227630,
+     "artistName": "Mac Miller",
+     "collectionName": "The Divine Feminine",
+     "releaseDate": "2016-09-16T07:00:00Z",
+     "trackCount": 10,
+     "primaryGenreName": "Hip-Hop",
+     "collectionExplicitness": "cleaned",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/1e/5c/ad/1e5cadeb-6f0c-86a0-9e85-6487a848d866/093624917168.jpg/600x600bb.jpg",
+     "cn_url": null
     }
    }
   ],
@@ -2235,16 +2952,6 @@
    }
   ],
   "wikipedia": [
-   {
-    "year": 2026,
-    "month": 9,
-    "day": null,
-    "artist": "Artist",
-    "title": "Album",
-    "genre": "Genre",
-    "label": "Label",
-    "album_has_article": false
-   },
    {
     "year": 2026,
     "month": 9,
@@ -4393,16 +5100,6 @@
     "title": "My Own Fairytale",
     "genre": "",
     "label": "Parkwuud Entertainment",
-    "album_has_article": false
-   },
-   {
-    "year": 2026,
-    "month": 10,
-    "day": null,
-    "artist": "Artist",
-    "title": "Album",
-    "genre": "Genre",
-    "label": "Label",
     "album_has_article": false
    },
    {
@@ -7070,16 +7767,6 @@
    {
     "year": 2026,
     "month": 11,
-    "day": null,
-    "artist": "Artist",
-    "title": "Album",
-    "genre": "Genre",
-    "label": "Label",
-    "album_has_article": false
-   },
-   {
-    "year": 2026,
-    "month": 11,
     "day": 1,
     "artist": "Liffey Light Orchestra",
     "title": "Ana Livia",
@@ -8450,13 +9137,6 @@
    {
     "year": 2026,
     "month": 9,
-    "day": null,
-    "title": "Album",
-    "artist": "Artist(s)"
-   },
-   {
-    "year": 2026,
-    "month": 9,
     "day": 1,
     "title": "Heat",
     "artist": "82Major"
@@ -8572,14 +9252,6 @@
     "day": 30,
     "title": "Sonorous",
     "artist": "Cravity"
-   },
-   {
-    "year": 2026,
-    "month": 10,
-    "day": null,
-    "title": "Album",
-    "artist": "Artist(s)",
-    "itunes": null
    },
    {
     "year": 2026,
@@ -8894,13 +9566,6 @@
    {
     "year": 2026,
     "month": 11,
-    "day": null,
-    "title": "Album",
-    "artist": "Artist(s)"
-   },
-   {
-    "year": 2026,
-    "month": 11,
     "day": 2,
     "title": "To Us",
     "artist": "TWS",
@@ -8938,91 +9603,4284 @@
   {
    "year": 2026,
    "month": 9,
-   "section": "Major events",
-   "cells": [
-    "September",
-    "12–13",
-    "Blizzard Entertainment held BlizzCon 2026 at Anaheim Convention Center in Anaheim, California."
-   ]
+   "day": 1,
+   "title": "Aerial_Knight's MrFreezy",
+   "platforms": "WIN",
+   "type": "Original",
+   "genre": "Puzzle",
+   "developer": "Aerial_Knight",
+   "publisher": ""
   },
   {
    "year": 2026,
    "month": 9,
-   "section": "Major events",
-   "cells": [
-    "September",
-    "17–20",
-    "The Tokyo Game Show was held at the Makuhari Messe in Chiba, Japan. Planned activity for the 21st was cancelled due to the anticipated arrival of Typhoon Dujuan."
-   ]
+   "day": 1,
+   "title": "Crimson Moon",
+   "platforms": "WIN, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Action-adventure, RPG",
+   "developer": "ProbablyMonsters",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 1,
+   "title": "Grail",
+   "platforms": "WIN",
+   "type": "Original",
+   "genre": "Auto battler",
+   "developer": "Sokpop Collective",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 1,
+   "title": "Knuckle Jet",
+   "platforms": "WIN, OSX, LIN",
+   "type": "Original",
+   "genre": "Action, Platformer",
+   "developer": "Rain Games",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 1,
+   "title": "Let It Die: Offline Edition",
+   "platforms": "WIN, PS5",
+   "type": "Rerelease",
+   "genre": "Roguelike, Hack and slash",
+   "developer": "Supertrick Games",
+   "publisher": "GungHo Online Entertainment"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 2,
+   "title": "Angeline Era",
+   "platforms": "NS, PS4, PS5, XBO, XBX/S",
+   "type": "Port",
+   "genre": "Action-adventure",
+   "developer": "Analgesic Productions",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 2,
+   "title": "Emery Hearts",
+   "platforms": "WIN, OSX",
+   "type": "Original",
+   "genre": "Action RPG",
+   "developer": "Haishō Interactive",
+   "publisher": "Shinyuden"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 2,
+   "title": "Moonlighter 2: The Endless Vault",
+   "platforms": "WIN, NS2, PS5, XBX/S",
+   "type": "Full release",
+   "genre": "Roguelike, Action RPG",
+   "developer": "Digital Sun",
+   "publisher": "11 Bit Studios"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 3,
+   "title": "Avatar Legends: The Fighting Game",
+   "platforms": "XBX/S",
+   "type": "Port",
+   "genre": "Fighting",
+   "developer": "Gameplay Group",
+   "publisher": "PM Studios"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 3,
+   "title": "BioEden",
+   "platforms": "WIN, NS2, PS5, XBX/S",
+   "type": "Original",
+   "genre": "CMS",
+   "developer": "Broken Arms Games",
+   "publisher": "Focus Entertainment"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 3,
+   "title": "The Blood of Dawnwalker",
+   "platforms": "WIN, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Action RPG",
+   "developer": "Rebel Wolves",
+   "publisher": "Bandai Namco Entertainment"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 3,
+   "title": "Donutal",
+   "platforms": "WIN",
+   "type": "Original",
+   "genre": "Adventure",
+   "developer": "Arc System Works",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 3,
+   "title": "Exstetra",
+   "platforms": "NS, NS2, PS5",
+   "type": "Port",
+   "genre": "RPG",
+   "developer": "FuRyu, Studio Saizensen",
+   "publisher": "FuRyu"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 3,
+   "title": "Hashire Hebereke: EX",
+   "platforms": "WIN, NS",
+   "type": "Remake",
+   "genre": "Racing",
+   "developer": "Sunsoft",
+   "publisher": "Gravity Game Arise"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 3,
+   "title": "Keeper",
+   "platforms": "PS5",
+   "type": "Port",
+   "genre": "Adventure",
+   "developer": "Double Fine",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 3,
+   "title": "My Hero Academia: All's Justice (JP)",
+   "platforms": "NS2",
+   "type": "Port",
+   "genre": "Fighting, Action",
+   "developer": "Byking",
+   "publisher": "Bandai Namco Entertainment"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 3,
+   "title": "Orbitals",
+   "platforms": "NS2",
+   "type": "Original",
+   "genre": "Adventure",
+   "developer": "Shapefarm",
+   "publisher": "Kepler Interactive"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 3,
+   "title": "SpeedRunners 2: King of Speed",
+   "platforms": "WIN, NS, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Platformer, Racing",
+   "developer": "Fair Play Labs",
+   "publisher": "tinyBuild"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 3,
+   "title": "Wo Long: Fallen Dynasty Complete Edition",
+   "platforms": "NS2",
+   "type": "Port",
+   "genre": "Action RPG, Hack and slash",
+   "developer": "Team Ninja",
+   "publisher": "Koei Tecmo"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 4,
+   "title": "Isle of Reveries",
+   "platforms": "WIN, LIN, NS, PS4, PS5, XBO, XBX/S",
+   "type": "Original",
+   "genre": "Action-adventure",
+   "developer": "desertcucco",
+   "publisher": "Electric Airship"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 4,
+   "title": "Jaleco Sports: Faceoffs",
+   "platforms": "NS, PS5",
+   "type": "Compilation",
+   "genre": "Sports",
+   "developer": "Sickhead Games",
+   "publisher": "Rock It Games"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 4,
+   "title": "My Hero Academia: All's Justice (WW)",
+   "platforms": "NS2",
+   "type": "Port",
+   "genre": "Fighting, Action",
+   "developer": "Byking",
+   "publisher": "Bandai Namco Entertainment"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 4,
+   "title": "NBA 2K27",
+   "platforms": "WIN, NS2, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Sports",
+   "developer": "Visual Concepts",
+   "publisher": "2K"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 4,
+   "title": "Onimusha: Way of the Sword",
+   "platforms": "WIN, NS2, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Action-adventure",
+   "developer": "Capcom",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 4,
+   "title": "Phantom of Inferno Nitro Archive",
+   "platforms": "WIN",
+   "type": "Port",
+   "genre": "Visual novel",
+   "developer": "Nitroplus",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 4,
+   "title": "Teenage Mutant Ninja Turtles Arcade: Wrath of the Mutants – Ninja Edition",
+   "platforms": "NS2",
+   "type": "Port",
+   "genre": "Brawler",
+   "developer": "Cradle Games, Raw Thrills",
+   "publisher": "GameMill Entertainment"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 7,
+   "title": "Mythmon: Mythic Monsters",
+   "platforms": "WIN",
+   "type": "Original",
+   "genre": "Hack and slash, Strategy",
+   "developer": "MachHabaneroGames",
+   "publisher": "Kodansha"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 7,
+   "title": "Port of Jumanah",
+   "platforms": "WIN, PS5",
+   "type": "Original",
+   "genre": "Adventure",
+   "developer": "Agate, Red Dunes Games",
+   "publisher": "Red Dunes Games"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 7,
+   "title": "WheelMates",
+   "platforms": "WIN",
+   "type": "Original",
+   "genre": "Adventure, Racing, Platformer",
+   "developer": "Firevolt",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 8,
+   "title": "Aerial_Knight's MrFreezy",
+   "platforms": "PS5",
+   "type": "Port",
+   "genre": "Puzzle",
+   "developer": "Aerial_Knight",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 8,
+   "title": "Culdcept The First Saturn Tribute (WW)",
+   "platforms": "NS, PS5, XBX/S",
+   "type": "Port",
+   "genre": "TBS, DCCG",
+   "developer": "City Connection",
+   "publisher": "City Connection, Clear River Games"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 8,
+   "title": "Halloween: The Game",
+   "platforms": "WIN, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Horror",
+   "developer": "IllFonic",
+   "publisher": "IllFonic Publishing, Gun Interactive"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 8,
+   "title": "Honeycomb: The World Beyond",
+   "platforms": "WIN, OSX, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Sandbox, Survival",
+   "developer": "Frozen Way",
+   "publisher": "Frozen District, Snail"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 8,
+   "title": "Mewgenics",
+   "platforms": "NS2, PS5, XBX/S",
+   "type": "Port",
+   "genre": "Tactical RPG, Roguelike, Life sim",
+   "developer": "Edmund McMillen, Tyler Glaiel",
+   "publisher": "Nicalis"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 8,
+   "title": "Sprawl Zero",
+   "platforms": "WIN, NS2, PS5, XBX/S",
+   "type": "Original",
+   "genre": "FPS",
+   "developer": "Maeth",
+   "publisher": "Kwalee"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 9,
+   "title": "Banchou Tactics: Lion Heart",
+   "platforms": "NS2",
+   "type": "Original",
+   "genre": "Action, Tactical RPG",
+   "developer": "Corecell Technology, ITSARAAMATA",
+   "publisher": "Corecell Technology"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 9,
+   "title": "Code Vein II – Mask of Idris",
+   "platforms": "WIN, PS5, XBX/S",
+   "type": "Expansion",
+   "genre": "Action RPG",
+   "developer": "Bandai Namco Studios",
+   "publisher": "Bandai Namco Entertainment"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 9,
+   "title": "Crisis Core: Final Fantasy VII Reunion",
+   "platforms": "NS2",
+   "type": "Port",
+   "genre": "Action RPG",
+   "developer": "Square Enix",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 9,
+   "title": "Dragon Quest Heroes: Torneko's Mystery Dungeon – Classic HD",
+   "platforms": "WIN, NS, NS2, PS5, XBX/S, iOS, DROID",
+   "type": "Remake",
+   "genre": "Roguelike, Role-playing",
+   "developer": "Square Enix",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 9,
+   "title": "Earth Must Die",
+   "platforms": "NS, PS5",
+   "type": "Port",
+   "genre": "PCA",
+   "developer": "Size Five",
+   "publisher": "No More Robots"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 9,
+   "title": "In Falsus",
+   "platforms": "WIN",
+   "type": "Original",
+   "genre": "Rhythm, Visual novel",
+   "developer": "lowiro",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 9,
+   "title": "Meccha Chameleon",
+   "platforms": "NS2",
+   "type": "Port",
+   "genre": "Casual",
+   "developer": "Lemorion 1224",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 9,
+   "title": "Star Fox Adventures",
+   "platforms": "NS2",
+   "type": "Port",
+   "genre": "Action-adventure",
+   "developer": "Rare",
+   "publisher": "Nintendo"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 9,
+   "title": "Sunset Summit",
+   "platforms": "WIN",
+   "type": "Original",
+   "genre": "Adventure",
+   "developer": "Joe Fender, Andrew Fender",
+   "publisher": "Future Friends Games"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 9,
+   "title": "Valheim",
+   "platforms": "WIN, OSX, LIN, NS2, PS5, XBO, XBX/S",
+   "type": "Full release",
+   "genre": "Sandbox, Survival",
+   "developer": "Iron Gate Studio",
+   "publisher": "Coffee Stain Publishing"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 10,
+   "title": "The Alighieri Circle: Dante's Bloodline",
+   "platforms": "WIN, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Horror (psych)",
+   "developer": "One-O-One Games",
+   "publisher": "C&R Creative Studios, Entalto Publishing"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 10,
+   "title": "BrokenLore: Don't Lie",
+   "platforms": "WIN, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Horror",
+   "developer": "Serafini Productions",
+   "publisher": "Wired Productions"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 10,
+   "title": "The Crust",
+   "platforms": "WIN, OSX",
+   "type": "Full release",
+   "genre": "Strategy, City builder, Simulation",
+   "developer": "VEOM Studio",
+   "publisher": "Crytivo"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 10,
+   "title": "Dumb Ways to Build",
+   "platforms": "WIN, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Action",
+   "developer": "PlaySide Studios",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 10,
+   "title": "Ex Sanguis",
+   "platforms": "WIN",
+   "type": "Early access",
+   "genre": "TBS",
+   "developer": "Lightbulb Crew",
+   "publisher": "Firesquid"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 10,
+   "title": "Gakkou de atta Kowai Hanashi (JP)",
+   "platforms": "NS",
+   "type": "Port",
+   "genre": "Visual novel",
+   "developer": "Mebius, Pandora Box",
+   "publisher": "D3 Publisher"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 10,
+   "title": "Hazard Pay",
+   "platforms": "WIN, OSX, LIN, NS, PS5",
+   "type": "Original",
+   "genre": "Puzzle",
+   "developer": "Smitner Studio",
+   "publisher": "Numskull Games"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 10,
+   "title": "Hot Wheels Infinite Rush",
+   "platforms": "WIN, NS2, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Racing",
+   "developer": "Milestone",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 10,
+   "title": "Jupiter & Mars: Definitive Edition",
+   "platforms": "NS",
+   "type": "Port",
+   "genre": "Adventure",
+   "developer": "Tigertron",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 10,
+   "title": "The Legend of Heroes: Trails from Zero",
+   "platforms": "NS2, PS5",
+   "type": "Port",
+   "genre": "RPG",
+   "developer": "Nihon Falcom",
+   "publisher": "NIS America"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 10,
+   "title": "The Legend of Heroes: Trails to Azure",
+   "platforms": "NS2, PS5",
+   "type": "Port",
+   "genre": "RPG",
+   "developer": "Nihon Falcom",
+   "publisher": "NIS America"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 10,
+   "title": "Magical Blush",
+   "platforms": "WIN",
+   "type": "Original",
+   "genre": "Action-adventure",
+   "developer": "Alkacer Game Studio",
+   "publisher": "Dangen Entertainment"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 10,
+   "title": "Romance of the Three Kingdoms XIV Complete Edition (JP/AS)",
+   "platforms": "WIN, NS, PS4, PS5",
+   "type": "RereleasePS5: Port",
+   "genre": "Strategy",
+   "developer": "Kou Shibusawa",
+   "publisher": "Koei Tecmo"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 10,
+   "title": "Screenbound",
+   "platforms": "WIN, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Platformer",
+   "developer": "Digital Pajamas, Crescent Moon Games",
+   "publisher": "Crescent Moon Games"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 10,
+   "title": "Shroom and Gloom",
+   "platforms": "WIN, OSX",
+   "type": "Early access",
+   "genre": "Deck building, Roguelike",
+   "developer": "Team Lazerbeam",
+   "publisher": "Devolver Digital"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 10,
+   "title": "Touhou Koumakyou: New Classic ~ The Embodiment of Scarlet Devil",
+   "platforms": "WIN, NS, NS2, PS5",
+   "type": "Remake",
+   "genre": "Bullet hell",
+   "developer": "Shanghai Alice Reprise",
+   "publisher": "Alliance Arts"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 10,
+   "title": "Tsukikomori (JP)",
+   "platforms": "NS",
+   "type": "Port",
+   "genre": "Visual novel",
+   "developer": "Mebius, Pandora Box",
+   "publisher": "D3 Publisher"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 10,
+   "title": "Wardogs",
+   "platforms": "WIN",
+   "type": "Early access",
+   "genre": "FPS",
+   "developer": "Bulkhead",
+   "publisher": "Team17"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 11,
+   "title": "NHL 27",
+   "platforms": "PS5, XSX/S",
+   "type": "Original",
+   "genre": "Sports",
+   "developer": "EA Vancouver",
+   "publisher": "Electronic Arts"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 12,
+   "title": "Warcraft III Reforged: Forsaken Kingdom",
+   "platforms": "WIN, OSX",
+   "type": "Expansion",
+   "genre": "RTS",
+   "developer": "Blizzard Entertainment, Lemon Sky Studios",
+   "publisher": "Blizzard Entertainment"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 13,
+   "title": "The Legend of Dark Witch Episode 2: The Price of Desire",
+   "platforms": "PS5",
+   "type": "Port",
+   "genre": "Action",
+   "developer": "Inside System",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 14,
+   "title": "Beyblade X: Evobattle",
+   "platforms": "PS5",
+   "type": "Port",
+   "genre": "Action",
+   "developer": "Groove Box Japan",
+   "publisher": "FuRyu"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 14,
+   "title": "Ferocious",
+   "platforms": "PS5, XBX/S",
+   "type": "Port",
+   "genre": "FPS",
+   "developer": "Omyog",
+   "publisher": "tinyBuild"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 14,
+   "title": "Truck-kun is Supporting Me from Another World?!",
+   "platforms": "NS2",
+   "type": "Port",
+   "genre": "Vehicular combat",
+   "developer": "Strange Scaffold",
+   "publisher": "Frosty Pop"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 15,
+   "title": "Destroy All Humans! 2: Reprobed",
+   "platforms": "NS2",
+   "type": "Port",
+   "genre": "Action-adventure",
+   "developer": "Black Forest Games",
+   "publisher": "THQ Nordic"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 15,
+   "title": "Diablo IV: Age of Hatred Collection",
+   "platforms": "NS2",
+   "type": "Port",
+   "genre": "Action RPG, Hack and slash",
+   "developer": "Blizzard Entertainment",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 15,
+   "title": "Fallout 76",
+   "platforms": "PS5, XBX/S",
+   "type": "Port",
+   "genre": "Action RPG",
+   "developer": "Bethesda Game Studios",
+   "publisher": "Bethesda Softworks"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 15,
+   "title": "Fright Train",
+   "platforms": "WIN",
+   "type": "Original",
+   "genre": "Survival horror",
+   "developer": "WildArts Games",
+   "publisher": "Black Lantern Collective"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 15,
+   "title": "Marvel's Wolverine",
+   "platforms": "PS5",
+   "type": "Original",
+   "genre": "Action-adventure",
+   "developer": "Insomniac Games",
+   "publisher": "Sony Interactive Entertainment"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 15,
+   "title": "RuneScape: Dragonwilds",
+   "platforms": "WIN, NS2, PS5, XBX/S",
+   "type": "Full release",
+   "genre": "Survival",
+   "developer": "Jagex",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 15,
+   "title": "TCG Card Shop Simulator",
+   "platforms": "WIN, NS, NS2, PS5, XBO, XBX/S",
+   "type": "Full release",
+   "genre": "Simulation",
+   "developer": "OPNeon Games",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 15,
+   "title": "Train Sim World 7",
+   "platforms": "WIN, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Simulation",
+   "developer": "Dovetail Games",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 15,
+   "title": "Trinity Trigger DX",
+   "platforms": "NS2",
+   "type": "Port",
+   "genre": "Action RPG",
+   "developer": "Three Rings",
+   "publisher": "JP: FuRyuWW: Xseed Games"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 16,
+   "title": "Aniimo",
+   "platforms": "WIN, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Action RPG, Monster tamer",
+   "developer": "Pawprint Studio",
+   "publisher": "Kingsglory"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 16,
+   "title": "Blackwood",
+   "platforms": "WIN",
+   "type": "Original",
+   "genre": "TPS",
+   "developer": "AttritoM7 Productions",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 16,
+   "title": "Chit Chat Party!",
+   "platforms": "NS2",
+   "type": "Original",
+   "genre": "Party",
+   "developer": "Alim",
+   "publisher": "GungHo Online Entertainment"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 16,
+   "title": "Disney Epic Mickey: Rebrushed",
+   "platforms": "DROID, iOS",
+   "type": "Port",
+   "genre": "Platformer",
+   "developer": "Purple Lamp, Snapshot Games",
+   "publisher": "THQ Nordic Mobile"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 16,
+   "title": "Fallen Tear: The Ascension",
+   "platforms": "WIN",
+   "type": "Full release",
+   "genre": "Metroidvania",
+   "developer": "Winter Crew",
+   "publisher": "CMD Studios"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 16,
+   "title": "Gladio Mori",
+   "platforms": "WIN, PS5, XBX/S",
+   "type": "Full release",
+   "genre": "Fighting",
+   "developer": "Plebian Studio",
+   "publisher": "Bonus Stage Publishing"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 16,
+   "title": "Little Witch in the Woods",
+   "platforms": "NS",
+   "type": "Port",
+   "genre": "Life sim",
+   "developer": "Sunny Side Up",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 16,
+   "title": "Monowave",
+   "platforms": "WIN, OSX, NS",
+   "type": "Original",
+   "genre": "Puzzle-platformer",
+   "developer": "Studio BBB",
+   "publisher": "Phoenixx"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 16,
+   "title": "Roman Sands RE:Build",
+   "platforms": "WIN, NS, PS4, PS5, XBO, XBX/S",
+   "type": "Original",
+   "genre": "Narrative adventure, Visual novel",
+   "developer": "Arbitrary Metric",
+   "publisher": "Serenity Forge"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 16,
+   "title": "Two Point Hospital: Full Health Collection",
+   "platforms": "NS2, PS5, XBX/S",
+   "type": "Port",
+   "genre": "Business sim",
+   "developer": "Two Point Studios",
+   "publisher": "Sega"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 16,
+   "title": "Woodo",
+   "platforms": "WIN, NS, NS2, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Puzzle",
+   "developer": "Tiny Monks Tales",
+   "publisher": "Daedalic Entertainment"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 17,
+   "title": "Absolum",
+   "platforms": "NS2",
+   "type": "Port",
+   "genre": "Brawler",
+   "developer": "Guard Crush Games, Supamonks",
+   "publisher": "Dotemu"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 17,
+   "title": "Akiba Lost",
+   "platforms": "WIN, NS, NS2, PS5",
+   "type": "Original",
+   "genre": "Interactive film, Adventure",
+   "developer": "IzanagiGames",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 17,
+   "title": "Another Eden Begins",
+   "platforms": "WIN, NS, NS2",
+   "type": "Remaster",
+   "genre": "RPG",
+   "developer": "WFS, Studio Prisma",
+   "publisher": "WFS"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 17,
+   "title": "Artis Impact",
+   "platforms": "NS",
+   "type": "Port",
+   "genre": "RPG",
+   "developer": "Mas",
+   "publisher": "Happinet"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 17,
+   "title": "Concrete Burial",
+   "platforms": "WIN",
+   "type": "Original",
+   "genre": "Horror",
+   "developer": "Games From The Abyss",
+   "publisher": "DreadXP"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 17,
+   "title": "Dave the Diver",
+   "platforms": "iOS, DROID",
+   "type": "Port",
+   "genre": "Fishing, Adventure",
+   "developer": "Mintrocket",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 17,
+   "title": "Endless Legend 2",
+   "platforms": "WIN, PS5, XBX/S",
+   "type": "Full release",
+   "genre": "TBS, 4X",
+   "developer": "Amplitude Studios",
+   "publisher": "Hooded Horse"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 17,
+   "title": "Fading Echo",
+   "platforms": "NS2, PS5, XBX/S",
+   "type": "Port",
+   "genre": "Action-adventure",
+   "developer": "Emeteria",
+   "publisher": "New Tales"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 17,
+   "title": "Fire Emblem: Fortune's Weave",
+   "platforms": "NS2",
+   "type": "Original",
+   "genre": "Tactical RPG",
+   "developer": "Intelligent Systems",
+   "publisher": "Nintendo"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 17,
+   "title": "Flamecraft",
+   "platforms": "WIN, OSX, NS, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Digital tabletop",
+   "developer": "Monster Couch",
+   "publisher": "Cardboard Alchemy, Monster Couch"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 17,
+   "title": "Fountains",
+   "platforms": "NS, PS5, XBX/S",
+   "type": "Port",
+   "genre": "Soulslike",
+   "developer": "John Pywell",
+   "publisher": "Crunching Koalas"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 17,
+   "title": "Granblue Fantasy Versus: Rising",
+   "platforms": "NS2",
+   "type": "Port",
+   "genre": "Fighting",
+   "developer": "Arc System Works",
+   "publisher": "Cygames"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 17,
+   "title": "The Guild 1 Remake: Europa 1410",
+   "platforms": "WIN",
+   "type": "Early access, Remake",
+   "genre": "Life sim, Strategy",
+   "developer": "Ashborne Games",
+   "publisher": "THQ Nordic"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 17,
+   "title": "Kernel Hearts",
+   "platforms": "WIN, NS2, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Action RPG, Roguelike",
+   "developer": "Ephemera Games",
+   "publisher": "Whitethorn Games"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 17,
+   "title": "Path of Mystery 2: The Mermaid Legend Murder Case (JP)",
+   "platforms": "NS, NS2",
+   "type": "Original",
+   "genre": "Visual novel",
+   "developer": "Toybox",
+   "publisher": "Imagineer"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 17,
+   "title": "Patlabor: The Case Files",
+   "platforms": "WIN, PS5",
+   "type": "Original",
+   "genre": "Action",
+   "developer": "Chime Corporation",
+   "publisher": "Good Smile Company"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 17,
+   "title": "Sniper Dan",
+   "platforms": "WIN, NS, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Hidden object",
+   "developer": "Denki",
+   "publisher": "PQube"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 17,
+   "title": "Trails in the Sky 2nd Chapter",
+   "platforms": "WIN, NS, NS2, PS5",
+   "type": "Remake",
+   "genre": "RPG",
+   "developer": "Nihon Falcom",
+   "publisher": "JP: Nihon FalcomNA: GungHo Online Entertainment"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 17,
+   "title": "Tristia: Chronicles (WW)",
+   "platforms": "NS",
+   "type": "Remaster, Compilation",
+   "genre": "Simulation",
+   "developer": "Kogado Studio",
+   "publisher": "Aksys Games"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 17,
+   "title": "Trivia Murder Party 3",
+   "platforms": "WIN",
+   "type": "Early access",
+   "genre": "Party",
+   "developer": "Jackbox Games",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 18,
+   "title": "The Grinch 2: Saving Christmas",
+   "platforms": "WIN, NS, PS4, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Adventure",
+   "developer": "Casual Brothers",
+   "publisher": "Outright Games"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 18,
+   "title": "Lego Batman: Legacy of the Dark Knight",
+   "platforms": "NS2",
+   "type": "Port",
+   "genre": "Action-adventure",
+   "developer": "Traveller's Tales",
+   "publisher": "Warner Bros. Games"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 18,
+   "title": "Moomintroll: Winter's Warmth",
+   "platforms": "NS2, PS5",
+   "type": "Port",
+   "genre": "Adventure",
+   "developer": "Hyper Games",
+   "publisher": "Hyper Games, Kakehashi Games"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 18,
+   "title": "Paperhead",
+   "platforms": "WIN, PS5, XBX/S",
+   "type": "Original",
+   "genre": "FPS",
+   "developer": "Paperhead te4m",
+   "publisher": "HypeTrain Digital"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 18,
+   "title": "The Walking Dead: Streets of Survival",
+   "platforms": "WIN, NS, NS2, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Brawler",
+   "developer": "Odaclick Game Studio",
+   "publisher": "Trailmark Games"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 21,
+   "title": "Dressmaker",
+   "platforms": "WIN, OSX",
+   "type": "Original",
+   "genre": "Simulation",
+   "developer": "Cozy Lives",
+   "publisher": "Free Lives"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 21,
+   "title": "Samson: A Tyndalston Story",
+   "platforms": "PS5, XBX/S",
+   "type": "Port",
+   "genre": "Action",
+   "developer": "Liquid Swords",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 22,
+   "title": "Cupid Parasite",
+   "platforms": "WIN",
+   "type": "Port",
+   "genre": "Otome, Visual novel",
+   "developer": "Otomate",
+   "publisher": "Idea Factory International"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 22,
+   "title": "Demeo x Dungeons & Dragons: Battlemarked",
+   "platforms": "XBX/S",
+   "type": "Port",
+   "genre": "Strategy, Adventure, RPG",
+   "developer": "Resolution Games",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 22,
+   "title": "Dune: Awakening",
+   "platforms": "PS5, XBX/S",
+   "type": "Port",
+   "genre": "Survival, MMO, RPG",
+   "developer": "Funcom",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 22,
+   "title": "EbiTapes",
+   "platforms": "WIN, OSX",
+   "type": "Original",
+   "genre": "Adventure, Cozy",
+   "developer": "Geese & Goose",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 22,
+   "title": "Graveyard Keeper II",
+   "platforms": "WIN, NS, NS2, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Life sim, CMS",
+   "developer": "Lazy Bear Games",
+   "publisher": "tinyBuild"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 22,
+   "title": "Rivage",
+   "platforms": "WIN, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Adventure, Puzzle",
+   "developer": "Exnilo Studio",
+   "publisher": "Raw Fury"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 22,
+   "title": "Ved: Recure",
+   "platforms": "WIN",
+   "type": "Original",
+   "genre": "Action, Roguelite",
+   "developer": "SummerClip",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 22,
+   "title": "Well Dweller",
+   "platforms": "WIN, NS, NS2, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Metroidvania",
+   "developer": "Kyle Thompson",
+   "publisher": "Top Hat Studios"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 23,
+   "title": "Aniimo",
+   "platforms": "iOS, DROID",
+   "type": "Port",
+   "genre": "Action RPG, Monster tamer",
+   "developer": "Pawprint Studio",
+   "publisher": "Kingsglory"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 23,
+   "title": "Lawn Mowing Simulator 2",
+   "platforms": "WIN, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Simulation",
+   "developer": "Skyhook Games",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 23,
+   "title": "Nomori",
+   "platforms": "WIN, XBX/S",
+   "type": "Original",
+   "genre": "Adventure, Puzzle",
+   "developer": "Enchanted Works",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 23,
+   "title": "Stick It to the Stickman",
+   "platforms": "WIN, OSX",
+   "type": "Full release",
+   "genre": "Roguelike, Brawler",
+   "developer": "Free Lives",
+   "publisher": "Devolver Digital"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 23,
+   "title": "Wind Runners",
+   "platforms": "WIN, OSX",
+   "type": "Early access",
+   "genre": "Roguelike, Scolling shooter, Shoot 'em up",
+   "developer": "Ludic Studios",
+   "publisher": "Twin Sails Interactive"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 24,
+   "title": "Alien Breed 35th Anniversary Collection",
+   "platforms": "WIN, NS, PS5, XBX/S",
+   "type": "Compilation",
+   "genre": "Run and gun",
+   "developer": "Antstream",
+   "publisher": "Commodore"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 24,
+   "title": "Castlevania",
+   "platforms": "iOS, DROID",
+   "type": "Port",
+   "genre": "Platformer",
+   "developer": "Konami",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 24,
+   "title": "Control Resonant",
+   "platforms": "WIN, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Action RPG",
+   "developer": "Remedy Entertainment",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 24,
+   "title": "Derby Stallion 2 (JP)",
+   "platforms": "NS2",
+   "type": "Original",
+   "genre": "Business sim, Racing (horse)",
+   "developer": "Game Addict, ParityBit",
+   "publisher": "Game Addict"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 24,
+   "title": "Dragon Quest XI S: Echoes of an Elusive Age – Definitive Edition",
+   "platforms": "NS2",
+   "type": "Port",
+   "genre": "RPG",
+   "developer": "Square Enix, Orca",
+   "publisher": "Square Enix"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 24,
+   "title": "Dragon Shelter",
+   "platforms": "WIN",
+   "type": "Original",
+   "genre": "Farming",
+   "developer": "Wild Forest Studio",
+   "publisher": "Curve Games"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 24,
+   "title": "Drapline",
+   "platforms": "WIN",
+   "type": "Full release",
+   "genre": "Raising sim, Roguelite",
+   "developer": "Kanawo, Vaka Game Magazine",
+   "publisher": "Vaka Game Magazine"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 24,
+   "title": "Farming Camp",
+   "platforms": "WIN, LIN, NS, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Farming",
+   "developer": "Innerfire Studios",
+   "publisher": "Soedesco [nl]"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 24,
+   "title": "Gobble (JP)",
+   "platforms": "WIN, NS, NS2, PS5",
+   "type": "Original",
+   "genre": "Action",
+   "developer": "Nippon Ichi Software",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 24,
+   "title": "The Magus Circle",
+   "platforms": "WIN",
+   "type": "Original",
+   "genre": "Roguelike",
+   "developer": "By Witchlight",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 24,
+   "title": "Namco Legendary Mountains",
+   "platforms": "iOS, DROID",
+   "type": "Port",
+   "genre": "Puzzle",
+   "developer": "BeXide",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 24,
+   "title": "Qliphah in Providence's Shadow",
+   "platforms": "WIN, NS, PS5",
+   "type": "Original",
+   "genre": "RPG",
+   "developer": "UnitePlus",
+   "publisher": "Arc System Works"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 24,
+   "title": "Sayagatari: Promise of the Cursed Blade (JP)",
+   "platforms": "WIN",
+   "type": "Original",
+   "genre": "Visual novel",
+   "developer": "Visual Arts Scripts",
+   "publisher": "Visual Arts"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 24,
+   "title": "Shinobi: Art of Vengeance",
+   "platforms": "NS2",
+   "type": "Port",
+   "genre": "Platformer, Action-adventure",
+   "developer": "Lizardcube",
+   "publisher": "Sega"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 24,
+   "title": "Silent Hill: Townfall",
+   "platforms": "WIN, PS5",
+   "type": "Original",
+   "genre": "Survival horror",
+   "developer": "Screen Burn",
+   "publisher": "Konami Digital Entertainment, Annapurna Interactive"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 24,
+   "title": "SiN: Reloaded",
+   "platforms": "WIN, NS, NS2, PS4, PS5, XBO, XBX/S",
+   "type": "Remaster",
+   "genre": "FPS",
+   "developer": "Nightdive Studios, Slipgate Ironworks, Ritual Entertainment",
+   "publisher": "Nightdive Studios, Atari, 3D Realms"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 25,
+   "title": "EA Sports FC 27",
+   "platforms": "WIN, NS, NS2, PS4, PS5, XBO, XBX/S",
+   "type": "Original",
+   "genre": "Sports",
+   "developer": "EA Vancouver, EA Romania",
+   "publisher": "Electronic Arts"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 25,
+   "title": "The Relic: First Guardian",
+   "platforms": "XBX/S",
+   "type": "Port",
+   "genre": "Action RPG",
+   "developer": "Project Cloud Games",
+   "publisher": "Perp Games"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 29,
+   "title": "Aliens: Fireteam Elite 2",
+   "platforms": "NS2",
+   "type": "Port",
+   "genre": "TPS",
+   "developer": "Cold Iron Studios",
+   "publisher": "Daybreak Game Company"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 29,
+   "title": "Gothic II Complete Classic",
+   "platforms": "PS4, PS5, XBO, XBX/S",
+   "type": "Port",
+   "genre": "Action RPG",
+   "developer": "Piranha Bytes",
+   "publisher": "THQ Nordic"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 29,
+   "title": "Minecraft Dungeons II",
+   "platforms": "WIN, NS, NS2, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Dungeon crawl",
+   "developer": "Mojang Studios, Double Eleven",
+   "publisher": "Xbox Game Studios"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 29,
+   "title": "Neighbors: Suburban Warfare",
+   "platforms": "WIN, PS5, XBX/S",
+   "type": "Full release",
+   "genre": "FPS",
+   "developer": "Invisible Walls",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 29,
+   "title": "Nivalis Nights",
+   "platforms": "WIN",
+   "type": "Original",
+   "genre": "RPG, Simulation",
+   "developer": "Ion Lands",
+   "publisher": "505 Games"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 29,
+   "title": "Petal Crash 2",
+   "platforms": "WIN, LIN",
+   "type": "Early access",
+   "genre": "Tile matching, Puzzle",
+   "developer": "Friend & Fairy",
+   "publisher": "GalaxyTrail"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 29,
+   "title": "Toem 2",
+   "platforms": "WIN, OSX, LIN, NS, NS2, PS5",
+   "type": "Original",
+   "genre": "Photography, Adventure",
+   "developer": "Something We Made",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 29,
+   "title": "Transport Fever 3",
+   "platforms": "WIN, OSX, LIN, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Business sim",
+   "developer": "Urban Games",
+   "publisher": "Paradox Interactive"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 29,
+   "title": "Way of the Hunter 2",
+   "platforms": "WIN, PS5, XBX/S",
+   "type": "Full release",
+   "genre": "Adventure",
+   "developer": "Nine Rocks Games",
+   "publisher": "THQ Nordic"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 29,
+   "title": "The Witcher 3: Wild Hunt – Remastered",
+   "platforms": "WIN, NS2, PS5, XBX/S",
+   "type": "Remaster",
+   "genre": "Action RPG",
+   "developer": "CD Projekt Red, Yigsoft",
+   "publisher": "CD Projekt"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 30,
+   "title": "Middle-earth: Shadow Bundle",
+   "platforms": "NS2",
+   "type": "Compilation",
+   "genre": "Action-adventure",
+   "developer": "Monolith Productions, Aspyr",
+   "publisher": "Aspyr"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 30,
+   "title": "Okko The Exiled",
+   "platforms": "WIN, OSX",
+   "type": "Original",
+   "genre": "Action-adventure",
+   "developer": "Frozen Flame Interactive",
+   "publisher": "Eastasiasoft"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 30,
+   "title": "Princess Maker: Children of Revelation",
+   "platforms": "WIN, LIN",
+   "type": "Full release",
+   "genre": "Raising sim",
+   "developer": "D-Zard, GEAR2",
+   "publisher": "GEAR2"
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 30,
+   "title": "Shinjuku Anomaly",
+   "platforms": "WIN",
+   "type": "Original",
+   "genre": "Horror, Visual novel",
+   "developer": "AMATA Games",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 30,
+   "title": "Songs of Glimmerwick",
+   "platforms": "WIN",
+   "type": "Original",
+   "genre": "RPG",
+   "developer": "Eastshade Studios",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 9,
+   "day": 30,
+   "title": "Viractal (WW)",
+   "platforms": "NS, NS2",
+   "type": "Port",
+   "genre": "RPG",
+   "developer": "Sting",
+   "publisher": ""
   },
   {
    "year": 2026,
    "month": 10,
-   "section": "Major events",
-   "cells": [
-    "October",
-    "6",
-    "Paramount Skydance completed its acquisition of Warner Bros. Discovery for $110 billion, becoming Skydance Corporation. This included merging of Warner Bros. Games and its studios with Paramount Games Studio."
-   ]
+   "day": 1,
+   "title": "Augment Protocol (JP)",
+   "platforms": "NS",
+   "type": "Port",
+   "genre": "Visual novel",
+   "developer": "Key",
+   "publisher": "Visual Arts"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 1,
+   "title": "Don't Fret",
+   "platforms": "WIN, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Horror",
+   "developer": "Scary Kid Studios",
+   "publisher": "Digital Pajamas"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 1,
+   "title": "Dynasty Warriors 3: Complete Edition Remastered",
+   "platforms": "WIN, NS2, PS5, XBX/S",
+   "type": "Remaster",
+   "genre": "Hack and slash",
+   "developer": "Omega Force",
+   "publisher": "Koei Tecmo"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 1,
+   "title": "End of Abyss",
+   "platforms": "WIN, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Action-adventure",
+   "developer": "Section 9 Interactive",
+   "publisher": "Epic Games Publishing"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 1,
+   "title": "Heartworm",
+   "platforms": "NS, NS2, PS4, PS5, XBO, XBX/S",
+   "type": "Port",
+   "genre": "Survival horror",
+   "developer": "Vincent Adinolfi",
+   "publisher": "DreadXP"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 1,
+   "title": "Moros Protocol",
+   "platforms": "NS2, PS5",
+   "type": "Port",
+   "genre": "Roguelike, FPS",
+   "developer": "Pixel Reign",
+   "publisher": "Super Rare Originals"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 1,
+   "title": "Muchi Muchi Pork! & PinkSweets Boosted",
+   "platforms": "WIN, NS, PS5",
+   "type": "Compilation",
+   "genre": "Shoot 'em up",
+   "developer": "Cave",
+   "publisher": "City Connection"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 1,
+   "title": "MXGP 26: The Official Game",
+   "platforms": "WIN, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Racing",
+   "developer": "Artefacts Studio",
+   "publisher": "Nacon"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 1,
+   "title": "Octopath Traveler (WW)",
+   "platforms": "NS2",
+   "type": "Port",
+   "genre": "RPG",
+   "developer": "Acquire, Square Enix",
+   "publisher": "Square Enix"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 1,
+   "title": "Octopath Traveler II (WW)",
+   "platforms": "NS2",
+   "type": "Port",
+   "genre": "RPG",
+   "developer": "Acquire, Square Enix",
+   "publisher": "Square Enix"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 1,
+   "title": "RetroSpace",
+   "platforms": "WIN, NS2, PS5, XBX/S",
+   "type": "Original",
+   "genre": "FPS, Horror",
+   "developer": "The Wild Gentlemen",
+   "publisher": "Kwalee"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 1,
+   "title": "River City Survivors: Downtown of the Dead",
+   "platforms": "iOS",
+   "type": "Original",
+   "genre": "Bullet heaven",
+   "developer": "Arc System Works",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 1,
+   "title": "Viractal (JP)",
+   "platforms": "NS, NS2",
+   "type": "Port",
+   "genre": "RPG",
+   "developer": "Sting",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 2,
+   "title": "Ace Combat 8: Wings of Theve",
+   "platforms": "WIN, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Vehicular combat (plane)",
+   "developer": "Bandai Namco Aces",
+   "publisher": "Bandai Namco Entertainment"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 2,
+   "title": "Magical Craft: My Enchanted Dress Shop (WW)",
+   "platforms": "NS",
+   "type": "Original",
+   "genre": "Life sim",
+   "developer": "syn Sophia",
+   "publisher": "Imagineer"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 5,
+   "title": "Aion 2 (WW)",
+   "platforms": "WIN",
+   "type": "Original",
+   "genre": "MMO, RPG",
+   "developer": "NCSoft",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 6,
+   "title": "Disney Epic Mickey: Rebrushed",
+   "platforms": "NS2",
+   "type": "Port",
+   "genre": "Platformer",
+   "developer": "Purple Lamp",
+   "publisher": "THQ Nordic"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 6,
+   "title": "Gears of War: E-Day",
+   "platforms": "WIN, XBX/S",
+   "type": "Original",
+   "genre": "TPS",
+   "developer": "The Coalition, People Can Fly",
+   "publisher": "Xbox Game Studios"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 6,
+   "title": "Star Wars: Galactic Racer",
+   "platforms": "WIN, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Racing",
+   "developer": "Fuse Games",
+   "publisher": "Secret Mode"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 7,
+   "title": "Deep Rock Galactic: Survivor",
+   "platforms": "NS, NS2, PS5",
+   "type": "Port",
+   "genre": "Bullet heaven",
+   "developer": "Funday Games",
+   "publisher": "Ghost Ship Publishing"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 8,
+   "title": "Boku to Tsuri Nikki (JP)",
+   "platforms": "NS, NS2",
+   "type": "Original",
+   "genre": "Action",
+   "developer": "Toybox",
+   "publisher": "Imagineer"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 8,
+   "title": "Clive Barker's Hellraiser: Revival",
+   "platforms": "WIN, NS2, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Survival horror, Action",
+   "developer": "Saber Interactive",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 8,
+   "title": "The Crew Motorfest",
+   "platforms": "NS2",
+   "type": "Port",
+   "genre": "Racing",
+   "developer": "Ubisoft Ivory Tower",
+   "publisher": "Ubisoft"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 8,
+   "title": "Dancing with Ghosts",
+   "platforms": "WIN",
+   "type": "Early access",
+   "genre": "Life sim",
+   "developer": "HumaNature Studios",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 8,
+   "title": "Deck of Haunts",
+   "platforms": "NS, NS2, PS5, XBO, XBX/S",
+   "type": "Port",
+   "genre": "Deck building, Roguelike",
+   "developer": "Mantis Games",
+   "publisher": "Dangen Entertainment"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 8,
+   "title": "Earth Defense Force 5",
+   "platforms": "NS2",
+   "type": "Port",
+   "genre": "TPS",
+   "developer": "Sandlot",
+   "publisher": "D3 Publisher"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 8,
+   "title": "Echo Weaver",
+   "platforms": "WIN, OSX, NS2, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Metroidvania",
+   "developer": "Moonlight Kids",
+   "publisher": "Akupara Games"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 8,
+   "title": "Forever Ago",
+   "platforms": "WIN, NS2, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Adventure",
+   "developer": "Third Shift",
+   "publisher": "Annapurna Interactive"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 8,
+   "title": "Gear.Club Unlimited 3",
+   "platforms": "WIN, PS5, XBX/S",
+   "type": "Port",
+   "genre": "Racing",
+   "developer": "Eden Games",
+   "publisher": "Nacon"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 8,
+   "title": "Hell Is Us",
+   "platforms": "NS2",
+   "type": "Port",
+   "genre": "Action-adventure",
+   "developer": "Rogue Factor",
+   "publisher": "Nacon"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 8,
+   "title": "Isles of Sea and Sky",
+   "platforms": "NS",
+   "type": "Port",
+   "genre": "Puzzle",
+   "developer": "Cicada Games",
+   "publisher": "Cicada Games, Gamera Games"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 8,
+   "title": "Kingdom Hearts Collection [I ~ III]",
+   "platforms": "NS2, PS5, XBX/S",
+   "type": "Compilation",
+   "genre": "Action RPG",
+   "developer": "Square Enix",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 8,
+   "title": "Mafia III: Definitive Edition",
+   "platforms": "PS5, XBX/S",
+   "type": "Port",
+   "genre": "Action-adventure",
+   "developer": "Hangar 13",
+   "publisher": "2K"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 8,
+   "title": "Mamon King",
+   "platforms": "NS2",
+   "type": "Port",
+   "genre": "Raising sim",
+   "developer": "LiTMUS",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 8,
+   "title": "Neon Abyss 2",
+   "platforms": "WIN, NS, PS5, XBX/S",
+   "type": "Full release",
+   "genre": "Run and gun, Roguelike, Action-adventure",
+   "developer": "Veewo Games",
+   "publisher": "Veewo Games, Kepler Ghost"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 8,
+   "title": "Once Upon a Katamari",
+   "platforms": "NS2",
+   "type": "Port",
+   "genre": "Puzzle, Action",
+   "developer": "RENGAME",
+   "publisher": "Bandai Namco Entertainment"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 8,
+   "title": "Order of the Sinking Star",
+   "platforms": "WIN, NS2, PS5",
+   "type": "Original",
+   "genre": "Puzzle, Adventure",
+   "developer": "Thekla",
+   "publisher": "Arc Games"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 8,
+   "title": "Silver Pines",
+   "platforms": "WIN, NS, NS2, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Survival horror, Metroidvania",
+   "developer": "Wych Elm",
+   "publisher": "Team17"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 8,
+   "title": "The World of Dokkaebi",
+   "platforms": "iOS, DROID",
+   "type": "Original",
+   "genre": "MMORPG",
+   "developer": "Supercat",
+   "publisher": "Kakao Games"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 9,
+   "title": "Banchou Tactics: Lion Heart",
+   "platforms": "PS5, XBX/S",
+   "type": "Port",
+   "genre": "Action, Tactical RPG",
+   "developer": "Corecell Technology, ITSARAAMATA",
+   "publisher": "Corecell Technology"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 9,
+   "title": "Dragon's Dogma 2: Dark Arisen",
+   "platforms": "WIN, NS2, PS5, XBX/S",
+   "type": "Port + Expansion",
+   "genre": "Action RPG",
+   "developer": "Capcom",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 9,
+   "title": "The Relic: First Guardian",
+   "platforms": "NS2",
+   "type": "Port",
+   "genre": "Action RPG",
+   "developer": "Project Cloud Games",
+   "publisher": "Perp Games"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 9,
+   "title": "Sesame Street: Friends & Fun",
+   "platforms": "WIN, NS, PS4, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Narrative adventure",
+   "developer": "Infinigon",
+   "publisher": "Outright Games"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 9,
+   "title": "Truckful",
+   "platforms": "WIN, OSX, LIN, DROID",
+   "type": "Original",
+   "genre": "Adventure",
+   "developer": "MythicOwl",
+   "publisher": "Pocketpair Publishing"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 12,
+   "title": "Alpha Nomos",
+   "platforms": "WIN, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Action, Rhythm, Roguelite",
+   "developer": "RibCage Games",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 12,
+   "title": "Colorbound",
+   "platforms": "WIN, NS, NS2, PS4, PS5, XBO, XBX/S",
+   "type": "Original",
+   "genre": "Puzzle-platformer",
+   "developer": "Panpipe Studios",
+   "publisher": "Whitethorn Games"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 12,
+   "title": "Sifu",
+   "platforms": "iOS, DROID",
+   "type": "Port",
+   "genre": "Brawler",
+   "developer": "Sloclap",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 12,
+   "title": "Spy Drops Gaiden",
+   "platforms": "WIN, LIN",
+   "type": "Original",
+   "genre": "Action, Stealth",
+   "developer": "Dadako",
+   "publisher": "Rainy Frog"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 12,
+   "title": "Time To Wake Up",
+   "platforms": "WIN, PS5",
+   "type": "Original",
+   "genre": "Horror (psych)",
+   "developer": "Eye Blink Twice",
+   "publisher": "Eye Blink Twice, Serafini Productions"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 13,
+   "title": "Deep Dish Dungeon",
+   "platforms": "WIN, OSX, XBX/S",
+   "type": "Original",
+   "genre": "Metroidvania, Survival",
+   "developer": "Behold Studios",
+   "publisher": "Raw Fury"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 13,
+   "title": "Planet Zoo 2",
+   "platforms": "WIN, PS5, XBX/S",
+   "type": "Original",
+   "genre": "CMS",
+   "developer": "Frontier Developments",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 13,
+   "title": "SpongeBob SquarePants: Titans of the Tide",
+   "platforms": "NS",
+   "type": "Port",
+   "genre": "Platformer",
+   "developer": "Purple Lamp",
+   "publisher": "THQ Nordic"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 13,
+   "title": "Total War: Shogun 2 – Complete Edition",
+   "platforms": "WIN",
+   "type": "Remaster",
+   "genre": "RTS",
+   "developer": "Creative Assembly",
+   "publisher": "Sega"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 13,
+   "title": "Valor Mortis",
+   "platforms": "WIN, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Soulslike",
+   "developer": "One More Level",
+   "publisher": "Lyrical Games"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 14,
+   "title": "Hubert",
+   "platforms": "WIN",
+   "type": "Original",
+   "genre": "Adventure",
+   "developer": "Brocap Studio",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 14,
+   "title": "Kururin Paradise (WW)",
+   "platforms": "NS, NS2",
+   "type": "Port",
+   "genre": "Puzzle",
+   "developer": "Eighting",
+   "publisher": "Nintendo"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 14,
+   "title": "Metal Slug Advance",
+   "platforms": "NS, NS2",
+   "type": "Port",
+   "genre": "Run and gun",
+   "developer": "Noise Factory",
+   "publisher": "SNK Playmore"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 14,
+   "title": "Monster Rancher Advance",
+   "platforms": "NS, NS2",
+   "type": "Port",
+   "genre": "Life sim",
+   "developer": "Tecmo",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 14,
+   "title": "Over The Hill",
+   "platforms": "WIN",
+   "type": "Original",
+   "genre": "Adventure",
+   "developer": "Funselektor Labs, Strelka Games",
+   "publisher": "Funselektor Labs"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 14,
+   "title": "Warhammer 40,000: Boltgun 2",
+   "platforms": "WIN, PS5, XBX/S",
+   "type": "Original",
+   "genre": "FPS",
+   "developer": "Auroch Digital",
+   "publisher": "Big Fan Games"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 14,
+   "title": "The Witch's Bakery",
+   "platforms": "WIN, NS, NS2, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Adventure, RPG",
+   "developer": "Sunny Lab",
+   "publisher": "Silver Lining Interactive"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 15,
+   "title": "Antonblast",
+   "platforms": "PS4, PS5",
+   "type": "Port",
+   "genre": "Platformer",
+   "developer": "Summitsphere",
+   "publisher": "Joystick Ventures"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 15,
+   "title": "A Bird Story",
+   "platforms": "NS, PS5, XBX/S",
+   "type": "Port",
+   "genre": "Adventure, RPG",
+   "developer": "Freebird Games",
+   "publisher": "Serenity Forge"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 15,
+   "title": "Bluey's Happy Snaps",
+   "platforms": "WIN, NS, NS2, PS4, PS5, XBO, XBX/S",
+   "type": "Original",
+   "genre": "Adventure",
+   "developer": "Gameloft Brisbane",
+   "publisher": "Gameloft"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 15,
+   "title": "Castlevania: Belmont's Curse",
+   "platforms": "WIN, NS, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Metroidvania",
+   "developer": "Evil Empire, Motion Twin",
+   "publisher": "Konami Digital Entertainment"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 15,
+   "title": "Enshrouded",
+   "platforms": "WIN, PS5",
+   "type": "Full release",
+   "genre": "Survival, Action RPG",
+   "developer": "Keen Games",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 15,
+   "title": "Frosthaven",
+   "platforms": "WIN",
+   "type": "Full release",
+   "genre": "Tactical RPG",
+   "developer": "Snapshot Games",
+   "publisher": "Arc Games"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 15,
+   "title": "Harvest Moon: Echoes of Teradea",
+   "platforms": "WIN, NS, NS2, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Farming",
+   "developer": "Imagica Geeq",
+   "publisher": "Natsume Inc."
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 15,
+   "title": "It Takes Two",
+   "platforms": "NS2",
+   "type": "Port",
+   "genre": "Action-adventure",
+   "developer": "Hazelight Studios",
+   "publisher": "Electronic Arts"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 15,
+   "title": "The Jackbox Party Pack 12",
+   "platforms": "WIN, NS, NS2, PS4, PS5, XBO, XBX/S",
+   "type": "Original",
+   "genre": "Party",
+   "developer": "Jackbox Games",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 15,
+   "title": "Pixel Washer",
+   "platforms": "WIN",
+   "type": "Early access",
+   "genre": "Simulation",
+   "developer": "Valadria",
+   "publisher": "Acclaim, Inc."
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 15,
+   "title": "Ratatan",
+   "platforms": "WIN, NS2, PS4, PS5, XBO, XBX/S",
+   "type": "Full release",
+   "genre": "Rhythm, Action, Roguelike",
+   "developer": "TVT, Ratata Arts",
+   "publisher": "Game Source Entertainment"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 15,
+   "title": "Tormented Souls II",
+   "platforms": "NS2",
+   "type": "Port",
+   "genre": "Survival horror",
+   "developer": "Dual Effect",
+   "publisher": "PQube"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 15,
+   "title": "Toy Story 3: Complete Edition",
+   "platforms": "WIN, NS, NS2, PS4, PS5, XBO, XBX/S",
+   "type": "Remaster",
+   "genre": "Platformer",
+   "developer": "Digital Eclipse",
+   "publisher": "Atari"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 15,
+   "title": "Toy Story: Retro Roundup!",
+   "platforms": "WIN, NS, NS2, PS4, PS5, XBO, XBX/S",
+   "type": "Compilation",
+   "genre": "—N/a",
+   "developer": "Digital Eclipse",
+   "publisher": "Atari"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 16,
+   "title": "Heavy Metal Death Can",
+   "platforms": "PS5, XBX/S",
+   "type": "Port",
+   "genre": "Survival horror",
+   "developer": "Krufs Productions",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 16,
+   "title": "Lego Harry Potter Collection",
+   "platforms": "NS2",
+   "type": "Port",
+   "genre": "Action-adventure",
+   "developer": "Cast Iron Games, Double Eleven, TT Games",
+   "publisher": "Warner Bros. Games"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 16,
+   "title": "Penguin Colony",
+   "platforms": "WIN",
+   "type": "Original",
+   "genre": "Narrative adventure",
+   "developer": "Origame Digital",
+   "publisher": "Fellow Traveller"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 16,
+   "title": "Resident Evil 2 Deluxe Edition",
+   "platforms": "NS2",
+   "type": "Port",
+   "genre": "Survival horror",
+   "developer": "Capcom",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 16,
+   "title": "Resident Evil 3",
+   "platforms": "NS2",
+   "type": "Port",
+   "genre": "Survival horror",
+   "developer": "Capcom",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 16,
+   "title": "Resident Evil 4 Gold Edition",
+   "platforms": "NS2",
+   "type": "Port",
+   "genre": "Survival horror",
+   "developer": "Capcom",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 16,
+   "title": "Tales of Eternia Remastered",
+   "platforms": "WIN, NS, NS2, PS4, PS5, XBX/S",
+   "type": "Remaster",
+   "genre": "Action RPG",
+   "developer": "Tose",
+   "publisher": "Bandai Namco Entertainment"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 16,
+   "title": "Tenebris Somnia",
+   "platforms": "WIN, NS, NS2, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Survival horror, Adventure",
+   "developer": "Andrés Borghi, Saibot Studios",
+   "publisher": "New Blood Interactive"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 19,
+   "title": "BeamNG.drive",
+   "platforms": "PS5",
+   "type": "Port",
+   "genre": "Vehicle sim",
+   "developer": "BeamNG",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 19,
+   "title": "DuneCrawl",
+   "platforms": "DROID, PS5, XBX/S",
+   "type": "Port",
+   "genre": "Action-adventure",
+   "developer": "Alientrap",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 19,
+   "title": "Frostpunk",
+   "platforms": "NS",
+   "type": "Port",
+   "genre": "City builder, Survival",
+   "developer": "11 Bit Studios",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 20,
+   "title": "Blue Ridge Hunting",
+   "platforms": "WIN, LIN",
+   "type": "Early access",
+   "genre": "Horror",
+   "developer": "Jade & Company",
+   "publisher": "Six One Publishing"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 20,
+   "title": "Dementium II",
+   "platforms": "WIN",
+   "type": "Remaster",
+   "genre": "FPS, Survival horror",
+   "developer": "Atooi",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 20,
+   "title": "I Am Your Beast",
+   "platforms": "NS, NS2",
+   "type": "Port",
+   "genre": "FPS",
+   "developer": "Strange Scaffold",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 20,
+   "title": "Star Trek: Outposts Unknown",
+   "platforms": "WIN, OSX",
+   "type": "Original",
+   "genre": "City builder (outpost)",
+   "developer": "Magic Fuel Games",
+   "publisher": "Playstack"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 20,
+   "title": "Mycopunk",
+   "platforms": "WIN",
+   "type": "Full release",
+   "genre": "FPS",
+   "developer": "Pigeons at Play",
+   "publisher": "Devolver Digital"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 20,
+   "title": "We Were Here Tomorrow",
+   "platforms": "WIN, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Adventure, Puzzle",
+   "developer": "Total Mayhem Games",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 21,
+   "title": "Escape From Playtime",
+   "platforms": "WIN",
+   "type": "Early access",
+   "genre": "Survival horror",
+   "developer": "Mob Entertainment",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 21,
+   "title": "The Killing Stone",
+   "platforms": "WIN, PS5. XBX/S",
+   "type": "Full release",
+   "genre": "Deck building",
+   "developer": "Question",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 21,
+   "title": "Stupid Never Dies",
+   "platforms": "WIN, PS5",
+   "type": "Original",
+   "genre": "Action RPG",
+   "developer": "GPTRACK50",
+   "publisher": "GPTRACK50, Sega"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 22,
+   "title": "Azure Striker Gunvolt Trilogy Enhanced – Nintendo Switch 2 Edition",
+   "platforms": "NS2",
+   "type": "Port",
+   "genre": "Action, Platformer",
+   "developer": "Inti Creates",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 22,
+   "title": "Back to the Dawn",
+   "platforms": "PS5",
+   "type": "Port",
+   "genre": "RPG",
+   "developer": "Metal Head Games",
+   "publisher": "Clouded Leopard Entertainment, Spiral Up Games"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 22,
+   "title": "Beyond the Dark: Nightwatch",
+   "platforms": "NS2",
+   "type": "Original",
+   "genre": "Horror",
+   "developer": "Atlantis Studio",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 22,
+   "title": "Cotton Reboot!",
+   "platforms": "NS2, PS5",
+   "type": "Port",
+   "genre": "Shoot 'em up",
+   "developer": "Rocket-Engine Co., Ltd",
+   "publisher": "Clear River Games"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 22,
+   "title": "Cotton Reboot! High Tension! (WW)",
+   "platforms": "NS, PS4, PS5",
+   "type": "Original",
+   "genre": "Shoot 'em up",
+   "developer": "Beep",
+   "publisher": "Clear River Games"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 22,
+   "title": "Cult of the Lamb",
+   "platforms": "NS2",
+   "type": "Port",
+   "genre": "Roguelike, CMS",
+   "developer": "Massive Monster",
+   "publisher": "Devolver Digital"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 22,
+   "title": "Cult of the Lamb: Woolhaven",
+   "platforms": "NS2, iOS",
+   "type": "Port",
+   "genre": "Roguelike, CMS",
+   "developer": "Massive Monster",
+   "publisher": "Devolver Digital"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 22,
+   "title": "Demons' Night Fever",
+   "platforms": "WIN, NS, PS5",
+   "type": "Original",
+   "genre": "Tactical RPG",
+   "developer": "Drecom, SuperNiche",
+   "publisher": "Arc System Works"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 22,
+   "title": "Final Fantasy Resonance",
+   "platforms": "WIN, NS2, NS, PS5, XBX/S",
+   "type": "Original",
+   "genre": "TBS, RPG",
+   "developer": "Square Enix",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 22,
+   "title": "Gaelco Sports Collection",
+   "platforms": "WIN, NS, PS4, PS5, XBO, XBX/S",
+   "type": "Compilation",
+   "genre": "Sports",
+   "developer": "QUByte Interactive",
+   "publisher": "QUByte Interactive, Bleem!, Piko Interactive"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 22,
+   "title": "Hitman: Absolution – Nintendo Switch 2 Edition",
+   "platforms": "NS2",
+   "type": "Port",
+   "genre": "Stealth, Action",
+   "developer": "IO Interactive",
+   "publisher": "Feral Interactive"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 22,
+   "title": "HoloVillage: Our Cozy Days",
+   "platforms": "NS2",
+   "type": "Port",
+   "genre": "Life sim",
+   "developer": "Roboqlo",
+   "publisher": "Holo Indie"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 22,
+   "title": "Moadra",
+   "platforms": "WIN, NS, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Metroidvania",
+   "developer": "Gloomsoft",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 22,
+   "title": "My Friendly Neighborhood",
+   "platforms": "NS2",
+   "type": "Port",
+   "genre": "Survival horror",
+   "developer": "John Szymanski, Evan Szymanski",
+   "publisher": "DreadXP"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 22,
+   "title": "Nintendo Switch Sports Resort",
+   "platforms": "NS2",
+   "type": "Original",
+   "genre": "Sports",
+   "developer": "Nintendo",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 22,
+   "title": "Peak",
+   "platforms": "NS2, PS5, XBX/S",
+   "type": "Port",
+   "genre": "Action-adventure",
+   "developer": "Aggro Crab, Landfall",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 22,
+   "title": "Red Chat Ritual: TSUMIMI TIME",
+   "platforms": "WIN",
+   "type": "Original",
+   "genre": "Visual novel, Horror, Adventure",
+   "developer": "Tohakusha",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 23,
+   "title": "Call of Duty: Modern Warfare 4",
+   "platforms": "WIN, NS2, PS5, XBX/S",
+   "type": "Original",
+   "genre": "FPS",
+   "developer": "Infinity Ward",
+   "publisher": "Activision"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 23,
+   "title": "One Piece: Grand Gourmet",
+   "platforms": "WIN, NS, NS2, iOS, DROID",
+   "type": "Original",
+   "genre": "CMS",
+   "developer": "Kairosoft",
+   "publisher": "Bandai Namco Entertainment"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 23,
+   "title": "Vixen 357",
+   "platforms": "WIN, NS, PS4, PS5, XBO, XBX/S",
+   "type": "Port",
+   "genre": "Tactical RPG",
+   "developer": "Shinyuden",
+   "publisher": "Masaya Games, Shinyuden, Ratalaika Games"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 23,
+   "title": "Warrior Cats: Clans of the Forest",
+   "platforms": "WIN, NS, NS2, PS5, XBX/S",
+   "type": "Original",
+   "genre": "RPG",
+   "developer": "Bamtang Games",
+   "publisher": "Trailmark Games"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 24,
+   "title": "Brave Dungeon + Dark Witch's Story: COMBAT",
+   "platforms": "PS5",
+   "type": "Port",
+   "genre": "RPG",
+   "developer": "Inside System",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 24,
+   "title": "Grifford Academy",
+   "platforms": "WIN, iOS, DROID",
+   "type": "Full release",
+   "genre": "RPG",
+   "developer": "LandShark Games",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 26,
+   "title": "Fangtopia",
+   "platforms": "WIN, NS2, PS5",
+   "type": "Original",
+   "genre": "Cozy, Puzzle",
+   "developer": "Absolutely Games",
+   "publisher": "Secret Mode"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 26,
+   "title": "Hunter's Moon",
+   "platforms": "PS5",
+   "type": "Original",
+   "genre": "Horror, Adventure",
+   "developer": "Twin Swans",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 26,
+   "title": "Reka",
+   "platforms": "WIN",
+   "type": "Full release",
+   "genre": "Adventure, Sandbox",
+   "developer": "Emberstorm Entertainment",
+   "publisher": "Fireshine Games"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 27,
+   "title": "4 Penny Coffins",
+   "platforms": "WIN",
+   "type": "Original",
+   "genre": "Adventure",
+   "developer": "Other Ocean",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 27,
+   "title": "9 R.I.P. sequel (WW)",
+   "platforms": "NS",
+   "type": "Original",
+   "genre": "Otome, Visual novel",
+   "developer": "Otomate",
+   "publisher": "Idea Factory International"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 27,
+   "title": "Dog Man: Bark in Action",
+   "platforms": "WIN, NS, PS4, PS5, XBO, XBX/S",
+   "type": "Original",
+   "genre": "Adventure, Platformer",
+   "developer": "Floor 84 Studio",
+   "publisher": "Mindscape"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 27,
+   "title": "Emberville",
+   "platforms": "WIN, LIN",
+   "type": "Early access",
+   "genre": "Action, Adventure, RPG",
+   "developer": "Cygnus Cross",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 27,
+   "title": "Minecraft: Bedrock Edition",
+   "platforms": "NS2",
+   "type": "Port",
+   "genre": "Sandbox, Survival",
+   "developer": "Mojang Studios",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 27,
+   "title": "Remothered: Red Nun's Legacy",
+   "platforms": "WIN, NS2, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Survival horror",
+   "developer": "Stormind Games",
+   "publisher": "Stormind Games, Soft Source Publishing"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 27,
+   "title": "The Séance of Blake Manor",
+   "platforms": "NS2, PS5, XBX/S",
+   "type": "Port",
+   "genre": "Adventure, Puzzle",
+   "developer": "Spooky Doorway",
+   "publisher": "Raw Fury"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 27,
+   "title": "Village in the Shade (WW)",
+   "platforms": "WIN, NS, NS2, PS5",
+   "type": "Original",
+   "genre": "Life sim, Adventure",
+   "developer": "Nippon Ichi Software",
+   "publisher": "NIS America"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 27,
+   "title": "Virtue and a Sledgehammer",
+   "platforms": "WIN",
+   "type": "Original",
+   "genre": "Action-adventure",
+   "developer": "Deconstructeam, Selkie Harbour",
+   "publisher": "Devolver Digital"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 28,
+   "title": "Buzz or Die",
+   "platforms": "WIN",
+   "type": "Original",
+   "genre": "Visual novel",
+   "developer": "Bon",
+   "publisher": "Kodansha"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 28,
+   "title": "Cities: Skylines – Expanded Edition",
+   "platforms": "NS2",
+   "type": "Port",
+   "genre": "City builder, CMS",
+   "developer": "Tantalus Media",
+   "publisher": "Paradox Interactive"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 28,
+   "title": "Gennady",
+   "platforms": "WIN, NS, PS4, PS5, XBO, XBX/S",
+   "type": "Original",
+   "genre": "Platformer, Roguelike",
+   "developer": "Feed 64",
+   "publisher": "Feed 64, Vsoo Games, Sobaka Studio"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 28,
+   "title": "No Man's Sky",
+   "platforms": "iOS",
+   "type": "Port",
+   "genre": "Action-adventure, Survival",
+   "developer": "Hello Games",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 28,
+   "title": "Probably Stolen",
+   "platforms": "WIN",
+   "type": "Original",
+   "genre": "Life sim",
+   "developer": "Questing Goose Studio",
+   "publisher": "tinyBuild"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 28,
+   "title": "SNØ: Ultimate Freeriding",
+   "platforms": "NS2, PS5, XBX/S",
+   "type": "Port",
+   "genre": "Sports (ski)",
+   "developer": "Studio Gauntlet",
+   "publisher": "AMATA Games"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 28,
+   "title": "Sulfur",
+   "platforms": "WIN, NS, NS2, PS4, PS5, XBO, XBX/S",
+   "type": "Full release",
+   "genre": "FPS, Roguelike",
+   "developer": "Perfect Random",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 29,
+   "title": "Age of Empires IV: Raiders of the North",
+   "platforms": "WIN, PS5, XBO, XBX/S",
+   "type": "Expansion",
+   "genre": "RTS",
+   "developer": "Relic Entertainment, World's Edge",
+   "publisher": "Xbox Game Studios"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 29,
+   "title": "Anomalith",
+   "platforms": "WIN, NS2, PS5",
+   "type": "Original",
+   "genre": "TPS, Survival horror",
+   "developer": "Winning Entertainment Group",
+   "publisher": "FuRyu"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 29,
+   "title": "Atmosfar",
+   "platforms": "WIN",
+   "type": "Early access",
+   "genre": "Survival",
+   "developer": "Apog Labs",
+   "publisher": "Shueisha Games"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 29,
+   "title": "Black Lily's Tale (JP)",
+   "platforms": "NS",
+   "type": "Port",
+   "genre": "Dating sim, Visual novel",
+   "developer": "1000-REKA",
+   "publisher": "1000-REKA, mirai works, Kadokawa Game Linkage"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 29,
+   "title": "Crimson Desert: Charting the Unknown",
+   "platforms": "WIN, OSX, PS5, XBX/S",
+   "type": "Expansion",
+   "genre": "Action-adventure",
+   "developer": "Pearl Abyss",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 29,
+   "title": "Croc 2: Kingdom of the Gobbos",
+   "platforms": "WIN, NS, PS4, PS5, XBX/S",
+   "type": "Remaster",
+   "genre": "Platformer",
+   "developer": "Argonaut Games",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 29,
+   "title": "Danchi Days",
+   "platforms": "WIN, OSX",
+   "type": "Original",
+   "genre": "Adventure",
+   "developer": "sandy powder, Melos Han-Tani, mogumu, gingham games",
+   "publisher": "Analgesic Productions"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 29,
+   "title": "Demon Slayer: Kimetsu no Yaiba – The Hinokami Chronicles 2 – Nintendo Switch 2 Edition (JP)",
+   "platforms": "NS2",
+   "type": "Port",
+   "genre": "Fighting, Action-adventure",
+   "developer": "CyberConnect2",
+   "publisher": "Aniplex"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 29,
+   "title": "Hello Kitty Party Land",
+   "platforms": "NS, NS2",
+   "type": "Original",
+   "genre": "Party",
+   "developer": "G-STYLE",
+   "publisher": "Sanrio Games, Bandai Namco Entertainment"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 29,
+   "title": "Hokko Spaces",
+   "platforms": "WIN, NS",
+   "type": "Original",
+   "genre": "Sandbox",
+   "developer": "Wonderscope Games",
+   "publisher": "Team17"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 29,
+   "title": "Joe & Mac Retro Collection",
+   "platforms": "WIN, NS, NS2, PS5, XBX/S",
+   "type": "Compilation",
+   "genre": "Platformer",
+   "developer": "Red Art Games",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 29,
+   "title": "Kowloon's Gate: Suzaku",
+   "platforms": "NS",
+   "type": "Port",
+   "genre": "Adventure",
+   "developer": "Jetman Inc.",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 29,
+   "title": "Metro Redux",
+   "platforms": "PS5, XBX/S",
+   "type": "Port",
+   "genre": "FPS",
+   "developer": "4A Games",
+   "publisher": "Deep Silver"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 29,
+   "title": "Monster Hunter Outlanders",
+   "platforms": "iOS, DROID",
+   "type": "Original",
+   "genre": "Action RPG, Survival",
+   "developer": "Capcom, TiMi Studio Group",
+   "publisher": "Level Infinite"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 29,
+   "title": "Phantom Blade Zero",
+   "platforms": "WIN, PS5",
+   "type": "Original",
+   "genre": "Action RPG",
+   "developer": "S-GAME",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 29,
+   "title": "Planted!",
+   "platforms": "WIN, NS, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Party",
+   "developer": "Cloth Cat Games",
+   "publisher": "Curveball Games"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 29,
+   "title": "Steins;Gate Re:Boot (WW)",
+   "platforms": "NS, NS2, PS4, PS5, XBX/S",
+   "type": "Port",
+   "genre": "Visual novel",
+   "developer": "Mages",
+   "publisher": "Spike Chunsoft"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 29,
+   "title": "Terrible Lizards",
+   "platforms": "WIN, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Puzzle-platformer, Survival horror",
+   "developer": "WDR Studios",
+   "publisher": "Behaviour Interactive, Digital Pajamas"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 29,
+   "title": "Titanium Court",
+   "platforms": "NS, NS2, PS5, iOS, DROID",
+   "type": "Port",
+   "genre": "Tile matching, Roguelike, Tower defense",
+   "developer": "AP Thomson",
+   "publisher": "Fellow Traveller"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 29,
+   "title": "The Wolf Among Us Remastered",
+   "platforms": "WIN, PS5, XBO, XBX/S",
+   "type": "Remaster",
+   "genre": "Graphic adventure, Interactive film",
+   "developer": "Telltale Games",
+   "publisher": "Telltale Games, PM Studios"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 30,
+   "title": "Asylum",
+   "platforms": "NS, PS4, PS5, XBX/S",
+   "type": "Port",
+   "genre": "Adventure, Horror",
+   "developer": "Senscape",
+   "publisher": "Soedesco [nl]"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 30,
+   "title": "The Cat in the Hat: Rainy Day Mayhem",
+   "platforms": "WIN, NS, PS4, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Party",
+   "developer": "Casual Brothers",
+   "publisher": "Outright Games"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 30,
+   "title": "Queen's Domain",
+   "platforms": "WIN, NS2, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Action RPG",
+   "developer": "Freshly Baked Games",
+   "publisher": "Future Friends Games"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 30,
+   "title": "Suri: The Seventh Note",
+   "platforms": "WIN, PS5",
+   "type": "Original",
+   "genre": "Action, Rhythm, Platformer",
+   "developer": "Tathvamasi Studios",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": 31,
+   "title": "HorrorVale: Deadluxe Edition",
+   "platforms": "NS, PS4, PS5, XBO, XBX/S",
+   "type": "Port",
+   "genre": "Horror, RPG",
+   "developer": "BatWorks Software",
+   "publisher": "Electric Airship"
+  },
+  {
+   "year": 2026,
+   "month": 10,
+   "day": null,
+   "title": "Hubert",
+   "platforms": "PS5",
+   "type": "Port",
+   "genre": "Adventure",
+   "developer": "Brocap Studio",
+   "publisher": ""
   },
   {
    "year": 2026,
    "month": 11,
-   "section": "Major events",
-   "cells": [
-    "November",
-    "17",
-    "The 2026 Esports Awards are scheduled to be held in Miami, Florida."
-   ]
+   "day": 2,
+   "title": "Gravhounds",
+   "platforms": "WIN, XBX/S",
+   "type": "Early access",
+   "genre": "Action, TPS",
+   "developer": "Octopus Panic",
+   "publisher": ""
   },
   {
    "year": 2026,
-   "month": 9,
-   "section": "Hardware releases",
-   "cells": [
-    "September 18",
-    "Steam Frame",
-    "Valve Corporation",
-    ""
-   ]
+   "month": 11,
+   "day": 3,
+   "title": "Godzilla: Destroy All Monsters Melee Remastered",
+   "platforms": "WIN, NS2, PS5, XBX/S",
+   "type": "Remaster",
+   "genre": "Fighting",
+   "developer": "Pipeworks Software",
+   "publisher": "Atari"
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 3,
+   "title": "Wilderdark",
+   "platforms": "WIN",
+   "type": "Original",
+   "genre": "Stealth, Survival horror",
+   "developer": "Team Junkfish",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 3,
+   "title": "Zero Parades: Director's Cut",
+   "platforms": "NS2, PS5",
+   "type": "Port",
+   "genre": "RPG",
+   "developer": "ZA/UM",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 4,
+   "title": "Hull Rupture",
+   "platforms": "WIN, OSX, LIN",
+   "type": "Original",
+   "genre": "Roguelike, Tower defense",
+   "developer": "Konfa Games",
+   "publisher": "Team17"
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 4,
+   "title": "Lightyear Frontier",
+   "platforms": "WIN, XBX/S",
+   "type": "Full release",
+   "genre": "Adventure, Farming",
+   "developer": "Frame Break",
+   "publisher": "Coffee Stain Publishing"
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 4,
+   "title": "Sound System",
+   "platforms": "WIN",
+   "type": "Early access",
+   "genre": "Rhythm",
+   "developer": "Echo Foundry Interactive",
+   "publisher": "Bonus Stage Publishing"
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 4,
+   "title": "Theos: Cities of Myth",
+   "platforms": "WIN",
+   "type": "Original",
+   "genre": "City builder",
+   "developer": "Triskell Interactive",
+   "publisher": "Dotemu"
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 4,
+   "title": "Void/Breaker",
+   "platforms": "WIN, PS5, XBX/S",
+   "type": "Full release",
+   "genre": "FPS, Roguelite",
+   "developer": "Stubby Games",
+   "publisher": "Playstack"
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 4,
+   "title": "World of Warcraft: Forever",
+   "platforms": "WIN, OSX",
+   "type": "Rerelease",
+   "genre": "MMO, RPG",
+   "developer": "Blizzard Entertainment",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 5,
+   "title": "Absolum",
+   "platforms": "iOS, DROID",
+   "type": "Port",
+   "genre": "Brawler",
+   "developer": "Guard Crush Games, Supamonks",
+   "publisher": "Dotemu, Playdigious"
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 5,
+   "title": "Airframe Ultra",
+   "platforms": "WIN",
+   "type": "Original",
+   "genre": "Racing, Vehicular combat",
+   "developer": "Videocult",
+   "publisher": "Akupara Games"
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 5,
+   "title": "Chivalware",
+   "platforms": "WIN, NS2",
+   "type": "Original",
+   "genre": "Action, Roguelite",
+   "developer": "Regal Pigeon",
+   "publisher": "The Arcade Crew, Imperfect Games"
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 5,
+   "title": "Crymelight",
+   "platforms": "WIN, NS2, PS5",
+   "type": "Original",
+   "genre": "Roguelike, Action",
+   "developer": "FuRyu",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 5,
+   "title": "Escape Academy 2: Back 2 School",
+   "platforms": "WIN, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Puzzle, Adventure",
+   "developer": "Coin Crew Games",
+   "publisher": "iam8bit"
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 5,
+   "title": "Eternal Palace Sakura",
+   "platforms": "WIN, NS",
+   "type": "Original",
+   "genre": "Action, Roguelite",
+   "developer": "Denneko Yuugi",
+   "publisher": "Denneko Yuugi, Shochiku"
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 5,
+   "title": "Kingdom of Night",
+   "platforms": "NS, PS5, XBX/S",
+   "type": "Port",
+   "genre": "Action RPG",
+   "developer": "Black Seven Studios",
+   "publisher": "Dangen Entertainment"
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 5,
+   "title": "K-POP Rising: Dream to Shine",
+   "platforms": "WIN, NS, PS5",
+   "type": "Original",
+   "genre": "Rhythm, Simulation",
+   "developer": "Old Skull Games",
+   "publisher": "Microids"
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 5,
+   "title": "The Legend of Zelda: Ocarina of Time",
+   "platforms": "NS2",
+   "type": "Remake",
+   "genre": "Action-adventure",
+   "developer": "Nintendo EPD",
+   "publisher": "Nintendo"
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 5,
+   "title": "Light: Black Cat & Amnesia Girl",
+   "platforms": "PS5",
+   "type": "Port",
+   "genre": "Adventure, Puzzle",
+   "developer": "Daylight Studio",
+   "publisher": "COSEN"
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 5,
+   "title": "Marvel's Guardians of the Galaxy Encore Edition",
+   "platforms": "NS2",
+   "type": "Port",
+   "genre": "Action-adventure",
+   "developer": "Eidos-Montréal",
+   "publisher": "Square Enix"
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 5,
+   "title": "Psycho-Sleuth",
+   "platforms": "WIN",
+   "type": "Original",
+   "genre": "Visual novel",
+   "developer": "Phosepo",
+   "publisher": "Thermite Games, Smilegate"
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 5,
+   "title": "Where The Seeds Fall",
+   "platforms": "WIN, NS2, PS5",
+   "type": "Original",
+   "genre": "Adventure, Platformer",
+   "developer": "CygamesEdge, Zereo",
+   "publisher": "Cygames"
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 5,
+   "title": "Wielders of the Essence",
+   "platforms": "WIN, OSX",
+   "type": "Original",
+   "genre": "Bullet heaven",
+   "developer": "Lavapotion",
+   "publisher": "Lavapotion, Coffee Stain Publishing"
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 5,
+   "title": "Yomawari: The Long Night Collection (WW)",
+   "platforms": "PS5",
+   "type": "Port",
+   "genre": "Survival horror",
+   "developer": "Nippon Ichi Software",
+   "publisher": "NIS America"
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 5,
+   "title": "Yomawari: Lost in the Dark (WW)",
+   "platforms": "PS5",
+   "type": "Port",
+   "genre": "Survival horror",
+   "developer": "Nippon Ichi Software",
+   "publisher": "NIS America"
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 6,
+   "title": "Dungeon Munchies 2",
+   "platforms": "WIN, OSX",
+   "type": "Early access",
+   "genre": "Action RPG",
+   "developer": "maJAJa",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 6,
+   "title": "Hasbro Games Junior Collection",
+   "platforms": "WIN, NS, NS2, PS4, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Digital tabletop, Party",
+   "developer": "Casual Brothers",
+   "publisher": "Outright Games"
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 6,
+   "title": "Stellar Blade Complete Edition",
+   "platforms": "NS2",
+   "type": "Port",
+   "genre": "Action-adventure",
+   "developer": "Shift Up",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 9,
+   "title": "Dreadmoor",
+   "platforms": "WIN",
+   "type": "Early access",
+   "genre": "Adventure",
+   "developer": "Dream Dock",
+   "publisher": "Digital Vortex"
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 10,
+   "title": "1999TOKOYO Building",
+   "platforms": "WIN",
+   "type": "Original",
+   "genre": "Horror",
+   "developer": "Tokoyo Fudosan",
+   "publisher": "Kodansha"
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 10,
+   "title": "Annihilated",
+   "platforms": "WIN",
+   "type": "Original",
+   "genre": "Deck building, RPG, Visual novel",
+   "developer": "Desu Kumiai",
+   "publisher": "Desu Kumiai, Flashlight Games"
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 10,
+   "title": "Football Manager 27",
+   "platforms": "WIN, OSX, PS5, XBX/S, iOS, DROID",
+   "type": "Original",
+   "genre": "Sports management",
+   "developer": "Sports Interactive",
+   "publisher": "Sega, Netflix (mobile)"
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 10,
+   "title": "Hope in the City",
+   "platforms": "WIN, XBX/S",
+   "type": "Original",
+   "genre": "Adventure",
+   "developer": "Lofty Sky Games",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 10,
+   "title": "Nocturnal 2",
+   "platforms": "WIN",
+   "type": "Original",
+   "genre": "Metroidvania",
+   "developer": "Sunnyside Games",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 10,
+   "title": "Unpetrified: Echoes of Nature",
+   "platforms": "NS, PS5, XBX/S",
+   "type": "Port",
+   "genre": "Adventure",
+   "developer": "Dreamhunt Studio",
+   "publisher": "Mindscape"
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 10,
+   "title": "Warhammer Survivors",
+   "platforms": "WIN, NS, NS2, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Bullet heaven",
+   "developer": "Auroch Digital",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 11,
+   "title": "Springs, Eternal",
+   "platforms": "WIN",
+   "type": "Original",
+   "genre": "Narrative adventure",
+   "developer": "Fullbright",
+   "publisher": "Serenity Forge"
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 12,
+   "title": "Barbie Rewind",
+   "platforms": "WIN, NS, NS2, PS4, PS5, XBO, XBX/S",
+   "type": "Compilation",
+   "genre": "—N/a",
+   "developer": "Digital Eclipse",
+   "publisher": "Atari"
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 12,
+   "title": "Fakin' It XL",
+   "platforms": "WIN, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Party",
+   "developer": "Jackbox Games",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 12,
+   "title": "Harold Halibut",
+   "platforms": "NS2",
+   "type": "Port",
+   "genre": "Adventure",
+   "developer": "Slow Bros.",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 12,
+   "title": "Hazard Levels",
+   "platforms": "WIN, PS5, XBX/S",
+   "type": "Full release",
+   "genre": "FPS, Survival",
+   "developer": "Wales Interactive",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 12,
+   "title": "Metaphor: ReFantazio",
+   "platforms": "NS2",
+   "type": "Port",
+   "genre": "RPG",
+   "developer": "Studio Zero",
+   "publisher": "JP: AtlusWW: Sega"
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 12,
+   "title": "Moomin: Midsummer Madness",
+   "platforms": "WIN, NS, NS2",
+   "type": "Original",
+   "genre": "PCA",
+   "developer": "Crossbridge Game Studios",
+   "publisher": "Shochiku"
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 12,
+   "title": "Pikmin 4 – Nintendo Switch 2 Edition + Dandori Academy",
+   "platforms": "NS2",
+   "type": "Remaster + Expansion",
+   "genre": "Puzzle, RTS",
+   "developer": "Nintendo EPD, Eighting",
+   "publisher": "Nintendo"
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 12,
+   "title": "Prinny Party: Going Overboard! (JP)",
+   "platforms": "WIN, NS, NS2, PS5",
+   "type": "Original",
+   "genre": "Party",
+   "developer": "Nippon Ichi Software",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 12,
+   "title": "Sonic Pico Park",
+   "platforms": "WIN, OSX, NS, NS2, PS5, XBX/S",
+   "type": "Original",
+   "genre": "Puzzle",
+   "developer": "TECOPARK",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 13,
+   "title": "UnderMire",
+   "platforms": "WIN",
+   "type": "Original",
+   "genre": "Roguelike, Adventure",
+   "developer": "Table Knight Games",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 13,
+   "title": "Warota: I Live Next to The Demon King's Castle LOL",
+   "platforms": "WIN",
+   "type": "Early access",
+   "genre": "City builder (village)",
+   "developer": "Team Earth Wars",
+   "publisher": "One or Eight"
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 19,
+   "title": "The Binding of Isaac: Repentance+",
+   "platforms": "NS2",
+   "type": "Port",
+   "genre": "Roguelike, Action-adventure",
+   "developer": "Edmund McMillen",
+   "publisher": "Nicalis"
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 19,
+   "title": "Evil Origin",
+   "platforms": "WIN",
+   "type": "Original",
+   "genre": "RPG",
+   "developer": "Kevin Musto",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 19,
+   "title": "Grand Theft Auto VI",
+   "platforms": "PS5, XBX/S",
+   "type": "Original",
+   "genre": "Action-adventure",
+   "developer": "Rockstar Games",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 19,
+   "title": "Reverie in the Moonlight",
+   "platforms": "NS, NS2",
+   "type": "Port",
+   "genre": "Action, Rougelike",
+   "developer": "Room6 Inc.",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 19,
+   "title": "Volvy's Adventure: Reslimed",
+   "platforms": "WIN",
+   "type": "Original",
+   "genre": "Platformer",
+   "developer": "Doinksoft",
+   "publisher": "Devolver Digital"
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 19,
+   "title": "Witch the Showdown",
+   "platforms": "WIN",
+   "type": "Early access",
+   "genre": "Deck building",
+   "developer": "CitalesGames",
+   "publisher": "Perp Games"
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 22,
+   "title": "Zombie Police: Midsummer Unhappy New Year",
+   "platforms": "WIN, OSX",
+   "type": "Original",
+   "genre": "Adventure",
+   "developer": "Lobstudio",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 24,
+   "title": "Gothic 3 Classic",
+   "platforms": "PS4, PS5, XBO, XBX/S",
+   "type": "Port",
+   "genre": "Action RPG",
+   "developer": "Piranha Bytes",
+   "publisher": "THQ Nordic"
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 26,
+   "title": "Appulse",
+   "platforms": "WIN",
+   "type": "Original",
+   "genre": "Pinball, Roguelite",
+   "developer": "Le Rado",
+   "publisher": "Raw Fury"
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 26,
+   "title": "Expelled from Paradise: The Stellar Angel",
+   "platforms": "WIN, NS",
+   "type": "Original",
+   "genre": "Visual novel",
+   "developer": "Studio51",
+   "publisher": "Toei Animation"
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 26,
+   "title": "Hello Kitty and Friends: Freeze Tag Party (JP)",
+   "platforms": "NS2",
+   "type": "Port",
+   "genre": "Action",
+   "developer": "Imagineer",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 30,
+   "title": "GrimKeep",
+   "platforms": "WIN, OSX, PS5",
+   "type": "Original",
+   "genre": "Deck building, Roguelite",
+   "developer": "Resolution Games",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": null,
+   "title": "Mercenaries Grace: Black Feather and the Golden Right Arm (JP)",
+   "platforms": "WIN, NS, PS5",
+   "type": "Original",
+   "genre": "Tactical RPG",
+   "developer": "RideonJapan",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": null,
+   "title": "Spirit Crossing",
+   "platforms": "WIN",
+   "type": "Early access",
+   "genre": "MMO, Life sim",
+   "developer": "Spry Fox",
+   "publisher": ""
   }
  ],
  "errors": [
-  "douban movie 1292052: HTTP Error 400: Bad Request",
-  "douban movie 35840408: HTTP Error 400: Bad Request",
-  "douban movie 36903929: HTTP Error 400: Bad Request",
-  "douban movie 38581618: HTTP Error 400: Bad Request",
-  "douban movie 37054065: HTTP Error 400: Bad Request",
-  "douban movie 37388212: HTTP Error 400: Bad Request",
-  "douban movie 35209727: HTTP Error 400: Bad Request",
-  "douban movie 2131459: HTTP Error 400: Bad Request",
-  "douban movie 35390242: HTTP Error 400: Bad Request",
-  "douban movie 35275131: HTTP Error 400: Bad Request",
-  "douban movie 36961914: HTTP Error 400: Bad Request",
-  "douban movie 25921812: HTTP Error 400: Bad Request",
-  "douban movie 25964071: HTTP Error 400: Bad Request",
-  "douban movie 33422507: HTTP Error 400: Bad Request",
-  "douban movie 38215445: HTTP Error 400: Bad Request",
-  "douban movie 36791178: HTTP Error 400: Bad Request",
-  "douban movie 37171813: HTTP Error 400: Bad Request",
-  "douban movie 35493879: HTTP Error 400: Bad Request",
-  "douban movie 26421039: HTTP Error 400: Bad Request",
-  "douban movie 36745791: HTTP Error 400: Bad Request",
-  "douban movie 20645021: HTTP Error 400: Bad Request",
-  "douban movie 26347311: HTTP Error 400: Bad Request",
-  "douban movie 27005362: HTTP Error 400: Bad Request",
-  "douban movie 27005365: HTTP Error 400: Bad Request",
-  "douban movie 37322586: HTTP Error 400: Bad Request",
-  "douban movie 37088929: HTTP Error 400: Bad Request",
-  "douban movie 37509917: HTTP Error 400: Bad Request",
-  "douban movie 36624248: HTTP Error 400: Bad Request",
-  "douban movie 37344902: HTTP Error 400: Bad Request",
-  "douban movie 25798131: HTTP Error 400: Bad Request",
-  "douban movie 1294417: HTTP Error 400: Bad Request",
-  "douban movie 37047880: HTTP Error 400: Bad Request",
-  "douban movie 35299923: HTTP Error 400: Bad Request",
-  "douban movie 23774856: HTTP Error 400: Bad Request",
-  "douban movie 35068655: HTTP Error 400: Bad Request",
-  "douban movie 36011202: HTTP Error 400: Bad Request"
+  "douban rate limited at movie 23774856; remaining details skipped"
  ]
 }
