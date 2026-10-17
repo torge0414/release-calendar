@@ -1,0 +1,56 @@
+name: Monthly window roll and candidates
+
+# 每月 1 日 00:05（北京时间）：滚动三个月窗口、准备候选数据和电影海报（scripts/monthly_prep.py）。
+# 只做不需要判断的准备工作；选哪些作品由 Claude 的月度定时任务（每月 1 日 08:52）读 candidates/latest.json 完成。
+# cron 是 UTC：每月 28–31 日 16:05 UTC 触发，脚本前一步只在北京时间为 1 日时继续，其余日子直接结束。
+on:
+  schedule:
+    - cron: "5 16 28-31 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-calendar-scores
+  cancel-in-progress: false
+
+jobs:
+  prep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Only on the 1st (Beijing time) for scheduled runs
+        id: gate
+        run: |
+          day=$(TZ=Asia/Shanghai date +%d)
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "$day" != "01" ]; then
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          fi
+      - if: steps.gate.outputs.run == 'true'
+        uses: actions/checkout@v4
+      - if: steps.gate.outputs.run == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Roll window and collect candidates
+        if: steps.gate.outputs.run == 'true'
+        run: python scripts/monthly_prep.py
+      - name: Validate data
+        if: steps.gate.outputs.run == 'true'
+        run: python scripts/check_data.py
+      - name: Commit only actual changes
+        if: steps.gate.outputs.run == 'true'
+        run: |
+          git add releases.json movies.json albums.json candidates
+          if git diff --cached --quiet; then
+            echo "No changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "自动滚动月份窗口并准备候选数据"
+          git pull --no-rebase --no-edit origin main
+          git push origin HEAD:main
