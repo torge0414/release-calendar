@@ -197,7 +197,7 @@ def douban(path: str, retry: bool = True):
 
 def collect_movies(months, errors) -> list[dict]:
     items = {}
-    for coll in ("movie_showing", "movie_soon"):
+    for coll in ("movie_soon", "movie_showing"):  # 即将上映优先：限流时先保住待映片的详情
         try:
             for x in douban(f"subject_collection/{coll}/items?start=0&count=60").get("subject_collection_items", []):
                 r = x.get("rating") or {}
