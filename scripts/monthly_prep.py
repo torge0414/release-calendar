@@ -13,7 +13,8 @@ monthly curation task. It only does deterministic work and never chooses titles:
    - music: Apple Music US most-played albums, Metacritic coming-soon list,
      Wikipedia "List of <year> albums", Wikipedia "<year> in South Korean music",
      plus iTunes lookups (genre, track count, artwork, China storefront link).
-   - games: Wikipedia "<year> in video games" release tables.
+   - games: Wikipedia "List of video games released in <year>" (date, title,
+     platforms, type such as new / remaster / port, genre, developer, publisher).
 Every source is optional: a failure is recorded in "errors" and the rest go on.
 Standard library only, like the other scripts.
 """
@@ -38,7 +39,8 @@ TIMEOUT = 30
 UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/140 Safari/537.36"
 MOBILE_UA = "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148"
 MOVIE_HEAT = 5000          # HANDOVER §4B：想看或评分人数
-DOUBAN_DELAY = 3.5         # 豆瓣对同一 IP 限流，请求之间至少 3 秒
+DOUBAN_DELAY = 6           # 豆瓣对同一 IP 限流（code 1309）：慢一点，触发后停 90 秒再试一次
+DOUBAN_MAX_DETAILS = 40
 ITUNES_DELAY = 3.2         # iTunes Search API 约每分钟 20 次
 FILES = (("releases.json", "games"), ("movies.json", "movies"), ("albums.json", "albums"))
 
@@ -175,9 +177,22 @@ def day_of(text: str) -> int | None:
 
 # ---------- 2a. 电影（豆瓣） ----------
 
-def douban(path: str):
+class RateLimited(Exception):
+    pass
+
+
+def douban(path: str, retry: bool = True):
     time.sleep(DOUBAN_DELAY)
-    return fetch_json("https://m.douban.com/rexxar/api/v2/" + path, {"User-Agent": MOBILE_UA, "Referer": "https://m.douban.com/movie/"})
+    try:
+        return fetch_json("https://m.douban.com/rexxar/api/v2/" + path, {"User-Agent": MOBILE_UA, "Referer": "https://m.douban.com/movie/"})
+    except HTTPError as exc:
+        body = exc.read().decode("utf-8", errors="replace") if exc.fp else ""
+        if "1309" in body or "rate_limit" in body or exc.code == 429:
+            if retry:
+                time.sleep(90)
+                return douban(path, retry=False)
+            raise RateLimited(path) from exc
+        raise
 
 
 def collect_movies(months, errors) -> list[dict]:
@@ -192,14 +207,25 @@ def collect_movies(months, errors) -> list[dict]:
         except (HTTPError, URLError, TimeoutError, ValueError, KeyError) as exc:
             errors.append(f"douban {coll}: {exc}")
     window = {(y, m) for y, m in months}
-    out = []
+    out, limited = [], False
     for sid, it in items.items():
+        out.append(it)
+        # 「正在上映」里有不少老片重映，列表给的日期（MM.DD）不在窗口月份内的直接跳过详情
+        hint = re.match(r"(\d{2})\.(\d{2})", str(it.get("release_hint") or ""))
+        if it["list"] == "movie_showing" and hint and int(hint.group(1)) not in {m for _, m in months}:
+            it["skipped"] = "release month outside window"
+            continue
+        if limited or sum(1 for x in out if "pubdate" in x) >= DOUBAN_MAX_DETAILS:
+            it["skipped"] = "douban rate limit / detail cap"
+            continue
         try:
             j = douban(f"movie/{sid}?ck=&for_mobile=1")
+        except RateLimited:
+            errors.append(f"douban rate limited at movie {sid}; remaining details skipped")
+            limited, it["skipped"] = True, "douban rate limit"
+            continue
         except (HTTPError, URLError, TimeoutError, ValueError) as exc:
             errors.append(f"douban movie {sid}: {exc}")
-            if "1309" in str(exc) or "429" in str(exc):
-                break
             continue
         pub = ";".join(j.get("pubdate") or [])
         m = re.search(r"(\d{4})-(\d{2})-(\d{2})\(中国大陆\)", pub)
@@ -212,12 +238,12 @@ def collect_movies(months, errors) -> list[dict]:
                    "score": r.get("value"), "votes": r.get("count"), "comments": j.get("comment_count"),
                    "null_rating_reason": j.get("null_rating_reason"), "poster_url": (j.get("pic") or {}).get("large")})
         it["in_window"] = bool(mainland and (mainland.year, mainland.month) in window)
+    for it in out:
         it["heat_ok"] = max(it.get("wish") or 0, it.get("votes") or 0) >= MOVIE_HEAT
-        out.append(it)
     # 过线、在窗口内、仓库里还没有本地海报的，先把海报下好
     (CAND / "posters").mkdir(parents=True, exist_ok=True)
     for it in out:
-        if not (it["in_window"] and it["heat_ok"] and it.get("poster_url")):
+        if not (it.get("in_window") and it["heat_ok"] and it.get("poster_url")):
             continue
         target = CAND / "posters" / f"movie_{it['sid']}.jpg"
         if (ROOT / "img" / target.name).exists():
@@ -293,7 +319,7 @@ def collect_music(months, errors) -> dict:
         try:
             for r in wiki_rows(f"List of {year} albums"):
                 c = r["cells"]
-                if len(c) < 4:
+                if len(c) < 4 or c[1] in ("Artist", "Artist(s)"):
                     continue
                 month = month_of(r["section"], c[0])
                 if not month or (year, month) not in window:
@@ -307,7 +333,7 @@ def collect_music(months, errors) -> dict:
             for r in wiki_rows(f"{year} in South Korean music"):
                 c = r["cells"]
                 month = month_of(r["section"], "")
-                if len(c) < 3 or not month or (year, month) not in window:
+                if len(c) < 3 or c[1] == "Album" or not month or (year, month) not in window:
                     continue
                 out["kpop"].append({"year": year, "month": month, "day": day_of(c[0]), "title": c[1], "artist": c[2]})
         except (HTTPError, URLError, TimeoutError, ValueError) as exc:
@@ -338,14 +364,15 @@ def collect_games(months, errors) -> list[dict]:
     out = []
     for year in sorted({y for y, _ in months}):
         try:
-            for r in wiki_rows(f"{year} in video games"):
+            for r in wiki_rows(f"List of video games released in {year}"):
                 c = r["cells"]
-                if len(c) < 3:
+                if len(c) < 7 or c[1] == "Title":
                     continue
-                month = month_of(r["section"], c[0])
+                month = month_of("", c[0])
                 if not month or (year, month) not in window:
                     continue
-                out.append({"year": year, "month": month, "section": r["section"], "cells": c})
+                out.append({"year": year, "month": month, "day": day_of(c[0]), "title": c[1], "platforms": c[2],
+                            "type": c[3], "genre": c[4], "developer": c[5], "publisher": c[6]})
         except (HTTPError, URLError, TimeoutError, ValueError) as exc:
             errors.append(f"wikipedia games {year}: {exc}")
     return out
