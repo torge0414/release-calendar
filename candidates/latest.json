@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-23 17:20:27",
+ "generated_at": "2026-10-23 17:32:06",
  "window": [
   {
    "year": 2026,
@@ -53,7 +53,7 @@
    "title": "小羊肖恩3：怪兽来袭",
    "list": "movie_soon",
    "release_hint": "10.24",
-   "wish": 1624,
+   "wish": 1625,
    "score": 0,
    "votes": 0,
    "pubdate": "2026-10-24(中国大陆)",
@@ -119,7 +119,7 @@
    "release_hint": "10.30",
    "wish": 88956,
    "score": 7.8,
-   "votes": 260721,
+   "votes": 260722,
    "pubdate": "2026-10-30(中国大陆)",
    "mainland_date": "2026-10-30",
    "year": "2014",
@@ -251,7 +251,7 @@
    "title": "白衣逆行者",
    "list": "movie_soon",
    "release_hint": "11.06",
-   "wish": 1720,
+   "wish": 1721,
    "score": 0,
    "votes": 0,
    "pubdate": "2026-11-06(中国大陆)",
@@ -271,7 +271,7 @@
     "杨子姗",
     "秦海璐"
    ],
-   "comments": 236,
+   "comments": 237,
    "null_rating_reason": "尚未上映",
    "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2936741903.jpg",
    "in_window": true,
@@ -282,7 +282,7 @@
    "title": "珠穆朗玛：云中彼岸",
    "list": "movie_soon",
    "release_hint": "11.06",
-   "wish": 1048,
+   "wish": 1051,
    "score": 0,
    "votes": 0,
    "pubdate": "2026-11-06(中国大陆)",
@@ -350,10 +350,32 @@
    "title": "我们仅有一次的人生",
    "list": "movie_soon",
    "release_hint": "11.07",
-   "wish": 9836,
-   "score": null,
-   "votes": null,
-   "heat_ok": true
+   "wish": 9837,
+   "score": 0,
+   "votes": 0,
+   "pubdate": "2026-11-07(中国大陆)",
+   "mainland_date": "2026-11-07",
+   "year": "2026",
+   "genres": [
+    "剧情"
+   ],
+   "countries": [
+    "中国大陆"
+   ],
+   "directors": [
+    "孙傲谦"
+   ],
+   "actors": [
+    "宋佳",
+    "文淇",
+    "祖峰"
+   ],
+   "comments": 152,
+   "null_rating_reason": "暂无评分",
+   "poster_url": "https://img9.doubanio.com/view/photo/m_ratio_poster/public/p2936815515.jpg",
+   "in_window": true,
+   "heat_ok": true,
+   "poster_file": "candidates/posters/movie_36424371.jpg"
   },
   {
    "sid": "36083358",
@@ -424,7 +446,7 @@
    "title": "时间里的爱人",
    "list": "movie_soon",
    "release_hint": "11.28",
-   "wish": 8540,
+   "wish": 8542,
    "score": 6.4,
    "votes": 5417,
    "pubdate": "2026-11-28(中国大陆)",
@@ -494,7 +516,7 @@
    "release_hint": "10.05",
    "wish": null,
    "score": 7.3,
-   "votes": 190507,
+   "votes": 190533,
    "pubdate": "2026-10-05(中国大陆)",
    "mainland_date": "2026-10-05",
    "year": "2026",
@@ -516,7 +538,7 @@
     "扎克·切利",
     "卡莉·瑞斯"
    ],
-   "comments": 85895,
+   "comments": 85905,
    "null_rating_reason": "",
    "poster_url": "https://img2.doubanio.com/view/photo/m_ratio_poster/public/p2936442661.jpg",
    "in_window": true,
@@ -530,7 +552,7 @@
    "release_hint": "10.13",
    "wish": null,
    "score": 7.2,
-   "votes": 3535,
+   "votes": 3537,
    "pubdate": "2026-10-13(中国大陆)",
    "mainland_date": "2026-10-13",
    "year": "2025",
@@ -613,7 +635,7 @@
     "阿宝",
     "陈育兵"
    ],
-   "comments": 122,
+   "comments": 124,
    "null_rating_reason": "暂无评分",
    "poster_url": "https://img9.doubanio.com/view/photo/m_ratio_poster/public/p2936862384.jpg",
    "in_window": true,
@@ -658,7 +680,7 @@
    "release_hint": "09.25",
    "wish": null,
    "score": 4.6,
-   "votes": 7666,
+   "votes": 7671,
    "pubdate": "2026-09-25(中国大陆)",
    "mainland_date": "2026-09-25",
    "year": "2026",
@@ -679,7 +701,7 @@
     "梁家辉",
     "王影璐"
    ],
-   "comments": 4834,
+   "comments": 4837,
    "null_rating_reason": "",
    "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2936005892.jpg",
    "in_window": true,
@@ -693,7 +715,7 @@
    "release_hint": "10.01",
    "wish": null,
    "score": 6.8,
-   "votes": 80990,
+   "votes": 81002,
    "pubdate": "2026-10-01(中国大陆)",
    "mainland_date": "2026-10-01",
    "year": "2026",
@@ -711,7 +733,7 @@
     "马丽",
     "陈明昊"
    ],
-   "comments": 37759,
+   "comments": 37767,
    "null_rating_reason": "",
    "poster_url": "https://img2.doubanio.com/view/photo/m_ratio_poster/public/p2935867001.jpg",
    "in_window": true,
@@ -759,7 +781,7 @@
    "release_hint": "09.30",
    "wish": null,
    "score": 7.3,
-   "votes": 22346,
+   "votes": 22347,
    "pubdate": "2026-09-30(中国大陆)",
    "mainland_date": "2026-09-30",
    "year": "2026",
@@ -793,7 +815,7 @@
    "release_hint": "10.01",
    "wish": null,
    "score": 6.3,
-   "votes": 26132,
+   "votes": 26137,
    "pubdate": "2026-10-01(中国大陆)",
    "mainland_date": "2026-10-01",
    "year": "2026",
@@ -812,7 +834,7 @@
     "沈春阳",
     "贾冰"
    ],
-   "comments": 13168,
+   "comments": 13170,
    "null_rating_reason": "",
    "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2936493940.jpg",
    "in_window": true,
@@ -826,7 +848,7 @@
    "release_hint": "10.03",
    "wish": null,
    "score": 6.5,
-   "votes": 19459,
+   "votes": 19461,
    "pubdate": "2026-10-03(中国大陆)",
    "mainland_date": "2026-10-03",
    "year": "2026",
@@ -859,7 +881,7 @@
    "release_hint": "10.01",
    "wish": null,
    "score": 6.9,
-   "votes": 14838,
+   "votes": 14840,
    "pubdate": "2026-10-01(中国大陆)",
    "mainland_date": "2026-10-01",
    "year": "2026",
@@ -877,7 +899,7 @@
     "叶童",
     "倪虹洁"
    ],
-   "comments": 8498,
+   "comments": 8499,
    "null_rating_reason": "",
    "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2935643598.jpg",
    "in_window": true,
@@ -920,7 +942,30 @@
    "wish": null,
    "score": 6.0,
    "votes": 12702,
-   "heat_ok": true
+   "pubdate": "2026-09-25(中国大陆)",
+   "mainland_date": "2026-09-25",
+   "year": "2026",
+   "genres": [
+    "动作",
+    "古装"
+   ],
+   "countries": [
+    "中国大陆"
+   ],
+   "directors": [
+    "曹盾"
+   ],
+   "actors": [
+    "章宇",
+    "窦骁",
+    "吕凉"
+   ],
+   "comments": 8121,
+   "null_rating_reason": "",
+   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2936069048.jpg",
+   "in_window": true,
+   "heat_ok": true,
+   "poster_file": "img/movie_35244246.jpg"
   },
   {
    "sid": "37474012",
@@ -961,7 +1006,7 @@
    "release_hint": "08.11",
    "wish": null,
    "score": 8.7,
-   "votes": 772513,
+   "votes": 772522,
    "skipped": "release month outside window",
    "heat_ok": true
   },
@@ -972,7 +1017,7 @@
    "release_hint": "09.04",
    "wish": null,
    "score": 8.7,
-   "votes": 127666,
+   "votes": 127667,
    "pubdate": "2026-09-04(中国大陆)",
    "mainland_date": "2026-09-04",
    "year": "2004",
@@ -991,7 +1036,7 @@
     "刘玉玲",
     "薇薇卡·福克斯"
    ],
-   "comments": 35806,
+   "comments": 35807,
    "null_rating_reason": "",
    "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2935283057.jpg",
    "in_window": true,
@@ -1005,7 +1050,7 @@
    "release_hint": "08.14",
    "wish": null,
    "score": 8.6,
-   "votes": 567405,
+   "votes": 567407,
    "skipped": "release month outside window",
    "heat_ok": true
   },
@@ -1016,7 +1061,7 @@
    "release_hint": "09.04",
    "wish": null,
    "score": 5.2,
-   "votes": 26326,
+   "votes": 26328,
    "pubdate": "2026-09-04(中国大陆)",
    "mainland_date": "2026-09-04",
    "year": "2026",
@@ -1037,7 +1082,7 @@
     "阿塞玛·托马斯",
     "汤姆·布里特尼"
    ],
-   "comments": 12325,
+   "comments": 12328,
    "null_rating_reason": "",
    "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2935283013.jpg",
    "in_window": true,
@@ -1051,7 +1096,7 @@
    "release_hint": "08.28",
    "wish": null,
    "score": 9.7,
-   "votes": 3352680,
+   "votes": 3352682,
    "skipped": "release month outside window",
    "heat_ok": true
   },
@@ -1062,7 +1107,7 @@
    "release_hint": "07.24",
    "wish": null,
    "score": 7.6,
-   "votes": 294586,
+   "votes": 294588,
    "skipped": "release month outside window",
    "heat_ok": true
   },
@@ -1106,7 +1151,7 @@
    "release_hint": "08.19",
    "wish": null,
    "score": 7.2,
-   "votes": 151279,
+   "votes": 151302,
    "skipped": "release month outside window",
    "heat_ok": true
   },
@@ -1180,7 +1225,7 @@
    "release_hint": "04.24",
    "wish": null,
    "score": 8.5,
-   "votes": 1177850,
+   "votes": 1177851,
    "skipped": "release month outside window",
    "heat_ok": true
   },
@@ -1373,26 +1418,9 @@
    "list": "movie_showing",
    "release_hint": "10.15",
    "wish": null,
-   "score": 0,
-   "votes": 0,
-   "pubdate": "2026-10-15(中国大陆)",
-   "mainland_date": "2026-10-15",
-   "year": "2026",
-   "genres": [
-    "纪录片"
-   ],
-   "countries": [
-    "中国大陆"
-   ],
-   "directors": [
-    "李志伟",
-    "刘翛然"
-   ],
-   "actors": [],
-   "comments": 47,
-   "null_rating_reason": "暂无评分",
-   "poster_url": "https://img9.doubanio.com/view/photo/m_ratio_poster/public/p2935221014.jpg",
-   "in_window": true,
+   "score": null,
+   "votes": null,
+   "skipped": "douban rate limit / detail cap",
    "heat_ok": false
   },
   {
@@ -1412,30 +1440,9 @@
    "list": "movie_showing",
    "release_hint": "09.12",
    "wish": null,
-   "score": 0,
-   "votes": 0,
-   "pubdate": "2026-09-12(中国大陆)",
-   "mainland_date": "2026-09-12",
-   "year": "2026",
-   "genres": [
-    "爱情",
-    "奇幻"
-   ],
-   "countries": [
-    "中国大陆"
-   ],
-   "directors": [
-    "相国强"
-   ],
-   "actors": [
-    "毕雯珺",
-    "何蓝逗",
-    "王砚辉"
-   ],
-   "comments": 1450,
-   "null_rating_reason": "暂无评分",
-   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2935129539.jpg",
-   "in_window": true,
+   "score": null,
+   "votes": null,
+   "skipped": "douban rate limit / detail cap",
    "heat_ok": false
   },
   {
@@ -1583,7 +1590,255 @@
   }
  ],
  "music": {
-  "apple_top": [],
+  "apple_top": [
+   {
+    "date": "2026-10-16",
+    "artist": "Zach Bryan",
+    "title": "Young Manhood and Other Donatable Organs",
+    "id": "6822944288",
+    "itunes": null
+   },
+   {
+    "date": "2026-10-02",
+    "artist": "Drake",
+    "title": "HABIBTI (FOMO)",
+    "id": "6818209777",
+    "itunes": {
+     "collectionId": 6818059268,
+     "artistName": "Drake",
+     "collectionName": "HABIBTI (FOMO)",
+     "releaseDate": "2026-10-01T07:00:00Z",
+     "trackCount": 15,
+     "primaryGenreName": "R&B/Soul",
+     "collectionExplicitness": "cleaned",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/62/58/98/62589807-decc-d418-eb07-5060de9a2d3e/26UMGIM63617.rgb.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/habibti-fomo/6818059268"
+    }
+   },
+   {
+    "date": "2026-09-24",
+    "artist": "Taylor Swift",
+    "title": "The Life of a Showgirl: The Encore",
+    "id": "6814997249"
+   },
+   {
+    "date": "2026-09-11",
+    "artist": "Jhené Aiko",
+    "title": "Westside Whimsy",
+    "id": "6810715695"
+   },
+   {
+    "date": "2026-10-16",
+    "artist": "LUCKI",
+    "title": "Last Laugh (archive tape)",
+    "id": "6821145872",
+    "itunes": null
+   },
+   {
+    "date": "2026-10-02",
+    "artist": "NoCap",
+    "title": "Heaven on Mars",
+    "id": "6776432217",
+    "itunes": null
+   },
+   {
+    "date": "2026-09-04",
+    "artist": "ADÉLA",
+    "title": "PRIMA",
+    "id": "6792883860"
+   },
+   {
+    "date": "2026-09-25",
+    "artist": "Ms. Rachel",
+    "title": "I'm So Happy",
+    "id": "6792048044"
+   },
+   {
+    "date": "2026-10-16",
+    "artist": "Fontaines D.C.",
+    "title": "Dopamine Chamber",
+    "id": "6792085051",
+    "itunes": null
+   },
+   {
+    "date": "2026-10-20",
+    "artist": "Bally Baby",
+    "title": "The Last Sipper",
+    "id": "6822129015",
+    "itunes": null
+   },
+   {
+    "date": "2026-10-09",
+    "artist": "Remi Wolf",
+    "title": "Mud",
+    "id": "6800467151",
+    "itunes": null
+   },
+   {
+    "date": "2026-10-16",
+    "artist": "Babyfxce E",
+    "title": "The X Tape 2",
+    "id": "6818634785",
+    "itunes": {
+     "collectionId": 1732786854,
+     "artistName": "Babyfxce E",
+     "collectionName": "The X Tape (Deluxe)",
+     "releaseDate": "2023-10-05T07:00:00Z",
+     "trackCount": 21,
+     "primaryGenreName": "Hip-Hop/Rap",
+     "collectionExplicitness": "cleaned",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/32/a4/73/32a4736b-58d1-8f37-f412-fcc27287ab3e/075679661395.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/the-x-tape-deluxe/1732786854"
+    }
+   },
+   {
+    "date": "2026-09-25",
+    "artist": "Tinashe",
+    "title": "Popstar",
+    "id": "6789739137"
+   },
+   {
+    "date": "2026-10-16",
+    "artist": "Gucci Mane",
+    "title": "Against All Odds",
+    "id": "6821161926",
+    "itunes": {
+     "collectionId": 6822478641,
+     "artistName": "Gucci Mane",
+     "collectionName": "Against All Odds",
+     "releaseDate": "2026-10-15T07:00:00Z",
+     "trackCount": 17,
+     "primaryGenreName": "Hip-Hop/Rap",
+     "collectionExplicitness": "cleaned",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/f8/27/95/f8279501-2279-a3d9-1416-81b83f13e326/075679559166.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/against-all-odds/6822478641"
+    }
+   },
+   {
+    "date": "2026-10-21",
+    "artist": "FullyChop",
+    "title": "99 Overall",
+    "id": "6817561215",
+    "itunes": null
+   },
+   {
+    "date": "2026-09-11",
+    "artist": "EST Gee",
+    "title": "BIGGER THAN THE DEVIL",
+    "id": "6810900350"
+   },
+   {
+    "date": "2026-09-18",
+    "artist": "Riley Green",
+    "title": "That's Just Me",
+    "id": "6770725355"
+   },
+   {
+    "date": "2026-10-16",
+    "artist": "Lucky Daye",
+    "title": "ALOUD!",
+    "id": "6815831824",
+    "itunes": null
+   },
+   {
+    "date": "2026-10-09",
+    "artist": "DDG",
+    "title": "HIT-A-THON (Deluxe)",
+    "id": "6820716322",
+    "itunes": {
+     "collectionId": 6817146375,
+     "artistName": "DDG",
+     "collectionName": "HIT-A-THON",
+     "releaseDate": "2026-09-24T07:00:00Z",
+     "trackCount": 15,
+     "primaryGenreName": "Hip-Hop/Rap",
+     "collectionExplicitness": "cleaned",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/a8/7f/ce/a87fceca-b4db-7c8c-0315-397712953f89/196874835692.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/hit-a-thon/6817146375"
+    }
+   },
+   {
+    "date": "2026-10-16",
+    "artist": "Ashe",
+    "title": "The Girl Of Your Dreams",
+    "id": "6805240956",
+    "itunes": null
+   },
+   {
+    "date": "2026-11-19",
+    "artist": "Various Artists",
+    "title": "Grand Theft Auto VI: The Album",
+    "id": "6812476961",
+    "itunes": {
+     "collectionId": 1655223658,
+     "artistName": "Various Artists",
+     "collectionName": "Grand Theft Auto IV — the Theme Song Collection - EP",
+     "releaseDate": "2010-04-13T07:00:00Z",
+     "trackCount": 4,
+     "primaryGenreName": "Soundtrack",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/66/57/ef/6657ef3a-8e22-f8a5-b518-830c71c0decf/859703416911.png/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/grand-theft-auto-iv-the-theme-song-collection-ep/1655223658"
+    }
+   },
+   {
+    "date": "2026-10-14",
+    "artist": "Dei V",
+    "title": "Flavorz Pack",
+    "id": "6820239289",
+    "itunes": null
+   },
+   {
+    "date": "2026-10-24",
+    "artist": "Victor Mendivil",
+    "title": "No Hay Ángeles Aquí",
+    "id": "6818554554",
+    "itunes": null
+   },
+   {
+    "date": "2026-09-18",
+    "artist": "Hunxho",
+    "title": "I Quit Rap",
+    "id": "6811156679"
+   },
+   {
+    "date": "2026-10-02",
+    "artist": "Victoria Monét",
+    "title": "Frequency Of Love",
+    "id": "6791645195",
+    "itunes": null
+   },
+   {
+    "date": "2026-10-09",
+    "artist": "Troye Sivan",
+    "title": "She’s the Best",
+    "id": "6820298773",
+    "itunes": null
+   },
+   {
+    "date": "2026-10-16",
+    "artist": "Fredo Bang",
+    "title": "Laugh Now Cry Later",
+    "id": "6815007772",
+    "itunes": {
+     "collectionId": 6822540419,
+     "artistName": "Fredo Bang",
+     "collectionName": "Laugh Now Cry Later",
+     "releaseDate": "2026-10-16T07:00:00Z",
+     "trackCount": 13,
+     "primaryGenreName": "Hip-Hop/Rap",
+     "collectionExplicitness": "cleaned",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/ec/67/d4/ec67d4f6-015c-3ea5-3804-bf31fbbd01a8/199316821796_cover.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/laugh-now-cry-later/6822540419"
+    }
+   },
+   {
+    "date": "2026-09-25",
+    "artist": "Tee Grizzley",
+    "title": "They Forgot",
+    "id": "6801309650"
+   }
+  ],
   "metacritic_soon": [],
   "wikipedia": [],
   "kpop": [
@@ -6552,9 +6807,5 @@
    "publisher": ""
   }
  ],
- "errors": [
-  "douban movie 36424371: <urlopen error _ssl.c:993: The handshake operation timed out>",
-  "douban movie 35244246: <urlopen error _ssl.c:993: The handshake operation timed out>",
-  "apple rss: HTTP Error 502: Bad Gateway"
- ]
+ "errors": []
 }
