@@ -364,7 +364,7 @@ release-calendar/
 ├─ .github/workflows/
 │  ├─ daily-scores.yml     每日数据刷新，实际变化才提交
 │  ├─ check-images.yml     手动图片检查
-│  └─ monthly-prep.yml     每月 1 日滚动窗口、准备候选数据（§10）
+│  └─ monthly-prep.yml     每月 1 日、15 日滚动窗口并准备候选数据（§10）
 ├─ .nojekyll               GitHub Pages 静态资源标记
 └─ HANDOVER.md             本文
 ```
@@ -419,8 +419,10 @@ release-calendar/
 
 北京时间每月 1 日 09:00 保留上月已发布清单，重新整理本月与下月，游戏、电影和音乐都要整理（游戏按 §4、音乐按 §4A、电影按 §4B）。2026-10-18 起分两步，用户确认：
 
-1. **GitHub Actions 准备**（`.github/workflows/monthly-prep.yml` → `scripts/monthly_prep.py`，每月 1 日 00:05 北京时间，也可手动触发）：只做不需要判断的事——把三份 JSON 滚动到新的三个月窗口（去掉过期月份、补空的新下月，已有条目不动），并把候选数据写进 `candidates/latest.json`：豆瓣上映 / 即将上映（想看、评分人数、类型、日期，单片详情请求间隔 3.5 秒）、热度过线电影的海报（`candidates/posters/`，豆瓣防盗链所以先下好）、Apple Music 美区热门专辑、Metacritic 即将发行、Wikipedia「List of <年> albums」「<年> in South Korean music」「<年> in video games」，以及本月和下月音乐候选的 iTunes 查询（流派、曲目数、600px 封面、国区链接）。任何来源失败都记进 `errors`，其他照常。它从不决定收录哪部作品。
+1. **GitHub Actions 准备**（`.github/workflows/monthly-prep.yml` → `scripts/monthly_prep.py`，每月 1 日和 15 日 00:05 北京时间，也可手动触发）：只做不需要判断的事——把三份 JSON 滚动到新的三个月窗口（去掉过期月份、补空的新下月，已有条目不动），并把候选数据写进 `candidates/latest.json`：豆瓣上映 / 即将上映（想看、评分人数、类型、日期，单片详情请求间隔 3.5 秒）、热度过线电影的海报（`candidates/posters/`，豆瓣防盗链所以先下好）、Apple Music 美区热门专辑、Metacritic 即将发行、Wikipedia「List of <年> albums」「<年> in South Korean music」「<年> in video games」，以及本月和下月音乐候选的 iTunes 查询（流派、曲目数、600px 封面、国区链接）。任何来源失败都记进 `errors`，其他照常。它从不决定收录哪部作品。
 2. **Claude 定时任务挑选**（claude.ai 里的「Release Calendar 每月名单整理」，每月 1 日 08:52 北京时间，在云端运行，不需要用户电脑开机）：读 `candidates/latest.json`，按 §4 / §4A / §4B 挑选并补齐字段，选中电影的海报从 `candidates/posters/` 移进 `img/`，用不到的海报删掉；候选数据不够时用 WebFetch 补查。
+
+3. **每月 15 日中途更新**（2026-10-23 用户要求，因为不少下月作品在月中前后才公布发售日）：monthly-prep 在 15 日 00:05 同样运行（窗口不变，只重新生成候选数据），Claude 的第二个定时任务「Release Calendar 月中名单更新」在 15 日 08:52 运行。只核对本月和下月：补上新定档、新过线的作品，改正延期或取消的，不动上月，不从头重排。
 
 仓库里没有能自己挑作品的程序，也不要加。页脚写的是「每月初更新」，不代表有自动调度。
 
