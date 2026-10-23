@@ -396,7 +396,7 @@ release-calendar/
 
 ### 评分和 Steam 现价：`.github/workflows/daily-scores.yml`
 
-计划时间每天 UTC 10:00（北京时间 18:00），也可手动 `workflow_dispatch`。scheduled run 经常晚点，不要向用户承诺每天 18:00 一定更新完。
+计划时间每天两次：UTC 00:00 和 10:00（北京时间 08:00 和 18:00，2026-10-23 用户同意从每天一次改成两次，因为大作的评分常在发售前一天才出，一天一次会空档近一天），也可手动 `workflow_dispatch`。scheduled run 经常晚点（实测晚 1～7 小时），不要向用户承诺固定时间一定更新完。
 
 用 Python 3.12 跑 `scripts/update_scores.py`，前后各跑一次 `check_data.py`。只有 `releases.json` 或 `movies.json` 真有变化才提交并推 `main`（音乐不刷新），提交说明是「自动更新评分和 Steam 价格」。用仓库 `GITHUB_TOKEN`，不需要私人 token。
 

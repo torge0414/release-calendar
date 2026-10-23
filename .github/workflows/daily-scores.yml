@@ -2,7 +2,8 @@ name: Daily score and Steam price update
 
 on:
   schedule:
-    # 18:00 China Standard Time (UTC+8)
+    # 08:00 and 18:00 China Standard Time (UTC+8); twice a day so new scores show up sooner
+    - cron: "0 0 * * *"
     - cron: "0 10 * * *"
   workflow_dispatch:
 
