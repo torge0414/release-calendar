@@ -317,7 +317,19 @@ def collect_music(months, errors) -> dict:
         errors.append(f"metacritic coming soon: {exc}")
     for year in sorted({y for y, _ in months}):
         try:
-            for r in wiki_rows(f"List of {year} albums"):
+            # 2026-11 起 Wikipedia 把年度专辑列表拆成上下半年两个子页面，主页面只剩链接
+            rows = []
+            for part in (f"List of {year} albums (January–June)", f"List of {year} albums (July–December)"):
+                try:
+                    rows += wiki_rows(part)
+                except HTTPError as exc:
+                    if exc.code != 404:
+                        raise
+            if not rows:
+                rows = wiki_rows(f"List of {year} albums")
+            if not rows:
+                errors.append(f"wikipedia albums {year}: no table rows parsed")
+            for r in rows:
                 c = r["cells"]
                 if len(c) < 4 or c[1] in ("Artist", "Artist(s)"):
                     continue
@@ -346,8 +358,6 @@ def collect_music(months, errors) -> dict:
             if src == "apple_top":
                 ym = (int(it["date"][:4]), int(it["date"][5:7]))
             if ym is not None and ym not in upcoming:
-                continue
-            if src == "wikipedia" and not it["album_has_article"]:
                 continue
             key = norm(it["artist"]) + "|" + norm(it["title"])
             if key in seen:
