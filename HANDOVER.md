@@ -127,6 +127,12 @@ GPT 和 Claude 两位 agent 都是项目负责人，地位对等，不设单一�
 - **《塞尔达传说 时之笛》2026 重制版**：Nintendo 官方明确说明为完全重制版，不是旧作移植。[Nintendo 商品页](https://ec.nintendo.com/HK/zh/titles/70010000130795)
 - 11 月其余保留《Football Manager 27》和《Grand Theft Auto VI》。
 
+2026-11-01 月度整理（Claude）：
+
+- 12 月加入 **DRAGON QUEST MONSTERS: The Withered World**（日版名「ドラゴンクエストモンスターズ４」，系列新作，[Steam 3681610](https://store.steampowered.com/app/3681610/)，PS 香港 12-03 00:00）和 **Warhammer 40,000: Dawn of War IV**（系列正统续作，70+ 关战役，[Steam 2272360](https://store.steampowered.com/app/2272360/)）。Steam 国区价当时没取到，留空等每日任务刷新。
+- 暂不收、等用户决定：Attack on Titan 3（12-10，动画授权衍生系列，Steam 页面还没写日期）、Rayman Legends Retold（12-03，官方说法是「reimagining」，没写 remake / remaster，分不清是不是重制）、Professor Layton and the New World of Steam（12-10 见于新闻，Steam / PS / Nintendo 香港都没找到商店条目）。
+- 不收：Cronos: Lazarus（约 9.99 美元的剧情 DLC，体量不够大型扩展）、Stronghold 4（12-07 是抢先体验）、Path of Exile 2 1.0（2024-12 已抢先体验发售）、Azur Promilia、Petit Planet（免费手游 / PC，无 Steam 条目）。
+
 ## 4A. 音乐收录口径
 
 2026-10-15 用户确认：只收**女歌手和女团**——**欧美主流女歌手**（流行、嘻哈、R&B、舞曲，**不收摇滚**）和**主流 K-pop 女团、女团成员 solo**的新专辑；**男歌手、男团、男性组合都不收**（男女混合团体 ALLDAY PROJECT 暂时保留）。主流艺人的 **EP / 迷你专辑也收**（数据里记 `kind: "EP"`；分类叫「音乐」，页面不单独标注 EP）。
@@ -176,6 +182,8 @@ GPT 和 Claude 两位 agent 都是项目负责人，地位对等，不设单一�
 | Carly Rae Jepsen《Day and Night (Continued)》（10-09） | 扩充版，只保留 09-18 的原专辑 |
 | Quavo《QRÖMELIFE》 | Apple Music 写 10-01，Wikipedia 写 10-02，按商店日期 |
 | Troye Sivan《She's the Best》 | 国区 Apple Music 没有上架，`apple_url` 为空，封面用美区图 |
+| 2026-11-01 加入 | CHAERYEONG《Lovesick》（11-09，ITZY 成员 solo 迷你专辑，国区未上架）、Snoh Aalegra《Legendary Love》（11-13，R&B，《Temporary Highs in the Violet Skies》Billboard 200 第 24） |
+| 2026-11-01 暂不收 | Dove Cameron《FINAL GIRL》（11-06，「Boyfriend」美国第 16，合格，但 iTunes 搜索没匹配到、封面还是占位图，月中复查）、Slayyyter《wor$t man in america》（12-04，Apple Music 只有和旧专辑合并的 23 首版本）、NAYEON《NA-sty》（单曲专辑）、Eliza Rose《ARCADIA: PLEASUREDOME》（Apple Music 是 09-10 发行）、Blu DeTiger、Tove Styrke（无英美前 40） |
 
 ## 4B. 电影收录口径
 
@@ -419,7 +427,7 @@ release-calendar/
 
 北京时间每月 1 日 09:00 保留上月已发布清单，重新整理本月与下月，游戏、电影和音乐都要整理（游戏按 §4、音乐按 §4A、电影按 §4B）。2026-10-18 起分两步，用户确认：
 
-1. **GitHub Actions 准备**（`.github/workflows/monthly-prep.yml` → `scripts/monthly_prep.py`，每月 1 日和 15 日 00:05 北京时间，也可手动触发）：只做不需要判断的事——把三份 JSON 滚动到新的三个月窗口（去掉过期月份、补空的新下月，已有条目不动），并把候选数据写进 `candidates/latest.json`：豆瓣上映 / 即将上映（想看、评分人数、类型、日期，单片详情请求间隔 3.5 秒）、热度过线电影的海报（`candidates/posters/`，豆瓣防盗链所以先下好）、Apple Music 美区热门专辑、Metacritic 即将发行、Wikipedia「List of <年> albums」「<年> in South Korean music」「<年> in video games」，以及本月和下月音乐候选的 iTunes 查询（流派、曲目数、600px 封面、国区链接）。任何来源失败都记进 `errors`，其他照常。它从不决定收录哪部作品。
+1. **GitHub Actions 准备**（`.github/workflows/monthly-prep.yml` → `scripts/monthly_prep.py`，每月 1 日和 15 日 00:05 北京时间，也可手动触发）：只做不需要判断的事——把三份 JSON 滚动到新的三个月窗口（去掉过期月份、补空的新下月，已有条目不动），并把候选数据写进 `candidates/latest.json`：豆瓣上映 / 即将上映（想看、评分人数、类型、日期，单片详情请求间隔 3.5 秒）、热度过线电影的海报（`candidates/posters/`，豆瓣防盗链所以先下好）、Apple Music 美区热门专辑、Metacritic 即将发行、Wikipedia「List of <年> albums」「<年> in South Korean music」「<年> in video games」，以及本月和下月音乐候选的 iTunes 查询（流派、曲目数、600px 封面、国区链接）。任何来源失败都记进 `errors`，其他照常。Wikipedia 2026 年专辑列表 2026-11 起拆成「(January–June)」「(July–December)」两个子页面，脚本已改读子页面，并给所有本月 / 下月条目查 iTunes（不再只查有词条的专辑）。它从不决定收录哪部作品。
 2. **Claude 定时任务挑选**（claude.ai 里的「Release Calendar 每月名单整理」，每月 1 日 08:52 北京时间，在云端运行，不需要用户电脑开机）：读 `candidates/latest.json`，按 §4 / §4A / §4B 挑选并补齐字段，选中电影的海报从 `candidates/posters/` 移进 `img/`，用不到的海报删掉；候选数据不够时用 WebFetch 补查。
 
 3. **每月 15 日中途更新**（2026-10-23 用户要求，因为不少下月作品在月中前后才公布发售日）：monthly-prep 在 15 日 00:05 同样运行（窗口不变，只重新生成候选数据），Claude 的第二个定时任务「Release Calendar 月中名单更新」在 15 日 08:52 运行。只核对本月和下月：补上新定档、新过线的作品，改正延期或取消的，不动上月，不从头重排。
