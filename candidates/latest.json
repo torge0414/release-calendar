@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-01 03:44:46",
+ "generated_at": "2026-11-01 09:06:08",
  "window": [
   {
    "year": 2026,
@@ -20,7 +20,7 @@
    "title": "梦寻苏毗女儿国",
    "list": "movie_soon",
    "release_hint": "11.03",
-   "wish": 438,
+   "wish": 440,
    "score": 0,
    "votes": 0,
    "pubdate": "2026-11-03(中国大陆)",
@@ -51,7 +51,7 @@
    "title": "白衣逆行者",
    "list": "movie_soon",
    "release_hint": "11.06",
-   "wish": 1979,
+   "wish": 1980,
    "score": 0,
    "votes": 0,
    "pubdate": "2026-11-06(中国大陆)",
@@ -82,7 +82,7 @@
    "title": "珠穆朗玛：云中彼岸",
    "list": "movie_soon",
    "release_hint": "11.06",
-   "wish": 1906,
+   "wish": 1914,
    "score": 0,
    "votes": 0,
    "pubdate": "2026-11-06(中国大陆)",
@@ -105,7 +105,7 @@
     "吉姆·莫里森",
     "希拉里·尼尔森"
    ],
-   "comments": 43,
+   "comments": 50,
    "null_rating_reason": "暂无评分",
    "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2936876483.jpg",
    "in_window": true,
@@ -116,7 +116,7 @@
    "title": "戴帽子的猫",
    "list": "movie_soon",
    "release_hint": "11.06",
-   "wish": 1035,
+   "wish": 1036,
    "score": 0,
    "votes": 0,
    "pubdate": "2026-11-06(中国大陆)",
@@ -213,7 +213,7 @@
    "title": "我们仅有一次的人生",
    "list": "movie_soon",
    "release_hint": "11.07",
-   "wish": 10333,
+   "wish": 10340,
    "score": 0,
    "votes": 0,
    "pubdate": "2026-11-07(中国大陆)",
@@ -245,7 +245,7 @@
    "title": "心迷宫之三重罪",
    "list": "movie_soon",
    "release_hint": "11.07",
-   "wish": 1033,
+   "wish": 1044,
    "score": 0,
    "votes": 0,
    "pubdate": "2026-11-07(中国大陆)",
@@ -266,7 +266,7 @@
     "杜光祎",
     "顾鑫"
    ],
-   "comments": 29,
+   "comments": 30,
    "null_rating_reason": "尚未上映",
    "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2937022178.jpg",
    "in_window": true,
@@ -277,7 +277,7 @@
    "title": "乡归",
    "list": "movie_soon",
    "release_hint": "11.07",
-   "wish": 518,
+   "wish": 519,
    "score": 0,
    "votes": 0,
    "pubdate": "2026-11-07(中国大陆)",
@@ -308,7 +308,7 @@
    "title": "清气满乾坤",
    "list": "movie_soon",
    "release_hint": "11.08",
-   "wish": 97,
+   "wish": 98,
    "score": 0,
    "votes": 0,
    "pubdate": "2026-11-08(中国大陆)",
@@ -340,7 +340,7 @@
    "title": "夫妻一场",
    "list": "movie_soon",
    "release_hint": "11.13",
-   "wish": 957,
+   "wish": 961,
    "score": 0,
    "votes": 0,
    "pubdate": "2026-11-13(中国大陆)",
@@ -398,7 +398,7 @@
    "title": "霹雳英雄：素还真",
    "list": "movie_soon",
    "release_hint": "11.20",
-   "wish": 612,
+   "wish": 613,
    "score": 6.8,
    "votes": 917,
    "pubdate": "2026-11-20(中国大陆)",
@@ -464,7 +464,7 @@
    "title": "魔法秘境",
    "list": "movie_soon",
    "release_hint": "11.27",
-   "wish": 1956,
+   "wish": 1962,
    "score": 0,
    "votes": 0,
    "pubdate": "2026-11-27(中国大陆)",
@@ -499,7 +499,7 @@
    "title": "时间里的爱人",
    "list": "movie_soon",
    "release_hint": "11.28",
-   "wish": 8907,
+   "wish": 8914,
    "score": 6.4,
    "votes": 5470,
    "pubdate": "2026-11-28(中国大陆)",
@@ -533,7 +533,7 @@
    "title": "复仇者联盟5",
    "list": "movie_soon",
    "release_hint": "12.16",
-   "wish": 91515,
+   "wish": 91522,
    "score": 0,
    "votes": 0,
    "pubdate": "2026-12-16(中国大陆)",
@@ -568,7 +568,7 @@
    "title": "沙丘3",
    "list": "movie_soon",
    "release_hint": "12.31",
-   "wish": 79753,
+   "wish": 79761,
    "score": 0,
    "votes": 0,
    "pubdate": "2026-12-31(中国大陆)",
@@ -634,7 +634,7 @@
    "title": "狼牙行动",
    "list": "movie_soon",
    "release_hint": "12.31",
-   "wish": 154,
+   "wish": 153,
    "score": 0,
    "votes": 0,
    "pubdate": "2026-12-31(中国大陆)",
@@ -668,7 +668,7 @@
    "release_hint": "10.23",
    "wish": null,
    "score": 8.9,
-   "votes": 23574,
+   "votes": 23609,
    "pubdate": "2026-10-23(中国大陆)",
    "mainland_date": "2026-10-23",
    "year": "2025",
@@ -686,7 +686,7 @@
     "哈南·莫特韦",
     "哈南·优素福"
    ],
-   "comments": 12104,
+   "comments": 12117,
    "null_rating_reason": "",
    "poster_url": "https://img9.doubanio.com/view/photo/m_ratio_poster/public/p2935834896.jpg",
    "in_window": true,
@@ -700,7 +700,7 @@
    "release_hint": "10.30",
    "wish": null,
    "score": 7.8,
-   "votes": 265855,
+   "votes": 265919,
    "pubdate": "2026-10-30(中国大陆)",
    "mainland_date": "2026-10-30",
    "year": "2014",
@@ -720,7 +720,7 @@
     "迈克尔·恩奎斯特",
     "阿尔菲·艾伦"
    ],
-   "comments": 67866,
+   "comments": 67885,
    "null_rating_reason": "",
    "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2936502228.jpg",
    "in_window": true,
@@ -734,7 +734,7 @@
    "release_hint": "10.30",
    "wish": null,
    "score": 8.5,
-   "votes": 243394,
+   "votes": 243420,
    "pubdate": "2026-10-30(中国大陆)",
    "mainland_date": "2026-10-30",
    "year": "1992",
@@ -754,7 +754,7 @@
     "林青霞",
     "关之琳"
    ],
-   "comments": 51915,
+   "comments": 51924,
    "null_rating_reason": "",
    "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2936705828.jpg",
    "in_window": true,
@@ -796,7 +796,7 @@
    "release_hint": "10.05",
    "wish": null,
    "score": 7.3,
-   "votes": 210664,
+   "votes": 210739,
    "pubdate": "2026-10-05(中国大陆)",
    "mainland_date": "2026-10-05",
    "year": "2026",
@@ -818,7 +818,7 @@
     "扎克·切利",
     "卡莉·瑞斯"
    ],
-   "comments": 94535,
+   "comments": 94558,
    "null_rating_reason": "",
    "poster_url": "https://img2.doubanio.com/view/photo/m_ratio_poster/public/p2936442661.jpg",
    "in_window": true,
@@ -832,7 +832,7 @@
    "release_hint": "09.25",
    "wish": null,
    "score": 6.0,
-   "votes": 15910,
+   "votes": 15953,
    "skipped": "release month outside window",
    "heat_ok": true
   },
@@ -843,9 +843,30 @@
    "release_hint": "10.01",
    "wish": null,
    "score": 6.7,
-   "votes": 87740,
-   "skipped": "douban rate limit",
-   "heat_ok": true
+   "votes": 87777,
+   "pubdate": "2026-10-01(中国大陆)",
+   "mainland_date": "2026-10-01",
+   "year": "2026",
+   "genres": [
+    "犯罪"
+   ],
+   "countries": [
+    "中国大陆"
+   ],
+   "directors": [
+    "陈思诚"
+   ],
+   "actors": [
+    "张译",
+    "马丽",
+    "陈明昊"
+   ],
+   "comments": 40546,
+   "null_rating_reason": "",
+   "poster_url": "https://img2.doubanio.com/view/photo/m_ratio_poster/public/p2935867001.jpg",
+   "in_window": true,
+   "heat_ok": true,
+   "poster_file": "img/movie_37247814.jpg"
   },
   {
    "sid": "37344902",
@@ -853,9 +874,31 @@
    "list": "movie_showing",
    "release_hint": "10.24",
    "wish": null,
-   "score": null,
-   "votes": null,
-   "skipped": "douban rate limit / detail cap",
+   "score": 0,
+   "votes": 0,
+   "pubdate": "2026-10-24(中国大陆)",
+   "mainland_date": "2026-10-24",
+   "year": "2026",
+   "genres": [
+    "喜剧",
+    "动画"
+   ],
+   "countries": [
+    "英国"
+   ],
+   "directors": [
+    "史蒂夫·考克斯",
+    "马修·沃克"
+   ],
+   "actors": [
+    "贾斯汀·弗莱彻",
+    "约翰·斯帕克斯",
+    "尼娜·索珊娅"
+   ],
+   "comments": 2178,
+   "null_rating_reason": "暂无评分",
+   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2936509282.jpg",
+   "in_window": true,
    "heat_ok": false
   },
   {
@@ -864,9 +907,31 @@
    "list": "movie_showing",
    "release_hint": "10.23",
    "wish": null,
-   "score": null,
-   "votes": null,
-   "skipped": "douban rate limit / detail cap",
+   "score": 0,
+   "votes": 0,
+   "pubdate": "2026-10-23(中国大陆)",
+   "mainland_date": "2026-10-23",
+   "year": "2026",
+   "genres": [
+    "剧情",
+    "惊悚",
+    "犯罪"
+   ],
+   "countries": [
+    "中国大陆"
+   ],
+   "directors": [
+    "李锐"
+   ],
+   "actors": [
+    "朱正廷",
+    "蒋梦婕",
+    "黄璐"
+   ],
+   "comments": 5149,
+   "null_rating_reason": "暂无评分",
+   "poster_url": "https://img9.doubanio.com/view/photo/m_ratio_poster/public/p2936706806.jpg",
+   "in_window": true,
    "heat_ok": false
   },
   {
@@ -876,8 +941,28 @@
    "release_hint": "10.13",
    "wish": null,
    "score": 7.2,
-   "votes": 4536,
-   "skipped": "douban rate limit / detail cap",
+   "votes": 4541,
+   "pubdate": "2026-10-13(中国大陆)",
+   "mainland_date": "2026-10-13",
+   "year": "2025",
+   "genres": [
+    "剧情"
+   ],
+   "countries": [
+    "中国大陆"
+   ],
+   "directors": [
+    "岗珍"
+   ],
+   "actors": [
+    "次仁央金",
+    "次吉美朵",
+    "泽仁顿珠"
+   ],
+   "comments": 2703,
+   "null_rating_reason": "",
+   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2936207450.jpg",
+   "in_window": true,
    "heat_ok": false
   },
   {
@@ -887,7 +972,7 @@
    "release_hint": "08.19",
    "wish": null,
    "score": 7.2,
-   "votes": 201655,
+   "votes": 201849,
    "skipped": "release month outside window",
    "heat_ok": true
   },
@@ -898,9 +983,31 @@
    "release_hint": "10.01",
    "wish": null,
    "score": 6.3,
-   "votes": 28180,
-   "skipped": "douban rate limit / detail cap",
-   "heat_ok": true
+   "votes": 28188,
+   "pubdate": "2026-10-01(中国大陆)",
+   "mainland_date": "2026-10-01",
+   "year": "2026",
+   "genres": [
+    "喜剧",
+    "家庭"
+   ],
+   "countries": [
+    "中国大陆"
+   ],
+   "directors": [
+    "沈春阳"
+   ],
+   "actors": [
+    "小沈阳",
+    "沈春阳",
+    "贾冰"
+   ],
+   "comments": 14106,
+   "null_rating_reason": "",
+   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2936493940.jpg",
+   "in_window": true,
+   "heat_ok": true,
+   "poster_file": "img/movie_37667015.jpg"
   },
   {
    "sid": "36828393",
@@ -909,7 +1016,7 @@
    "release_hint": "09.30",
    "wish": null,
    "score": 7.3,
-   "votes": 23900,
+   "votes": 23905,
    "skipped": "release month outside window",
    "heat_ok": true
   },
@@ -920,9 +1027,31 @@
    "release_hint": "10.03",
    "wish": null,
    "score": 6.5,
-   "votes": 20388,
-   "skipped": "douban rate limit / detail cap",
-   "heat_ok": true
+   "votes": 20387,
+   "pubdate": "2026-10-03(中国大陆)",
+   "mainland_date": "2026-10-03",
+   "year": "2026",
+   "genres": [
+    "动作",
+    "犯罪"
+   ],
+   "countries": [
+    "中国大陆"
+   ],
+   "directors": [
+    "马浴柯"
+   ],
+   "actors": [
+    "梁洛施",
+    "文俊辉",
+    "洪金宝"
+   ],
+   "comments": 12763,
+   "null_rating_reason": "",
+   "poster_url": "https://img2.doubanio.com/view/photo/m_ratio_poster/public/p2936087801.jpg",
+   "in_window": true,
+   "heat_ok": true,
+   "poster_file": "img/movie_37403222.jpg"
   },
   {
    "sid": "35840408",
@@ -931,7 +1060,7 @@
    "release_hint": "09.25",
    "wish": null,
    "score": 4.6,
-   "votes": 11137,
+   "votes": 11149,
    "skipped": "release month outside window",
    "heat_ok": true
   },
@@ -941,9 +1070,31 @@
    "list": "movie_showing",
    "release_hint": "10.30",
    "wish": null,
-   "score": null,
-   "votes": null,
-   "skipped": "douban rate limit / detail cap",
+   "score": 0,
+   "votes": 0,
+   "pubdate": "2026-10-30(中国大陆)",
+   "mainland_date": "2026-10-30",
+   "year": "2026",
+   "genres": [
+    "悬疑",
+    "惊悚",
+    "恐怖"
+   ],
+   "countries": [
+    "中国大陆"
+   ],
+   "directors": [
+    "徐俊"
+   ],
+   "actors": [
+    "何雨宸",
+    "傅天",
+    "黄城"
+   ],
+   "comments": 30,
+   "null_rating_reason": "暂无评分",
+   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2936098118.jpg",
+   "in_window": true,
    "heat_ok": false
   },
   {
@@ -952,9 +1103,31 @@
    "list": "movie_showing",
    "release_hint": "10.31",
    "wish": null,
-   "score": null,
-   "votes": null,
-   "skipped": "douban rate limit / detail cap",
+   "score": 0,
+   "votes": 0,
+   "pubdate": "2026-10-31(中国大陆)",
+   "mainland_date": "2026-10-31",
+   "year": "2026",
+   "genres": [
+    "悬疑",
+    "惊悚",
+    "恐怖"
+   ],
+   "countries": [
+    "中国大陆"
+   ],
+   "directors": [
+    "宋小君"
+   ],
+   "actors": [
+    "胡连馨",
+    "高维蔓",
+    "蒋昀霖"
+   ],
+   "comments": 44,
+   "null_rating_reason": "暂无评分",
+   "poster_url": "https://img9.doubanio.com/view/photo/m_ratio_poster/public/p2937022135.jpg",
+   "in_window": true,
    "heat_ok": false
   },
   {
@@ -964,9 +1137,32 @@
    "release_hint": "10.16",
    "wish": null,
    "score": 6.1,
-   "votes": 7317,
-   "skipped": "douban rate limit / detail cap",
-   "heat_ok": true
+   "votes": 7322,
+   "pubdate": "2026-10-16(中国大陆)",
+   "mainland_date": "2026-10-16",
+   "year": "2026",
+   "genres": [
+    "剧情",
+    "惊悚",
+    "冒险"
+   ],
+   "countries": [
+    "美国"
+   ],
+   "directors": [
+    "布莱恩·达菲尔德"
+   ],
+   "actors": [
+    "奥斯汀·艾布拉姆斯",
+    "乔什·布洛林",
+    "伊丽莎白·苏"
+   ],
+   "comments": 4072,
+   "null_rating_reason": "",
+   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2935800697.jpg",
+   "in_window": true,
+   "heat_ok": true,
+   "poster_file": "img/movie_36806762.jpg"
   },
   {
    "sid": "37450627",
@@ -975,7 +1171,7 @@
    "release_hint": "07.24",
    "wish": null,
    "score": 7.6,
-   "votes": 299021,
+   "votes": 299094,
    "skipped": "release month outside window",
    "heat_ok": true
   },
@@ -986,7 +1182,7 @@
    "release_hint": "09.05",
    "wish": null,
    "score": 6.8,
-   "votes": 12455,
+   "votes": 12477,
    "skipped": "release month outside window",
    "heat_ok": true
   },
@@ -997,9 +1193,30 @@
    "release_hint": "10.01",
    "wish": null,
    "score": 6.9,
-   "votes": 15028,
-   "skipped": "douban rate limit / detail cap",
-   "heat_ok": true
+   "votes": 15029,
+   "pubdate": "2026-10-01(中国大陆)",
+   "mainland_date": "2026-10-01",
+   "year": "2026",
+   "genres": [
+    "剧情"
+   ],
+   "countries": [
+    "中国大陆"
+   ],
+   "directors": [
+    "罗冬"
+   ],
+   "actors": [
+    "闫妮",
+    "叶童",
+    "倪虹洁"
+   ],
+   "comments": 8616,
+   "null_rating_reason": "",
+   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2935643598.jpg",
+   "in_window": true,
+   "heat_ok": true,
+   "poster_file": "img/movie_37899051.jpg"
   },
   {
    "sid": "36464801",
@@ -1007,9 +1224,30 @@
    "list": "movie_showing",
    "release_hint": "10.23",
    "wish": null,
-   "score": null,
-   "votes": null,
-   "skipped": "douban rate limit / detail cap",
+   "score": 0,
+   "votes": 0,
+   "pubdate": "2026-10-23(中国大陆)",
+   "mainland_date": "2026-10-23",
+   "year": "2026",
+   "genres": [
+    "纪录片"
+   ],
+   "countries": [
+    "中国大陆",
+    "新加坡"
+   ],
+   "directors": [
+    "顾瑜瑾"
+   ],
+   "actors": [
+    "杰克糖",
+    "阿宝",
+    "陈育兵"
+   ],
+   "comments": 776,
+   "null_rating_reason": "暂无评分",
+   "poster_url": "https://img9.doubanio.com/view/photo/m_ratio_poster/public/p2936862384.jpg",
+   "in_window": true,
    "heat_ok": false
   },
   {
@@ -1019,7 +1257,7 @@
    "release_hint": "08.11",
    "wish": null,
    "score": 8.7,
-   "votes": 780592,
+   "votes": 780646,
    "skipped": "release month outside window",
    "heat_ok": true
   },
@@ -1030,7 +1268,7 @@
    "release_hint": "08.14",
    "wish": null,
    "score": 8.6,
-   "votes": 572279,
+   "votes": 572308,
    "skipped": "release month outside window",
    "heat_ok": true
   },
@@ -1040,9 +1278,30 @@
    "list": "movie_showing",
    "release_hint": "10.20",
    "wish": null,
-   "score": null,
-   "votes": null,
-   "skipped": "douban rate limit / detail cap",
+   "score": 0,
+   "votes": 0,
+   "pubdate": "2026-10-20(中国大陆)",
+   "mainland_date": "2026-10-20",
+   "year": "2026",
+   "genres": [
+    "剧情",
+    "儿童"
+   ],
+   "countries": [
+    "中国大陆"
+   ],
+   "directors": [
+    "邵兵"
+   ],
+   "actors": [
+    "王砚辉",
+    "李浩菲",
+    "徐越"
+   ],
+   "comments": 183,
+   "null_rating_reason": "暂无评分",
+   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2936503109.jpg",
+   "in_window": true,
    "heat_ok": false
   },
   {
@@ -1052,8 +1311,27 @@
    "release_hint": "10.01",
    "wish": null,
    "score": 6.3,
-   "votes": 1836,
-   "skipped": "douban rate limit / detail cap",
+   "votes": 1839,
+   "pubdate": "2026-10-01(中国大陆)",
+   "mainland_date": "2026-10-01",
+   "year": "2026",
+   "genres": [
+    "喜剧",
+    "动画",
+    "冒险"
+   ],
+   "countries": [
+    "中国大陆",
+    "英国"
+   ],
+   "directors": [
+    "刘源"
+   ],
+   "actors": [],
+   "comments": 1097,
+   "null_rating_reason": "",
+   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2935672158.jpg",
+   "in_window": true,
    "heat_ok": false
   },
   {
@@ -1063,7 +1341,7 @@
    "release_hint": "08.28",
    "wish": null,
    "score": 9.7,
-   "votes": 3361148,
+   "votes": 3361160,
    "skipped": "release month outside window",
    "heat_ok": true
   },
@@ -1074,7 +1352,7 @@
    "release_hint": "05.19",
    "wish": null,
    "score": 8.4,
-   "votes": 170610,
+   "votes": 170612,
    "skipped": "release month outside window",
    "heat_ok": true
   },
@@ -1085,8 +1363,29 @@
    "release_hint": null,
    "wish": null,
    "score": 8.7,
-   "votes": 76724,
-   "skipped": "douban rate limit / detail cap",
+   "votes": 76725,
+   "pubdate": "1948-09(中国大陆)",
+   "mainland_date": null,
+   "year": "1948",
+   "genres": [
+    "剧情",
+    "爱情"
+   ],
+   "countries": [
+    "中国大陆"
+   ],
+   "directors": [
+    "费穆"
+   ],
+   "actors": [
+    "李纬",
+    "韦伟",
+    "石羽"
+   ],
+   "comments": 27400,
+   "null_rating_reason": "",
+   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2029605819.jpg",
+   "in_window": false,
    "heat_ok": true
   },
   {
@@ -1096,7 +1395,7 @@
    "release_hint": "09.04",
    "wish": null,
    "score": 5.2,
-   "votes": 27750,
+   "votes": 27759,
    "skipped": "release month outside window",
    "heat_ok": true
   },
@@ -1118,8 +1417,30 @@
    "release_hint": null,
    "wish": null,
    "score": 7.8,
-   "votes": 53406,
-   "skipped": "douban rate limit / detail cap",
+   "votes": 53411,
+   "pubdate": "1984-09-07",
+   "mainland_date": null,
+   "year": "1984",
+   "genres": [
+    "剧情",
+    "悬疑",
+    "惊悚"
+   ],
+   "countries": [
+    "美国"
+   ],
+   "directors": [
+    "乔尔·科恩"
+   ],
+   "actors": [
+    "约翰·盖兹",
+    "弗兰西斯·麦克多蒙德",
+    "丹·哈达亚"
+   ],
+   "comments": 16435,
+   "null_rating_reason": "",
+   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2170091763.jpg",
+   "in_window": false,
    "heat_ok": true
   },
   {
@@ -1140,7 +1461,7 @@
    "release_hint": "02.01",
    "wish": null,
    "score": 9.0,
-   "votes": 53679,
+   "votes": 53680,
    "skipped": "release month outside window",
    "heat_ok": true
   },
@@ -1151,7 +1472,7 @@
    "release_hint": "02.15",
    "wish": null,
    "score": 8.4,
-   "votes": 38327,
+   "votes": 38335,
    "skipped": "release month outside window",
    "heat_ok": true
   },
@@ -1162,7 +1483,7 @@
    "release_hint": "09.04",
    "wish": null,
    "score": 8.7,
-   "votes": 128691,
+   "votes": 128696,
    "skipped": "release month outside window",
    "heat_ok": true
   },
@@ -1195,7 +1516,7 @@
    "release_hint": "08.05",
    "wish": null,
    "score": 6.0,
-   "votes": 53226,
+   "votes": 53228,
    "skipped": "release month outside window",
    "heat_ok": true
   },
@@ -1206,7 +1527,7 @@
    "release_hint": "09.06",
    "wish": null,
    "score": 8.5,
-   "votes": 35040,
+   "votes": 35045,
    "skipped": "release month outside window",
    "heat_ok": true
   },
@@ -1217,7 +1538,7 @@
    "release_hint": "05.15",
    "wish": null,
    "score": 7.4,
-   "votes": 21454,
+   "votes": 21456,
    "skipped": "release month outside window",
    "heat_ok": true
   },
@@ -1228,7 +1549,7 @@
    "release_hint": "09.04",
    "wish": null,
    "score": 5.6,
-   "votes": 13866,
+   "votes": 13868,
    "skipped": "release month outside window",
    "heat_ok": true
   },
@@ -1261,7 +1582,7 @@
    "release_hint": "03.24",
    "wish": null,
    "score": 8.4,
-   "votes": 25068,
+   "votes": 25069,
    "skipped": "release month outside window",
    "heat_ok": true
   },
@@ -1272,7 +1593,7 @@
    "release_hint": "07.12",
    "wish": null,
    "score": 7.7,
-   "votes": 74614,
+   "votes": 74618,
    "skipped": "release month outside window",
    "heat_ok": true
   },
@@ -1283,7 +1604,7 @@
    "release_hint": "08.28",
    "wish": null,
    "score": 6.7,
-   "votes": 3875,
+   "votes": 3874,
    "skipped": "release month outside window",
    "heat_ok": false
   },
@@ -1305,7 +1626,7 @@
    "release_hint": "08.07",
    "wish": null,
    "score": 7.5,
-   "votes": 27057,
+   "votes": 27054,
    "skipped": "release month outside window",
    "heat_ok": true
   },
@@ -1366,16 +1687,16 @@
     "id": "6825987374"
    },
    {
-    "date": "2026-10-02",
-    "artist": "NoCap",
-    "title": "Heaven on Mars",
-    "id": "6776432217"
-   },
-   {
     "date": "2026-10-30",
     "artist": "Queens of the Stone Age",
     "title": "Perfecth",
     "id": "6797444451"
+   },
+   {
+    "date": "2026-10-02",
+    "artist": "NoCap",
+    "title": "Heaven on Mars",
+    "id": "6776432217"
    },
    {
     "date": "2026-10-30",
@@ -1402,34 +1723,22 @@
     "id": "6800467151"
    },
    {
-    "date": "2026-10-22",
-    "artist": "Victor Mendivil",
-    "title": "No Hay Ángeles Aquí",
-    "id": "6818554554"
-   },
-   {
     "date": "2026-10-30",
     "artist": "Kirk Franklin",
     "title": "I Am What I Am",
     "id": "6813692585"
    },
    {
+    "date": "2026-10-22",
+    "artist": "Victor Mendivil",
+    "title": "No Hay Ángeles Aquí",
+    "id": "6818554554"
+   },
+   {
     "date": "2026-10-16",
     "artist": "LUCKI",
     "title": "Last Laugh (archive tape)",
     "id": "6821145872"
-   },
-   {
-    "date": "2026-10-24",
-    "artist": "Boosie Badazz & Webbie",
-    "title": "Back At It",
-    "id": "6824736637"
-   },
-   {
-    "date": "2026-10-30",
-    "artist": "bleood",
-    "title": "KILL YOUR IDOLS",
-    "id": "6826454370"
    },
    {
     "date": "2026-10-23",
@@ -1442,6 +1751,18 @@
     "artist": "Bally Baby",
     "title": "The Last Sipper",
     "id": "6822129015"
+   },
+   {
+    "date": "2026-10-24",
+    "artist": "Boosie Badazz & Webbie",
+    "title": "Back At It",
+    "id": "6824736637"
+   },
+   {
+    "date": "2026-10-30",
+    "artist": "bleood",
+    "title": "KILL YOUR IDOLS",
+    "id": "6826454370"
    },
    {
     "date": "2026-10-23",
@@ -1486,7 +1807,5196 @@
    }
   ],
   "metacritic_soon": [],
-  "wikipedia": [],
+  "wikipedia": [
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 1,
+    "artist": "Pabllo Vittar",
+    "title": "Lost in Lust",
+    "genre": "",
+    "label": "The Orchard",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 1,
+    "artist": "Quadeca",
+    "title": "Life 1",
+    "genre": "",
+    "label": "X8 Music",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 2,
+    "artist": "The Album Leaf",
+    "title": "A Body of Voices",
+    "genre": "",
+    "label": "Nettwerk",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 2,
+    "artist": "Amon Amarth",
+    "title": "The Allfather Awakens",
+    "genre": "",
+    "label": "Metal Blade",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 2,
+    "artist": "Blossoms",
+    "title": "Songs from the Wedding Cake",
+    "genre": "",
+    "label": "ODD SK, Distiller Records",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 2,
+    "artist": "Brymir",
+    "title": "What We Leave Behind",
+    "genre": "Melodic death metal, symphonic death metal",
+    "label": "Napalm",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 2,
+    "artist": "Butcher Babies",
+    "title": "Nightbloom",
+    "genre": "",
+    "label": "Judge & Jury",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 2,
+    "artist": "Dead Poet Society",
+    "title": "Monarch",
+    "genre": "",
+    "label": "Spinefarm",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 2,
+    "artist": "Deerhoof",
+    "title": "Divine Schism",
+    "genre": "",
+    "label": "",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 2,
+    "artist": "Dexter and the Moonrocks",
+    "title": "Friends That I Don't Like",
+    "genre": "",
+    "label": "Severance Records, Big Loud Rock",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 2,
+    "artist": "Ella Hooper",
+    "title": "Overnight Success",
+    "genre": "Ella Hooper, MGM",
+    "label": "",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 2,
+    "artist": "Escape the Fate",
+    "title": "The Last Goodbye",
+    "genre": "",
+    "label": "Big Noise",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 2,
+    "artist": "The Fall",
+    "title": "Post Script",
+    "genre": "",
+    "label": "Cog Sinister",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 2,
+    "artist": "Fat Dog",
+    "title": "Cancel Me (I'm Tired)",
+    "genre": "",
+    "label": "Domino",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 2,
+    "artist": "Gavin Adcock",
+    "title": "The Day I Hang It Up",
+    "genre": "",
+    "label": "Thrivin Here, Warner Nashville",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 2,
+    "artist": "Ghostkid",
+    "title": "Follow the White Rabbit",
+    "genre": "",
+    "label": "Century Media",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 2,
+    "artist": "Greg Freeman",
+    "title": "All Set the Bone",
+    "genre": "",
+    "label": "Transgressive, Canvasback",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 2,
+    "artist": "Imminence",
+    "title": "Axis Mundi",
+    "genre": "Metalcore",
+    "label": "Sumerian",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 2,
+    "artist": "Johnny Marr",
+    "title": "The Age of Everything",
+    "genre": "",
+    "label": "New Voodoo, BMG",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 2,
+    "artist": "Kaitlyn Aurelia Smith",
+    "title": "Ruin: It's Not Just Music",
+    "genre": "",
+    "label": "Someone Special",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 2,
+    "artist": "Kavus Torabi",
+    "title": "October by Name",
+    "genre": "",
+    "label": "Believers Roast",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 2,
+    "artist": "Kodaline",
+    "title": "We Were Only Young",
+    "genre": "",
+    "label": "Concord",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 2,
+    "artist": "Kyle Gordon",
+    "title": "Kyle Gordon Is Everywhere",
+    "genre": "",
+    "label": "BMG",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 2,
+    "artist": "Lee Brice",
+    "title": "Sunriser",
+    "genre": "",
+    "label": "Curb",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 2,
+    "artist": "Lenny Kaye",
+    "title": "Riot on Oxford Street",
+    "genre": "",
+    "label": "IN.2 Records",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 2,
+    "artist": "Logic1000",
+    "title": "Confirmation!",
+    "genre": "",
+    "label": "Therapy, Because Music",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 2,
+    "artist": "Master Peace",
+    "title": "If I Don't Love You, Who Will?",
+    "genre": "",
+    "label": "",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 2,
+    "artist": "Meshell Ndegeocello",
+    "title": "Synonym",
+    "genre": "",
+    "label": "Blue Note",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 2,
+    "artist": "Miranda Lambert",
+    "title": "Crisco",
+    "genre": "Country pop, disco, yacht rock",
+    "label": "Music Corporation of America",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 2,
+    "artist": "Miss May I",
+    "title": "No Place for Me",
+    "genre": "Metalcore",
+    "label": "Solid State",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 2,
+    "artist": "Montell Fish",
+    "title": "Nest",
+    "genre": "",
+    "label": "",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 2,
+    "artist": "Of Virtue",
+    "title": "Death of the Altar",
+    "genre": "",
+    "label": "Arising Empire",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 2,
+    "artist": "The Paradox",
+    "title": "Proceed with Caution",
+    "genre": "",
+    "label": "",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 2,
+    "artist": "Paul Weller",
+    "title": "In the Shadow of the Sun, Paul Weller & Band Live & Very Direct",
+    "genre": "",
+    "label": "",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 2,
+    "artist": "Quavo",
+    "title": "Qrömelife",
+    "genre": "",
+    "label": "Quality Control",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 2,
+    "artist": "Spike Fuck",
+    "title": "Evidence",
+    "genre": "",
+    "label": "Sacred Bones",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 2,
+    "artist": "Soul Wun",
+    "title": "Kaleidoscope",
+    "genre": "",
+    "label": "Gallery Recordings",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 2,
+    "artist": "Sponge",
+    "title": "Recuerda Tu Muerte",
+    "genre": "",
+    "label": "Three One Three Records",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 2,
+    "artist": "Stef Chura",
+    "title": "Dancing Alone on the Concrete",
+    "genre": "",
+    "label": "Saddle Creek",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 2,
+    "artist": "Susanne Sundfør",
+    "title": "Revelations of Divine Love",
+    "genre": "",
+    "label": "Bella Union",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 2,
+    "artist": "To the Grave",
+    "title": "Liberation Front",
+    "genre": "",
+    "label": "BlkIIBlk",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 2,
+    "artist": "Twin Atlantic",
+    "title": "Separation from the Animals",
+    "genre": "",
+    "label": "",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 2,
+    "artist": "Vacations",
+    "title": "Pursuit of Anything",
+    "genre": "",
+    "label": "Nettwerk",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 2,
+    "artist": "Vanishing Twin",
+    "title": "Archives",
+    "genre": "",
+    "label": "Fire",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 2,
+    "artist": "Victoria Monét",
+    "title": "Frequency of Love",
+    "genre": "R&B",
+    "label": "Lovett Music, RCA",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 2,
+    "artist": "Way Dynamic",
+    "title": "Massive Shoe",
+    "genre": "",
+    "label": "Jagjaguwar",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 2,
+    "artist": "Wishy",
+    "title": "Nature's Pill",
+    "genre": "",
+    "label": "",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 2,
+    "artist": "Wynonna Judd",
+    "title": "The Hard Truth",
+    "genre": "",
+    "label": "Anti-",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 5,
+    "artist": "Joe Hendry",
+    "title": "Beyond Belief",
+    "genre": "",
+    "label": "",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 5,
+    "artist": "Manchán Magan",
+    "title": "Slí na Samhaíochta (The Way of Imagination)",
+    "genre": "",
+    "label": "Claddagh",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 8,
+    "artist": "Pitbull",
+    "title": "Pitcoin",
+    "genre": "",
+    "label": "",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 9,
+    "artist": "Bodega",
+    "title": "All Inside Aquarium",
+    "genre": "",
+    "label": "Chrysalis",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 9,
+    "artist": "Calla",
+    "title": "De Facto",
+    "genre": "",
+    "label": "Nuevo Leon Recordings",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 9,
+    "artist": "Cameron Winter",
+    "title": "Live at Carnegie Hall",
+    "genre": "Folk",
+    "label": "Partisan, PIAS",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 9,
+    "artist": "Chase & Status",
+    "title": "Generic Everything",
+    "genre": "",
+    "label": "Warner",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 9,
+    "artist": "Chloe Slater",
+    "title": "Riot Youth",
+    "genre": "",
+    "label": "",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 9,
+    "artist": "Claire Cronin",
+    "title": "The Bruise",
+    "genre": "",
+    "label": "Orindal Records",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 9,
+    "artist": "Claire Rousay",
+    "title": "On Holding",
+    "genre": "",
+    "label": "Quality Sounds Ltd",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 9,
+    "artist": "Dan Croll",
+    "title": "Winning Streak",
+    "genre": "",
+    "label": "",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 9,
+    "artist": "Danielle Ponder",
+    "title": "Everything Has Changed",
+    "genre": "",
+    "label": "Dead Oceans",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 9,
+    "artist": "Dawn Richard",
+    "title": "Creole Culture",
+    "genre": "",
+    "label": "Merge",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 9,
+    "artist": "Death Valley Girls",
+    "title": "Welcome to Earth",
+    "genre": "",
+    "label": "Suicide Squeeze Records",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 9,
+    "artist": "Enuff Z'Nuff",
+    "title": "Live at the Whisky A Go-Go",
+    "genre": "",
+    "label": "Cleopatra",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 9,
+    "artist": "Fatima Al Qadiri",
+    "title": "3TWI (عتوي)",
+    "genre": "",
+    "label": "Hyperdub",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 9,
+    "artist": "Fola",
+    "title": "9",
+    "genre": "",
+    "label": "Dangbana Republik Records, Empire",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 9,
+    "artist": "Gabriella Cilmi",
+    "title": "Pure Love",
+    "genre": "",
+    "label": "",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 9,
+    "artist": "Gayance",
+    "title": "Roaming",
+    "genre": "",
+    "label": "Tru Thoughts",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 9,
+    "artist": "Girl Ultra with Chromeo",
+    "title": "RRRomeo",
+    "genre": "",
+    "label": "Big Dada",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 9,
+    "artist": "Graveyard",
+    "title": "Fever",
+    "genre": "",
+    "label": "",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 9,
+    "artist": "Greta Van Fleet",
+    "title": "Palace for the People",
+    "genre": "",
+    "label": "Republic",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 9,
+    "artist": "HAAi",
+    "title": "Digitise",
+    "genre": "",
+    "label": "Mute",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 9,
+    "artist": "Imperial Teen",
+    "title": "All Over You",
+    "genre": "",
+    "label": "Merge",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 9,
+    "artist": "Jamie T",
+    "title": "Ghosts (100 Days of Morning)",
+    "genre": "",
+    "label": "Polydor",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 9,
+    "artist": "Jess Williamson",
+    "title": "A Mile South of Heaven",
+    "genre": "",
+    "label": "New West",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 9,
+    "artist": "Joyce Wrice",
+    "title": "Machiko",
+    "genre": "",
+    "label": "BMG",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 9,
+    "artist": "Laura Cortese",
+    "title": "Lucky Water",
+    "genre": "",
+    "label": "Compass",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 9,
+    "artist": "Left to Suffer",
+    "title": "Unwelcome Guest",
+    "genre": "",
+    "label": "Hopeless",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 9,
+    "artist": "Love Is Noise",
+    "title": "The Space Between Happiness and Heartache",
+    "genre": "",
+    "label": "Bloodblast",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 9,
+    "artist": "Lucy",
+    "title": "Citizen's Arrest",
+    "genre": "",
+    "label": "",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 9,
+    "artist": "Margo Cilker",
+    "title": "Little White Cross",
+    "genre": "",
+    "label": "Fossil Records",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 9,
+    "artist": "Marina Herlop",
+    "title": "Dja Dja",
+    "genre": "",
+    "label": "",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 9,
+    "artist": "Ovrkast",
+    "title": "Striking",
+    "genre": "",
+    "label": "Three Times Louder",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 9,
+    "artist": "Pet Shop Boys",
+    "title": "A Man from the Future",
+    "genre": "",
+    "label": "Parlophone",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 9,
+    "artist": "The Pineapple Thief",
+    "title": "Far and Wide",
+    "genre": "",
+    "label": "Inside Out",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 9,
+    "artist": "Queen of Jeans",
+    "title": "Hard/Sweet",
+    "genre": "",
+    "label": "Memory Music",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 9,
+    "artist": "Remi Wolf",
+    "title": "Mud",
+    "genre": "Pop rock",
+    "label": "Island",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 9,
+    "artist": "Sheryl Crow",
+    "title": "Pick You Up",
+    "genre": "",
+    "label": "Big Green Barn Productions, Thirty Tigers",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 9,
+    "artist": "Selfish Things",
+    "title": "Receptivity",
+    "genre": "",
+    "label": "FLG",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 9,
+    "artist": "The Tallest Man on Earth",
+    "title": "Just Beyond Endless Mountain",
+    "genre": "",
+    "label": "Anti-",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 9,
+    "artist": "Teenage Fanclub",
+    "title": "Do Not Dare to Dream",
+    "genre": "",
+    "label": "",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 9,
+    "artist": "Todd Snider",
+    "title": "My Second Rodeo",
+    "genre": "",
+    "label": "Aimless, Inc., Thirty Tigers",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 9,
+    "artist": "Troye Sivan",
+    "title": "She's the Best",
+    "genre": "",
+    "label": "Interscope",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 9,
+    "artist": "Twin Temple",
+    "title": "Doomed Lovers",
+    "genre": "",
+    "label": "Pentagrammaton Records",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 9,
+    "artist": "Wage War",
+    "title": "Landfall",
+    "genre": "",
+    "label": "Fearless",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 11,
+    "artist": "Chris Gantry",
+    "title": "Worth Every Nail",
+    "genre": "",
+    "label": "Appalachia Record Co.",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 12,
+    "artist": "NCT Wish",
+    "title": "I Spy",
+    "genre": "",
+    "label": "SM",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 15,
+    "artist": "Lords of Acid",
+    "title": "Mundo Bizarro",
+    "genre": "",
+    "label": "Metropolis",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 16,
+    "artist": "@",
+    "title": "Autosmile",
+    "genre": "Psychedelic folk",
+    "label": "4AD",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 16,
+    "artist": "Andy Grammer",
+    "title": "Big Stupid Heart",
+    "genre": "",
+    "label": "S-Curve, Hollywood",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 16,
+    "artist": "Angèle",
+    "title": "Instinct",
+    "genre": "",
+    "label": "Angèle VL Records, Sony Music",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 16,
+    "artist": "Antoni O'Breskey",
+    "title": "A Wild Inhabitation",
+    "genre": "",
+    "label": "",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 16,
+    "artist": "The Avalanches",
+    "title": "No Bad Memories",
+    "genre": "",
+    "label": "Modular",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 16,
+    "artist": "Bibio and Dorian Concept",
+    "title": "Answers",
+    "genre": "",
+    "label": "Warp",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 16,
+    "artist": "Blind Illusion",
+    "title": "Stage Flight: Live at the UC Theatre",
+    "genre": "",
+    "label": "Hectic Records, Bleeding Priest Records",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 16,
+    "artist": "Brian Kennedy",
+    "title": "How Can I Keep from Singing",
+    "genre": "",
+    "label": "",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 16,
+    "artist": "Caspian",
+    "title": "Caspian",
+    "genre": "",
+    "label": "Wax Bodega",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 16,
+    "artist": "Devin Townsend",
+    "title": "Harmonic Dharma",
+    "genre": "",
+    "label": "",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 16,
+    "artist": "Dummy",
+    "title": "Do You Love the Color of the Sky?",
+    "genre": "",
+    "label": "Polyvinyl",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 16,
+    "artist": "Eels",
+    "title": "Cookie Happened",
+    "genre": "",
+    "label": "E Works, PIAS",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 16,
+    "artist": "Eivør",
+    "title": "Tungl",
+    "genre": "",
+    "label": "Nuclear Blast",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 16,
+    "artist": "Fish Narc",
+    "title": "Uncle",
+    "genre": "",
+    "label": "K",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 16,
+    "artist": "Florrie",
+    "title": "Magic for a While",
+    "genre": "",
+    "label": "BMG, Xenomania UK",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 16,
+    "artist": "Fontaines D.C.",
+    "title": "Dopamine Chamber",
+    "genre": "",
+    "label": "XL",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 16,
+    "artist": "Geologist",
+    "title": "The Sirens",
+    "genre": "",
+    "label": "Outside Time",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 16,
+    "artist": "Grace Carter",
+    "title": "When Saturn Returns",
+    "genre": "",
+    "label": "",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 16,
+    "artist": "Gucci Mane",
+    "title": "Against All Odds",
+    "genre": "",
+    "label": "",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 16,
+    "artist": "Insomnium",
+    "title": "Netherworlds",
+    "genre": "",
+    "label": "Century Media",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 16,
+    "artist": "Jacques Greene",
+    "title": "JG",
+    "genre": "",
+    "label": "LuckyMe",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 16,
+    "artist": "Kid Bookie",
+    "title": "Cheaper Than Therapy II",
+    "genre": "",
+    "label": "FLG",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 16,
+    "artist": "K. Michelle",
+    "title": "Jesus & Whiskey",
+    "genre": "",
+    "label": "Real Outlawz Records",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 16,
+    "artist": "Lucky Daye",
+    "title": "Aloud!",
+    "genre": "",
+    "label": "Warner",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 16,
+    "artist": "Matt Carmichael",
+    "title": "Held in the Dark",
+    "genre": "",
+    "label": "Porthole Music",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 16,
+    "artist": "Max Richter",
+    "title": "While the Flood Rages",
+    "genre": "",
+    "label": "",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 16,
+    "artist": "Nao",
+    "title": "Autumn",
+    "genre": "",
+    "label": "Little Tokyo Records",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 16,
+    "artist": "Nero's Day at Disneyland",
+    "title": "Grand Reopening",
+    "genre": "",
+    "label": "Deathbomb Arc",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 16,
+    "artist": "Nieve Ella",
+    "title": "How Long Will It Take?",
+    "genre": "Alternative pop",
+    "label": "Artist Theory",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 16,
+    "artist": "#1 Dads",
+    "title": "Every Little Fire",
+    "genre": "",
+    "label": "Pieater",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 16,
+    "artist": "The Number Twelve Looks Like You",
+    "title": "Howls from the Holographic Heart",
+    "genre": "",
+    "label": "Equal Vision",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 16,
+    "artist": "Paerish",
+    "title": "Rita",
+    "genre": "",
+    "label": "SideOneDummy",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 16,
+    "artist": "Rachel Chinouriri",
+    "title": "I Think I Spoke Too Soon",
+    "genre": "Synth-pop, pop rock, dance-pop",
+    "label": "Parlophone",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 16,
+    "artist": "Richard Thompson",
+    "title": "Hippies, Thugs and Heroes",
+    "genre": "",
+    "label": "New West",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 16,
+    "artist": "Rick Wakeman",
+    "title": "Return to the Red Planet",
+    "genre": "",
+    "label": "Madfish Records",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 16,
+    "artist": "The Rubens",
+    "title": "Group Therapy",
+    "genre": "",
+    "label": "",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 16,
+    "artist": "They Are Gutting a Body of Water",
+    "title": "Kool Faith / Loosies II",
+    "genre": "",
+    "label": "ATO, Julia's War",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 16,
+    "artist": "Sadurn",
+    "title": "The Underworld",
+    "genre": "",
+    "label": "Run for Cover",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 16,
+    "artist": "Sophia Stel",
+    "title": "The Greatest Album of All Time",
+    "genre": "",
+    "label": "A24 Music",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 16,
+    "artist": "Temperance",
+    "title": "Arcani",
+    "genre": "",
+    "label": "Napalm",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 16,
+    "artist": "Tina Arena",
+    "title": "Way of the World",
+    "genre": "",
+    "label": "Positive Dream",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 16,
+    "artist": "Tinie Tempah",
+    "title": "The Night's Not Dead",
+    "genre": "",
+    "label": "Imhotep Records",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 16,
+    "artist": "Tokio Hotel",
+    "title": "Encore",
+    "genre": "",
+    "label": "Epic",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 16,
+    "artist": "World News",
+    "title": "In Purgatory",
+    "genre": "",
+    "label": "",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 16,
+    "artist": "XO",
+    "title": "Need to Know",
+    "genre": "",
+    "label": "Polydor",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 16,
+    "artist": "Ziggy Alberts",
+    "title": "Twin Flames",
+    "genre": "",
+    "label": "",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 17,
+    "artist": "Kid Rock",
+    "title": "Halfway 2 Jesus",
+    "genre": "Christian rock",
+    "label": "Top Dog Records",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 21,
+    "artist": "Ryan Hemsworth",
+    "title": "Numbskull",
+    "genre": "",
+    "label": "Topshelf",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Anderson .Paak and Cordae",
+    "title": "Heavy Is the Crown",
+    "genre": "",
+    "label": "Apeshit, Mass Appeal, Empire",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Art d'Ecco",
+    "title": "Scheele's Green",
+    "genre": "",
+    "label": "Paper Bag",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Baby Lasagna",
+    "title": "End the Party",
+    "genre": "",
+    "label": "",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Bernie Taupin",
+    "title": "The Sea Has No Mercy",
+    "genre": "Folk",
+    "label": "Vertigo, MCA Nashville",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Brakence",
+    "title": "Marrow",
+    "genre": "",
+    "label": "Columbia",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Brothers Osborne",
+    "title": "Watertown",
+    "genre": "",
+    "label": "MCA",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "The Buoys",
+    "title": "Concrete Cowboy",
+    "genre": "",
+    "label": "Sony Music Australia, Music for Nations",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Caroline Rose",
+    "title": "Gentling the Horse at the Walt Whitman Mall",
+    "genre": "",
+    "label": "Suck Records",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Clara Mann",
+    "title": "Wishbone",
+    "genre": "",
+    "label": "State51",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Claud",
+    "title": "Me and the Music",
+    "genre": "",
+    "label": "Dead Oceans",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Dan Sultan",
+    "title": "Little Miracles",
+    "genre": "",
+    "label": "Mushroom Music",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Dragonland",
+    "title": "Prophecies",
+    "genre": "",
+    "label": "Scarlet",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Dustin Kensrue",
+    "title": "That Spirit of Christmas",
+    "genre": "",
+    "label": "BMG",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Entheos",
+    "title": "Empty on the Inside",
+    "genre": "",
+    "label": "Metal Blade",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Fenne Lily",
+    "title": "Win Win",
+    "genre": "",
+    "label": "Nettwerk",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Fine",
+    "title": "Jazz Dreams",
+    "genre": "Jangle pop, jazz",
+    "label": "Escho",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "The Flower Kings",
+    "title": "Hope",
+    "genre": "",
+    "label": "InsideOut",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Forbidden",
+    "title": "Forbidden",
+    "genre": "",
+    "label": "BlkIIBlk",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "GDP",
+    "title": "Cross Off Matthew",
+    "genre": "",
+    "label": "Run for Cover",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Get the Shot",
+    "title": "Crucifixion Depiction",
+    "genre": "",
+    "label": "",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Ghostemane",
+    "title": "AM:FM",
+    "genre": "",
+    "label": "Blackmage",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Grey DeLisle",
+    "title": "Don't Turn Around",
+    "genre": "",
+    "label": "Hummin'bird Records",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Gus Dapperton",
+    "title": "4 Dear Life",
+    "genre": "",
+    "label": "Alter Music",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Hilary Duff",
+    "title": "Holiday Things",
+    "genre": "",
+    "label": "",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "HMLTD",
+    "title": "Fangs",
+    "genre": "",
+    "label": "Lucky Number Records",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "James Brandon Lewis",
+    "title": "Calling Antonín",
+    "genre": "",
+    "label": "TAO Forms",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Jazzy",
+    "title": "Peace & Patience",
+    "genre": "",
+    "label": "UMG",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "John Legend",
+    "title": "Muse",
+    "genre": "",
+    "label": "Republic",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Kendall Street Company",
+    "title": "Yodeling Astroman",
+    "genre": "",
+    "label": "Gitcha Records",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Lisa",
+    "title": "Press Play",
+    "genre": "",
+    "label": "Lloud, RCA",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "LoCash",
+    "title": "Chris & Preston",
+    "genre": "",
+    "label": "Galaxy Label Group",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Manic Street Preachers",
+    "title": "The Holy Bible Live",
+    "genre": "",
+    "label": "Sony Music",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Mason Hill",
+    "title": "World So Wonderful",
+    "genre": "",
+    "label": "7Hz Productions",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Matt Lang",
+    "title": "Ain't That Bad",
+    "genre": "",
+    "label": "",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Mental Cruelty",
+    "title": "Echoes of a Forlorn Land",
+    "genre": "",
+    "label": "Century Media",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Michael Kiwanuka",
+    "title": "Fudge",
+    "genre": "Psychedelic soul",
+    "label": "Polydor",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Muireann Bradley",
+    "title": "Blackwood Pew",
+    "genre": "",
+    "label": "",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Nasty",
+    "title": "Trauma",
+    "genre": "",
+    "label": "Triple B Records",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Nathan Fake",
+    "title": "Caldera",
+    "genre": "",
+    "label": "InFiné",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Offset",
+    "title": "GMFU",
+    "genre": "",
+    "label": "",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "The Olivia Tremor Control",
+    "title": "The Same Place",
+    "genre": "",
+    "label": "Elephant 6",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Orchestra Baobab",
+    "title": "Made in Senegal",
+    "genre": "",
+    "label": "Strut",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Polyphia",
+    "title": "Be Not Afraid",
+    "genre": "",
+    "label": "Rise",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Sasha Alex Sloan",
+    "title": "And the Crowd Goes Mild",
+    "genre": "",
+    "label": "",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Sen Morimoto",
+    "title": "Time Is on Your Side",
+    "genre": "",
+    "label": "Sooper",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Shabazz Palaces",
+    "title": "It's a Style Sport",
+    "genre": "",
+    "label": "Sub Pop",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Shit and Shine",
+    "title": "0 aa Riot",
+    "genre": "",
+    "label": "Riot Season",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "The Snuts",
+    "title": "Joy in Short Moments",
+    "genre": "",
+    "label": "Happy Artist Records, VMG",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Sour Widows",
+    "title": "Sigil",
+    "genre": "",
+    "label": "Julia's War",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Stand Atlantic",
+    "title": "Godbreath",
+    "genre": "",
+    "label": "Virgin Music",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Strawberry Guy",
+    "title": "Give Me a Dream",
+    "genre": "",
+    "label": "AWAL",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Timmy Trumpet",
+    "title": "Revelations",
+    "genre": "",
+    "label": "",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Tommy Lefroy",
+    "title": "The Precariat",
+    "genre": "",
+    "label": "Thirty Tigers",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Tony Iommi",
+    "title": "From the Dark",
+    "genre": "",
+    "label": "BMG",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "William Basinski",
+    "title": "Passing the Cup of Sorrows",
+    "genre": "",
+    "label": "Temporary Residence",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Windwaker",
+    "title": "Smile, You're on Camera",
+    "genre": "",
+    "label": "Fearless",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Winona Oak",
+    "title": "Bloom",
+    "genre": "",
+    "label": "Nettwerk",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Wolves in the Throne Room",
+    "title": "Estuary",
+    "genre": "",
+    "label": "Relapse",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Yung Miami",
+    "title": "Watch Dis",
+    "genre": "",
+    "label": "Uptown",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 26,
+    "artist": "Jeshi",
+    "title": "Headrush",
+    "genre": "",
+    "label": "Select Discs, Partisan",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 26,
+    "artist": "Xiaojun",
+    "title": "Hey, Somebody",
+    "genre": "",
+    "label": "SM",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 30,
+    "artist": "2nd Grade",
+    "title": "Girls and Boys",
+    "genre": "",
+    "label": "Lame-O",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 30,
+    "artist": "Against the Current",
+    "title": "Till Death & Back",
+    "genre": "",
+    "label": "",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 30,
+    "artist": "Andy Stott",
+    "title": "Late Loop",
+    "genre": "",
+    "label": "Modern Love",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 30,
+    "artist": "Bad Waitress",
+    "title": "In the Hollow",
+    "genre": "",
+    "label": "Stomp",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 30,
+    "artist": "Ben Vaughn and Deer Tick",
+    "title": "Magnetic East: The Deer Tick Sessions",
+    "genre": "",
+    "label": "Yep Roc",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 30,
+    "artist": "The Big Moon",
+    "title": "Forever",
+    "genre": "",
+    "label": "",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 30,
+    "artist": "Blind Channel",
+    "title": "Painstream",
+    "genre": "",
+    "label": "Century Media",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 30,
+    "artist": "Chloe Qisha",
+    "title": "Fantasize",
+    "genre": "",
+    "label": "",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 30,
+    "artist": "The Church",
+    "title": "Lacuna",
+    "genre": "",
+    "label": "Cooking Vinyl",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 30,
+    "artist": "Clinic",
+    "title": "Wild in the Streets",
+    "genre": "",
+    "label": "Domino",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 30,
+    "artist": "Daddy Yankee",
+    "title": "La Postal",
+    "genre": "",
+    "label": "DY Music",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 30,
+    "artist": "Darkest Hour",
+    "title": "Suffer Divine",
+    "genre": "",
+    "label": "MNRK Heavy",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 30,
+    "artist": "David Archuleta",
+    "title": "Warm Me Up",
+    "genre": "",
+    "label": "",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 30,
+    "artist": "Dave Hill",
+    "title": "Dirty Foot Lane",
+    "genre": "",
+    "label": "",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 30,
+    "artist": "DIIV",
+    "title": "Zirp!",
+    "genre": "",
+    "label": "Fantasy",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 30,
+    "artist": "Dominic Fike",
+    "title": "How to Quit Smoking",
+    "genre": "",
+    "label": "Columbia",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 30,
+    "artist": "Dustin Lynch",
+    "title": "Clean Slate",
+    "genre": "",
+    "label": "BBR, BMG Nashville",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 30,
+    "artist": "Editors",
+    "title": "Surface, Echo & Sound",
+    "genre": "",
+    "label": "Play It Again Sam",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 30,
+    "artist": "Enslaved",
+    "title": "Mið",
+    "genre": "",
+    "label": "Nuclear Blast",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 30,
+    "artist": "Ex:Re",
+    "title": "Save As",
+    "genre": "",
+    "label": "4AD",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 30,
+    "artist": "Fuel",
+    "title": "Pendulum",
+    "genre": "",
+    "label": "",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 30,
+    "artist": "Fujiya & Miyagi",
+    "title": "New Shiny Object",
+    "genre": "",
+    "label": "Impossible Objects of Desire",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 30,
+    "artist": "Gretta Ray",
+    "title": "Heartsong",
+    "genre": "",
+    "label": "EMI Music Australia",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 30,
+    "artist": "Haiden Henderson",
+    "title": "Bleach",
+    "genre": "",
+    "label": "Lava, Republic",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 30,
+    "artist": "HorsegiirL",
+    "title": "Hardcore Healing",
+    "genre": "",
+    "label": "HorsegiirL, RCA",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 30,
+    "artist": "Jonah Kagen",
+    "title": "Eternity of Anything",
+    "genre": "",
+    "label": "Arista",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 30,
+    "artist": "Jordan Rakei",
+    "title": "A Safe Place to Be Wild",
+    "genre": "",
+    "label": "Fontana",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 30,
+    "artist": "Kaitlin Butts",
+    "title": "Hello, Honky Tonk",
+    "genre": "",
+    "label": "Republic",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 30,
+    "artist": "Kali Malone",
+    "title": "Burning Song",
+    "genre": "",
+    "label": "Ideologic Organ",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 30,
+    "artist": "Lydia Loveless",
+    "title": "Accolades",
+    "genre": "",
+    "label": "Bloodshot",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 30,
+    "artist": "Ministry",
+    "title": "Hate to Go – Take Out or Delivery",
+    "genre": "",
+    "label": "Cleopatra",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 30,
+    "artist": "Mollie Elizabeth",
+    "title": "People Pleaser",
+    "genre": "",
+    "label": "Capitol",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 30,
+    "artist": "Moses Boyd",
+    "title": "Songs for Sinners",
+    "genre": "",
+    "label": "Exodus",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 30,
+    "artist": "Mylène Farmer",
+    "title": "Égrégore",
+    "genre": "",
+    "label": "Stuffed Monkey",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 30,
+    "artist": "Nickelback",
+    "title": "Everything Under the Sun",
+    "genre": "",
+    "label": "VMG",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 30,
+    "artist": "Northlane",
+    "title": "Anemoia",
+    "genre": "",
+    "label": "",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 30,
+    "artist": "OR",
+    "title": "Music for Empty Stadiums",
+    "genre": "",
+    "label": "AD 93",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 30,
+    "artist": "Queens of the Stone Age",
+    "title": "Perfecth",
+    "genre": "",
+    "label": "Matador",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 30,
+    "artist": "RIP Magic",
+    "title": "1,2,3",
+    "genre": "",
+    "label": "Section1",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 30,
+    "artist": "Rocketship",
+    "title": "Hurt Feelings",
+    "genre": "",
+    "label": "Darla",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 30,
+    "artist": "Sampa the Great",
+    "title": "Nu Zamrock",
+    "genre": "",
+    "label": "",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 30,
+    "artist": "Sennen",
+    "title": "New Quiet",
+    "genre": "",
+    "label": "Sonic Cathedral",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 30,
+    "artist": "Thao",
+    "title": "Show Me",
+    "genre": "",
+    "label": "Kill Rock Stars",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 30,
+    "artist": "Why?",
+    "title": "Oh Golly / Yes Lord",
+    "genre": "",
+    "label": "Waterlines Records",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 1,
+    "artist": "Liffey Light Orchestra",
+    "title": "Ana Livia",
+    "genre": "",
+    "label": "Legal Records",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Alanis Morissette",
+    "title": "Good Weather for Immaculate Conception",
+    "genre": "",
+    "label": "Epiphany Records, VMG",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6816116333,
+     "artistName": "Alanis Morissette",
+     "collectionName": "Good Weather For Immaculate Conception",
+     "releaseDate": "2026-10-09T07:00:00Z",
+     "trackCount": 14,
+     "primaryGenreName": "Holiday",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/c0/0b/05/c00b0532-1bd3-de7b-14d4-482e2f82be21/00823375487272_Cover.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/good-weather-for-immaculate-conception/6816116333"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Asia",
+    "title": "Indigo",
+    "genre": "",
+    "label": "Frontiers",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6786070473,
+     "artistName": "Asia",
+     "collectionName": "Indigo",
+     "releaseDate": "2026-11-06T08:00:00Z",
+     "trackCount": 16,
+     "primaryGenreName": "Hard Rock",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/ee/21/88/ee218830-cc6a-c9ac-4d0f-5daf3ad73913/820233957458.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/indigo/6786070473"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Bad Brains",
+    "title": "Are You Ready: The First Studio Recording (Inner Ear – March 1979)",
+    "genre": "",
+    "label": "Trust Records",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6803227685,
+     "artistName": "Bad Brains",
+     "collectionName": "Are You Ready: The First Studio Recording (Inner Ear - March 1979) - EP",
+     "releaseDate": "2026-11-06T08:00:00Z",
+     "trackCount": 6,
+     "primaryGenreName": "Punk",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/83/b8/52/83b85289-78d1-37f5-a1f9-9626fea75744/794558801966.jpg/600x600bb.jpg",
+     "cn_url": null
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Bassvictim",
+    "title": "Peace + War",
+    "genre": "",
+    "label": "VOTB",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Blu DeTiger",
+    "title": "N.Y. Baby",
+    "genre": "",
+    "label": "",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6810805501,
+     "artistName": "Blu DeTiger",
+     "collectionName": "N.Y. Baby",
+     "releaseDate": "2026-11-06T08:00:00Z",
+     "trackCount": 10,
+     "primaryGenreName": "Pop",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/5e/23/bd/5e23bde1-80d7-62a6-08fa-db5990d34fb5/075679557353.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/n-y-baby/6810805501"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Bob Dylan",
+    "title": "The Rolling Thunder Revue: The 1976 Live Recordings",
+    "genre": "",
+    "label": "Columbia, Legacy",
+    "album_has_article": true,
+    "itunes": {
+     "collectionId": 292026137,
+     "artistName": "Bob Dylan",
+     "collectionName": "The Bootleg Series, Vol. 5: Live 1975 - The Rolling Thunder Revue",
+     "releaseDate": "2002-11-25T08:00:00Z",
+     "trackCount": 22,
+     "primaryGenreName": "Rock",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/4d/b4/5b/4db45b06-7525-2de8-a52f-d7ab98124c8f/888880385703.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/the-bootleg-series-vol-5-live-1975-the-rolling-thunder-revue/292026137"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Boys Noize",
+    "title": "7llvsion",
+    "genre": "",
+    "label": "Ones and Zeros",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Bryan Adams",
+    "title": "How's It Goin",
+    "genre": "",
+    "label": "Bad Records",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6809936545,
+     "artistName": "Bryan Adams",
+     "collectionName": "How's It Goin'",
+     "releaseDate": "2026-11-06T08:00:00Z",
+     "trackCount": 13,
+     "primaryGenreName": "Pop/Rock",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/de/9f/f5/de9ff595-ff1c-e4ab-e5ca-09e43f57386c/5059449450919.png/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/hows-it-goin/6809936545"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Carnifex",
+    "title": "More Than Misery",
+    "genre": "",
+    "label": "Sumerian",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Chastity Belt",
+    "title": "All My Friends",
+    "genre": "",
+    "label": "Suicide Squeeze",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Comeback Kid",
+    "title": "Chosen Hell",
+    "genre": "",
+    "label": "SharpTone, Dine Alone",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Computerwife",
+    "title": "Born from a Wish",
+    "genre": "",
+    "label": "Danger Collective Records",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Cult of Luna",
+    "title": "In the Shadow of Your Shadow",
+    "genre": "",
+    "label": "Red Crk Recordings",
+    "album_has_article": true,
+    "itunes": {
+     "collectionId": 6782122885,
+     "artistName": "Cult of Luna",
+     "collectionName": "In the Shadow of Your Shadow",
+     "releaseDate": "2026-11-06T08:00:00Z",
+     "trackCount": 9,
+     "primaryGenreName": "Metal",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/69/66/ed/6966eddd-3265-0110-0519-47e2a629adeb/820233817530.jpg/600x600bb.jpg",
+     "cn_url": null
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Current Joys",
+    "title": "Rosebud",
+    "genre": "",
+    "label": "They Are Evil",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6799227158,
+     "artistName": "Current Joys",
+     "collectionName": "ROSEBUD",
+     "releaseDate": "2026-11-06T08:00:00Z",
+     "trackCount": 10,
+     "primaryGenreName": "Alternative",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/b8/d2/e1/b8d2e103-75e5-5c3b-8592-aa0552fc341f/193436482677_ROSEBUD.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/rosebud/6799227158"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Déyyess",
+    "title": "Well I Might Just Die",
+    "genre": "",
+    "label": "Boys Boys Boys Records",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Distant",
+    "title": "Into Despair",
+    "genre": "",
+    "label": "",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Django Django",
+    "title": "Doveland",
+    "genre": "",
+    "label": "",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6771922645,
+     "artistName": "Django Django",
+     "collectionName": "Doveland",
+     "releaseDate": "2026-11-06T08:00:00Z",
+     "trackCount": 12,
+     "primaryGenreName": "Alternative",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/0a/2e/8f/0a2e8f0d-4d6a-45e2-dc94-fc7d6271017d/4250795611905.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/doveland/6771922645"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Do Nothing",
+    "title": "Friend World",
+    "genre": "",
+    "label": "",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6776627725,
+     "artistName": "Do Nothing",
+     "collectionName": "Friend World",
+     "releaseDate": "2026-11-06T08:00:00Z",
+     "trackCount": 11,
+     "primaryGenreName": "Indie Rock",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/d2/49/bd/d249bd14-6a17-740e-caaa-9deb156befb7/5060951633066_cover.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/friend-world/6776627725"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Dove Cameron",
+    "title": "Final Girl",
+    "genre": "",
+    "label": "Columbia, Disruptor",
+    "album_has_article": true,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Extol",
+    "title": "Aura of Decay",
+    "genre": "",
+    "label": "Solid State",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6798743703,
+     "artistName": "Extol",
+     "collectionName": "Aura of Decay",
+     "releaseDate": "2026-11-06T08:00:00Z",
+     "trackCount": 11,
+     "primaryGenreName": "Metal",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/0e/bb/09/0ebb0961-8efe-f3f5-d40d-bb1cfd7599e5/810129813227.jpg/600x600bb.jpg",
+     "cn_url": null
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Florence and the Machine",
+    "title": "Everybody Scream Tour Live",
+    "genre": "",
+    "label": "",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 1833585853,
+     "artistName": "Florence + the Machine",
+     "collectionName": "Everybody Scream",
+     "releaseDate": "2025-10-31T07:00:00Z",
+     "trackCount": 12,
+     "primaryGenreName": "Alternative",
+     "collectionExplicitness": "cleaned",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/d0/77/ed/d077ed0d-51ea-76b6-ba24-8aa7d4e248ad/25UM1IM19552.rgb.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/everybody-scream/1833585853"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Gilbert O'Sullivan",
+    "title": "On the Record",
+    "genre": "",
+    "label": "BMG",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6788050315,
+     "artistName": "Gilbert O'Sullivan",
+     "collectionName": "On the Record",
+     "releaseDate": "2026-11-06T08:00:00Z",
+     "trackCount": 13,
+     "primaryGenreName": "Adult Contemporary",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/c7/49/72/c749723b-f110-90cf-bbef-fe617c35fd34/4099964261776.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/on-the-record/6788050315"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Hatebreed",
+    "title": "Fatal Paradox",
+    "genre": "",
+    "label": "BLKIIBLK",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Hypno5e",
+    "title": "Trame Noire",
+    "genre": "",
+    "label": "Pelagic Records",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6789316919,
+     "artistName": "Hypno5e",
+     "collectionName": "Trame Noire",
+     "releaseDate": "2026-11-06T08:00:00Z",
+     "trackCount": 5,
+     "primaryGenreName": "Death Metal/Black Metal",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/fb/f0/5e/fbf05e38-4aa1-ef6a-d1df-f848ac8230e1/820233588591.jpg/600x600bb.jpg",
+     "cn_url": null
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "James Blunt",
+    "title": "Airplane Mode",
+    "genre": "",
+    "label": "Atlantic",
+    "album_has_article": true,
+    "itunes": {
+     "collectionId": 6805055407,
+     "artistName": "James Blunt",
+     "collectionName": "Airplane Mode",
+     "releaseDate": "2026-11-06T08:00:00Z",
+     "trackCount": 12,
+     "primaryGenreName": "Pop",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/17/8e/2b/178e2b94-8f53-74b8-3642-7ef36502d5f5/1200214944070.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/airplane-mode/6805055407"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Jesse Jo Stark",
+    "title": "Muse",
+    "genre": "",
+    "label": "Deadly Doll",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Jim Jarmusch and Jozef van Wissem",
+    "title": "Bocca di Lupo",
+    "genre": "",
+    "label": "Sacred Bones",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6793688298,
+     "artistName": "Jozef Van Wissem & Jim Jarmusch",
+     "collectionName": "Bocca di Lupo",
+     "releaseDate": "2026-11-06T08:00:00Z",
+     "trackCount": 7,
+     "primaryGenreName": "Alternative",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/d5/37/52/d53752e8-cd30-1d1d-9318-83ed5d55b572/67743.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/bocca-di-lupo/6793688298"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Jim Jarmusch and Jozef van Wissem",
+    "title": "Mouth of the Wolf",
+    "genre": "",
+    "label": "Sacred Bones",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Katie Gregson-MacLeod",
+    "title": "Albatross",
+    "genre": "",
+    "label": "Last Recordings On Earth",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6790852509,
+     "artistName": "Katie Gregson-MacLeod",
+     "collectionName": "Albatross",
+     "releaseDate": "2026-11-06T08:00:00Z",
+     "trackCount": 12,
+     "primaryGenreName": "Singer/Songwriter",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/d7/09/ea/d709eafc-d65a-6315-2069-f30208be11a7/820233312295.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/albatross/6790852509"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Kings of Leon",
+    "title": "O My Beloved",
+    "genre": "",
+    "label": "Love Tap Records",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6802901441,
+     "artistName": "Kings of Leon",
+     "collectionName": "O My Beloved",
+     "releaseDate": "2026-11-06T08:00:00Z",
+     "trackCount": 13,
+     "primaryGenreName": "Alternative",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/c2/84/79/c2847988-ab33-0de8-0dc3-ebf0c6cbd0b4/00823375343684_Cover.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/o-my-beloved/6802901441"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Lil Baby",
+    "title": "Fresh",
+    "genre": "",
+    "label": "",
+    "album_has_article": true,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Little Angels",
+    "title": "Big Bad & Back EP",
+    "genre": "",
+    "label": "",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6812912935,
+     "artistName": "Little Angels",
+     "collectionName": "Big Bad & Back EP - EP",
+     "releaseDate": "2026-11-06T08:00:00Z",
+     "trackCount": 5,
+     "primaryGenreName": "Rock",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/d4/5d/0d/d45d0d80-c4dc-e8e4-9a16-a2ec9ab40679/5037300088587.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/big-bad-back-ep-ep/6812912935"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Midnight",
+    "title": "Satanic Attack Live!",
+    "genre": "",
+    "label": "Metal Blade",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Naked Raygun",
+    "title": "Live at Riot Fest",
+    "genre": "",
+    "label": "Loud Pizza Records",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6823003277,
+     "artistName": "Naked Raygun",
+     "collectionName": "Live at Riot Fest",
+     "releaseDate": "2026-11-06T08:00:00Z",
+     "trackCount": 21,
+     "primaryGenreName": "Punk",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/03/ee/28/03ee289c-61ae-9a05-4000-adac26e87862/artwork.jpg/600x600bb.jpg",
+     "cn_url": null
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Natalie Bergman",
+    "title": "I Killed a North American Songbird",
+    "genre": "",
+    "label": "Third Man",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6814578007,
+     "artistName": "Natalie Bergman",
+     "collectionName": "I Killed A North American Songbird - EP",
+     "releaseDate": "2026-11-06T08:00:00Z",
+     "trackCount": 5,
+     "primaryGenreName": "Alternative Folk",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/2a/8c/58/2a8c58ce-d8be-894a-a45f-b087282041ae/68991.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/i-killed-a-north-american-songbird-ep/6814578007"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Odette",
+    "title": "Blink",
+    "genre": "",
+    "label": "Beloved Records",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Oso Oso",
+    "title": "An Exchange of Information",
+    "genre": "",
+    "label": "Feral Twin Records",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Prong",
+    "title": "Prong",
+    "genre": "",
+    "label": "Napalm",
+    "album_has_article": true,
+    "itunes": {
+     "collectionId": 6787142090,
+     "artistName": "Prong",
+     "collectionName": "Prong",
+     "releaseDate": "2026-11-06T08:00:00Z",
+     "trackCount": 13,
+     "primaryGenreName": "Metal",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/ad/5c/71/ad5c7109-00e9-f7f7-7eac-cd803552985d/810221172376.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/prong/6787142090"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Party Dozen",
+    "title": "21 Bum Salute",
+    "genre": "",
+    "label": "City Slang",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6800005343,
+     "artistName": "Party Dozen",
+     "collectionName": "21 Bum Salute",
+     "releaseDate": "2026-11-06T08:00:00Z",
+     "trackCount": 10,
+     "primaryGenreName": "Indie Rock",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/64/b0/de/64b0decb-2334-4e3d-c8eb-a93e0ef4a106/4250506853266_cover.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/21-bum-salute/6800005343"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Passenger",
+    "title": "Wild Love",
+    "genre": "",
+    "label": "",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6789444108,
+     "artistName": "Passenger",
+     "collectionName": "Wild Love",
+     "releaseDate": "2026-11-06T08:00:00Z",
+     "trackCount": 14,
+     "primaryGenreName": "Singer/Songwriter",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/1b/d0/04/1bd00499-92ae-244c-6e73-02d669db062e/067003029230.png/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/wild-love/6789444108"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Resa Saffa Park",
+    "title": "Kendra",
+    "genre": "",
+    "label": "Ja. Group",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 1895132281,
+     "artistName": "Resa Saffa Park",
+     "collectionName": "Kendra",
+     "releaseDate": "2026-11-06T08:00:00Z",
+     "trackCount": 12,
+     "primaryGenreName": "Indie Pop",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/f0/be/6a/f0be6abd-f274-9690-1c1d-015c47aeb701/820233074742.jpg/600x600bb.jpg",
+     "cn_url": null
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Rex Orange County",
+    "title": "Dream Fatigue",
+    "genre": "",
+    "label": "",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Robert Grace",
+    "title": "My Fathers Son",
+    "genre": "",
+    "label": "",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "La Roux",
+    "title": "Old Flames",
+    "genre": "",
+    "label": "Vertigo",
+    "album_has_article": true,
+    "itunes": {
+     "collectionId": 1894292696,
+     "artistName": "La Roux",
+     "collectionName": "Old Flames",
+     "releaseDate": "2026-11-06T08:00:00Z",
+     "trackCount": 11,
+     "primaryGenreName": "Pop",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/53/26/17/53261760-4064-0469-bc35-1382004806f5/26UMGIM43498.rgb.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/old-flames/1894292696"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Sam Barber",
+    "title": "The Outlier",
+    "genre": "",
+    "label": "Atlantic Outpost",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "SATCHVAI Band",
+    "title": "The Sea of Emotion",
+    "genre": "",
+    "label": "earMUSIC",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6804731236,
+     "artistName": "Joe Satriani & Steve Vai",
+     "collectionName": "SatchVai: The Sea Of Emotion",
+     "releaseDate": "2026-11-06T08:00:00Z",
+     "trackCount": 10,
+     "primaryGenreName": "Rock",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/61/a3/26/61a32666-0a4d-2c57-c358-fb1c3332d808/4029759222828.jpg/600x600bb.jpg",
+     "cn_url": null
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Shygirl",
+    "title": "Swallow!",
+    "genre": "",
+    "label": "",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Skepta",
+    "title": "The Fork and Knife",
+    "genre": "",
+    "label": "",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Spanish Love Songs",
+    "title": "Future Nausea",
+    "genre": "",
+    "label": "Pure Noise",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Steven Wilson",
+    "title": "Requiem for a Village",
+    "genre": "",
+    "label": "Fiction",
+    "album_has_article": true,
+    "itunes": {
+     "collectionId": 6779529412,
+     "artistName": "Steven Wilson",
+     "collectionName": "Requiem for a Village",
+     "releaseDate": "2026-11-06T08:00:00Z",
+     "trackCount": 12,
+     "primaryGenreName": "Rock",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/50/49/86/50498649-9a81-bc78-26c4-09165c7b8779/823375169109_Cover.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/requiem-for-a-village/6779529412"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Straw Man Army",
+    "title": "True North",
+    "genre": "",
+    "label": "La Vida Es Un Mus Discos",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6812733097,
+     "artistName": "Straw Man Army",
+     "collectionName": "True North",
+     "releaseDate": "2026-11-06T08:00:00Z",
+     "trackCount": 11,
+     "primaryGenreName": "Punk",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/74/aa/4e/74aa4eb0-c3ee-0eae-d846-6e27fc033443/17283.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/true-north/6812733097"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Sufjan Stevens",
+    "title": "Worst Christmas Ever!",
+    "genre": "",
+    "label": "Asthmatic Kitty",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Thrown",
+    "title": "Unwanted",
+    "genre": "",
+    "label": "Arising Empire",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Tove Styrke",
+    "title": "I Thought This Story Wasn't About Me",
+    "genre": "",
+    "label": "Sony Music Sweden",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6776636213,
+     "artistName": "Tove Styrke",
+     "collectionName": "I thought this story wasn't about me",
+     "releaseDate": "2026-11-06T08:00:00Z",
+     "trackCount": 16,
+     "primaryGenreName": "Alternative",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/4d/9c/6b/4d9c6b32-10fa-1c23-19cb-e205afb5ed39/196874359631.jpg/600x600bb.jpg",
+     "cn_url": null
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Trollfest",
+    "title": "Trollywood",
+    "genre": "",
+    "label": "Reaper Entertainment",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6788728987,
+     "artistName": "TrollfesT",
+     "collectionName": "Trollywood",
+     "releaseDate": "2026-11-06T08:00:00Z",
+     "trackCount": 11,
+     "primaryGenreName": "Metal",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/f4/cb/6f/f4cb6f8f-06c5-a282-03c6-306ee858c8b3/1200214344399.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/trollywood/6788728987"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "TV Priest",
+    "title": "Cartoons",
+    "genre": "",
+    "label": "",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6781278835,
+     "artistName": "TV Priest",
+     "collectionName": "Cartoons",
+     "releaseDate": "2026-11-06T08:00:00Z",
+     "trackCount": 10,
+     "primaryGenreName": "Alternative",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/b2/d0/1a/b2d01a53-bc46-a9e5-8a3b-dbbd6b76cfce/5056868112619.png/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/cartoons/6781278835"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Twisted Teens",
+    "title": "The Holy Cross Tigers",
+    "genre": "",
+    "label": "Sub Pop",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6797957482,
+     "artistName": "Twisted Teens",
+     "collectionName": "The Holy Cross Tigers",
+     "releaseDate": "2026-11-06T08:00:00Z",
+     "trackCount": 13,
+     "primaryGenreName": "Alternative",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/ef/13/ce/ef13ce0b-fcbc-dd59-fa1f-9293d7271f02/098787175561.png/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/the-holy-cross-tigers/6797957482"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Willi Carlisle",
+    "title": "The Universal Bubba",
+    "genre": "",
+    "label": "",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Yoo Doo Right",
+    "title": "Build and Rest by the Shepherd's Light",
+    "genre": "",
+    "label": "Mothland",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 9,
+    "artist": "Ice Nine Kills",
+    "title": "A Very Vicious Christmas",
+    "genre": "",
+    "label": "",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 11,
+    "artist": "2hollis",
+    "title": "Pirouette",
+    "genre": "",
+    "label": "Interscope",
+    "album_has_article": true,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 11,
+    "artist": "Anberlin",
+    "title": "Currency",
+    "genre": "",
+    "label": "Equal Vision",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6793210792,
+     "artistName": "Anberlin",
+     "collectionName": "CURRENCY",
+     "releaseDate": "2026-11-11T08:00:00Z",
+     "trackCount": 11,
+     "primaryGenreName": "Alternative",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/9f/0f/64/9f0f64ae-7d9c-ed4c-254d-f114ad76d454/794558052566.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/currency/6793210792"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 11,
+    "artist": "Eliza Rose",
+    "title": "Arcadia: Pleasuredome",
+    "genre": "",
+    "label": "",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6808324553,
+     "artistName": "Eliza Rose",
+     "collectionName": "ARCADIA:PLEASUREDOME - EP",
+     "releaseDate": "2026-09-10T07:00:00Z",
+     "trackCount": 6,
+     "primaryGenreName": "Electronic",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/75/54/ae/7554ae6a-491d-362a-44cc-d2bf9fd030e4/1200220049059.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/arcadia-pleasuredome-ep/6808324553"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 13,
+    "artist": "Aesop Rock and Blockhead",
+    "title": "Trouble Mountain",
+    "genre": "",
+    "label": "Rhymesayers",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6792764038,
+     "artistName": "Aesop Rock & Blockhead",
+     "collectionName": "Trouble Mountain",
+     "releaseDate": "2026-11-13T08:00:00Z",
+     "trackCount": 17,
+     "primaryGenreName": "Hip-Hop/Rap",
+     "collectionExplicitness": "cleaned",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/d0/c4/9e/d0c49e72-307a-4069-b9c2-ec412c1fc27e/67646.jpg/600x600bb.jpg",
+     "cn_url": null
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 13,
+    "artist": "Amira Elfeky",
+    "title": "It Was Only a Dream",
+    "genre": "",
+    "label": "Atlantic",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 13,
+    "artist": "Ateez",
+    "title": "Golden Hour: Part.6",
+    "genre": "",
+    "label": "Sony Music Korea, RCA",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 1822545714,
+     "artistName": "ATEEZ",
+     "collectionName": "GOLDEN HOUR : Part.3 'In Your Fantasy Edition'",
+     "releaseDate": "2025-07-11T07:00:00Z",
+     "trackCount": 15,
+     "primaryGenreName": "K-Pop",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/67/41/06/6741061b-db7d-dccb-6200-0be18e0a7cf8/196873101224.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/golden-hour-part-3-in-your-fantasy-edition/1822545714"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 13,
+    "artist": "Blackhaine",
+    "title": "Saints in the Wethouse",
+    "genre": "",
+    "label": "XL",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 13,
+    "artist": "Becky Hill",
+    "title": "Rebecca",
+    "genre": "",
+    "label": "Polydor, Astralwerks",
+    "album_has_article": true,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 13,
+    "artist": "Bell X1",
+    "title": "Good Bones",
+    "genre": "",
+    "label": "",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6807986010,
+     "artistName": "Bell X1",
+     "collectionName": "Good Bones",
+     "releaseDate": "2026-11-13T08:00:00Z",
+     "trackCount": 12,
+     "primaryGenreName": "Alternative",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/d1/78/9d/d1789df2-79f9-f9e7-164e-25d1fe45f8a4/859745435468_cover.jpg/600x600bb.jpg",
+     "cn_url": null
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 13,
+    "artist": "Los Bitchos",
+    "title": "Los Bitchos & Friends Vol. 1",
+    "genre": "",
+    "label": "GREAT! Records, !K7",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6793961661,
+     "artistName": "Los Bitchos",
+     "collectionName": "Los Bitchos & Friends Vol 1",
+     "releaseDate": "2026-11-13T08:00:00Z",
+     "trackCount": 9,
+     "primaryGenreName": "Alternative",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/1b/f4/38/1bf438ac-6f33-0c38-933b-24723f6ce077/4062548147605.png/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/los-bitchos-friends-vol-1/6793961661"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 13,
+    "artist": "The Body and Cel Genesis",
+    "title": "Whole Wide World",
+    "genre": "",
+    "label": "Thrill Jockey",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6798769593,
+     "artistName": "The Body & Cel Genesis",
+     "collectionName": "Whole Wide World",
+     "releaseDate": "2026-11-13T08:00:00Z",
+     "trackCount": 8,
+     "primaryGenreName": "Alternative",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/0e/10/cd/0e10cdf1-f789-7e43-fca8-6ae69c45e11d/790377066463.png/600x600bb.jpg",
+     "cn_url": null
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 13,
+    "artist": "The Datsuns",
+    "title": "Moonstruck Man",
+    "genre": "",
+    "label": "Hellsquad Records",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6805801756,
+     "artistName": "The Datsuns",
+     "collectionName": "Moonstruck Man",
+     "releaseDate": "2026-11-13T08:00:00Z",
+     "trackCount": 11,
+     "primaryGenreName": "Alternative",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/6a/20/cf/6a20cf7d-c34d-df4f-96f3-1b1bbed441a4/8717931358873.jpg/600x600bb.jpg",
+     "cn_url": null
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 13,
+    "artist": "David Kushner",
+    "title": "Devotion",
+    "genre": "",
+    "label": "",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 13,
+    "artist": "Diamond Rio",
+    "title": "America Works",
+    "genre": "",
+    "label": "Rio Records 2.0, One Riot Records",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6810422991,
+     "artistName": "Diamond Rio",
+     "collectionName": "America Works - EP",
+     "releaseDate": "2026-11-13T08:00:00Z",
+     "trackCount": 4,
+     "primaryGenreName": "Country",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/37/5b/20/375b206d-fff0-c3ea-bfdb-3d19748992ae/823375421825_Cover.jpg/600x600bb.jpg",
+     "cn_url": null
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 13,
+    "artist": "DJ Heartstring",
+    "title": "Sentimental Ultra",
+    "genre": "",
+    "label": "Steel City Dance Discs",
+    "album_has_article": true,
+    "itunes": {
+     "collectionId": 6815353226,
+     "artistName": "DJ HEARTSTRING",
+     "collectionName": "Sentimental Ultra",
+     "releaseDate": "2026-11-13T08:00:00Z",
+     "trackCount": 15,
+     "primaryGenreName": "Electronic",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/16/14/3b/16143b25-2aab-d0ff-9e6c-c76947bf20c1/16804.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/sentimental-ultra/6815353226"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 13,
+    "artist": "Dropkick Murphys",
+    "title": "20th Century Paddy – The Songs of Shane MacGowan",
+    "genre": "",
+    "label": "",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 13,
+    "artist": "Ed Palermo Big Band",
+    "title": "It's an Ed Palermo Christmas! God Bless Us, Everyone!",
+    "genre": "",
+    "label": "Sky Cat Records",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 13,
+    "artist": "Esme Emerson",
+    "title": "It's All Just Noise",
+    "genre": "",
+    "label": "Communion",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 13,
+    "artist": "Font",
+    "title": "American Bully XL",
+    "genre": "",
+    "label": "Acrophase",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 13,
+    "artist": "Fucked Up",
+    "title": "Year of the Rooster",
+    "genre": "",
+    "label": "Tankcrimes",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 13,
+    "artist": "Heaven in Her Arms",
+    "title": "The End of Purification",
+    "genre": "",
+    "label": "Banshies",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 13,
+    "artist": "Gwar and John Brennan and the Bigfeet",
+    "title": "Gwar and the Last Drive-In-Stein",
+    "genre": "",
+    "label": "",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 13,
+    "artist": "Heavens Edge",
+    "title": "Philadelphia",
+    "genre": "",
+    "label": "Frontiers",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 13,
+    "artist": "Iron Savior",
+    "title": "Deathbringer",
+    "genre": "",
+    "label": "Frontiers",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6814622784,
+     "artistName": "Iron Savior",
+     "collectionName": "Deathbringer",
+     "releaseDate": "2026-11-13T08:00:00Z",
+     "trackCount": 11,
+     "primaryGenreName": "Metal",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/82/67/ca/8267ca12-99b9-c4ed-5ee1-85b7f83dd334/885288658446.jpg/600x600bb.jpg",
+     "cn_url": null
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 13,
+    "artist": "Jake Bugg",
+    "title": "Alamo",
+    "genre": "",
+    "label": "Thirty Tigers",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6799178943,
+     "artistName": "Jake Bugg",
+     "collectionName": "Alamo",
+     "releaseDate": "2026-11-13T08:00:00Z",
+     "trackCount": 11,
+     "primaryGenreName": "Singer/Songwriter",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/b3/8e/8a/b38e8af6-32e9-01b8-88c9-5527553c25f5/885288042818.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/alamo/6799178943"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 13,
+    "artist": "Kalia Vandever and Dave Harrington",
+    "title": "Evergreen",
+    "genre": "",
+    "label": "Sudden Quarterly",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6800473174,
+     "artistName": "Kalia Vandever & Dave Harrington",
+     "collectionName": "Evergreen",
+     "releaseDate": "2026-11-13T08:00:00Z",
+     "trackCount": 10,
+     "primaryGenreName": "Jazz",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/08/21/19/082119b7-2d87-44c1-afa0-5d1eeb6fb5cc/68178.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/evergreen/6800473174"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 13,
+    "artist": "Kim Deal",
+    "title": "Live at the Barbican",
+    "genre": "",
+    "label": "4AD",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6815316557,
+     "artistName": "Kim Deal",
+     "collectionName": "Live at the Barbican",
+     "releaseDate": "2026-11-13T08:00:00Z",
+     "trackCount": 18,
+     "primaryGenreName": "Alternative",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/31/be/bc/31bebc06-71ca-0e35-c43c-dd7c0e23f187/191400092273.png/600x600bb.jpg",
+     "cn_url": null
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 13,
+    "artist": "Krill",
+    "title": "Secret Language",
+    "genre": "",
+    "label": "Exploding in Sound",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6798805070,
+     "artistName": "Krill",
+     "collectionName": "Secret Language",
+     "releaseDate": "2026-11-13T08:00:00Z",
+     "trackCount": 9,
+     "primaryGenreName": "Alternative",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/bd/ad/c2/bdadc22a-e38a-afb7-7a56-a5b3f7bba018/129120.jpg/600x600bb.jpg",
+     "cn_url": null
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 13,
+    "artist": "Land of Talk",
+    "title": "Lasts",
+    "genre": "",
+    "label": "Saddle Creek",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 13,
+    "artist": "Live Skull",
+    "title": "What Could Go Wrong?",
+    "genre": "",
+    "label": "Bronson Recordings",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 13,
+    "artist": "Randy Travis",
+    "title": "Same Old Way",
+    "genre": "",
+    "label": "Warner Records Nashville",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6807553130,
+     "artistName": "Randy Travis",
+     "collectionName": "Same Old Way",
+     "releaseDate": "2026-11-13T08:00:00Z",
+     "trackCount": 12,
+     "primaryGenreName": "Country",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/8d/f5/0f/8df50f5f-2b3c-4957-4d78-a15363239d1b/093624815150.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/same-old-way/6807553130"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 13,
+    "artist": "Royal Blood",
+    "title": "Dead Company",
+    "genre": "",
+    "label": "Warner",
+    "album_has_article": true,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 13,
+    "artist": "Rwake",
+    "title": "Built from Stardust - 'The Return of Magik' Live in Little Rock, AR",
+    "genre": "",
+    "label": "Relapse",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 13,
+    "artist": "Say Now",
+    "title": "Say What You See",
+    "genre": "",
+    "label": "",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6820764664,
+     "artistName": "Say Now",
+     "collectionName": "Say what you see - EP",
+     "releaseDate": "2026-11-13T08:00:00Z",
+     "trackCount": 6,
+     "primaryGenreName": "Pop",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/ac/84/eb/ac84eb1e-5213-726d-3fd5-f916cfce9c5b/1200220221127.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/say-what-you-see-ep/6820764664"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 13,
+    "artist": "Sharon Shannon",
+    "title": "Home",
+    "genre": "",
+    "label": "",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 13,
+    "artist": "Silvertomb",
+    "title": "The Interpretation of Nightmares",
+    "genre": "",
+    "label": "Steamhammer/SPV",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6791924095,
+     "artistName": "Silvertomb",
+     "collectionName": "The Interpretation Of Nightmares",
+     "releaseDate": "2026-11-13T08:00:00Z",
+     "trackCount": 8,
+     "primaryGenreName": "Metal",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/93/b2/15/93b215dc-e5fb-4dc6-8088-dd7a76562bd4/4001617110522.jpg/600x600bb.jpg",
+     "cn_url": null
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 13,
+    "artist": "Snoh Aalegra",
+    "title": "Legendary Love",
+    "genre": "",
+    "label": "Stem",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6819862096,
+     "artistName": "Snoh Aalegra",
+     "collectionName": "Legendary Love",
+     "releaseDate": "2026-11-13T08:00:00Z",
+     "trackCount": 13,
+     "primaryGenreName": "R&B/Soul",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/11/17/75/11177586-6ecd-6183-ef18-11252eb229ca/193436490245_LLAlbumCover.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/legendary-love/6819862096"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 13,
+    "artist": "Swansea Sound",
+    "title": "Pre-Post-Truth",
+    "genre": "",
+    "label": "",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 13,
+    "artist": "Trentemøller",
+    "title": "Trentemøller",
+    "genre": "",
+    "label": "In My Room",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 266580047,
+     "artistName": "Trentemøller",
+     "collectionName": "Trentemøller - The Digital Chronicles (Bonus Track Version)",
+     "releaseDate": "2007-10-01T07:00:00Z",
+     "trackCount": 22,
+     "primaryGenreName": "Electronic",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/2b/3f/b3/2b3fb3dc-63b2-8d00-8ccb-12ee8bd0f7f7/cover.jpg/600x600bb.jpg",
+     "cn_url": null
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 13,
+    "artist": "U2",
+    "title": "Carnaval de Luz",
+    "genre": "",
+    "label": "Island",
+    "album_has_article": true,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 13,
+    "artist": "Walls of Jericho",
+    "title": "System Error: Humanity",
+    "genre": "",
+    "label": "Napalm",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 13,
+    "artist": "Wavves",
+    "title": "Cherry Soda",
+    "genre": "",
+    "label": "I Surrender Records, Bose Records",
+    "album_has_article": true,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 13,
+    "artist": "Waylon Jennings",
+    "title": "Diamonds",
+    "genre": "",
+    "label": "Son of Jessi, Thirty Tigers",
+    "album_has_article": true,
+    "itunes": {
+     "collectionId": 1135477599,
+     "artistName": "JOHNNYSWIM",
+     "collectionName": "Diamonds",
+     "releaseDate": "2014-04-29T07:00:00Z",
+     "trackCount": 12,
+     "primaryGenreName": "Singer/Songwriter",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/40/67/02/40670242-6261-1851-cb4f-0a98041be66b/850477007046.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/diamonds/1135477599"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 13,
+    "artist": "Westside Gunn",
+    "title": "Heelmatic",
+    "genre": "",
+    "label": "Griselda, Mass Appeal",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 13,
+    "artist": "Yngwie Malmsteen",
+    "title": "Hell or High Water",
+    "genre": "",
+    "label": "Music Theories Recordings, Artone Label Group",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6784787642,
+     "artistName": "Yngwie Malmsteen",
+     "collectionName": "Hell Or High Water",
+     "releaseDate": "2026-11-13T08:00:00Z",
+     "trackCount": 9,
+     "primaryGenreName": "Rock",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/ad/e8/83/ade883ae-8618-6861-12be-e299c5e08094/8712725753483.png/600x600bb.jpg",
+     "cn_url": null
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 13,
+    "artist": "Zebra",
+    "title": "Zebra V",
+    "genre": "",
+    "label": "",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 16,
+    "artist": "Tomorrow X Together",
+    "title": "Perfect Storm",
+    "genre": "",
+    "label": "Big Hit Music",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 1747648504,
+     "artistName": "Tomohisa Yamashita",
+     "collectionName": "Perfect Storm (feat. TAEHYUN of TOMORROW X TOGETHER)",
+     "releaseDate": "2024-06-05T07:00:00Z",
+     "trackCount": 1,
+     "primaryGenreName": "J-Pop",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/cc/a4/fa/cca4fa43-66bf-3f24-f035-726cf12dc9fb/PA00153902_0_193242_jacket.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/perfect-storm-feat-taehyun-of-tomorrow-x-together/1747648504"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 19,
+    "artist": "Angelus Apatrida",
+    "title": "The Reckoning",
+    "genre": "",
+    "label": "Napalm",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 20,
+    "artist": "Alan Vega",
+    "title": "Live at Max's Kansas City",
+    "genre": "",
+    "label": "Sacred Bones",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6797656901,
+     "artistName": "Alan Vega",
+     "collectionName": "Live at Max’s Kansas City",
+     "releaseDate": "2026-11-20T08:00:00Z",
+     "trackCount": 7,
+     "primaryGenreName": "Rock & Roll",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/5d/ae/7e/5dae7e23-32e9-b911-21a7-ce9ec6a7edd2/67980.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/live-at-maxs-kansas-city/6797656901"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 20,
+    "artist": "Any Given Sin",
+    "title": "Until We Disappear",
+    "genre": "",
+    "label": "",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 20,
+    "artist": "Desperate Journalist",
+    "title": "Gilding the Lily",
+    "genre": "",
+    "label": "Fierce Panda",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 20,
+    "artist": "Disfear",
+    "title": "The Last Nail",
+    "genre": "",
+    "label": "Relapse",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6791700794,
+     "artistName": "Disfear",
+     "collectionName": "The Last Nail",
+     "releaseDate": "2026-11-20T08:00:00Z",
+     "trackCount": 8,
+     "primaryGenreName": "Metal",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/89/49/f9/8949f977-4d36-69eb-6fb3-a75a1d2712d8/781676533411.jpg/600x600bb.jpg",
+     "cn_url": null
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 20,
+    "artist": "Down",
+    "title": "Volume V",
+    "genre": "",
+    "label": "Nuclear Blast",
+    "album_has_article": true,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 20,
+    "artist": "Eidola",
+    "title": "The Will to Power",
+    "genre": "",
+    "label": "3DOT Recordings",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 20,
+    "artist": "Girish and the Chronicles",
+    "title": "Disintegrate",
+    "genre": "",
+    "label": "",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 20,
+    "artist": "Joshua Redman",
+    "title": "If Ever You Would Leave Us (We Play for Rollins)",
+    "genre": "",
+    "label": "Blue Note",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6808849195,
+     "artistName": "Joshua Redman",
+     "collectionName": "If Ever You Would Leave Us (we play for Rollins) [feat. Christian McBride, Marcus Gilmore, Larry Grenadier, Cécile McLorin Salvant, Kevin Hays, Chris Potter, Peter Bernstein & Gabrielle Cavassa]",
+     "releaseDate": "2026-11-20T08:00:00Z",
+     "trackCount": 11,
+     "primaryGenreName": "Jazz",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/d1/14/df/d114df49-413e-a253-4071-8bdf6dd583b2/26UMGIM85240.rgb.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/if-ever-you-would-leave-us-we-play-for-rollins-feat/6808849195"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 20,
+    "artist": "Julianna Barwick and Mary Lattimore",
+    "title": "Threshold (Original Motion Picture Score)",
+    "genre": "",
+    "label": "Florid Recordings, Blue Pool Recordings",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6802745088,
+     "artistName": "Julianna Barwick & Mary Lattimore",
+     "collectionName": "Threshold (Original Motion Picture Score)",
+     "releaseDate": "2026-11-20T08:00:00Z",
+     "trackCount": 16,
+     "primaryGenreName": "Alternative",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/76/8c/35/768c35a9-1a93-f9a0-9c70-f6b6b425fb0f/881626821367_cover.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/threshold-original-motion-picture-score/6802745088"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 20,
+    "artist": "Lael Neale",
+    "title": "As Killers Do",
+    "genre": "",
+    "label": "Consensual Sound",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6794957529,
+     "artistName": "Lael Neale",
+     "collectionName": "As Killers Do",
+     "releaseDate": "2026-11-20T08:00:00Z",
+     "trackCount": 10,
+     "primaryGenreName": "Alternative",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/b9/b9/77/b9b97799-cf81-2bd7-f562-ea56bdc2171f/128936.jpg/600x600bb.jpg",
+     "cn_url": null
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 20,
+    "artist": "Lambchop",
+    "title": "Demoed",
+    "genre": "",
+    "label": "",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 20,
+    "artist": "Lorenzo Senni",
+    "title": "All Ages",
+    "genre": "",
+    "label": "Warp",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6802783748,
+     "artistName": "Lorenzo Senni",
+     "collectionName": "All Ages",
+     "releaseDate": "2026-11-20T08:00:00Z",
+     "trackCount": 11,
+     "primaryGenreName": "Electronic",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/5b/79/95/5b799581-3bb3-6989-0d34-c0ba50424f4b/5056818808715.png/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/all-ages/6802783748"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 20,
+    "artist": "Mez",
+    "title": "Electric Future Gangster",
+    "genre": "",
+    "label": "Mass Appeal",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 20,
+    "artist": "Rammstein",
+    "title": "Live in Mexico City",
+    "genre": "",
+    "label": "",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 20,
+    "artist": "R.E.M.",
+    "title": "The Black Sessions Revealed",
+    "genre": "",
+    "label": "Craft",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 20,
+    "artist": "Richard Skelton and Lawrence English",
+    "title": "Noon",
+    "genre": "",
+    "label": "Phantom Limb",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6783288970,
+     "artistName": "Richard Skelton & Lawrence English",
+     "collectionName": "NOON",
+     "releaseDate": "2026-11-20T08:00:00Z",
+     "trackCount": 4,
+     "primaryGenreName": "Ambient",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/7a/ac/91/7aac9180-832f-8fca-6d62-4309bf465fa5/5053760155683_cover.jpg/600x600bb.jpg",
+     "cn_url": null
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 20,
+    "artist": "Suicide Silence",
+    "title": "Graceless",
+    "genre": "",
+    "label": "",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 20,
+    "artist": "Take That",
+    "title": "Dreamers",
+    "genre": "",
+    "label": "EMI",
+    "album_has_article": true,
+    "itunes": {
+     "collectionId": 6814543019,
+     "artistName": "Take That",
+     "collectionName": "Dreamers",
+     "releaseDate": "2026-11-20T08:00:00Z",
+     "trackCount": 12,
+     "primaryGenreName": "Pop",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/29/11/22/291122a2-5136-40a9-f195-715fc0b5d87d/26UM1IM20740.rgb.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/dreamers/6814543019"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 20,
+    "artist": "Then Comes Silence",
+    "title": "Requiem Ballroom",
+    "genre": "",
+    "label": "",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6825182011,
+     "artistName": "Then Comes Silence",
+     "collectionName": "Requiem Ballroom",
+     "releaseDate": "2026-11-20T08:00:00Z",
+     "trackCount": 12,
+     "primaryGenreName": "Punk",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/7a/e2/02/7ae202d4-7731-b820-0c16-18b7346fbdcc/782388147262_Cover.jpg/600x600bb.jpg",
+     "cn_url": null
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 20,
+    "artist": "Thy Catafalque",
+    "title": "XIII: Sárga Erdő",
+    "genre": "",
+    "label": "Season of Mist",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6798033431,
+     "artistName": "Thy Catafalque",
+     "collectionName": "XIII: Sárga Erdő",
+     "releaseDate": "2026-11-20T08:00:00Z",
+     "trackCount": 12,
+     "primaryGenreName": "Death Metal/Black Metal",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/92/77/29/9277296b-9094-f542-15e8-d72d3e423633/822603021059.jpg/600x600bb.jpg",
+     "cn_url": null
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 20,
+    "artist": "Trivium",
+    "title": "Crown in the Grave",
+    "genre": "",
+    "label": "Roadrunner",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 20,
+    "artist": "Wolf",
+    "title": "Hour of the Wolf",
+    "genre": "",
+    "label": "Fireflash Records",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 1413499206,
+     "artistName": "Steppenwolf",
+     "collectionName": "Hour of the Wolf (Expanded Edition)",
+     "releaseDate": "1975-09-01T07:00:00Z",
+     "trackCount": 10,
+     "primaryGenreName": "Rock",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/81/5c/85/815c85ec-0585-6c5e-a7fd-84b427cac39d/886447140086.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/hour-of-the-wolf-expanded-edition/1413499206"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 25,
+    "artist": "Pretty Lights",
+    "title": "A Trip Thru Time Fantastic",
+    "genre": "",
+    "label": "",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 26,
+    "artist": "Priya Ragu",
+    "title": "Madras",
+    "genre": "",
+    "label": "",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 27,
+    "artist": "Björk",
+    "title": "Björk Orkestral with the Hamrahlíð Choir",
+    "genre": "",
+    "label": "One Little Independent",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6819756090,
+     "artistName": "Björk & The Hamrahlíð Choir",
+     "collectionName": "Björk Orkestral with the Hamrahlíð Choir (Live at Harpa Hall, Reykjavík)",
+     "releaseDate": "2026-11-27T08:00:00Z",
+     "trackCount": 11,
+     "primaryGenreName": "Alternative",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/4c/be/e9/4cbee956-38d0-3931-30a4-1a60f3874524/5016958110734.png/600x600bb.jpg",
+     "cn_url": null
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 27,
+    "artist": "The Blue Aeroplanes",
+    "title": "Tales from the Silver Lounge",
+    "genre": "",
+    "label": "Artstar Records",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6821036379,
+     "artistName": "The Blue Aeroplanes",
+     "collectionName": "Tales From The Silver Lounge",
+     "releaseDate": "2026-11-27T08:00:00Z",
+     "trackCount": 11,
+     "primaryGenreName": "Alternative",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/69/76/0d/69760d6c-d413-b60f-b4aa-951c2271dc88/17373.jpg/600x600bb.jpg",
+     "cn_url": null
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 27,
+    "artist": "Cliff Richard",
+    "title": "Only Number Ones",
+    "genre": "",
+    "label": "",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6808349010,
+     "artistName": "Cliff Richard",
+     "collectionName": "Only Number Ones (Deluxe Edition)",
+     "releaseDate": "2026-11-27T08:00:00Z",
+     "trackCount": 29,
+     "primaryGenreName": "Pop",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/9c/2f/56/9c2f560f-a9aa-1dc3-aff5-4a4d76eecd69/1200214965921.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/only-number-ones-deluxe-edition/6808349010"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 27,
+    "artist": "Contrarian",
+    "title": "Escaping Depravity",
+    "genre": "",
+    "label": "Willowtip Records",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6818255365,
+     "artistName": "Contrarian",
+     "collectionName": "Escaping Depravity - EP",
+     "releaseDate": "2026-10-02T07:00:00Z",
+     "trackCount": 1,
+     "primaryGenreName": "Metal",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/4b/28/dd/4b28dd62-6e4b-1b6f-3fa6-8afc7614e39f/26UM1IM21517.rgb.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/escaping-depravity-ep/6818255365"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 27,
+    "artist": "Factory Floor",
+    "title": "One Trip",
+    "genre": "",
+    "label": "Phantasy Sound",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 27,
+    "artist": "Jon Bryant",
+    "title": "Harbour",
+    "genre": "",
+    "label": "Nettwerk Music Group",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 1877992810,
+     "artistName": "Jon Bryant",
+     "collectionName": "Harbour",
+     "releaseDate": "2026-11-27T08:00:00Z",
+     "trackCount": 10,
+     "primaryGenreName": "Singer/Songwriter",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/ef/74/a8/ef74a8de-a9ce-abcf-2061-f80886056bde/067003242448.png/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/harbour/1877992810"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 27,
+    "artist": "King 810",
+    "title": "La Grande Mort or Silence of God",
+    "genre": "",
+    "label": "",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 27,
+    "artist": "Molly Hatchet",
+    "title": "Lost Horizon",
+    "genre": "",
+    "label": "Steamhammer/SPV",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 27,
+    "artist": "Morten Harket",
+    "title": "Human Grace",
+    "genre": "",
+    "label": "",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 27,
+    "artist": "Mya Mehmi",
+    "title": "M1",
+    "genre": "",
+    "label": "Dialled In Records",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 27,
+    "artist": "Mystic Prophecy",
+    "title": "In Metal",
+    "genre": "",
+    "label": "Perception Records, Reigning Phoenix",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6790513741,
+     "artistName": "Mystic Prophecy",
+     "collectionName": "In Metal",
+     "releaseDate": "2026-11-27T08:00:00Z",
+     "trackCount": 10,
+     "primaryGenreName": "Metal",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/4f/cf/c6/4fcfc644-7078-780c-80ac-3b5f29b85478/4251981719610.jpg/600x600bb.jpg",
+     "cn_url": null
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 27,
+    "artist": "PeelingFlesh",
+    "title": "PeelingFlesh",
+    "genre": "",
+    "label": "Unique Leader",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 27,
+    "artist": "Peter Gabriel",
+    "title": "O\\I",
+    "genre": "",
+    "label": "Real World",
+    "album_has_article": true,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 27,
+    "artist": "Purple Pilgrims",
+    "title": "Given to the Night",
+    "genre": "",
+    "label": "AD 93",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6801585081,
+     "artistName": "Purple Pilgrims",
+     "collectionName": "Given to the Night",
+     "releaseDate": "2026-11-27T08:00:00Z",
+     "trackCount": 11,
+     "primaryGenreName": "Alternative",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/07/06/77/0706775b-34cf-e7ca-240c-208ea5b48425/191400613270.png/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/given-to-the-night/6801585081"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 27,
+    "artist": "Whiplash",
+    "title": "Roar",
+    "genre": "",
+    "label": "Time To Kill Records",
+    "album_has_article": true,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 12,
+    "day": 1,
+    "artist": "Beans On Toast",
+    "title": "The Great Unravelling",
+    "genre": "",
+    "label": "",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6776244690,
+     "artistName": "Beans On Toast",
+     "collectionName": "The Great Unravelling",
+     "releaseDate": "2026-12-01T08:00:00Z",
+     "trackCount": 9,
+     "primaryGenreName": "Contemporary Folk",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/b0/78/86/b07886d6-d7a0-2feb-548c-6bd0b4522193/5053760152521_cover.jpg/600x600bb.jpg",
+     "cn_url": null
+    }
+   },
+   {
+    "year": 2026,
+    "month": 12,
+    "day": 1,
+    "artist": "Infant Annihilator",
+    "title": "The Somnial Plunge into Cyclic Ebullition",
+    "genre": "",
+    "label": "",
+    "album_has_article": true,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 12,
+    "day": 2,
+    "artist": "Hanabie.",
+    "title": "Umami",
+    "genre": "",
+    "label": "",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 12,
+    "day": 4,
+    "artist": "2 Chainz and Statik Selektah",
+    "title": "Playaz Only Live Once",
+    "genre": "",
+    "label": "",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 12,
+    "day": 4,
+    "artist": "Eleine",
+    "title": "The Water Taste of Blood",
+    "genre": "",
+    "label": "Algoth Records",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6774806239,
+     "artistName": "Eleine",
+     "collectionName": "The Water Taste Of Blood",
+     "releaseDate": "2026-12-04T08:00:00Z",
+     "trackCount": 12,
+     "primaryGenreName": "Metal",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/5c/e6/f4/5ce6f421-bb4e-07a3-3017-e7b979cd82ea/4251981716367.jpg/600x600bb.jpg",
+     "cn_url": null
+    }
+   },
+   {
+    "year": 2026,
+    "month": 12,
+    "day": 4,
+    "artist": "End of Green",
+    "title": "Ashes & Gold",
+    "genre": "",
+    "label": "",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6798878699,
+     "artistName": "End of Green",
+     "collectionName": "Ashes & Gold",
+     "releaseDate": "2026-12-04T08:00:00Z",
+     "trackCount": 11,
+     "primaryGenreName": "Pop",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/d1/fc/3a/d1fc3a1e-59cf-92e1-9391-564cc33cf301/4255698502534.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/ashes-gold/6798878699"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 12,
+    "day": 4,
+    "artist": "Morphine",
+    "title": "Cocoon",
+    "genre": "",
+    "label": "Partisan",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6793997982,
+     "artistName": "Morphine",
+     "collectionName": "Cocoon",
+     "releaseDate": "2026-12-04T08:00:00Z",
+     "trackCount": 8,
+     "primaryGenreName": "Alternative",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/67/0d/e6/670de61e-d45c-4265-2479-8a4eadaa03ad/0720841306702_Cover.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/cocoon/6793997982"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 12,
+    "day": 4,
+    "artist": "Parkway Drive",
+    "title": "Home – Live at the Sydney Opera House",
+    "genre": "",
+    "label": "Parkway Records, Civilians",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 12,
+    "day": 4,
+    "artist": "Self Esteem",
+    "title": "A Complicated Woman - Live from Brixton Academy",
+    "genre": "",
+    "label": "Polydor",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 12,
+    "day": 4,
+    "artist": "Slayyyter",
+    "title": "Worst Man in America",
+    "genre": "",
+    "label": "Records, Columbia",
+    "album_has_article": true,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 12,
+    "day": 4,
+    "artist": "Soak",
+    "title": "Decembers",
+    "genre": "",
+    "label": "",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6810744638,
+     "artistName": "SOAK",
+     "collectionName": "decembers",
+     "releaseDate": "2026-12-04T08:00:00Z",
+     "trackCount": 9,
+     "primaryGenreName": "Alternative",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/26/d4/97/26d497f4-6c61-c629-e089-0fc231cf0f85/191402060676.png/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/decembers/6810744638"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 12,
+    "day": 11,
+    "artist": "Æther Realm",
+    "title": "Season of Bloodshed",
+    "genre": "",
+    "label": "Napalm",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 12,
+    "day": 11,
+    "artist": "Archon Angel",
+    "title": "Beyond the Grave",
+    "genre": "",
+    "label": "Frontiers",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6821758141,
+     "artistName": "Archon Angel",
+     "collectionName": "Beyond The Grave",
+     "releaseDate": "2026-12-11T08:00:00Z",
+     "trackCount": 11,
+     "primaryGenreName": "Metal",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/f9/cc/32/f9cc32bc-4d3f-3926-a603-f294581f7fe3/885288831542.jpg/600x600bb.jpg",
+     "cn_url": null
+    }
+   },
+   {
+    "year": 2026,
+    "month": 12,
+    "day": 11,
+    "artist": "Doro",
+    "title": "Wild at Heart",
+    "genre": "",
+    "label": "",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 1164023614,
+     "artistName": "The Wild!",
+     "collectionName": "Wild at Heart",
+     "releaseDate": "2017-02-17T08:00:00Z",
+     "trackCount": 11,
+     "primaryGenreName": "Rock",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music62/v4/f3/42/f2/f342f21a-66a0-2679-d770-897bf5077b28/625712599828.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/wild-at-heart/1164023614"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 12,
+    "day": 11,
+    "artist": "Keaton Henson",
+    "title": "Versions",
+    "genre": "",
+    "label": "PIAS",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6817305284,
+     "artistName": "Keaton Henson",
+     "collectionName": "Versions",
+     "releaseDate": "2026-12-11T08:00:00Z",
+     "trackCount": 11,
+     "primaryGenreName": "Alternative",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/59/11/5d/59115ddc-ee2b-217c-16ef-d486e1302099/5400863219291_cover.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/versions/6817305284"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 12,
+    "day": 11,
+    "artist": "Nightwish",
+    "title": "The Greatest 30 Years on Earth",
+    "genre": "",
+    "label": "Nuclear Blast",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6800270959,
+     "artistName": "Nightwish",
+     "collectionName": "The Greatest 30 Years On Earth (Live)",
+     "releaseDate": "2026-12-11T08:00:00Z",
+     "trackCount": 27,
+     "primaryGenreName": "Metal",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/f5/50/ed/f550ede6-d961-71b8-c361-73ff2cc01556/cover.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/the-greatest-30-years-on-earth-live/6800270959"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 12,
+    "day": 11,
+    "artist": "Panda Bear",
+    "title": "PB Band Live 25 at Power Station",
+    "genre": "",
+    "label": "Domino Documents",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6819304599,
+     "artistName": "Panda Bear",
+     "collectionName": "pb band live 25 at power station",
+     "releaseDate": "2026-12-11T08:00:00Z",
+     "trackCount": 17,
+     "primaryGenreName": "Alternative",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/7c/33/96/7c33965c-f44e-c80e-b952-9c71f355abf8/191508000668.png/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/pb-band-live-25-at-power-station/6819304599"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 12,
+    "day": 11,
+    "artist": "Warpaint",
+    "title": "Artifact",
+    "genre": "",
+    "label": "Rough Trade",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 12,
+    "day": 18,
+    "artist": "Vybz Kartel",
+    "title": "The Sun",
+    "genre": "",
+    "label": "",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 12,
+    "day": 23,
+    "artist": "Man with a Mission",
+    "title": "The Circus",
+    "genre": "",
+    "label": "Sony Music, Century Media",
+    "album_has_article": false,
+    "itunes": null
+   }
+  ],
   "kpop": [
    {
     "year": 2026,
@@ -1706,18 +7216,7 @@
     "month": 11,
     "day": 16,
     "title": "Perfect Storm",
-    "artist": "Tomorrow X Together",
-    "itunes": {
-     "collectionId": 1747648504,
-     "artistName": "Tomohisa Yamashita",
-     "collectionName": "Perfect Storm (feat. TAEHYUN of TOMORROW X TOGETHER)",
-     "releaseDate": "2024-06-05T07:00:00Z",
-     "trackCount": 1,
-     "primaryGenreName": "J-Pop",
-     "collectionExplicitness": "notExplicit",
-     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/cc/a4/fa/cca4fa43-66bf-3f24-f035-726cf12dc9fb/PA00153902_0_193242_jacket.jpg/600x600bb.jpg",
-     "cn_url": "https://music.apple.com/cn/album/perfect-storm-feat-taehyun-of-tomorrow-x-together/1747648504"
-    }
+    "artist": "Tomorrow X Together"
    },
    {
     "year": 2026,
@@ -5226,7 +10725,5 @@
    "publisher": ""
   }
  ],
- "errors": [
-  "douban rate limited at movie 37247814; remaining details skipped"
- ]
+ "errors": []
 }
