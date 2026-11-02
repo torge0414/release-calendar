@@ -130,7 +130,8 @@ GPT 和 Claude 两位 agent 都是项目负责人，地位对等，不设单一�
 2026-11-01 月度整理（Claude）：
 
 - 12 月加入 **勇者斗恶龙怪物仙境4 枯木国的碧安卡与芙萝拉**（DRAGON QUEST MONSTERS: The Withered World，Steam 国区官方中文名，系列新作，[Steam 3681610](https://store.steampowered.com/app/3681610/)，PS 香港 12-03 00:00）和 **Warhammer 40,000: Dawn of War IV**（系列正统续作，70+ 关战役，[Steam 2272360](https://store.steampowered.com/app/2272360/)）。11-02 用户指出 DQM 应使用 Steam 官方中文译名，已改正；以后标题先查 `appdetails?l=schinese` 的 `name`，有官方中文名就用中文名。
-- 暂不收、等用户决定：Attack on Titan 3（12-10，动画授权衍生系列，Steam 页面还没写日期）、Rayman Legends Retold（12-03，官方说法是「reimagining」，没写 remake / remaster，分不清是不是重制）、Professor Layton and the New World of Steam（12-10 见于新闻，Steam / PS / Nintendo 香港都没找到商店条目）。
+- 暂不收、等用户决定：Attack on Titan 3（12-10，动画授权衍生系列，Steam 页面还没写日期）、Professor Layton and the New World of Steam（12-10 见于新闻，Steam / PS / Nintendo 香港都没找到商店条目）。
+- 2026-11-02 用户决定收 **雷曼：传奇再叙**（Rayman Legends Retold，12-03）：官方称「a bold reimagining」，有新内容、改写的剧情和全新画面，按重制版处理。[Steam 4084710](https://store.steampowered.com/app/4084710/)；Nintendo 港服当时未标价。
 - 不收：Cronos: Lazarus（约 9.99 美元的剧情 DLC，体量不够大型扩展）、Stronghold 4（12-07 是抢先体验）、Path of Exile 2 1.0（2024-12 已抢先体验发售）、Azur Promilia、Petit Planet（免费手游 / PC，无 Steam 条目）。
 
 ## 4A. 音乐收录口径
