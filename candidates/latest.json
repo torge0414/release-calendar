@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-01 09:06:08",
+ "generated_at": "2026-11-11 17:40:32",
  "window": [
   {
    "year": 2026,
@@ -16,331 +16,43 @@
  ],
  "movies": [
   {
-   "sid": "37516928",
-   "title": "梦寻苏毗女儿国",
+   "sid": "1292001",
+   "title": "海上钢琴师",
    "list": "movie_soon",
-   "release_hint": "11.03",
-   "wish": 440,
-   "score": 0,
-   "votes": 0,
-   "pubdate": "2026-11-03(中国大陆)",
-   "mainland_date": "2026-11-03",
-   "year": "2026",
+   "release_hint": "11.15",
+   "wish": 676258,
+   "score": 9.3,
+   "votes": 1908080,
+   "pubdate": "2019-11-15(中国大陆)",
+   "mainland_date": "2019-11-15",
+   "year": "1998",
    "genres": [
     "剧情",
-    "爱情"
+    "音乐"
    ],
    "countries": [
-    "中国大陆"
+    "意大利"
    ],
    "directors": [
-    "拉华加"
+    "朱塞佩·托纳多雷"
    ],
    "actors": [
-    "丁真珍珠",
-    "卓依娜姆"
+    "蒂姆·罗斯",
+    "普路特·泰勒·文斯",
+    "比尔·努恩"
    ],
-   "comments": 152,
-   "null_rating_reason": "暂无评分",
-   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2937059589.jpg",
-   "in_window": true,
-   "heat_ok": false
-  },
-  {
-   "sid": "35299923",
-   "title": "白衣逆行者",
-   "list": "movie_soon",
-   "release_hint": "11.06",
-   "wish": 1980,
-   "score": 0,
-   "votes": 0,
-   "pubdate": "2026-11-06(中国大陆)",
-   "mainland_date": "2026-11-06",
-   "year": "2026",
-   "genres": [
-    "剧情"
-   ],
-   "countries": [
-    "中国香港"
-   ],
-   "directors": [
-    "邱礼涛"
-   ],
-   "actors": [
-    "刘德华",
-    "杨子姗",
-    "秦海璐"
-   ],
-   "comments": 259,
-   "null_rating_reason": "尚未上映",
-   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2936741903.jpg",
-   "in_window": true,
-   "heat_ok": false
-  },
-  {
-   "sid": "37822528",
-   "title": "珠穆朗玛：云中彼岸",
-   "list": "movie_soon",
-   "release_hint": "11.06",
-   "wish": 1914,
-   "score": 0,
-   "votes": 0,
-   "pubdate": "2026-11-06(中国大陆)",
-   "mainland_date": "2026-11-06",
-   "year": "2026",
-   "genres": [
-    "纪录片",
-    "运动"
-   ],
-   "countries": [
-    "美国",
-    "中国大陆",
-    "尼泊尔"
-   ],
-   "directors": [
-    "金国威",
-    "伊丽莎白·柴·瓦沙瑞莉"
-   ],
-   "actors": [
-    "吉姆·莫里森",
-    "希拉里·尼尔森"
-   ],
-   "comments": 50,
-   "null_rating_reason": "暂无评分",
-   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2936876483.jpg",
-   "in_window": true,
-   "heat_ok": false
-  },
-  {
-   "sid": "23774856",
-   "title": "戴帽子的猫",
-   "list": "movie_soon",
-   "release_hint": "11.06",
-   "wish": 1036,
-   "score": 0,
-   "votes": 0,
-   "pubdate": "2026-11-06(中国大陆)",
-   "mainland_date": "2026-11-06",
-   "year": "2026",
-   "genres": [
-    "喜剧",
-    "动画",
-    "奇幻"
-   ],
-   "countries": [
-    "美国"
-   ],
-   "directors": [
-    "亚历山德罗·卡罗尼",
-    "埃丽卡·里维诺亚"
-   ],
-   "actors": [
-    "比尔·哈德尔",
-    "克索斯利尔·戈麦斯",
-    "迪亚戈·马丁内斯"
-   ],
-   "comments": 18,
-   "null_rating_reason": "尚未上映",
-   "poster_url": "https://img9.doubanio.com/view/photo/m_ratio_poster/public/p2936530304.jpg",
-   "in_window": true,
-   "heat_ok": false
-  },
-  {
-   "sid": "37659649",
-   "title": "手捧繁星",
-   "list": "movie_soon",
-   "release_hint": "11.06",
-   "wish": 118,
-   "score": 0,
-   "votes": 0,
-   "pubdate": "2026-11-06(中国大陆)",
-   "mainland_date": "2026-11-06",
-   "year": "2026",
-   "genres": [
-    "剧情"
-   ],
-   "countries": [
-    "中国大陆"
-   ],
-   "directors": [
-    "宁敬武"
-   ],
-   "actors": [
-    "加奈那",
-    "袁文康",
-    "卡力比努尔"
-   ],
-   "comments": 3,
-   "null_rating_reason": "尚未上映",
-   "poster_url": "https://img9.doubanio.com/view/photo/m_ratio_poster/public/p2937106396.jpg",
-   "in_window": true,
-   "heat_ok": false
-  },
-  {
-   "sid": "37659565",
-   "title": "感恩号·大篷车",
-   "list": "movie_soon",
-   "release_hint": "11.06",
-   "wish": 8,
-   "score": 0,
-   "votes": 0,
-   "pubdate": "2026-11-06(中国大陆)",
-   "mainland_date": "2026-11-06",
-   "year": "2026",
-   "genres": [
-    "剧情"
-   ],
-   "countries": [
-    "中国大陆"
-   ],
-   "directors": [
-    "马岱山",
-    "马子晶"
-   ],
-   "actors": [
-    "秋琪",
-    "杨雨橙",
-    "刘牧"
-   ],
-   "comments": 1,
-   "null_rating_reason": "尚未上映",
-   "poster_url": "https://img9.doubanio.com/view/photo/m_ratio_poster/public/p2937093376.jpg",
-   "in_window": true,
-   "heat_ok": false
-  },
-  {
-   "sid": "36424371",
-   "title": "我们仅有一次的人生",
-   "list": "movie_soon",
-   "release_hint": "11.07",
-   "wish": 10340,
-   "score": 0,
-   "votes": 0,
-   "pubdate": "2026-11-07(中国大陆)",
-   "mainland_date": "2026-11-07",
-   "year": "2026",
-   "genres": [
-    "剧情"
-   ],
-   "countries": [
-    "中国大陆"
-   ],
-   "directors": [
-    "孙傲谦"
-   ],
-   "actors": [
-    "宋佳",
-    "文淇",
-    "祖峰"
-   ],
-   "comments": 155,
-   "null_rating_reason": "暂无评分",
-   "poster_url": "https://img9.doubanio.com/view/photo/m_ratio_poster/public/p2936815515.jpg",
-   "in_window": true,
-   "heat_ok": true,
-   "poster_file": "img/movie_36424371.jpg"
-  },
-  {
-   "sid": "37295792",
-   "title": "心迷宫之三重罪",
-   "list": "movie_soon",
-   "release_hint": "11.07",
-   "wish": 1044,
-   "score": 0,
-   "votes": 0,
-   "pubdate": "2026-11-07(中国大陆)",
-   "mainland_date": "2026-11-07",
-   "year": "2026",
-   "genres": [
-    "悬疑",
-    "犯罪"
-   ],
-   "countries": [
-    "中国大陆"
-   ],
-   "directors": [
-    "何念"
-   ],
-   "actors": [
-    "姜武",
-    "杜光祎",
-    "顾鑫"
-   ],
-   "comments": 30,
-   "null_rating_reason": "尚未上映",
-   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2937022178.jpg",
-   "in_window": true,
-   "heat_ok": false
-  },
-  {
-   "sid": "36083358",
-   "title": "乡归",
-   "list": "movie_soon",
-   "release_hint": "11.07",
-   "wish": 519,
-   "score": 0,
-   "votes": 0,
-   "pubdate": "2026-11-07(中国大陆)",
-   "mainland_date": "2026-11-07",
-   "year": "2025",
-   "genres": [
-    "纪录片"
-   ],
-   "countries": [
-    "中国大陆"
-   ],
-   "directors": [
-    "徐晓晖"
-   ],
-   "actors": [
-    "刘休",
-    "周燕",
-    "钟欣怡"
-   ],
-   "comments": 16,
-   "null_rating_reason": "暂无评分",
-   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2926368987.jpg",
-   "in_window": true,
-   "heat_ok": false
-  },
-  {
-   "sid": "36171702",
-   "title": "清气满乾坤",
-   "list": "movie_soon",
-   "release_hint": "11.08",
-   "wish": 98,
-   "score": 0,
-   "votes": 0,
-   "pubdate": "2026-11-08(中国大陆)",
-   "mainland_date": "2026-11-08",
-   "year": "2026",
-   "genres": [
-    "剧情",
-    "悬疑"
-   ],
-   "countries": [
-    "中国大陆"
-   ],
-   "directors": [
-    "刘峰"
-   ],
-   "actors": [
-    "宁理",
-    "丁圣霏",
-    "徐永革"
-   ],
-   "comments": 2,
-   "null_rating_reason": "尚未上映",
-   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2937052567.jpg",
-   "in_window": true,
-   "heat_ok": false
+   "comments": 383182,
+   "null_rating_reason": "",
+   "poster_url": "https://img9.doubanio.com/view/photo/m_ratio_poster/public/p2914698334.jpg",
+   "in_window": false,
+   "heat_ok": true
   },
   {
    "sid": "37388286",
    "title": "夫妻一场",
    "list": "movie_soon",
    "release_hint": "11.13",
-   "wish": 961,
+   "wish": 1297,
    "score": 0,
    "votes": 0,
    "pubdate": "2026-11-13(中国大陆)",
@@ -356,9 +68,42 @@
     "秦潇越"
    ],
    "actors": [],
-   "comments": 263,
+   "comments": 359,
    "null_rating_reason": "暂无评分",
    "poster_url": "https://img9.doubanio.com/view/photo/m_ratio_poster/public/p2936798165.jpg",
+   "in_window": true,
+   "heat_ok": false
+  },
+  {
+   "sid": "37409137",
+   "title": "我没错！",
+   "list": "movie_soon",
+   "release_hint": "11.14",
+   "wish": 482,
+   "score": 0,
+   "votes": 0,
+   "pubdate": "2026-11-14(中国大陆)",
+   "mainland_date": "2026-11-14",
+   "year": "2026",
+   "genres": [
+    "剧情",
+    "喜剧",
+    "犯罪"
+   ],
+   "countries": [
+    "中国大陆"
+   ],
+   "directors": [
+    "宗海英"
+   ],
+   "actors": [
+    "佟丽娅",
+    "王皓",
+    "王智"
+   ],
+   "comments": 8,
+   "null_rating_reason": "尚未上映",
+   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2937345969.jpg",
    "in_window": true,
    "heat_ok": false
   },
@@ -367,7 +112,7 @@
    "title": "向阳青春",
    "list": "movie_soon",
    "release_hint": "11.14",
-   "wish": 6,
+   "wish": 59,
    "score": 0,
    "votes": 0,
    "pubdate": "2026-11-14(中国大陆)",
@@ -387,20 +132,53 @@
     "吕炫乐",
     "徐光宇"
    ],
-   "comments": 0,
+   "comments": 1,
    "null_rating_reason": "尚未上映",
    "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2937076012.jpg",
    "in_window": true,
    "heat_ok": false
   },
   {
+   "sid": "35211934",
+   "title": "深度安静",
+   "list": "movie_soon",
+   "release_hint": "11.19",
+   "wish": 11523,
+   "score": 6.8,
+   "votes": 3499,
+   "pubdate": "2026-11-19(中国大陆)",
+   "mainland_date": "2026-11-19",
+   "year": "2025",
+   "genres": [
+    "剧情"
+   ],
+   "countries": [
+    "中国台湾",
+    "意大利"
+   ],
+   "directors": [
+    "沈可尚"
+   ],
+   "actors": [
+    "张孝全",
+    "林依晨",
+    "金士杰"
+   ],
+   "comments": 1564,
+   "null_rating_reason": "",
+   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2923391533.jpg",
+   "in_window": true,
+   "heat_ok": true,
+   "poster_file": "candidates/posters/movie_35211934.jpg"
+  },
+  {
    "sid": "35622269",
    "title": "霹雳英雄：素还真",
    "list": "movie_soon",
    "release_hint": "11.20",
-   "wish": 613,
+   "wish": 696,
    "score": 6.8,
-   "votes": 917,
+   "votes": 924,
    "pubdate": "2026-11-20(中国大陆)",
    "mainland_date": "2026-11-20",
    "year": "2022",
@@ -421,9 +199,42 @@
    "actors": [
     "黄文择"
    ],
-   "comments": 389,
+   "comments": 393,
    "null_rating_reason": "",
    "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2937074309.jpg",
+   "in_window": true,
+   "heat_ok": false
+  },
+  {
+   "sid": "39031675",
+   "title": "金哲",
+   "list": "movie_soon",
+   "release_hint": "11.20",
+   "wish": 96,
+   "score": 0,
+   "votes": 0,
+   "pubdate": "2026-11-20(中国大陆)",
+   "mainland_date": "2026-11-20",
+   "year": "2026",
+   "genres": [
+    "剧情",
+    "喜剧",
+    "家庭"
+   ],
+   "countries": [
+    "中国大陆"
+   ],
+   "directors": [
+    "金成峰"
+   ],
+   "actors": [
+    "王振鑫",
+    "俞智元",
+    "李玉姬"
+   ],
+   "comments": 6,
+   "null_rating_reason": "尚未上映",
+   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2937372163.jpg",
    "in_window": true,
    "heat_ok": false
   },
@@ -432,7 +243,7 @@
    "title": "试探",
    "list": "movie_soon",
    "release_hint": "11.21",
-   "wish": 1380,
+   "wish": 1504,
    "score": 0,
    "votes": 0,
    "pubdate": "2026-11-21(中国大陆)",
@@ -453,18 +264,50 @@
     "陈雨锶",
     "李梦"
    ],
-   "comments": 37,
+   "comments": 39,
    "null_rating_reason": "尚未上映",
-   "poster_url": "https://img9.doubanio.com/view/photo/m_ratio_poster/public/p2936965976.jpg",
+   "poster_url": "https://img9.doubanio.com/view/photo/m_ratio_poster/public/p2937261554.jpg",
    "in_window": true,
    "heat_ok": false
+  },
+  {
+   "sid": "27102569",
+   "title": "悲伤逆流成河",
+   "list": "movie_soon",
+   "release_hint": "09.21",
+   "wish": 75086,
+   "score": 5.8,
+   "votes": 286167,
+   "pubdate": "2018-09-21(中国大陆)",
+   "mainland_date": "2018-09-21",
+   "year": "2018",
+   "genres": [
+    "剧情",
+    "爱情"
+   ],
+   "countries": [
+    "中国大陆"
+   ],
+   "directors": [
+    "落落"
+   ],
+   "actors": [
+    "赵英博",
+    "任敏",
+    "辛云来"
+   ],
+   "comments": 88507,
+   "null_rating_reason": "",
+   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2937261327.jpg",
+   "in_window": false,
+   "heat_ok": true
   },
   {
    "sid": "37503053",
    "title": "魔法秘境",
    "list": "movie_soon",
    "release_hint": "11.27",
-   "wish": 1962,
+   "wish": 2466,
    "score": 0,
    "votes": 0,
    "pubdate": "2026-11-27(中国大陆)",
@@ -488,9 +331,41 @@
     "拉什达·琼斯",
     "朱迪·福斯特"
    ],
-   "comments": 37,
+   "comments": 43,
    "null_rating_reason": "尚未上映",
    "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2937074540.jpg",
+   "in_window": true,
+   "heat_ok": false
+  },
+  {
+   "sid": "33412900",
+   "title": "二十四味",
+   "list": "movie_soon",
+   "release_hint": "11.27",
+   "wish": 1232,
+   "score": 0,
+   "votes": 0,
+   "pubdate": "2026-11-27(中国大陆)",
+   "mainland_date": "2026-11-27",
+   "year": "2024",
+   "genres": [
+    "剧情",
+    "家庭"
+   ],
+   "countries": [
+    "中国大陆"
+   ],
+   "directors": [
+    "黄绮玲"
+   ],
+   "actors": [
+    "张艾嘉",
+    "钟镇涛",
+    "袁澧林"
+   ],
+   "comments": 102,
+   "null_rating_reason": "暂无评分",
+   "poster_url": "https://img9.doubanio.com/view/photo/m_ratio_poster/public/p2937401916.jpg",
    "in_window": true,
    "heat_ok": false
   },
@@ -499,9 +374,9 @@
    "title": "时间里的爱人",
    "list": "movie_soon",
    "release_hint": "11.28",
-   "wish": 8914,
+   "wish": 9251,
    "score": 6.4,
-   "votes": 5470,
+   "votes": 5538,
    "pubdate": "2026-11-28(中国大陆)",
    "mainland_date": "2026-11-28",
    "year": "2024",
@@ -521,7 +396,7 @@
     "弗洛伦丝·皮尤",
     "格瑞斯·德兰妮"
    ],
-   "comments": 2306,
+   "comments": 2341,
    "null_rating_reason": "",
    "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2936889823.jpg",
    "in_window": true,
@@ -529,11 +404,74 @@
    "poster_file": "img/movie_36313679.jpg"
   },
   {
+   "sid": "37505711",
+   "title": "顾炎武",
+   "list": "movie_soon",
+   "release_hint": "12.01",
+   "wish": 25,
+   "score": 0,
+   "votes": 0,
+   "pubdate": "2026-12-01(中国大陆)",
+   "mainland_date": "2026-12-01",
+   "year": "2025",
+   "genres": [
+    "戏曲"
+   ],
+   "countries": [
+    "中国大陆"
+   ],
+   "directors": [
+    "袁俊平"
+   ],
+   "actors": [
+    "柯军",
+    "张大环",
+    "龚隐雷"
+   ],
+   "comments": 3,
+   "null_rating_reason": "暂无评分",
+   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2937408247.jpg",
+   "in_window": true,
+   "heat_ok": false
+  },
+  {
+   "sid": "37452950",
+   "title": "偷偷藏不住",
+   "list": "movie_soon",
+   "release_hint": "12.12",
+   "wish": 759,
+   "score": 0,
+   "votes": 0,
+   "pubdate": "2026-12-12(中国大陆)",
+   "mainland_date": "2026-12-12",
+   "year": "2026",
+   "genres": [
+    "剧情",
+    "爱情"
+   ],
+   "countries": [
+    "中国大陆"
+   ],
+   "directors": [
+    "张裕笛"
+   ],
+   "actors": [
+    "朱珞宁",
+    "周皓崎",
+    "夏浩然"
+   ],
+   "comments": 61,
+   "null_rating_reason": "尚未上映",
+   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2937345697.jpg",
+   "in_window": true,
+   "heat_ok": false
+  },
+  {
    "sid": "36011202",
    "title": "复仇者联盟5",
    "list": "movie_soon",
    "release_hint": "12.16",
-   "wish": 91522,
+   "wish": 93479,
    "score": 0,
    "votes": 0,
    "pubdate": "2026-12-16(中国大陆)",
@@ -556,19 +494,19 @@
     "克里斯·埃文斯",
     "克里斯·海姆斯沃斯"
    ],
-   "comments": 1750,
+   "comments": 1796,
    "null_rating_reason": "尚未上映",
    "poster_url": "https://img9.doubanio.com/view/photo/m_ratio_poster/public/p2936595686.jpg",
    "in_window": true,
    "heat_ok": true,
-   "poster_file": "candidates/posters/movie_36011202.jpg"
+   "poster_file": "img/movie_36011202.jpg"
   },
   {
    "sid": "36787273",
    "title": "沙丘3",
    "list": "movie_soon",
    "release_hint": "12.31",
-   "wish": 79761,
+   "wish": 81312,
    "score": 0,
    "votes": 0,
    "pubdate": "2026-12-31(中国大陆)",
@@ -590,19 +528,19 @@
     "赞达亚",
     "杰森·莫玛"
    ],
-   "comments": 1327,
+   "comments": 1339,
    "null_rating_reason": "尚未上映",
    "poster_url": "https://img9.doubanio.com/view/photo/m_ratio_poster/public/p2937021716.jpg",
    "in_window": true,
    "heat_ok": true,
-   "poster_file": "candidates/posters/movie_36787273.jpg"
+   "poster_file": "img/movie_36787273.jpg"
   },
   {
    "sid": "38443833",
    "title": "活久久",
    "list": "movie_soon",
    "release_hint": "12.31",
-   "wish": 489,
+   "wish": 535,
    "score": 0,
    "votes": 0,
    "pubdate": "2026-12-31(中国大陆)",
@@ -623,7 +561,7 @@
     "陈立农",
     "林永健"
    ],
-   "comments": 28,
+   "comments": 32,
    "null_rating_reason": "尚未上映",
    "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2936056618.jpg",
    "in_window": true,
@@ -634,7 +572,7 @@
    "title": "狼牙行动",
    "list": "movie_soon",
    "release_hint": "12.31",
-   "wish": 153,
+   "wish": 165,
    "score": 0,
    "votes": 0,
    "pubdate": "2026-12-31(中国大陆)",
@@ -662,13 +600,112 @@
    "heat_ok": false
   },
   {
+   "sid": "37295792",
+   "title": "心迷宫之三重罪",
+   "list": "movie_showing",
+   "release_hint": "11.07",
+   "wish": null,
+   "score": 0,
+   "votes": 0,
+   "pubdate": "2026-11-07(中国大陆)",
+   "mainland_date": "2026-11-07",
+   "year": "2026",
+   "genres": [
+    "悬疑",
+    "犯罪"
+   ],
+   "countries": [
+    "中国大陆"
+   ],
+   "directors": [
+    "何念"
+   ],
+   "actors": [
+    "姜武",
+    "杜光祎",
+    "顾鑫"
+   ],
+   "comments": 2354,
+   "null_rating_reason": "暂无评分",
+   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2937022178.jpg",
+   "in_window": true,
+   "heat_ok": false
+  },
+  {
+   "sid": "36424371",
+   "title": "我们仅有一次的人生",
+   "list": "movie_showing",
+   "release_hint": "11.07",
+   "wish": null,
+   "score": 5.9,
+   "votes": 5578,
+   "pubdate": "2026-11-07(中国大陆)",
+   "mainland_date": "2026-11-07",
+   "year": "2026",
+   "genres": [
+    "剧情"
+   ],
+   "countries": [
+    "中国大陆"
+   ],
+   "directors": [
+    "孙傲谦"
+   ],
+   "actors": [
+    "宋佳",
+    "文淇",
+    "祖峰"
+   ],
+   "comments": 3574,
+   "null_rating_reason": "",
+   "poster_url": "https://img9.doubanio.com/view/photo/m_ratio_poster/public/p2936815515.jpg",
+   "in_window": true,
+   "heat_ok": true,
+   "poster_file": "img/movie_36424371.jpg"
+  },
+  {
+   "sid": "37822528",
+   "title": "珠穆朗玛：云中彼岸",
+   "list": "movie_showing",
+   "release_hint": "11.06",
+   "wish": null,
+   "score": 0,
+   "votes": 0,
+   "pubdate": "2026-11-06(中国大陆)",
+   "mainland_date": "2026-11-06",
+   "year": "2026",
+   "genres": [
+    "纪录片",
+    "运动"
+   ],
+   "countries": [
+    "美国",
+    "中国大陆",
+    "尼泊尔"
+   ],
+   "directors": [
+    "金国威",
+    "伊丽莎白·柴·瓦沙瑞莉"
+   ],
+   "actors": [
+    "吉姆·莫里森",
+    "希拉莉·尼尔森",
+    "金国威"
+   ],
+   "comments": 3158,
+   "null_rating_reason": "暂无评分",
+   "poster_url": "https://img2.doubanio.com/view/photo/m_ratio_poster/public/p2937280981.jpg",
+   "in_window": true,
+   "heat_ok": false
+  },
+  {
    "sid": "37322586",
    "title": "生日快乐",
    "list": "movie_showing",
    "release_hint": "10.23",
    "wish": null,
    "score": 8.9,
-   "votes": 23609,
+   "votes": 33674,
    "pubdate": "2026-10-23(中国大陆)",
    "mainland_date": "2026-10-23",
    "year": "2025",
@@ -683,15 +720,82 @@
    ],
    "actors": [
     "朵哈·拉马丹",
-    "哈南·莫特韦",
-    "哈南·优素福"
+    "哈迪贾·艾哈迈德",
+    "哈南·莫特韦"
    ],
-   "comments": 12117,
+   "comments": 16807,
    "null_rating_reason": "",
    "poster_url": "https://img9.doubanio.com/view/photo/m_ratio_poster/public/p2935834896.jpg",
    "in_window": true,
    "heat_ok": true,
    "poster_file": "img/movie_37322586.jpg"
+  },
+  {
+   "sid": "36154923",
+   "title": "爷爷奶奶那些事",
+   "list": "movie_showing",
+   "release_hint": "11.10",
+   "wish": null,
+   "score": 0,
+   "votes": 0,
+   "pubdate": "2026-11-10(中国大陆)",
+   "mainland_date": "2026-11-10",
+   "year": "2024",
+   "genres": [
+    "纪录片"
+   ],
+   "countries": [
+    "中国大陆"
+   ],
+   "directors": [
+    "杨骊珠"
+   ],
+   "actors": [
+    "邓桂英",
+    "杨桥源",
+    "杨骊珠"
+   ],
+   "comments": 392,
+   "null_rating_reason": "暂无评分",
+   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2937161249.jpg",
+   "in_window": true,
+   "heat_ok": false
+  },
+  {
+   "sid": "37068446",
+   "title": "生化危机：爆发夜",
+   "list": "movie_showing",
+   "release_hint": "10.05",
+   "wish": null,
+   "score": 7.3,
+   "votes": 239293,
+   "pubdate": "2026-10-05(中国大陆)",
+   "mainland_date": "2026-10-05",
+   "year": "2026",
+   "genres": [
+    "科幻",
+    "惊悚",
+    "恐怖"
+   ],
+   "countries": [
+    "德国",
+    "法国",
+    "美国"
+   ],
+   "directors": [
+    "扎克·克雷格"
+   ],
+   "actors": [
+    "奥斯汀·艾布拉姆斯",
+    "扎克·切利",
+    "卡莉·瑞斯"
+   ],
+   "comments": 105555,
+   "null_rating_reason": "",
+   "poster_url": "https://img2.doubanio.com/view/photo/m_ratio_poster/public/p2936442661.jpg",
+   "in_window": true,
+   "heat_ok": true,
+   "poster_file": "img/movie_37068446.jpg"
   },
   {
    "sid": "25798131",
@@ -700,7 +804,7 @@
    "release_hint": "10.30",
    "wish": null,
    "score": 7.8,
-   "votes": 265919,
+   "votes": 274695,
    "pubdate": "2026-10-30(中国大陆)",
    "mainland_date": "2026-10-30",
    "year": "2014",
@@ -720,12 +824,23 @@
     "迈克尔·恩奎斯特",
     "阿尔菲·艾伦"
    ],
-   "comments": 67885,
+   "comments": 71708,
    "null_rating_reason": "",
    "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2936502228.jpg",
    "in_window": true,
    "heat_ok": true,
    "poster_file": "img/movie_25798131.jpg"
+  },
+  {
+   "sid": "36828393",
+   "title": "野兽之心",
+   "list": "movie_showing",
+   "release_hint": "09.30",
+   "wish": null,
+   "score": 7.3,
+   "votes": 30363,
+   "skipped": "release month outside window",
+   "heat_ok": true
   },
   {
    "sid": "1294417",
@@ -734,7 +849,7 @@
    "release_hint": "10.30",
    "wish": null,
    "score": 8.5,
-   "votes": 243420,
+   "votes": 246338,
    "pubdate": "2026-10-30(中国大陆)",
    "mainland_date": "2026-10-30",
    "year": "1992",
@@ -754,12 +869,78 @@
     "林青霞",
     "关之琳"
    ],
-   "comments": 51924,
+   "comments": 53360,
    "null_rating_reason": "",
    "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2936705828.jpg",
    "in_window": true,
    "heat_ok": true,
    "poster_file": "candidates/posters/movie_1294417.jpg"
+  },
+  {
+   "sid": "37247814",
+   "title": "神探之痕迹‎",
+   "list": "movie_showing",
+   "release_hint": "10.01",
+   "wish": null,
+   "score": 6.7,
+   "votes": 92676,
+   "pubdate": "2026-10-01(中国大陆)",
+   "mainland_date": "2026-10-01",
+   "year": "2026",
+   "genres": [
+    "犯罪"
+   ],
+   "countries": [
+    "中国大陆"
+   ],
+   "directors": [
+    "陈思诚"
+   ],
+   "actors": [
+    "张译",
+    "马丽",
+    "陈明昊"
+   ],
+   "comments": 42399,
+   "null_rating_reason": "",
+   "poster_url": "https://img2.doubanio.com/view/photo/m_ratio_poster/public/p2935867001.jpg",
+   "in_window": true,
+   "heat_ok": true,
+   "poster_file": "img/movie_37247814.jpg"
+  },
+  {
+   "sid": "23774856",
+   "title": "戴帽子的猫",
+   "list": "movie_showing",
+   "release_hint": "11.06",
+   "wish": null,
+   "score": 0,
+   "votes": 0,
+   "pubdate": "2026-11-06(中国大陆)",
+   "mainland_date": "2026-11-06",
+   "year": "2026",
+   "genres": [
+    "喜剧",
+    "动画",
+    "奇幻"
+   ],
+   "countries": [
+    "美国"
+   ],
+   "directors": [
+    "埃丽卡·里维诺亚",
+    "亚历山德罗·卡罗尼"
+   ],
+   "actors": [
+    "比尔·哈德尔",
+    "克索斯利尔·戈麦斯",
+    "迪亚戈·马丁内斯"
+   ],
+   "comments": 405,
+   "null_rating_reason": "暂无评分",
+   "poster_url": "https://img9.doubanio.com/view/photo/m_ratio_poster/public/p2936530304.jpg",
+   "in_window": true,
+   "heat_ok": false
   },
   {
    "sid": "37509917",
@@ -783,47 +964,76 @@
     "越明"
    ],
    "actors": [],
-   "comments": 691,
+   "comments": 836,
    "null_rating_reason": "暂无评分",
    "poster_url": "https://img9.doubanio.com/view/photo/m_ratio_poster/public/p2936892976.jpg",
    "in_window": true,
    "heat_ok": false
   },
   {
-   "sid": "37068446",
-   "title": "生化危机：爆发夜",
+   "sid": "36808876",
+   "title": "奥德赛",
    "list": "movie_showing",
-   "release_hint": "10.05",
+   "release_hint": "08.14",
    "wish": null,
-   "score": 7.3,
-   "votes": 210739,
-   "pubdate": "2026-10-05(中国大陆)",
-   "mainland_date": "2026-10-05",
+   "score": 8.6,
+   "votes": 581202,
+   "skipped": "release month outside window",
+   "heat_ok": true
+  },
+  {
+   "sid": "35211543",
+   "title": "无可替代的你",
+   "list": "movie_showing",
+   "release_hint": "11.11",
+   "wish": null,
+   "score": 0,
+   "votes": 0,
+   "pubdate": "2026-11-11(中国大陆)",
+   "mainland_date": "2026-11-11",
    "year": "2026",
    "genres": [
-    "科幻",
-    "惊悚",
-    "恐怖"
+    "喜剧",
+    "爱情"
    ],
    "countries": [
-    "德国",
-    "法国",
-    "美国"
+    "中国大陆"
    ],
    "directors": [
-    "扎克·克雷格"
+    "杜斌"
    ],
    "actors": [
-    "奥斯汀·艾布拉姆斯",
-    "扎克·切利",
-    "卡莉·瑞斯"
+    "康玥",
+    "王乐",
+    "唐剑柔"
    ],
-   "comments": 94558,
-   "null_rating_reason": "",
-   "poster_url": "https://img2.doubanio.com/view/photo/m_ratio_poster/public/p2936442661.jpg",
+   "comments": 21,
+   "null_rating_reason": "暂无评分",
+   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2934252629.jpg",
    "in_window": true,
-   "heat_ok": true,
-   "poster_file": "img/movie_37068446.jpg"
+   "heat_ok": false
+  },
+  {
+   "sid": "37508847",
+   "title": "空枪",
+   "list": "movie_showing",
+   "release_hint": "08.19",
+   "wish": null,
+   "score": 7.2,
+   "votes": 229821,
+   "skipped": "release month outside window",
+   "heat_ok": true
+  },
+  {
+   "sid": "35209727",
+   "title": "密档",
+   "list": "movie_showing",
+   "release_hint": "08.28",
+   "wish": null,
+   "score": 6.7,
+   "votes": 4348,
+   "skipped": "release month outside window",
+   "heat_ok": false
   },
   {
    "sid": "35244246",
@@ -832,41 +1042,9 @@
    "release_hint": "09.25",
    "wish": null,
    "score": 6.0,
-   "votes": 15953,
+   "votes": 20846,
    "skipped": "release month outside window",
    "heat_ok": true
-  },
-  {
-   "sid": "37247814",
-   "title": "神探之痕迹‎",
-   "list": "movie_showing",
-   "release_hint": "10.01",
-   "wish": null,
-   "score": 6.7,
-   "votes": 87777,
-   "pubdate": "2026-10-01(中国大陆)",
-   "mainland_date": "2026-10-01",
-   "year": "2026",
-   "genres": [
-    "犯罪"
-   ],
-   "countries": [
-    "中国大陆"
-   ],
-   "directors": [
-    "陈思诚"
-   ],
-   "actors": [
-    "张译",
-    "马丽",
-    "陈明昊"
-   ],
-   "comments": 40546,
-   "null_rating_reason": "",
-   "poster_url": "https://img2.doubanio.com/view/photo/m_ratio_poster/public/p2935867001.jpg",
-   "in_window": true,
-   "heat_ok": true,
-   "poster_file": "img/movie_37247814.jpg"
   },
   {
    "sid": "37344902",
@@ -895,11 +1073,185 @@
     "约翰·斯帕克斯",
     "尼娜·索珊娅"
    ],
-   "comments": 2178,
+   "comments": 4064,
    "null_rating_reason": "暂无评分",
    "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2936509282.jpg",
    "in_window": true,
    "heat_ok": false
+  },
+  {
+   "sid": "37667015",
+   "title": "什么意思夫妇",
+   "list": "movie_showing",
+   "release_hint": "10.01",
+   "wish": null,
+   "score": 6.3,
+   "votes": 29573,
+   "pubdate": "2026-10-01(中国大陆)",
+   "mainland_date": "2026-10-01",
+   "year": "2026",
+   "genres": [
+    "喜剧",
+    "家庭"
+   ],
+   "countries": [
+    "中国大陆"
+   ],
+   "directors": [
+    "沈春阳"
+   ],
+   "actors": [
+    "小沈阳",
+    "沈春阳",
+    "贾冰"
+   ],
+   "comments": 14670,
+   "null_rating_reason": "",
+   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2936493940.jpg",
+   "in_window": true,
+   "heat_ok": true,
+   "poster_file": "img/movie_37667015.jpg"
+  },
+  {
+   "sid": "36171702",
+   "title": "清气满乾坤",
+   "list": "movie_showing",
+   "release_hint": "11.08",
+   "wish": null,
+   "score": 0,
+   "votes": 0,
+   "pubdate": "2026-11-08(中国大陆)",
+   "mainland_date": "2026-11-08",
+   "year": "2026",
+   "genres": [
+    "剧情",
+    "悬疑"
+   ],
+   "countries": [
+    "中国大陆"
+   ],
+   "directors": [
+    "刘峰"
+   ],
+   "actors": [
+    "宁理",
+    "丁圣霏",
+    "徐永革"
+   ],
+   "comments": 27,
+   "null_rating_reason": "暂无评分",
+   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2937052567.jpg",
+   "in_window": true,
+   "heat_ok": false
+  },
+  {
+   "sid": "37403222",
+   "title": "重生2",
+   "list": "movie_showing",
+   "release_hint": "10.03",
+   "wish": null,
+   "score": 6.5,
+   "votes": 20697,
+   "pubdate": "2026-10-03(中国大陆)",
+   "mainland_date": "2026-10-03",
+   "year": "2026",
+   "genres": [
+    "动作",
+    "犯罪"
+   ],
+   "countries": [
+    "中国大陆"
+   ],
+   "directors": [
+    "马浴柯"
+   ],
+   "actors": [
+    "梁洛施",
+    "文俊辉",
+    "洪金宝"
+   ],
+   "comments": 12905,
+   "null_rating_reason": "",
+   "poster_url": "https://img2.doubanio.com/view/photo/m_ratio_poster/public/p2936087801.jpg",
+   "in_window": true,
+   "heat_ok": true,
+   "poster_file": "img/movie_37403222.jpg"
+  },
+  {
+   "sid": "37516928",
+   "title": "梦寻苏毗女儿国",
+   "list": "movie_showing",
+   "release_hint": "11.03",
+   "wish": null,
+   "score": 0,
+   "votes": 0,
+   "pubdate": "2026-11-03(中国大陆)",
+   "mainland_date": "2026-11-03",
+   "year": "2026",
+   "genres": [
+    "剧情",
+    "爱情"
+   ],
+   "countries": [
+    "中国大陆"
+   ],
+   "directors": [
+    "拉华加"
+   ],
+   "actors": [
+    "丁真珍珠",
+    "卓依娜姆"
+   ],
+   "comments": 335,
+   "null_rating_reason": "暂无评分",
+   "poster_url": "https://img9.doubanio.com/view/photo/m_ratio_poster/public/p2937214545.jpg",
+   "in_window": true,
+   "heat_ok": false
+  },
+  {
+   "sid": "36806762",
+   "title": "鲸口脱险",
+   "list": "movie_showing",
+   "release_hint": "10.16",
+   "wish": null,
+   "score": 6.1,
+   "votes": 7592,
+   "pubdate": "2026-10-16(中国大陆)",
+   "mainland_date": "2026-10-16",
+   "year": "2026",
+   "genres": [
+    "剧情",
+    "惊悚",
+    "冒险"
+   ],
+   "countries": [
+    "美国"
+   ],
+   "directors": [
+    "布莱恩·达菲尔德"
+   ],
+   "actors": [
+    "奥斯汀·艾布拉姆斯",
+    "乔什·布洛林",
+    "伊丽莎白·苏"
+   ],
+   "comments": 4220,
+   "null_rating_reason": "",
+   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2935800697.jpg",
+   "in_window": true,
+   "heat_ok": true,
+   "poster_file": "img/movie_36806762.jpg"
+  },
+  {
+   "sid": "37450627",
+   "title": "痴迷",
+   "list": "movie_showing",
+   "release_hint": "07.24",
+   "wish": null,
+   "score": 7.6,
+   "votes": 305229,
+   "skipped": "release month outside window",
+   "heat_ok": true
   },
   {
    "sid": "37088929",
@@ -928,11 +1280,22 @@
     "蒋梦婕",
     "黄璐"
    ],
-   "comments": 5149,
+   "comments": 5263,
    "null_rating_reason": "暂无评分",
    "poster_url": "https://img9.doubanio.com/view/photo/m_ratio_poster/public/p2936706806.jpg",
    "in_window": true,
    "heat_ok": false
+  },
+  {
+   "sid": "35840408",
+   "title": "老江湖",
+   "list": "movie_showing",
+   "release_hint": "09.25",
+   "wish": null,
+   "score": 4.6,
+   "votes": 12522,
+   "skipped": "release month outside window",
+   "heat_ok": true
   },
   {
    "sid": "36449264",
@@ -941,7 +1304,7 @@
    "release_hint": "10.13",
    "wish": null,
    "score": 7.2,
-   "votes": 4541,
+   "votes": 5019,
    "pubdate": "2026-10-13(中国大陆)",
    "mainland_date": "2026-10-13",
    "year": "2025",
@@ -959,232 +1322,12 @@
     "次吉美朵",
     "泽仁顿珠"
    ],
-   "comments": 2703,
+   "comments": 2979,
    "null_rating_reason": "",
    "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2936207450.jpg",
    "in_window": true,
-   "heat_ok": false
-  },
-  {
-   "sid": "37508847",
-   "title": "空枪",
-   "list": "movie_showing",
-   "release_hint": "08.19",
-   "wish": null,
-   "score": 7.2,
-   "votes": 201849,
-   "skipped": "release month outside window",
-   "heat_ok": true
-  },
-  {
-   "sid": "37667015",
-   "title": "什么意思夫妇",
-   "list": "movie_showing",
-   "release_hint": "10.01",
-   "wish": null,
-   "score": 6.3,
-   "votes": 28188,
-   "pubdate": "2026-10-01(中国大陆)",
-   "mainland_date": "2026-10-01",
-   "year": "2026",
-   "genres": [
-    "喜剧",
-    "家庭"
-   ],
-   "countries": [
-    "中国大陆"
-   ],
-   "directors": [
-    "沈春阳"
-   ],
-   "actors": [
-    "小沈阳",
-    "沈春阳",
-    "贾冰"
-   ],
-   "comments": 14106,
-   "null_rating_reason": "",
-   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2936493940.jpg",
-   "in_window": true,
    "heat_ok": true,
-   "poster_file": "img/movie_37667015.jpg"
-  },
-  {
-   "sid": "36828393",
-   "title": "野兽之心",
-   "list": "movie_showing",
-   "release_hint": "09.30",
-   "wish": null,
-   "score": 7.3,
-   "votes": 23905,
-   "skipped": "release month outside window",
-   "heat_ok": true
-  },
-  {
-   "sid": "37403222",
-   "title": "重生2",
-   "list": "movie_showing",
-   "release_hint": "10.03",
-   "wish": null,
-   "score": 6.5,
-   "votes": 20387,
-   "pubdate": "2026-10-03(中国大陆)",
-   "mainland_date": "2026-10-03",
-   "year": "2026",
-   "genres": [
-    "动作",
-    "犯罪"
-   ],
-   "countries": [
-    "中国大陆"
-   ],
-   "directors": [
-    "马浴柯"
-   ],
-   "actors": [
-    "梁洛施",
-    "文俊辉",
-    "洪金宝"
-   ],
-   "comments": 12763,
-   "null_rating_reason": "",
-   "poster_url": "https://img2.doubanio.com/view/photo/m_ratio_poster/public/p2936087801.jpg",
-   "in_window": true,
-   "heat_ok": true,
-   "poster_file": "img/movie_37403222.jpg"
-  },
-  {
-   "sid": "35840408",
-   "title": "老江湖",
-   "list": "movie_showing",
-   "release_hint": "09.25",
-   "wish": null,
-   "score": 4.6,
-   "votes": 11149,
-   "skipped": "release month outside window",
-   "heat_ok": true
-  },
-  {
-   "sid": "37560050",
-   "title": "阴阳路惊魂",
-   "list": "movie_showing",
-   "release_hint": "10.30",
-   "wish": null,
-   "score": 0,
-   "votes": 0,
-   "pubdate": "2026-10-30(中国大陆)",
-   "mainland_date": "2026-10-30",
-   "year": "2026",
-   "genres": [
-    "悬疑",
-    "惊悚",
-    "恐怖"
-   ],
-   "countries": [
-    "中国大陆"
-   ],
-   "directors": [
-    "徐俊"
-   ],
-   "actors": [
-    "何雨宸",
-    "傅天",
-    "黄城"
-   ],
-   "comments": 30,
-   "null_rating_reason": "暂无评分",
-   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2936098118.jpg",
-   "in_window": true,
-   "heat_ok": false
-  },
-  {
-   "sid": "37047880",
-   "title": "民宿惊魂",
-   "list": "movie_showing",
-   "release_hint": "10.31",
-   "wish": null,
-   "score": 0,
-   "votes": 0,
-   "pubdate": "2026-10-31(中国大陆)",
-   "mainland_date": "2026-10-31",
-   "year": "2026",
-   "genres": [
-    "悬疑",
-    "惊悚",
-    "恐怖"
-   ],
-   "countries": [
-    "中国大陆"
-   ],
-   "directors": [
-    "宋小君"
-   ],
-   "actors": [
-    "胡连馨",
-    "高维蔓",
-    "蒋昀霖"
-   ],
-   "comments": 44,
-   "null_rating_reason": "暂无评分",
-   "poster_url": "https://img9.doubanio.com/view/photo/m_ratio_poster/public/p2937022135.jpg",
-   "in_window": true,
-   "heat_ok": false
-  },
-  {
-   "sid": "36806762",
-   "title": "鲸口脱险",
-   "list": "movie_showing",
-   "release_hint": "10.16",
-   "wish": null,
-   "score": 6.1,
-   "votes": 7322,
-   "pubdate": "2026-10-16(中国大陆)",
-   "mainland_date": "2026-10-16",
-   "year": "2026",
-   "genres": [
-    "剧情",
-    "惊悚",
-    "冒险"
-   ],
-   "countries": [
-    "美国"
-   ],
-   "directors": [
-    "布莱恩·达菲尔德"
-   ],
-   "actors": [
-    "奥斯汀·艾布拉姆斯",
-    "乔什·布洛林",
-    "伊丽莎白·苏"
-   ],
-   "comments": 4072,
-   "null_rating_reason": "",
-   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2935800697.jpg",
-   "in_window": true,
-   "heat_ok": true,
-   "poster_file": "img/movie_36806762.jpg"
-  },
-  {
-   "sid": "37450627",
-   "title": "痴迷",
-   "list": "movie_showing",
-   "release_hint": "07.24",
-   "wish": null,
-   "score": 7.6,
-   "votes": 299094,
-   "skipped": "release month outside window",
-   "heat_ok": true
-  },
-  {
-   "sid": "36903929",
-   "title": "燃烧吧！爸爸",
-   "list": "movie_showing",
-   "release_hint": "09.05",
-   "wish": null,
-   "score": 6.8,
-   "votes": 12477,
-   "skipped": "release month outside window",
-   "heat_ok": true
+   "poster_file": "img/movie_36449264.jpg"
   },
   {
    "sid": "37899051",
@@ -1193,7 +1336,7 @@
    "release_hint": "10.01",
    "wish": null,
    "score": 6.9,
-   "votes": 15029,
+   "votes": 15085,
    "pubdate": "2026-10-01(中国大陆)",
    "mainland_date": "2026-10-01",
    "year": "2026",
@@ -1211,7 +1354,7 @@
     "叶童",
     "倪虹洁"
    ],
-   "comments": 8616,
+   "comments": 8645,
    "null_rating_reason": "",
    "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2935643598.jpg",
    "in_window": true,
@@ -1219,118 +1362,33 @@
    "poster_file": "img/movie_37899051.jpg"
   },
   {
-   "sid": "36464801",
-   "title": "象行记",
+   "sid": "36641112",
+   "title": "一朵山花别样红",
    "list": "movie_showing",
-   "release_hint": "10.23",
+   "release_hint": "11.06",
    "wish": null,
    "score": 0,
    "votes": 0,
-   "pubdate": "2026-10-23(中国大陆)",
-   "mainland_date": "2026-10-23",
+   "pubdate": "2026-11-06(中国大陆)",
+   "mainland_date": "2026-11-06",
    "year": "2026",
    "genres": [
-    "纪录片"
-   ],
-   "countries": [
-    "中国大陆",
-    "新加坡"
-   ],
-   "directors": [
-    "顾瑜瑾"
-   ],
-   "actors": [
-    "杰克糖",
-    "阿宝",
-    "陈育兵"
-   ],
-   "comments": 776,
-   "null_rating_reason": "暂无评分",
-   "poster_url": "https://img9.doubanio.com/view/photo/m_ratio_poster/public/p2936862384.jpg",
-   "in_window": true,
-   "heat_ok": false
-  },
-  {
-   "sid": "35811064",
-   "title": "欢迎来龙餐馆",
-   "list": "movie_showing",
-   "release_hint": "08.11",
-   "wish": null,
-   "score": 8.7,
-   "votes": 780646,
-   "skipped": "release month outside window",
-   "heat_ok": true
-  },
-  {
-   "sid": "36808876",
-   "title": "奥德赛",
-   "list": "movie_showing",
-   "release_hint": "08.14",
-   "wish": null,
-   "score": 8.6,
-   "votes": 572308,
-   "skipped": "release month outside window",
-   "heat_ok": true
-  },
-  {
-   "sid": "37474012",
-   "title": "勇敢女孩合唱团",
-   "list": "movie_showing",
-   "release_hint": "10.20",
-   "wish": null,
-   "score": 0,
-   "votes": 0,
-   "pubdate": "2026-10-20(中国大陆)",
-   "mainland_date": "2026-10-20",
-   "year": "2026",
-   "genres": [
-    "剧情",
-    "儿童"
+    "剧情"
    ],
    "countries": [
     "中国大陆"
    ],
    "directors": [
-    "邵兵"
+    "高小卫"
    ],
    "actors": [
-    "王砚辉",
-    "李浩菲",
-    "徐越"
+    "彭静",
+    "王新中",
+    "张立"
    ],
-   "comments": 183,
+   "comments": 35,
    "null_rating_reason": "暂无评分",
-   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2936503109.jpg",
-   "in_window": true,
-   "heat_ok": false
-  },
-  {
-   "sid": "36964833",
-   "title": "小猪佩奇·完美假期",
-   "list": "movie_showing",
-   "release_hint": "10.01",
-   "wish": null,
-   "score": 6.3,
-   "votes": 1839,
-   "pubdate": "2026-10-01(中国大陆)",
-   "mainland_date": "2026-10-01",
-   "year": "2026",
-   "genres": [
-    "喜剧",
-    "动画",
-    "冒险"
-   ],
-   "countries": [
-    "中国大陆",
-    "英国"
-   ],
-   "directors": [
-    "刘源"
-   ],
-   "actors": [],
-   "comments": 1097,
-   "null_rating_reason": "",
-   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2935672158.jpg",
+   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2937300333.jpg",
    "in_window": true,
    "heat_ok": false
   },
@@ -1341,9 +1399,64 @@
    "release_hint": "08.28",
    "wish": null,
    "score": 9.7,
-   "votes": 3361160,
+   "votes": 3363824,
    "skipped": "release month outside window",
    "heat_ok": true
+  },
+  {
+   "sid": "37659649",
+   "title": "手捧繁星",
+   "list": "movie_showing",
+   "release_hint": "11.06",
+   "wish": null,
+   "score": null,
+   "votes": null,
+   "skipped": "douban rate limit / detail cap",
+   "heat_ok": false
+  },
+  {
+   "sid": "36083358",
+   "title": "乡归",
+   "list": "movie_showing",
+   "release_hint": "11.07",
+   "wish": null,
+   "score": null,
+   "votes": null,
+   "skipped": "douban rate limit / detail cap",
+   "heat_ok": false
+  },
+  {
+   "sid": "37047880",
+   "title": "民宿惊魂",
+   "list": "movie_showing",
+   "release_hint": "10.31",
+   "wish": null,
+   "score": null,
+   "votes": null,
+   "skipped": "douban rate limit / detail cap",
+   "heat_ok": false
+  },
+  {
+   "sid": "36464801",
+   "title": "象行记",
+   "list": "movie_showing",
+   "release_hint": "10.23",
+   "wish": null,
+   "score": null,
+   "votes": null,
+   "skipped": "douban rate limit / detail cap",
+   "heat_ok": false
+  },
+  {
+   "sid": "37560050",
+   "title": "阴阳路惊魂",
+   "list": "movie_showing",
+   "release_hint": "10.30",
+   "wish": null,
+   "score": null,
+   "votes": null,
+   "skipped": "douban rate limit / detail cap",
+   "heat_ok": false
   },
   {
    "sid": "1298759",
@@ -1352,138 +1465,7 @@
    "release_hint": "05.19",
    "wish": null,
    "score": 8.4,
-   "votes": 170612,
-   "skipped": "release month outside window",
-   "heat_ok": true
-  },
-  {
-   "sid": "1323746",
-   "title": "小城之春",
-   "list": "movie_showing",
-   "release_hint": null,
-   "wish": null,
-   "score": 8.7,
-   "votes": 76725,
-   "pubdate": "1948-09(中国大陆)",
-   "mainland_date": null,
-   "year": "1948",
-   "genres": [
-    "剧情",
-    "爱情"
-   ],
-   "countries": [
-    "中国大陆"
-   ],
-   "directors": [
-    "费穆"
-   ],
-   "actors": [
-    "李纬",
-    "韦伟",
-    "石羽"
-   ],
-   "comments": 27400,
-   "null_rating_reason": "",
-   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2029605819.jpg",
-   "in_window": false,
-   "heat_ok": true
-  },
-  {
-   "sid": "36318704",
-   "title": "坠落2：死点",
-   "list": "movie_showing",
-   "release_hint": "09.04",
-   "wish": null,
-   "score": 5.2,
-   "votes": 27759,
-   "skipped": "release month outside window",
-   "heat_ok": true
-  },
-  {
-   "sid": "37380650",
-   "title": "死亡禁区实录",
-   "list": "movie_showing",
-   "release_hint": "09.25",
-   "wish": null,
-   "score": 4.5,
-   "votes": 3830,
-   "skipped": "release month outside window",
-   "heat_ok": false
-  },
-  {
-   "sid": "1302542",
-   "title": "血迷宫",
-   "list": "movie_showing",
-   "release_hint": null,
-   "wish": null,
-   "score": 7.8,
-   "votes": 53411,
-   "pubdate": "1984-09-07",
-   "mainland_date": null,
-   "year": "1984",
-   "genres": [
-    "剧情",
-    "悬疑",
-    "惊悚"
-   ],
-   "countries": [
-    "美国"
-   ],
-   "directors": [
-    "乔尔·科恩"
-   ],
-   "actors": [
-    "约翰·盖兹",
-    "弗兰西斯·麦克多蒙德",
-    "丹·哈达亚"
-   ],
-   "comments": 16435,
-   "null_rating_reason": "",
-   "poster_url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2170091763.jpg",
-   "in_window": false,
-   "heat_ok": true
-  },
-  {
-   "sid": "37070811",
-   "title": "逐浪之文圣常",
-   "list": "movie_showing",
-   "release_hint": "10.22",
-   "wish": null,
-   "score": null,
-   "votes": null,
-   "skipped": "douban rate limit / detail cap",
-   "heat_ok": false
-  },
-  {
-   "sid": "1301897",
-   "title": "何处是我朋友的家",
-   "list": "movie_showing",
-   "release_hint": "02.01",
-   "wish": null,
-   "score": 9.0,
-   "votes": 53680,
-   "skipped": "release month outside window",
-   "heat_ok": true
-  },
-  {
-   "sid": "3285632",
-   "title": "都灵之马",
-   "list": "movie_showing",
-   "release_hint": "02.15",
-   "wish": null,
-   "score": 8.4,
-   "votes": 38335,
-   "skipped": "release month outside window",
-   "heat_ok": true
-  },
-  {
-   "sid": "10756537",
-   "title": "杀死比尔：血色全传",
-   "list": "movie_showing",
-   "release_hint": "09.04",
-   "wish": null,
-   "score": 8.7,
-   "votes": 128696,
+   "votes": 172379,
    "skipped": "release month outside window",
    "heat_ok": true
   },
@@ -1494,8 +1476,19 @@
    "release_hint": null,
    "wish": null,
    "score": 8.4,
-   "votes": 23401,
+   "votes": 25136,
    "skipped": "douban rate limit / detail cap",
+   "heat_ok": true
+  },
+  {
+   "sid": "3285632",
+   "title": "都灵之马",
+   "list": "movie_showing",
+   "release_hint": "02.15",
+   "wish": null,
+   "score": 8.4,
+   "votes": 39327,
+   "skipped": "release month outside window",
    "heat_ok": true
   },
   {
@@ -1505,18 +1498,29 @@
    "release_hint": "05.19",
    "wish": null,
    "score": 9.1,
-   "votes": 99916,
+   "votes": 101292,
    "skipped": "release month outside window",
    "heat_ok": true
   },
   {
-   "sid": "38581618",
-   "title": "牛来",
+   "sid": "1302542",
+   "title": "血迷宫",
    "list": "movie_showing",
-   "release_hint": "08.05",
+   "release_hint": null,
    "wish": null,
-   "score": 6.0,
-   "votes": 53228,
+   "score": 7.8,
+   "votes": 54725,
+   "skipped": "douban rate limit / detail cap",
+   "heat_ok": true
+  },
+  {
+   "sid": "1294531",
+   "title": "牺牲",
+   "list": "movie_showing",
+   "release_hint": "05.09",
+   "wish": null,
+   "score": 8.5,
+   "votes": 26431,
    "skipped": "release month outside window",
    "heat_ok": true
   },
@@ -1527,8 +1531,52 @@
    "release_hint": "09.06",
    "wish": null,
    "score": 8.5,
-   "votes": 35045,
+   "votes": 36453,
    "skipped": "release month outside window",
+   "heat_ok": true
+  },
+  {
+   "sid": "36964833",
+   "title": "小猪佩奇·完美假期",
+   "list": "movie_showing",
+   "release_hint": "10.01",
+   "wish": null,
+   "score": 6.3,
+   "votes": 1963,
+   "skipped": "douban rate limit / detail cap",
+   "heat_ok": false
+  },
+  {
+   "sid": "1301897",
+   "title": "何处是我朋友的家",
+   "list": "movie_showing",
+   "release_hint": "02.01",
+   "wish": null,
+   "score": 9.0,
+   "votes": 55263,
+   "skipped": "release month outside window",
+   "heat_ok": true
+  },
+  {
+   "sid": "1297574",
+   "title": "英雄本色",
+   "list": "movie_showing",
+   "release_hint": "11.17",
+   "wish": null,
+   "score": 8.6,
+   "votes": 619906,
+   "skipped": "douban rate limit / detail cap",
+   "heat_ok": true
+  },
+  {
+   "sid": "1323746",
+   "title": "小城之春",
+   "list": "movie_showing",
+   "release_hint": null,
+   "wish": null,
+   "score": 8.7,
+   "votes": 78038,
+   "skipped": "douban rate limit / detail cap",
    "heat_ok": true
   },
   {
@@ -1538,106 +1586,40 @@
    "release_hint": "05.15",
    "wish": null,
    "score": 7.4,
-   "votes": 21456,
+   "votes": 22402,
    "skipped": "release month outside window",
    "heat_ok": true
   },
   {
-   "sid": "36889088",
-   "title": "怒之杀",
+   "sid": "10756537",
+   "title": "杀死比尔：血色全传",
    "list": "movie_showing",
    "release_hint": "09.04",
    "wish": null,
-   "score": 5.6,
-   "votes": 13868,
+   "score": 8.7,
+   "votes": 129567,
    "skipped": "release month outside window",
    "heat_ok": true
   },
   {
-   "sid": "36753343",
-   "title": "上海女儿",
+   "sid": "1400829",
+   "title": "我的舅舅",
    "list": "movie_showing",
-   "release_hint": "09.19",
+   "release_hint": null,
    "wish": null,
-   "score": null,
-   "votes": null,
-   "skipped": "release month outside window",
-   "heat_ok": false
-  },
-  {
-   "sid": "38902940",
-   "title": "新大头儿子和小头爸爸之天眼系列：失控的第七天",
-   "list": "movie_showing",
-   "release_hint": "10.01",
-   "wish": null,
-   "score": null,
-   "votes": null,
+   "score": 8.6,
+   "votes": 28223,
    "skipped": "douban rate limit / detail cap",
-   "heat_ok": false
-  },
-  {
-   "sid": "1316560",
-   "title": "列宁格勒牛仔征美记",
-   "list": "movie_showing",
-   "release_hint": "03.24",
-   "wish": null,
-   "score": 8.4,
-   "votes": 25069,
-   "skipped": "release month outside window",
    "heat_ok": true
   },
   {
-   "sid": "36624248",
-   "title": "落凡尘",
-   "list": "movie_showing",
-   "release_hint": "07.12",
-   "wish": null,
-   "score": 7.7,
-   "votes": 74618,
-   "skipped": "release month outside window",
-   "heat_ok": true
-  },
-  {
-   "sid": "35209727",
-   "title": "密档",
-   "list": "movie_showing",
-   "release_hint": "08.28",
-   "wish": null,
-   "score": 6.7,
-   "votes": 3874,
-   "skipped": "release month outside window",
-   "heat_ok": false
-  },
-  {
-   "sid": "1296972",
-   "title": "在那河畔青草青",
-   "list": "movie_showing",
-   "release_hint": "11.27",
-   "wish": null,
-   "score": 7.1,
-   "votes": 3457,
-   "skipped": "douban rate limit / detail cap",
-   "heat_ok": false
-  },
-  {
-   "sid": "35275131",
-   "title": "去你的岛",
-   "list": "movie_showing",
-   "release_hint": "08.07",
-   "wish": null,
-   "score": 7.5,
-   "votes": 27054,
-   "skipped": "release month outside window",
-   "heat_ok": true
-  },
-  {
-   "sid": "37667170",
-   "title": "凝脂手",
+   "sid": "37380650",
+   "title": "死亡禁区实录",
    "list": "movie_showing",
    "release_hint": "09.25",
    "wish": null,
-   "score": null,
-   "votes": null,
+   "score": 4.5,
+   "votes": 3866,
    "skipped": "release month outside window",
    "heat_ok": false
   }
@@ -1645,10 +1627,28 @@
  "music": {
   "apple_top": [
    {
-    "date": "2026-10-30",
+    "date": "2026-11-06",
+    "artist": "Lil Baby",
+    "title": "FRESH",
+    "id": "6823820064",
+    "itunes": null
+   },
+   {
+    "date": "2026-11-02",
     "artist": "BigXthaPlug",
     "title": "BETTER OVER TIME",
-    "id": "6815463121"
+    "id": "6827763091",
+    "itunes": {
+     "collectionId": 6826982636,
+     "artistName": "BigXthaPlug",
+     "collectionName": "BETTER OVER TIME",
+     "releaseDate": "2026-10-30T07:00:00Z",
+     "trackCount": 18,
+     "primaryGenreName": "Hip-Hop/Rap",
+     "collectionExplicitness": "cleaned",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/5d/f5/f1/5df5f178-05fb-94b4-ce5e-de9730cadb96/711209266721_WyGct2M-copy-d4126fdb.png/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/better-over-time/6826982636"
+    }
    },
    {
     "date": "2026-10-02",
@@ -1657,40 +1657,85 @@
     "id": "6818209777"
    },
    {
+    "date": "2026-11-10",
+    "artist": "Lil Baby",
+    "title": "FRESH (Bonus Track)",
+    "id": "6832737653",
+    "itunes": null
+   },
+   {
+    "date": "2026-11-06",
+    "artist": "Mack Geiger",
+    "title": "Dying In This House",
+    "id": "6825883834",
+    "itunes": {
+     "collectionId": 6825883834,
+     "artistName": "Mack Geiger",
+     "collectionName": "Dying In This House",
+     "releaseDate": "2026-11-06T08:00:00Z",
+     "trackCount": 12,
+     "primaryGenreName": "Country",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/fb/a2/91/fba291db-11f2-c55d-36bd-f69fe6635771/196874914748.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/dying-in-this-house/6825883834"
+    }
+   },
+   {
     "date": "2026-10-16",
     "artist": "Zach Bryan",
     "title": "Young Manhood and Other Donatable Organs",
     "id": "6822944288"
    },
    {
-    "date": "2026-10-28",
-    "artist": "Young Nudy",
-    "title": "Just Doin Me",
-    "id": "6820234612"
+    "date": "2026-11-06",
+    "artist": "Jack Harlow",
+    "title": "Sweet Action II",
+    "id": "6829221591",
+    "itunes": {
+     "collectionId": 6830926750,
+     "artistName": "Jack Harlow",
+     "collectionName": "Sweet Action II",
+     "releaseDate": "2026-11-05T08:00:00Z",
+     "trackCount": 7,
+     "primaryGenreName": "Hip-Hop/Rap",
+     "collectionExplicitness": "cleaned",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/b0/91/8b/b0918b44-1c83-78f3-d360-16aab22f94c5/075679548931.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/sweet-action-ii/6830926750"
+    }
    },
    {
-    "date": "2026-10-23",
-    "artist": "Anderson .Paak & Cordae",
-    "title": "Heavy Is The Crown",
-    "id": "6801692287"
+    "date": "2026-11-06",
+    "artist": "Kings of Leon",
+    "title": "O My Beloved",
+    "id": "6802901441",
+    "itunes": {
+     "collectionId": 6802901441,
+     "artistName": "Kings of Leon",
+     "collectionName": "O My Beloved",
+     "releaseDate": "2026-11-06T08:00:00Z",
+     "trackCount": 13,
+     "primaryGenreName": "Alternative",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/c2/84/79/c2847988-ab33-0de8-0dc3-ebf0c6cbd0b4/00823375343684_Cover.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/o-my-beloved/6802901441"
+    }
    },
    {
-    "date": "2026-10-30",
-    "artist": "Dominic Fike",
-    "title": "HOW TO QUIT SMOKING",
-    "id": "6805707169"
-   },
-   {
-    "date": "2026-10-23",
-    "artist": "Yeat & Lyfestyle Corporation",
-    "title": "Luh Leakyz Vol. 1",
-    "id": "6825987374"
-   },
-   {
-    "date": "2026-10-30",
-    "artist": "Queens of the Stone Age",
-    "title": "Perfecth",
-    "id": "6797444451"
+    "date": "2026-11-06",
+    "artist": "Sam Barber",
+    "title": "Outlier - EP",
+    "id": "6828607811",
+    "itunes": {
+     "collectionId": 6828607811,
+     "artistName": "Sam Barber",
+     "collectionName": "Outlier - EP",
+     "releaseDate": "2026-11-06T08:00:00Z",
+     "trackCount": 6,
+     "primaryGenreName": "Country",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/65/c6/f6/65c6f691-bd12-f1d9-6ebe-4765ae4d80a8/075679551535.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/outlier-ep/6828607811"
+    }
    },
    {
     "date": "2026-10-02",
@@ -1699,22 +1744,17 @@
     "id": "6776432217"
    },
    {
-    "date": "2026-10-30",
-    "artist": "Nettspend",
-    "title": "Virginia Creeper - EP",
-    "id": "6827309568"
+    "date": "2026-10-23",
+    "artist": "Anderson .Paak & Cordae",
+    "title": "Heavy Is The Crown",
+    "id": "6801692287"
    },
    {
-    "date": "2026-10-30",
-    "artist": "Daddy Yankee",
-    "title": "LA POSTAL",
-    "id": "6826504720"
-   },
-   {
-    "date": "2026-10-30",
-    "artist": "Nickelback",
-    "title": "Everything Under The Sun",
-    "id": "6784018115"
+    "date": "2026-11-06",
+    "artist": "Ella Mai",
+    "title": "3two (EP) - Single",
+    "id": "6831334494",
+    "itunes": null
    },
    {
     "date": "2026-10-09",
@@ -1723,61 +1763,20 @@
     "id": "6800467151"
    },
    {
-    "date": "2026-10-30",
-    "artist": "Kirk Franklin",
-    "title": "I Am What I Am",
-    "id": "6813692585"
+    "date": "2026-11-04",
+    "artist": "Scotty OTH & Lil Poppa",
+    "title": "Vol. 5: Vampires & Astronauts (Disc 2)",
+    "id": "6827273291",
+    "itunes": null
    },
    {
-    "date": "2026-10-22",
-    "artist": "Victor Mendivil",
-    "title": "No Hay Ángeles Aquí",
-    "id": "6818554554"
+    "date": "2026-10-28",
+    "artist": "Young Nudy",
+    "title": "Just Doin Me",
+    "id": "6820234612"
    },
    {
-    "date": "2026-10-16",
-    "artist": "LUCKI",
-    "title": "Last Laugh (archive tape)",
-    "id": "6821145872"
-   },
-   {
-    "date": "2026-10-23",
-    "artist": "Josiah Queen",
-    "title": "Damascus Road",
-    "id": "6795596925"
-   },
-   {
-    "date": "2026-10-20",
-    "artist": "Bally Baby",
-    "title": "The Last Sipper",
-    "id": "6822129015"
-   },
-   {
-    "date": "2026-10-24",
-    "artist": "Boosie Badazz & Webbie",
-    "title": "Back At It",
-    "id": "6824736637"
-   },
-   {
-    "date": "2026-10-30",
-    "artist": "bleood",
-    "title": "KILL YOUR IDOLS",
-    "id": "6826454370"
-   },
-   {
-    "date": "2026-10-23",
-    "artist": "Yung Miami",
-    "title": "Watch Dis!",
-    "id": "6824744660"
-   },
-   {
-    "date": "2026-10-16",
-    "artist": "Babyfxce E",
-    "title": "The X Tape 2",
-    "id": "6818634785"
-   },
-   {
-    "date": "2026-11-19",
+    "date": "2026-11-20",
     "artist": "Various Artists",
     "title": "Grand Theft Auto VI: The Album",
     "id": "6812476961",
@@ -1794,16 +1793,49 @@
     }
    },
    {
-    "date": "2026-10-09",
-    "artist": "DDG",
-    "title": "HIT-A-THON (Deluxe)",
-    "id": "6820716322"
+    "date": "2026-10-23",
+    "artist": "Yeat & Lyfestyle Corporation",
+    "title": "Luh Leakyz Vol. 1",
+    "id": "6825987374"
+   },
+   {
+    "date": "2026-11-06",
+    "artist": "Curren$y & Harry Fraud",
+    "title": "Off To The Races",
+    "id": "6827246030",
+    "itunes": null
+   },
+   {
+    "date": "2026-11-20",
+    "artist": "Gracie Abrams",
+    "title": "Daughter from Hell (Deluxe)",
+    "id": "6827357170",
+    "itunes": null
+   },
+   {
+    "date": "2026-11-06",
+    "artist": "Rex Orange County",
+    "title": "Dream Fatigue",
+    "id": "6806315557",
+    "itunes": null
    },
    {
     "date": "2026-10-30",
-    "artist": "HARDY",
-    "title": "Sides - EP",
-    "id": "6823404812"
+    "artist": "Dominic Fike",
+    "title": "HOW TO QUIT SMOKING",
+    "id": "6805707169"
+   },
+   {
+    "date": "2026-10-22",
+    "artist": "Victor Mendivil",
+    "title": "No Hay Ángeles Aquí",
+    "id": "6818554554"
+   },
+   {
+    "date": "2026-10-30",
+    "artist": "Kirk Franklin",
+    "title": "I Am What I Am",
+    "id": "6827881008"
    }
   ],
   "metacritic_soon": [],
@@ -2094,7 +2126,7 @@
     "day": 2,
     "artist": "Miranda Lambert",
     "title": "Crisco",
-    "genre": "Country pop, disco, yacht rock",
+    "genre": "Country pop",
     "label": "Music Corporation of America",
     "album_has_article": true
    },
@@ -2316,6 +2348,16 @@
     "title": "Pitcoin",
     "genre": "",
     "label": "",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 9,
+    "artist": "Basht.",
+    "title": "Poor Advice",
+    "genre": "",
+    "label": "LAB",
     "album_has_article": false
    },
    {
@@ -2732,6 +2774,16 @@
     "year": 2026,
     "month": 10,
     "day": 9,
+    "artist": "Tungsten",
+    "title": "Ashes",
+    "genre": "Industrial metal, power metal",
+    "label": "Perception",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 9,
     "artist": "Twin Temple",
     "title": "Doomed Lovers",
     "genre": "",
@@ -2952,6 +3004,16 @@
     "year": 2026,
     "month": 10,
     "day": 16,
+    "artist": "Gothminister",
+    "title": "We Are All Demons",
+    "genre": "Gothic metal, industrial metal",
+    "label": "Elevator Records",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 16,
     "artist": "Grace Carter",
     "title": "When Saturn Returns",
     "genre": "",
@@ -2976,7 +3038,7 @@
     "title": "Netherworlds",
     "genre": "",
     "label": "Century Media",
-    "album_has_article": false
+    "album_has_article": true
    },
    {
     "year": 2026,
@@ -3142,16 +3204,6 @@
     "year": 2026,
     "month": 10,
     "day": 16,
-    "artist": "They Are Gutting a Body of Water",
-    "title": "Kool Faith / Loosies II",
-    "genre": "",
-    "label": "ATO, Julia's War",
-    "album_has_article": false
-   },
-   {
-    "year": 2026,
-    "month": 10,
-    "day": 16,
     "artist": "Sadurn",
     "title": "The Underworld",
     "genre": "",
@@ -3174,8 +3226,18 @@
     "day": 16,
     "artist": "Temperance",
     "title": "Arcani",
-    "genre": "",
+    "genre": "Symphonic metal, power metal",
     "label": "Napalm",
+    "album_has_article": true
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 16,
+    "artist": "They Are Gutting a Body of Water",
+    "title": "Kool Faith / Loosies II",
+    "genre": "",
+    "label": "ATO, Julia's War",
     "album_has_article": false
    },
    {
@@ -3204,9 +3266,9 @@
     "day": 16,
     "artist": "Tokio Hotel",
     "title": "Encore",
-    "genre": "",
-    "label": "Epic",
-    "album_has_article": false
+    "genre": "Pop rock",
+    "label": "SPV",
+    "album_has_article": true
    },
    {
     "year": 2026,
@@ -3536,7 +3598,7 @@
     "title": "Muse",
     "genre": "",
     "label": "Republic",
-    "album_has_article": false
+    "album_has_article": true
    },
    {
     "year": 2026,
@@ -3567,6 +3629,16 @@
     "genre": "",
     "label": "Galaxy Label Group",
     "album_has_article": false
+   },
+   {
+    "year": 2026,
+    "month": 10,
+    "day": 23,
+    "artist": "Loidis",
+    "title": "From the Toolkit of Lovers",
+    "genre": "Minimal house",
+    "label": "Incienso",
+    "album_has_article": true
    },
    {
     "year": 2026,
@@ -3604,9 +3676,9 @@
     "day": 23,
     "artist": "Mental Cruelty",
     "title": "Echoes of a Forlorn Land",
-    "genre": "",
+    "genre": "Deathcore, melodic death metal, symphonic black metal",
     "label": "Century Media",
-    "album_has_article": false
+    "album_has_article": true
    },
    {
     "year": 2026,
@@ -3656,7 +3728,7 @@
     "title": "GMFU",
     "genre": "",
     "label": "",
-    "album_has_article": false
+    "album_has_article": true
    },
    {
     "year": 2026,
@@ -4045,8 +4117,8 @@
     "artist": "Editors",
     "title": "Surface, Echo & Sound",
     "genre": "",
-    "label": "Play It Again Sam",
-    "album_has_article": false
+    "label": "PIAS",
+    "album_has_article": true
    },
    {
     "year": 2026,
@@ -4054,9 +4126,9 @@
     "day": 30,
     "artist": "Enslaved",
     "title": "Mið",
-    "genre": "",
+    "genre": "Black metal, progressive metal",
     "label": "Nuclear Blast",
-    "album_has_article": false
+    "album_has_article": true
    },
    {
     "year": 2026,
@@ -4096,7 +4168,7 @@
     "title": "Heartsong",
     "genre": "",
     "label": "EMI Music Australia",
-    "album_has_article": false
+    "album_has_article": true
    },
    {
     "year": 2026,
@@ -4212,21 +4284,21 @@
     "year": 2026,
     "month": 10,
     "day": 30,
-    "artist": "Nickelback",
-    "title": "Everything Under the Sun",
-    "genre": "",
-    "label": "VMG",
+    "artist": "Nettspend",
+    "title": "Virginia Creeper",
+    "genre": "Rage, trap",
+    "label": "Grade A, Interscope",
     "album_has_article": true
    },
    {
     "year": 2026,
     "month": 10,
     "day": 30,
-    "artist": "Northlane",
-    "title": "Anemoia",
+    "artist": "Nickelback",
+    "title": "Everything Under the Sun",
     "genre": "",
-    "label": "",
-    "album_has_article": false
+    "label": "VMG",
+    "album_has_article": true
    },
    {
     "year": 2026,
@@ -4310,6 +4382,16 @@
    },
    {
     "year": 2026,
+    "month": 10,
+    "day": 30,
+    "artist": "Yello",
+    "title": "Time Lab",
+    "genre": "",
+    "label": "Universal",
+    "album_has_article": false
+   },
+   {
+    "year": 2026,
     "month": 11,
     "day": 1,
     "artist": "Liffey Light Orchestra",
@@ -4317,7 +4399,59 @@
     "genre": "",
     "label": "Legal Records",
     "album_has_article": false,
-    "itunes": null
+    "itunes": {
+     "collectionId": 6829648458,
+     "artistName": "Liffey Light Orchestra",
+     "collectionName": "Ana Livia",
+     "releaseDate": "2026-11-01T07:00:00Z",
+     "trackCount": 21,
+     "primaryGenreName": "Worldwide",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/4d/91/6d/4d916dea-ecf9-e245-5040-c692b25aa9c9/5392001028028_cover.jpg/600x600bb.jpg",
+     "cn_url": null
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 3,
+    "artist": "BOM (Miranda! and Lali)",
+    "title": "Bailar o Morir",
+    "genre": "Italo disco, dance-pop, house",
+    "label": "Sony Argentina",
+    "album_has_article": true,
+    "itunes": {
+     "collectionId": 6826373481,
+     "artistName": "BOM, Miranda! & Lali",
+     "collectionName": "BAILAR O MORIR",
+     "releaseDate": "2026-11-03T08:00:00Z",
+     "trackCount": 10,
+     "primaryGenreName": "Pop Latino",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/a4/0b/ef/a40bef38-87d5-1fa9-4521-1d1a21c0b73b/196874820858.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/bailar-o-morir/6826373481"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 4,
+    "artist": "Yoasobi",
+    "title": "Yoasobi 5th Anniversary Dome Live 2024 \"Chō-genjitsu\" at Tokyo Dome",
+    "genre": "",
+    "label": "Echoes, Sony Japan",
+    "album_has_article": true,
+    "itunes": {
+     "collectionId": 6826993131,
+     "artistName": "YOASOBI",
+     "collectionName": "YOASOBI 5th ANNIVERSARY DOME LIVE 2024 “超現実” at TOKYO DOME",
+     "releaseDate": "2026-11-04T08:00:00Z",
+     "trackCount": 27,
+     "primaryGenreName": "J-Pop",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/f7/a3/81/f7a381e9-cc40-58c9-02a5-55ffc59aeece/711641100775.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/yoasobi-5th-anniversary-dome-live-2024-%E8%B6%85%E7%8F%BE%E5%AE%9F-at-tokyo-dome/6826993131"
+    }
    },
    {
     "year": 2026,
@@ -4332,7 +4466,7 @@
      "collectionId": 6816116333,
      "artistName": "Alanis Morissette",
      "collectionName": "Good Weather For Immaculate Conception",
-     "releaseDate": "2026-10-09T07:00:00Z",
+     "releaseDate": "2026-11-06T08:00:00Z",
      "trackCount": 14,
      "primaryGenreName": "Holiday",
      "collectionExplicitness": "notExplicit",
@@ -4389,7 +4523,18 @@
     "artist": "Bassvictim",
     "title": "Peace + War",
     "genre": "",
-    "label": "VOTB",
+    "label": "VOTB, Warner",
+    "album_has_article": true,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Best Ex",
+    "title": "Good Girl",
+    "genre": "",
+    "label": "Iodine",
     "album_has_article": false,
     "itunes": null
    },
@@ -4557,12 +4702,43 @@
     "year": 2026,
     "month": 11,
     "day": 6,
+    "artist": "Daine",
+    "title": "In Endless Awe & Agony",
+    "genre": "",
+    "label": "Pack Records",
+    "album_has_article": true,
+    "itunes": {
+     "collectionId": 6769934903,
+     "artistName": "daine",
+     "collectionName": "In Endless Awe & Agony",
+     "releaseDate": "2026-11-06T08:00:00Z",
+     "trackCount": 11,
+     "primaryGenreName": "Alternative",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/3b/37/69/3b376905-c78e-bd5e-2025-7489989b2443/612891028300.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/in-endless-awe-agony/6769934903"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
     "artist": "Déyyess",
     "title": "Well I Might Just Die",
     "genre": "",
     "label": "Boys Boys Boys Records",
     "album_has_article": false,
-    "itunes": null
+    "itunes": {
+     "collectionId": 6831697104,
+     "artistName": "Déyyess",
+     "collectionName": "Well I Might Just Die",
+     "releaseDate": "2026-11-06T08:00:00Z",
+     "trackCount": 7,
+     "primaryGenreName": "Alternative",
+     "collectionExplicitness": "cleaned",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/66/2c/d4/662cd45e-de35-8a0d-78e6-7797082d39ee/26UM1IM17469.rgb.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/well-i-might-just-die/6831697104"
+    }
    },
    {
     "year": 2026,
@@ -4626,7 +4802,17 @@
     "genre": "",
     "label": "Columbia, Disruptor",
     "album_has_article": true,
-    "itunes": null
+    "itunes": {
+     "collectionId": 6831699931,
+     "artistName": "Dove Cameron",
+     "collectionName": "FINAL GIRL",
+     "releaseDate": "2026-11-05T08:00:00Z",
+     "trackCount": 11,
+     "primaryGenreName": "Pop",
+     "collectionExplicitness": "cleaned",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/4b/bc/e3/4bbce3e8-fc83-61c2-bdbf-0fddf36360eb/196874966945.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/final-girl/6831699931"
+    }
    },
    {
     "year": 2026,
@@ -4687,7 +4873,7 @@
      "trackCount": 13,
      "primaryGenreName": "Adult Contemporary",
      "collectionExplicitness": "notExplicit",
-     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/c7/49/72/c749723b-f110-90cf-bbef-fe617c35fd34/4099964261776.jpg/600x600bb.jpg",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/6e/a5/04/6ea504c6-4aba-3581-cd60-21480cc99ba7/4099964261776.jpg/600x600bb.jpg",
      "cn_url": "https://music.apple.com/cn/album/on-the-record/6788050315"
     }
    },
@@ -4697,9 +4883,9 @@
     "day": 6,
     "artist": "Hatebreed",
     "title": "Fatal Paradox",
-    "genre": "",
-    "label": "BLKIIBLK",
-    "album_has_article": false,
+    "genre": "Metalcore, hardcore punk",
+    "label": "BlkIIBlk",
+    "album_has_article": true,
     "itunes": null
    },
    {
@@ -4722,6 +4908,16 @@
      "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/fb/f0/5e/fbf05e38-4aa1-ef6a-d1df-f848ac8230e1/820233588591.jpg/600x600bb.jpg",
      "cn_url": null
     }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 6,
+    "artist": "Jack Harlow",
+    "title": "Sweet Action II",
+    "genre": "",
+    "label": "",
+    "album_has_article": false
    },
    {
     "year": 2026,
@@ -4785,7 +4981,17 @@
     "genre": "",
     "label": "Sacred Bones",
     "album_has_article": false,
-    "itunes": null
+    "itunes": {
+     "collectionId": 6793690565,
+     "artistName": "Jozef Van Wissem & Jim Jarmusch",
+     "collectionName": "Mouth of the Wolf",
+     "releaseDate": "2026-11-06T08:00:00Z",
+     "trackCount": 2,
+     "primaryGenreName": "Alternative",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/7f/2d/0b/7f2d0bc6-7b3e-b89c-ca09-1e45fda6a719/67744.jpg/600x600bb.jpg",
+     "cn_url": null
+    }
    },
    {
     "year": 2026,
@@ -4816,18 +5022,7 @@
     "title": "O My Beloved",
     "genre": "",
     "label": "Love Tap Records",
-    "album_has_article": false,
-    "itunes": {
-     "collectionId": 6802901441,
-     "artistName": "Kings of Leon",
-     "collectionName": "O My Beloved",
-     "releaseDate": "2026-11-06T08:00:00Z",
-     "trackCount": 13,
-     "primaryGenreName": "Alternative",
-     "collectionExplicitness": "notExplicit",
-     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/c2/84/79/c2847988-ab33-0de8-0dc3-ebf0c6cbd0b4/00823375343684_Cover.jpg/600x600bb.jpg",
-     "cn_url": "https://music.apple.com/cn/album/o-my-beloved/6802901441"
-    }
+    "album_has_article": true
    },
    {
     "year": 2026,
@@ -4837,8 +5032,7 @@
     "title": "Fresh",
     "genre": "",
     "label": "",
-    "album_has_article": true,
-    "itunes": null
+    "album_has_article": true
    },
    {
     "year": 2026,
@@ -5028,8 +5222,7 @@
     "title": "Dream Fatigue",
     "genre": "",
     "label": "",
-    "album_has_article": false,
-    "itunes": null
+    "album_has_article": false
    },
    {
     "year": 2026,
@@ -5101,9 +5294,9 @@
     "day": 6,
     "artist": "Shygirl",
     "title": "Swallow!",
-    "genre": "",
-    "label": "",
-    "album_has_article": false,
+    "genre": "Experimental pop",
+    "label": "Because",
+    "album_has_article": true,
     "itunes": null
    },
    {
@@ -5134,7 +5327,7 @@
     "day": 6,
     "artist": "Steven Wilson",
     "title": "Requiem for a Village",
-    "genre": "",
+    "genre": "Progressive rock",
     "label": "Fiction",
     "album_has_article": true,
     "itunes": {
@@ -5179,7 +5372,17 @@
     "genre": "",
     "label": "Asthmatic Kitty",
     "album_has_article": false,
-    "itunes": null
+    "itunes": {
+     "collectionId": 6795255823,
+     "artistName": "Sufjan Stevens",
+     "collectionName": "Worst Christmas Ever!",
+     "releaseDate": "2026-11-06T08:00:00Z",
+     "trackCount": 16,
+     "primaryGenreName": "Holiday",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/9d/d1/74/9dd174fa-e57b-2f1c-83ab-ec202e8b44d0/67807.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/worst-christmas-ever/6795255823"
+    }
    },
    {
     "year": 2026,
@@ -5296,7 +5499,17 @@
     "genre": "",
     "label": "Mothland",
     "album_has_article": false,
-    "itunes": null
+    "itunes": {
+     "collectionId": 6790950199,
+     "artistName": "Yoo Doo Right",
+     "collectionName": "Build and Rest by the Shepherd's Light",
+     "releaseDate": "2026-11-06T08:00:00Z",
+     "trackCount": 8,
+     "primaryGenreName": "Rock",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/f9/e1/08/f9e1085b-25b1-917a-9477-988b503dd304/885288085686.jpg/600x600bb.jpg",
+     "cn_url": null
+    }
    },
    {
     "year": 2026,
@@ -5307,7 +5520,17 @@
     "genre": "",
     "label": "",
     "album_has_article": false,
-    "itunes": null
+    "itunes": {
+     "collectionId": 6829875678,
+     "artistName": "ICE NINE KILLS",
+     "collectionName": "A Very Vicious Christmas",
+     "releaseDate": "2026-11-09T08:00:00Z",
+     "trackCount": 8,
+     "primaryGenreName": "Holiday",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/4a/e4/44/4ae4448c-5ddd-ddff-2d32-d810dfdbd6da/26CRGIM57169.rgb.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/a-very-vicious-christmas/6829875678"
+    }
    },
    {
     "year": 2026,
@@ -5345,6 +5568,28 @@
     "year": 2026,
     "month": 11,
     "day": 11,
+    "artist": "Bruiser Wolf and Conductor Williams",
+    "title": "The Dealer Wins",
+    "genre": "",
+    "label": "",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 11,
+    "artist": "Chanmina",
+    "title": "Legend",
+    "genre": "",
+    "label": "No Label",
+    "album_has_article": true,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 11,
     "artist": "Eliza Rose",
     "title": "Arcadia: Pleasuredome",
     "genre": "",
@@ -5361,6 +5606,17 @@
      "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/75/54/ae/7554ae6a-491d-362a-44cc-d2bf9fd030e4/1200220049059.jpg/600x600bb.jpg",
      "cn_url": "https://music.apple.com/cn/album/arcadia-pleasuredome-ep/6808324553"
     }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 12,
+    "artist": "Ecco2k",
+    "title": "Echo",
+    "genre": "",
+    "label": "9th",
+    "album_has_article": true,
+    "itunes": null
    },
    {
     "year": 2026,
@@ -5404,15 +5660,15 @@
     "label": "Sony Music Korea, RCA",
     "album_has_article": false,
     "itunes": {
-     "collectionId": 1822545714,
+     "collectionId": 1816843869,
      "artistName": "ATEEZ",
-     "collectionName": "GOLDEN HOUR : Part.3 'In Your Fantasy Edition'",
-     "releaseDate": "2025-07-11T07:00:00Z",
-     "trackCount": 15,
+     "collectionName": "GOLDEN HOUR : Part.3 - EP",
+     "releaseDate": "2025-06-13T07:00:00Z",
+     "trackCount": 5,
      "primaryGenreName": "K-Pop",
      "collectionExplicitness": "notExplicit",
-     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/67/41/06/6741061b-db7d-dccb-6200-0be18e0a7cf8/196873101224.jpg/600x600bb.jpg",
-     "cn_url": "https://music.apple.com/cn/album/golden-hour-part-3-in-your-fantasy-edition/1822545714"
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/6d/d2/68/6dd26826-582e-8f68-392d-3c8c4cd1ea23/196873155647.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/golden-hour-part-3-ep/1816843869"
     }
    },
    {
@@ -5455,8 +5711,19 @@
      "primaryGenreName": "Alternative",
      "collectionExplicitness": "notExplicit",
      "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/d1/78/9d/d1789df2-79f9-f9e7-164e-25d1fe45f8a4/859745435468_cover.jpg/600x600bb.jpg",
-     "cn_url": null
+     "cn_url": "https://music.apple.com/cn/album/good-bones/6807986010"
     }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 13,
+    "artist": "Belly Gang Kushington",
+    "title": "Good Dope Sell Itself",
+    "genre": "",
+    "label": "LVRN",
+    "album_has_article": false,
+    "itunes": null
    },
    {
     "year": 2026,
@@ -5550,7 +5817,7 @@
      "primaryGenreName": "Country",
      "collectionExplicitness": "notExplicit",
      "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/37/5b/20/375b206d-fff0-c3ea-bfdb-3d19748992ae/823375421825_Cover.jpg/600x600bb.jpg",
-     "cn_url": null
+     "cn_url": "https://music.apple.com/cn/album/america-works-ep/6810422991"
     }
    },
    {
@@ -5745,6 +6012,17 @@
      "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/31/be/bc/31bebc06-71ca-0e35-c43c-dd7c0e23f187/191400092273.png/600x600bb.jpg",
      "cn_url": null
     }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 13,
+    "artist": "Kittie",
+    "title": "Oracle XXV",
+    "genre": "",
+    "label": "",
+    "album_has_article": false,
+    "itunes": null
    },
    {
     "year": 2026,
@@ -6128,7 +6406,7 @@
      "primaryGenreName": "Metal",
      "collectionExplicitness": "notExplicit",
      "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/89/49/f9/8949f977-4d36-69eb-6fb3-a75a1d2712d8/781676533411.jpg/600x600bb.jpg",
-     "cn_url": null
+     "cn_url": "https://music.apple.com/cn/album/the-last-nail/6791700794"
     }
    },
    {
@@ -6391,6 +6669,27 @@
     "year": 2026,
     "month": 11,
     "day": 20,
+    "artist": "Toro y Moi",
+    "title": "Unusua",
+    "genre": "",
+    "label": "",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6823370459,
+     "artistName": "Toro y Moi",
+     "collectionName": "Unusua",
+     "releaseDate": "2026-11-20T08:00:00Z",
+     "trackCount": 7,
+     "primaryGenreName": "Instrumental",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/42/0d/42/420d42e6-04cc-3588-be3e-aa58f9c1e03b/193436491488_TyMUnusuax.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/unusua/6823370459"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 20,
     "artist": "Trivium",
     "title": "Crown in the Grave",
     "genre": "",
@@ -6408,15 +6707,15 @@
     "label": "Fireflash Records",
     "album_has_article": false,
     "itunes": {
-     "collectionId": 1413499206,
-     "artistName": "Steppenwolf",
-     "collectionName": "Hour of the Wolf (Expanded Edition)",
-     "releaseDate": "1975-09-01T07:00:00Z",
-     "trackCount": 10,
-     "primaryGenreName": "Rock",
+     "collectionId": 1861880188,
+     "artistName": "Freja Drakenberg & Freja The Dragon",
+     "collectionName": "Hour of the Wolf",
+     "releaseDate": "2026-03-26T07:00:00Z",
+     "trackCount": 9,
+     "primaryGenreName": "Alternative",
      "collectionExplicitness": "notExplicit",
-     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/81/5c/85/815c85ec-0585-6c5e-a7fd-84b427cac39d/886447140086.jpg/600x600bb.jpg",
-     "cn_url": "https://music.apple.com/cn/album/hour-of-the-wolf-expanded-edition/1413499206"
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/57/a6/f2/57a6f2c3-8589-5ebf-7a05-798801866d4e/7350045461391.png/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/hour-of-the-wolf/1861880188"
     }
    },
    {
@@ -6450,17 +6749,7 @@
     "genre": "",
     "label": "One Little Independent",
     "album_has_article": false,
-    "itunes": {
-     "collectionId": 6819756090,
-     "artistName": "Björk & The Hamrahlíð Choir",
-     "collectionName": "Björk Orkestral with the Hamrahlíð Choir (Live at Harpa Hall, Reykjavík)",
-     "releaseDate": "2026-11-27T08:00:00Z",
-     "trackCount": 11,
-     "primaryGenreName": "Alternative",
-     "collectionExplicitness": "notExplicit",
-     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/4c/be/e9/4cbee956-38d0-3931-30a4-1a60f3874524/5016958110734.png/600x600bb.jpg",
-     "cn_url": null
-    }
+    "itunes": null
    },
    {
     "year": 2026,
@@ -6480,7 +6769,7 @@
      "primaryGenreName": "Alternative",
      "collectionExplicitness": "notExplicit",
      "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/69/76/0d/69760d6c-d413-b60f-b4aa-951c2271dc88/17373.jpg/600x600bb.jpg",
-     "cn_url": null
+     "cn_url": "https://music.apple.com/cn/album/tales-from-the-silver-lounge/6821036379"
     }
    },
    {
@@ -6572,6 +6861,27 @@
     "year": 2026,
     "month": 11,
     "day": 27,
+    "artist": "Leviathan",
+    "title": "Die to This",
+    "genre": "",
+    "label": "Profound Lore",
+    "album_has_article": false,
+    "itunes": {
+     "collectionId": 6819360298,
+     "artistName": "Leviathan",
+     "collectionName": "Die To This",
+     "releaseDate": "2026-11-27T08:00:00Z",
+     "trackCount": 9,
+     "primaryGenreName": "Death Metal/Black Metal",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/97/11/8e/97118e65-2db3-b67c-98c6-88c7e1220f7d/840526518517.jpg/600x600bb.jpg",
+     "cn_url": null
+    }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 27,
     "artist": "Molly Hatchet",
     "title": "Lost Horizon",
     "genre": "",
@@ -6621,6 +6931,28 @@
      "art": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/4f/cf/c6/4fcfc644-7078-780c-80ac-3b5f29b85478/4251981719610.jpg/600x600bb.jpg",
      "cn_url": null
     }
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 27,
+    "artist": "Neal Morse and The Resonance",
+    "title": "River of Light",
+    "genre": "",
+    "label": "",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 27,
+    "artist": "Northlane",
+    "title": "Anemoia",
+    "genre": "",
+    "label": "Immortal, Believe",
+    "album_has_article": false,
+    "itunes": null
    },
    {
     "year": 2026,
@@ -6678,6 +7010,17 @@
    },
    {
     "year": 2026,
+    "month": 11,
+    "day": 30,
+    "artist": "Taeyeon",
+    "title": "Unspecial",
+    "genre": "",
+    "label": "SM",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
     "month": 12,
     "day": 1,
     "artist": "Beans On Toast",
@@ -6715,8 +7058,8 @@
     "artist": "Hanabie.",
     "title": "Umami",
     "genre": "",
-    "label": "",
-    "album_has_article": false,
+    "label": "Epic Japan",
+    "album_has_article": true,
     "itunes": null
    },
    {
@@ -6771,6 +7114,60 @@
      "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/d1/fc/3a/d1fc3a1e-59cf-92e1-9391-564cc33cf301/4255698502534.jpg/600x600bb.jpg",
      "cn_url": "https://music.apple.com/cn/album/ashes-gold/6798878699"
     }
+   },
+   {
+    "year": 2026,
+    "month": 12,
+    "day": 4,
+    "artist": "Forrest Frank",
+    "title": "The Jesus Generation",
+    "genre": "",
+    "label": "River House Records",
+    "album_has_article": true,
+    "itunes": {
+     "collectionId": 6830512369,
+     "artistName": "Forrest Frank",
+     "collectionName": "THE JESUS GENERATION",
+     "releaseDate": "2026-12-04T08:00:00Z",
+     "trackCount": 20,
+     "primaryGenreName": "Christian",
+     "collectionExplicitness": "notExplicit",
+     "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/aa/5d/b2/aa5db205-ba4f-0c54-a40d-6b7bc4766d02/075679547330.jpg/600x600bb.jpg",
+     "cn_url": "https://music.apple.com/cn/album/the-jesus-generation/6830512369"
+    }
+   },
+   {
+    "year": 2026,
+    "month": 12,
+    "day": 4,
+    "artist": "Harakiri for the Sky",
+    "title": "Reliving the Trauma – Live at Theater Akzent",
+    "genre": "",
+    "label": "AOP Records",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 12,
+    "day": 4,
+    "artist": "King Gizzard & the Lizard Wizard",
+    "title": "Entropy",
+    "genre": "",
+    "label": "(p)doom records",
+    "album_has_article": false,
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 12,
+    "day": 4,
+    "artist": "Kristin Hersh",
+    "title": "Downers on Blackstone",
+    "genre": "",
+    "label": "",
+    "album_has_article": false,
+    "itunes": null
    },
    {
     "year": 2026,
@@ -6993,7 +7390,7 @@
     "title": "The Circus",
     "genre": "",
     "label": "Sony Music, Century Media",
-    "album_has_article": false,
+    "album_has_article": true,
     "itunes": null
    }
   ],
@@ -7030,7 +7427,7 @@
     "year": 2026,
     "month": 10,
     "day": 8,
-    "title": "二十七(27)",
+    "title": "27",
     "artist": "Yuqi"
    },
    {
@@ -7128,7 +7525,7 @@
     "year": 2026,
     "month": 10,
     "day": 19,
-    "title": "on: our noise",
+    "title": "On: Our Noise",
     "artist": "Evnne"
    },
    {
@@ -7156,7 +7553,7 @@
     "year": 2026,
     "month": 10,
     "day": 28,
-    "title": "i=!",
+    "title": "I=!",
     "artist": "Xlov"
    },
    {
@@ -7229,9 +7626,32 @@
    {
     "year": 2026,
     "month": 11,
-    "day": null,
-    "title": "TBA",
+    "day": 21,
+    "title": "4th Deux",
+    "artist": "Deux",
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 23,
+    "title": "Gleam Hour",
     "artist": "Wendy",
+    "itunes": null
+   },
+   {
+    "year": 2026,
+    "month": 11,
+    "day": 30,
+    "title": "Unspecial",
+    "artist": "Taeyeon"
+   },
+   {
+    "year": 2026,
+    "month": 12,
+    "day": 1,
+    "title": "Waking Up the Night",
+    "artist": "Exo-KaSe",
     "itunes": null
    }
   ]
@@ -9263,17 +9683,6 @@
   },
   {
    "year": 2026,
-   "month": 10,
-   "day": null,
-   "title": "Hubert",
-   "platforms": "PS5",
-   "type": "Port",
-   "genre": "Adventure",
-   "developer": "Brocap Studio",
-   "publisher": ""
-  },
-  {
-   "year": 2026,
    "month": 11,
    "day": 2,
    "title": "Gravhounds",
@@ -9682,6 +10091,17 @@
   {
    "year": 2026,
    "month": 11,
+   "day": 9,
+   "title": "Hozy",
+   "platforms": "PS5, XBX/S",
+   "type": "Port",
+   "genre": "Cozy",
+   "developer": "Come On Games",
+   "publisher": "tinyBuild"
+  },
+  {
+   "year": 2026,
+   "month": 11,
    "day": 10,
    "title": "1999TOKOYO Building",
    "platforms": "WIN",
@@ -9727,6 +10147,17 @@
    "year": 2026,
    "month": 11,
    "day": 10,
+   "title": "Hard West 2",
+   "platforms": "PS5, XSX/S",
+   "type": "Port",
+   "genre": "Strategy",
+   "developer": "Ice Cold Games",
+   "publisher": "Good Sheperd Entertainment, Klabater"
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 10,
    "title": "Hope in the City",
    "platforms": "WIN, XBX/S",
    "type": "Original",
@@ -9749,6 +10180,17 @@
    "year": 2026,
    "month": 11,
    "day": 10,
+   "title": "Ova Magica",
+   "platforms": "NS, NS2, PS4, PS5, XBO, XBX/S",
+   "type": "Port",
+   "genre": "Life sim",
+   "developer": "Skinny Frog",
+   "publisher": "Top Hat Studios"
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 10,
    "title": "Raccoin: Chaos Max Edition",
    "platforms": "NS2, PS5, XBX/S",
    "type": "Port",
@@ -9760,12 +10202,34 @@
    "year": 2026,
    "month": 11,
    "day": 10,
+   "title": "Takeover 2",
+   "platforms": "WIN",
+   "type": "Original",
+   "genre": "Brawler",
+   "developer": "Pelikan13",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 10,
    "title": "Tanuki: Pon's Summer",
    "platforms": "WIN, NS, NS2, PS4, PS5, XBO, XBX/S",
    "type": "Original",
    "genre": "Adventure",
    "developer": "Denkiworks",
    "publisher": "Critical Reflex"
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 10,
+   "title": "Thrifty Buisness",
+   "platforms": "DROID, iOS",
+   "type": "Port",
+   "genre": "Simulation",
+   "developer": "colspan=\"2\" | Spellgarden Games",
+   "publisher": ""
   },
   {
    "year": 2026,
@@ -9980,12 +10444,45 @@
    "year": 2026,
    "month": 11,
    "day": 17,
+   "title": "Duck Side of the Moon",
+   "platforms": "PS5",
+   "type": "Port",
+   "genre": "Adventure",
+   "developer": "Starbrew Games",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 17,
+   "title": "HARMA",
+   "platforms": "WIN",
+   "type": "Early access",
+   "genre": "Deck building, Rougelike",
+   "developer": "INDIRECT SHINE",
+   "publisher": "Astrolabe Games"
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 17,
    "title": "Moonlight Peaks",
    "platforms": "PS5",
    "type": "Port",
    "genre": "Life sim",
    "developer": "Little Chicken Game Company",
    "publisher": "Xseed Games, Marvelous Europe"
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": 17,
+   "title": "POPUCOM",
+   "platforms": "PS5",
+   "type": "Port",
+   "genre": "Puzzle, Adventure",
+   "developer": "Hypergryph",
+   "publisher": "Gryphline, Fireshine Games"
   },
   {
    "year": 2026,
@@ -10133,6 +10630,17 @@
   {
    "year": 2026,
    "month": 11,
+   "day": 27,
+   "title": "MR. ELEVATOR",
+   "platforms": "PS5",
+   "type": "Port",
+   "genre": "Adventure, Puzzle",
+   "developer": "GIFT TEN INDUSTRY",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 11,
    "day": 30,
    "title": "GrimKeep",
    "platforms": "WIN, OSX, PS5",
@@ -10151,6 +10659,28 @@
    "genre": "Tactical RPG",
    "developer": "RideonJapan",
    "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 11,
+   "day": null,
+   "title": "Silly Polly Beast",
+   "platforms": "NS2",
+   "type": "Port",
+   "genre": "Action, Shooter, Survival horror",
+   "developer": "Anji Games",
+   "publisher": "Top Hat Studios"
+  },
+  {
+   "year": 2026,
+   "month": 12,
+   "day": 1,
+   "title": "CaTHaRSiS: The last of atelier",
+   "platforms": "WIN",
+   "type": "Original",
+   "genre": "Adventure",
+   "developer": "Mana",
+   "publisher": "Kodansha Creator's Lab"
   },
   {
    "year": 2026,
@@ -10256,7 +10786,7 @@
    "month": 12,
    "day": 3,
    "title": "The Dark Queen of Mortholme",
-   "platforms": "NS2, PS5, XSX/S",
+   "platforms": "NS2, PS5, XBX/S",
    "type": "Port",
    "genre": "Action-adventure",
    "developer": "Mosu",
@@ -10322,11 +10852,22 @@
    "month": 12,
    "day": 3,
    "title": "FreeStyle football 2",
-   "platforms": "WIN, PS5, XSX/S",
+   "platforms": "WIN, PS5, XBX/S",
    "type": "Original",
    "genre": "Sports",
    "developer": "Woore",
    "publisher": "Joycity"
+  },
+  {
+   "year": 2026,
+   "month": 12,
+   "day": 3,
+   "title": "HUNGER",
+   "platforms": "WIN",
+   "type": "Early access",
+   "genre": "FPS, Action RPG",
+   "developer": "Good Fun Corporation",
+   "publisher": ""
   },
   {
    "year": 2026,
@@ -10371,6 +10912,17 @@
    "genre": "Adventure, Horror",
    "developer": "Maboroshi Artworks",
    "publisher": "Entalto Publishing"
+  },
+  {
+   "year": 2026,
+   "month": 12,
+   "day": 3,
+   "title": "Thief: The Dark Project Remastered",
+   "platforms": "WIN, NS, NS2, PS4, PS5, XBX/S",
+   "type": "Remaster",
+   "genre": "Stealth",
+   "developer": "Nightdive Studios, Eidos-Montréal",
+   "publisher": "Atari"
   },
   {
    "year": 2026,
@@ -10442,22 +10994,22 @@
    "year": 2026,
    "month": 12,
    "day": 7,
-   "title": "Muri: WildWoods",
-   "platforms": "WIN, LIN",
+   "title": "Mouse Work",
+   "platforms": "NS2",
    "type": "Original",
-   "genre": "Adventure, Cozy",
-   "developer": "Speldosa Interactive",
+   "genre": "Party",
+   "developer": "Nitrome",
    "publisher": ""
   },
   {
    "year": 2026,
    "month": 12,
    "day": 7,
-   "title": "Stronghold 4",
-   "platforms": "WIN",
+   "title": "Muri: WildWoods",
+   "platforms": "WIN, LIN",
    "type": "Original",
-   "genre": "RTS",
-   "developer": "Firefly Studios",
+   "genre": "Adventure, Cozy",
+   "developer": "Speldosa Interactive",
    "publisher": ""
   },
   {
@@ -10540,6 +11092,39 @@
   {
    "year": 2026,
    "month": 12,
+   "day": 9,
+   "title": "Winter Whiskers",
+   "platforms": "WIN, OSX",
+   "type": "Original",
+   "genre": "Simulation",
+   "developer": "Mango Leaf Games",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 12,
+   "day": 9,
+   "title": "Wish Upon a Llama",
+   "platforms": "WIN, NS, PS4, PS5, XBO, XSX/S",
+   "type": "Original",
+   "genre": "Cozy, Life sim",
+   "developer": "Millionhare Studios",
+   "publisher": "Whitethorn Games"
+  },
+  {
+   "year": 2026,
+   "month": 12,
+   "day": 9,
+   "title": "Wonderfall",
+   "platforms": "WIN",
+   "type": "Original",
+   "genre": "Action adventure",
+   "developer": "Attaboy Interactive",
+   "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 12,
    "day": 10,
    "title": "Aeruta",
    "platforms": "NS, PS4, PS5",
@@ -10618,6 +11203,17 @@
    "year": 2026,
    "month": 12,
    "day": 10,
+   "title": "Ravenswatch - Nintendo Switch 2 Edition (WW)",
+   "platforms": "NS2",
+   "type": "Port",
+   "genre": "Action, Rougelike",
+   "developer": "Passtech Games",
+   "publisher": "Nacon"
+  },
+  {
+   "year": 2026,
+   "month": 12,
+   "day": 10,
    "title": "Super Yanoman Collection (JP)",
    "platforms": "WIN, NS, NS2, PS5",
    "type": "Compilation",
@@ -10679,6 +11275,17 @@
    "genre": "Rhythm",
    "developer": "Broccoli",
    "publisher": ""
+  },
+  {
+   "year": 2026,
+   "month": 12,
+   "day": 18,
+   "title": "Ravenswatch - Nintendo Switch 2 Edition (NA)",
+   "platforms": "NS2",
+   "type": "Port",
+   "genre": "Action, Rougelike",
+   "developer": "Passtech Games",
+   "publisher": "Nacon"
   },
   {
    "year": 2026,
