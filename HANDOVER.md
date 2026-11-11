@@ -507,6 +507,7 @@ Python 脚本只用标准库，建议 Python 3.12（与 Actions 一致）；Node
 - Python 的 `tempfile` 若命中不可写的沙箱临时目录，先把本进程的 `TEMP`、`TMP` 指向 `H:\Release Calendar\qa-temp` 再跑检查，不需要改测试代码或系统全局设置。
 - Windows 控制台默认 GBK，跑会打印中文的 Python 时加 `PYTHONUTF8=1`。PowerShell 不支持 `&&` 和 bash heredoc。
 - 这台机器到 `github.com:443` 会间歇断开几分钟到二十分钟，`api.github.com` 和 Pages 通常还能访问。推送失败就隔 40 秒以上再试，不要高频连打。`git fetch` 成功但随后的 pull 断了，可以用已有的 `origin/main` 执行 `git merge origin/main --no-edit`。
+- GitHub 直连超时后的代理后备（2026-11-11 实测）：Windows 用户代理是 `127.0.0.1:7890`，Clash for Windows 正在运行，但命令行没有继承 `HTTP_PROXY` / `HTTPS_PROXY`。直连 `raw.githubusercontent.com` 超时，同一文件通过 `http://127.0.0.1:7890` 约 1 秒返回 HTTP 200。直连失败后，先确认 Clash 和该本地代理仍可用，再只在单次命令中指定代理，例如 `git -c http.proxy=http://127.0.0.1:7890 fetch origin`，随后用 `git merge origin/main --no-edit` 接上；下载文件可用 `curl --proxy http://127.0.0.1:7890 -L --fail <URL>`。不要修改系统代理或全局 Git 配置，不要把凭据写进命令或文档；代理也不可用时停止并报告，不要高频重试。
 
 ## 14. 和当前页面对得上的提交
 
