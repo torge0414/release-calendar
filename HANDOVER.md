@@ -134,6 +134,12 @@ GPT 和 Claude 两位 agent 都是项目负责人，地位对等，不设单一�
 - 2026-11-02 用户决定收 **雷曼：传奇再叙**（Rayman Legends Retold，12-03）：官方称「a bold reimagining」，有新内容、改写的剧情和全新画面，按重制版处理。[Steam 4084710](https://store.steampowered.com/app/4084710/)；Nintendo 港服当时未标价。
 - 不收：Cronos: Lazarus（约 9.99 美元的剧情 DLC，体量不够大型扩展）、Stronghold 4（12-07 是抢先体验）、Path of Exile 2 1.0（2024-12 已抢先体验发售）、Azur Promilia、Petit Planet（免费手游 / PC，无 Steam 条目）。
 
+2026-11-11 月中核对（只核对本月与下月，无增删）：
+
+- 本月 3 款日期不变：时之笛 11-05、足球经理27 11-10、GTA VI 11-19（已进厂压盘，官方口径不再延期）。下月 3 款 Steam 日期仍为 12-03（DQM 枯木国、Dawn of War IV、雷曼：传奇再叙）。
+- Attack on Titan 3 的 Steam 页面已上线（[Steam 2916700](https://store.steampowered.com/app/2916700/)，标 2026-12-09）；仍维持 11-01 的「暂不收、等用户决定」，不在月度任务里自行加入。
+- Professor Layton and the New World of Steam 在 Steam 仍无商店条目，维持暂不收。
+
 ## 4A. 音乐收录口径
 
 2026-10-15 用户确认：只收**女歌手和女团**——**欧美主流女歌手**（流行、嘻哈、R&B、舞曲，**不收摇滚**）和**主流 K-pop 女团、女团成员 solo**的新专辑；**男歌手、男团、男性组合都不收**（男女混合团体 ALLDAY PROJECT 暂时保留）。主流艺人的 **EP / 迷你专辑也收**（数据里记 `kind: "EP"`；分类叫「音乐」，页面不单独标注 EP）。
@@ -172,7 +178,7 @@ GPT 和 Claude 两位 agent 都是项目负责人，地位对等，不设单一�
 | 放宽到前 40 后加入 | Bea Miller《Mr. Peaked In High School》（09-18，Billboard 200 第 7）、Lennon Stella《Sleeping Lion》（10-23，英国单曲第 12）、Yung Miami《Watch Dis》（10-23，City Girls 美国单曲第 26）、Shygirl《SWALLOW!》（11-06，英国专辑第 34） |
 | 过了前 40 但按流派不收 | Lizzy McAlpine《Angel》（英国单曲第 6，独立民谣）、Rachel Chinouriri《I think I spoke too soon》（英国专辑第 17，偏独立摇滚）、Paris Paloma《The Fatal Flaw》（英国单曲第 22，独立民谣） |
 | 前 40 也不够 | Ashe（美国最高第 71）、Tove Styrke（只在瑞典上榜）、Rebecca Black（美国第 55）、Nessa Barrett（美国第 80）、Angèle（英国第 79）、Cara Delevingne、Katie Gregson-MacLeod（查不到英美上榜记录）；Natalie Imbruglia、Chaka Khan 按老牌规则不收；K-pop 的 Hyojung、YUJU、RESCENE 不算一线 |
-| 女歌手复查后不收（其他原因） | Holly Humberstone《Cruel World… So It Ends》（旧专辑扩充版）、Alanis Morissette（节日专辑）、K. Michelle《Jesus & Whiskey》（转型乡村）、Kaitlin Butts（乡村）、Björk《Orkestral》（现场管弦乐版） |
+| 女歌手复查后不收（其他原因） | Holly Humberstone《Cruel World… So It Ends》（旧专辑扩充版）、Alanis Morissette《Jesus & Whiskey》（转型乡村）、Kaitlin Butts（乡村）、Björk《Orkestral》（现场管弦乐版） |
 | 男歌手（用户要求剔除） | Yeat、Leon Bridges、Quavo、Troye Sivan、Pet Shop Boys、Lucky Daye、Anderson .Paak & Cordae、John Legend、Michael Kiwanuka、Dominic Fike、James Blunt、Skepta、Take That |
 | 男团和男团 solo，用户要求剔除 | MONSTA X、NCT WISH、MINHO、D.O.、YESUNG、MAX CHANGMIN；待上架的 ATEEZ、TOMORROW X TOGETHER、XIAOJUN 也不再补 |
 | K-pop solo 不收 | ONEW《KAKERA》（日语 EP）；JISOO、ROSÉ、NAYEON、IU 这几个月只有单曲；Yves（11-20）的迷你专辑 Apple Music 还没有条目，上架后补 |
@@ -185,6 +191,8 @@ GPT 和 Claude 两位 agent 都是项目负责人，地位对等，不设单一�
 | Troye Sivan《She's the Best》 | 国区 Apple Music 没有上架，`apple_url` 为空，封面用美区图 |
 | 2026-11-01 加入 | CHAERYEONG《Lovesick》（11-09，ITZY 成员 solo 迷你专辑，国区未上架）、Snoh Aalegra《Legendary Love》（11-13，R&B，《Temporary Highs in the Violet Skies》Billboard 200 第 24） |
 | 2026-11-01 暂不收 | Dove Cameron《FINAL GIRL》（11-06，「Boyfriend」美国第 16，合格，但 iTunes 搜索没匹配到、封面还是占位图，月中复查）、Slayyyter《wor$t man in america》（12-04，Apple Music 只有和旧专辑合并的 23 首版本）、NAYEON《NA-sty》（单曲专辑）、Eliza Rose《ARCADIA: PLEASUREDOME》（Apple Music 是 09-10 发行）、Blu DeTiger、Tove Styrke（无英美前 40） |
+| 2026-11-11 月中加入 | Dove Cameron《FINAL GIRL》（11-05 起售）：月中复查 iTunes 已有正式条目和封面（11 首，Pop，国区已上架）；Apple Music 写 11-05，Wikipedia 写 11-06，按商店日期 |
+| 2026-11-11 复查后仍不收 | Wendy《Gleam Hour》（11-23）、Taeyeon《Unspecial》（11-30）：iTunes 仍无条目，不猜日期，上架后补；Slayyyter《wor$t man in america》：Apple Music 仍搜不到可核对条目；Ella Mai《3two (EP)》：Apple Music 标为 Single、只有 3 首，按数字单曲不收 |
 
 ## 4B. 电影收录口径
 
@@ -210,6 +218,15 @@ GPT 和 Claude 两位 agent 都是项目负责人，地位对等，不设单一�
 | 一个夜晚与三个夏天（10-13 上映） | 暂留在 7 天观察期内，10-20 起由页面按评分人数自动判断 |
 | 侦战（3,428）、死亡禁区实录（3,689）、怪屋 | 不收，热度不够 |
 | 小猪佩奇、小羊肖恩3、新大头儿子、戴帽子的猫、红孩儿；杀死比尔：血色全传等重映；大熊雨林、喂喂喂足球队（纪录片）；京剧电影 | 按范围规则不收 |
+
+2026-11-11 月中更新（只核对本月与下月）：
+
+| 条目 | 决定 |
+| --- | --- |
+| 深度安静（11-19，想看 11,523） | 收录判断符合规则，但本次未上线：2025 年台湾影片首次在内地上映，按老片首次上映规则算新片；豆瓣评分 6.8 / 3,499 人是台湾上映积累的。候选海报保留在 `candidates/posters/movie_35211934.jpg`（540×800，未超重）；因本地海报没有合规的二进制发布通道，本次撤回已推送的 JSON 条目，避免页面出现缺图，待海报可发布后补上 |
+| 试探（想看 1,504）、魔法秘境（想看 2,466）等其余 11～12 月候选 | 不收，热度不够 |
+| 笑傲江湖2：东方不败（1992，10-30 首次内地上映，评分人数 24 万+） | 属上月窗口，月中不动上月，未加入。它定档晚于 10-15 调整，11-01 起 10 月按「保留上月」不再核对，按现行规则不会进入名单；是否特批由用户决定 |
+| 海上钢琴师（11-15） | 重映（豆瓣 pubdate 2019-11-15 中国大陆），不收；monthly-prep 已标 `in_window: false` |
 
 ## 5. 数据来源与结构
 
@@ -293,7 +310,7 @@ GPT 和 Claude 两位 agent 都是项目负责人，地位对等，不设单一�
 
 - 字标和桌面月份用 Georgia / Songti 衬线。手机月份用默认齐线数字的 Times New Roman / Times 衬线（`--score-serif`），52px / 700、固定 `2ch` 宽，数字特性 `normal`，避免 Georgia 在部分手机上让 9 显得更大。
 - 作品标题：桌面衬线 26px / 700、1.25 行高；手机无衬线 16px / 600、1.4 行高。按实际内容占一行或两行，不预留两行高度。
-- 桌面中文标题的字体栈是 `Georgia, "Times New Roman", "Songti SC", "RC Title Serif SC", SimSun`。Mac 用系统宋体；Windows 没有带真粗体的中文衬线体，会加载仓库里的思源宋体 Bold 子集 `fonts/title-serif-sc-bold.woff2`（约 740KB，常用 3755 字加当前标题用字，2026-10-14 按用户选择加入）；手机标题是无衬线，不会下载。不要把 SimSun 挪回子集字体前面，否则 Windows 又会变成宋体伪粗体。启动遮罩最多等 1.2 秒让字体到位，字体加载完会重算列表高度。
+- 桌面中文标题的字体栈是 `Georgia, "Times New Roman", "Songti SC", "RC Title Serif SC", SimSun`。Mac 用系统宋体；Windows 没有带真粗体的中文衬线体，会加载仓库里的思源宋体 Bold 子集 `fonts/title-serif-sc-bold.woff2`（约 740KB，常用 3755 字加当前标题用字，2026-10-14 按用户选择加入）；手机标题是无衬线，不会下载。不要把 SimSun 挪到子集字体前面，否则 Windows 又会变成宋体伪粗体。启动遮罩最多等 1.2 秒让字体到位，字体加载完会重算列表高度。
 - 评分用默认齐线数字的 Times New Roman / Times 衬线（`--score-serif`），不要改回 Georgia。
 - 无衬线（PingFang SC / 微软雅黑 / Noto Sans SC）用于日期、状态、价格、页签、页脚。
 - 浅色底 `#eef0f3`，深色底 `#101114`。主文字 `#1c1d21` / `#f4f5f6`，日期 `#444c59` / `#c5ccd6` 加重，已发布状态 `#606772` / `#a3aab4`。
@@ -411,7 +428,7 @@ release-calendar/
 
 脚本行为：
 
-- 只读取现有 `mc_url`、电影 `sid` 和 Steam 链接，遍历全部保留月份，不区分已发售或未发售。不增删作品，不改日期或平台。
+- 只读取现有 `mc_url`、电影 `sid` 和 Steam 链接，遍历全部保留月份，不区分已发售或未发售。
 - 游戏更新 `mc`，电影更新 `score` 和 `votes`。音乐没有评分，每日任务不碰 `albums.json`。没有游戏媒体评论数量字段，不要承诺这个功能存在。
 - Steam 更新顶层 `steam_price` 和 `plats` 内价格（中国区人民币现价，含折扣）；编号或币种不符、价格未开放、接口失败时保留旧价。套装先核对 `steam_package_apps` 再接受价格。不刷新 PS / Nintendo 价格。
 - 豆瓣没有评分或人数时，不用空或 0 覆盖旧值。
@@ -484,6 +501,7 @@ Python 脚本只用标准库，建议 Python 3.12（与 Actions 一致）；Node
 - 不要强推、`reset --hard`，也不要用旧 JSON 覆盖机器人刚写入的数据。需要旧实现时用 git 历史查看。
 - 没有实际变化不做空提交，也不为了留痕改 `updated`。
 - 发布算完成的标准：Pages 部署的 commit 就是刚推的那个，并且线上 `index.html`（加查询参数避开缓存）里能看到新内容。只看推送成功或 Actions 绿勾不能说已经上线；没在真实页面上看过，不能说视觉已经验收。
+- 2026-11-11 实测，官方 GitHub 插件的 `push_files` 会把 Base64 当成普通文本写入，不能用于 JPG / PNG 等二进制文件。新增本地海报前必须确认合规的二进制写入通道；无法发布海报时，不要先推送引用该文件的 JSON。
 
 仓库本地 git 配置（不要改用户的全局配置）：`user.name = torge0414`，`user.email = 56673045+torge0414@users.noreply.github.com`，`pull.rebase = false`。
 
