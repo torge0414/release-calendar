@@ -178,7 +178,7 @@ GPT 和 Claude 两位 agent 都是项目负责人，地位对等，不设单一�
 | 放宽到前 40 后加入 | Bea Miller《Mr. Peaked In High School》（09-18，Billboard 200 第 7）、Lennon Stella《Sleeping Lion》（10-23，英国单曲第 12）、Yung Miami《Watch Dis》（10-23，City Girls 美国单曲第 26）、Shygirl《SWALLOW!》（11-06，英国专辑第 34） |
 | 过了前 40 但按流派不收 | Lizzy McAlpine《Angel》（英国单曲第 6，独立民谣）、Rachel Chinouriri《I think I spoke too soon》（英国专辑第 17，偏独立摇滚）、Paris Paloma《The Fatal Flaw》（英国单曲第 22，独立民谣） |
 | 前 40 也不够 | Ashe（美国最高第 71）、Tove Styrke（只在瑞典上榜）、Rebecca Black（美国第 55）、Nessa Barrett（美国第 80）、Angèle（英国第 79）、Cara Delevingne、Katie Gregson-MacLeod（查不到英美上榜记录）；Natalie Imbruglia、Chaka Khan 按老牌规则不收；K-pop 的 Hyojung、YUJU、RESCENE 不算一线 |
-| 女歌手复查后不收（其他原因） | Holly Humberstone《Cruel World… So It Ends》（旧专辑扩充版）、Alanis Morissette《Jesus & Whiskey》（转型乡村）、Kaitlin Butts（乡村）、Björk《Orkestral》（现场管弦乐版） |
+| 女歌手复查后不收（其他原因） | Holly Humberstone《Cruel World… So It Ends》（旧专辑扩充版）、Alanis Morissette（节日专辑）、K. Michelle《Jesus & Whiskey》（转型乡村）、Kaitlin Butts（乡村）、Björk《Orkestral》（现场管弦乐版） |
 | 男歌手（用户要求剔除） | Yeat、Leon Bridges、Quavo、Troye Sivan、Pet Shop Boys、Lucky Daye、Anderson .Paak & Cordae、John Legend、Michael Kiwanuka、Dominic Fike、James Blunt、Skepta、Take That |
 | 男团和男团 solo，用户要求剔除 | MONSTA X、NCT WISH、MINHO、D.O.、YESUNG、MAX CHANGMIN；待上架的 ATEEZ、TOMORROW X TOGETHER、XIAOJUN 也不再补 |
 | K-pop solo 不收 | ONEW《KAKERA》（日语 EP）；JISOO、ROSÉ、NAYEON、IU 这几个月只有单曲；Yves（11-20）的迷你专辑 Apple Music 还没有条目，上架后补 |
@@ -310,7 +310,7 @@ GPT 和 Claude 两位 agent 都是项目负责人，地位对等，不设单一�
 
 - 字标和桌面月份用 Georgia / Songti 衬线。手机月份用默认齐线数字的 Times New Roman / Times 衬线（`--score-serif`），52px / 700、固定 `2ch` 宽，数字特性 `normal`，避免 Georgia 在部分手机上让 9 显得更大。
 - 作品标题：桌面衬线 26px / 700、1.25 行高；手机无衬线 16px / 600、1.4 行高。按实际内容占一行或两行，不预留两行高度。
-- 桌面中文标题的字体栈是 `Georgia, "Times New Roman", "Songti SC", "RC Title Serif SC", SimSun`。Mac 用系统宋体；Windows 没有带真粗体的中文衬线体，会加载仓库里的思源宋体 Bold 子集 `fonts/title-serif-sc-bold.woff2`（约 740KB，常用 3755 字加当前标题用字，2026-10-14 按用户选择加入）；手机标题是无衬线，不会下载。不要把 SimSun 挪到子集字体前面，否则 Windows 又会变成宋体伪粗体。启动遮罩最多等 1.2 秒让字体到位，字体加载完会重算列表高度。
+- 桌面中文标题的字体栈是 `Georgia, "Times New Roman", "Songti SC", "RC Title Serif SC", SimSun`。Mac 用系统宋体；Windows 没有带真粗体的中文衬线体，会加载仓库里的思源宋体 Bold 子集 `fonts/title-serif-sc-bold.woff2`（约 740KB，常用 3755 字加当前标题用字，2026-10-14 按用户选择加入）；手机标题是无衬线，不会下载。不要把 SimSun 挪回子集字体前面，否则 Windows 又会变成宋体伪粗体。启动遮罩最多等 1.2 秒让字体到位，字体加载完会重算列表高度。
 - 评分用默认齐线数字的 Times New Roman / Times 衬线（`--score-serif`），不要改回 Georgia。
 - 无衬线（PingFang SC / 微软雅黑 / Noto Sans SC）用于日期、状态、价格、页签、页脚。
 - 浅色底 `#eef0f3`，深色底 `#101114`。主文字 `#1c1d21` / `#f4f5f6`，日期 `#444c59` / `#c5ccd6` 加重，已发布状态 `#606772` / `#a3aab4`。
@@ -428,7 +428,7 @@ release-calendar/
 
 脚本行为：
 
-- 只读取现有 `mc_url`、电影 `sid` 和 Steam 链接，遍历全部保留月份，不区分已发售或未发售。
+- 只读取现有 `mc_url`、电影 `sid` 和 Steam 链接，遍历全部保留月份，不区分已发售或未发售。不增删作品，不改日期或平台。
 - 游戏更新 `mc`，电影更新 `score` 和 `votes`。音乐没有评分，每日任务不碰 `albums.json`。没有游戏媒体评论数量字段，不要承诺这个功能存在。
 - Steam 更新顶层 `steam_price` 和 `plats` 内价格（中国区人民币现价，含折扣）；编号或币种不符、价格未开放、接口失败时保留旧价。套装先核对 `steam_package_apps` 再接受价格。不刷新 PS / Nintendo 价格。
 - 豆瓣没有评分或人数时，不用空或 0 覆盖旧值。
