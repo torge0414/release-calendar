@@ -1,0 +1,51 @@
+name: Publish candidate movie poster
+
+on:
+  workflow_dispatch:
+    inputs:
+      sid:
+        description: 豆瓣电影数字 ID（候选海报须已存在）
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-movie-poster-main
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      SID: ${{ inputs.sid }}
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Validate and move poster
+        run: |
+          set -euo pipefail
+          [[ "$SID" =~ ^[0-9]+$ ]] || { echo "sid must be numeric"; exit 1; }
+          src="candidates/posters/movie_${SID}.jpg"
+          dest="img/movie_${SID}.jpg"
+          [[ -f "$src" ]] || { echo "Missing candidate: $src"; exit 1; }
+          [[ ! -e "$dest" ]] || { echo "Refusing to overwrite: $dest"; exit 1; }
+          file "$src"
+          [[ "$(file -b --mime-type "$src")" == "image/jpeg" ]] || { echo "Not a JPEG: $src"; exit 1; }
+          git mv -- "$src" "$dest"
+
+      - name: Commit and push
+        run: |
+          set -euo pipefail
+          if git diff --cached --quiet; then
+            echo "No poster change to publish"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "发布电影海报 ${SID}"
+          git push origin HEAD:main
