@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "movies": {
+    "upsert": [],
+    "remove": []
+  },
+  "albums": {
+    "upsert": [],
+    "remove": []
+  },
+  "games": {
+    "upsert": [],
+    "remove": []
+  }
+}
