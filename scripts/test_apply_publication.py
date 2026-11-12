@@ -180,6 +180,16 @@ class PublicationTests(unittest.TestCase):
         self.assertEqual(apply_publication.apply(self.root), apply_publication.Result(False, 0, 0))
         self.assertEqual(self.snapshot(), before)
 
+    def test_successful_cli_style_application_clears_manifest(self):
+        self.publish(albums=[self.entry("albums", 201, "New Album", 2)])
+        result = apply_publication.apply(self.root, clear_manifest=True)
+        self.assertEqual(result, apply_publication.Result(True, 0, 0))
+        cleared = json.loads(self.manifest.read_text(encoding="utf-8"))
+        self.assertTrue(all(cleared[kind] == {"upsert": [], "remove": []} for kind in apply_publication.SPECS))
+        before = self.snapshot()
+        self.assertEqual(apply_publication.apply(self.root, clear_manifest=True), apply_publication.Result(False, 0, 0))
+        self.assertEqual(self.snapshot(), before)
+
     def test_game_rename_uses_remove_and_upsert(self):
         renamed = self.entry("games", 301, "新名字", 12)
         self.publish(games=[renamed], remove_games=["旧游戏"])

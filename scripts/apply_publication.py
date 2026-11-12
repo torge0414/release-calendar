@@ -136,7 +136,15 @@ def atomic_write(path: Path, content: str) -> None:
     os.replace(temporary, path)
 
 
-def apply(root: Path = ROOT, manifest_path: Path | None = None) -> Result:
+def cleared_manifest() -> str:
+    return json.dumps(
+        {"version": 1, **{kind: {"upsert": [], "remove": []} for kind in SPECS}},
+        ensure_ascii=False,
+        indent=2,
+    ) + "\n"
+
+
+def apply(root: Path = ROOT, manifest_path: Path | None = None, clear_manifest: bool = False) -> Result:
     root = root.resolve()
     manifest_path = manifest_path or root / "candidates" / "publish.json"
     operations = parse_manifest(read_json(manifest_path))
@@ -207,13 +215,17 @@ def apply(root: Path = ROOT, manifest_path: Path | None = None) -> Result:
         kind: datasets[spec["file"]] != original[kind]
         for kind, spec in SPECS.items()
     }
-    if not any(changed_data.values()) and not posters:
+    empty_manifest = cleared_manifest()
+    manifest_changed = clear_manifest and manifest_path.read_text(encoding="utf-8") != empty_manifest
+    if not any(changed_data.values()) and not posters and not manifest_changed:
         return Result(False, 0, 0)
 
     snapshots = {
         root / SPECS[kind]["file"]: (root / SPECS[kind]["file"]).read_bytes()
         for kind, changed in changed_data.items() if changed
     }
+    if manifest_changed:
+        snapshots[manifest_path] = manifest_path.read_bytes()
     moved = []
     try:
         for source, target in posters:
@@ -224,6 +236,8 @@ def apply(root: Path = ROOT, manifest_path: Path | None = None) -> Result:
             if changed:
                 spec = SPECS[kind]
                 atomic_write(root / spec["file"], json.dumps(datasets[spec["file"]], ensure_ascii=False))
+        if manifest_changed:
+            atomic_write(manifest_path, empty_manifest)
     except Exception:
         for path, content in snapshots.items():
             atomic_write(path, content.decode("utf-8"))
@@ -242,9 +256,11 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=ROOT)
     parser.add_argument("--manifest", type=Path)
+    parser.add_argument("--keep-manifest", action="store_true", help="keep operations for an explicit idempotency check")
     args = parser.parse_args()
     try:
-        result = apply(args.root, args.manifest)
+        # The CLI consumes successful operations so a later run cannot restore stale scores.
+        result = apply(args.root, args.manifest, clear_manifest=not args.keep_manifest)
     except PublicationError as exc:
         print(f"Publication rejected: {exc}", file=sys.stderr)
         return 1
