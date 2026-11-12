@@ -36,11 +36,11 @@
 
 ## 2. 负责人与协作
 
-GPT 和 Claude 两位 agent 都是项目负责人，地位对等，不设单一集成负责人。两位都可以按用户要求修改、验收并发布。
+GPT 和 Kimi 两位 agent 都是项目负责人，地位对等，不设单一集成负责人。两位都可以按用户要求修改、验收并发布。
 
 | 事项 | 负责方 |
 | --- | --- |
-| 每月 1 日精选（名单整理） | Claude（2026-10-18 起，用户从 GPT 改交给 Claude；由 Claude 的定时任务执行，见 §10） |
+| 每月 1 日精选与每月 15 日中途更新（名单整理） | Kimi（2026-11-11 起由 Claude 移交，由 Kimi 的定时任务执行，见 §10） |
 | 用户交给某一位的具体任务 | 接到任务的一方，从改动、验证到发布全程负责 |
 | 每日评分与 Steam 价格 | 现有 GitHub Actions，两位都不另建 |
 
@@ -50,11 +50,11 @@ GPT 和 Claude 两位 agent 都是项目负责人，地位对等，不设单一�
 - 每项任务开始时明确：目标、基准提交、允许改动的文件或函数、验收标准、是否涉及数据与发布。
 - `index.html` 是主要冲突点。两位都要改它时，先后进行；确需并行，就在独立分支或 `git worktree` 里做范围明确的补丁，由后完成的一方负责合并并告知对方。
 - 两位共用 `H:\Release Calendar\release-calendar` 这一个 checkout：开始前先 `git status` 看有没有对方未提交的改动；不同时切换分支；不覆盖对方的未提交改动；不替对方暂存或提交不认识的文件。
-- 前端任务尽量不碰 JSON；数据任务尽量不碰页面；采集任务分清每日字段刷新和月度名单编辑。每日机器人仍会写 `main`，分工不能消除这个并发来源。
-- 每月名单整理由 Claude 的定时任务负责（2026-10-18 用户决定）。GPT 不再做月度名单，也不另建月度写入任务；GPT 发现名单问题时记录下来，交给 Claude 或用户。
+- 前端任务尽量不碰 JSON；数据任务只提交发布清单；采集任务分清每日字段刷新和月度名单编辑。每日机器人仍会写 `main`，分工不能消除这个并发来源。
+- 每月名单整理由 Kimi 的定时任务负责。GPT 不再做月度名单，也不另建月度写入任务；GPT 发现名单问题时记录下来，交给 Kimi 或用户。
 - 每次交付说明：基准和成果提交、改了哪些文件或函数、实际行为变化、运行过的检查、浏览器证据、未验证的事项和已知限制。遇到规格冲突，先描述具体差异，不静默改回旧版本。
 
-只读本文不产生新的产品需求。除每月精选由 Claude 负责外，其他具体事项等用户分配；没有任务时可以先检查环境、理解代码、记录问题，但不要就此提交、推送或新建定时任务。
+只读本文不产生新的产品需求。除每月精选由 Kimi 负责外，其他具体事项等用户分配；没有任务时可以先检查环境、理解代码、记录问题，但不要就此提交、推送或新建定时任务。
 
 ## 3. 用户已确认的要求
 
@@ -95,7 +95,7 @@ GPT 和 Claude 两位 agent 都是项目负责人，地位对等，不设单一�
 | --- | --- | --- |
 | Marvel's Guardians of the Galaxy: Encore Edition | Nintendo 70010000119220 | [Steam 原作（2021 年）](https://store.steampowered.com/app/1088850/) |
 | 剑星 完全版 | Nintendo 70010000123391 | [Steam 原作（2025 年已发售）](https://store.steampowered.com/app/3489700/) |
-| 暗喻幻想：ReFantazio（NS2 版） | Nintendo 70010000105918 | [Steam 原作（2024 年）](https://store.steampowered.com/app/2679460/) |
+| 暗喻幻想：ReFantazio（NS2 版） | Nintendo 70010000105918 | [Steam 原作（2024 年已发售）](https://store.steampowered.com/app/2679460/) |
 | 皮克敏4 Nintendo Switch 2 Edition + 大家来挑战！当多虑检定 | Nintendo 70010000135062 | [Nintendo Switch 原作（2023 年）](https://www.nintendo.com/jp/switch/ampya/index.html) |
 
 ### 暂不收录的边界作品
@@ -123,7 +123,7 @@ GPT 和 Claude 两位 agent 都是项目负责人，地位对等，不设单一�
 以下是当时的编辑选择，不代表重新确认了预算、游玩时长或未来档期：
 
 - **《不朽遗志 Valor Mortis》**：官方定位为有完整剧情、探索和成长系统的第一人称类魂动作项目，由《幽灵行者》开发团队制作，作为重点新 IP 保留。[官方项目页](https://valormortis.com/)
-- **《龙之信条2：Dark Arisen》**：新扩展包含新区域、新剧情及 12 个迷宫挑战，符合大型剧情 DLC 范围，不是旧本体换平台。封面和价格处理见 §6。[扩展的 Steam 页面](https://store.steampowered.com/app/2593290/)
+- **《龙之信条2：Dark Arisen》**：新扩展包含新区域、新剧情及 12 个迷宫挑战，符合大型剧情 DLC 范围，不是旧作移植。封面和价格处理见 §6。[扩展的 Steam 页面](https://store.steampowered.com/app/2593290/)
 - **《塞尔达传说 时之笛》2026 重制版**：Nintendo 官方明确说明为完全重制版，不是旧作移植。[Nintendo 商品页](https://ec.nintendo.com/HK/zh/titles/70010000130795)
 - 11 月其余保留《Football Manager 27》和《Grand Theft Auto VI》。
 
@@ -178,7 +178,7 @@ GPT 和 Claude 两位 agent 都是项目负责人，地位对等，不设单一�
 | 放宽到前 40 后加入 | Bea Miller《Mr. Peaked In High School》（09-18，Billboard 200 第 7）、Lennon Stella《Sleeping Lion》（10-23，英国单曲第 12）、Yung Miami《Watch Dis》（10-23，City Girls 美国单曲第 26）、Shygirl《SWALLOW!》（11-06，英国专辑第 34） |
 | 过了前 40 但按流派不收 | Lizzy McAlpine《Angel》（英国单曲第 6，独立民谣）、Rachel Chinouriri《I think I spoke too soon》（英国专辑第 17，偏独立摇滚）、Paris Paloma《The Fatal Flaw》（英国单曲第 22，独立民谣） |
 | 前 40 也不够 | Ashe（美国最高第 71）、Tove Styrke（只在瑞典上榜）、Rebecca Black（美国第 55）、Nessa Barrett（美国第 80）、Angèle（英国第 79）、Cara Delevingne、Katie Gregson-MacLeod（查不到英美上榜记录）；Natalie Imbruglia、Chaka Khan 按老牌规则不收；K-pop 的 Hyojung、YUJU、RESCENE 不算一线 |
-| 女歌手复查后不收（其他原因） | Holly Humberstone《Cruel World… So It Ends》（旧专辑扩充版）、Alanis Morissette（节日专辑）、K. Michelle《Jesus & Whiskey》（转型乡村）、Kaitlin Butts（乡村）、Björk《Orkestral》（现场管弦乐版） |
+| 女歌手复查后不收（其他原因） | Holly Humberstone《Cruel World… So It Ends》（旧专辑扩充版）、Alanis Morissette（节日专辑）、K. Michelle《Jesus & Whiskey》（转型乡村）、Kaitlyn Butts（乡村）、Björk《Orkestral》（现场管弦乐版） |
 | 男歌手（用户要求剔除） | Yeat、Leon Bridges、Quavo、Troye Sivan、Pet Shop Boys、Lucky Daye、Anderson .Paak & Cordae、John Legend、Michael Kiwanuka、Dominic Fike、James Blunt、Skepta、Take That |
 | 男团和男团 solo，用户要求剔除 | MONSTA X、NCT WISH、MINHO、D.O.、YESUNG、MAX CHANGMIN；待上架的 ATEEZ、TOMORROW X TOGETHER、XIAOJUN 也不再补 |
 | K-pop solo 不收 | ONEW《KAKERA》（日语 EP）；JISOO、ROSÉ、NAYEON、IU 这几个月只有单曲；Yves（11-20）的迷你专辑 Apple Music 还没有条目，上架后补 |
@@ -225,7 +225,7 @@ GPT 和 Claude 两位 agent 都是项目负责人，地位对等，不设单一�
 | --- | --- |
 | 深度安静（11-19，想看 11,523） | 2026-11-12 已收录并恢复上线：2025 年台湾影片首次在内地上映，按老片首次上映规则算新片；豆瓣评分 6.8 / 3,499 人是台湾上映积累的。手动工作流 run `43150018654` 将候选海报原样移入 `img/movie_35211934.jpg`（540×800，119531 字节，移动前后 blob SHA 均为 `a7ab959fa2a9866e4f3a18fc12a92561c460609f`），随后恢复 JSON 条目；发布通道与授权边界见 §12 |
 | 试探（想看 1,504）、魔法秘境（想看 2,466）等其余 11～12 月候选 | 不收，热度不够 |
-| 笑傲江湖2：东方不败（1992，10-30 首次内地上映，评分人数 24 万+） | 属上月窗口，月中不动上月，未加入。它定档晚于 10-15 调整，11-01 起 10 月按「保留上月」不再核对，按现行规则不会进入名单；是否特批由用户决定 |
+| 笑傲江湖2：东方不败（1992，10-30 首次内地上映，评分人数 24 万+） | 2026-11-12 用户明确特批加入上月清单，用于清单驱动的完整云端试跑；这是单次决定，不改变「月中不动上月」规则。影片符合首次内地上映与热度口径。monthly-prep run `43157255372` 在云端采集候选并下载海报；publish-selection run `43162464730` 成功，最终数据提交 `28083d1` 在同一个提交里新增豆瓣 sid `1294417` 的正式条目（验收时评分 8.5、246420 人）、将 `candidates/posters/movie_1294417.jpg` 原样移到 `img/movie_1294417.jpg`，并清空已消费的发布清单 |
 | 海上钢琴师（11-15） | 重映（豆瓣 pubdate 2019-11-15 中国大陆），不收；monthly-prep 已标 `in_window: false` |
 
 ## 5. 数据来源与结构
@@ -270,7 +270,7 @@ GPT 和 Claude 两位 agent 都是项目负责人，地位对等，不设单一�
 
 游戏封面框固定为 **460×215**（约 2.14:1），`object-fit: cover`。选图优先 Steam `header.jpg`。不要用 `capsule_616x353`（约 1.74:1）或宽于约 2.35 的套装横幅当主封面。已经核对过的 460×215 图可以放在 `img/`，用 `cover_img` 优先显示。电影海报 2:3，`poster` 可以指向 `img/` 里的本地文件；存进仓库前缩到 600px 宽、JPEG 质量 80 左右（每张约 50–190KB）。豆瓣原图常是 1080px、300–500KB，直接放进来会让页面变重；`check_data.py` 对超过 220KB 的本地封面和海报会提醒。
 
-候选顺序：`cover_img`、Steam、Nintendo、PlayStation，加载失败再换下一张。刷新价格时不能把已验证的 `cover_img` 盖回不适配的外链。外链必须返回真正的图片；只有一个来源时更要检查。
+候选顺序：`cover_img`、Steam、Nintendo、PlayStation，加载失败再换下一张。外链必须返回真正的图片；只有一个来源时更要检查。
 
 现有比例不对的外链先留在数据里，由 CSS 裁进 460×215，下次改名单时再换成 `header.jpg`。不要改回「每张图用自己的比例」，也不要改回 16:9。
 
@@ -296,7 +296,7 @@ GPT 和 Claude 两位 agent 都是项目负责人，地位对等，不设单一�
 
 ### 页头
 
-- 左上是字标「Release Calendar」，右上是主题开关。字标用 Georgia 斜体、22px、常规字重，大小落在页签（14px）和作品标题（26px）之间，不和 72px 月份数字抢，斜体也和正体粗衬线的作品标题区分开；行高 31px 等于开关高度，`top:.05em` 让字形和开关居中（Windows Georgia 实测误差约 0.1px）。桌面和手机同一大小，320px 宽时离开关还有约 50px。2026-10-14 试过 40px（和开关等高）被用户否掉；也不用全大写加宽字距的刊头样式。
+- 左上是字标「Release Calendar」，右上是主题开关。字标用 Georgia 斜体、22px、常规字重，大小落在页签（14px）和作品标题（26px）之间，不和 72px 月份数字抢，斜体也和正体粗衬线的作品标题区分开；行高 31px 等于开关高度，桌面和手机同一大小，`top:.05em` 让字形和开关居中（Windows Georgia 实测误差约 0.1px）。320px 宽时离开关还有约 50px。2026-10-14 试过 40px（和开关等高）被用户否掉；也不用全大写加宽字距的刊头样式。
 - 月份数字是页面的主视觉，和列表左对齐。按用户要求不显示年份；年份数据仍用于月份选择、跨年判断和倒计时。
 - 手机月份数字固定占 `2ch` 宽度（`flex:0 0 2ch`），保留大号衬线和左对齐；切换月份时游戏 / 电影按钮不能跟着数字字形宽度左右移动。
 - 「游戏 / 电影 / 音乐」在月份数字旁边，和月份用相同的文字页签与 1px 下划线，无外框和反色底。类别列表只淡入淡出，所以类别下划线直接定位到选中项、不滑动，只保留主题颜色过渡；`aria-pressed` 随切换更新。
@@ -334,7 +334,7 @@ GPT 和 Claude 两位 agent 都是项目负责人，地位对等，不设单一�
 - 游戏名用 `gameTitle()` 在显示时处理：有中文就只留中文，去掉英文名和括号里与名字无关的说明（「塞尔达传说 时之笛（2026 重制版）」显示为「塞尔达传说 时之笛」）。纯英文标题保持原样。紧贴中文的罗马数字留下（「侠盗猎车手VI」）。™ ® © 一律去掉，避免单独折行。
 - 日期行只有「10月2日 · 已发售」这种日期和状态，不显示开发商。「今天 / 明天发售」只靠金色文字提示，不加左侧色条（旧卡片遗留的色条已于 2026-10-14 删除）。
 - 平台没有价格时，图标后显示灰色的「暂无价格」，不要只留一个图标。
-- 手机评分与平台链接的行盒为 24px，用伪元素上下各扩展 10px，保证至少 44×44px 触摸范围；链接 `z-index:3`，高于日期状态文字。平台图标 13px，图标与价格间距 4px，平台之间横向间距 12px（2026-10-14 从 6px 加大，避免价格和下一个图标连在一起）；价格换行时行间距 20px，相邻行的触摸范围不重叠。
+- 手机评分与平台链接的行盒为 24px，用伪元素上下各扩展 10px，保证至少 44×44px 触摸范围；链接 `z-index:3`，高于日期状态文字。平台图标 13px，图标与价格间距 4px，平台之间横向间距 12px（2026-10-15 从 6px 加大，避免价格和下一个平台连在一起）；价格换行时行间距 20px，相邻行的触摸范围不重叠。
 
 ### 电影列表
 
@@ -346,7 +346,7 @@ GPT 和 Claude 两位 agent 都是项目负责人，地位对等，不设单一�
 
 ### 音乐列表
 
-- 版式沿用电影海报网格：860px 栏里 3 列，≤640px 为 2 列，网格顶部留白相同。封面 1:1（`.pic.al`），Apple Music 600×600 外链。
+- 版式沿用电影海报网格：860px 栏里 3 列，≤640px 为 2 列，封面 1:1（`.pic.al`），Apple Music 600×600 外链。
 - 标题行样式与电影相同（CSS 用 `:is(#movieBody,#albumBody)` 共用），但不显示评分。标题下面多一行艺人（`.artist`）：无衬线，桌面 14px、手机 13px，500 字重，主文字色，单行省略。再下面是日期和状态。
 - 状态写「今天发行 / 明天发行 / 还有N天 / 已发行」，颜色规则同游戏。
 - 作品名和艺人都是纯文本，卡片没有外链。页脚「共 N 张 · 每月初更新」。
@@ -357,7 +357,7 @@ GPT 和 Claude 两位 agent 都是项目负责人，地位对等，不设单一�
 - 游戏 / 电影切换约 0.22 秒淡入淡出（`animFade`），并保留当前所选月份（2026-10-13 起，不再重置到本月）。月份切换约 0.6 秒左右滑动（`animSwap`）。
 - 主题变色统一用 `--theme-duration: .22s` 和 `ease`，所有自己声明颜色的元素都要同步过渡，只继承颜色的子元素跟随父级。主题旋钮移动约 0.35 秒。保留 `prefers-reduced-motion`。
 - iPhone Safari / WebKit 会对继承中的 `color` 叠加过渡，导致衬线字标和标题晚约 0.4～0.6 秒变色。`h1`、`.mh .mn`、`.txt .tline .t` 必须直接取 `var(--txt)`；`.item`、`.pic`、`.tabs` 等只继承文字色的容器不能再做 `color` 过渡。动到主题或字体时，验收必须包含 WebKit 手机宽度的浅→深、深→浅双向切换，只测 Chromium 不够。
-- 主题按钮必须是 `position: relative`，否则绝对定位的旋钮会叠到字标上。浅色旋钮是白底琥珀色太阳（`#d18a1d`），夜间旋钮是深灰（`#565661`）加浅蓝灰月亮（`#d6ddf2`）。不要两个主题都用白旋钮。
+- 主题按钮必须是 `position: relative`，否则绝对定位的旋钮会叠在字标上。浅色旋钮是白底琥珀色太阳（`#d18a1d`），夜间旋钮是深灰（`#565661`）加浅蓝灰月亮（`#d6ddf2`）。不要两个主题都用白旋钮。
 - 偏好键：
   - 主题 `glwTheme`（localStorage）：只在所选外观和系统相反时才保存；切回和系统一致的外观就删掉，重新跟随系统，系统外观变化时页面立即跟着变。
   - 视图 `glwView`（localStorage，`game` / `movie`）。
@@ -382,16 +382,19 @@ release-calendar/
 │  ├─ check_data.py        数据结构、日期、月份校验；--images 另查外链图片；标题有子集字体缺的字时提醒
 │  ├─ build_title_font.py  重建标题子集字体（需要 fontTools、brotli 和思源宋体源文件，不在日常流程里）
 │  ├─ test_calendar.py     月份约束和 Steam 套装价格等回归检查
+│  ├─ apply_publication.py 把发布清单合并进三份 JSON，校验并移动候选电影海报；全部成功才落盘
+│  ├─ test_apply_publication.py 发布清单的新增、更新、删除、幂等与失败回滚测试
 │  ├─ test_month_tabs.js   月份、偏好持久化和隐藏页可访问性检查
 │  ├─ test_game_cover.js   封面优先级、图片比例和标题处理检查
 │  ├─ update_scores.py     现有评分及 Steam 国区价格刷新；--dry-run 不写文件
 │  └─ monthly_prep.py      每月准备：滚动窗口、抓候选、下电影海报；--today 测试日期，--skip-candidates 只滚窗口
-├─ candidates/             每月准备数据（latest.json、posters/），由 monthly-prep 生成，不被页面读取
+├─ candidates/             每月准备数据（latest.json、posters/）和发布清单（publish.json），不被页面读取
 ├─ .github/workflows/
 │  ├─ daily-scores.yml     每日数据刷新，实际变化才提交
 │  ├─ check-images.yml     手动图片检查
 │  ├─ monthly-prep.yml     每月 1 日、15 日滚动窗口并准备候选数据（§10）
-│  └─ publish-movie-poster.yml  手动把指定 sid 的候选 JPEG 海报移入 img/（§12）
+│  ├─ publish-selection.yml 发布清单变化后统一合并数据、搬海报、测试并提交（§10、§12）
+│  └─ publish-movie-poster.yml 后备：手动把指定 sid 的候选 JPEG 海报移入 img/（§12）
 ├─ .nojekyll               GitHub Pages 静态资源标记
 └─ HANDOVER.md             本文
 ```
@@ -442,27 +445,33 @@ release-calendar/
 
 只能手动触发（Actions 页面的「Check displayed images」），运行 `check_data.py --images`，不修改内容。图片检测只能发现疑似失效链接，不能代替浏览器里的视觉检查。
 
-## 10. 每月 1 日精选（Claude 负责）
+## 10. 每月 1 日精选与月中更新（Kimi 负责）
 
-北京时间每月 1 日 09:00 保留上月已发布清单，重新整理本月与下月，游戏、电影和音乐都要整理（游戏按 §4、音乐按 §4A、电影按 §4B）。2026-10-18 起分两步，用户确认：
+北京时间每月 1 日 09:00 保留上月已发布清单，重新整理本月与下月，游戏、电影和音乐都要整理（游戏按 §4、音乐按 §4A、电影按 §4B）。2026-11-12 起分三步：
 
-1. **GitHub Actions 准备**（`.github/workflows/monthly-prep.yml` → `scripts/monthly_prep.py`，每月 1 日和 15 日 00:05 北京时间，也可手动触发）：只做不需要判断的事——把三份 JSON 滚动到新的三个月窗口（去掉过期月份、补空的新下月，已有条目不动），并把候选数据写进 `candidates/latest.json`：豆瓣上映 / 即将上映（想看、评分人数、类型、日期，单片详情请求间隔 3.5 秒）、热度过线电影的海报（`candidates/posters/`，豆瓣防盗链所以先下好）、Apple Music 美区热门专辑、Metacritic 即将发行、Wikipedia「List of <年> albums」「<年> in South Korean music」「<年> in video games」，以及本月和下月音乐候选的 iTunes 查询（流派、曲目数、600px 封面、国区链接）。任何来源失败都记进 `errors`，其他照常。Wikipedia 2026 年专辑列表 2026-11 起拆成「(January–June)」「(July–December)」两个子页面，脚本已改读子页面，并给所有本月 / 下月条目查 iTunes（不再只查有词条的专辑）。它从不决定收录哪部作品。
-2. **Claude 定时任务挑选**（claude.ai 里的「Release Calendar 每月名单整理」，每月 1 日 08:52 北京时间，在云端运行，不需要用户电脑开机）：读 `candidates/latest.json`，按 §4 / §4A / §4B 挑选并补齐字段，选中电影的海报从 `candidates/posters/` 移进 `img/`，用不到的海报删掉；候选数据不够时用 WebFetch 补查。
+1. **GitHub Actions 准备**（`.github/workflows/monthly-prep.yml` → `scripts/monthly_prep.py`，每月 1 日和 15 日 00:05 北京时间，也可手动触发）：只做不需要判断的事——把三份 JSON 滚动到新的三个月窗口（去掉过期月份、补空的新下月，已有条目不动），并把候选数据写进 `candidates/latest.json`：豆瓣上映 / 即将上映、热度过线电影的海报（`candidates/posters/`）、Apple Music、Metacritic、Wikipedia 和 iTunes 候选信息。任何来源失败都记进 `errors`，其他照常。它从不决定收录哪部作品。
+2. **Kimi 定时任务挑选并提交清单**：每月 1 日、15 日 09:00 读 `candidates/latest.json`，按 §4 / §4A / §4B 挑选、补查并补齐完整字段，只提交 `candidates/publish.json` 里的本次变化。不要直接改三份正式 JSON，不要在本地下载或提交电影海报，也不要删除候选海报。月中只核对本月和下月，不动上月。
+3. **GitHub Actions 统一发布**：`publish-selection.yml` 监听 `main` 上 `candidates/publish.json` 的变化，也可手动 `workflow_dispatch` 重跑。它调用 `scripts/apply_publication.py`，合并条目、移动海报、运行确定性回归检查，然后只用一个提交同时写入正式数据、必要图片和已清空的清单。失败不提交；成功后的空清单变化可能再触发一次无改动复核，这是正常保护。
 
-3. **每月 15 日中途更新**（2026-10-23 用户要求，因为不少下月作品在月中前后才公布发售日）：monthly-prep 在 15 日 00:05 同样运行（窗口不变，只重新生成候选数据），Claude 的第二个定时任务「Release Calendar 月中名单更新」在 15 日 08:52 运行。只核对本月和下月：补上新定档、新过线的作品，改正延期或取消的，不动上月，不从头重排。
+仓库里没有能自己判断收录作品的程序，也不要加。挑选由 Kimi 的定时任务完成，确定性合并和发布由 Actions 完成。2026-10-06 曾加过 `.github/workflows/monthly-curate.yml`，用户随即要求回退（`66f63e4` → `0cd00ce`）；不要恢复它，也不要另建第二套月度写入任务。
 
-仓库里没有能自己挑作品的程序，也不要加。页脚写的是「每月初更新」，不代表有自动调度。
+### 发布清单格式
 
-2026-10-06 曾加过 `.github/workflows/monthly-curate.yml`，用户随即要求回退（`66f63e4` → `0cd00ce`）。任何一方都不要自行恢复。除上面那个 Claude 定时任务外，不要另建第二套写入 `main` 的月度任务。
+`candidates/publish.json` 的顶层是 `version: 1` 和 `movies/albums/games` 三节；每节只有 `upsert` 和 `remove` 两个数组。清单只放本次变化，不复制上次已消费的操作。`upsert` 放完整条目对象，不是字段补丁；`remove` 放主键字符串。电影主键为豆瓣数字 `sid`，音乐为 Apple 数字 `apple_id`，游戏沿用现有 `title`。游戏改名用「`remove` 旧标题＋`upsert` 新标题」。
 
-步骤：
+- 只允许操作当前三个 `groups` 内的日期；每条 `date/year/month/day` 必须一致。每组按日期稳定排序，顶层 `fetched_at/updated/source` 和未涉及条目保持不变。
+- 电影条目的 `poster` 必须是 `img/movie_<sid>.jpg`。目标不存在时，必须有 `candidates/posters/movie_<sid>.jpg` 且是 JPEG；Actions 会将原文件移入 `img/`。目标已存在时只更新条目，不要求候选海报仍在，也不覆盖已有图片。
+- 删除条目默认保留图片，避免误删仍可能被历史或其他条目引用的文件。缺图、重复 ID、越界日期、非法路径或最终数据校验失败都会拒绝整次发布。
+- 命令行发布成功后会把清单重置为空操作，避免陈旧条目在下次运行时覆盖每日任务刚更新的评分。需要显式验证同一清单的幂等性时使用 `python scripts/apply_publication.py --keep-manifest`。删除不存在的条目和重复 `upsert` 相同对象都属于幂等操作；脚本先在隔离目录验证完整结果，再落盘。工作流不强推，遇到意外外部写入会失败并等待安全重跑。
+- `daily-scores.yml`、`monthly-prep.yml`、`publish-selection.yml` 和后备 `publish-movie-poster.yml` 共用 `release-calendar-main-writes` 并发组且 `cancel-in-progress: false`，避免机器人之间分叉或覆盖。
+
+### 挑选与验收步骤
 
 1. 按 §4 的精选规则和已记录决定过滤游戏，电影按 §4B、音乐按 §4A 筛选，排除旧作换平台再发行，然后从商店和豆瓣的实际条目确认日期、地区、平台、价格与详情链接。不能仅凭商店有页面、知名 IP、售价或评分扩大名单，也不能重新加入已暂不收录的边界作品。缺少可核对条目时不要猜测日期或价格。
-2. 只保留上月、本月、下月三个 `groups`，按月份升序。上月沿用已发布列表，不重新猜填历史记录；本月与下月按来源重新核对。每条的 `date` 必须与 `year`、`month`、`day` 和所属月份一致。跨年时检查年份切换。PlayStation 的 UTC 时间换成香港 / 北京时间再写。
-3. 原有评分保留可信值，再按每日评分来源复核；来源失效不能把有效评分改为空。
-4. 按 §6 核对封面；新海报先缩到 600px 宽再放进 `img/`。
-5. 运行 `python scripts/check_data.py`。如果它提示「title font subset lacks …」，说明新标题里有子集字体没覆盖的字（会回落到宋体），用 `python scripts/build_title_font.py --source <Noto Serif SC Bold 字体文件>` 重建 `fonts/` 后一起提交。网络允许时再运行 `python scripts/check_data.py --images` 或手动触发图片检查。失败项在浏览器里复核，源站可能拦截非浏览器请求。
-6. 审阅 JSON 差异，确认没有误删字段，再按 §12 提交、推送并确认线上。
+2. 上月沿用已发布列表，不重新猜填历史记录；本月与下月按来源重新核对。跨年时检查年份切换。PlayStation 的 UTC 时间换成香港 / 北京时间再写。
+3. 原有评分保留可信值，再按每日评分来源复核；来源失效不能把有效评分改为空。按 §6 核对封面；候选海报仍由 monthly-prep 在云端下载。
+4. 本地修改发布脚本时运行 `python scripts/test_apply_publication.py` 和 §11 的全部基础检查。如果数据检查提示「title font subset lacks …」，按 §11 的字体说明处理；网络允许时再运行 `python scripts/check_data.py --images`。
+5. 审阅清单差异后按 §12 提交。确认发布 Actions 的最终数据提交、对应 Pages 部署和真实页面，不能只凭清单提交或 Actions 绿勾宣布上线。
 
 ## 11. 本地开发与验证
 
@@ -474,10 +483,11 @@ python -m http.server 8765 --bind 127.0.0.1
 
 浏览器打开 `http://127.0.0.1:8765/`，不要直接双击 HTML。等 `#boot` 消失再看布局，看完关掉服务器进程。
 
-基础检查（四项，每次提交前都要跑）：
+基础检查（五项，每次提交前都要跑）：
 
 ```text
 python scripts/check_data.py
+python scripts/test_apply_publication.py
 python scripts/test_calendar.py
 node scripts/test_month_tabs.js
 node scripts/test_game_cover.js
@@ -495,21 +505,21 @@ Python 脚本只用标准库，建议 Python 3.12（与 Actions 一致）；Node
 
 ## 12. 提交与发布
 
-- Kimi 的远端写入方式（2026-11-12 核实）：账号的 Authorized OAuth Apps 中是 MoonshotAI 的 `Kimi GitHub Plugin`，不是 Installed GitHub Apps；现有权限为仓库和用户资料，没有 `workflow`。普通文本文件通过 Kimi GitHub 插件读写；不要回退到本机 GitHub CLI 的个人 OAuth / PAT 或个人 SSH 凭据。此要求不改变 Claude 和现有每日 Actions 的授权方式。
+- Kimi 的远端写入方式（2026-11-12 核实）：账号的 Authorized OAuth Apps 中是 MoonshotAI 的 `Kimi GitHub Plugin`，不是 Installed GitHub Apps；现有权限为仓库和用户资料，没有 `workflow`。普通文本文件通过 Kimi GitHub 插件读写；不要回退到本机 GitHub CLI 的个人 OAuth / PAT 或个人 SSH 凭据。此要求不改变其他 agent 和现有 Actions 的授权方式。
 - 纯远端协作（2026-11-11 用户确认）：不需要本地测试、图片处理或多文件差异审阅的修改，可以直接通过 Kimi GitHub 插件读取、提交并验证远端，不要求回拉或更新本地 checkout。本地副本可以是旧版本；需要本地工作时再按本节同步，不能以本地 HEAD 判断远端最新状态。
 - 只暂存任务相关的文件，不要 `git add .`。
 - 推送前 `git fetch origin`，看远端有没有每日机器人或另一位 agent 的新提交；有就 `git merge` 接上，解决冲突后再推。
 - 不要强推、`reset --hard`，也不要用旧 JSON 覆盖机器人刚写入的数据。需要旧实现时用 git 历史查看。
 - 没有实际变化不做空提交，也不为了留痕改 `updated`。
 - 发布算完成的标准：Pages 部署的 commit 就是刚推的那个，并且线上 `index.html`（加查询参数避开缓存）里能看到新内容。只看推送成功或 Actions 绿勾不能说已经上线；没在真实页面上看过，不能说视觉已经验收。
-- 2026-11-11 实测，Kimi GitHub 插件的 `push_files` 会把 Base64 当成普通文本写入，不能用于 JPG / PNG 等二进制文件。电影候选 JPEG 今后通过手动工作流 `.github/workflows/publish-movie-poster.yml` 发布：输入数字 `sid`，工作流检查 `candidates/posters/movie_<sid>.jpg` 存在、目标不存在且 MIME 为 `image/jpeg`，再用 `git mv` 移入 `img/`，由 `GITHUB_TOKEN` 提交推送。只有海报移动成功后才能推送引用它的 JSON。
-- 本次工作流文件是 2026-11-12 用户明确授权的仅一次 GitHub 网页上传；后续普通文本仍走 Kimi GitHub 插件。未获新的明确授权，不得继续用网页写入仓库，也不要把网页上传当成常规发布通道。
+- 2026-11-11 实测，Kimi GitHub 插件的 `push_files` 会把 Base64 当成普通文本写入，不能用于 JPG / PNG 等二进制文件。正常电影发布只提交 `candidates/publish.json`，由 `publish-selection.yml` 在云端把候选 JPEG 和正式 JSON 作为一个提交落库。后备手动工作流 `publish-movie-poster.yml` 仍可输入数字 `sid`，单独把候选海报移入 `img/`；使用后备通道时，只有海报移动成功后才能发布引用它的清单。
+- `.github/workflows/` 下的文件需要 `workflow` 权限，Kimi GitHub 插件不能写入。通过已登录 GitHub 网页上传或修改工作流必须每次先取得用户明确授权；普通文本仍走插件，不要把网页上传当成常规发布通道。
 
 仓库本地 git 配置（不要改用户的全局配置）：`user.name = torge0414`，`user.email = 56673045+torge0414@users.noreply.github.com`，`pull.rebase = false`。
 
 ## 13. 本机环境（仅适用于 Torge 的 Windows 电脑）
 
-- 工作仓库：`H:\Release Calendar\release-calendar`，GPT 和 Claude 共用。`C:\Users\Torge\release-calendar` 是旧副本，不在上面工作。
+- 工作仓库：`H:\Release Calendar\release-calendar`，GPT 和 Kimi 共用。`C:\Users\Torge\release-calendar` 是旧副本，不在上面工作。
 - 外层 `H:\Release Calendar` 不是 Git 仓库，放着本机辅助脚本和检查产物：
   - `qa-safari-serif.cjs`、`qa-view-switch.cjs`、`qa-month-glider.cjs`、`qa-digit-font.cjs` 等是浏览器检查脚本；
   - `score-review/` 是历史截图和测量结果，不能当成当前版本的验收证据；
@@ -550,6 +560,8 @@ Python 脚本只用标准库，建议 Python 3.12（与 Actions 一致）；Node
 | `bb6939a` | 固定手机月份宽度 |
 | `a9a7541` | 手机月份改用齐线衬线数字 |
 | `64957a4` | 页头不显示年份 |
+| `4a53124` / `1d1c751` / `93006d4` | 引入发布清单、确定性合并脚本和统一发布工作流；四个写 `main` 的工作流共用互斥组；发布后自动清空清单，避免陈旧条目覆盖每日评分 |
+| `28083d1` | 《笑傲江湖2：东方不败》真实全流程验收的数据提交：同一提交写正式条目、移动候选海报并清空清单 |
 
 需要某处的历史原因时，查看对应提交的 diff。
 
@@ -564,4 +576,4 @@ Python 脚本只用标准库，建议 Python 3.12（与 Actions 一致）；Node
 >
 > 网站是原生单页加三份 JSON，没有 npm 构建，只维护上月、本月、下月的游戏精选、内地院线电影和音乐精选（欧美主流女歌手加 K-pop 女团的专辑和 EP，不收男歌手，不显示评分）。旧版音乐数据不要恢复。保持当前的月份目录页头、860px 共用栏宽、460×215 游戏封面、齐线衬线评分，以及手机触摸和可访问性规则。不要恢复旧视觉。
 >
-> GPT 和 Claude 都是项目负责人，谁改动谁负责验收发布；每月精选由 Claude 的定时任务负责。两位共用 `H:\Release Calendar\release-calendar`，先分清任务和文件，避免同时改 `index.html`。提交前跑四项基础检查，样式改动看真实桌面、手机和两种主题，主题 / 字体改动补 WebKit 双向切换。每日 Actions 会提交评分和 Steam 价格，推送前先 fetch，禁止强推和覆盖新数据。除现有的 Claude 月度定时任务外，不要自行新建月度任务或扩大清单。
+> GPT 和 Kimi 都是项目负责人，谁改动谁负责验收发布；每月精选和月中更新由 Kimi 的定时任务负责。两位共用 `H:\Release Calendar\release-calendar`，先分清任务和文件，避免同时改 `index.html`。名单任务只提交 `candidates/publish.json`，由 Actions 统一合并正式 JSON 和电影海报。提交前跑五项基础检查，样式改动看真实桌面、手机和两种主题，主题 / 字体改动补 WebKit 双向切换。每日 Actions 会提交评分和 Steam 价格，所有写 `main` 的工作流共用互斥组，禁止强推和覆盖新数据。不要自行新建第二套月度任务或扩大清单。
