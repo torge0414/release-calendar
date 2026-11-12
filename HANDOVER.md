@@ -85,7 +85,7 @@ GPT 和 Claude 两位 agent 都是项目负责人，地位对等，不设单一�
 
 ### 排除旧作换平台再发行
 
-以作品本身的首次发售为准，不把旧游戏后来登陆 Steam、PlayStation、Switch 或 Switch 2 的日期当成新作发售日期。排除跨平台移植、次世代升级版，以及只加入既有内容的完全版、豪华版、合集、Encore Edition；不能只凭平台、版名变化或已有高评分判断为新作。
+以作品本身的首次发售为准，不把旧游戏后来登陆 Steam、PlayStation、Switch 或 Switch 2 的日期当成新作发售日期。排除跨平台移植、次世代升级版，以及只加入既有内容的完全版、豪华版、合集、Encore Edition；不能只凭新平台商店日期、版名变化或已有高评分判断为新作。每月整理前须查原版商店或发行商页面，确认是否已在其他平台发售。
 
 官方明确标注的 remake，以及有首次发售新内容的大型扩展，只要符合精选范围，就不按「移植」误删；但只有画质提升的 remaster 或升级通行证不能冒充重制新作。分不清是移植还是重制 / 新内容时先核对官方说明，仍不明确就请用户决定。新扩展与本体同捆的条目必须明确代表新扩展，不能用旧本体日期或旧本体评分冒充。
 
@@ -176,7 +176,7 @@ GPT 和 Claude 两位 agent 都是项目负责人，地位对等，不设单一�
 | K-pop solo | JEON SOYEON《What a Wonderful Life》（i-dle）、YUQI《27》（i-dle，中文 EP） |
 | 女歌手复查后加入 | ADÉLA《PRIMA》（09-04，Billboard 200 第 4）、GAYLE《Observing Chaos》（09-18，「abcdefu」美国前 3）、La Roux《Old Flames》（11-06，「Bulletproof」英国第 1） |
 | 放宽到前 40 后加入 | Bea Miller《Mr. Peaked In High School》（09-18，Billboard 200 第 7）、Lennon Stella《Sleeping Lion》（10-23，英国单曲第 12）、Yung Miami《Watch Dis》（10-23，City Girls 美国单曲第 26）、Shygirl《SWALLOW!》（11-06，英国专辑第 34） |
-| 过了前 40 但按流派不收 | Lizzy McAlpine《Angel》（英国单曲第 6，独立民谣）、Rachel Chinouriri《I think I spoke too soon》（英国专辑第 17，偏独立摇滚）、Paris Paloma《The Fatal Flaw》（英国单曲第 22，偏独立民谣） |
+| 过了前 40 但按流派不收 | Lizzy McAlpine《Angel》（英国单曲第 6，独立民谣）、Rachel Chinouriri《I think I spoke too soon》（英国专辑第 17，偏独立摇滚）、Paris Paloma《The Fatal Flaw》（英国单曲第 22，独立民谣） |
 | 前 40 也不够 | Ashe（美国最高第 71）、Tove Styrke（只在瑞典上榜）、Rebecca Black（美国第 55）、Nessa Barrett（美国第 80）、Angèle（英国第 79）、Cara Delevingne、Katie Gregson-MacLeod（查不到英美上榜记录）；Natalie Imbruglia、Chaka Khan 按老牌规则不收；K-pop 的 Hyojung、YUJU、RESCENE 不算一线 |
 | 女歌手复查后不收（其他原因） | Holly Humberstone《Cruel World… So It Ends》（旧专辑扩充版）、Alanis Morissette（节日专辑）、K. Michelle《Jesus & Whiskey》（转型乡村）、Kaitlin Butts（乡村）、Björk《Orkestral》（现场管弦乐版） |
 | 男歌手（用户要求剔除） | Yeat、Leon Bridges、Quavo、Troye Sivan、Pet Shop Boys、Lucky Daye、Anderson .Paak & Cordae、John Legend、Michael Kiwanuka、Dominic Fike、James Blunt、Skepta、Take That |
@@ -257,7 +257,7 @@ GPT 和 Claude 两位 agent 都是项目负责人，地位对等，不设单一�
 
 ### 音乐（`albums.json`，文件名沿用 albums）
 
-- **不显示评分**（2026-10-15 用户决定）。试过的来源：Metacritic 只评欧美作品、基本不评 K-pop 女团（每日任务能读到它的「New Releases」列表页，单张专辑页会弹 Cloudflare 验证）；豆瓣音乐对新专辑出分很慢（9 月初的作品 5～6 周后仍「暂无评分」），K-pop 分数还受粉丝互刷影响；AOTY、RateYourMusic 的用户分最及时，但都卡在 Cloudflare 验证，无法自动抓取。以后要恢复评分，先和用户确认来源。
+- **不显示评分**（2026-10-15 用户决定）。试过的来源：Metacritic 只评欧美作品、基本不评 K-pop（每日任务能读到它的「New Releases」列表页，单张专辑页会弹 Cloudflare 验证）；豆瓣音乐对新专辑出分很慢（9 月初的作品 5～6 周后仍「暂无评分」），K-pop 分数还受粉丝互刷影响；AOTY、RateYourMusic 的用户分最及时，但都卡在 Cloudflare 验证，无法自动抓取。以后要恢复评分，先和用户确认来源。
 - Spotify 不考虑：2026-02 起开发模式应用删掉了新发列表接口，还要求开发者开 Premium。
 - 封面和链接：iTunes Lookup API（`https://itunes.apple.com/lookup?id={id}&country=cn`）。`cn` 区的 search 接口不返回结果，要先在 `us` 区按艺人查到专辑编号，再用 lookup 查国区有没有上架。封面用 `…/600x600bb.jpg` 外链（1:1）。
 - 结构同样是三个 groups，内容数组为 `albums`。条目字段：`title`、`artist`、`date`、`year/month/day`、`kind`（`LP` 或 `EP`）、`apple_id`、`apple_url`（国区链接，没上架为 `null`）、`art`。不存评分字段（`check_data.py` 会拦 `mc` / `mc_url`）。页面只显示封面、作品名、艺人和日期状态，`apple_url` 先只存不显示。
@@ -309,7 +309,7 @@ GPT 和 Claude 两位 agent 都是项目负责人，地位对等，不设单一�
 ### 字体和颜色
 
 - 字标和桌面月份用 Georgia / Songti 衬线。手机月份用默认齐线数字的 Times New Roman / Times 衬线（`--score-serif`），52px / 700、固定 `2ch` 宽，数字特性 `normal`，避免 Georgia 在部分手机上让 9 显得更大。
-- 作品标题：桌面衬线 26px / 700、1.25 行高；手机无衬线 16px / 600、1.4 行高。标题按实际内容占一行或两行，不预留两行高度。
+- 作品标题：桌面衬线 26px / 700、1.25 行高；手机无衬线 16px / 600、1.4 行高。按实际内容占一行或两行，不预留两行高度。
 - 桌面中文标题的字体栈是 `Georgia, "Times New Roman", "Songti SC", "RC Title Serif SC", SimSun`。Mac 用系统宋体；Windows 没有带真粗体的中文衬线体，会加载仓库里的思源宋体 Bold 子集 `fonts/title-serif-sc-bold.woff2`（约 740KB，常用 3755 字加当前标题用字，2026-10-14 按用户选择加入）；手机标题是无衬线，不会下载。不要把 SimSun 挪回子集字体前面，否则 Windows 又会变成宋体伪粗体。启动遮罩最多等 1.2 秒让字体到位，字体加载完会重算列表高度。
 - 评分用默认齐线数字的 Times New Roman / Times 衬线（`--score-serif`），不要改回 Georgia。
 - 无衬线（PingFang SC / 微软雅黑 / Noto Sans SC）用于日期、状态、价格、页签、页脚。
@@ -358,12 +358,11 @@ GPT 和 Claude 两位 agent 都是项目负责人，地位对等，不设单一�
 - 主题变色统一用 `--theme-duration: .22s` 和 `ease`，所有自己声明颜色的元素都要同步过渡，只继承颜色的子元素跟随父级。主题旋钮移动约 0.35 秒。保留 `prefers-reduced-motion`。
 - iPhone Safari / WebKit 会对继承中的 `color` 叠加过渡，导致衬线字标和标题晚约 0.4～0.6 秒变色。`h1`、`.mh .mn`、`.txt .tline .t` 必须直接取 `var(--txt)`；`.item`、`.pic`、`.tabs` 等只继承文字色的容器不能再做 `color` 过渡。动到主题或字体时，验收必须包含 WebKit 手机宽度的浅→深、深→浅双向切换，只测 Chromium 不够。
 - 主题按钮必须是 `position: relative`，否则绝对定位的旋钮会叠到字标上。浅色旋钮是白底琥珀色太阳（`#d18a1d`），夜间旋钮是深灰（`#565661`）加浅蓝灰月亮（`#d6ddf2`）。不要两个主题都用白旋钮。
-- 主题开关悬停只加深底色，不放大、不加阴影。
 - 偏好键：
   - 主题 `glwTheme`（localStorage）：只在所选外观和系统相反时才保存；切回和系统一致的外观就删掉，重新跟随系统，系统外观变化时页面立即跟着变。
   - 视图 `glwView`（localStorage，`game` / `movie`）。
   - 月份 `glwTab_tabs_month`（sessionStorage，存年月如 `2026-10`，不存页码）：只在本次浏览里记住，重新打开网站总是回到本月（2026-10-14 起）。
-- 主题开关悬停只加深底色，不放大、不加阴影。
+- 主题开关悬停只加深底色（`--switch-bg-hover`），不放大、不加阴影。
 - 隐藏的类别和月份页用 `inert` 和 `aria-hidden="true"` 退出键盘与读屏导航，切换开始即更新，保留原有淡出动画。月份和类别按钮用 `aria-pressed` 表示选择。键盘焦点用 `focus-visible` 描边，不要拿掉。
 - 手机（≤640px）月份、类别按钮和平台、评分链接的点击范围至少 44×44px。主题按钮保留原尺寸，用伪元素把触摸高度扩到 45px。检查扩展后的范围有没有重叠或被附近文字挡住。
 - 手机上在列表区左右滑动可以换月（左滑看下一个月），距屏幕左右边缘 24px 以内的触摸不算，留给系统返回手势。列表底部不放换月按钮（2026-10-14 试加后按用户要求去掉）。
