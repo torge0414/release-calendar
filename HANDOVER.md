@@ -453,6 +453,8 @@ release-calendar/
 2. **Kimi 定时任务挑选并提交清单**：每月 1 日、15 日 09:00 读 `candidates/latest.json`，按 §4 / §4A / §4B 挑选、补查并补齐完整字段，只提交 `candidates/publish.json` 里的本次变化。不要直接改三份正式 JSON，不要在本地下载或提交电影海报，也不要删除候选海报。月中只核对本月和下月，不动上月。
 3. **GitHub Actions 统一发布**：`publish-selection.yml` 监听 `main` 上 `candidates/publish.json` 的变化，也可手动 `workflow_dispatch` 重跑。它调用 `scripts/apply_publication.py`，合并条目、移动海报、运行确定性回归检查，然后只用一个提交同时写入正式数据、必要图片和已清空的清单。失败不提交；成功后的空清单变化可能再触发一次无改动复核，这是正常保护。
 
+发布工作流声明 `pages: write`，并在推送步骤后无条件调用 `POST /repos/{owner}/{repo}/pages/builds`。`GITHUB_TOKEN` 推送本身不会触发 legacy Pages，所以常规数据更新不能再依赖伴随的手册提交顺带部署；空清单手动重跑也会请求 Pages 构建。2026-11-12 在工作流提交 `2400589` 上实测：手动发布 run `43166576285` 全部步骤成功（包括 `Request GitHub Pages build`），随后独立 Pages run `43166591814` 成功，`head_sha` 为 `24005893e16d3c952311d337ce635fd278f22cd3`。
+
 仓库里没有能自己判断收录作品的程序，也不要加。挑选由 Kimi 的定时任务完成，确定性合并和发布由 Actions 完成。2026-10-06 曾加过 `.github/workflows/monthly-curate.yml`，用户随即要求回退（`66f63e4` → `0cd00ce`）；不要恢复它，也不要另建第二套月度写入任务。
 
 ### 发布清单格式
@@ -562,6 +564,7 @@ Python 脚本只用标准库，建议 Python 3.12（与 Actions 一致）；Node
 | `64957a4` | 页头不显示年份 |
 | `4a53124` / `1d1c751` / `93006d4` | 引入发布清单、确定性合并脚本和统一发布工作流；四个写 `main` 的工作流共用互斥组；发布后自动清空清单，避免陈旧条目覆盖每日评分 |
 | `28083d1` | 《笑傲江湖2：东方不败》真实全流程验收的数据提交：同一提交写正式条目、移动候选海报并清空清单 |
+| `2400589` | 发布工作流增加 `pages: write`，推送后显式请求 legacy Pages 构建；手动发布 run `43166576285` 和独立 Pages run `43166591814` 均成功 |
 
 需要某处的历史原因时，查看对应提交的 diff。
 
