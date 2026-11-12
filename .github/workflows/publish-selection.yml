@@ -10,6 +10,7 @@ on:
 
 permissions:
   contents: write
+  pages: write
 
 # All workflows that write main use this group. A queued run checks out the latest
 # main, so a manifest rerun is safe after the daily or monthly updater finishes.
@@ -57,3 +58,9 @@ jobs:
           # Never force-push. An unexpected external write fails this run safely;
           # workflow_dispatch reapplies the same idempotent manifest on latest main.
           git push origin HEAD:main
+
+      - name: Request GitHub Pages build
+        env:
+          GH_TOKEN: ${{ github.token }}
+        # GITHUB_TOKEN pushes do not trigger the legacy Pages build automatically.
+        run: gh api --method POST "repos/${{ github.repository }}/pages/builds"
