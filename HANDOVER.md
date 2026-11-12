@@ -95,7 +95,7 @@ GPT 和 Kimi 两位 agent 都是项目负责人，地位对等，不设单一集
 | --- | --- | --- |
 | Marvel's Guardians of the Galaxy: Encore Edition | Nintendo 70010000119220 | [Steam 原作（2021 年）](https://store.steampowered.com/app/1088850/) |
 | 剑星 完全版 | Nintendo 70010000123391 | [Steam 原作（2025 年已发售）](https://store.steampowered.com/app/3489700/) |
-| 暗喻幻想：ReFantazio（NS2 版） | Nintendo 70010000105918 | [Steam 原作（2024 年已发售）](https://store.steampowered.com/app/2679460/) |
+| 暗喻幻想：ReFantazio（NS2 版） | Nintendo 70010000105918 | [Steam 原作（2024 年）](https://store.steampowered.com/app/2679460/) |
 | 皮克敏4 Nintendo Switch 2 Edition + 大家来挑战！当多虑检定 | Nintendo 70010000135062 | [Nintendo Switch 原作（2023 年）](https://www.nintendo.com/jp/switch/ampya/index.html) |
 
 ### 暂不收录的边界作品
@@ -123,7 +123,7 @@ GPT 和 Kimi 两位 agent 都是项目负责人，地位对等，不设单一集
 以下是当时的编辑选择，不代表重新确认了预算、游玩时长或未来档期：
 
 - **《不朽遗志 Valor Mortis》**：官方定位为有完整剧情、探索和成长系统的第一人称类魂动作项目，由《幽灵行者》开发团队制作，作为重点新 IP 保留。[官方项目页](https://valormortis.com/)
-- **《龙之信条2：Dark Arisen》**：新扩展包含新区域、新剧情及 12 个迷宫挑战，符合大型剧情 DLC 范围，不是旧作移植。封面和价格处理见 §6。[扩展的 Steam 页面](https://store.steampowered.com/app/2593290/)
+- **《龙之信条2：Dark Arisen》**：新扩展包含新区域、新剧情及 12 个迷宫挑战，符合大型剧情 DLC 范围，不是旧本体换平台。封面和价格处理见 §6。[扩展的 Steam 页面](https://store.steampowered.com/app/2593290/)
 - **《塞尔达传说 时之笛》2026 重制版**：Nintendo 官方明确说明为完全重制版，不是旧作移植。[Nintendo 商品页](https://ec.nintendo.com/HK/zh/titles/70010000130795)
 - 11 月其余保留《Football Manager 27》和《Grand Theft Auto VI》。
 
@@ -178,7 +178,7 @@ GPT 和 Kimi 两位 agent 都是项目负责人，地位对等，不设单一集
 | 放宽到前 40 后加入 | Bea Miller《Mr. Peaked In High School》（09-18，Billboard 200 第 7）、Lennon Stella《Sleeping Lion》（10-23，英国单曲第 12）、Yung Miami《Watch Dis》（10-23，City Girls 美国单曲第 26）、Shygirl《SWALLOW!》（11-06，英国专辑第 34） |
 | 过了前 40 但按流派不收 | Lizzy McAlpine《Angel》（英国单曲第 6，独立民谣）、Rachel Chinouriri《I think I spoke too soon》（英国专辑第 17，偏独立摇滚）、Paris Paloma《The Fatal Flaw》（英国单曲第 22，独立民谣） |
 | 前 40 也不够 | Ashe（美国最高第 71）、Tove Styrke（只在瑞典上榜）、Rebecca Black（美国第 55）、Nessa Barrett（美国第 80）、Angèle（英国第 79）、Cara Delevingne、Katie Gregson-MacLeod（查不到英美上榜记录）；Natalie Imbruglia、Chaka Khan 按老牌规则不收；K-pop 的 Hyojung、YUJU、RESCENE 不算一线 |
-| 女歌手复查后不收（其他原因） | Holly Humberstone《Cruel World… So It Ends》（旧专辑扩充版）、Alanis Morissette（节日专辑）、K. Michelle《Jesus & Whiskey》（转型乡村）、Kaitlyn Butts（乡村）、Björk《Orkestral》（现场管弦乐版） |
+| 女歌手复查后不收（其他原因） | Holly Humberstone《Cruel World… So It Ends》（旧专辑扩充版）、Alanis Morissette（节日专辑）、K. Michelle《Jesus & Whiskey》（转型乡村）、Kaitlin Butts（乡村）、Björk《Orkestral》（现场管弦乐版） |
 | 男歌手（用户要求剔除） | Yeat、Leon Bridges、Quavo、Troye Sivan、Pet Shop Boys、Lucky Daye、Anderson .Paak & Cordae、John Legend、Michael Kiwanuka、Dominic Fike、James Blunt、Skepta、Take That |
 | 男团和男团 solo，用户要求剔除 | MONSTA X、NCT WISH、MINHO、D.O.、YESUNG、MAX CHANGMIN；待上架的 ATEEZ、TOMORROW X TOGETHER、XIAOJUN 也不再补 |
 | K-pop solo 不收 | ONEW《KAKERA》（日语 EP）；JISOO、ROSÉ、NAYEON、IU 这几个月只有单曲；Yves（11-20）的迷你专辑 Apple Music 还没有条目，上架后补 |
@@ -270,7 +270,7 @@ GPT 和 Kimi 两位 agent 都是项目负责人，地位对等，不设单一集
 
 游戏封面框固定为 **460×215**（约 2.14:1），`object-fit: cover`。选图优先 Steam `header.jpg`。不要用 `capsule_616x353`（约 1.74:1）或宽于约 2.35 的套装横幅当主封面。已经核对过的 460×215 图可以放在 `img/`，用 `cover_img` 优先显示。电影海报 2:3，`poster` 可以指向 `img/` 里的本地文件；存进仓库前缩到 600px 宽、JPEG 质量 80 左右（每张约 50–190KB）。豆瓣原图常是 1080px、300–500KB，直接放进来会让页面变重；`check_data.py` 对超过 220KB 的本地封面和海报会提醒。
 
-候选顺序：`cover_img`、Steam、Nintendo、PlayStation，加载失败再换下一张。外链必须返回真正的图片；只有一个来源时更要检查。
+候选顺序：`cover_img`、Steam、Nintendo、PlayStation，加载失败再换下一张。刷新价格时不能把已验证的 `cover_img` 盖回不适配的外链。外链必须返回真正的图片；只有一个来源时更要检查。
 
 现有比例不对的外链先留在数据里，由 CSS 裁进 460×215，下次改名单时再换成 `header.jpg`。不要改回「每张图用自己的比例」，也不要改回 16:9。
 
@@ -296,7 +296,7 @@ GPT 和 Kimi 两位 agent 都是项目负责人，地位对等，不设单一集
 
 ### 页头
 
-- 左上是字标「Release Calendar」，右上是主题开关。字标用 Georgia 斜体、22px、常规字重，大小落在页签（14px）和作品标题（26px）之间，不和 72px 月份数字抢，斜体也和正体粗衬线的作品标题区分开；行高 31px 等于开关高度，桌面和手机同一大小，`top:.05em` 让字形和开关居中（Windows Georgia 实测误差约 0.1px）。320px 宽时离开关还有约 50px。2026-10-14 试过 40px（和开关等高）被用户否掉；也不用全大写加宽字距的刊头样式。
+- 左上是字标「Release Calendar」，右上是主题开关。字标用 Georgia 斜体、22px、常规字重，大小落在页签（14px）和作品标题（26px）之间，不和 72px 月份数字抢，斜体也和正体粗衬线的作品标题区分开；行高 31px 等于开关高度，`top:.05em` 让字形和开关居中（Windows Georgia 实测误差约 0.1px）。桌面和手机同一大小，320px 宽时离开关还有约 50px。2026-10-14 试过 40px（和开关等高）被用户否掉；也不用全大写加宽字距的刊头样式。
 - 月份数字是页面的主视觉，和列表左对齐。按用户要求不显示年份；年份数据仍用于月份选择、跨年判断和倒计时。
 - 手机月份数字固定占 `2ch` 宽度（`flex:0 0 2ch`），保留大号衬线和左对齐；切换月份时游戏 / 电影按钮不能跟着数字字形宽度左右移动。
 - 「游戏 / 电影 / 音乐」在月份数字旁边，和月份用相同的文字页签与 1px 下划线，无外框和反色底。类别列表只淡入淡出，所以类别下划线直接定位到选中项、不滑动，只保留主题颜色过渡；`aria-pressed` 随切换更新。
@@ -334,7 +334,7 @@ GPT 和 Kimi 两位 agent 都是项目负责人，地位对等，不设单一集
 - 游戏名用 `gameTitle()` 在显示时处理：有中文就只留中文，去掉英文名和括号里与名字无关的说明（「塞尔达传说 时之笛（2026 重制版）」显示为「塞尔达传说 时之笛」）。纯英文标题保持原样。紧贴中文的罗马数字留下（「侠盗猎车手VI」）。™ ® © 一律去掉，避免单独折行。
 - 日期行只有「10月2日 · 已发售」这种日期和状态，不显示开发商。「今天 / 明天发售」只靠金色文字提示，不加左侧色条（旧卡片遗留的色条已于 2026-10-14 删除）。
 - 平台没有价格时，图标后显示灰色的「暂无价格」，不要只留一个图标。
-- 手机评分与平台链接的行盒为 24px，用伪元素上下各扩展 10px，保证至少 44×44px 触摸范围；链接 `z-index:3`，高于日期状态文字。平台图标 13px，图标与价格间距 4px，平台之间横向间距 12px（2026-10-15 从 6px 加大，避免价格和下一个平台连在一起）；价格换行时行间距 20px，相邻行的触摸范围不重叠。
+- 手机评分与平台链接的行盒为 24px，用伪元素上下各扩展 10px，保证至少 44×44px 触摸范围；链接 `z-index:3`，高于日期状态文字。平台图标 13px，图标与价格间距 4px，平台之间横向间距 12px（2026-10-14 从 6px 加大，避免价格和下一个图标连在一起）；价格换行时行间距 20px，相邻行的触摸范围不重叠。
 
 ### 电影列表
 
@@ -346,7 +346,7 @@ GPT 和 Kimi 两位 agent 都是项目负责人，地位对等，不设单一集
 
 ### 音乐列表
 
-- 版式沿用电影海报网格：860px 栏里 3 列，≤640px 为 2 列，封面 1:1（`.pic.al`），Apple Music 600×600 外链。
+- 版式沿用电影海报网格：860px 栏里 3 列，≤640px 为 2 列，网格顶部留白相同。封面 1:1（`.pic.al`），Apple Music 600×600 外链。
 - 标题行样式与电影相同（CSS 用 `:is(#movieBody,#albumBody)` 共用），但不显示评分。标题下面多一行艺人（`.artist`）：无衬线，桌面 14px、手机 13px，500 字重，主文字色，单行省略。再下面是日期和状态。
 - 状态写「今天发行 / 明天发行 / 还有N天 / 已发行」，颜色规则同游戏。
 - 作品名和艺人都是纯文本，卡片没有外链。页脚「共 N 张 · 每月初更新」。
