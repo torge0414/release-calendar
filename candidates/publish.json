@@ -1,7 +1,25 @@
 {
   "version": 1,
   "movies": {
-    "upsert": [],
+    "upsert": [
+      {
+        "title": "深度安静",
+        "sid": "35211934",
+        "url": "https://movie.douban.com/subject/35211934/",
+        "month": 11,
+        "day": 19,
+        "date": "2026-11-19",
+        "score": 6.8,
+        "votes": 3499,
+        "poster": "img/movie_35211934.jpg",
+        "info": "2025 / 中国台湾 意大利 / 剧情 / 沈可尚 / 张孝全 林依晨 金士杰",
+        "directors": ["沈可尚"],
+        "actors": ["张孝全", "林依晨", "金士杰"],
+        "year": 2026,
+        "genres": ["剧情"],
+        "director": "沈可尚"
+      }
+    ],
     "remove": []
   },
   "albums": {
