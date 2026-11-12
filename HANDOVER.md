@@ -85,7 +85,7 @@ GPT 和 Claude 两位 agent 都是项目负责人，地位对等，不设单一�
 
 ### 排除旧作换平台再发行
 
-以作品本身的首次发售为准，不把旧游戏后来登陆 Steam、PlayStation、Switch 或 Switch 2 的日期当成新作发售日期。排除跨平台移植、次世代升级版，以及只加入既有内容的完全版、豪华版、合集、Encore Edition；不能只凭新平台商店日期、版名变化或已有高评分判断为新作。每月整理前须查原版商店或发行商页面，确认是否已在其他平台发售。
+以作品本身的首次发售为准，不把旧游戏后来登陆 Steam、PlayStation、Switch 或 Switch 2 的日期当成新作发售日期。排除跨平台移植、次世代升级版，以及只加入既有内容的完全版、豪华版、合集、Encore Edition；不能只凭平台、版名变化或已有高评分判断为新作。
 
 官方明确标注的 remake，以及有首次发售新内容的大型扩展，只要符合精选范围，就不按「移植」误删；但只有画质提升的 remaster 或升级通行证不能冒充重制新作。分不清是移植还是重制 / 新内容时先核对官方说明，仍不明确就请用户决定。新扩展与本体同捆的条目必须明确代表新扩展，不能用旧本体日期或旧本体评分冒充。
 
@@ -176,7 +176,7 @@ GPT 和 Claude 两位 agent 都是项目负责人，地位对等，不设单一�
 | K-pop solo | JEON SOYEON《What a Wonderful Life》（i-dle）、YUQI《27》（i-dle，中文 EP） |
 | 女歌手复查后加入 | ADÉLA《PRIMA》（09-04，Billboard 200 第 4）、GAYLE《Observing Chaos》（09-18，「abcdefu」美国前 3）、La Roux《Old Flames》（11-06，「Bulletproof」英国第 1） |
 | 放宽到前 40 后加入 | Bea Miller《Mr. Peaked In High School》（09-18，Billboard 200 第 7）、Lennon Stella《Sleeping Lion》（10-23，英国单曲第 12）、Yung Miami《Watch Dis》（10-23，City Girls 美国单曲第 26）、Shygirl《SWALLOW!》（11-06，英国专辑第 34） |
-| 过了前 40 但按流派不收 | Lizzy McAlpine《Angel》（英国单曲第 6，独立民谣）、Rachel Chinouriri《I think I spoke too soon》（英国专辑第 17，偏独立摇滚）、Paris Paloma《The Fatal Flaw》（英国单曲第 22，独立民谣） |
+| 过了前 40 但按流派不收 | Lizzy McAlpine《Angel》（英国单曲第 6，独立民谣）、Rachel Chinouriri《I think I spoke too soon》（英国专辑第 17，偏独立摇滚）、Paris Paloma《The Fatal Flaw》（英国单曲第 22，偏独立民谣） |
 | 前 40 也不够 | Ashe（美国最高第 71）、Tove Styrke（只在瑞典上榜）、Rebecca Black（美国第 55）、Nessa Barrett（美国第 80）、Angèle（英国第 79）、Cara Delevingne、Katie Gregson-MacLeod（查不到英美上榜记录）；Natalie Imbruglia、Chaka Khan 按老牌规则不收；K-pop 的 Hyojung、YUJU、RESCENE 不算一线 |
 | 女歌手复查后不收（其他原因） | Holly Humberstone《Cruel World… So It Ends》（旧专辑扩充版）、Alanis Morissette（节日专辑）、K. Michelle《Jesus & Whiskey》（转型乡村）、Kaitlin Butts（乡村）、Björk《Orkestral》（现场管弦乐版） |
 | 男歌手（用户要求剔除） | Yeat、Leon Bridges、Quavo、Troye Sivan、Pet Shop Boys、Lucky Daye、Anderson .Paak & Cordae、John Legend、Michael Kiwanuka、Dominic Fike、James Blunt、Skepta、Take That |
@@ -223,7 +223,7 @@ GPT 和 Claude 两位 agent 都是项目负责人，地位对等，不设单一�
 
 | 条目 | 决定 |
 | --- | --- |
-| 深度安静（11-19，想看 11,523） | 收录判断符合规则，但本次未上线：2025 年台湾影片首次在内地上映，按老片首次上映规则算新片；豆瓣评分 6.8 / 3,499 人是台湾上映积累的。候选海报保留在 `candidates/posters/movie_35211934.jpg`（540×800，未超重）；因本地海报没有合规的二进制发布通道，本次撤回已推送的 JSON 条目，避免页面出现缺图，待海报可发布后补上 |
+| 深度安静（11-19，想看 11,523） | 2026-11-12 已收录并恢复上线：2025 年台湾影片首次在内地上映，按老片首次上映规则算新片；豆瓣评分 6.8 / 3,499 人是台湾上映积累的。手动工作流 run `43150018654` 将候选海报原样移入 `img/movie_35211934.jpg`（540×800，119531 字节，移动前后 blob SHA 均为 `a7ab959fa2a9866e4f3a18fc12a92561c460609f`），随后恢复 JSON 条目；发布通道与授权边界见 §12 |
 | 试探（想看 1,504）、魔法秘境（想看 2,466）等其余 11～12 月候选 | 不收，热度不够 |
 | 笑傲江湖2：东方不败（1992，10-30 首次内地上映，评分人数 24 万+） | 属上月窗口，月中不动上月，未加入。它定档晚于 10-15 调整，11-01 起 10 月按「保留上月」不再核对，按现行规则不会进入名单；是否特批由用户决定 |
 | 海上钢琴师（11-15） | 重映（豆瓣 pubdate 2019-11-15 中国大陆），不收；monthly-prep 已标 `in_window: false` |
@@ -257,7 +257,7 @@ GPT 和 Claude 两位 agent 都是项目负责人，地位对等，不设单一�
 
 ### 音乐（`albums.json`，文件名沿用 albums）
 
-- **不显示评分**（2026-10-15 用户决定）。试过的来源：Metacritic 只评欧美作品、基本不评 K-pop（每日任务能读到它的「New Releases」列表页，单张专辑页会弹 Cloudflare 验证）；豆瓣音乐对新专辑出分很慢（9 月初的作品 5～6 周后仍「暂无评分」），K-pop 分数还受粉丝互刷影响；AOTY、RateYourMusic 的用户分最及时，但都卡在 Cloudflare 验证，无法自动抓取。以后要恢复评分，先和用户确认来源。
+- **不显示评分**（2026-10-15 用户决定）。试过的来源：Metacritic 只评欧美作品、基本不评 K-pop 女团（每日任务能读到它的「New Releases」列表页，单张专辑页会弹 Cloudflare 验证）；豆瓣音乐对新专辑出分很慢（9 月初的作品 5～6 周后仍「暂无评分」），K-pop 分数还受粉丝互刷影响；AOTY、RateYourMusic 的用户分最及时，但都卡在 Cloudflare 验证，无法自动抓取。以后要恢复评分，先和用户确认来源。
 - Spotify 不考虑：2026-02 起开发模式应用删掉了新发列表接口，还要求开发者开 Premium。
 - 封面和链接：iTunes Lookup API（`https://itunes.apple.com/lookup?id={id}&country=cn`）。`cn` 区的 search 接口不返回结果，要先在 `us` 区按艺人查到专辑编号，再用 lookup 查国区有没有上架。封面用 `…/600x600bb.jpg` 外链（1:1）。
 - 结构同样是三个 groups，内容数组为 `albums`。条目字段：`title`、`artist`、`date`、`year/month/day`、`kind`（`LP` 或 `EP`）、`apple_id`、`apple_url`（国区链接，没上架为 `null`）、`art`。不存评分字段（`check_data.py` 会拦 `mc` / `mc_url`）。页面只显示封面、作品名、艺人和日期状态，`apple_url` 先只存不显示。
@@ -309,7 +309,7 @@ GPT 和 Claude 两位 agent 都是项目负责人，地位对等，不设单一�
 ### 字体和颜色
 
 - 字标和桌面月份用 Georgia / Songti 衬线。手机月份用默认齐线数字的 Times New Roman / Times 衬线（`--score-serif`），52px / 700、固定 `2ch` 宽，数字特性 `normal`，避免 Georgia 在部分手机上让 9 显得更大。
-- 作品标题：桌面衬线 26px / 700、1.25 行高；手机无衬线 16px / 600、1.4 行高。按实际内容占一行或两行，不预留两行高度。
+- 作品标题：桌面衬线 26px / 700、1.25 行高；手机无衬线 16px / 600、1.4 行高。标题按实际内容占一行或两行，不预留两行高度。
 - 桌面中文标题的字体栈是 `Georgia, "Times New Roman", "Songti SC", "RC Title Serif SC", SimSun`。Mac 用系统宋体；Windows 没有带真粗体的中文衬线体，会加载仓库里的思源宋体 Bold 子集 `fonts/title-serif-sc-bold.woff2`（约 740KB，常用 3755 字加当前标题用字，2026-10-14 按用户选择加入）；手机标题是无衬线，不会下载。不要把 SimSun 挪回子集字体前面，否则 Windows 又会变成宋体伪粗体。启动遮罩最多等 1.2 秒让字体到位，字体加载完会重算列表高度。
 - 评分用默认齐线数字的 Times New Roman / Times 衬线（`--score-serif`），不要改回 Georgia。
 - 无衬线（PingFang SC / 微软雅黑 / Noto Sans SC）用于日期、状态、价格、页签、页脚。
@@ -358,11 +358,12 @@ GPT 和 Claude 两位 agent 都是项目负责人，地位对等，不设单一�
 - 主题变色统一用 `--theme-duration: .22s` 和 `ease`，所有自己声明颜色的元素都要同步过渡，只继承颜色的子元素跟随父级。主题旋钮移动约 0.35 秒。保留 `prefers-reduced-motion`。
 - iPhone Safari / WebKit 会对继承中的 `color` 叠加过渡，导致衬线字标和标题晚约 0.4～0.6 秒变色。`h1`、`.mh .mn`、`.txt .tline .t` 必须直接取 `var(--txt)`；`.item`、`.pic`、`.tabs` 等只继承文字色的容器不能再做 `color` 过渡。动到主题或字体时，验收必须包含 WebKit 手机宽度的浅→深、深→浅双向切换，只测 Chromium 不够。
 - 主题按钮必须是 `position: relative`，否则绝对定位的旋钮会叠到字标上。浅色旋钮是白底琥珀色太阳（`#d18a1d`），夜间旋钮是深灰（`#565661`）加浅蓝灰月亮（`#d6ddf2`）。不要两个主题都用白旋钮。
+- 主题开关悬停只加深底色，不放大、不加阴影。
 - 偏好键：
   - 主题 `glwTheme`（localStorage）：只在所选外观和系统相反时才保存；切回和系统一致的外观就删掉，重新跟随系统，系统外观变化时页面立即跟着变。
   - 视图 `glwView`（localStorage，`game` / `movie`）。
   - 月份 `glwTab_tabs_month`（sessionStorage，存年月如 `2026-10`，不存页码）：只在本次浏览里记住，重新打开网站总是回到本月（2026-10-14 起）。
-- 主题开关悬停只加深底色（`--switch-bg-hover`），不放大、不加阴影。
+- 主题开关悬停只加深底色，不放大、不加阴影。
 - 隐藏的类别和月份页用 `inert` 和 `aria-hidden="true"` 退出键盘与读屏导航，切换开始即更新，保留原有淡出动画。月份和类别按钮用 `aria-pressed` 表示选择。键盘焦点用 `focus-visible` 描边，不要拿掉。
 - 手机（≤640px）月份、类别按钮和平台、评分链接的点击范围至少 44×44px。主题按钮保留原尺寸，用伪元素把触摸高度扩到 45px。检查扩展后的范围有没有重叠或被附近文字挡住。
 - 手机上在列表区左右滑动可以换月（左滑看下一个月），距屏幕左右边缘 24px 以内的触摸不算，留给系统返回手势。列表底部不放换月按钮（2026-10-14 试加后按用户要求去掉）。
@@ -390,7 +391,8 @@ release-calendar/
 ├─ .github/workflows/
 │  ├─ daily-scores.yml     每日数据刷新，实际变化才提交
 │  ├─ check-images.yml     手动图片检查
-│  └─ monthly-prep.yml     每月 1 日、15 日滚动窗口并准备候选数据（§10）
+│  ├─ monthly-prep.yml     每月 1 日、15 日滚动窗口并准备候选数据（§10）
+│  └─ publish-movie-poster.yml  手动把指定 sid 的候选 JPEG 海报移入 img/（§12）
 ├─ .nojekyll               GitHub Pages 静态资源标记
 └─ HANDOVER.md             本文
 ```
@@ -494,14 +496,15 @@ Python 脚本只用标准库，建议 Python 3.12（与 Actions 一致）；Node
 
 ## 12. 提交与发布
 
-- GPT 的推送授权方式（2026-10-14 用户要求）：必须通过安装到 `torge0414` 账号、并获准访问本仓库的官方 GitHub App 完成远端写入。仅有 GitHub 插件已连接或个人账号有 push 权限，不代表已经满足此要求；先确认连接实际使用 GitHub App 安装授权，再发布。未确认前不推送，也不回退到本机 GitHub CLI 的个人 OAuth / PAT 或个人 SSH 凭据。此要求不改变 Claude 和现有每日 Actions 的授权方式。
-- 纯远端协作（2026-11-11 用户确认）：不需要本地测试、图片处理或多文件差异审阅的修改，可以直接通过官方 GitHub App 读取、提交并验证远端，不要求回拉或更新本地 checkout。本地副本可以是旧版本；需要本地工作时再按本节同步，不能以本地 HEAD 判断远端最新状态。
+- Kimi 的远端写入方式（2026-11-12 核实）：账号的 Authorized OAuth Apps 中是 MoonshotAI 的 `Kimi GitHub Plugin`，不是 Installed GitHub Apps；现有权限为仓库和用户资料，没有 `workflow`。普通文本文件通过 Kimi GitHub 插件读写；不要回退到本机 GitHub CLI 的个人 OAuth / PAT 或个人 SSH 凭据。此要求不改变 Claude 和现有每日 Actions 的授权方式。
+- 纯远端协作（2026-11-11 用户确认）：不需要本地测试、图片处理或多文件差异审阅的修改，可以直接通过 Kimi GitHub 插件读取、提交并验证远端，不要求回拉或更新本地 checkout。本地副本可以是旧版本；需要本地工作时再按本节同步，不能以本地 HEAD 判断远端最新状态。
 - 只暂存任务相关的文件，不要 `git add .`。
 - 推送前 `git fetch origin`，看远端有没有每日机器人或另一位 agent 的新提交；有就 `git merge` 接上，解决冲突后再推。
 - 不要强推、`reset --hard`，也不要用旧 JSON 覆盖机器人刚写入的数据。需要旧实现时用 git 历史查看。
 - 没有实际变化不做空提交，也不为了留痕改 `updated`。
 - 发布算完成的标准：Pages 部署的 commit 就是刚推的那个，并且线上 `index.html`（加查询参数避开缓存）里能看到新内容。只看推送成功或 Actions 绿勾不能说已经上线；没在真实页面上看过，不能说视觉已经验收。
-- 2026-11-11 实测，官方 GitHub 插件的 `push_files` 会把 Base64 当成普通文本写入，不能用于 JPG / PNG 等二进制文件。新增本地海报前必须确认合规的二进制写入通道；无法发布海报时，不要先推送引用该文件的 JSON。
+- 2026-11-11 实测，Kimi GitHub 插件的 `push_files` 会把 Base64 当成普通文本写入，不能用于 JPG / PNG 等二进制文件。电影候选 JPEG 今后通过手动工作流 `.github/workflows/publish-movie-poster.yml` 发布：输入数字 `sid`，工作流检查 `candidates/posters/movie_<sid>.jpg` 存在、目标不存在且 MIME 为 `image/jpeg`，再用 `git mv` 移入 `img/`，由 `GITHUB_TOKEN` 提交推送。只有海报移动成功后才能推送引用它的 JSON。
+- 本次工作流文件是 2026-11-12 用户明确授权的仅一次 GitHub 网页上传；后续普通文本仍走 Kimi GitHub 插件。未获新的明确授权，不得继续用网页写入仓库，也不要把网页上传当成常规发布通道。
 
 仓库本地 git 配置（不要改用户的全局配置）：`user.name = torge0414`，`user.email = 56673045+torge0414@users.noreply.github.com`，`pull.rebase = false`。
 
