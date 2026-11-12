@@ -1,0 +1,59 @@
+name: Apply publication manifest
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - candidates/publish.json
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# All workflows that write main use this group. A queued run checks out the latest
+# main, so a manifest rerun is safe after the daily or monthly updater finishes.
+concurrency:
+  group: release-calendar-main-writes
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out latest main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Merge manifest and stage movie posters
+        run: python scripts/apply_publication.py
+
+      - name: Run deterministic regression checks
+        run: |
+          python scripts/check_data.py
+          python scripts/test_apply_publication.py
+          python scripts/test_calendar.py
+          node scripts/test_month_tabs.js
+          node scripts/test_game_cover.js
+          git diff --check
+
+      - name: Commit and push the complete publication
+        run: |
+          set -euo pipefail
+          git add -A -- releases.json movies.json albums.json img candidates
+          if git diff --cached --quiet; then
+            echo "Publication already applied; no commit needed."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "应用发布清单"
+          # Never force-push. An unexpected external write fails this run safely;
+          # workflow_dispatch reapplies the same idempotent manifest on latest main.
+          git push origin HEAD:main

@@ -12,7 +12,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: publish-movie-poster-main
+  group: release-calendar-main-writes
   cancel-in-progress: false
 
 jobs:

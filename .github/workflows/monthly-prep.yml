@@ -1,7 +1,7 @@
 name: Monthly window roll and candidates
 
 # 每月 1 日和 15 日 00:05（北京时间）：滚动三个月窗口（15 日窗口不变，不会改名单）、准备候选数据和电影海报（scripts/monthly_prep.py）。
-# 只做不需要判断的准备工作；选哪些作品由 Claude 的定时任务（每月 1 日和 15 日 08:52）读 candidates/latest.json 完成。
+# 只做不需要判断的准备工作；选哪些作品由 Kimi 的定时任务读 candidates/latest.json 并提交 candidates/publish.json 完成。
 # cron 是 UTC：每月 28–31 日和 14 日 16:05 UTC 触发，下一步只在北京时间为 1 日或 15 日时继续，其余日子直接结束。
 on:
   schedule:
@@ -13,7 +13,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: release-calendar-scores
+  group: release-calendar-main-writes
   cancel-in-progress: false
 
 jobs:
