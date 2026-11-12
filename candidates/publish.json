@@ -3,21 +3,21 @@
   "movies": {
     "upsert": [
       {
-        "title": "深度安静",
-        "sid": "35211934",
-        "url": "https://movie.douban.com/subject/35211934/",
-        "month": 11,
-        "day": 19,
-        "date": "2026-11-19",
-        "score": 6.8,
-        "votes": 3499,
-        "poster": "img/movie_35211934.jpg",
-        "info": "2025 / 中国台湾 意大利 / 剧情 / 沈可尚 / 张孝全 林依晨 金士杰",
-        "directors": ["沈可尚"],
-        "actors": ["张孝全", "林依晨", "金士杰"],
+        "title": "笑傲江湖2：东方不败",
+        "sid": "1294417",
+        "url": "https://movie.douban.com/subject/1294417/",
+        "month": 10,
+        "day": 30,
+        "date": "2026-10-30",
         "year": 2026,
-        "genres": ["剧情"],
-        "director": "沈可尚"
+        "score": 8.5,
+        "votes": 246420,
+        "poster": "img/movie_1294417.jpg",
+        "info": "1992 / 中国香港 / 动作 爱情 武侠 / 程小东 / 李连杰 林青霞 关之琳",
+        "directors": ["程小东"],
+        "actors": ["李连杰", "林青霞", "关之琳"],
+        "genres": ["动作", "爱情", "武侠"],
+        "director": "程小东"
       }
     ],
     "remove": []
