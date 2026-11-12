@@ -1,32 +1,14 @@
 {
   "version": 1,
-  "movies": {
-    "upsert": [
-      {
-        "title": "笑傲江湖2：东方不败",
-        "sid": "1294417",
-        "url": "https://movie.douban.com/subject/1294417/",
-        "month": 10,
-        "day": 30,
-        "date": "2026-10-30",
-        "year": 2026,
-        "score": 8.5,
-        "votes": 246420,
-        "poster": "img/movie_1294417.jpg",
-        "info": "1992 / 中国香港 / 动作 爱情 武侠 / 程小东 / 李连杰 林青霞 关之琳",
-        "directors": ["程小东"],
-        "actors": ["李连杰", "林青霞", "关之琳"],
-        "genres": ["动作", "爱情", "武侠"],
-        "director": "程小东"
-      }
-    ],
-    "remove": []
-  },
-  "albums": {
+  "games": {
     "upsert": [],
     "remove": []
   },
-  "games": {
+  "movies": {
+    "upsert": [],
+    "remove": []
+  },
+  "albums": {
     "upsert": [],
     "remove": []
   }
