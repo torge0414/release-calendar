@@ -5,42 +5,11 @@
     "remove": []
   },
   "movies": {
-    "upsert": [
-      {
-        "title": "饥饿游戏：收获日出",
-        "sid": "36915988",
-        "url": "https://movie.douban.com/subject/36915988/",
-        "month": 11,
-        "day": 20,
-        "date": "2026-11-20",
-        "score": null,
-        "votes": 0,
-        "poster": "img/movie_36915988.jpg",
-        "info": "2026 / 美国 / 动作 科幻 冒险 / 弗朗西斯·劳伦斯 / 约瑟夫·扎达 杰西·普莱蒙",
-        "directors": ["弗朗西斯·劳伦斯"],
-        "actors": ["约瑟夫·扎达", "杰西·普莱蒙", "拉尔夫·费因斯"],
-        "year": 2026,
-        "genres": ["动作", "科幻", "冒险"],
-        "director": "弗朗西斯·劳伦斯"
-      }
-    ],
+    "upsert": [],
     "remove": []
   },
   "albums": {
-    "upsert": [
-      {
-        "title": "Cute & Anxiety",
-        "artist": "Yves",
-        "date": "2026-11-20",
-        "year": 2026,
-        "month": 11,
-        "day": 20,
-        "kind": "EP",
-        "apple_id": "6822634780",
-        "apple_url": "https://music.apple.com/cn/album/cute-anxiety-ep/6822634780",
-        "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/0b/12/8c/0b128c80-4c17-940b-9f93-da1d733bfcab/1200220308125.jpg/600x600bb.jpg"
-      }
-    ],
+    "upsert": [],
     "remove": []
   }
 }
