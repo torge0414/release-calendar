@@ -1,7 +1,7 @@
 """Monthly preparation: roll the three-month window and collect candidate data.
 
-Runs in GitHub Actions on the 1st of each month (08:00 Beijing), before Claude's
-monthly curation task. It only does deterministic work and never chooses titles:
+Runs in GitHub Actions on the 1st and 15th of each month (00:05 Beijing), before Kimi's
+curation task. It only does deterministic work and never chooses titles:
 
 1. Roll releases.json / movies.json / albums.json to the new window
    (previous, current, next month). Groups that leave the window are dropped,
@@ -9,14 +9,15 @@ monthly curation task. It only does deterministic work and never chooses titles:
 2. Collect candidates into candidates/latest.json:
    - movies: Douban "now showing" + "coming soon" (heat: wish / rating counts),
      details for titles inside the window, and posters for titles that pass the
-     heat line, saved to candidates/posters/ (Douban blocks hotlinking).
+     heat line. The same sid's type=R gallery is checked for a strict 2:3 poster;
+     the current Douban main poster remains the fallback and results are recorded.
    - music: Apple Music US most-played albums, Metacritic coming-soon list,
      Wikipedia "List of <year> albums", Wikipedia "<year> in South Korean music",
      plus iTunes lookups (genre, track count, artwork, China storefront link).
    - games: Wikipedia "List of video games released in <year>" (date, title,
      platforms, type such as new / remaster / port, genre, developer, publisher).
 Every source is optional: a failure is recorded in "errors" and the rest go on.
-Standard library only, like the other scripts.
+Standard library only except Pillow for lossless-ratio poster resizing in Actions.
 """
 from __future__ import annotations
 
@@ -24,6 +25,7 @@ import argparse
 from datetime import date, datetime, timedelta, timezone
 import html
 from html.parser import HTMLParser
+from io import BytesIO
 import json
 from pathlib import Path
 import re
@@ -195,6 +197,123 @@ def douban(path: str, retry: bool = True):
         raise
 
 
+DOUBAN_POSTER_LIMIT = 12  # 只看海报库按喜欢排序的第一页，限制每月任务的下载量
+
+
+def strict_poster_ratio(width, height) -> bool:
+    return type(width) is int and type(height) is int and width > 0 and height > 0 and width * 3 == height * 2
+
+
+class DoubanPosterGallery(HTMLParser):
+    """Parse .cover entries from a desktop Douban photos?type=R gallery page."""
+
+    image_pattern = re.compile(
+        r"(https://img\d\.doubanio\.com)/view/photo/m/public/(p\d+)\.(?:jpe?g|webp)$"
+    )
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.posters = []
+        self.cover_depth = 0
+        self.current = None
+        self.heading = None
+        self.is_poster_page = False
+        self.challenge = False
+
+    def handle_starttag(self, tag, attrs):
+        a = dict(attrs)
+        if tag == "form" and a.get("id") == "sec" and (a.get("action") or "").startswith("/c"):
+            self.challenge = True
+        elif tag == "h1":
+            self.heading = ""
+        if tag == "div" and "cover" in (a.get("class") or "").split():
+            self.cover_depth = 1
+            self.current = None
+        elif self.cover_depth and tag == "div":
+            self.cover_depth += 1
+        elif self.cover_depth and tag == "a":
+            match = re.fullmatch(r"https://movie\.douban\.com/photos/photo/(\d+)/", a.get("href") or "")
+            if match:
+                self.current = {"photo_id": match.group(1), "page_url": a["href"]}
+        elif self.cover_depth and tag == "img" and self.current:
+            match = self.image_pattern.fullmatch(a.get("src") or "")
+            if match and match.group(2)[1:] == self.current["photo_id"]:
+                self.posters.append({
+                    **self.current,
+                    "image_url": f"{match.group(1)}/view/photo/l/public/{match.group(2)}.jpg",
+                })
+
+    def handle_data(self, data):
+        if self.heading is not None:
+            self.heading += data
+
+    def handle_endtag(self, tag):
+        if tag == "h1" and self.heading is not None:
+            self.is_poster_page = "的海报" in self.heading
+            self.heading = None
+        elif tag == "div" and self.cover_depth:
+            self.cover_depth -= 1
+            if not self.cover_depth:
+                self.current = None
+
+
+def parse_douban_posters(page: str) -> list[dict]:
+    parser = DoubanPosterGallery()
+    parser.feed(page)
+    parser.close()
+    if parser.challenge:
+        raise ValueError("Douban poster gallery requires verification; not bypassed")
+    if not parser.is_poster_page:
+        raise ValueError("Unrecognized Douban poster gallery HTML")
+    return list({poster["photo_id"]: poster for poster in parser.posters}.values())
+
+
+def douban_poster_options(sid: str) -> list[dict]:
+    gallery = f"https://movie.douban.com/subject/{sid}/photos?type=R&start=0&sortby=like&size=a&subtype=a"
+    time.sleep(DOUBAN_DELAY)
+    page = fetch(gallery, {"Accept": "text/html", "Referer": f"https://movie.douban.com/subject/{sid}/"})
+    return parse_douban_posters(page)
+
+
+def douban_candidate_poster(candidate: dict, target: Path) -> dict:
+    """Use only this Douban sid's type=R gallery; never substitute the generic stills API."""
+    # Pillow is installed by monthly-prep.yml. Resize only: never crop or pad to force a ratio.
+    from PIL import Image
+
+    options = douban_poster_options(candidate["sid"])
+    candidates = options[:DOUBAN_POSTER_LIMIT]
+    failures, checked = [], 0
+    for poster in candidates:
+        try:
+            data = fetch(poster["image_url"], {"Referer": f"https://movie.douban.com/subject/{candidate['sid']}/"}, binary=True)
+            with Image.open(BytesIO(data)) as image:
+                image.load()
+                if not strict_poster_ratio(image.width, image.height):
+                    checked += 1
+                    continue
+                checked += 1
+                output = BytesIO()
+                image.convert("RGB").resize((600, 900), Image.Resampling.LANCZOS).save(output, "JPEG", quality=80, optimize=True)
+        except (HTTPError, URLError, TimeoutError, ValueError, OSError) as exc:
+            failures.append(f"{poster['photo_id']}: {exc}")
+            continue
+        target.write_bytes(output.getvalue())
+        return {"status": "ready", "photo_id": poster["photo_id"], "page_url": poster["page_url"],
+                "image_url": poster["image_url"], "original_width": image.width,
+                "original_height": image.height, "width": 600, "height": 900,
+                "gallery_candidates": len(options), "checked_candidates": checked,
+                "download_failures": failures}
+    if failures and not checked:
+        status, reason = "unavailable", "Could not inspect gallery images: " + "; ".join(failures)
+    else:
+        status = "no strict 2:3 poster"
+        reason = f"No usable strict 2:3 poster in the first {len(candidates)} gallery candidates"
+        if failures:
+            reason += "; download failures: " + "; ".join(failures)
+    return {"status": status, "reason": reason, "gallery_candidates": len(options),
+            "checked_candidates": checked, "download_failures": failures}
+
+
 def collect_movies(months, errors) -> list[dict]:
     items = {}
     for coll in ("movie_soon", "movie_showing"):  # 即将上映优先：限流时先保住待映片的详情
@@ -232,7 +351,8 @@ def collect_movies(months, errors) -> list[dict]:
         mainland = date(int(m.group(1)), int(m.group(2)), int(m.group(3))) if m else None
         r = j.get("rating") or {}
         it.update({"pubdate": pub, "mainland_date": mainland.isoformat() if mainland else None,
-                   "year": j.get("year"), "genres": j.get("genres"), "countries": j.get("countries"),
+                   "year": j.get("year"), "original_title": j.get("original_title"), "aka": j.get("aka") or [],
+                   "genres": j.get("genres"), "countries": j.get("countries"),
                    "directors": [d.get("name") for d in j.get("directors") or []],
                    "actors": [a.get("name") for a in (j.get("actors") or [])[:3]],
                    "score": r.get("value"), "votes": r.get("count"), "comments": j.get("comment_count"),
@@ -240,7 +360,7 @@ def collect_movies(months, errors) -> list[dict]:
         it["in_window"] = bool(mainland and (mainland.year, mainland.month) in window)
     for it in out:
         it["heat_ok"] = max(it.get("wish") or 0, it.get("votes") or 0) >= MOVIE_HEAT
-    # 过线、在窗口内、仓库里还没有本地海报的，先把海报下好
+    # 新候选只查同一豆瓣 sid 的 type=R 海报库；不可用或无严格 2:3 时回退当前主海报。
     (CAND / "posters").mkdir(parents=True, exist_ok=True)
     for it in out:
         if not (it.get("in_window") and it["heat_ok"] and it.get("poster_url")):
@@ -248,15 +368,27 @@ def collect_movies(months, errors) -> list[dict]:
         target = CAND / "posters" / f"movie_{it['sid']}.jpg"
         if (ROOT / "img" / target.name).exists():
             it["poster_file"] = f"img/{target.name}"
+            it["poster_source"] = "existing"
             continue
+        try:
+            meta = douban_candidate_poster(it, target)
+        except (HTTPError, URLError, TimeoutError, ValueError, KeyError, ImportError, OSError) as exc:
+            meta = {"status": "unavailable", "reason": str(exc)}
+        it["poster_gallery"] = meta
+        if meta["status"] == "ready":
+            it["poster_file"] = f"candidates/posters/{target.name}"
+            it["poster_source"] = "douban_gallery"
+            continue
+        errors.append(f"douban poster gallery {it['sid']}: {meta.get('reason', meta['status'])}; main poster used")
         try:
             data = fetch(it["poster_url"], {"Referer": "https://m.douban.com/"}, binary=True)
             if data[:3] != b"\xff\xd8\xff":
                 raise ValueError("not a JPEG")
             target.write_bytes(data)
             it["poster_file"] = f"candidates/posters/{target.name}"
+            it["poster_source"] = "douban_main"
         except (HTTPError, URLError, TimeoutError, ValueError) as exc:
-            errors.append(f"douban poster {it['sid']}: {exc}")
+            errors.append(f"douban main poster {it['sid']}: {exc}")
     return out
 
 
