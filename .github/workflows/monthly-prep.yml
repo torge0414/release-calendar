@@ -36,12 +36,17 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Install poster resizing dependency
+        if: steps.gate.outputs.run == 'true'
+        run: python -m pip install Pillow
       - name: Roll window and collect candidates
         if: steps.gate.outputs.run == 'true'
         run: python scripts/monthly_prep.py
       - name: Validate data
         if: steps.gate.outputs.run == 'true'
-        run: python scripts/check_data.py
+        run: |
+          python scripts/check_data.py
+          python scripts/test_movie_posters.py
       - name: Commit only actual changes
         if: steps.gate.outputs.run == 'true'
         run: |
