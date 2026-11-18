@@ -1,6 +1,6 @@
 # Release Calendar 维护手册
 
-更新日期：2026-11-16。本文合并了原来的 `HANDOVER.md`、`MAINTENANCE.md`、`AGENT_COLLABORATION.md` 和 `GAME_SELECTION.md`，是这个项目唯一的维护、协作与收录说明。
+更新日期：2026-11-18。本文合并了原来的 `HANDOVER.md`、`MAINTENANCE.md`、`AGENT_COLLABORATION.md` 和 `GAME_SELECTION.md`，是这个项目唯一的维护、协作与收录说明。
 
 所有面向用户的日期和时间用北京时间（Asia/Shanghai，UTC+8）。
 
@@ -274,16 +274,14 @@ GPT 和 Kimi 两位 agent 都是项目负责人，地位对等，不设单一集
 
 电影海报框固定为 **2:3**，页面用 `object-fit: cover`；源图不是 2:3 时会被裁切。`poster` 指向 `img/` 里的本地文件，存进仓库前缩到 600px 宽、JPEG 质量 80 左右（每张约 50–190KB）。豆瓣原图常是 1080px、300–500KB，直接放进来会让页面变重；`check_data.py` 对超过 220KB 的本地封面和海报会提醒。
 
-### 电影海报：Actions 直接查豆瓣海报库，发布前复核画面
+### 电影海报优先查 TMDB，发布前复核画面
 
-1. **常规新候选由 GitHub Actions 选图，不靠维护者临时手动找**。`monthly-prep.yml` 安装 Pillow，`monthly_prep.py` 只对仓库尚无 `img/movie_<sid>.jpg` 的新候选自动查图；已有正式海报不在月度任务里静默覆盖。豆瓣方案不需要 TMDB，也不需要配置任何 API Secret。
-2. **只查同一豆瓣 sid 的海报库**：`https://movie.douban.com/subject/<sid>/photos?type=R&start=0&sortby=like&size=a&subtype=a`。`type=R` 才是海报，`type=S` 是剧照，`type=W` 是壁纸；页面按喜欢排序，每页 30 张。任务只读第一页，按页面顺序最多下载检查前 12 张，避免无界下载。条目从 `.cover` 内的豆瓣 `/photos/photo/<photo_id>/` 链接和 `view/photo/m/public/p<photo_id>.webp` 图片地址取得同一 photo ID，再取 `view/photo/l/public/p<photo_id>.jpg` 大图。
-3. **不能用移动通用 photos 接口冒充海报库**：`https://m.douban.com/rexxar/api/v2/movie/<sid>/photos` 实测返回通用剧照，传入 `type=R` 也不会变成海报分类；不要为了找竖图改用它。由于海报页就在当前豆瓣 sid 下，不再跨站按标题和年份猜影片 ID，但同名、旧片名和图面内容仍须人工复核。
-4. **严格用下载后图片的 `width × 3 == height × 2` 筛选**，例如 2000×3000、900×1350 合格；2000×2933、1080×1735、540×809 都不合格。只等比缩放到 600×900、JPEG 质量约 80，不裁切、不拉伸、不补白。近似比例或竖图不能冒充 2:3。
-5. 前 12 张没有严格 2:3、海报库查询失败或图片下载失败时，自动回退当前豆瓣候选的 `poster_url` 主海报；主海报原样保存，不能为了比例强裁。成功图记为 `poster_source="douban_gallery"`，主海报回退记为 `douban_main`；`poster_gallery` 保留 `status/reason`、photo ID、豆瓣详情页与原图地址、原始和输出尺寸、检查数量及下载失败信息，`errors` 也记录回退原因。不是所有影片都必然有严格 2:3 版本，找不到时保留归属正确的现片名主海报并明确记录例外。
-6. **桌面海报页在本机出现过豆瓣验证页**。识别到验证页时记为海报库暂不可用，不自动求解或绕过，不使用私人 Cookie，随后走主海报回退。GitHub Actions 云端能否稳定读取必须实际试跑确认，不能预先承诺每次都能查海报库。豆瓣验证和移动接口限流都不能成为使用剧照或错片海报的理由。
-7. **Actions 能核对来源和比例，不能可靠识别海报上写的是旧片名还是现片名**。Kimi 在提交发布清单前必须打开候选图，核对片名、人物、导演与影片归属，并查看 `poster_source` / `poster_gallery`；不能只看 photo ID、喜欢排序或缩略图。改名电影尤其注意：《我们仅有一次的人生》原名《余烬》，旧片名海报即使是 2:3，也不能冒充现片名海报。发布后仍要看桌面与手机真实页面，确认 `cover` 没有造成不应有的裁切。
-8. 人工补查或改选最方便的是上面的豆瓣 `type=R` 海报页：可集中比较正式 / 预告 / 角色海报及中国大陆等版本，点击条目进 `/photos/photo/<photo_id>/` 详情核对大图。图面、现片名和归属优先于比例，不能为了尺寸改用别的电影、旧片名或来路不明的图，也不要改回 `object-fit: contain` 或留白方案（用户已否定）。
+1. `monthly-prep.yml` 通过仓库的 Actions Secret `TMDB_API_KEY` 读取 TMDB v3 API Key，并安装 Pillow。豆瓣仍提供影片、内地档期和评分。已有 `img/movie_<sid>.jpg` 的影片沿用正式海报。
+2. 用豆瓣片名、原名和原始发行年份查 TMDB，只有唯一的同名同年结果才继续。选择标记为中文的海报，最多下载四张。公开海报库可按地区查看，API 的中文标签涵盖多个地区，发布前要核对是否为内地版。
+3. 同时校验 TMDB 元数据和下载图片的实际尺寸，须满足 `width × 3 == height × 2`。合格图等比缩放到 600×900，存为质量约 80 的 JPEG，保留完整画面。找不到合格图、匹配有歧义或接口不可用时，原样保存豆瓣当前主海报作为备用。
+4. 候选文件仍为 `candidates/posters/movie_<sid>.jpg`。`poster_source` 记录 `tmdb`、`douban_main` 或 `existing`，`poster_gallery` 记录 TMDB 影片 ID、海报库、图片地址、尺寸或失败原因。电影页脚提供 TMDB 署名。失败原因也会写入 `errors`。
+5. Kimi 在提交发布清单前打开候选图，核对影片、现片名和地区，并查看 `poster_source` / `poster_gallery`。《我们仅有一次的人生》原名《余烬》，须核对海报上的现片名。需要补查内地版时，优先看片方、发行方或同一影片的豆瓣 `type=R` 海报页。发布后查看桌面和手机页面的裁切。
+6. 要在云端单独验证 TMDB，在手动运行月度准备工作流时填写 `tmdb_test_sids`，填 `candidates/latest.json` 里一个或多个豆瓣 ID，以空格分隔。验证只下载到临时目录并输出结果，工作流跳过候选刷新和提交。
 
 候选顺序：`cover_img`、Steam、Nintendo、PlayStation，加载失败再换下一张。刷新价格时不能把已验证的 `cover_img` 盖回不适配的外链。外链必须返回真正的图片；只有一个来源时更要检查。
 
@@ -401,9 +399,9 @@ release-calendar/
 │  ├─ test_apply_publication.py 发布清单的新增、更新、删除、幂等与失败回滚测试
 │  ├─ test_month_tabs.js   月份、偏好持久化和隐藏页可访问性检查
 │  ├─ test_game_cover.js   封面优先级、图片比例和标题处理检查
-│  ├─ test_movie_posters.py 豆瓣海报库解析、严格 2:3 筛选、验证页与主海报回退、等比缩放测试（需要 Pillow）
+│  ├─ test_movie_posters.py TMDB 影片匹配、严格 2:3 筛选、主海报回退、等比缩放测试（需要 Pillow）
 │  ├─ update_scores.py     现有评分及 Steam 国区价格刷新；--dry-run 不写文件
-│  └─ monthly_prep.py      每月准备：滚动窗口、抓候选；同 sid 的豆瓣 type=R 海报库严格 2:3 优先、主海报回退；--today 测试日期
+│  └─ monthly_prep.py      每月准备：滚动窗口、抓候选；TMDB 中文海报优先、豆瓣主海报回退；--today 测试日期
 ├─ candidates/             每月准备数据（latest.json、posters/）和发布清单（publish.json），不被页面读取
 ├─ .github/workflows/
 │  ├─ daily-scores.yml     每日数据刷新，实际变化才提交
@@ -465,7 +463,7 @@ release-calendar/
 
 北京时间每月 1 日 09:00 保留上月已发布清单，重新整理本月与下月，游戏、电影和音乐都要整理（游戏按 §4、音乐按 §4A、电影按 §4B）。2026-11-12 起分三步：
 
-1. **GitHub Actions 准备**（`.github/workflows/monthly-prep.yml` → `scripts/monthly_prep.py`，每月 1 日和 15 日 00:05 北京时间，也可手动触发）：只做不需要判断的事——把三份 JSON 滚动到新的三个月窗口（去掉过期月份、补空的新下月，已有条目不动），并把候选数据写进 `candidates/latest.json`：豆瓣上映 / 即将上映、热度过线电影按 §6 从同 sid 的豆瓣 `type=R` 海报库选严格 2:3、找不到或不可用则回退当前主海报下载的海报（`candidates/posters/`）、Apple Music、Metacritic、Wikipedia 和 iTunes 候选信息。任何来源失败都记进 `errors`，其他照常。它从不决定收录哪部作品。
+1. **GitHub Actions 准备**（`.github/workflows/monthly-prep.yml` → `scripts/monthly_prep.py`，每月 1 日和 15 日 00:05 北京时间，也可手动触发）：把三份 JSON 滚动到新的三个月窗口，去掉过期月份、补空的新下月并保留已有条目。把豆瓣上映 / 即将上映、Apple Music、Metacritic、Wikipedia 和 iTunes 候选信息写入 `candidates/latest.json`。热度过线的影片按 §6 优先从 TMDB 下载严格 2:3 中文海报，豆瓣主海报作为备用，文件存入 `candidates/posters/`。单个来源失败记入 `errors`，其余来源照常收集。收录名单由下一步的 Kimi 定时任务决定。
 2. **Kimi 定时任务挑选并提交清单**：每月 1 日、15 日 09:00 读 `candidates/latest.json`，按 §4 / §4A / §4B 挑选、补查并补齐完整字段，只提交 `candidates/publish.json` 里的本次变化。电影发布前必须打开候选海报复核画面，并查看 `poster_source` / `poster_gallery`，不能假定 Actions 已识别旧片名或错片。不要直接改三份正式 JSON，不要在本地下载或提交电影海报，也不要删除候选海报。月中只核对本月和下月，不动上月。
 3. **GitHub Actions 统一发布**：`publish-selection.yml` 监听 `main` 上 `candidates/publish.json` 的变化，也可手动 `workflow_dispatch` 重跑。它调用 `scripts/apply_publication.py`，合并条目、移动海报、运行确定性回归检查，然后只用一个提交同时写入正式数据、必要图片和已清空的清单。失败不提交；成功后的空清单变化可能再触发一次无改动复核，这是正常保护。
 
@@ -517,7 +515,7 @@ Python 脚本通常只用标准库，建议 Python 3.12（与 Actions 一致）�
 
 - 图片变化：`python scripts/check_data.py --images`。
 - 评分采集变化：`python scripts/update_scores.py --dry-run`，只访问来源并打印差异，不写文件。要实际写入就去掉 `--dry-run`，之后再跑 `check_data.py`，确认差异只涉及评分、人数、Steam 价格和更新时间。
-- 月度电影海报库解析、筛选或缩放变化：`python scripts/test_movie_posters.py`，使用模拟响应，不需要 Secret 或联网。
+- 月度电影海报匹配、筛选或缩放变化：`python scripts/test_movie_posters.py`，使用模拟响应。需要核对实际下载时，再按 §6 手动试跑工作流。
 - 前两项都要联网。网络阻断或源站拦截要逐条复核，不要把网络失败当成图片坏了，也不要因此删条目。普通界面调整不需要刷新评分。
 
 样式和交互至少看 1280px 桌面和 390px 手机，必要时补 320px；两个类别、两个主题、三个月份都要看。重点看长标题、未评分、链接点击范围、快速切换、刷新后偏好恢复、页面高度和减弱动画设置。

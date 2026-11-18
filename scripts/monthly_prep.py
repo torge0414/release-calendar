@@ -9,7 +9,7 @@ curation task. It only does deterministic work and never chooses titles:
 2. Collect candidates into candidates/latest.json:
    - movies: Douban "now showing" + "coming soon" (heat: wish / rating counts),
      details for titles inside the window, and posters for titles that pass the
-     heat line. The same sid's type=R gallery is checked for a strict 2:3 poster;
+     heat line. TMDB is checked for a strict 2:3 Chinese-language poster;
      the current Douban main poster remains the fallback and results are recorded.
    - music: Apple Music US most-played albums, Metacritic coming-soon list,
      Wikipedia "List of <year> albums", Wikipedia "<year> in South Korean music",
@@ -27,11 +27,14 @@ import html
 from html.parser import HTMLParser
 from io import BytesIO
 import json
+import os
 from pathlib import Path
 import re
+from tempfile import TemporaryDirectory
 import time
+from unicodedata import normalize
 from urllib.error import HTTPError, URLError
-from urllib.parse import quote
+from urllib.parse import quote, urlencode
 from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -197,121 +200,89 @@ def douban(path: str, retry: bool = True):
         raise
 
 
-DOUBAN_POSTER_LIMIT = 12  # 只看海报库按喜欢排序的第一页，限制每月任务的下载量
+TMDB_POSTER_LIMIT = 4
 
 
 def strict_poster_ratio(width, height) -> bool:
     return type(width) is int and type(height) is int and width > 0 and height > 0 and width * 3 == height * 2
 
 
-class DoubanPosterGallery(HTMLParser):
-    """Parse .cover entries from a desktop Douban photos?type=R gallery page."""
-
-    image_pattern = re.compile(
-        r"(https://img\d\.doubanio\.com)/view/photo/m/public/(p\d+)\.(?:jpe?g|webp)$"
-    )
-
-    def __init__(self):
-        super().__init__(convert_charrefs=True)
-        self.posters = []
-        self.cover_depth = 0
-        self.current = None
-        self.heading = None
-        self.is_poster_page = False
-        self.challenge = False
-
-    def handle_starttag(self, tag, attrs):
-        a = dict(attrs)
-        if tag == "form" and a.get("id") == "sec" and (a.get("action") or "").startswith("/c"):
-            self.challenge = True
-        elif tag == "h1":
-            self.heading = ""
-        if tag == "div" and "cover" in (a.get("class") or "").split():
-            self.cover_depth = 1
-            self.current = None
-        elif self.cover_depth and tag == "div":
-            self.cover_depth += 1
-        elif self.cover_depth and tag == "a":
-            match = re.fullmatch(r"https://movie\.douban\.com/photos/photo/(\d+)/", a.get("href") or "")
-            if match:
-                self.current = {"photo_id": match.group(1), "page_url": a["href"]}
-        elif self.cover_depth and tag == "img" and self.current:
-            match = self.image_pattern.fullmatch(a.get("src") or "")
-            if match and match.group(2)[1:] == self.current["photo_id"]:
-                self.posters.append({
-                    **self.current,
-                    "image_url": f"{match.group(1)}/view/photo/l/public/{match.group(2)}.jpg",
-                })
-
-    def handle_data(self, data):
-        if self.heading is not None:
-            self.heading += data
-
-    def handle_endtag(self, tag):
-        if tag == "h1" and self.heading is not None:
-            self.is_poster_page = "的海报" in self.heading
-            self.heading = None
-        elif tag == "div" and self.cover_depth:
-            self.cover_depth -= 1
-            if not self.cover_depth:
-                self.current = None
+def tmdb_api(path: str, api_key: str, **params) -> dict:
+    url = f"https://api.themoviedb.org/3/{path}?" + urlencode({"api_key": api_key, **params})
+    try:
+        result = fetch_json(url)
+    except HTTPError as exc:
+        raise ValueError(f"TMDB API returned HTTP {exc.code}") from None
+    except (OSError, ValueError):
+        # The request URL contains the key. Never log it or the raw exception.
+        raise ValueError("TMDB API connection failed or returned invalid JSON") from None
+    if not isinstance(result, dict):
+        raise ValueError("TMDB API returned an unexpected response")
+    return result
 
 
-def parse_douban_posters(page: str) -> list[dict]:
-    parser = DoubanPosterGallery()
-    parser.feed(page)
-    parser.close()
-    if parser.challenge:
-        raise ValueError("Douban poster gallery requires verification; not bypassed")
-    if not parser.is_poster_page:
-        raise ValueError("Unrecognized Douban poster gallery HTML")
-    return list({poster["photo_id"]: poster for poster in parser.posters}.values())
+def poster_title_key(title: str) -> str:
+    return "".join(char for char in normalize("NFKC", title).casefold() if char.isalnum())
 
 
-def douban_poster_options(sid: str) -> list[dict]:
-    gallery = f"https://movie.douban.com/subject/{sid}/photos?type=R&start=0&sortby=like&size=a&subtype=a"
-    time.sleep(DOUBAN_DELAY)
-    page = fetch(gallery, {"Accept": "text/html", "Referer": f"https://movie.douban.com/subject/{sid}/"})
-    return parse_douban_posters(page)
+def tmdb_movie_id(candidate: dict, api_key: str) -> int:
+    year = str(candidate.get("year") or "")
+    if not re.fullmatch(r"\d{4}", year):
+        raise ValueError("Missing original release year for TMDB match")
+    titles = {}
+    for title in (candidate.get("title"), candidate.get("original_title")):
+        key = poster_title_key(title or "")
+        if key:
+            titles[key] = title
+    matches = set()
+    for title in titles.values():
+        results = tmdb_api("search/movie", api_key, query=title, language="zh-CN",
+                           primary_release_year=year)
+        if (results.get("total_pages") or 0) > 1:
+            raise ValueError("TMDB title and year search returned more than one page")
+        for movie in results.get("results") or []:
+            if (str(movie.get("release_date") or "")[:4] == year
+                    and type(movie.get("id")) is int
+                    and any(poster_title_key(movie.get(field) or "") in titles
+                            for field in ("title", "original_title"))):
+                matches.add(movie["id"])
+    if len(matches) != 1:
+        reason = "No" if not matches else "More than one"
+        raise ValueError(f"{reason} exact TMDB title and year match")
+    return matches.pop()
 
 
-def douban_candidate_poster(candidate: dict, target: Path) -> dict:
-    """Use only this Douban sid's type=R gallery; never substitute the generic stills API."""
-    # Pillow is installed by monthly-prep.yml. Resize only: never crop or pad to force a ratio.
+def tmdb_candidate_poster(candidate: dict, target: Path, api_key: str) -> dict:
     from PIL import Image
 
-    options = douban_poster_options(candidate["sid"])
-    candidates = options[:DOUBAN_POSTER_LIMIT]
-    failures, checked = [], 0
-    for poster in candidates:
+    movie_id = tmdb_movie_id(candidate, api_key)
+    gallery = {"tmdb_id": movie_id, "page_url": f"https://www.themoviedb.org/movie/{movie_id}/images/posters"}
+    images = tmdb_api(f"movie/{movie_id}/images", api_key, include_image_language="zh")
+    options = [poster["file_path"] for poster in images.get("posters") or []
+               if poster.get("iso_639_1") == "zh"
+               and strict_poster_ratio(poster.get("width"), poster.get("height"))
+               and re.fullmatch(r"/[A-Za-z0-9]+\.jpg", poster.get("file_path") or "")]
+    failures = []
+    for path in options[:TMDB_POSTER_LIMIT]:
+        image_url = f"https://image.tmdb.org/t/p/original{path}"
         try:
-            data = fetch(poster["image_url"], {"Referer": f"https://movie.douban.com/subject/{candidate['sid']}/"}, binary=True)
+            data = fetch(image_url, binary=True)
             with Image.open(BytesIO(data)) as image:
-                image.load()
-                if not strict_poster_ratio(image.width, image.height):
-                    checked += 1
+                width, height = image.size
+                if not strict_poster_ratio(width, height):
+                    failures.append(f"{path}: downloaded image is not 2:3")
                     continue
-                checked += 1
                 output = BytesIO()
                 image.convert("RGB").resize((600, 900), Image.Resampling.LANCZOS).save(output, "JPEG", quality=80, optimize=True)
-        except (HTTPError, URLError, TimeoutError, ValueError, OSError) as exc:
-            failures.append(f"{poster['photo_id']}: {exc}")
+        except (OSError, ValueError, Image.DecompressionBombError) as exc:
+            failures.append(f"{path}: {exc}")
             continue
         target.write_bytes(output.getvalue())
-        return {"status": "ready", "photo_id": poster["photo_id"], "page_url": poster["page_url"],
-                "image_url": poster["image_url"], "original_width": image.width,
-                "original_height": image.height, "width": 600, "height": 900,
-                "gallery_candidates": len(options), "checked_candidates": checked,
+        return {**gallery, "status": "ready", "image_url": image_url, "language": "zh",
+                "original_width": width, "original_height": height, "width": 600, "height": 900,
                 "download_failures": failures}
-    if failures and not checked:
-        status, reason = "unavailable", "Could not inspect gallery images: " + "; ".join(failures)
-    else:
-        status = "no strict 2:3 poster"
-        reason = f"No usable strict 2:3 poster in the first {len(candidates)} gallery candidates"
-        if failures:
-            reason += "; download failures: " + "; ".join(failures)
-    return {"status": status, "reason": reason, "gallery_candidates": len(options),
-            "checked_candidates": checked, "download_failures": failures}
+    reason = "Could not download a usable TMDB poster" if options else "No strict 2:3 Chinese-language TMDB poster"
+    return {**gallery, "status": "unavailable", "reason": reason, "download_failures": failures}
 
 
 def collect_movies(months, errors) -> list[dict]:
@@ -360,10 +331,11 @@ def collect_movies(months, errors) -> list[dict]:
         it["in_window"] = bool(mainland and (mainland.year, mainland.month) in window)
     for it in out:
         it["heat_ok"] = max(it.get("wish") or 0, it.get("votes") or 0) >= MOVIE_HEAT
-    # 新候选只查同一豆瓣 sid 的 type=R 海报库；不可用或无严格 2:3 时回退当前主海报。
+    # 新候选优先查 TMDB 中文海报，不可用时回退当前豆瓣主海报。
+    api_key = os.environ.get("TMDB_API_KEY", "").strip()
     (CAND / "posters").mkdir(parents=True, exist_ok=True)
     for it in out:
-        if not (it.get("in_window") and it["heat_ok"] and it.get("poster_url")):
+        if not (it.get("in_window") and it["heat_ok"]):
             continue
         target = CAND / "posters" / f"movie_{it['sid']}.jpg"
         if (ROOT / "img" / target.name).exists():
@@ -371,15 +343,19 @@ def collect_movies(months, errors) -> list[dict]:
             it["poster_source"] = "existing"
             continue
         try:
-            meta = douban_candidate_poster(it, target)
-        except (HTTPError, URLError, TimeoutError, ValueError, KeyError, ImportError, OSError) as exc:
+            if not api_key:
+                raise ValueError("TMDB_API_KEY is not configured")
+            meta = tmdb_candidate_poster(it, target, api_key)
+        except (ValueError, ImportError, OSError) as exc:
             meta = {"status": "unavailable", "reason": str(exc)}
         it["poster_gallery"] = meta
         if meta["status"] == "ready":
             it["poster_file"] = f"candidates/posters/{target.name}"
-            it["poster_source"] = "douban_gallery"
+            it["poster_source"] = "tmdb"
             continue
-        errors.append(f"douban poster gallery {it['sid']}: {meta.get('reason', meta['status'])}; main poster used")
+        errors.append(f"TMDB poster {it['sid']}: {meta['reason']}")
+        if not it.get("poster_url"):
+            continue
         try:
             data = fetch(it["poster_url"], {"Referer": "https://m.douban.com/"}, binary=True)
             if data[:3] != b"\xff\xd8\xff":
@@ -387,7 +363,7 @@ def collect_movies(months, errors) -> list[dict]:
             target.write_bytes(data)
             it["poster_file"] = f"candidates/posters/{target.name}"
             it["poster_source"] = "douban_main"
-        except (HTTPError, URLError, TimeoutError, ValueError) as exc:
+        except (OSError, ValueError) as exc:
             errors.append(f"douban main poster {it['sid']}: {exc}")
     return out
 
@@ -520,11 +496,38 @@ def collect_games(months, errors) -> list[dict]:
     return out
 
 
+def verify_tmdb(sids: list[str]) -> int:
+    api_key = os.environ.get("TMDB_API_KEY", "").strip()
+    if not api_key:
+        print("TMDB_API_KEY is not configured")
+        return 1
+    snapshot = json.loads((CAND / "latest.json").read_text(encoding="utf-8"))
+    movies = {movie["sid"]: movie for movie in snapshot["movies"]}
+    failed = False
+    with TemporaryDirectory() as folder:
+        for sid in sids:
+            if sid not in movies:
+                print(f"Douban sid {sid!r} is missing from candidates/latest.json")
+                failed = True
+                continue
+            try:
+                meta = tmdb_candidate_poster(movies[sid], Path(folder) / "poster.jpg", api_key)
+            except (ValueError, ImportError, OSError) as exc:
+                meta = {"status": "unavailable", "reason": str(exc)}
+            print(json.dumps({"sid": sid, "title": movies[sid]["title"], **meta}, ensure_ascii=False))
+            failed |= meta["status"] != "ready"
+    return int(failed)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--today", help="override the Beijing date (YYYY-MM-DD), for testing")
     parser.add_argument("--skip-candidates", action="store_true", help="only roll the window")
+    parser.add_argument("--verify-tmdb", nargs="+", metavar="SID",
+                        help="check TMDB for these candidate Douban IDs without updating repository files")
     args = parser.parse_args()
+    if args.verify_tmdb:
+        return verify_tmdb(args.verify_tmdb)
     today = date.fromisoformat(args.today) if args.today else datetime.now(BJ).date()
     months = window_for(today)
     rolled = []

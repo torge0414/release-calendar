@@ -166,6 +166,8 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
   .sect{padding-top:8px;}
   .pfoot{color:var(--dim); font-size:11.5px; margin-top:40px; text-align:center; padding-bottom:8px; font-family:var(--sans);}
   .credit{color:var(--dim); font-size:11px; text-align:center; padding-bottom:16px; opacity:.8; font-family:var(--sans);}
+  .poster-credit{display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:6px 8px; margin-top:8px;}
+  .poster-credit img{display:block; width:54px; height:auto;}
 
   /* ---------- 列表通用：封面、标题行、日期状态、评分 ---------- */
   .list{display:flex; flex-direction:column;}
@@ -438,6 +440,9 @@ function tabbed(tabsEl, panels){
       sect.appendChild(list);
       const ft = document.createElement('div'); ft.className = 'pfoot';
       ft.textContent = p.footFn ? p.footFn(g, items) : '';
+      if(p.body.id === 'movieBody'){
+        ft.insertAdjacentHTML('beforeend', '<div class="poster-credit"><a href="https://www.themoviedb.org/"><img src="img/tmdb-logo.svg" alt="TMDB"></a><span>This product uses the TMDB API but is not endorsed or certified by TMDB.</span></div>');
+      }
       sect.appendChild(ft);
       const cr = document.createElement('div'); cr.className = 'credit'; cr.textContent = '@torge';
       sect.appendChild(cr);

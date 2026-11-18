@@ -8,6 +8,11 @@ on:
     - cron: "5 16 28-31 * *"
     - cron: "5 16 14 * *"
   workflow_dispatch:
+    inputs:
+      tmdb_test_sids:
+        description: "Candidate Douban IDs separated by spaces. Verify TMDB only when supplied."
+        type: string
+        required: false
 
 permissions:
   contents: write
@@ -39,16 +44,26 @@ jobs:
       - name: Install poster resizing dependency
         if: steps.gate.outputs.run == 'true'
         run: python -m pip install Pillow
+      - name: Verify TMDB candidate posters
+        if: steps.gate.outputs.run == 'true' && inputs.tmdb_test_sids
+        env:
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+          TMDB_TEST_SIDS: ${{ inputs.tmdb_test_sids }}
+        run: |
+          read -r -a sids <<< "$TMDB_TEST_SIDS"
+          python scripts/monthly_prep.py --verify-tmdb "${sids[@]}"
       - name: Roll window and collect candidates
-        if: steps.gate.outputs.run == 'true'
+        if: steps.gate.outputs.run == 'true' && !inputs.tmdb_test_sids
+        env:
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
         run: python scripts/monthly_prep.py
       - name: Validate data
-        if: steps.gate.outputs.run == 'true'
+        if: steps.gate.outputs.run == 'true' && !inputs.tmdb_test_sids
         run: |
           python scripts/check_data.py
           python scripts/test_movie_posters.py
       - name: Commit only actual changes
-        if: steps.gate.outputs.run == 'true'
+        if: steps.gate.outputs.run == 'true' && !inputs.tmdb_test_sids
         run: |
           git add releases.json movies.json albums.json candidates
           if git diff --cached --quiet; then
