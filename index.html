@@ -129,6 +129,8 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
     font-size:14px; font-weight:500; color:var(--dim); padding:0 0 2px; flex:none; white-space:nowrap;
     border-radius:0; transition:color var(--theme-duration) ease;
   }
+  /* 扩大点击区，按钮和下划线仍按文字宽度排版。 */
+  .tab::after{content:""; position:absolute; inset:-11px -8px;}
   .tab:hover{color:var(--txt);}
   .tab.on{color:var(--txt); font-weight:600;}
   /* 类别和月份使用相同的文字页签与共享下划线；类别下划线不滑动 */
@@ -257,6 +259,8 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
 
   /* ---------- 桌面 ---------- */
   @media (min-width:641px){
+    .tabs{gap:18px;}
+    .tab{font-size:16px;}
     /* 信息区与封面等高：标题和日期靠上，平台价格贴齐封面底部。 */
     #body .item{align-items:stretch;}
     #body .txt{justify-content:flex-start; gap:8px;}
@@ -274,9 +278,8 @@ if((_t==='dark')||(!_t&&matchMedia('(prefers-color-scheme: dark)').matches))docu
     .mh .mn{font-size:52px; font-family:var(--score-serif); font-variant-numeric:normal;
          font-feature-settings:normal; flex:0 0 2ch; min-width:0;}
     .mh .gap{flex:1 1 0; min-width:4px;}
-    /* 按钮宽度等于文字，下划线和文字对齐；点击范围靠伪元素扩到 44×44，相邻按钮之间留 16px 不重叠 */
+    /* 相邻页签间距与两侧扩出的点击区等宽。 */
     #tabs,#topTabs{gap:16px;}
-    #tabs .tab::after,#topTabs .tab::after{content:""; position:absolute; inset:-11px -8px;}
     /* 游戏 */
     #body .item{gap:14px; padding:14px 0;}
     #body .item .pic{flex:0 0 clamp(108px,32vw,148px); width:clamp(108px,32vw,148px);}
