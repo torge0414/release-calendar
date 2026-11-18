@@ -9,8 +9,8 @@ curation task. It only does deterministic work and never chooses titles:
 2. Collect candidates into candidates/latest.json:
    - movies: Douban "now showing" + "coming soon" (heat: wish / rating counts),
      details for titles inside the window, and posters for titles that pass the
-     heat line. TMDB is checked for a strict 2:3 Chinese-language poster;
-     the current Douban main poster remains the fallback and results are recorded.
+     heat line. TMDB posters are ranked by language and fit to the 2:3 frame.
+     Missing posters and download failures are recorded with the candidates.
    - music: Apple Music US most-played albums, Metacritic coming-soon list,
      Wikipedia "List of <year> albums", Wikipedia "<year> in South Korean music",
      plus iTunes lookups (genre, track count, artwork, China storefront link).
@@ -200,11 +200,16 @@ def douban(path: str, retry: bool = True):
         raise
 
 
-TMDB_POSTER_LIMIT = 4
+TMDB_POSTER_LIMIT = 4  # downloads per language and aspect-ratio group
+MIN_POSTER_FRAME_FIT = 0.9
 
 
-def strict_poster_ratio(width, height) -> bool:
-    return type(width) is int and type(height) is int and width > 0 and height > 0 and width * 3 == height * 2
+def poster_frame_fit(width, height) -> float:
+    """Fraction of the image visible when covering the site's 2:3 frame."""
+    if type(width) is not int or type(height) is not int or width <= 0 or height <= 0:
+        return 0
+    scaled_width, scaled_height = width * 3, height * 2
+    return min(scaled_width, scaled_height) / max(scaled_width, scaled_height)
 
 
 def tmdb_api(path: str, api_key: str, **params) -> dict:
@@ -252,36 +257,49 @@ def tmdb_movie_id(candidate: dict, api_key: str) -> int:
     return matches.pop()
 
 
+def tmdb_poster_options(posters: list[dict]):
+    groups = {("zh", True): [], ("zh", False): [], ("en", True): [], ("en", False): []}
+    for poster in posters:
+        fit = poster_frame_fit(poster.get("width"), poster.get("height"))
+        group = (poster.get("iso_639_1"), fit == 1)
+        if (group in groups and fit >= MIN_POSTER_FRAME_FIT
+                and re.fullmatch(r"/[A-Za-z0-9]+\.jpg", poster.get("file_path") or "")):
+            groups[group].append((fit, poster))
+    for group in groups.values():
+        ranked = sorted(group, key=lambda option: option[0], reverse=True)
+        for _, poster in ranked[:TMDB_POSTER_LIMIT]:
+            yield poster
+
+
 def tmdb_candidate_poster(candidate: dict, target: Path, api_key: str) -> dict:
     from PIL import Image
 
     movie_id = tmdb_movie_id(candidate, api_key)
     gallery = {"tmdb_id": movie_id, "page_url": f"https://www.themoviedb.org/movie/{movie_id}/images/posters"}
-    images = tmdb_api(f"movie/{movie_id}/images", api_key, include_image_language="zh")
-    options = [poster["file_path"] for poster in images.get("posters") or []
-               if poster.get("iso_639_1") == "zh"
-               and strict_poster_ratio(poster.get("width"), poster.get("height"))
-               and re.fullmatch(r"/[A-Za-z0-9]+\.jpg", poster.get("file_path") or "")]
+    images = tmdb_api(f"movie/{movie_id}/images", api_key, include_image_language="zh,en")
     failures = []
-    for path in options[:TMDB_POSTER_LIMIT]:
+    for poster in tmdb_poster_options(images.get("posters") or []):
+        path = poster["file_path"]
         image_url = f"https://image.tmdb.org/t/p/original{path}"
         try:
             data = fetch(image_url, binary=True)
             with Image.open(BytesIO(data)) as image:
                 width, height = image.size
-                if not strict_poster_ratio(width, height):
-                    failures.append(f"{path}: downloaded image is not 2:3")
+                if (width, height) != (poster["width"], poster["height"]):
+                    failures.append(f"{path}: downloaded dimensions differ from TMDB metadata")
                     continue
+                output_size = (600, round(height * 600 / width))
                 output = BytesIO()
-                image.convert("RGB").resize((600, 900), Image.Resampling.LANCZOS).save(output, "JPEG", quality=80, optimize=True)
+                image.convert("RGB").resize(output_size, Image.Resampling.LANCZOS).save(output, "JPEG", quality=80, optimize=True)
         except (OSError, ValueError, Image.DecompressionBombError) as exc:
             failures.append(f"{path}: {exc}")
             continue
         target.write_bytes(output.getvalue())
-        return {**gallery, "status": "ready", "image_url": image_url, "language": "zh",
-                "original_width": width, "original_height": height, "width": 600, "height": 900,
+        return {**gallery, "status": "ready", "image_url": image_url, "language": poster["iso_639_1"],
+                "original_width": width, "original_height": height, "width": output_size[0], "height": output_size[1],
                 "download_failures": failures}
-    reason = "Could not download a usable TMDB poster" if options else "No strict 2:3 Chinese-language TMDB poster"
+    reason = ("Could not download a usable TMDB poster" if failures
+              else "No Chinese- or English-language TMDB poster fits the 2:3 frame")
     return {**gallery, "status": "unavailable", "reason": reason, "download_failures": failures}
 
 
@@ -327,11 +345,11 @@ def collect_movies(months, errors) -> list[dict]:
                    "directors": [d.get("name") for d in j.get("directors") or []],
                    "actors": [a.get("name") for a in (j.get("actors") or [])[:3]],
                    "score": r.get("value"), "votes": r.get("count"), "comments": j.get("comment_count"),
-                   "null_rating_reason": j.get("null_rating_reason"), "poster_url": (j.get("pic") or {}).get("large")})
+                   "null_rating_reason": j.get("null_rating_reason")})
         it["in_window"] = bool(mainland and (mainland.year, mainland.month) in window)
     for it in out:
         it["heat_ok"] = max(it.get("wish") or 0, it.get("votes") or 0) >= MOVIE_HEAT
-    # 新候选优先查 TMDB 中文海报，不可用时回退当前豆瓣主海报。
+    # 新候选海报统一从 TMDB 下载，缺图的原因保留在候选数据中。
     api_key = os.environ.get("TMDB_API_KEY", "").strip()
     (CAND / "posters").mkdir(parents=True, exist_ok=True)
     for it in out:
@@ -354,17 +372,6 @@ def collect_movies(months, errors) -> list[dict]:
             it["poster_source"] = "tmdb"
             continue
         errors.append(f"TMDB poster {it['sid']}: {meta['reason']}")
-        if not it.get("poster_url"):
-            continue
-        try:
-            data = fetch(it["poster_url"], {"Referer": "https://m.douban.com/"}, binary=True)
-            if data[:3] != b"\xff\xd8\xff":
-                raise ValueError("not a JPEG")
-            target.write_bytes(data)
-            it["poster_file"] = f"candidates/posters/{target.name}"
-            it["poster_source"] = "douban_main"
-        except (OSError, ValueError) as exc:
-            errors.append(f"douban main poster {it['sid']}: {exc}")
     return out
 
 

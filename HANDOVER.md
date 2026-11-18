@@ -274,13 +274,13 @@ GPT 和 Kimi 两位 agent 都是项目负责人，地位对等，不设单一集
 
 电影海报框固定为 **2:3**，页面用 `object-fit: cover`；源图不是 2:3 时会被裁切。`poster` 指向 `img/` 里的本地文件，存进仓库前缩到 600px 宽、JPEG 质量 80 左右（每张约 50–190KB）。豆瓣原图常是 1080px、300–500KB，直接放进来会让页面变重；`check_data.py` 对超过 220KB 的本地封面和海报会提醒。
 
-### 电影海报优先查 TMDB，发布前复核画面
+### 电影海报统一从 TMDB 获取，发布前复核画面
 
 1. `monthly-prep.yml` 通过仓库的 Actions Secret `TMDB_API_KEY` 读取 TMDB v3 API Key，并安装 Pillow。豆瓣仍提供影片、内地档期和评分。已有 `img/movie_<sid>.jpg` 的影片沿用正式海报。
-2. 用豆瓣片名、原名和原始发行年份查 TMDB，只有唯一的同名同年结果才继续。选择标记为中文的海报，最多下载四张。公开海报库可按地区查看，API 的中文标签涵盖多个地区，发布前要核对是否为内地版。
-3. 同时校验 TMDB 元数据和下载图片的实际尺寸，须满足 `width × 3 == height × 2`。合格图等比缩放到 600×900，存为质量约 80 的 JPEG，保留完整画面。找不到合格图、匹配有歧义或接口不可用时，原样保存豆瓣当前主海报作为备用。
-4. 候选文件仍为 `candidates/posters/movie_<sid>.jpg`。`poster_source` 记录 `tmdb`、`douban_main` 或 `existing`，`poster_gallery` 记录 TMDB 影片 ID、海报库、图片地址、尺寸或失败原因。电影页脚提供 TMDB 署名。失败原因也会写入 `errors`。
-5. Kimi 在提交发布清单前打开候选图，核对影片、现片名和地区，并查看 `poster_source` / `poster_gallery`。《我们仅有一次的人生》原名《余烬》，须核对海报上的现片名。需要补查内地版时，优先看片方、发行方或同一影片的豆瓣 `type=R` 海报页。发布后查看桌面和手机页面的裁切。
+2. 用豆瓣片名、原名和原始发行年份查 TMDB，只有唯一的同名同年结果才继续。选图顺序是严格 2:3 的中文海报、接近 2:3 的中文海报、英文海报。英文同样先选严格 2:3，再选接近 2:3。相近比例按网页填满 2:3 框时至少能保留原图 90% 的画面来判断，每种语言和比例分组最多尝试下载四张。
+3. 校验 TMDB 元数据和实际下载尺寸一致，将图片等比缩放到 600px 宽，保存为质量约 80 的 JPEG。严格 2:3 的输出是 600×900。遇到比例接近的图片，下载文件保留完整画面，由网页在 2:3 的框内显示。
+4. 候选文件为 `candidates/posters/movie_<sid>.jpg`。`poster_source` 记录 `tmdb` 或 `existing`，`poster_gallery` 记录 TMDB 影片 ID、海报库、图片地址、语言和尺寸。查询失败或找不到合格图时，原因写入 `poster_gallery` 和 `errors`，候选保留为缺图，后续从 TMDB 补查。电影页脚提供 TMDB 署名。
+5. Kimi 在提交发布清单前打开候选图，核对影片、现片名和地区，并查看 `poster_source` / `poster_gallery`。TMDB 的中文标签涵盖多个地区，可在其公开海报库中比较内地、香港和台湾版本。《我们仅有一次的人生》原名《余烬》，须核对海报上的现片名。发布后查看桌面和手机页面的裁切。
 6. 要在云端单独验证 TMDB，在手动运行月度准备工作流时填写 `tmdb_test_sids`，填 `candidates/latest.json` 里一个或多个豆瓣 ID，以空格分隔。验证只下载到临时目录并输出结果，工作流跳过候选刷新和提交。
 
 候选顺序：`cover_img`、Steam、Nintendo、PlayStation，加载失败再换下一张。刷新价格时不能把已验证的 `cover_img` 盖回不适配的外链。外链必须返回真正的图片；只有一个来源时更要检查。
@@ -399,9 +399,9 @@ release-calendar/
 │  ├─ test_apply_publication.py 发布清单的新增、更新、删除、幂等与失败回滚测试
 │  ├─ test_month_tabs.js   月份、偏好持久化和隐藏页可访问性检查
 │  ├─ test_game_cover.js   封面优先级、图片比例和标题处理检查
-│  ├─ test_movie_posters.py TMDB 影片匹配、严格 2:3 筛选、主海报回退、等比缩放测试（需要 Pillow）
+│  ├─ test_movie_posters.py TMDB 影片匹配、语言和比例优先级、缺图、等比缩放测试（需要 Pillow）
 │  ├─ update_scores.py     现有评分及 Steam 国区价格刷新；--dry-run 不写文件
-│  └─ monthly_prep.py      每月准备：滚动窗口、抓候选；TMDB 中文海报优先、豆瓣主海报回退；--today 测试日期
+│  └─ monthly_prep.py      每月准备：滚动窗口、抓候选、从 TMDB 下载海报；--today 测试日期
 ├─ candidates/             每月准备数据（latest.json、posters/）和发布清单（publish.json），不被页面读取
 ├─ .github/workflows/
 │  ├─ daily-scores.yml     每日数据刷新，实际变化才提交
@@ -463,7 +463,7 @@ release-calendar/
 
 北京时间每月 1 日 09:00 保留上月已发布清单，重新整理本月与下月，游戏、电影和音乐都要整理（游戏按 §4、音乐按 §4A、电影按 §4B）。2026-11-12 起分三步：
 
-1. **GitHub Actions 准备**（`.github/workflows/monthly-prep.yml` → `scripts/monthly_prep.py`，每月 1 日和 15 日 00:05 北京时间，也可手动触发）：把三份 JSON 滚动到新的三个月窗口，去掉过期月份、补空的新下月并保留已有条目。把豆瓣上映 / 即将上映、Apple Music、Metacritic、Wikipedia 和 iTunes 候选信息写入 `candidates/latest.json`。热度过线的影片按 §6 优先从 TMDB 下载严格 2:3 中文海报，豆瓣主海报作为备用，文件存入 `candidates/posters/`。单个来源失败记入 `errors`，其余来源照常收集。收录名单由下一步的 Kimi 定时任务决定。
+1. **GitHub Actions 准备**（`.github/workflows/monthly-prep.yml` → `scripts/monthly_prep.py`，每月 1 日和 15 日 00:05 北京时间，也可手动触发）：把三份 JSON 滚动到新的三个月窗口，去掉过期月份、补空的新下月并保留已有条目。把豆瓣上映 / 即将上映、Apple Music、Metacritic、Wikipedia 和 iTunes 候选信息写入 `candidates/latest.json`。热度过线的影片按 §6 从 TMDB 下载海报，依次选严格 2:3 中文、接近 2:3 中文和合适比例的英文，文件存入 `candidates/posters/`。单个来源失败记入 `errors`，其余来源照常收集。收录名单由下一步的 Kimi 定时任务决定。
 2. **Kimi 定时任务挑选并提交清单**：每月 1 日、15 日 09:00 读 `candidates/latest.json`，按 §4 / §4A / §4B 挑选、补查并补齐完整字段，只提交 `candidates/publish.json` 里的本次变化。电影发布前必须打开候选海报复核画面，并查看 `poster_source` / `poster_gallery`，不能假定 Actions 已识别旧片名或错片。不要直接改三份正式 JSON，不要在本地下载或提交电影海报，也不要删除候选海报。月中只核对本月和下月，不动上月。
 3. **GitHub Actions 统一发布**：`publish-selection.yml` 监听 `main` 上 `candidates/publish.json` 的变化，也可手动 `workflow_dispatch` 重跑。它调用 `scripts/apply_publication.py`，合并条目、移动海报、运行确定性回归检查，然后只用一个提交同时写入正式数据、必要图片和已清空的清单。失败不提交；成功后的空清单变化可能再触发一次无改动复核，这是正常保护。
 
