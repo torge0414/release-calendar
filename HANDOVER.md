@@ -17,7 +17,7 @@
 | 主分支 | `main` |
 | 部署 | GitHub Pages，`main` 分支根目录，legacy 构建；推送 `main` 即触发构建 |
 | 技术 | 单个 `index.html`（内联 CSS / JS）直接读取同目录的 `releases.json`、`movies.json`、`albums.json`；Python 脚本维护数据；GitHub Actions 每日刷新。没有 npm 构建、前端框架或后端数据库 |
-| 工作仓库 | 本机 `H:\Release Calendar\release-calendar` 由 Kimi 使用；Claude 在云端会话里单独 clone 远端工作（见 §2、§12、§13） |
+| 工作仓库 | 本机 `H:\Release Calendar\release-calendar` 供 Codex 和 Kimi 使用。纯文本变更也可通过各自的 GitHub 连接完成（见 §2、§12、§13） |
 | 内容窗口 | 上月、本月、下月，共三个连续月份 |
 | 页面分类 | 游戏、电影、音乐（音乐 2026-10-15 起，收专辑和 EP；2026-10-14 删除的旧版音乐数据和做法不恢复，见 §3、§4A） |
 | 用户 | Torge，设计师。视觉细节要逐项对着真实页面看，不能只看代码 |
@@ -36,11 +36,11 @@
 
 ## 2. 负责人与协作
 
-Claude 和 Kimi 两位 agent 都是项目负责人，**Claude 总负责**（2026-11-20 用户确认；GPT 不再参与本项目）。两位都可以按用户要求修改、验收并发布。Claude 负责统筹分工、维护本文、在用户已确认的要求范围内处理两位之间的冲突，并对整体线上状态负责；需要改变收录口径、产品范围或权限的事项仍由用户决定。
+Codex 和 Kimi 两位 agent 都可以按用户要求修改、验收并发布。2026-11-20 用户确认由 **Codex 总负责**，接手 Claude 的项目维护职责，包括统筹分工、维护本文、按用户已确认的要求协调冲突，以及对整体线上状态负责。改变收录口径、产品范围或权限仍由用户决定。
 
 | 事项 | 负责方 |
 | --- | --- |
-| 每月 1 日精选与每月 15 日中途更新（名单整理） | Claude（2026-11-11 至 11-19 曾由 Kimi 的定时任务执行；2026-11-20 起由 Claude 的定时任务「Release Calendar 月度名单整理」执行，见 §10） |
+| 每月 1 日精选与每月 15 日中途更新（名单整理） | Codex 定时任务「Release Calendar 月度名单整理」（2026-11-20 从 Claude 接手，见 §10） |
 | 用户交给某一位的具体任务 | 接到任务的一方，从改动、验证到发布全程负责 |
 | 每日评分与 Steam 价格 | 现有 GitHub Actions，两位都不另建 |
 
@@ -49,14 +49,14 @@ Claude 和 Kimi 两位 agent 都是项目负责人，**Claude 总负责**（2026
 - 谁改动，谁负责验收和发布。发布前同步远端，确认没有覆盖另一位或每日机器人的提交。
 - 每项任务开始时明确：目标、基准提交、允许改动的文件或函数、验收标准、是否涉及数据与发布。
 - `index.html` 是主要冲突点。两位都要改它时，先后进行；确需并行，就在独立分支或 `git worktree` 里做范围明确的补丁，由后完成的一方负责合并并告知对方。
-- Kimi 使用本机 `H:\Release Calendar\release-calendar`；Claude 在云端会话里 clone 远端，不在本机 checkout 上提交。在本机 checkout 上工作时，开始前先 `git status` 看有没有未提交的改动；不同时切换分支；不覆盖别人的未提交改动；不暂存或提交不认识的文件。
+- Codex 和 Kimi 使用同一本机 checkout `H:\Release Calendar\release-calendar`。本地工作前用 `git status` 查看未提交改动，确认归属。切换分支前先协调，保留他人的未提交改动，只暂存和提交自己负责的文件。
 - 需要本地修改时，**动手前先同步远端基准**：先 `git fetch origin`，核对 `HEAD` 与 `origin/main`；工作区干净且本地没有未推送提交时，先 `git pull --ff-only` 再改。已有未提交改动时先辨认归属并备份，不能为了拉取而覆盖。发布后或隔了一段时间再继续改，也要重新 fetch，不能假定本地仍是最新。
 - `candidates/latest.json` 只是候选快照，不是线上正式名单。判断作品是否已发布必须查远端 `releases.json`、`movies.json` 或 `albums.json`；不能因为本地旧 HEAD 或本地 `img/` 缺文件，就认定线上也没有。2026-11-16 曾因此重复补入线上已有的《饥饿游戏：收获日出》，此后先核对远端再动手。
 - 前端任务尽量不碰 JSON；数据任务只提交发布清单；采集任务分清每日字段刷新和月度名单编辑。每日机器人仍会写 `main`，分工不能消除这个并发来源。
-- 每月名单整理由 Claude 的定时任务负责。Kimi 不再做月度名单，也不另建月度写入任务；Kimi 原有的月度定时任务已于 2026-11-20 由用户关闭，不要重新开启，也不能和 Claude 的任务同时运行。Kimi 发现名单问题时记录下来，交给 Claude 或用户。
+- 每月名单由 Codex 定时任务整理。Kimi 的旧任务已关闭，Claude 的任务已由用户确认暂停，月度名单只由 Codex 的这一项定时任务写入。Kimi 发现名单问题时记录下来，交给 Codex 或用户。
 - 每次交付说明：基准和成果提交、改了哪些文件或函数、实际行为变化、运行过的检查、浏览器证据、未验证的事项和已知限制。遇到规格冲突，先描述具体差异，不静默改回旧版本。
 
-只读本文不产生新的产品需求。除每月精选由 Claude 负责外，其他具体事项等用户分配；没有任务时可以先检查环境、理解代码、记录问题，但不要就此提交、推送或新建定时任务。
+只读本文不产生新的产品需求。除每月精选由 Codex 负责外，其他具体事项等用户分配；没有任务时可以先检查环境、理解代码、记录问题，但不要就此提交、推送或新建定时任务。
 
 ## 3. 用户已确认的要求
 
@@ -461,17 +461,17 @@ release-calendar/
 
 只能手动触发（Actions 页面的「Check displayed images」），运行 `check_data.py --images`，不修改内容。图片检测只能发现疑似失效链接，不能代替浏览器里的视觉检查。
 
-## 10. 每月 1 日精选与月中更新（Claude 负责）
+## 10. 每月 1 日精选与月中更新（Codex 负责）
 
 北京时间每月 1 日 09:00 保留上月已发布清单，重新整理本月与下月，游戏、电影和音乐都要整理（游戏按 §4、音乐按 §4A、电影按 §4B）。2026-11-12 起分三步：
 
-1. **GitHub Actions 准备**（`.github/workflows/monthly-prep.yml` → `scripts/monthly_prep.py`，每月 1 日和 15 日 00:05 北京时间，也可手动触发）：把三份 JSON 滚动到新的三个月窗口，去掉过期月份、补空的新下月并保留已有条目。把豆瓣上映 / 即将上映、Apple Music、Metacritic、Wikipedia 和 iTunes 候选信息写入 `candidates/latest.json`。热度过线的影片按 §6 从 TMDB 下载海报，依次选严格 2:3 中文、接近 2:3 中文和合适比例的英文，文件存入 `candidates/posters/`。单个来源失败记入 `errors`，其余来源照常收集。收录名单由下一步的 Claude 定时任务决定。
-2. **Claude 定时任务挑选并提交清单**（claude.ai 的定时任务「Release Calendar 月度名单整理」，`CRON_TZ=Asia/Shanghai 0 9 1,15 * *`，每次在新的云端会话中运行，完成后推送报告给用户）：每月 1 日、15 日 09:00 读 `candidates/latest.json`，按 §4 / §4A / §4B 挑选、补查并补齐完整字段，只提交 `candidates/publish.json` 里的本次变化。电影发布前必须打开候选海报复核画面，并查看 `poster_source` / `poster_gallery`，不能假定 Actions 已识别旧片名或错片。不要直接改三份正式 JSON，不要在本地下载或提交电影海报，也不要删除候选海报。月中只核对本月和下月，不动上月。
+1. **GitHub Actions 准备**（`.github/workflows/monthly-prep.yml` → `scripts/monthly_prep.py`，每月 1 日和 15 日 00:05 北京时间，也可手动触发）：把三份 JSON 滚动到新的三个月窗口，去掉过期月份、补空的新下月并保留已有条目。把豆瓣上映 / 即将上映、Apple Music、Metacritic、Wikipedia 和 iTunes 候选信息写入 `candidates/latest.json`。热度过线的影片按 §6 从 TMDB 下载海报，依次选严格 2:3 中文、接近 2:3 中文和合适比例的英文，文件存入 `candidates/posters/`。单个来源失败记入 `errors`，其余来源照常收集。收录名单由下一步的 Codex 定时任务决定。
+2. **Codex 定时任务挑选并提交清单**（Codex 的「Release Calendar 月度名单整理」，在本机项目 `H:\Release Calendar` 中以独立任务运行，完成后向用户汇报）：每月 1 日、15 日 09:00 读 `candidates/latest.json`，按 §4 / §4A / §4B 挑选、补查并补齐完整字段，只提交 `candidates/publish.json` 里的本次变化。电影发布前必须打开候选海报复核画面，并查看 `poster_source` / `poster_gallery`，不能假定 Actions 已识别旧片名或错片。不要直接改三份正式 JSON，不要在本地下载或提交电影海报，也不要删除候选海报。月中只核对本月和下月，不动上月。
 3. **GitHub Actions 统一发布**：`publish-selection.yml` 监听 `main` 上 `candidates/publish.json` 的变化，也可手动 `workflow_dispatch` 重跑。它调用 `scripts/apply_publication.py`，合并条目、移动海报、运行确定性回归检查，然后只用一个提交同时写入正式数据、必要图片和已清空的清单。失败不提交；成功后的空清单变化可能再触发一次无改动复核，这是正常保护。
 
 发布工作流声明 `pages: write`，并在推送步骤后无条件调用 `POST /repos/{owner}/{repo}/pages/builds`。`GITHUB_TOKEN` 推送本身不会触发 legacy Pages，所以常规数据更新不能再依赖伴随的手册提交顺带部署；空清单手动重跑也会请求 Pages 构建。2026-11-12 在工作流提交 `2400589` 上实测：手动发布 run `43166576285` 全部步骤成功（包括 `Request GitHub Pages build`），随后独立 Pages run `43166591814` 成功，`head_sha` 为 `24005893e16d3c952311d337ce635fd278f22cd3`。
 
-仓库里没有能自己判断收录作品的程序，也不要加。挑选由 Claude 的定时任务完成，确定性合并和发布由 Actions 完成。2026-10-06 曾加过 `.github/workflows/monthly-curate.yml`，用户随即要求回退（`66f63e4` → `0cd00ce`）；不要恢复它，也不要另建第二套月度写入任务。
+仓库里没有能自己判断收录作品的程序，也不要加。挑选由 Codex 的定时任务完成，确定性合并和发布由 Actions 完成。2026-10-06 曾加过 `.github/workflows/monthly-curate.yml`，用户随即要求回退（`66f63e4` → `0cd00ce`）；不要恢复它，也不要另建第二套月度写入任务。
 
 ### 发布清单格式
 
@@ -524,9 +524,9 @@ Python 脚本通常只用标准库，建议 Python 3.12（与 Actions 一致）�
 
 ## 12. 提交与发布
 
-- Claude 的远端写入方式（2026-11-20 起）：用户在 claude.ai 的 GitHub 连接里授权本仓库，Claude 在云端会话里挂上仓库（push 权限）、浅 clone 后用普通 `git commit` / `git push` 写 `main`，用 `gh` 查看 Actions。不使用用户本机的 GitHub CLI 凭据、PAT 或 SSH 密钥，也不在本机 checkout 上提交。会话授权被拒绝时停止并请用户授权，不要绕过。
+- Codex 的远端写入方式（2026-11-20 起）：通过已连接的 GitHub 读取并提交单个文本文件，需要本地测试或处理图片时按本节同步并使用本机仓库。按任务范围使用已有授权。
 - Kimi 的远端写入方式（2026-11-12 核实）：账号的 Authorized OAuth Apps 中是 MoonshotAI 的 `Kimi GitHub Plugin`，不是 Installed GitHub Apps；现有权限为仓库和用户资料，没有 `workflow`。普通文本文件通过 Kimi GitHub 插件读写；不要回退到本机 GitHub CLI 的个人 OAuth / PAT 或个人 SSH 凭据。此要求不改变其他 agent 和现有 Actions 的授权方式。
-- 纯远端协作（2026-11-11 用户确认）：不需要本地测试、图片处理或多文件差异审阅的修改，可以直接在远端（Claude 的云端会话或 Kimi GitHub 插件）读取、提交并验证，不要求回拉或更新本机 checkout。本机副本可以是旧版本；需要本机工作时再按本节同步，不能以本机 HEAD 判断远端最新状态。
+- 纯远端协作（2026-11-11 用户确认）：不需要本地测试、图片处理或多文件差异审阅的修改，可以直接在远端（Codex 或 Kimi 的 GitHub 连接）读取、提交并验证，不要求回拉或更新本机 checkout。本机副本可以是旧版本；需要本机工作时再按本节同步，不能以本机 HEAD 判断远端最新状态。
 - 只暂存任务相关的文件，不要 `git add .`。
 - 推送前 `git fetch origin`，看远端有没有每日机器人或另一位 agent 的新提交；有就 `git merge` 接上，解决冲突后再推。
 - 不要强推、`reset --hard`，也不要用旧 JSON 覆盖机器人刚写入的数据。需要旧实现时用 git 历史查看。
@@ -539,7 +539,7 @@ Python 脚本通常只用标准库，建议 Python 3.12（与 Actions 一致）�
 
 ## 13. 本机环境（仅适用于 Torge 的 Windows 电脑）
 
-- 工作仓库：`H:\Release Calendar\release-calendar`，Kimi 使用（Claude 在云端单独 clone）。`C:\Users\Torge\release-calendar` 是旧副本，不在上面工作。
+- 工作仓库：`H:\Release Calendar\release-calendar`，Codex 和 Kimi 共用。`C:\Users\Torge\release-calendar` 是旧副本，不在上面工作。
 - 外层 `H:\Release Calendar` 不是 Git 仓库，放着本机辅助脚本和检查产物：
   - `qa-safari-serif.cjs`、`qa-view-switch.cjs`、`qa-month-glider.cjs`、`qa-digit-font.cjs` 等是浏览器检查脚本；
   - `score-review/` 是历史截图和测量结果，不能当成当前版本的验收证据；
@@ -597,4 +597,4 @@ Python 脚本通常只用标准库，建议 Python 3.12（与 Actions 一致）�
 >
 > 网站是原生单页加三份 JSON，没有 npm 构建，只维护上月、本月、下月的游戏精选、内地院线电影和音乐精选（欧美主流女歌手加 K-pop 女团的专辑和 EP，不收男歌手，不显示评分）。旧版音乐数据不要恢复。保持当前的月份目录页头、860px 共用栏宽、460×215 游戏封面、齐线衬线评分，以及手机触摸和可访问性规则。不要恢复旧视觉。
 >
-> Claude 和 Kimi 都是项目负责人，Claude 总负责；谁改动谁负责验收发布；每月精选和月中更新由 Claude 的定时任务负责。Kimi 在本机 `H:\Release Calendar\release-calendar` 工作，Claude 在云端 clone 远端；先分清任务和文件，避免同时改 `index.html`。名单任务只提交 `candidates/publish.json`，由 Actions 统一合并正式 JSON 和电影海报。提交前跑五项基础检查，样式改动看真实桌面、手机和两种主题，主题 / 字体改动补 WebKit 双向切换。每日 Actions 会提交评分和 Steam 价格，所有写 `main` 的工作流共用互斥组，禁止强推和覆盖新数据。不要自行新建第二套月度任务或扩大清单。
+> Codex 总负责，Kimi 继续参与。谁改动谁负责验收发布。每月精选和月中更新由 Codex 的定时任务负责。Codex 和 Kimi 共用本机 `H:\Release Calendar\release-calendar`，先分清任务和文件，避免同时改 `index.html`。名单任务只提交 `candidates/publish.json`，由 Actions 统一合并正式 JSON 和电影海报。提交前跑五项基础检查，样式改动看真实桌面、手机和两种主题，主题 / 字体改动补 WebKit 双向切换。每日 Actions 会提交评分和 Steam 价格，所有写 `main` 的工作流共用互斥组，禁止强推和覆盖新数据。不要自行新建第二套月度任务或扩大清单。
