@@ -5,11 +5,78 @@
     "remove": []
   },
   "movies": {
-    "upsert": [],
+    "upsert": [
+      {
+        "title": "心迷宫之三重罪",
+        "sid": "37295792",
+        "url": "https://movie.douban.com/subject/37295792/",
+        "month": 11,
+        "day": 7,
+        "date": "2026-11-07",
+        "score": 5.9,
+        "votes": 5697,
+        "poster": "img/movie_37295792.jpg",
+        "info": "2026 / 中国大陆 / 悬疑 犯罪 / 何念 / 姜武 杜光祎 顾鑫",
+        "directors": [
+          "何念"
+        ],
+        "actors": [
+          "姜武",
+          "杜光祎",
+          "顾鑫"
+        ],
+        "year": 2026,
+        "genres": [
+          "悬疑",
+          "犯罪"
+        ],
+        "director": "何念"
+      },
+      {
+        "title": "泥面人",
+        "sid": "37154591",
+        "url": "https://movie.douban.com/subject/37154591/",
+        "month": 11,
+        "day": 27,
+        "date": "2026-11-27",
+        "score": 8,
+        "votes": 6956,
+        "poster": "img/movie_37154591.jpg",
+        "info": "2026 / 美国 / 动作 惊悚 奇幻 / 詹姆斯·瓦特金斯 / 汤姆·里斯·哈里斯 娜奥米·托德 大卫·丹席克",
+        "directors": [
+          "詹姆斯·瓦特金斯"
+        ],
+        "actors": [
+          "汤姆·里斯·哈里斯",
+          "娜奥米·托德",
+          "大卫·丹席克"
+        ],
+        "year": 2026,
+        "genres": [
+          "动作",
+          "惊悚",
+          "奇幻"
+        ],
+        "director": "詹姆斯·瓦特金斯"
+      }
+    ],
     "remove": []
   },
   "albums": {
-    "upsert": [],
+    "upsert": [
+      {
+        "title": "Unspecial",
+        "artist": "TAEYEON",
+        "date": "2026-11-30",
+        "year": 2026,
+        "month": 11,
+        "day": 30,
+        "kind": "LP",
+        "apple_id": "6835781570",
+        "apple_url": null,
+        "art": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/92/56/b1/9256b135-a929-bfc4-607a-b37dd3ea74cc/888735957604.png/600x600bb.jpg"
+      }
+    ],
     "remove": []
   }
 }
