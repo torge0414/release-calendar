@@ -6,11 +6,12 @@ const vm = require('node:vm');
 const root = path.join(__dirname, '..');
 const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 const context = {
-  today: new Date(2026, 9, 1),
   document: {createElement: () => ({classList: {add() {}}, querySelector: () => ({textContent: ''})})},
   esc: s => String(s), phColor: () => '#000', firstChar: () => 'D'
 };
 vm.createContext(context);
+vm.runInContext(html.slice(html.indexOf('const DAY_MS'), html.indexOf('/* 平台官方矢量')) +
+  '\ntoday = readBeijingDay(new Date("2026-10-01T04:00:00Z"));', context);
 vm.runInContext(html.slice(html.indexOf('const PICONS'), html.indexOf('function phColor')), context);   // card() 依赖内联平台图标表
 vm.runInContext(html.slice(html.indexOf('function card('), html.indexOf('function firstChar(')), context);
 vm.runInContext(html.slice(html.indexOf('function ckw('), html.indexOf('/* ---------- 电影')), context);

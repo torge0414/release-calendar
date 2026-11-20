@@ -299,7 +299,7 @@ Codex 和 Kimi 两位 agent 都可以按用户要求修改、验收并发布。2
 
 《Fire Emblem: Fortune's Weave》修过封面加载，保留现有优先封面和兜底。
 
-图片按需加载（2026-10-14 起）：卡片里的 `<img>` 只写 `data-src`，当前视图的当前月份显示时由 `wakeVisible()` 换成 `src`，1.5 秒后再预载同一视图的其他月份；另一个视图切过去才加载。原因是隐藏的月份和视图叠在首屏位置，单靠 `loading="lazy"` 会被浏览器当成可见，一打开就把三个月、两个视图的图全部下载（原来约 4.9MB，现在手机首屏约 0.3MB）。新增卡片或改图片写法时保持 `data-src`。
+图片按需加载：卡片里的 `<img>` 只写 `data-src`。`wakeVisible()` 在当前分类的当前月份显示时才写入 `src`。其余月份和分类切过去才加载封面。隐藏页叠在首屏位置，仅靠 `loading="lazy"` 会提前下载图片。新增卡片时保留 `data-src`。
 
 页面不再引用的本地图片直接删除（2026-10-14 删掉了 4 张已剔除旧作的封面和 4 张音乐图片）。
 
@@ -381,7 +381,8 @@ Codex 和 Kimi 两位 agent 都可以按用户要求修改、验收并发布。2
 - 隐藏的类别和月份页用 `inert` 和 `aria-hidden="true"` 退出键盘与读屏导航，切换开始即更新，保留原有淡出动画。月份和类别按钮用 `aria-pressed` 表示选择。键盘焦点用 `focus-visible` 描边，不要拿掉。
 - 手机（≤640px）月份、类别按钮和平台、评分链接的点击范围至少 44×44px。主题按钮保留原尺寸，用伪元素把触摸高度扩到 45px。检查扩展后的范围有没有重叠或被附近文字挡住。
 - 手机上在列表区左右滑动可以换月（左滑看下一个月），距屏幕左右边缘 24px 以内的触摸不算，留给系统返回手势。列表底部不放换月按钮（2026-10-14 试加后按用户要求去掉）。
-- 启动时 `#boot` 盖住页面。游戏、电影和音乐数据在启动时都会请求并预渲染，任一份到位后 `paint()` 重建共享月份界面，内容画完 `#boot` 才退出。验收时等它消失再看布局。
+- 启动时 `#boot` 盖住页面。三份 JSON 并发请求，每个分类复用进行中的请求并单独渲染。月份页签始终共用同一组按钮。当前分类完成加载或显示错误后退出遮罩。验收时等遮罩消失再看布局。
+- 月份、倒计时和电影上映天数按北京时间计算。到北京时间午夜或页面恢复时重新核对日期。跨月后仍显示上月、本月、下月，缺少新月份数据时按间隔重新读取正式清单。
 
 ## 8. 代码入口
 
@@ -419,14 +420,14 @@ release-calendar/
 
 | 函数 | 作用 |
 | --- | --- |
-| `refresh()` / `refreshMovies()` | 获取 JSON、错误提示与渲染 |
+| `refreshPanel()` / `loadPanel()` | 分类请求去重、错误提示和独立渲染 |
 | `moveGlider()` | 页签下划线定位及移动 |
 | `setPageActive()` / `tabbed()` | 隐藏页可访问性、三个月页签、共享月份、会话内记住月份、滑动入口 `_switchBy` |
-| `wakeImages()` / `wakeVisible()` | 图片按需加载 |
+| `wakeVisible()` | 只加载当前分类当前月份的图片 |
 | `hideBoot()` | 等标题字体（最多 1.2 秒）后揭开启动遮罩 |
 | `stackFit()` | 同步容器高度，防止切换时裁切或塌陷 |
 | `animSwap()` / `animFade()` | 月份滑动、类别淡入淡出 |
-| `state`、`paint()` | 数据状态、两类内容共同渲染 |
+| `readBeijingDay()` / `syncCalendarDate()` | 北京日期、跨日更新和月份数据重查 |
 | `scoreLink()` | 把评分拆成固定宽度数字格 |
 | `card()` / `gameTitle()` | 游戏行和中文标题显示处理 |
 | `cf()` / `ckw()` | 封面失败兜底和超宽图标记 |
@@ -435,7 +436,7 @@ release-calendar/
 
 测试通过源码边界切出片段单独运行，移动或重构函数时要同步调整测试：
 
-- `scripts/test_month_tabs.js` 切出 `function setPageActive(` 到 `function showCredit(`，依赖自由变量 `PAGE_CLASSES`、`animSwap`、`moveGlider`、`stackFit`、`esc`、`today`、`document`、`window`、`sessionStorage`。它还检查滑动入口 `_switchBy`。
+- `scripts/test_month_tabs.js` 切出北京时间、月份控制、图片加载和分类请求的源码片段，测试跨年、滑动入口 `_switchBy`、隐藏页、按需加载和请求去重。
 - `scripts/test_game_cover.js` 切出 `function card(` 到 `function firstChar(`，以及 `function ckw(` 到第一个 `/* ---------- 电影` 注释（所以样式表里的区块注释不能用这个开头）。`gameTitle()` 必须留在这一段里；`scoreLink()` 在 `card()` 前面，测试条目没有 `mc`，不会调用它。
 
 ## 9. 每日自动化

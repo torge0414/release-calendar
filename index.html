@@ -370,7 +370,33 @@ const $ = s => document.querySelector(s);
 const PALS = [['#0071e3','#0a58a5'],['#af52de','#6d2fa8'],['#ff375f','#b0183a'],
   ['#34c759','#1e7a3e'],['#ff9f0a','#b26a00'],['#5e5ce6','#3634a8'],
   ['#ff6482','#a81d3a'],['#30b0c7','#1a6a78']];
-const today = new Date();
+const DAY_MS = 86400000;
+const BEIJING_OFFSET_MS = 8 * 3600000;
+const beijingDate = new Intl.DateTimeFormat('en', {
+  timeZone: 'Asia/Shanghai', year: 'numeric', month: 'numeric', day: 'numeric'
+});
+
+function readBeijingDay(now = new Date()){
+  const parts = Object.fromEntries(beijingDate.formatToParts(now).map(({type, value})=>[type, Number(value)]));
+  return new Date(Date.UTC(parts.year, parts.month-1, parts.day));
+}
+
+// A UTC date represents the Beijing calendar day, so day differences never span a DST change.
+let today = readBeijingDay();
+function releaseOffset({year, month, day}){
+  return (Date.UTC(year, month-1, day) - today.getTime()) / DAY_MS;
+}
+function calendarMonths(day){
+  const year = day.getUTCFullYear(), month = day.getUTCMonth();
+  return [-1, 0, 1].map(offset=>{
+    const first = new Date(Date.UTC(year, month+offset, 1));
+    return {year: first.getUTCFullYear(), month: first.getUTCMonth()+1};
+  });
+}
+function monthKey({year, month}){
+  return year + '-' + String(month).padStart(2, '0');
+}
+
 /* 平台官方矢量 logo(simple-icons, CC0): 内联避免外部请求, 颜色跟随标签文字 */
 const PICONS = {
   steam: '<svg class="pi" viewBox="0 0 24 24"><path d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.031 4.524 4.527s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911c0 .052.004.105.004.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.727L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 11.999-5.373 11.999-12S18.605 0 11.979 0zM7.54 18.21l-1.473-.61c.262.543.714.999 1.314 1.25 1.297.539 2.793-.076 3.332-1.375.263-.63.264-1.319.005-1.949s-.75-1.121-1.377-1.383c-.624-.26-1.29-.249-1.878-.03l1.523.63c.956.4 1.409 1.5 1.009 2.455-.397.957-1.497 1.41-2.454 1.012H7.54zm11.415-9.303c0-1.662-1.353-3.015-3.015-3.015-1.665 0-3.015 1.353-3.015 3.015 0 1.665 1.35 3.015 3.015 3.015 1.663 0 3.015-1.35 3.015-3.015zm-5.273-.005c0-1.252 1.013-2.266 2.265-2.266 1.249 0 2.266 1.014 2.266 2.266 0 1.251-1.017 2.265-2.266 2.265-1.253 0-2.265-1.014-2.265-2.265z"/></svg>',
@@ -381,20 +407,6 @@ function phColor(t){ let h=0; for(const c of t) h=(h*31+c.codePointAt(0))>>>0;
   const [a,b]=PALS[h%PALS.length]; return 'linear-gradient(135deg,'+a+','+b+')'; }
 function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 
-async function refresh(){
-  $('#errBox').style.display='none';
-  try{
-    const r = await fetch('releases.json'); const d = await r.json();
-    if(d.error) throw new Error(d.error);
-    render(d);
-  }catch(e){
-    $('#errBox').textContent='获取失败：'+e.message;
-    $('#errBox').style.display='block';
-    showCredit();
-    hideBoot();
-  }
-}
-
 function moveGlider(tabsEl, btn, instant){
   const g = tabsEl.querySelector('.tabg');
   if(!g || !btn) return;
@@ -404,164 +416,176 @@ function moveGlider(tabsEl, btn, instant){
   if(instant){ void g.offsetWidth; g.style.transition = ''; }
 }
 
-/* 通用: 月份页签 + 交叉重叠过渡; panels = [{body, groups, makeCard, unit, footFn}]
-   一份页签可同时控制多个 panel(游戏/电影各自的列表), 切月时两边同步 */
 function setPageActive(page, active){
   page.inert = !active;
   page.setAttribute('aria-hidden', String(!active));
 }
 
 function tabbed(tabsEl, panels){
-  tabsEl.innerHTML = '<span class="tabg"></span>';  // 共享下划线层
-  const tabKey = 'glwTab_' + (tabsEl.id || 'x');
-  const groups = panels[0].groups;
-  const monthKey = g => g.year + '-' + String(g.month).padStart(2, '0');
-  const currentKey = today.getFullYear() + '-' + String(today.getMonth()+1).padStart(2, '0');
-  const currentIdx = Math.max(0, groups.findIndex(g=>monthKey(g)===currentKey));
-  /* 所选月份只在本次浏览里记住（sessionStorage）；重新打开网站总是回到本月 */
-  let savedMonth = '';
-  try { savedMonth = sessionStorage.getItem(tabKey + '_month') || ''; } catch(e) {}
-  const savedIdx = groups.findIndex(g=>monthKey(g)===savedMonth);
-  let curIdx = savedIdx >= 0 ? savedIdx : currentIdx;
-  const labelOf = g => {
-    const relativeMonth = (g.year-today.getFullYear())*12 + g.month-(today.getMonth()+1);
-    return ({'-1':'上月','0':'本月','1':'下月'})[relativeMonth] || (g.year+'年');
-  };
+  const storageKey = 'glwTab_' + (tabsEl.id || 'x') + '_month';
+  const monthDisplay = document.getElementById('mhMn');
+  let months = calendarMonths(today);
+  let savedMonth;
+  try { savedMonth = sessionStorage.getItem(storageKey); } catch(e) {}
+  let curIdx = months.findIndex(month=>monthKey(month) === savedMonth);
+  if(curIdx < 0) curIdx = 1;
 
-  panels.forEach(p=>{
-    p.body.innerHTML = '';
-    const pagesEl = document.createElement('div'); pagesEl.className='pages';
-    p.pagesEl = pagesEl; p.sections = [];
-    p.groups.forEach((g,i)=>{
-      const items = g.games || g.movies || g.albums || [];
-      const sect = document.createElement('div');
-      sect.className = 'sect page' + (i===curIdx ? ' on' : '');
-      setPageActive(sect, i===curIdx);
-      const list = document.createElement('div'); list.className='list' + (p.grid?' mgrid':'');
-      if(!items.length) list.innerHTML='<div class="empty">'+esc(p.emptyText || '该月暂无已定档')+'</div>';
-      else items.forEach(it=>list.appendChild(p.makeCard(it)));
-      sect.appendChild(list);
-      const ft = document.createElement('div'); ft.className = 'pfoot';
-      ft.textContent = p.footFn ? p.footFn(g, items) : '';
-      if(p.body.id === 'movieBody'){
-        ft.insertAdjacentHTML('beforeend', '<div class="poster-credit"><a href="https://www.themoviedb.org/"><img src="img/tmdb-logo.svg" alt="TMDB"></a><span>This product uses the TMDB API but is not endorsed or certified by TMDB.</span></div>');
+  function fitPanel(panel){
+    if(panel.sections && !panel.holdH) panel.pagesEl.style.height = panel.sections[curIdx].offsetHeight + 'px';
+  }
+  function fit(){
+    panels.forEach(fitPanel);
+  }
+
+  function render(panel){
+    clearTimeout(panel.holdTimer);
+    panel.holdH = false;
+    const pages = document.createElement('div');
+    pages.className = 'pages';
+    panel.sections = months.map((month,i)=>{
+      const group = panel.groups.find(g=>g.year === month.year && g.month === month.month);
+      const entries = group?.[panel.key] || [];
+      const items = panel.filter ? entries.filter(panel.filter) : entries;
+      const active = i === curIdx;
+      const section = document.createElement('div');
+      section.className = 'sect page ' + (active ? 'on' : 'off');
+      setPageActive(section, active);
+
+      const list = document.createElement('div');
+      list.className = 'list' + (panel.grid ? ' mgrid' : '');
+      if(items.length) items.forEach(item=>list.appendChild(panel.makeCard(item)));
+      else list.innerHTML = '<div class="empty">'+esc(panel.emptyText || '该月暂无已定档')+'</div>';
+      section.appendChild(list);
+
+      const footer = document.createElement('div');
+      footer.className = 'pfoot';
+      footer.textContent = panel.footer(items.length);
+      if(panel.key === 'movies'){
+        footer.insertAdjacentHTML('beforeend', '<div class="poster-credit"><a href="https://www.themoviedb.org/"><img src="img/tmdb-logo.svg" alt="TMDB"></a><span>This product uses the TMDB API but is not endorsed or certified by TMDB.</span></div>');
       }
-      sect.appendChild(ft);
-      const cr = document.createElement('div'); cr.className = 'credit'; cr.textContent = '@torge';
-      sect.appendChild(cr);
-      pagesEl.appendChild(sect); p.sections.push(sect);
+      section.appendChild(footer);
+      const credit = document.createElement('div');
+      credit.className = 'credit';
+      credit.textContent = '@torge';
+      section.appendChild(credit);
+      pages.appendChild(section);
+      return section;
     });
-    p.body.appendChild(pagesEl);
-    p.sections.forEach((section,i)=>{ if(i!==curIdx) section.classList.add('off'); });
-    p.fit = ()=>{ if(p.holdH) return; if(p.sections[curIdx]) p.pagesEl.style.height = p.sections[curIdx].offsetHeight + 'px'; };
-    p.fit();
+    panel.pagesEl = pages;
+    panel.body.replaceChildren(pages);
+    fitPanel(panel);
+  }
+
+  const buttons = ['上月', '本月', '下月'].map((label,i)=>{
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'tab';
+    button.textContent = label;
+    button.addEventListener('click', ()=>switchTo(i));
+    tabsEl.appendChild(button);
+    return button;
   });
 
-  const fitAll = ()=> panels.forEach(p=>p.fit());
-  /* 两个类别共享所选月份，隐藏页在动画开始时就退出交互。 */
-  const applyIdx = (p, i, animate)=>{
-    const onIdx = p.sections.findIndex(s=>s.classList.contains('on'));
-    const pCur = onIdx >= 0 ? onIdx : 0;
-    if(pCur === i) return;
-    const cur = p.sections[pCur], nxt = p.sections[i];
-    if(!cur || !nxt) return;
-    setPageActive(cur, false);
-    setPageActive(nxt, true);
-    if(animate){
-      /* 动画期间容器按两页里更高的那页撑住: 否则高度立即缩到新页, 旧页多出的部分会被 .pages 的
-         overflow:hidden 直接切掉(表现为"一部分内容没有动效就消失")。640ms 后再收敛到新页高度。 */
-      const h = Math.max(cur.offsetHeight, nxt.offsetHeight);
-      p.holdH = h; p.pagesEl.style.height = h + 'px';
-      clearTimeout(p.holdT);
-      p.holdT = setTimeout(()=>{ p.holdH = 0; p.fit(); stackFit(); }, 640);
-      animSwap(cur, nxt, i > pCur);
-    } else {
-      PAGE_CLASSES.forEach(c=>{ cur.classList.remove(c); nxt.classList.remove(c); });
-      cur.classList.add('off');
-      nxt.classList.add('on');
-    }
-  };
-  const switchTo = (i, animate)=>{
+  function alignTabs(){
+    moveGlider(tabsEl, buttons[curIdx], true);
+  }
+  function updateTabs(animate){
+    if(monthDisplay) monthDisplay.textContent = String(months[curIdx].month).padStart(2, '0');
+    buttons.forEach((button,i)=>{
+      button.classList.toggle('on', i === curIdx);
+      button.setAttribute('aria-pressed', String(i === curIdx));
+    });
+    moveGlider(tabsEl, buttons[curIdx], !animate);
+  }
+
+  function rememberMonth(){
+    try {
+      if(curIdx === 1) sessionStorage.removeItem(storageKey);
+      else sessionStorage.setItem(storageKey, monthKey(months[curIdx]));
+    } catch(e) {}
+  }
+
+  function switchTo(i){
     if(i === curIdx) return;
-    if(animate === undefined) animate = true;
-    panels.forEach(p=>{
-      applyIdx(p, i, animate);
-    });
+    const previous = curIdx;
     curIdx = i;
-    const mhMn = document.getElementById('mhMn');   /* 固定月份标题: 瞬时换字, 不参与交叉动画(避免大号衬线数字叠字) */
-    if(mhMn) mhMn.textContent = String(groups[i].month).padStart(2,'0');
-    try { sessionStorage.setItem(tabKey + '_month', monthKey(groups[i])); } catch(e) {}
-    fitAll();
+    const visible = visibleView();
+    for(const panel of panels){
+      if(!panel.sections) continue;
+      const cur = panel.sections[previous], next = panel.sections[i];
+      setPageActive(cur, false);
+      setPageActive(next, true);
+      clearTimeout(panel.holdTimer);
+      panel.holdH = panel.body.parentElement === visible;
+      if(panel.holdH){
+        // Keep both pages within the container during the existing slide transition.
+        panel.pagesEl.style.height = Math.max(cur.offsetHeight, next.offsetHeight) + 'px';
+        panel.holdTimer = setTimeout(()=>{
+          panel.holdH = false;
+          fitPanel(panel);
+          stackFit();
+        }, 640);
+        animSwap(cur, next, i > previous);
+      } else {
+        cur.classList.remove(...PAGE_CLASSES);
+        next.classList.remove(...PAGE_CLASSES);
+        cur.classList.add('off');
+        next.classList.add('on');
+      }
+    }
+    rememberMonth();
+    updateTabs(true);
+    fit();
     stackFit();
-    if(typeof wakeVisible === 'function') wakeVisible();   /* 新月份的图片此时才加载 */
-    tabsEl.querySelectorAll('.tab').forEach((b,j)=>{
-      b.classList.toggle('on', j===i);
-      b.setAttribute('aria-pressed', String(j===i));
-    });
-    /* 下划线和月份列表一起切换。 */
-    const actBtn = tabsEl.querySelectorAll('.tab')[i];
-    moveGlider(tabsEl, actBtn, !animate);
+    wakeVisible();
+  }
+
+  function updateDay(){
+    const selectedMonth = monthKey(months[curIdx]);
+    const nextMonths = calendarMonths(today);
+    if(monthKey(nextMonths[1]) !== monthKey(months[1])){
+      const selected = nextMonths.findIndex(month=>monthKey(month) === selectedMonth);
+      curIdx = curIdx === 1 || selected < 0 ? 1 : selected;
+      months = nextMonths;
+      rememberMonth();
+      updateTabs(false);
+    }
+    panels.filter(panel=>panel.groups).forEach(render);
+  }
+
+  function hasCurrentWindow(panel){
+    return months.every(month=>panel.groups.some(g=>g.year === month.year && g.month === month.month));
+  }
+
+  // 供手机左右滑动换月调用。
+  tabsEl._switchBy = delta=>{
+    const next = curIdx + delta;
+    if(next >= 0 && next < months.length) switchTo(next);
   };
-
-  /* 供手机左右滑动换月调用 */
-  tabsEl._switchBy = d=>{ const j = curIdx + d; if(j>=0 && j<groups.length) switchTo(j); };
-
-  panels[0].groups.forEach((g,i)=>{
-    const btn = document.createElement('button');
-    btn.type = 'button';
-    btn.className = 'tab' + (i===curIdx ? ' on' : '');
-    btn.setAttribute('aria-pressed', String(i===curIdx));
-    btn.textContent = labelOf(g);   /* 具体月份由下方大标题显示, 页签只标相对位置(不再重复) */
-    btn.addEventListener('click', ()=>switchTo(i));
-    tabsEl.appendChild(btn);
-  });
-
-  const fitKey = '_fit_' + (tabsEl.id || 'x');
-  if(window[fitKey]) window.removeEventListener('resize', window[fitKey]);
-  const resizeFit = ()=>{
-    fitAll();
-    moveGlider(tabsEl, tabsEl.querySelectorAll('.tab')[curIdx], true);
-  };
-  window[fitKey] = resizeFit;
-  window.addEventListener('resize', resizeFit);
-  moveGlider(tabsEl, tabsEl.querySelectorAll('.tab')[curIdx], true);   // 恢复定位不滑动
-  const mhMn0 = document.getElementById('mhMn');
-  if(mhMn0) mhMn0.textContent = String(groups[curIdx].month).padStart(2,'0');
-  return fitAll;
+  updateTabs(false);
+  return {render, fit, alignTabs, updateDay, hasCurrentWindow};
 }
 
-/* 图片按需加载：卡片里的 <img> 只写 data-src，当前视图的当前月份显示时才换成 src。
-   隐藏的月份和视图叠在首屏位置，浏览器的 loading="lazy" 会把它们当成可见，一打开就全部下载。 */
-function wakeImages(root){
-  if(!root) return;
-  root.querySelectorAll('img[data-src]').forEach(img=>{
-    img.setAttribute('src', img.dataset.src);
+function visibleView(){
+  return Array.from(document.getElementById('viewStack').children).find(view=>view.classList.contains('on'));
+}
+
+// Hidden months are layered near the viewport, so native lazy loading alone cannot keep their images deferred.
+function wakeVisible(){
+  const section = visibleView()?.querySelector('.sect.on');
+  if(!section) return;
+  section.querySelectorAll('img[data-src]').forEach(img=>{
+    img.src = img.dataset.src;
     img.removeAttribute('data-src');
   });
 }
-function visibleView(){
-  const stack = document.getElementById('viewStack');
-  return stack ? Array.from(stack.children).find(el=>el.classList.contains('on')) : null;
-}
-let warmT = null;
-function wakeVisible(){
-  const view = visibleView();
-  if(!view) return;
-  wakeImages(Array.from(view.querySelectorAll('.sect')).find(s=>s.classList.contains('on')));
-  /* 稍后预载同一视图的其他月份，切月时图片已就位；另一个视图要切过去才加载 */
-  clearTimeout(warmT);
-  warmT = setTimeout(()=>{ const v = visibleView(); if(v) v.querySelectorAll('.sect').forEach(wakeImages); }, 1500);
-}
-
-function showCredit(){
-  const c = document.querySelector('.credit');
-  if(c) c.classList.add('show');
-}
 
 /* 数据就位后淡出启动遮罩 */
+let bootHiding = false;
 function hideBoot(){
   const b = document.getElementById('boot');
-  if(!b) return;
+  if(!b || bootHiding) return;
+  bootHiding = true;
   /* 先排版触发标题字体加载；Windows 桌面要等子集字体到位（最多 1.2 秒）再揭开，避免宋体闪一下再换 */
   void document.body.offsetHeight;
   const ready = (document.fonts && document.fonts.ready) || Promise.resolve();
@@ -569,7 +593,7 @@ function hideBoot(){
 }
 /* 字体换上后标题高度可能变化，重算列表容器高度，防止被 overflow:hidden 裁掉 */
 if(document.fonts) document.fonts.addEventListener('loadingdone', ()=>{
-  if(window['_fit_tabs']) window['_fit_tabs']();
+  calendar.fit();
   stackFit();
 });
 
@@ -605,42 +629,97 @@ function animFade(cur, nxt){
   nxt.classList.add('anim-fade-in', 'on');
 }
 
-let state = { game: null, movie: null, album: null };
-/* 电影热度门槛（2026-10-15 用户确认按热度筛，不按评分）：上映满 7 天、豆瓣评分人数仍不到 5000（含「暂无评分」）就不显示。
-   数据仍留在 movies.json，每日任务刷新人数后过线会重新出现；未上映的片子由每月整理按「想看」人数把关。 */
+/* 电影上映满 7 天后按豆瓣评分人数筛选。 */
 const MOVIE_MIN_VOTES = 5000, MOVIE_GRACE_DAYS = 7;
-function movieVisible(m){
-  const released = new Date(m.year, m.month-1, m.day);
-  const days = Math.round((new Date(today.getFullYear(),today.getMonth(),today.getDate()) - released)/86400000);
-  return days < MOVIE_GRACE_DAYS || (Number(m.votes) || 0) >= MOVIE_MIN_VOTES;
-}
-/* 任一份数据到位就重建(月签只有一份, 同时控制游戏、电影、音乐的列表) */
-function paint(){
-  const panels = [];
-  if(state.game) panels.push({
-    body: $('#body'), groups: state.game.groups || [], makeCard: card, unit: '款',
-    footFn: g => '共 ' + g.games.length + ' 款 · 评分来自 Metacritic · 每月初更新'
-  });
-  if(state.movie) panels.push({
-    body: $('#movieBody'), unit: '部', grid: true, makeCard: mcard, emptyText: '暂无符合条件的影片',
-    groups: (state.movie.groups || []).map(g => Object.assign({}, g, { movies: (g.movies || []).filter(movieVisible) })),
-    footFn: g => '共 ' + g.movies.length + ' 部 · 评分来自豆瓣 · 每月初更新'
-  });
-  if(state.album) panels.push({
-    body: $('#albumBody'), groups: state.album.groups || [], makeCard: acard, unit: '张', grid: true,
-    footFn: g => '共 ' + g.albums.length + ' 张 · 每月初更新'
-  });
-  if(!panels.length) return;
-  tabbed($('#tabs'), panels);
-  showCredit();
-  stackFit();
-  wakeVisible();
-  hideBoot();
+function movieVisible(movie){
+  return -releaseOffset(movie) < MOVIE_GRACE_DAYS || (Number(movie.votes) || 0) >= MOVIE_MIN_VOTES;
 }
 
-function render(d){
-  state.game = d;
-  paint();
+const panels = {
+  game: {
+    body: $('#body'), error: $('#errBox'), url: 'releases.json', key: 'games', makeCard: card,
+    footer: count=>'共 ' + count + ' 款 · 评分来自 Metacritic · 每月初更新'
+  },
+  movie: {
+    body: $('#movieBody'), error: $('#mErrBox'), url: 'movies.json', key: 'movies', makeCard: mcard,
+    grid: true, filter: movieVisible, emptyText: '暂无符合条件的影片',
+    footer: count=>'共 ' + count + ' 部 · 评分来自豆瓣 · 每月初更新'
+  },
+  album: {
+    body: $('#albumBody'), error: $('#aErrBox'), url: 'albums.json', key: 'albums', makeCard: acard, grid: true,
+    footer: count=>'共 ' + count + ' 张 · 每月初更新'
+  }
+};
+const allPanels = Object.values(panels);
+const calendar = tabbed($('#tabs'), allPanels);
+const WINDOW_RETRY_MS = 15 * 60000;
+let calendarTimer;
+
+function refreshPanel(panel, refreshWindow = false){
+  if(panel.pending) return panel.pending;
+  if(panel.groups && !refreshWindow) return;
+  panel.requestedAt = Date.now();
+  panel.error.style.display = 'none';
+  panel.pending = loadPanel(panel, refreshWindow).finally(()=>{
+    panel.pending = null;
+    if(panel.body.parentElement === visibleView()) hideBoot();
+    scheduleDateCheck();
+  });
+  return panel.pending;
+}
+
+async function loadPanel(panel, refreshWindow){
+  try{
+    const response = await fetch(panel.url, {cache: refreshWindow ? 'no-cache' : 'default'});
+    if(!response.ok) throw new Error('HTTP ' + response.status);
+    const data = await response.json();
+    if(data?.error) throw new Error(data.error);
+    if(!Array.isArray(data?.groups) || data.groups.length !== 3 ||
+        !data.groups.every(group=>Number.isInteger(group?.year) && Number.isInteger(group.month) &&
+          group.month >= 1 && group.month <= 12 && Array.isArray(group[panel.key]))){
+      throw new Error('数据格式异常');
+    }
+    if(refreshWindow && JSON.stringify(data.groups) === JSON.stringify(panel.groups)) return;
+    panel.groups = data.groups;
+    calendar.render(panel);
+    if(panel.body.parentElement === visibleView()){
+      stackFit();
+      wakeVisible();
+    }
+  }catch(error){
+    if(panel.groups) return;
+    panel.body.replaceChildren();
+    panel.error.textContent = '获取失败：' + error.message;
+    panel.error.style.display = 'block';
+    if(panel.body.parentElement === visibleView()) stackFit();
+  }
+}
+
+function stalePanels(){
+  if(document.hidden) return [];
+  return allPanels.filter(panel=>panel.groups && !panel.pending && !calendar.hasCurrentWindow(panel));
+}
+
+function scheduleDateCheck(){
+  clearTimeout(calendarTimer);
+  // The next Beijing midnight is 16:00 UTC on the current Beijing calendar day.
+  let next = today.getTime() + DAY_MS - BEIJING_OFFSET_MS;
+  for(const panel of stalePanels()) next = Math.min(next, panel.requestedAt + WINDOW_RETRY_MS);
+  calendarTimer = setTimeout(syncCalendarDate, Math.max(0, next - Date.now()));
+}
+
+function syncCalendarDate(){
+  const day = readBeijingDay();
+  if(day.getTime() !== today.getTime()){
+    today = day;
+    calendar.updateDay();
+    stackFit();
+    wakeVisible();
+  }
+  for(const panel of stalePanels()){
+    if(Date.now() - panel.requestedAt >= WINDOW_RETRY_MS) refreshPanel(panel, true);
+  }
+  scheduleDateCheck();
 }
 
 /* 评分按位拆开，每位一格。手机上的衬线数字不等宽，整段右对齐只能对齐个位 */
@@ -651,8 +730,7 @@ function scoreLink(n, cls, href, label){
 
 function card(it){
   const wrap = document.createElement('div'); wrap.className='item';
-  const date = new Date(it.year, it.month-1, it.day);
-  const diff = Math.round((date - new Date(today.getFullYear(),today.getMonth(),today.getDate()))/86400000);
+  const diff = releaseOffset(it);
   let whenTxt, whenCls;
   if(diff===0){ whenTxt='今天发售'; whenCls='today'; }
   else if(diff===1){ whenTxt='明天发售'; whenCls='today'; }
@@ -735,8 +813,7 @@ function ckw(img){
 function mcard(it){
   const wrap = document.createElement('div'); wrap.className='item mv pc';
   const sc = (typeof it.score==='number' && it.score>0) ? it.score : null;
-  const date = new Date(it.year, it.month-1, it.day);
-  const diff = Math.round((date - new Date(today.getFullYear(),today.getMonth(),today.getDate()))/86400000);
+  const diff = releaseOffset(it);
   let whenTxt='', whenCls='';
   if(diff===0){ whenTxt='今天上映'; whenCls='today'; }
   else if(diff===1){ whenTxt='明天上映'; whenCls='today'; }
@@ -763,32 +840,10 @@ function mcard(it){
   return wrap;
 }
 
-function renderMovies(d){
-  state.movie = d;
-  paint();
-}
-
-let moviesLoaded = false;
-async function refreshMovies(){
-  if(moviesLoaded) return;
-  const box = $('#mErrBox');
-  box.style.display='none';
-  try{
-    const r = await fetch('movies.json'); const d = await r.json();
-    if(d.error) throw new Error(d.error);
-    renderMovies(d);
-    moviesLoaded = true;
-  }catch(e){
-    box.textContent='获取失败：'+e.message;
-    box.style.display='block';
-  }
-}
-
 /* ---------- 音乐：专辑和 EP(不显示评分，封面来自 Apple Music) ---------- */
 function acard(it){
   const wrap = document.createElement('div'); wrap.className='item al pc';
-  const date = new Date(it.year, it.month-1, it.day);
-  const diff = Math.round((date - new Date(today.getFullYear(),today.getMonth(),today.getDate()))/86400000);
+  const diff = releaseOffset(it);
   let whenTxt='', whenCls='';
   if(diff===0){ whenTxt='今天发行'; whenCls='today'; }
   else if(diff===1){ whenTxt='明天发行'; whenCls='today'; }
@@ -811,23 +866,6 @@ function acard(it){
   wrap.querySelector('.t').textContent = it.title;      /* 作品名、艺人纯文本 */
   wrap.querySelector('.artist').textContent = it.artist;   /* 分类叫「音乐」，EP 不单独标注 */
   return wrap;
-}
-
-let albumsLoaded = false;
-async function refreshAlbums(){
-  if(albumsLoaded) return;
-  const box = $('#aErrBox');
-  box.style.display='none';
-  try{
-    const r = await fetch('albums.json'); const d = await r.json();
-    if(d.error) throw new Error(d.error);
-    state.album = d;
-    paint();
-    albumsLoaded = true;
-  }catch(e){
-    box.textContent='获取失败：'+e.message;
-    box.style.display='block';
-  }
 }
 
 /* 顶层切换: 游戏 / 电影 / 音乐（淡入淡出，记住上次视图） */
@@ -866,12 +904,11 @@ async function refreshAlbums(){
     });
     const curBtn = btns.find(b=>b.dataset.view === v);
     if(curBtn) moveGlider(top, curBtn, true);   // 类别只淡入淡出，下划线直接定位，不横向滑动
-    if(v === 'movie') refreshMovies();
-    if(v === 'album') refreshAlbums();
+    refreshPanel(panels[v]);
     /* 直接用新视图高度(切换瞬间它可能还没拿到 on), 高度瞬时调整 */
     const stack = document.getElementById('viewStack');
     if(stack) stack.style.height = nxt.offsetHeight + 'px';
-    if(window['_fit_tabs']) window['_fit_tabs']();
+    calendar.fit();
     wakeVisible();
     try { localStorage.setItem('glwView', v); } catch(e) {}
   }
@@ -885,7 +922,7 @@ async function refreshAlbums(){
   const alignViewGlider = ()=>moveGlider(top, top.querySelector('.tab.on') || btns[0], true);
   window.addEventListener('resize', alignViewGlider);
   window.addEventListener('load', alignViewGlider);
-  window.addEventListener('resize', stackFit);
+
   stackFit();
 })();
 
@@ -910,10 +947,16 @@ async function refreshAlbums(){
   }, {passive:true});
 })();
 
-window.addEventListener('load', stackFit);   // 字体/图片就位后重算高度
-refresh();
-refreshMovies();   // 预渲染电影、音乐视图: 首次切换时高度已就位, 避免"先塌后撑"的下沉
-refreshAlbums();
+window.addEventListener('load', stackFit);
+window.addEventListener('resize', ()=>{
+  calendar.fit();
+  stackFit();
+  calendar.alignTabs();
+});
+document.addEventListener('visibilitychange', syncCalendarDate);
+window.addEventListener('pageshow', syncCalendarDate);
+allPanels.forEach(panel=>refreshPanel(panel));
+syncCalendarDate();
 </script>
 </body>
 </html>
