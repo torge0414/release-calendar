@@ -52,4 +52,12 @@ assert.equal(context.gameTitle('Star Wars® Galactic Racer™'), 'Star Wars Gala
 const noPrice = context.card({title: '测试', year: 2026, month: 10, day: 9,
   plats: [{key: 'ps', name: 'PS', url: 'https://example.test/'}]}).innerHTML;
 assert(noPrice.includes('暂无价格'), 'A platform without price must say so instead of showing a bare icon');
-console.log('Game cover valid: priority source, suitable JPEG ratio, unchanged wide-banner fallback, title symbols and missing prices');
+const roundedPrices = context.card({...fixture, plats: [
+  {key: 'steam', name: 'Steam', price: 208.6},
+  {key: 'ps', name: 'PlayStation', price: 232.2},
+  {key: 'ns', name: 'Nintendo Switch', price: 0}
+]}).innerHTML;
+assert(roundedPrices.includes('aria-label="Steam ¥209"') && roundedPrices.includes('¥209</a>'));
+assert(roundedPrices.includes('aria-label="PlayStation HK$232"') && roundedPrices.includes('HK$232</a>'));
+assert(roundedPrices.includes('aria-label="Nintendo Switch HK$0"') && roundedPrices.includes('HK$0</a>'));
+console.log('Game cover valid: priority source, suitable JPEG ratio, unchanged wide-banner fallback, title symbols, rounded prices and missing prices');

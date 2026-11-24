@@ -752,8 +752,7 @@ function card(it){
     let pfmt = '';
     if (pv!=null && pv!==false && pv!=='') {
       const n = Number(pv);
-      pfmt = (n % 1 === 0) ? String(n) : n.toFixed(2);
-      pfmt = (p.key==='steam' ? '¥'+pfmt : 'HK$'+pfmt);
+      if(Number.isFinite(n)) pfmt = (p.key==='steam' ? '¥' : 'HK$') + Math.round(n);
     }
     const url = p.url ? 'href="'+esc(p.url)+'" target="_blank" rel="noopener"' : '';
     const pm = (p.key==='steam'?'st':p.key);
